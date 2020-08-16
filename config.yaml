@@ -5,3 +5,6 @@ title: "DSRKafuU"
 # language
 languageCode: "zh-cn" # rss
 defaultContentLanguage: "zh-hans" # html
+
+params:
+  author: "DSRKafuU"
