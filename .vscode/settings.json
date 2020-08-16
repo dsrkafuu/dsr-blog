@@ -1,0 +1,8 @@
+{
+  "editor.tabSize": 2,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "html.format.wrapAttributes": "aligned-multiple",
+  "html.format.wrapLineLength": 100
+}

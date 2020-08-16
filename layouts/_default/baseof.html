@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+  {{ block "head" . }}{{ end }}
+</head>
+
+<body data-theme="auto">
+  {{ partial "scripts-theme.html" . }}
+
+  <header>
+    {{ block "header" . }}{{ end }}
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    {{ block "footer" . }}{{ end }}
+  </footer>
+
+  {{ block "scripts" . }}{{ end }}
+</body>
+
+</html>

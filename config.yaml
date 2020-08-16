@@ -1,3 +1,7 @@
-baseURL: "http://example.org/"
-languageCode: "en-us"
-title: "My New Hugo Site"
+# base info
+baseURL: "https://amzrk2.cc/"
+title: "DSRKafuU"
+
+# language
+languageCode: "zh-cn" # rss
+defaultContentLanguage: "zh-hans" # html
