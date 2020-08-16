@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
 
-<head>
-  {{ block "head" . }}{{ end }}
-</head>
+{{ partial "head.html" . }}
 
 <body data-theme="auto">
   {{ partial "scripts-theme.html" . }}
