@@ -1,12 +1,6 @@
 {
   "name": "amzrk2-ng",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "amzrk2",
-  "license": "ISC"
+  "version": "5.0.0",
+  "author": "DSRKafuU <mail@amzrk2.cc> (https://amzrk2.cc/)",
+  "license": "Apache-2.0"
 }
