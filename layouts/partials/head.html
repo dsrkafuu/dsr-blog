@@ -33,7 +33,7 @@
 
 <!-- stylesheets -->
 {{ if eq (getenv "NODE_ENV") "production" }}
-{{ $options := (dict "targetPath" "assets/amzrk2.min.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
+{{ $options := (dict "targetPath" "assets/amzrk2.min.css" "outputStyle" "compressed" "includePaths" (slice "node_modules")) }}
 {{ $css := resources.Get "scss/index.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 {{ else }}
