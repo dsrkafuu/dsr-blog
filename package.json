@@ -4,6 +4,14 @@
   "author": "DSRKafuU <mail@amzrk2.cc> (https://amzrk2.cc/)",
   "license": "Apache-2.0",
   "dependencies": {
-    "bulma": "^0.9.0"
+    "bulma": "^0.9.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development hugo server",
+    "build": "cross-env NODE_ENV=production hugo"
   }
 }
