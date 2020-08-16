@@ -1,0 +1,32 @@
+<!-- basic meta -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+{{ hugo.Generator }}
+
+<!-- seo metadata -->
+<!-- $ title -->
+{{ if .IsHome }}
+<title>{{ .Site.Title }}</title>
+{{ else }}
+<title>{{ .Title }} - {{ .Site.Title }}</title>
+{{ end }}
+<!-- $ author -->
+{{ if .Params.author }}
+<meta name="author" content="{{ .Params.author }}" />
+{{ else }}
+<meta name="author" content="{{ .Site.Params.author }}" />
+{{ end }}
+<!-- $ description -->
+{{ if .Params.description }}
+<meta name="description" content="{{ .Params.description }}" />
+{{ end }}
+{{ if .Params.tags }}
+<meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
+{{ end }}
+<!-- $ og -->
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
