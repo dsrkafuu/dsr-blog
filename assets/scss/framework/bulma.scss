@@ -9,17 +9,16 @@ $blue: hsl(217, 71%, 53%);
 $purple: hsl(271, 100%, 71%);
 $red: hsl(348, 86%, 61%);
 // font-family
-$family-sans-serif: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica',
-  'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC',
-  'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-$family-monospace: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $family-sans-serif;
+$family-sans-serif: $amzrk2-font-family-base;
+$family-monospace: $amzrk2-font-family-mono;
 
 /* derived */
 
 /* generic */
 // size
-$body-size: 16px;
+$body-size: $amzrk2-font-size-base;
 
 /* components */
 @import 'bulma/sass/utilities/_all';
 @import 'bulma/sass/base/_all';
+@import 'bulma/sass/components/navbar';
