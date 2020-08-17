@@ -1,0 +1,28 @@
+$amzrk2-font-family-base: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue',
+  'Helvetica', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN',
+  'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$amzrk2-font-family-mono: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas',
+  $amzrk2-font-family-base;
+$amzrk2-font-size-base: 16px;
+$amzrk2-font-sizes: (
+  'xs': 0.75rem,
+  'sm': 0.875rem,
+  'md': 1rem,
+  'lg': 1.125rem,
+  'xl': 1.25rem,
+);
+
+$amzrk2-colors: (
+  'body': #ecf0f5,
+  'hover': #eceef2,
+  'primary': #8aa2d3,
+);
+:root {
+  @each $key, $value in $amzrk2-colors {
+    --color-#{$key}: #{$value};
+  }
+}
+
+:root {
+  --shadow-card: 0 0.25rem 1.2rem rgba(48, 55, 66, 0.06);
+}
