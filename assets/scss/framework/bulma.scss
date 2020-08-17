@@ -18,7 +18,10 @@ $family-monospace: $amzrk2-font-family-mono;
 // size
 $body-size: $amzrk2-font-size-base;
 
+$fullhd-enabled: false;
+
 /* components */
 @import 'bulma/sass/utilities/_all';
 @import 'bulma/sass/base/_all';
+@import 'bulma/sass/elements/container';
 @import 'bulma/sass/components/navbar';
