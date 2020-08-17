@@ -1,11 +1,18 @@
 .footer {
   background-color: var(--color-bg);
   box-shadow: var(--shadow);
+  font-size: $amzrk2-font-size-sm;
 
   .container {
     height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 $block-spacing;
+
+    @media screen and (max-width: $desktop) {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }
