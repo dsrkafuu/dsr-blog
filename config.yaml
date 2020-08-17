@@ -2,6 +2,15 @@
 baseURL: "https://amzrk2.cc/"
 title: "DSRKafuU"
 
+# features
+hasCJKLanguage: true
+enableEmoji: true
+enableRobotsTXT: true
+disableKinds:
+  - "taxonomy"
+ignoreErrors:
+  - "error-disable-taxonomy"
+
 # language
 languageCode: "zh-cn" # rss
 defaultContentLanguage: "zh-hans" # html

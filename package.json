@@ -11,7 +11,7 @@
     "cross-env": "^7.0.2"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development hugo server",
-    "build": "cross-env NODE_ENV=production hugo"
+    "start": "cross-env NODE_ENV=development hugo server --disableFastRender",
+    "build": "cross-env NODE_ENV=production hugo --cleanDestinationDir --gc"
   }
 }
