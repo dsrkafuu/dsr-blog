@@ -26,6 +26,8 @@
 {{ end }}
 {{ if .Params.tags }}
 <meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
+{{ else if .Params.keywords }}
+<meta name="keywords" content="{{ delimit .Params.keywords ", " }}" />
 {{ end }}
 <!-- $ og -->
 {{ template "_internal/opengraph.html" . }}
