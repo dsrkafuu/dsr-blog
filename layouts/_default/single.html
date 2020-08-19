@@ -3,7 +3,18 @@
 {{ end }}
 
 {{ define "main" }}
-main
+<div class="container main-container">
+  <div class="columns main-columns">
+    <div class="column main-content">
+      <div class="card">
+        {{ .Content }}
+      </div>
+    </div>
+    <div class="column main-sidebar is-one-quarter">
+      <div class="card">card</div>
+    </div>
+  </div>
+</div>
 {{ end }}
 
 {{ define "scripts" }}
