@@ -7,9 +7,14 @@ $text: var(--color-font);
 
 /* generic */
 $body-size: $amzrk2-font-size-base;
+
+/* responsive */
+$desktop: 1080px;
+$widescreen-enabled: false;
 $fullhd-enabled: false;
 
 /* components */
 @import 'bulma/sass/utilities/_all';
 @import 'bulma/sass/base/_all';
 @import 'bulma/sass/elements/container';
+@import 'bulma/sass/grid/columns';
