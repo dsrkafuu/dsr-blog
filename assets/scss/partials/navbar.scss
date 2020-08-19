@@ -1,0 +1,51 @@
+.navbar {
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow);
+
+  .container {
+    height: $amzrk2-navbar-height;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-item {
+    display: block;
+    padding: 0 $amzrk2-space-sm;
+    height: $amzrk2-navbar-height;
+    line-height: $amzrk2-navbar-height;
+
+    &:hover {
+      background-color: var(--color-hover);
+    }
+  }
+
+  a,
+  a:hover {
+    color: var(--color-font);
+  }
+
+  .navbar-brand {
+    flex: 0 0 auto;
+
+    .navbar-item {
+      font-size: $amzrk2-font-size-md;
+      padding: 0 $amzrk2-space-base;
+    }
+  }
+
+  .navbar-menu {
+    flex: 1 1 auto;
+    display: flex;
+  }
+
+  .navbar-start {
+    flex: 1 1 auto;
+    display: flex;
+  }
+
+  .navbar-end {
+    flex: 0 0 auto;
+    justify-self: end;
+    display: flex;
+  }
+}

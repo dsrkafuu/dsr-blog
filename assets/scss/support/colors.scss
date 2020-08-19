@@ -1,8 +1,10 @@
 $amzrk2-colors: (
-  'body': #ecf0f5,
-  'bg': #ffffff,
+  'body': #f2f5f8,
+  'bg': #fffffd,
   'hover': #eceef2,
   'primary': #8aa2d3,
+  'secondary': #8b81c3,
+  'font': #3f4551,
 );
 body {
   @each $key, $value in $amzrk2-colors {
@@ -11,5 +13,5 @@ body {
 }
 
 body {
-  --shadow: 0 0.25rem 1.2rem rgba(48, 55, 66, 0.06);
+  --shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.06);
 }
