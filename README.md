@@ -17,5 +17,10 @@
 - Markdown 渲染内容部分通过修改 Bulma 预定义变量实现，其他部分通过覆盖 CSS 样式实现
 - 全局主题与色彩均通过 CSS 变量实现以便于适配多主题
 - 定义不同比例占位适应 lazyload，使用 shortcode 参数传入比例渲染对应占位
+- Navbar 为响应式，宽度小于 `$tablet` 时高度与排列方式单独定义
 
 ## LICENSE
+
+The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/amzrk2/amzrk2-ng/blob/master/LICENSE).
+
+> © 2020 DSRKafuU <amzrk2.cc>
