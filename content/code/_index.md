@@ -6,7 +6,3 @@ keywords:
   - amzrk2
   - 代码
 ---
-
-DSRKafuU 个人站点生活博客模块
-
-<!--more-->
