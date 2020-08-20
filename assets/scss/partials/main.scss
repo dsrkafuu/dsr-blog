@@ -6,4 +6,7 @@
 }
 
 .main-sidebar {
+  .card:not(:last-child) {
+    margin-bottom: $amzrk2-space-base;
+  }
 }
