@@ -1,11 +1,11 @@
 $amzrk2-colors: (
   'body': #f2f5f8,
   'bg': #fffffd,
-  'hover': #f1f1f1,
+  'hover': #f3f5fa,
   'wrapper': #f2f5f8,
+  'font': #3f4551,
   'primary': #8aa2d3,
   'secondary': #8b81c3,
-  'font': #3f4551,
 );
 body {
   @each $key, $value in $amzrk2-colors {

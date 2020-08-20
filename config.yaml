@@ -14,4 +14,8 @@ languageCode: "zh-cn" # rss
 defaultContentLanguage: "zh-hans" # html
 
 params:
+  # sidebar info
   author: "DSRKafuU"
+  para: "かふうです"
+  avatar: "https://amzrk2.cc/assets/img/avatar.webp"
+  avatarFallback: "https://amzrk2.cc/assets/img/avatar.jpg"
