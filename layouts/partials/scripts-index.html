@@ -1,0 +1,6 @@
+{{ if eq (getenv "NODE_ENV") "production" }}
+{{ else }}
+{{ $options := (dict "targetPath" "assets/amzrk2.js" "minify" false "target" "es2017" "format" "iife") }}
+{{ $built := resources.Get "js/index.js" | js.Build $options }}
+<script src="{{ $built.RelPermalink }}"></script>
+{{ end }}

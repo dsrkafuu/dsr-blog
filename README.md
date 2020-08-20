@@ -6,10 +6,16 @@
 
 ## 部分开发细节
 
+### JS
+
+- CSS 通过 Hugo Pipes 由 ESBuild 编译而来
+- 不同模板使用不同的 scripts 局部模板，引入不同依赖库并通过不同入口文件编译主 JS
+
 ### CSS
 
 - CSS 通过 Hugo Pipes 由 SCSS 编译而来
 - Markdown 渲染内容部分通过修改 Bulma 预定义变量实现，其他部分通过覆盖 CSS 样式实现
 - 全局主题与色彩均通过 CSS 变量实现以便于适配多主题
+- 定义不同比例占位适应 lazyload，使用 shortcode 参数传入比例渲染对应占位
 
 ## LICENSE
