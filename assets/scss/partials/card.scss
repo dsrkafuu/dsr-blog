@@ -4,3 +4,43 @@
   border-radius: $amzrk2-radius;
   padding: $amzrk2-space-base;
 }
+
+.card-info {
+  text-align: center;
+
+  .avatar {
+    margin: 0 auto 1rem auto;
+    width: 5rem;
+  }
+
+  .info {
+    & > span {
+      display: block;
+    }
+    text-align: center;
+    font-size: $amzrk2-font-size-sm;
+  }
+  .info-name {
+    font-size: $amzrk2-font-size-lg;
+  }
+  .info-location {
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+  }
+
+  .counter {
+    display: flex;
+  }
+  .counter-wrapper {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .counter-data {
+    font-size: $amzrk2-font-size-md;
+  }
+  .counter-name {
+    font-size: $amzrk2-font-size-sm;
+  }
+}

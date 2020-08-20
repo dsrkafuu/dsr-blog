@@ -6,10 +6,8 @@ title: "DSRKafuU"
 hasCJKLanguage: true
 enableEmoji: true
 enableRobotsTXT: true
-disableKinds:
-  - "taxonomy"
-ignoreErrors:
-  - "error-disable-taxonomy"
+taxonomies:
+  tag: tags
 
 # language
 languageCode: "zh-cn" # rss

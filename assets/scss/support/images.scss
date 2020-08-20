@@ -1,0 +1,18 @@
+.image-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: var(--color-wrapper);
+  border-radius: $amzrk2-radius;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  &.ratio-100 {
+    padding-bottom: 100%;
+  }
+}
