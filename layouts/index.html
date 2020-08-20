@@ -7,11 +7,9 @@
   <div class="columns main-columns">
     <div class="column main-content">
       <div class="card">
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <div class="markdown content">
+          {{ with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end }}
+        </div>
       </div>
     </div>
     <div class="column main-sidebar is-one-quarter">

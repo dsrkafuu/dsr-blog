@@ -7,7 +7,3 @@ keywords:
   - 生活
   - 博客
 ---
-
-DSRKafuU 个人站点生活博客模块
-
-<!--more-->
