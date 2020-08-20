@@ -1,8 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 /* sticky footer */
 html,
 body {
-  height: 100%;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 body {
