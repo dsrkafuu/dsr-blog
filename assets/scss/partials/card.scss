@@ -11,6 +11,7 @@
   .avatar {
     margin: 0 auto 1rem auto;
     width: 5rem;
+    user-select: none;
   }
 
   .info {
@@ -23,10 +24,9 @@
   .info-name {
     font-size: $amzrk2-font-size-lg;
   }
-  .info-location {
+  .info-para {
     margin-top: 0.25rem;
     margin-bottom: 0.75rem;
-    color: var(--color-primary);
   }
 
   .counter {

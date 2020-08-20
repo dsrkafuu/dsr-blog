@@ -15,6 +15,7 @@
     line-height: $amzrk2-navbar-height;
 
     &:hover {
+      color: var(--color-primary);
       background-color: var(--color-hover);
     }
   }
@@ -28,7 +29,7 @@
     flex: 0 0 auto;
 
     .navbar-item {
-      font-size: $amzrk2-font-size-md;
+      font-size: $amzrk2-font-size-lg;
       padding: 0 $amzrk2-space-base;
     }
   }
