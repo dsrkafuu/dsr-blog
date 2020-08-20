@@ -13,6 +13,7 @@
     padding: 0 $amzrk2-space-sm;
     height: $amzrk2-navbar-height;
     line-height: $amzrk2-navbar-height;
+    cursor: pointer;
 
     &:hover {
       color: var(--color-primary);
@@ -48,5 +49,28 @@
     flex: 0 0 auto;
     justify-self: end;
     display: flex;
+    padding-right: $amzrk2-space-base - $amzrk2-space-sm + 0.05rem;
+    font-size: $amzrk2-font-size-md;
+  }
+
+  @media screen and (max-width: $tablet) {
+    .container {
+      height: $amzrk2-navbar-height-sm * 2;
+      flex-direction: column;
+      font-size: $amzrk2-font-size-sm;
+    }
+
+    .navbar-item {
+      height: $amzrk2-navbar-height-sm;
+      line-height: $amzrk2-navbar-height-sm;
+    }
+
+    .navbar-brand .navbar-item {
+      font-size: $amzrk2-font-size-md;
+    }
+
+    .navbar-end .navbar-item {
+      font-size: $amzrk2-font-size-sm;
+    }
   }
 }
