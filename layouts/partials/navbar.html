@@ -8,18 +8,13 @@
 
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
-          生活
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        <a class="navbar-item {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}"
+           href="{{ .URL }}">
+          {{ .Name }}
         </a>
-        <a class="navbar-item">
-          代码
-        </a>
-        <a class="navbar-item">
-          标签
-        </a>
-        <a class="navbar-item">
-          友链
-        </a>
+        {{ end }}
       </div>
 
       <div class="navbar-end">
