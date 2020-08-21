@@ -1,5 +1,5 @@
 ---
-title: 'LIFE'
+title: '生活'
 description: 'DSRKafuU 个人站点生活博客模块'
 keywords:
   - DSRKafuU

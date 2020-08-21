@@ -1,5 +1,5 @@
 ---
-title: 'INDEX'
+title: '主页'
 description: 'DSRKafuU 个人站点主页'
 keywords:
   - DSRKafuU
@@ -18,7 +18,7 @@ keywords:
 
 Commonly used identity: `DSRKafuU` and `amzrk2`.
 
-You can try the links and my e-mail address in the info section.
+You can try the links and my e-mail address in the info section. To prevent e-mali from being crawled by crawlers, you need to click to get them via JavaScript.
 
 ## This site
 

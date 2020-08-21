@@ -1,5 +1,5 @@
 # base info
-baseURL: "https://next.amzrk2.cc/"
+baseURL: "https://next.amzrk2.cc/preview/"
 title: "DSRKafuU"
 
 # features
@@ -20,6 +20,22 @@ params:
   para: "かふうです"
   avatar: "https://amzrk2.cc/assets/img/avatar.webp"
   avatarFallback: "https://amzrk2.cc/assets/img/avatar.jpg"
+
+# menu
+menu:
+  main:
+    - name: 生活
+      url: /post/
+      weight: 1
+    - name: 代码
+      url: /code/
+      weight: 2
+    - name: 标签
+      url: /tags/
+      weight: 3
+    - name: 友链
+      url: /friends/
+      weight: 4
 
 # markup
 markup:
