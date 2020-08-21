@@ -1,2 +1,13 @@
 <script>
+  (function (d) {
+    let t;
+    try {
+      t = JSON.parse(localStorage.getItem('amzrk2-theme'));
+    } catch (e) {
+      t = null;
+    }
+    if (t && t !== d) {
+      document.body.setAttribute('data-theme', t);
+    }
+  })(document.body.getAttribute('data-theme'));
 </script>
