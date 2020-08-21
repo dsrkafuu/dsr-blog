@@ -1,9 +1,9 @@
 {{ if eq (getenv "NODE_ENV") "production" }}
-{{ $options := (dict "targetPath" "assets/amzrk2.min.js" "minify" true "target" "es2017" "format" "iife") }}
+{{ $options := (dict "targetPath" "assets/amzrk2-index.min.js" "minify" true "target" "es2017" "format" "iife") }}
 {{ $built := resources.Get "js/index.js" | js.Build $options }}
 <script src="{{ $built.RelPermalink }}"></script>
 {{ else }}
-{{ $options := (dict "targetPath" "assets/amzrk2.js" "minify" false "target" "es2017" "format" "iife") }}
+{{ $options := (dict "targetPath" "assets/amzrk2-index.js" "minify" false "target" "es2017" "format" "iife") }}
 {{ $built := resources.Get "js/index.js" | js.Build $options }}
 <script src="{{ $built.RelPermalink }}"></script>
 {{ end }}
