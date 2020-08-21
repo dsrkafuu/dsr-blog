@@ -13,9 +13,23 @@ taxonomies:
 languageCode: "zh-cn" # rss
 defaultContentLanguage: "zh-hans" # html
 
+# params
 params:
   # sidebar info
   author: "DSRKafuU"
   para: "かふうです"
   avatar: "https://amzrk2.cc/assets/img/avatar.webp"
   avatarFallback: "https://amzrk2.cc/assets/img/avatar.jpg"
+
+# markup
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # enable user-embed HTML snippets
+  highlight:
+    codeFences: false # disable code highlighter
+    tabWidth: 2
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+    ordered: false
