@@ -1,7 +1,14 @@
-export default class ThemeManager {
-  theme = document.body.getAttribute('data-theme');
+import { setLS, getLS } from '../plugins/storage';
+import { DOCUMENT_THEME, STORAGE_THEME } from '../constants';
 
-  constructor() {}
+export default class ThemeManager {
+  constructor() {
+    this.theme = getLS(STORAGE_THEME) || document.body.getAttribute(DOCUMENT_THEME);
+    // 若 body 后的内联脚本执行失败了
+    if (this.theme !== document.body.getAttribute(DOCUMENT_THEME)) {
+      document.body.setAttribute(DOCUMENT_THEME, this.theme);
+    }
+  }
 
   /**
    * @private
@@ -32,7 +39,7 @@ export default class ThemeManager {
    */
   setTheme(scheme) {
     if (['auto', 'dark', 'light'].includes(scheme)) {
-      document.body.setAttribute('data-theme', scheme);
+      document.body.setAttribute(DOCUMENT_THEME, scheme);
       this.theme = scheme;
       console.info(`[LOGGER] Theme set to ${scheme} mode`);
     }
@@ -49,8 +56,10 @@ export default class ThemeManager {
       // 若目标主题为浏览器主题
       // 则恢复自动模式
       this.setTheme('auto');
+      setLS(STORAGE_THEME, 'auto');
     } else {
       this.setTheme(targetTheme);
+      setLS(STORAGE_THEME, targetTheme);
     }
   }
 }
