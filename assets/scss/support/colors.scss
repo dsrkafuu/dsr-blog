@@ -1,4 +1,4 @@
-$amzrk2-colors: (
+$amzrk2-colors-light: (
   'body': #f2f5f8,
   'bg': #fffffd,
   'hover': #f3f5fa,
@@ -7,12 +7,42 @@ $amzrk2-colors: (
   'primary': #8aa2d3,
   'secondary': #8b81c3,
 );
-body {
-  @each $key, $value in $amzrk2-colors {
+@mixin light {
+  @each $key, $value in $amzrk2-colors-light {
     --color-#{$key}: #{$value};
+  }
+  --shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.06);
+}
+
+$amzrk2-colors-dark: (
+  'body': #2f3136,
+  'bg': #4d5158,
+  'hover': #41454b,
+  'wrapper': #2f3136,
+  'font': rgba(255, 255, 255, 0.75),
+  'primary': #8aa2d3,
+  'secondary': #bab1df,
+);
+@mixin dark {
+  @each $key, $value in $amzrk2-colors-dark {
+    --color-#{$key}: #{$value};
+  }
+  --shadow: none;
+  img {
+    filter: brightness(85%);
   }
 }
 
-body {
-  --shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.06);
+body[data-theme='auto'] {
+  @include light();
+
+  @media (prefers-color-scheme: dark) {
+    @include dark();
+  }
+}
+body[data-theme='light'] {
+  @include light();
+}
+body[data-theme='dark'] {
+  @include dark();
 }
