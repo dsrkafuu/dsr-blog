@@ -1,0 +1,20 @@
+@media screen and (max-width: $tablet) {
+  .main-columns {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.main-container {
+  padding: $amzrk2-space-base;
+}
+
+.main-sidebar {
+  .card:not(:last-child) {
+    margin-bottom: $amzrk2-space-base;
+  }
+}
+
+.main-content .markdown.content h2:first-child {
+  margin-top: 0;
+}
