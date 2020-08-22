@@ -2,11 +2,10 @@ $amzrk2-colors-light: (
   'body': #f2f5f8,
   'bg': #fffffd,
   'hover': #f3f5fa,
-  'wrapper': #f1f1f1,
+  'wrapper': #f5f5f5,
   'font': #3f4551,
   'primary': #8aa2d3,
   'secondary': #8b81c3,
-  'mute': #6b7f94,
   'border': #e6e8ee,
 );
 @mixin light {
@@ -24,7 +23,6 @@ $amzrk2-colors-dark: (
   'font': rgba(255, 255, 255, 0.75),
   'primary': #8aa2d3,
   'secondary': #bab1df,
-  'mute': #6b7f94,
   'border': #e6e8ee,
 );
 @mixin dark {

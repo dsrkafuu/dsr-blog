@@ -32,7 +32,6 @@
   .info-para {
     margin-top: 0.25rem;
     margin-bottom: 0.75rem;
-    color: var(--color-mute);
   }
 
   .counter {
@@ -45,6 +44,7 @@
   }
   .counter-data {
     font-size: $amzrk2-font-size-md;
+    color: var(--color-primary);
   }
   .counter-name {
     font-size: $amzrk2-font-size-sm;
