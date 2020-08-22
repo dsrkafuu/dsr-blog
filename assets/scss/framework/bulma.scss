@@ -15,6 +15,12 @@ $desktop: 1080px;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
+/* markdown */
+$text-strong: var(--color-font);
+$content-blockquote-background-color: transparent;
+$content-blockquote-padding: 0 $amzrk2-space-sm;
+$content-pre-padding: $amzrk2-space-sm;
+
 /* components */
 @import 'bulma/sass/utilities/_all';
 @import 'bulma/sass/base/_all';

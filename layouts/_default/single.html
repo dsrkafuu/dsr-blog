@@ -5,9 +5,11 @@
 {{ define "main" }}
 <div class="container main-container">
   <div class="columns main-columns">
-    <div class="column main-content">
+    <div class="column main-content is-three-quarters">
       <div class="card">
-        {{ .Content }}
+        <div class="markdown content">
+          {{ .Content }}
+        </div>
       </div>
     </div>
     <div class="column main-sidebar is-one-quarter">
