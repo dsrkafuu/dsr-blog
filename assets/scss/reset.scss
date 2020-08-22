@@ -24,26 +24,29 @@ h6 {
 
   h2 {
     font-size: $amzrk2-font-size-xl;
-    margin: 1.3rem 0 1.2rem 0;
-    padding-bottom: 0.25rem;
-    border-bottom: $amzrk2-divider;
+    margin: 1.375rem 0 1rem 0;
     color: var(--color-primary);
   }
 
   h3 {
     font-size: $amzrk2-font-size-md;
-    margin: 1.2rem 0 1.1rem 0;
+    margin: 1.25rem 0 1rem 0;
     color: var(--color-primary);
   }
 
   h4 {
     font-size: $amzrk2-font-size-base;
-    margin: 1.1rem 0 1rem 0;
+    margin: 1.125rem 0 1rem 0;
     color: var(--color-primary);
   }
 
   ul {
-    list-style-type: circle;
+    list-style-type: '- ';
+  }
+
+  ul,
+  ol {
+    margin-left: 1.25rem;
   }
 
   img {
