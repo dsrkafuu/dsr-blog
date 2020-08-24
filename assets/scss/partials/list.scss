@@ -32,6 +32,14 @@
   }
   .list-summary {
     margin-bottom: $amzrk2-space-sm;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      display: none;
+    }
   }
   .list-meta {
     font-size: $amzrk2-font-size-sm;
