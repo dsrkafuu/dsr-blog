@@ -3,17 +3,31 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="container main-container">
-  <div class="columns main-columns">
-    <div class="column main-content is-three-quarters">
+<div class="container single-container">
+  <div class="columns single-columns">
+    <div class="column single-content is-three-quarters">
       <div class="card">
-        <div class="markdown content">
-          {{ .Content }}
+        <div class="post-image image-wrapper ratio-40x9">img</div>
+        <div class="post-box">
+          <h2 class="post-title">{{ .Title }}</h2>
+          <div class="post-meta">meta</div>
+        </div>
+        <div class="post-content">
+          <div class="markdown content">
+            {{ .Content }}
+          </div>
         </div>
       </div>
     </div>
-    <div class="column main-sidebar is-one-quarter">
-      <div class="card">card</div>
+    <div class="column single-sidebar is-one-quarter">
+      <div class="card">
+        {{ partial "card-info.html" . }}
+      </div>
+      <div class="sticky">
+        <div class="card">
+          toc
+        </div>
+      </div>
     </div>
   </div>
 </div>
