@@ -1,4 +1,5 @@
 import { setLS, getLS } from '../plugins/storage';
+import { logInfo } from '../plugins/logger';
 import { DOCUMENT_THEME, STORAGE_THEME } from '../constants';
 
 export default class ThemeManager {
@@ -41,7 +42,7 @@ export default class ThemeManager {
     if (['auto', 'dark', 'light'].includes(scheme)) {
       document.body.setAttribute(DOCUMENT_THEME, scheme);
       this.theme = scheme;
-      console.info(`[LOGGER] Theme set to ${scheme} mode`);
+      logInfo(`Theme set to ${scheme} mode`);
     }
   }
 
