@@ -68,3 +68,40 @@
     }
   }
 }
+
+#TableOfContents {
+  overflow: auto;
+  max-height: $amzrk2-toc-height;
+  scrollbar-width: thin;
+
+  a {
+    white-space: nowrap;
+    color: var(--color-font);
+  }
+
+  & > ul {
+    font-size: $amzrk2-font-size-sm;
+
+    & > li {
+      & > ul {
+        margin-left: 0.5rem;
+        padding-left: 0.5rem;
+        border-left: $amzrk2-divider;
+      }
+    }
+  }
+
+  li a {
+    display: block;
+    height: 2rem;
+    line-height: 2rem;
+    color: var(--color-font);
+    padding-left: 0.5rem;
+    border-radius: $amzrk2-radius;
+
+    &:hover {
+      color: var(--color-primary);
+      background-color: var(--color-hover);
+    }
+  }
+}
