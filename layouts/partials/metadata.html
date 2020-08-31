@@ -1,0 +1,22 @@
+<span>
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-calendar-day"></use>
+  </svg>&nbsp;{{- .Date.Format "2006-01-02" -}}</span>
+<span>
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-clock"></use>
+  </svg>&nbsp;{{- .ReadingTime }} 分钟</span>
+<span>
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-hashtag"></use>
+  </svg>&nbsp;
+  {{- if .Params.tags -}}
+  {{- range .Params.tags -}}
+  <a href="{{ "/tags/" | relURL }}{{ . | urlize}}">
+    {{- . -}}
+  </a>
+  {{- end -}}
+  {{- else -}}
+  无标签
+  {{- end -}}
+</span>
