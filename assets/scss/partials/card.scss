@@ -52,3 +52,19 @@
     font-size: $amzrk2-font-size-sm;
   }
 }
+
+.card-links {
+  text-align: center;
+
+  .links-item {
+    display: block;
+    height: 2rem;
+    line-height: 2rem;
+    color: var(--color-font);
+
+    &:hover {
+      color: var(--color-primary);
+      background-color: var(--color-hover);
+    }
+  }
+}

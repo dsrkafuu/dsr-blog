@@ -1,3 +1,7 @@
 <div class="card-links">
-  links
+  {{ range .Site.Menus.links }}
+  <a class="links-item btn" href="{{ .URL }}">
+    {{ .Name }}
+  </a>
+  {{ end }}
 </div>
