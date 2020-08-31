@@ -18,8 +18,7 @@ params:
   # sidebar info
   author: "DSRKafuU"
   para: "かふうです"
-  avatar: "https://amzrk2.cc/assets/img/avatar.webp"
-  avatarFallback: "https://amzrk2.cc/assets/img/avatar.jpg"
+  avatar: "https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1.3.0/amzrk2/kitashirakawa_tamako_256p.webp"
 
 # menu
 menu:
