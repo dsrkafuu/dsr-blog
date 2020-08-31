@@ -1,6 +1,6 @@
 import { setLS, getLS } from '../plugins/storage';
 import { logInfo } from '../plugins/logger';
-import { DOCUMENT_THEME, STORAGE_THEME } from '../constants';
+import { DOCUMENT_THEME, STORAGE_THEME } from '../plugins/constants';
 
 export default class ThemeManager {
   constructor() {
