@@ -6,6 +6,11 @@
 
 ## 部分开发细节
 
+### Hugo
+
+- `toc: false` 不渲染 ToC
+- `image` 字段未设置则不渲染头图
+
 ### JS
 
 - CSS 通过 Hugo Pipes 由 ESBuild 编译而来

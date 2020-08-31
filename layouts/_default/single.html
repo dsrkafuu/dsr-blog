@@ -30,9 +30,11 @@
         {{ partial "card-info.html" . }}
       </div>
       <div class="sticky">
+        {{ if ne .Params.toc false }}
         <div class="card">
           {{ .TableOfContents }}
         </div>
+        {{ end }}
       </div>
     </div>
   </div>
