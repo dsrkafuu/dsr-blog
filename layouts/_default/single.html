@@ -7,10 +7,14 @@
   <div class="columns single-columns">
     <div class="column single-content is-three-quarters">
       <div class="card">
-        <div class="post-image image-wrapper ratio-40x9">img</div>
+        <div class="post-image image-wrapper ratio-40x9">
+          <img src="https://cdn.jsdelivr.net/npm/sks@0.1.9/hexo-5.png" />
+        </div>
         <div class="post-box">
           <h2 class="post-title">{{ .Title }}</h2>
-          <div class="post-meta">meta</div>
+          <div class="post-meta">
+            {{ partial "metadata.html" . }}
+          </div>
         </div>
         <div class="post-content">
           <div class="markdown content">
