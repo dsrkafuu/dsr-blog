@@ -1,5 +1,9 @@
 import { logInfo, logError } from '../plugins/logger';
 
+/**
+ * 设置邮箱地址 (机器人验证待添加)
+ * @param {string} address 邮箱地址
+ */
 export default async function loadEmail(address) {
   const emailLoader = new Promise((resolve, reject) => {
     const linksNode = document.getElementsByClassName('links-item btn');
