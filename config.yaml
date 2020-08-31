@@ -7,7 +7,7 @@ hasCJKLanguage: true
 enableEmoji: true
 enableRobotsTXT: true
 taxonomies:
-  tag: tags
+  tag: "tags"
 
 # language
 languageCode: "zh-cn" # rss
@@ -23,17 +23,30 @@ params:
 # menu
 menu:
   main:
-    - name: 生活
-      url: /post/
+    - name: "生活"
+      url: "/post/"
       weight: 1
-    - name: 代码
-      url: /code/
+    - name: "代码"
+      url: "/code/"
       weight: 2
-    - name: 标签
-      url: /tags/
+    - name: "标签"
+      url: "/tags/"
       weight: 3
-    - name: 友链
-      url: /friends/
+    - name: "友链"
+      url: "/friends/"
+      weight: 4
+  links:
+    - name: "GitHub"
+      url: "https://github.com/amzrk2"
+      weight: 1
+    - name: "Twitter"
+      url: "https://twitter.com/amzrk2"
+      weight: 2
+    - name: "哔哩哔哩"
+      url: "https://space.bilibili.com/19767474"
+      weight: 3
+    - name: "邮箱"
+      url: "mailto:mail@fake.google"
       weight: 4
 
 # markup
