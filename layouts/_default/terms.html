@@ -1,0 +1,28 @@
+{{ define "header" }}
+{{ partial "navbar.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<div class="container list-container">
+  <div class="columns list-columns">
+    <div class="column list-content is-three-quarters">
+      <div class="card">
+      </div>
+    </div>
+    <div class="column list-sidebar is-one-quarter">
+      <div class="sticky">
+        <div class="card">
+          {{ partial "card-info.html" . }}
+        </div>
+        <div class="card">
+          {{ partial "card-links.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ partial "scripts-list.html" . }}
+{{ end }}
