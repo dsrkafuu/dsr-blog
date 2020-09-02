@@ -8,6 +8,7 @@ enableEmoji: true
 enableRobotsTXT: true
 taxonomies:
   tag: "tags"
+paginate: 1
 
 # language
 languageCode: "zh-cn" # rss
