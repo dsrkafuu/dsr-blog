@@ -3,7 +3,9 @@
 <div class="card">
   {{ if .Params.image }}
   <div class="list-image image-wrapper ratio-40x9">
-    <img src="{{ .Params.image }}" />
+    <a href="{{ .Permalink }}">
+      <img src="{{ .Params.image }}" />
+    </a>
   </div>
   {{ end }}
   <div class="list-box">
