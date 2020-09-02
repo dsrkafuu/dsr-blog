@@ -6,8 +6,7 @@
 <div class="container list-container">
   <div class="columns list-columns">
     <div class="column list-content is-three-quarters">
-      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) }}
-      {{ range $paginator.Pages }}
+      {{ range .Paginator.Pages }}
       {{ partial "card-list.html" . }}
       {{ end }}
     </div>
