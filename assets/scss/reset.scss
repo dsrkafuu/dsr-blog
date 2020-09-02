@@ -16,7 +16,6 @@ h4,
 h5,
 h6 {
   font-weight: 400 !important;
-  color: var(--color-primary) !important;
 }
 
 .markdown.content {
@@ -87,6 +86,25 @@ h6 {
 
   blockquote {
     border-left: $amzrk2-divider;
+  }
+
+  table {
+    background: transparent;
+
+    &.is-narrow {
+      font-size: $amzrk2-font-size-sm;
+    }
+
+    th {
+      color: var(--color-primary);
+      font-weight: 400;
+      font-size: $amzrk2-font-size-base;
+    }
+
+    td,
+    th {
+      border-color: var(--color-font);
+    }
   }
 }
 
