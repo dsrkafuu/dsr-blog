@@ -20,6 +20,7 @@ $text-strong: var(--color-primary);
 $content-blockquote-background-color: transparent;
 $content-blockquote-padding: 0 $amzrk2-space-sm;
 $content-pre-padding: $amzrk2-space-sm;
+$table-color: var(--color-font);
 
 /* components */
 @import 'bulma/sass/utilities/_all';
@@ -29,3 +30,4 @@ $content-pre-padding: $amzrk2-space-sm;
 @import 'bulma/sass/elements/content';
 @import 'bulma/sass/form/shared';
 @import 'bulma/sass/form/input-textarea';
+@import 'bulma/sass/elements/table';
