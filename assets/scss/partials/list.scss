@@ -46,3 +46,13 @@
   font-size: $amzrk2-font-size-sm;
   color: var(--color-primary);
 }
+
+.tag-list {
+  padding: $amzrk2-space-base !important;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag-item {
+  color: var(--color-primary);
+  margin-right: $amzrk2-space-sm;
+}

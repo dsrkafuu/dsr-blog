@@ -3,8 +3,6 @@ title: 'JavaScript 继承方式简单笔记'
 date: 2020-08-02T16:19:39+08:00
 tags:
   - javascript
-  - javascript2
-  - javascript3
 description: '语法糖是生产力进步的阶梯。'
 image: 'https://cdn.jsdelivr.net/npm/sks@0.1.9/hexo-5.png'
 ---
