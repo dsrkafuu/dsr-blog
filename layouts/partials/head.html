@@ -44,3 +44,6 @@
 {{ $css := resources.Get "scss/index.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 {{ end }}
+
+<!-- cfga -->
+{{ partial "cfga.html" . }}
