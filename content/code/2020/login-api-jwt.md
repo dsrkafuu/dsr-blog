@@ -1,9 +1,13 @@
-+++
-title = "Node 登录模块、权限验证、错误处理和可配置自定义中间件实现笔记"
-date = 2020-07-21T12:05:47+08:00
-tags = ["nodejs", "javascript", "mongodb", "express"]
-description = "一次全新尝试的笔记第二部分。"
-+++
+---
+title: 'Node 登录模块、权限验证、错误处理和可配置自定义中间件实现笔记'
+date: 2020-07-21T12:05:47+08:00
+tags:
+  - 'nodejs'
+  - 'javascript'
+  - 'mongodb'
+  - 'express'
+description: '一次全新尝试的笔记第二部分。'
+---
 
 近期在补习 [Node.js](https://nodejs.org/) + [MongoDB](https://www.mongodb.com/) 的配合使用，目前已基本将后台管理界面完工。下一步是本人此前从未接触过的账户登录管理以及鉴权相关的内容，因此将学习过程中简单的完整实现记录下来便以后回顾。
 
@@ -140,7 +144,9 @@ app.post('/admin/api/login', async (req, res) => {
 
 ```js
 const jwt = require('jsonwebtoken');
-const privateKey = fs.readFileSync(path.resolve(__dirname, '../../../test_key.key'), { encoding: 'utf-8' });
+const privateKey = fs.readFileSync(path.resolve(__dirname, '../../../test_key.key'), {
+  encoding: 'utf-8',
+});
 // 登录接口
 app.post('/admin/api/login', async (req, res) => {
   '...';
@@ -216,7 +222,9 @@ app.use(require('cookie-parser')()); // 使用 cookie-parser 方便解析 cookie
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const path = require('path');
-const publicKey = fs.readFileSync(path.resolve(__dirname, '../../../test_key.key.pub'), { encoding: 'utf-8' });
+const publicKey = fs.readFileSync(path.resolve(__dirname, '../../../test_key.key.pub'), {
+  encoding: 'utf-8',
+});
 const UserAdmin = require('../../model/UserAdmin');
 
 module.exports = async function validatorMiddleware(req, res, next) {
