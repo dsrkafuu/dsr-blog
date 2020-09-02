@@ -6,7 +6,6 @@ $amzrk2-colors-light: (
   'font': #3f4551,
   'primary': #8aa2d3,
   'secondary': #8b81c3,
-  'border': #e6e8ee,
 );
 @mixin light {
   @each $key, $value in $amzrk2-colors-light {
@@ -23,7 +22,6 @@ $amzrk2-colors-dark: (
   'font': rgba(255, 255, 255, 0.75),
   'primary': #8aa2d3,
   'secondary': #bab1df,
-  'border': #e6e8ee,
 );
 @mixin dark {
   @each $key, $value in $amzrk2-colors-dark {
