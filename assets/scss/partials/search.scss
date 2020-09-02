@@ -1,0 +1,24 @@
+.search-ctrl {
+  padding: $amzrk2-space-base !important;
+}
+
+.search-form {
+  display: flex;
+
+  button {
+    flex: 0 0 auto;
+    outline: none;
+    border: none;
+    border-radius: $amzrk2-radius;
+    cursor: pointer;
+    color: var(--color-font);
+    background-color: var(--color-wrapper);
+    margin-left: $amzrk2-space-sm;
+    padding: 0 $amzrk2-space-sm;
+
+    &:hover {
+      color: var(--color-primary);
+      background-color: var(--color-hover);
+    }
+  }
+}

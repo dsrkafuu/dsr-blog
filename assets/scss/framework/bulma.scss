@@ -22,6 +22,16 @@ $content-blockquote-padding: 0 $amzrk2-space-sm;
 $content-pre-padding: $amzrk2-space-sm;
 $table-color: var(--color-font);
 
+/* search */
+$input-color: var(--color-font);
+$input-background-color: var(--color-wrapper);
+$input-border-color: transparent;
+$input-hover-color: var(--color-wrapper);
+$input-hover-border-color: transparent;
+$input-focus-color: var(--color-wrapper);
+$input-focus-border-color: var(--color-primary);
+$input-radius: 3px;
+
 /* components */
 @import 'bulma/sass/utilities/_all';
 @import 'bulma/sass/base/_all';
