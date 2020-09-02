@@ -17,8 +17,12 @@ defaultContentLanguage: "zh-Hans" # html
 params:
   # sidebar info
   author: "DSRKafuU"
+  email: "amzrk2@outlook.com"
   para: "かふうです"
   avatar: "https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1.3.0/amzrk2/kitashirakawa_tamako_256p.webp"
+  mainSections:
+    - "post"
+    - "code"
 
 # menu
 menu:
