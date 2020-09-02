@@ -1,0 +1,23 @@
+.list-pagination {
+  display: flex;
+  padding: 0 $amzrk2-space-base;
+  justify-content: center;
+
+  & > a {
+    display: block;
+    color: inherit;
+    flex: 0 1 auto;
+    height: $amzrk2-navbar-height-sm;
+    line-height: $amzrk2-navbar-height-sm;
+    padding: 0 $amzrk2-space-sm;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-primary);
+      background-color: var(--color-hover);
+    }
+    &.pag-current {
+      color: var(--color-primary);
+    }
+  }
+}

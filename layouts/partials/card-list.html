@@ -19,22 +19,26 @@
   </div>
 </div>
 {{ end }}
-<div class="card list-pagination">
+<div class="card">
   {{ $offsetLinks := 2 }}
   {{ $maxLinks := (add (mul $offsetLinks 2) 1) }}
   {{ $lowerLimit := (add $offsetLinks 1) }}
   {{ $upperLimit := (sub $paginator.TotalPages $offsetLinks) }}
   {{ if gt $paginator.TotalPages 1 }}
-  <div class="pagination">
+  <div class="list-pagination">
     {{ if ne $paginator.PageNumber 1 }}
-    <div class="pag-first">
-      <a href="{{ $paginator.First.URL }}">first</a>
-    </div>
+    <a class="pag-first" href="{{ $paginator.First.URL }}">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chevron-double-left"></use>
+      </svg>
+    </a>
     {{ end }}
     {{ if $paginator.HasPrev }}
-    <div class="pag-previous">
-      <a href="{{ $paginator.Prev.URL }}">prev</a>
-    </div>
+    <a class="pag-previous" href="{{ $paginator.Prev.URL }}">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chevron-left"></use>
+      </svg>
+    </a>
     {{ end }}
     {{ range $paginator.Pagers }}
     {{ $.Scratch.Set "pageNumFlag" false }}
@@ -56,20 +60,23 @@
     {{ $.Scratch.Set "pageNumFlag" true }}
     {{ end }}
     {{ if eq ($.Scratch.Get "pageNumFlag") true }}
-    <div class="pag-item{{ if eq . $paginator }} pag-current{{ end }}">
-      <a href="{{ .URL }}">{{ .PageNumber }}</a>
-    </div>
+    <a class="pag-item{{ if eq . $paginator }} pag-current{{ end }}"
+       href="{{ .URL }}">{{ .PageNumber }}</a>
     {{ end }}
     {{ end }}
     {{ if $paginator.HasNext }}
-    <div class="pag-next">
-      <a href="{{ $paginator.Next.URL }}">next</a>
-    </div>
+    <a class="pag-next" href="{{ $paginator.Next.URL }}">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chevron-right"></use>
+      </svg>
+    </a>
     {{ end }}
     {{ if ne $paginator.PageNumber $paginator.TotalPages }}
-    <div class="pag-last">
-      <a href="{{ $paginator.Last.URL }}">last</a>
-    </div>
+    <a class="pag-last" href="{{ $paginator.Last.URL }}">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chevron-double-right"></use>
+      </svg>
+    </a>
     {{ end }}
   </div>
   {{ end }}
