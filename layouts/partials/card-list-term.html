@@ -1,4 +1,4 @@
-{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) }}
+{{ $paginator := .Paginator }}
 {{ range $paginator.Pages }}
 <div class="card">
   {{ if .Params.image }}

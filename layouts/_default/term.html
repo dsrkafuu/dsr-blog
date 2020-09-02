@@ -6,9 +6,7 @@
 <div class="container list-container">
   <div class="columns list-columns">
     <div class="column list-content is-three-quarters">
-      {{ range .Paginator.Pages }}
-      {{ partial "card-list.html" . }}
-      {{ end }}
+      {{ partial "card-list-term.html" . }}
     </div>
     <div class="column list-sidebar is-one-quarter">
       <div class="sticky">
