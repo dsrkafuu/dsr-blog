@@ -1,30 +1,32 @@
-<div class="card-info">
-  <div class="avatar">
-    <div class="image-wrapper ratio-1x1">
-      <img src="{{ .Site.Params.avatar }}" />
+<div class="card">
+  <div class="card-info">
+    <div class="avatar">
+      <div class="image-wrapper ratio-1x1">
+        <img src="{{ .Site.Params.avatar }}" />
+      </div>
     </div>
-  </div>
-  <div class="info">
-    <span class="info-name">{{ .Site.Params.author }}</span>
-    <span class="info-para">{{ .Site.Params.para }}</span>
-  </div>
-  <div class="counter">
-    <div class="counter-wrapper">
-      {{ $.Scratch.Set "TOTAL_WORD_COUNT" 0 }}
-      {{ range .Site.RegularPages }}
-      {{ $.Scratch.Add "TOTAL_WORD_COUNT" .WordCount }}
-      {{ end }}
-      {{ $totalWords := $.Scratch.Get "TOTAL_WORD_COUNT" }}
-      <span class="counter-data">{{ math.Round (div $totalWords 1000.0) }}</span>
-      <span class="counter-name">千字</span>
+    <div class="info">
+      <span class="info-name">{{ .Site.Params.author }}</span>
+      <span class="info-para">{{ .Site.Params.para }}</span>
     </div>
-    <div class="counter-wrapper">
-      <span class="counter-data">{{ len .Site.Taxonomies.tags }}</span>
-      <span class="counter-name">标签</span>
-    </div>
-    <div class="counter-wrapper">
-      <span class="counter-data">{{ len .Site.RegularPages }}</span>
-      <span class="counter-name">文章</span>
+    <div class="counter">
+      <div class="counter-wrapper">
+        {{ $.Scratch.Set "TOTAL_WORD_COUNT" 0 }}
+        {{ range .Site.RegularPages }}
+        {{ $.Scratch.Add "TOTAL_WORD_COUNT" .WordCount }}
+        {{ end }}
+        {{ $totalWords := $.Scratch.Get "TOTAL_WORD_COUNT" }}
+        <span class="counter-data">{{ math.Round (div $totalWords 1000.0) }}</span>
+        <span class="counter-name">千字</span>
+      </div>
+      <div class="counter-wrapper">
+        <span class="counter-data">{{ len .Site.Taxonomies.tags }}</span>
+        <span class="counter-name">标签</span>
+      </div>
+      <div class="counter-wrapper">
+        <span class="counter-data">{{ len .Site.RegularPages }}</span>
+        <span class="counter-name">文章</span>
+      </div>
     </div>
   </div>
 </div>
