@@ -25,7 +25,8 @@
 |      theme       |                internal                |   common    |
 | email-protection |                internal                | list search |
 |    lazysizes     | <https://github.com/aFarkas/lazysizes> | list single |
-|     prismjs      |         <https://prismjs.com/>         |   single    |
+|     prism.js     |         <https://prismjs.com/>         |   single    |
+|      vue.js      |          <https://vuejs.org/>          |   search    |
 
 ### CSS
 

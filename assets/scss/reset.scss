@@ -5,8 +5,10 @@ a {
   }
 }
 
-strong {
+strong,
+b {
   font-weight: 400 !important;
+  color: var(--color-primary);
 }
 
 h1,

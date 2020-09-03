@@ -22,3 +22,14 @@
     }
   }
 }
+
+.search-data {
+  display: block;
+  text-align: center;
+  font-size: $amzrk2-font-size-sm;
+  margin-top: $amzrk2-space-sm;
+}
+
+.search-result .list-summary.markdown.content {
+  margin-bottom: 0;
+}
