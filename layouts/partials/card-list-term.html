@@ -21,12 +21,12 @@
   </div>
 </div>
 {{ end }}
+{{ if gt $paginator.TotalPages 1 }}
 <div class="card">
   {{ $offsetLinks := 2 }}
   {{ $maxLinks := (add (mul $offsetLinks 2) 1) }}
   {{ $lowerLimit := (add $offsetLinks 1) }}
   {{ $upperLimit := (sub $paginator.TotalPages $offsetLinks) }}
-  {{ if gt $paginator.TotalPages 1 }}
   <div class="list-pagination">
     {{ if ne $paginator.PageNumber 1 }}
     <a class="pag-first" href="{{ $paginator.First.URL }}">
@@ -81,5 +81,5 @@
     </a>
     {{ end }}
   </div>
-  {{ end }}
 </div>
+{{ end }}
