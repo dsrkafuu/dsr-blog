@@ -85,7 +85,7 @@
     & > li {
       & > ul {
         margin-left: 0.5rem;
-        padding-left: 0.5rem;
+        padding: 0 0.375rem;
         border-left: $amzrk2-divider;
       }
     }
@@ -96,7 +96,7 @@
     height: 2rem;
     line-height: 2rem;
     color: var(--color-font);
-    padding-left: 0.5rem;
+    padding: 0 0.375rem;
     border-radius: $amzrk2-radius;
 
     &:hover {
