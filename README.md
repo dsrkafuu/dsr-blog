@@ -19,6 +19,14 @@
 - 不同模板使用不同的 scripts 局部模板，引入不同依赖库并通过不同入口文件编译主 JS
 - Lazyload 图片需要使用 shortcode 并指定固定的长宽比: 文章头图 40x9 anime-note 32x9
 
+|       模块       |                  链接                  |    用途     |
+| :--------------: | :------------------------------------: | :---------: |
+|     iconfont     |                internal                |   common    |
+|      theme       |                internal                |   common    |
+| email-protection |                internal                | list search |
+|    lazysizes     | <https://github.com/aFarkas/lazysizes> | list single |
+|     prismjs      |         <https://prismjs.com/>         |   single    |
+
 ### CSS
 
 - CSS 通过 Hugo Pipes 由 SCSS 编译而来

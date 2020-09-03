@@ -1,3 +1,5 @@
+<!-- lazysizes -->
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
 {{ if eq (getenv "NODE_ENV") "production" }}
 {{ $options := (dict "targetPath" "assets/amzrk2-list.min.js" "minify" true "target" "es2017" "format" "iife") }}
 {{ $built := resources.Get "js/list.js" | js.Build $options }}
@@ -7,5 +9,3 @@
 {{ $built := resources.Get "js/list.js" | js.Build $options }}
 <script src="{{ $built.RelPermalink }}"></script>
 {{ end }}
-<!-- lazysizes -->
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>

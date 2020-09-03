@@ -1,3 +1,5 @@
+<!-- lazysizes -->
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
 <!-- main script -->
 {{ if eq (getenv "NODE_ENV") "production" }}
 {{ $options := (dict "targetPath" "assets/amzrk2-single.min.js" "minify" true "target" "es2017" "format" "iife") }}
@@ -8,8 +10,6 @@
 {{ $built := resources.Get "js/single.js" | js.Build $options }}
 <script src="{{ $built.RelPermalink }}"></script>
 {{ end }}
-<!-- lazysizes -->
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
 <!-- prism.js -->
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js"></script>
 <script
