@@ -11,7 +11,7 @@ image: 'https://cdn.jsdelivr.net/npm/sks@0.1.9/hexo-5.png'
 
 <!--more-->
 
-![继承方式简单分类图](/preview/img/js-extends-note/20200802162333.png)
+![继承方式简单分类图](/images/2020/js-extends-note/20200802162333.webp)
 
 ## 组合继承
 
@@ -39,7 +39,7 @@ const subInstance = new SubClass('aName', 18);
 
 上例中子类的实例中有独立的实例属性 `name` `friends` `age`，共享原型方法 `printName()` `printAge()`。由于子类的 prototype 其实是一个父类的实例，因此其中有冗余的独立的实例属性 `name` 和 `friends` 被创建，而这两个属性被子类实例构造函数中调用 `call()` 生成的同名属性覆盖。
 
-![组合继承实例图](/preview/img/js-extends-note/20200802161333.png)
+![组合继承实例图](/images/2020/js-extends-note/20200802161333.webp)
 
 ## 寄生组合继承
 
@@ -67,7 +67,7 @@ const subInstance = new SubClass('aName', 18);
 
 上例中子类的实例中同样有独立的实例属性 `name` `friends` `age`，共享原型方法 `printName()` `printAge()`。但不同之处在于子类的 prototype 不再是父类的一个实例了，而是一个父类 prototype 的拷贝，因此其中不会有冗余的独立的实例属性 `name` 和 `friends`。
 
-![寄生组合继承实例图](/preview/img/js-extends-note/20200802161414.png)
+![寄生组合继承实例图](/images/2020/js-extends-note/20200802161414.webp)
 
 ## ES6 Class 继承
 
@@ -93,4 +93,4 @@ SubClass.prototype.printAge = function () {
 const subInstance = new SubClass('aName', 18);
 ```
 
-![ES6 Class 继承实例图](/preview/img/js-extends-note/20200802161702.png)
+![ES6 Class 继承实例图](/images/2020/js-extends-note/20200802161702.webp)

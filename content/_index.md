@@ -25,6 +25,8 @@ You can try the links and my e-mail address in the info section. To prevent e-ma
 
 This site is built based on the latest version of [Firefox](https://www.mozilla.org/firefox/new/), so please raise an [issue](https://github.com/amzrk2/amzrk2-ng/issues) if you are having problems with other browsers. Outdated browsers such as IE will not be supported.
 
+Also, as the site is already using [WebP](https://developers.google.com/speed/webp) images across the board without fallbacks, only Safari 14+ on iOS 14+ and macOS 11+ will be supported.
+
 ### Intention
 
 In early 2020, I wrote a new Hugo theme [Fuji](https://github.com/amzrk2/hugo-theme-fuji) for myself to use on my personal blog. From then until the middle of the year, I gradually built up my notes and personal information sites to keep track of my learning progress.
