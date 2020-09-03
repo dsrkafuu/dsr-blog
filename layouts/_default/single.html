@@ -26,9 +26,7 @@
       </div>
     </div>
     <div class="column single-sidebar is-one-quarter">
-      <div class="card">
-        {{ partial "card-info.html" . }}
-      </div>
+      {{ partial "card-info.html" . }}
       <div class="sticky">
         {{ if ne .Params.toc false }}
         <div class="card">
