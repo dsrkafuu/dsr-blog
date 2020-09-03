@@ -4,7 +4,7 @@
   {{ if .Params.image }}
   <div class="list-image image-wrapper ratio-40x9">
     <a href="{{ .Permalink }}">
-      <img src="{{ .Params.image }}" />
+      <img class="lazyload" data-src="{{ .Params.image }}" />
     </a>
   </div>
   {{ end }}
