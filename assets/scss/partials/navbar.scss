@@ -77,4 +77,22 @@
       font-size: $amzrk2-font-size-sm;
     }
   }
+
+  @media screen and (max-width: 26.25rem) {
+    .navbar-start .navbar-item {
+      padding: 0 0.625rem;
+    }
+    .navbar-end .navbar-item {
+      padding: 0 0.75rem;
+    }
+  }
+
+  @media screen and (max-width: 21.875rem) {
+    .navbar-start .navbar-item {
+      padding: 0 0.375rem;
+    }
+    .navbar-end .navbar-item {
+      padding: 0 0.5rem;
+    }
+  }
 }

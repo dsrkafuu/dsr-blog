@@ -14,5 +14,10 @@
       flex-direction: column;
       justify-content: center;
     }
+
+    span {
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
 }
