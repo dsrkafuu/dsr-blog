@@ -133,7 +133,7 @@ ul.pagination li.page-item {
 
 例如当有十个页面时，并且定义 `$offsetLinks = 2` 时希望实现如下图的效果：
 
-![智能导航栏预览图](/img/hugo-custom-pagination/20200413210143.png)
+![智能导航栏预览图](/images/2019/hugo-custom-pagination/20200413210143.webp)
 
 - 最大可显示的页码数 `$maxLinks = ($offsetLinks * 2) + 1`
 - 如果总页面数小于 `$maxLinks`，那么所有页码正常显示

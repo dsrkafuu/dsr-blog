@@ -19,7 +19,7 @@ description: '近来由于本地项目需求，需要在 Windows 下临时使用
 
 从 Catalina 系统内的 `/System/Library/Fonts` 内取出 `PingFang.ttc` 即可。
 
-![macOS 字体文件夹截图](/img/extract-sf-pingfang/20200425135558.png)
+![macOS 字体文件夹截图](/images/2020/extract-sf-pingfang/20200425135558.webp)
 
 ## TTC 解包
 
@@ -31,7 +31,7 @@ python otc2otf.py -w PingFang.ttc
 
 注意 `otc2otf.py` 需要在 Python 2 下运行。解包会将 PSNameUndefined.otf 一起提取出来，由于对移植没什么用删除即可。最终得到如下文件：
 
-![解包后的字体截图](/img/extract-sf-pingfang/20200425140859.png)
+![解包后的字体截图](/images/2020/extract-sf-pingfang/20200425140859.webp)
 
 ## 旧移植方法 (失效)
 
@@ -94,7 +94,7 @@ sudo apt install fonttools
 ttx -t name PingFangSC-Regular.otf
 ```
 
-![提取 name 表截图](/img/extract-sf-pingfang/20200425145049.png)
+![提取 name 表截图](/images/2020/extract-sf-pingfang/20200425145049.webp)
 
 编辑生成的 `PingFangSC-Regular.ttx` 移除这些字段：
 
@@ -128,7 +128,7 @@ ttx -t name PingFangSC-Regular.otf
 ttx -b -m PingFangSC-Regular.otf PingFangSC-Regular.ttx
 ```
 
-![打包完成截图](/img/extract-sf-pingfang/20200425151150.png)
+![打包完成截图](/images/2020/extract-sf-pingfang/20200425151150.webp)
 
 得到的 `PingFangSC-Regular#1.otf` 即可在各系统正常安装使用，其他文件类推。
 

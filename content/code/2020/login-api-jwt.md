@@ -101,7 +101,7 @@ export default http;
 
 此时当用户不存在时应为如下情况：
 
-![用户不存在错误提示截图](/img/login-api-jwt/20200719133154.png)
+![用户不存在错误提示截图](/images/2020/login-api-jwt/20200719133154.webp)
 
 ### 验证密码
 
@@ -136,9 +136,9 @@ app.post('/admin/api/login', async (req, res) => {
 
 首先生成 RSA 私钥和公钥，注意 ssh-keygen 生成 key 后还需用 openssl 生成 pem，这里图方便直接在 WSL 下搞了：
 
-![生成密钥截图一](/img/login-api-jwt/20200719140143.png)
+![生成密钥截图一](/images/2020/login-api-jwt/20200719140143.webp)
 
-![生成密钥截图二](/img/login-api-jwt/20200719153829.png)
+![生成密钥截图二](/images/2020/login-api-jwt/20200719153829.webp)
 
 引入 jwt 和私钥，并使用私钥生成 token：
 

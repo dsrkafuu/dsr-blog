@@ -17,6 +17,7 @@
 
 - CSS 通过 Hugo Pipes 由 ESBuild 编译而来
 - 不同模板使用不同的 scripts 局部模板，引入不同依赖库并通过不同入口文件编译主 JS
+- Lazyload 图片需要使用 shortcode 并指定固定的长宽比
 
 ### CSS
 
