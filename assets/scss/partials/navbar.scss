@@ -56,43 +56,4 @@
     padding-right: $amzrk2-space-base - $amzrk2-space-sm + 0.05rem;
     font-size: $amzrk2-font-size-md;
   }
-
-  @media screen and (max-width: $tablet) {
-    .container {
-      height: $amzrk2-navbar-height-sm * 2;
-      flex-direction: column;
-      font-size: $amzrk2-font-size-sm;
-    }
-
-    .navbar-item {
-      height: $amzrk2-navbar-height-sm;
-      line-height: $amzrk2-navbar-height-sm;
-    }
-
-    .navbar-brand .navbar-item {
-      font-size: $amzrk2-font-size-md;
-    }
-
-    .navbar-end .navbar-item {
-      font-size: $amzrk2-font-size-sm;
-    }
-  }
-
-  @media screen and (max-width: 26.25rem) {
-    .navbar-start .navbar-item {
-      padding: 0 0.625rem;
-    }
-    .navbar-end .navbar-item {
-      padding: 0 0.75rem;
-    }
-  }
-
-  @media screen and (max-width: 21.875rem) {
-    .navbar-start .navbar-item {
-      padding: 0 0.375rem;
-    }
-    .navbar-end .navbar-item {
-      padding: 0 0.5rem;
-    }
-  }
 }
