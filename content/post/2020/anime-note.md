@@ -4,6 +4,7 @@ date: 2020-09-04T22:44:56+08:00
 tags:
   - 'anime'
 description: '就个人来说，对一部动画的感觉是会因时间而变化的。'
+image: '/images/2020/anime-note/header.webp'
 ---
 
 > 给自己的笔记：四种状态分别为追番、补全、回放和抛弃，前三种均为完成状态。
