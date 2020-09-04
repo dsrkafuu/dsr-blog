@@ -4,7 +4,6 @@ date: 2020-08-02T16:19:39+08:00
 tags:
   - javascript
 description: '语法糖是生产力进步的阶梯。'
-image: 'https://cdn.jsdelivr.net/npm/sks@0.1.9/hexo-5.png'
 ---
 
 直接进入正题，下图为继承方式的简单分类，这里主要只注重于组合继承、寄生组合继承与 ES6 Class 继承。

@@ -3,12 +3,17 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="container main-container">
-  <div class="columns main-columns">
-    <div class="column main-content is-three-quarters">
+<div class="container single-container main-container">
+  <div class="columns single-columns main-columns">
+    <div class="column single-content main-content is-three-quarters">
       <div class="card">
-        <div class="markdown content">
-          {{ with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end }}
+        <div class="post-image image-wrapper ratio-40x9">
+          <img src="{{ .Site.Params.image | relURL }}" />
+        </div>
+        <div class="post-content">
+          <div class="markdown content">
+            {{ with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end }}
+          </div>
         </div>
       </div>
     </div>
