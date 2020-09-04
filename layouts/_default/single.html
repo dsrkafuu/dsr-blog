@@ -29,7 +29,7 @@
       {{ partial "card-info.html" . }}
       <div class="sticky">
         {{ if ne .Params.toc false }}
-        <div class="card">
+        <div class="card toc hidden" id="table-of-contents">
           {{ .TableOfContents }}
         </div>
         {{ end }}
