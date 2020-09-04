@@ -26,10 +26,10 @@ if (!getLS(NOTIFICATION_FEATURE_SUPPORTED) && !getLS(NOTIFICATION_FEATURE_DISMIS
     if (!result.lossless) {
       unsupportedFeatures.push('无损压缩模式 WebP 格式图片');
     }
-    if (result.alpha) {
+    if (!result.alpha) {
       unsupportedFeatures.push('WebP 格式图片 alpha 通道');
     }
-    if (result.animation) {
+    if (!result.animation) {
       unsupportedFeatures.push('WebP 格式动态图片');
     }
     if (unsupportedFeatures.length > 0) {
