@@ -20,7 +20,7 @@ params:
   author: "DSRKafuU"
   email: "amzrk2@outlook.com"
   para: "かふうです"
-  avatar: "https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/amzrk2/kitashirakawa_tamako_256p.webp"
+  avatar: "/images/_kitashirakawa.webp"
   image: "/images/_header.webp"
   mainSections:
     - "post"
