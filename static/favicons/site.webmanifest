@@ -1,0 +1,19 @@
+{
+  "name": "DSRKafuU",
+  "short_name": "DSRKafuU",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#8aa2d3",
+  "background_color": "#f2f5f8",
+  "display": "standalone"
+}
