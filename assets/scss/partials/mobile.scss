@@ -60,11 +60,13 @@ main {
   display: none;
 }
 @media screen and (max-width: $tablet) {
-  #ctrl-rss {
-    display: none;
-  }
-  #ctrl-toc {
-    display: block;
+  body[data-section='single'] {
+    #ctrl-rss {
+      display: none;
+    }
+    #ctrl-toc {
+      display: block;
+    }
   }
 }
 
