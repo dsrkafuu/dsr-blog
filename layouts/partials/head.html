@@ -8,42 +8,44 @@
 {{ hugo.Generator }}
 {{ partial "favicon.html" . }}
 
-<!-- seo metadata -->
-<!-- $ title -->
-{{ if .IsHome }}
+<!-- seo metadata title -->
+{{- if .IsHome -}}
 <title>{{ .Site.Title }}</title>
-{{ else }}
+{{- else -}}
 <title>{{ .Title }} | {{ .Site.Title }}</title>
-{{ end }}
-<!-- $ author -->
-{{ if .Params.author }}
+{{- end -}}
+
+<!-- seo metadata author -->
+{{- if .Params.author -}}
 <meta name="author" content="{{ .Params.author }}" />
-{{ else }}
+{{- else -}}
 <meta name="author" content="{{ .Site.Params.author }}" />
-{{ end }}
+{{- end -}}
+
 <!-- $ description -->
-{{ if .Params.description }}
+{{- if .Params.description -}}
 <meta name="description" content="{{ .Params.description }}" />
-{{ end }}
-{{ if .Params.tags }}
+{{- end -}}
+{{- if .Params.tags -}}
 <meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
-{{ else if .Params.keywords }}
+{{- else if .Params.keywords -}}
 <meta name="keywords" content="{{ delimit .Params.keywords ", " }}" />
-{{ end }}
+{{- end -}}
+
 <!-- $ og -->
-{{ template "_internal/opengraph.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
+{{- template "_internal/opengraph.html" . -}}
+{{- template "_internal/twitter_cards.html" . -}}
 
 <!-- stylesheets -->
-{{ if eq (getenv "NODE_ENV") "production" }}
+{{- if eq (getenv "NODE_ENV") "production" -}}
 {{ $options := (dict "targetPath" "assets/amzrk2.min.css" "outputStyle" "compressed" "includePaths" (slice "node_modules")) }}
 {{ $css := resources.Get "scss/index.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-{{ else }}
+{{- else -}}
 {{ $options := (dict "targetPath" "assets/amzrk2.css" "outputStyle" "expanded" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
 {{ $css := resources.Get "scss/index.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-{{ end }}
+{{- end -}}
 
 <!-- cfga -->
 {{ partial "cfga.html" . }}

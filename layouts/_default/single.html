@@ -1,44 +1,51 @@
-{{ define "header" }}
-{{ partial "navbar.html" . }}
-{{ end }}
+{{ define "body" }}
 
-{{ define "main" }}
-<div class="container single-container">
-  <div class="columns single-columns">
-    <div class="column single-content is-three-quarters">
-      <div class="card">
-        {{ if .Params.image }}
-        <div class="post-image image-wrapper ratio-40x9">
-          <img src="{{ .Params.image }}" />
-        </div>
-        {{ end }}
-        <div class="post-box">
-          <h2 class="post-title">{{ .Title }}</h2>
-          <div class="post-meta">
-            {{ partial "metadata.html" . }}
+<body data-theme="auto" data-section="single">
+  {{ partial "scripts-theme.html" . }}
+  <div id="top" style="height: 0; overflow: hidden;"></div>
+  <header>
+    {{ partial "navbar.html" . }}
+  </header>
+  <main>
+    <div class="container single-container">
+      <div class="columns single-columns">
+        <div class="column single-content is-three-quarters">
+          <div class="card">
+            {{ if .Params.image }}
+            <div class="post-image image-wrapper ratio-40x9">
+              <img src="{{ .Params.image }}" />
+            </div>
+            {{ end }}
+            <div class="post-box">
+              <h2 class="post-title">{{ .Title }}</h2>
+              <div class="post-meta">
+                {{ partial "metadata.html" . }}
+              </div>
+            </div>
+            <div class="post-content">
+              <div class="markdown content">
+                {{ .Content }}
+              </div>
+            </div>
           </div>
         </div>
-        <div class="post-content">
-          <div class="markdown content">
-            {{ .Content }}
+        <div class="column single-sidebar is-one-quarter">
+          {{ partial "card-info.html" . }}
+          <div class="sticky">
+            {{ if ne .Params.toc false }}
+            <div class="card toc hidden" id="table-of-contents">
+              {{ .TableOfContents }}
+            </div>
+            {{ end }}
           </div>
         </div>
       </div>
     </div>
-    <div class="column single-sidebar is-one-quarter">
-      {{ partial "card-info.html" . }}
-      <div class="sticky">
-        {{ if ne .Params.toc false }}
-        <div class="card toc hidden" id="table-of-contents">
-          {{ .TableOfContents }}
-        </div>
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</div>
-{{ end }}
+    {{ partial "notification.html" . }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ partial "scripts-common.html" . }}
+  {{ partial "scripts-single.html" . }}
+</body>
 
-{{ define "scripts" }}
-{{ partial "scripts-single.html" . }}
 {{ end }}

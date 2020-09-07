@@ -15,27 +15,6 @@
 
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
-
-{{ partial "head.html" . }}
-
-<body data-theme="auto">
-  {{ partial "scripts-theme.html" . }}
-  <div id="top" style="height: 0; overflow: hidden;"></div>
-
-  <header>
-    {{ block "header" . }}{{ end }}
-  </header>
-
-  <main>
-    {{ block "main" . }}{{ end }}
-
-    {{ partial "notification.html" . }}
-  </main>
-
-  {{ partial "footer.html" . }}
-
-  {{ partial "scripts-common.html" . }}
-  {{ block "scripts" . }}{{ end }}
-</body>
-
+{{- partial "head.html" . -}}
+{{ block "body" . }}{{ end }}
 </html>
