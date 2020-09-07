@@ -1,51 +1,57 @@
-{{ define "header" }}
-{{ partial "navbar.html" . }}
-{{ end }}
+{{ define "body" }}
 
-{{ define "main" }}
-<div class="container list-container">
-  <div class="columns list-columns">
-    <div class="column list-content is-three-quarters">
-      <div id="app">
-        <div class="card search-ctrl">
-          <form class="search-form" method="GET" target="_self">
-            <input class="input" type="search" name="q" autocapitalize="off" autocomplete="off"
-                   autocorrect="off" spellcheck="false" v-model="searchInput" />
-            <button class="button" type="submit">搜索</button>
-          </form>
-          <template v-if="status" style="display: none;">
-            <div class="search-data" v-if="resultData.searchInformation">
-              找到约 <span v-text="resultData.searchInformation.formattedTotalResults"></span>
-              条结果 (用时 <span v-text="resultData.searchInformation.formattedSearchTime"></span> 秒)
+<body data-theme="auto" data-section="search">
+  {{ partial "scripts-theme.html" . }}
+  <header>
+    {{ partial "navbar.html" . }}
+  </header>
+  <main>
+    <div class="container list-container">
+      <div class="columns list-columns">
+        <div class="column list-content is-three-quarters">
+          <div id="app">
+            <div class="card search-ctrl">
+              <form class="search-form" method="GET" target="_self">
+                <input class="input" type="search" name="q" autocapitalize="off" autocomplete="off"
+                       autocorrect="off" spellcheck="false" v-model="searchInput" />
+                <button class="button" type="submit">搜索</button>
+              </form>
+              <template v-if="status" style="display: none;">
+                <div class="search-data" v-if="resultData.searchInformation">
+                  找到约 <span v-text="resultData.searchInformation.formattedTotalResults"></span>
+                  条结果 (用时 <span v-text="resultData.searchInformation.formattedSearchTime"></span> 秒)
+                </div>
+                <div class="search-data" v-else>
+                  无法连接到 Google 服务器
+                </div>
+              </template>
             </div>
-            <div class="search-data" v-else>
-              无法连接到 Google 服务器
-            </div>
-          </template>
-        </div>
-        <template v-if="status && resultData.items" style="display: none;">
-          <div class="search-result">
-            <div class="card" v-for="item of resultData.items">
-              <div class="list-box">
-                <div class="list-post">
-                  <a :href="item.link" target="_blank">
-                    <h2 class="list-title" v-text="item.title"></h2>
-                  </a>
-                  <div class="list-summary markdown content" v-html="item.htmlSnippet"></div>
+            <template v-if="status && resultData.items" style="display: none;">
+              <div class="search-result">
+                <div class="card" v-for="item of resultData.items">
+                  <div class="list-box">
+                    <div class="list-post">
+                      <a :href="item.link" target="_blank">
+                        <h2 class="list-title" v-text="item.title"></h2>
+                      </a>
+                      <div class="list-summary markdown content" v-html="item.htmlSnippet"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </template>
           </div>
-        </template>
+        </div>
+        <div class="column list-sidebar is-one-quarter">
+          {{ partial "card-bundle-list.html" . }}
+        </div>
       </div>
     </div>
-    <div class="column list-sidebar is-one-quarter">
-      {{ partial "card-bundle-list.html" . }}
-    </div>
-  </div>
-</div>
-{{ end }}
+    {{ partial "notification.html" . }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ partial "scripts-common.html" . }}
+  {{ partial "scripts-search.html" . }}
+</body>
 
-{{ define "scripts" }}
-{{ partial "scripts-search.html" . }}
 {{ end }}

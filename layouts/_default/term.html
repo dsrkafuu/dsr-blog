@@ -1,20 +1,26 @@
-{{ define "header" }}
-{{ partial "navbar.html" . }}
-{{ end }}
+{{ define "body" }}
 
-{{ define "main" }}
-<div class="container list-container">
-  <div class="columns list-columns">
-    <div class="column list-content is-three-quarters">
-      {{ partial "card-list-term.html" . }}
+<body data-theme="auto" data-section="term">
+  {{ partial "scripts-theme.html" . }}
+  <header>
+    {{ partial "navbar.html" . }}
+  </header>
+  <main>
+    <div class="container list-container">
+      <div class="columns list-columns">
+        <div class="column list-content is-three-quarters">
+          {{ partial "card-list-term.html" . }}
+        </div>
+        <div class="column list-sidebar is-one-quarter">
+          {{ partial "card-bundle-list.html" . }}
+        </div>
+      </div>
     </div>
-    <div class="column list-sidebar is-one-quarter">
-      {{ partial "card-bundle-list.html" . }}
-    </div>
-  </div>
-</div>
-{{ end }}
+    {{ partial "notification.html" . }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ partial "scripts-common.html" . }}
+  {{ partial "scripts-list.html" . }}
+</body>
 
-{{ define "scripts" }}
-{{ partial "scripts-list.html" . }}
 {{ end }}

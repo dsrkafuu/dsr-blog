@@ -1,29 +1,35 @@
-{{ define "header" }}
-{{ partial "navbar.html" . }}
-{{ end }}
+{{ define "body" }}
 
-{{ define "main" }}
-<div class="container single-container main-container">
-  <div class="columns single-columns main-columns">
-    <div class="column single-content main-content is-three-quarters">
-      <div class="card">
-        <div class="post-image image-wrapper ratio-40x9">
-          <img src="{{ .Site.Params.image | relURL }}" />
-        </div>
-        <div class="post-content">
-          <div class="markdown content">
-            {{ with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end }}
+<body data-theme="auto" data-section="index">
+  {{ partial "scripts-theme.html" . }}
+  <header>
+    {{ partial "navbar.html" . }}
+  </header>
+  <main>
+    <div class="container single-container main-container">
+      <div class="columns single-columns main-columns">
+        <div class="column single-content main-content is-three-quarters">
+          <div class="card">
+            <div class="post-image image-wrapper ratio-40x9">
+              <img src="{{ .Site.Params.image | relURL }}" />
+            </div>
+            <div class="post-content">
+              <div class="markdown content">
+                {{ with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end }}
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="column main-sidebar is-one-quarter">
+          {{ partial "card-bundle-list.html" . }}
         </div>
       </div>
     </div>
-    <div class="column main-sidebar is-one-quarter">
-      {{ partial "card-bundle-list.html" . }}
-    </div>
-  </div>
-</div>
-{{ end }}
+    {{ partial "notification.html" . }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ partial "scripts-common.html" . }}
+  {{ partial "scripts-list.html" . }}
+</body>
 
-{{ define "scripts" }}
-{{ partial "scripts-list.html" . }}
 {{ end }}
