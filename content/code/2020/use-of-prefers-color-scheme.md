@@ -6,6 +6,7 @@ tags:
   - 'javascript'
   - 'css'
 description: '用 prefers-color-scheme 适配系统效果绝佳。'
+image: '/images/2020/use-of-prefers-color-scheme/header.webp'
 ---
 
 自己给博客写的主题 [Fuji](https://github.com/amzrk2/hugo-theme-fuji) 正在进行大改版，顺手也把夜间模式 (深色模式、黑暗模式？都差不多) 进行了改版以适配 `prefers-color-scheme`。

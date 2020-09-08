@@ -6,6 +6,7 @@ tags:
   - 'javascript'
   - 'cloudflare'
 description: 'Hugo 主题夜间模式填坑，却遇上了 CloudFlare 的另一个坑。'
+image: '/images/2020/dark-mode-und-rocked-loader/header.webp'
 ---
 
 近来在给我的 Hugo 主题 [Fuji](https://github.com/amzrk2/hugo-theme-fuji) 写一次大更新，准备添加一些新功能顺便整理一下混乱的 SCSS 结构。由于近期入手一台 iPad，晚上几乎一直是在夜间模式下逛网页，因此计划给主题添加一个夜间模式。原本挺简单的一个小功能没想到却踩了不少坑，在此记录一下。

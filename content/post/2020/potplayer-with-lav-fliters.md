@@ -5,6 +5,7 @@ tags:
   - 'anime'
   - 'video'
 description: '现在的高清视频观看体验，瓶颈不在片源，也不在制作，而是在播放器。'
+image: '/images/2020/potplayer-with-lav-fliters/header.webp'
 ---
 
 涉及回放似乎就脱不开 madVR，但是我现在不再使用 madVR 自然也是有其原因的。
