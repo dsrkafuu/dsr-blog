@@ -6,7 +6,7 @@ import { logInfo, logError } from '../plugins/logger';
  */
 export default async function loadEmail(address) {
   const emailLoader = new Promise((resolve, reject) => {
-    const linksNode = document.getElementsByClassName('links-item btn');
+    const linksNode = document.querySelectorAll('.links-item.links-email');
     if (linksNode && linksNode.length > 0) {
       const emailNode = linksNode[linksNode.length - 1];
       emailNode.setAttribute('href', `mailto:${address}`);
