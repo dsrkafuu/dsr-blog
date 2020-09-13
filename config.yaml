@@ -42,16 +42,16 @@ menu:
       url: "/friends/"
       weight: 4
   links:
-    - name: "GitHub"
+    - name: "#icon-github"
       url: "https://github.com/amzrk2"
       weight: 1
-    - name: "Twitter"
+    - name: "#icon-twitter"
       url: "https://twitter.com/amzrk2"
       weight: 2
-    - name: "哔哩哔哩"
+    - name: "#icon-tv-retro"
       url: "https://space.bilibili.com/19767474"
       weight: 3
-    - name: "邮箱"
+    - name: "#icon-envelope-open-text"
       url: "mailto:mail@fake.google"
       weight: 4
 
