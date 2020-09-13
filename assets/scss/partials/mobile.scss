@@ -91,3 +91,10 @@ main {
     right: -15rem;
   }
 }
+
+// mobile card margin fix
+@media screen and (max-width: $tablet) {
+  .card-links {
+    margin-bottom: 0 !important;
+  }
+}
