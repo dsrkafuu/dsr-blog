@@ -124,3 +124,7 @@ img {
   text-align: center;
   font-size: $amzrk2-font-size-sm;
 }
+
+input {
+  min-width: 0; // fix mobile input overflow
+}
