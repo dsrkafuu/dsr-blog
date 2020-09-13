@@ -54,17 +54,27 @@
 }
 
 .card-links {
-  text-align: center;
+  display: flex;
+  padding: 0;
+  justify-content: center;
 
-  .links-item {
+  & > a {
     display: block;
-    height: 2rem;
-    line-height: 2rem;
-    color: var(--color-font);
+    color: inherit;
+    flex: 0 1 auto;
+    height: $amzrk2-navbar-height-sm;
+    line-height: $amzrk2-navbar-height-sm;
+    padding: 0 $amzrk2-space-sm;
+    cursor: pointer;
 
     &:hover {
       color: var(--color-primary);
       background-color: var(--color-hover);
+    }
+
+    // prevent overflow on $tablet - $desktop
+    @media screen and (max-width: $desktop) {
+      padding: 0 0.725rem;
     }
   }
 }
