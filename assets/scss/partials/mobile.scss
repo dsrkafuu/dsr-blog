@@ -119,3 +119,10 @@ main {
     padding-bottom: 0.25rem;
   }
 }
+
+// mobile optimized link card
+@media screen and (max-width: $tablet) {
+  .card-links > a {
+    width: 2rem + 2 * $amzrk2-space-sm;
+  }
+}
