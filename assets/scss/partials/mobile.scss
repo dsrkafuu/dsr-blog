@@ -98,3 +98,24 @@ main {
     margin-bottom: 0 !important;
   }
 }
+
+// mobile small card margin
+@media screen and (max-width: $tablet) {
+  .main-container,
+  .list-container {
+    padding: $amzrk2-space-sm;
+  }
+  .list-content,
+  .main-sidebar,
+  .list-sidebar {
+    .card:not(:last-child) {
+      margin-bottom: $amzrk2-space-sm;
+    }
+  }
+  .column.list-content.is-three-quarters {
+    padding-bottom: 0.25rem;
+  }
+  .column.main-sidebar.is-one-quarter {
+    padding-bottom: 0.25rem;
+  }
+}
