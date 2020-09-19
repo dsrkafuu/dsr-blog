@@ -72,6 +72,10 @@ main {
 
 // mobile table of contents
 @media screen and (max-width: $tablet) {
+  #TableOfContents {
+    max-height: 100%;
+  }
+
   .card.toc {
     position: fixed;
     top: $amzrk2-navbar-height-sm * 2;
