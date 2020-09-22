@@ -268,3 +268,61 @@ Vue.component('base-input', {
 ```
 
 现在 `<base-input>` 组件可以完全像一个普通的 `<input>` 元素一样使用了。
+
+### 插槽
+
+#### 具名插槽
+
+组件：
+
+```html
+<div class="container">
+  <header>
+    <slot name="header"></slot>
+  </header>
+  <main>
+    <slot></slot>
+  </main>
+</div>
+```
+
+使用该组件：
+
+```html
+<base-layout>
+  <template #header>
+    <h1>Here might be a page title</h1>
+  </template>
+  <template v-slot:default>
+    <p>A paragraph for the main content.</p>
+    <p>And another one.</p>
+  </template>
+</base-layout>
+```
+
+#### 作用域插槽
+
+在父级使用插槽时可以访问子组件中才有的数据，并决定其显示方式。
+
+在子组件中绑定需要在父组件中访问的数据：
+
+```html
+<span>
+  <slot :user="user">{{ user.name }}</slot>
+</span>
+```
+
+在父组件中和试图使用昵称而不是名字来显示用户：
+
+```html
+<current-user>
+  <template v-slot:default="slotProps">{{ slotProps.user.nickname }}</template>
+  <template v-slot="{user}">{{ user.nickname }}</template>
+</current-user>
+```
+
+## 边界情况
+
+### refs 注意事项
+
+`$refs` 只会在组件渲染完成之后生效，并且它们不是响应式的。应该避免在模板或计算属性中访问 `$refs`。
