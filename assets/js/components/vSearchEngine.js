@@ -32,7 +32,11 @@ const VSearchInfo = {
     },
   },
   template: `
-    <div v-if="loading" class="search-data">搜索中</div>
+    <div v-if="loading" class="search-data">
+      <svg class="icon spin" aria-hidden="true">
+        <use xlink:href="#icon-spinner-third"></use>
+      </svg>
+    </div>
     <div v-else-if="status && info" class="search-data">{{ info }}</div>
   `,
 };
