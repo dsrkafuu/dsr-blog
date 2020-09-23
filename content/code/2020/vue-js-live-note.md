@@ -326,3 +326,75 @@ Vue.component('base-input', {
 ### refs 注意事项
 
 `$refs` 只会在组件渲染完成之后生效，并且它们不是响应式的。应该避免在模板或计算属性中访问 `$refs`。
+
+## mixin
+
+当组件使用混入对象时，所有混入对象的选项将被 "混合" 进入该组件本身的选项。
+
+```js
+const myMixin = {
+  created() {
+    this.hello();
+  },
+  methods: {
+    hello() {
+      console.log('hello from mixin!');
+    },
+  },
+};
+const Component = Vue.extend({
+  mixins: [myMixin],
+});
+```
+
+合并冲突处理：
+
+- 数据对象在内部递归合并，发生冲突时以组件数据优先
+- 同名钩子函数将合并为一个数组都被调用，并且混入对象的钩子函数将会优先调用
+
+## 响应式原理相关
+
+### 监听数据变化
+
+Vue 利用了 `Object.defineProperty(obj, prop, descriptor)` 方法将响应式的属性定义为 getter 和 setter。每个组件 (也就是一个 Vue 实例) 都有对应的一个 watcher 实例，它会将渲染某个组件时用到的数据记录下来，当数据的 setter 执行、数据改变时重新渲染组件，实现数据的响应式变化。
+
+### 异步更新队列
+
+Vue 在更新 DOM 时是异步执行的，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据变更。如果同一个 watcher 被多次触发，只会被推入到队列中一次。如果想在数据更新后立刻对更新后的 DOM 进行一些操作，则可能无法在更新完成后准确进行。
+
+`Vue.nextTick(fn)` 和 `this.$nextTick(fn)` 提供了解决方案，回调函数将在 DOM 更新完成后被调用，并且其本身也返回 Promise：
+
+```js
+methods: {
+  updateMessage: async () => {
+    this.message = '已更新';
+    console.log(this.$el.textContent); // => '未更新'
+    await this.$nextTick();
+    console.log(this.$el.textContent); // => '已更新'
+  };
+}
+```
+
+### 响应式数据注意事项
+
+#### 数组
+
+无法监测的变化：
+
+- 用数字引索位置直接设置数组元素：`arr[0] = "content"`
+- 直接修改数组的长度属性：`arr.length = 100`
+
+可监测的途径：
+
+- `Vue.set()` 和 `vm.$set()`：`Vue.set(array, index, newValue)`
+- `Array.prototype.splice()`：[MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+- Vue 已经进行过包裹的数组相关方法：`push()`、`pop()`、`shift()`、`unshift()`、`splice()`、`sort()`、`reverse()`
+
+#### 对象
+
+已经存在用于渲染的对象属性的变化会被 Vue 监测，但 Vue 无法监测到属性的添加或移除。
+
+可监测的途径：
+
+- `Vue.set()` 和 `vm.$set()` 依旧可以使用：`Vue.set(obj, propName, newValue)`
+- 直接将对象替换为一个新对象，比如当为对象添加多个属性或 mixin 对象：`this.object = Object.assign({}, this.object, anotherObject)`

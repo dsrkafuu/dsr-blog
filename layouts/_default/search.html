@@ -16,30 +16,10 @@
                        autocorrect="off" spellcheck="false" v-model="searchInput" />
                 <button class="button" type="submit">搜索</button>
               </form>
-              <template v-if="status" style="display: none;">
-                <div class="search-data" v-if="resultData.searchInformation">
-                  找到约 <span v-text="resultData.searchInformation.formattedTotalResults"></span>
-                  条结果 (用时 <span v-text="resultData.searchInformation.formattedSearchTime"></span> 秒)
-                </div>
-                <div class="search-data" v-else>
-                  无法连接到 Google 服务器
-                </div>
-              </template>
+              <v-search-info :status="status" :data="resultData.searchInformation"
+                             :query="searchQuerys" />
             </div>
-            <template v-if="status && resultData.items" style="display: none;">
-              <div class="search-result">
-                <div class="card" v-for="item of resultData.items">
-                  <div class="list-box">
-                    <div class="list-post">
-                      <a :href="item.link" target="_blank">
-                        <h2 class="list-title" v-text="item.title"></h2>
-                      </a>
-                      <div class="list-summary markdown content" v-html="item.htmlSnippet"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </template>
+            <v-search-list :status="status" :items="resultData.items" />
           </div>
         </div>
         <div class="column list-sidebar is-one-quarter">
