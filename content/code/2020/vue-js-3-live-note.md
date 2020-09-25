@@ -176,3 +176,47 @@ export default {
   },
 };
 ```
+
+## 函数式组件和异步组件
+
+在 3.x 中，函数式组件 2.x 的性能提升可以忽略不计，因此我们建议只使用有状态的组件；同时单文件组件中 `<template>` 上的 `functional` 属性已经被移除。
+
+在 3.x 中若需要使用函数式组件，则需要用普通函数创建：
+
+```js
+import { h } from 'vue';
+const DynamicHeading = (props, context) => {
+  return h(`h${props.level}`, context.attrs, context.slots);
+};
+DynamicHeading.props = ['level'];
+export default DynamicHeading;
+```
+
+同时由于函数式组件被定义为纯函数，因此异步组件的定义也进行了修改。在 2.x 中，通过将组件定义为一个返回 Promise 的函数，来创建异步组件：
+
+```js
+const asyncComponent = () => import('Component.vue'); // 动态 import 返回 Promise
+const asyncComponentWithConfig = {
+  component: () => import('Component.vue'),
+  delay: 200,
+  loading: LoadingComponent,
+};
+```
+
+在 3.x 中，则需要通过 显式定义异步组件：
+
+```js
+import { defineAsyncComponent } from 'vue';
+import LoadingComponent from 'LoadingComponent.vue';
+const asyncComponent = defineAsyncComponent(() => import('Component.vue'));
+const asyncComponentWithConfig = defineAsyncComponent({
+  loader: () => import('Component.vue'),
+  delay: 200,
+  loadingComponent: LoadingComponent,
+});
+```
+
+## 生命周期函数
+
+- `destroyed` => `unmounted`
+- `beforeDestroy` => `beforeUnmount`
