@@ -1,5 +1,20 @@
 <div class="sticky">
   {{ partial "card-info.html" . }}
-  {{ partial "card-links.html" . }}
-  {{ partial "card-advert.html" . }}
+  <div class="card card-links">
+    {{ range .Site.Menus.links }}
+    <a class="links-item{{ if (eq (substr .URL 0 6) "mailto") }} links-email{{ end }}"
+       href="{{ .URL }}" target="_blank">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="{{ .Name }}"></use>
+      </svg>
+    </a>
+    {{ end }}
+  </div>
+  <div class="card card-firefox">
+    <a href="https://www.mozilla.org/firefox/" target="_blank">
+      <div class="firefox-image image-wrapper ratio-32x9">
+        <img src="{{ "/images/_firefox.webp" | relURL }}" />
+      </div>
+    </a>
+  </div>
 </div>
