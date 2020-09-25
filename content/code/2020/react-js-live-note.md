@@ -1,6 +1,6 @@
 ---
 title: 'React 即时笔记'
-date: 2020-07-29T09:26:55+08:00
+date: 2020-07-19T09:26:55+08:00
 tags:
   - 'react'
   - 'javascript'
@@ -11,6 +11,9 @@ image: '/images/2020/react-js-live-note/header.webp'
 这篇文章用于记录自己在学习 React 时不够熟练的部分以及与其他框架有不同之处的部分，用于自己将来的复习及日常开发。笔记将会随着自己的学习进度随时更新。
 
 <!--more-->
+
+- [Vue 3 即时笔记](/code/vue-js-3-live-note/)
+- [Vue 2 即时笔记](/code/vue-js-live-note/)
 
 ## 基础内容
 
