@@ -263,6 +263,8 @@ app.component('todo-list-statistics', {
 
 ## 响应式 (重要)
 
+Vue 2 利用了 `Object.defineProperty()` 方法为响应式的属性自动定义 getter 和 setter，而在 Vue 3 中，更多的使用了 ES6 Proxy。Proxy 是包含一个对象或函数，并允许你对其进行拦截的对象。
+
 以下代码均基于下一段解释的 Composition API。
 
 ```js
