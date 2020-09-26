@@ -220,3 +220,153 @@ const asyncComponentWithConfig = defineAsyncComponent({
 
 - `destroyed` => `unmounted`
 - `beforeDestroy` => `beforeUnmount`
+
+## Composition (组合) API
+
+用于优化 Vue 2 传统单文件组件某一特定逻辑关注点分散在各处的问题。
+
+### 简单上手
+
+`setup` 组件选项在创建组件之前执行，因此在 `setup` 选项中没有 `this`。这意味着，除了 `props` 之外，将无法访问组件中声明的任何属性 (本地状态、计算属性或方法)。
+
+`setup` 选项是一个接受 `props` 和 `context` 的函数，从 `setup` return 的所有内容都将暴露给组件的其余部分 (计算属性、方法、生命周期钩子等等) 以及组件的模板，**因此没有在 return 内返回的内容在外部是无法获取的**。
+
+Vue 3 中，可以通过一个新的 `ref` 函数使任何响应式变量在任何地方起作用，`ref` 接受参数并返回它包装在具有 `value` 属性的对象中，然后可以使用该属性访问或更改响应式变量的值。这样 ref 就对值创建了一个响应式的引用，因此就可以在整个应用程序中安全地传递它，而不必担心在某个地方失去它的响应式。
+
+加上生命周期钩子和监听器后到现在为止的实例，这个实例实现了从 API 获取某用户对应的内容，并在用户更改时更新内容：
+
+```js
+import { fetchUserRepositories } from '@/api/repositories'; // 模拟远程 API
+import { ref, onMounted, watch, toRefs } from 'vue'; // 用到的方法
+// 组件中的 setup
+function setup(props) {
+  const { user } = toRefs(props); // 使用 `toRefs` 创建对 prop 的 `user` 属性的响应式引用
+  const repositories = ref([]); // 响应式内容 `repositories`
+  const getUserRepositories = async (username) => {
+    repositories.value = await fetchUserRepositories(username); // 更新 `prop.user`
+  };
+  onMounted(() => {
+    getUserRepositories(user.value);
+  }); // 生命周期钩子
+  watch(user, () => {
+    getUserRepositories(user.value);
+  }); // 在用户 prop 的响应式引用上设置一个侦听器
+
+  return {
+    repositories,
+    getUserRepositories,
+  };
+}
+```
+
+其它部分的业务逻辑也可以进行迁移并且差分，以下是拆分为多文件后的完整示例：
+
+```js
+// src/composables/useUserRepositories.js /* 获取用户数据功能模块 */
+import { fetchUserRepositories } from '@/api/repositories'; // 模拟远程 API
+import { ref, onMounted, watch, toRefs } from 'vue'; // 用到的方法
+
+export default function useUserRepositories(user) {
+  const { user } = toRefs(props); // 使用 `toRefs` 创建对 prop 的 `user` 属性的响应式引用
+  const repositories = ref([]); // 响应式内容 `repositories`
+  const getUserRepositories = async (username) => {
+    repositories.value = await fetchUserRepositories(username); // 更新 `prop.user`
+  };
+  onMounted(() => {
+    getUserRepositories(user.value);
+  }); // 生命周期钩子
+  watch(user, () => {
+    getUserRepositories(user.value);
+  }); // 在用户 prop 的响应式引用上设置一个侦听器
+
+  return {
+    repositories,
+    getUserRepositories,
+  };
+}
+```
+
+```js
+// src/composables/useRepositoryNameSearch.js /* 搜索过滤功能模块 */
+import { ref, onMounted, watch, toRefs } from 'vue';
+
+export default function useRepositoryNameSearch(repositories) {
+  const searchQuery = ref(''); // 响应式搜索关键词
+  const repositoriesMatchingSearchQuery = computed(() => {
+    return repositories.value.filter((repository) => repository.name.includes(searchQuery.value));
+  }); // 符合关键词的 repo 计算属性，注意计算属性也需要使用 `.value` 来访问
+
+  return {
+    searchQuery,
+    repositoriesMatchingSearchQuery,
+  };
+}
+```
+
+```js
+// src/composables/useRepositoryNameSearch.js /* 搜索过滤功能模块 */
+import { ref, onMounted, watch, toRefs } from 'vue';
+
+export default function useRepositoryNameSearch(repositories) {
+  const searchQuery = ref(''); // 响应式搜索关键词
+  const repositoriesMatchingSearchQuery = computed(() => {
+    return repositories.value.filter((repository) => repository.name.includes(searchQuery.value));
+  }); // 符合关键词的 repo 计算属性，注意计算属性也需要使用 `.value` 来访问
+
+  return {
+    searchQuery,
+    repositoriesMatchingSearchQuery,
+  };
+}
+```
+
+最终完成的组件：
+
+```js
+// src/components/UserRepositories.vue
+import { toRefs } from 'vue';
+import useUserRepositories from '@/composables/useUserRepositories';
+import useRepositoryNameSearch from '@/composables/useRepositoryNameSearch';
+
+export default {
+  components: { RepositoriesSearchBy, RepositoriesList },
+  props: { user: { type: String } },
+  setup(props) {
+    const { user } = toRefs(props); // user 响应式引用
+    // 获取内容模块
+    const { repositories, getUserRepositories } = useUserRepositories(user);
+    // 搜索模块
+    const { searchQuery, repositoriesMatchingSearchQuery } = useRepositoryNameSearch(repositories);
+
+    return {
+      // 因为我们并不关心未经过滤的仓库，可以在 `repositories` 名称下直接返回过滤后的结果
+      repositories: filteredRepositories,
+      getUserRepositories,
+      searchQuery,
+    };
+  },
+};
+```
+
+### setup
+
+`setup` 接收两个参数，第一个为 `props`；`props` 是响应式的，当传入新的属性时会被更新。**注意不能直接在 `props` 上使用 ES6 解构，这会破坏响应式的特性**，需要使用 `toRefs` 函数来进行解构：
+
+```js
+import { toRefs } from 'vue';
+function setup(props) {
+  const { propName } = toRefs(props);
+}
+```
+
+`setup` 函数的第二个参数是 `context`；它是一个非响应式的普通对象，可以直接解构。
+
+```js
+export default {
+  setup(props, { attrs, slots, emit }) {
+  }
+}
+}
+```
+
+`setup` 返回对象的内容可以在模板上直接使用，并且**不用通过 `.value` 获取数据**。同时，在 `setup` **内部的 `this` 并非指向该 Vue 实例**。
