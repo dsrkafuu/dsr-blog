@@ -203,7 +203,7 @@ const asyncComponentWithConfig = {
 };
 ```
 
-在 3.x 中，则需要通过 显式定义异步组件：
+在 3.x 中，则需要通过 `defineAsyncComponent()` 显式定义异步组件：
 
 ```js
 import { defineAsyncComponent } from 'vue';
@@ -221,6 +221,91 @@ const asyncComponentWithConfig = defineAsyncComponent({
 - `destroyed` => `unmounted`
 - `beforeDestroy` => `beforeUnmount`
 
+## 提供 / 注入
+
+如果我们有这样的层次结构：
+
+```txt
+Root
+└─ TodoList
+   ├─ TodoItem
+   └─ TodoListFooter
+      ├─ ClearTodosButton
+      └─ TodoListStatistics
+```
+
+如果要将 TodoList 内的数据直接传递给 TodoListStatistics，我们传统上是把这个属性向下依次传递：TodoList => TodoListFooter => TodoListStatistics。
+
+通过提供 / 注入方法，可以直接执行以下操作：
+
+```js
+const app = Vue.createApp({});
+app.component('todo-list', {
+  data() {
+    return {
+      todos: ['Feed a cat', 'Buy tickets'],
+    };
+  },
+  provide() {
+    return { user: 'John Doe', todoLength: this.todos.length };
+  },
+  template: `
+    <div>{{ todos.length }}</div>
+  `,
+});
+app.component('todo-list-statistics', {
+  inject: ['user', 'todoLength'], // 注入 property
+  created() {
+    console.log(`Injected property: ${this.user} - ${this.todoLength}`);
+  },
+});
+```
+
+## 响应式 (重要)
+
+以下代码均基于下一段解释的 Composition API。
+
+```js
+import { ref, reactive } from 'vue';
+
+// 响应式数据
+const count = ref(0);
+// 访问响应式数据 (需要 .value)
+count.value++;
+console.log(count.value); // 1
+// 模板使用响应式数据 (自动 ref 展开，不需要 .value，但需要确保在 setup 中已经 return 过)
+`<span>{{ count }}</span>`;
+
+// 响应式对象
+const state = reactive({
+  count: 0,
+});
+// 访问响应式对象 (自动 ref 展开，不需要 value)
+state.count++;
+console.log(state.count); // 1
+state.count = ref(2); // 替换时也可以使用响应式数据
+console.log(state.count); // 2
+```
+
+**注意：ref 展开仅发生在被响应式对象嵌套的时候。当从数组或其他原生集合类型如 Map 访问 ref 时，不会进行展开。**
+
+ES6 解构时，必须使用工具函数防止丢失响应性：
+
+```js
+import { toRefs } from 'vue';
+let { author, title } = toRefs(book); // 必须使用防止丢失响应性
+```
+
+也可以限制响应式变量为不可更改，建议创建一个 Proxy：
+
+```js
+import { reactive, readonly } from 'vue';
+const original = reactive({ count: 0 });
+const copy = readonly(original);
+original.count++; // 可行
+copy.count++; // 不可行，警告: "Set operation on key 'count' failed: target is readonly."
+```
+
 ## Composition (组合) API
 
 用于优化 Vue 2 传统单文件组件某一特定逻辑关注点分散在各处的问题。
@@ -231,7 +316,7 @@ const asyncComponentWithConfig = defineAsyncComponent({
 
 `setup` 选项是一个接受 `props` 和 `context` 的函数，从 `setup` return 的所有内容都将暴露给组件的其余部分 (计算属性、方法、生命周期钩子等等) 以及组件的模板，**因此没有在 return 内返回的内容在外部是无法获取的**。
 
-Vue 3 中，可以通过一个新的 `ref` 函数使任何响应式变量在任何地方起作用，`ref` 接受参数并返回它包装在具有 `value` 属性的对象中，然后可以使用该属性访问或更改响应式变量的值。这样 ref 就对值创建了一个响应式的引用，因此就可以在整个应用程序中安全地传递它，而不必担心在某个地方失去它的响应式。
+Vue 3 中，可以通过一个新的 `ref` 函数使任何响应式变量在任何地方起作用，`ref` 接受参数并返回它包装在具有 `value` 属性的对象中，然后可以使用该属性访问或更改响应式变量的值。这样 ref 就对值创建了一个响应式的引用，因此就可以在整个应用程序中安全地传递它，而不必担心在某个地方失去它的响应式。对应 `ref`，可以使用 `reactive` 递归深转换一个对象为响应式对象。
 
 加上生命周期钩子和监听器后到现在为止的实例，这个实例实现了从 API 获取某用户对应的内容，并在用户更改时更新内容：
 
@@ -370,3 +455,64 @@ export default {
 ```
 
 `setup` 返回对象的内容可以在模板上直接使用，并且**不用通过 `.value` 获取数据**。同时，在 `setup` **内部的 `this` 并非指向该 Vue 实例**。
+
+### 生命周期钩子
+
+因为 `setup` 是围绕 `beforeCreate` 和 `created` 生命周期钩子运行的，所以不需要显式地定义它们。换句话说，在这些钩子中编写的任何代码都应该直接在 `setup` 函数中编写。
+
+其他的生命周期钩子，则统一遵循以下变化：
+
+- `beforeMount` => `onBeforeMount`
+- `mounted` => `onMounted`
+
+### 提供 / 注入方法
+
+提供：
+
+```html
+<!-- src/components/MyMap.vue -->
+<template>
+  <my-marker />
+</template>
+<script>
+  import { provide, reactive, readonly, ref } from 'vue';
+  import MyMarker from './MyMarker.vue';
+  export default {
+    components: { MyMarker },
+    setup() {
+      const location = ref('North Pole'); // 提供值 (响应式)
+      const geolocation = reactive({
+        longitude: 90,
+        latitude: 135,
+      }); // 提供对象 (响应式)
+      const updateLocation = () => {
+        location.value = 'South Pole';
+      }; // 提供用于修改数据的方法
+      provide('location', readonly(location)); // 禁止子组件修改
+      provide('geolocation', readonly(geolocation)); // 禁止子组件修改
+      provide('updateLocation', updateLocation);
+    },
+  };
+</script>
+```
+
+注入：
+
+```html
+<!-- src/components/MyMarker.vue -->
+<script>
+  import { inject } from 'vue';
+  export default {
+    setup() {
+      const userLocation = inject('location', 'The Universe'); // 可以提供默认值
+      const userGeolocation = inject('geolocation');
+      const updateUserLocation = inject('updateUserLocation');
+      return {
+        userLocation,
+        userGeolocation,
+        updateUserLocation,
+      };
+    },
+  };
+</script>
+```
