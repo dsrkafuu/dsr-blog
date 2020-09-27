@@ -1,8 +1,4 @@
-/*!
- * modernizr v3.6.0 https://modernizr.com/download?-webp-dontmin
- * Copyright (c) MIT License
- *  Faruk Ates / Paul Irish / Alex Sexton / Ryan Seddon / Patrick Kettner / Stu Cox / Richard Herrera
- */
+/*! modernizr v3.6.0 | Faruk Ates / Paul Irish / Alex Sexton / Ryan Seddon / Patrick Kettner / Stu Cox / Richard Herrera | Copyright (c) MIT License */
 
 /*
  * Modernizr tests which native CSS3 and HTML5 features are available in the
