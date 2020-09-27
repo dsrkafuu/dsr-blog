@@ -1,9 +1,10 @@
 import { logInfo, logError } from '../plugins/logger';
 import { decData } from '../plugins/encrypt';
+import { SEARCH_API_CX, SEARCH_API_URL, SEARCH_API_KEY } from '../plugins/constants';
 
-const API_KEY = 'QlJFTXVWbU0yWUdjcjVHWjVWamNSUjNhcUZHWnZWM05ROTFYSkp6ZDNFelE1TlZZNmxVUQ==';
-const API_CX = '981257f142e5b0b8e';
-const API_URL = 'https://www.googleapis.com/customsearch/v1';
+const API_KEY = SEARCH_API_KEY;
+const API_CX = SEARCH_API_CX;
+const API_URL = SEARCH_API_URL;
 
 /* vue components */
 const VSearchInfo = {
@@ -15,7 +16,7 @@ const VSearchInfo = {
   computed: {
     info() {
       if (this.status) {
-        if (this.data.formattedTotalResults && this.data.formattedSearchTime) {
+        if (this.data && this.data.formattedTotalResults && this.data.formattedSearchTime) {
           return `找到约 ${this.data.formattedTotalResults} 条结果 (用时 ${this.data.formattedSearchTime} 秒)`;
         } else {
           return `无法连接到 Google 服务器`;
@@ -63,7 +64,7 @@ const VSearchList = {
 };
 
 /* vue search engine */
-const vSearchEngine = new Vue({
+new Vue({
   el: '#app',
   components: {
     VSearchInfo,
@@ -127,5 +128,3 @@ const vSearchEngine = new Vue({
     },
   },
 });
-
-export default vSearchEngine;
