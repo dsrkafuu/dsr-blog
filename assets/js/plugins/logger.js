@@ -1,3 +1,7 @@
+/**
+ * data logger
+ */
+
 export function logInfo(info, ...params) {
   console.info('[LOGGER]', info, ...params);
 }
