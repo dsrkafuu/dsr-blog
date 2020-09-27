@@ -20,14 +20,17 @@
 - Lazyload 图片需要使用 shortcode 并指定固定的长宽比: 文章头图 40x9 anime-note 32x9
 - 手机侧边栏控制 fixed 定位 right 偏移量实现动画淡入，用于显示目录
 
-|       模块       |                  链接                  |    用途     |
-| :--------------: | :------------------------------------: | :---------: |
-|     iconfont     |                internal                |   common    |
-|      theme       |                internal                |   common    |
-| email-protection |                internal                | list search |
-|    lazysizes     | <https://github.com/aFarkas/lazysizes> | list single |
-|     prism.js     |         <https://prismjs.com/>         |   single    |
-|      vue.js      |          <https://vuejs.org/>          |   search    |
+|        模块         |                  链接                  |    用途     |
+| :-----------------: | :------------------------------------: | :---------: |
+|      iconfont       |                internal                |   common    |
+|        theme        |                internal                |   common    |
+|     toc-control     |                internal                |   common    |
+|      modernizr      |        <https://modernizr.com/>        |   common    |
+|      lazysizes      | <https://github.com/aFarkas/lazysizes> | list single |
+|  email-protection   |                internal                | list search |
+|  vue.js\[browser\]  |          <https://vuejs.org/>          |   search    |
+| prism.js\[browser\] |         <https://prismjs.com/>         |   single    |
+|      disqusjs       |  <https://github.com/SukkaW/DisqusJS>  |   single    |
 
 ### CSS
 
