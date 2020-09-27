@@ -47,9 +47,11 @@
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 {{- end -}}
 
+{{- if eq (getenv "NODE_ENV") "production" -}}
 <!-- cfga -->
 <script>
   window.ga_tid = 'UA-146011233-8';
   window.ga_api = 'https://worker.amzrk2.cc/cfga/main/hls.min.js';
 </script>
 <script async src="https://cdn.jsdelivr.net/npm/cfga@1.0.3/cfga.min.js"></script>
+{{- end -}}
