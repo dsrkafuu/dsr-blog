@@ -1,4 +1,5 @@
 import { logInfo, logError } from '../plugins/logger';
+import { decData } from '../plugins/encrypt';
 
 const API_KEY = 'QlJFTXVWbU0yWUdjcjVHWjVWamNSUjNhcUZHWnZWM05ROTFYSkp6ZDNFelE1TlZZNmxVUQ==';
 const API_CX = '981257f142e5b0b8e';
@@ -112,7 +113,7 @@ const vSearchEngine = new Vue({
       const params = new URLSearchParams();
       params.append('q', this.searchQuerys.join('+'));
       params.append('cx', API_CX);
-      params.append('key', window.atob(window.atob(API_KEY).split('').reverse().join('')));
+      params.append('key', decData(API_KEY));
       url.search = params.toString();
       const req = new Request(url);
       try {
