@@ -1,4 +1,4 @@
-export default function initMobileToc() {
+(function initMobileToc() {
   const tocNode = document.getElementById('table-of-contents');
   if (tocNode) {
     document.getElementById('ctrl-toc').addEventListener('click', () => {
@@ -10,4 +10,4 @@ export default function initMobileToc() {
       }
     });
   }
-}
+})();

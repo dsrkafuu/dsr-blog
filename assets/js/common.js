@@ -12,9 +12,7 @@ document.getElementById('ctrl-adjust').addEventListener('click', () => {
 });
 
 /* toc control */
-import initMobileToc from './components/toc';
-initMobileToc();
+import './components/toc';
 
 /* feature detection */
-import detectFeature from './components/feature';
-detectFeature();
+import './components/feature';

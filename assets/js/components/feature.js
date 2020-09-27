@@ -5,7 +5,7 @@ import {
   NOTIFICATION_FEATURE_DISMISSED,
 } from '../plugins/constants';
 
-export default function detectFeature() {
+(function detectFeature() {
   if (!getLS(NOTIFICATION_FEATURE_SUPPORTED) && !getLS(NOTIFICATION_FEATURE_DISMISSED)) {
     initModernizr(window, document);
     const unsupportedFeatures = [];
@@ -37,4 +37,4 @@ export default function detectFeature() {
       }
     });
   }
-}
+})();

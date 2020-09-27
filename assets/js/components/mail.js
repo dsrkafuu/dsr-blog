@@ -1,16 +1,16 @@
 import { logInfo, logError } from '../plugins/logger';
+import { EMAIL_ADDRESS } from '../plugins/constants';
 
 /**
  * 设置邮箱地址 (机器人验证待添加)
- * @param {string} address 邮箱地址
  */
-export default async function loadEmail(address) {
+(async function loadEmail() {
   const emailLoader = new Promise((resolve, reject) => {
     const linksNode = document.querySelectorAll('.links-item.links-email');
     if (linksNode && linksNode.length > 0) {
       const emailNode = linksNode[linksNode.length - 1];
-      emailNode.setAttribute('href', `mailto:${address}`);
-      resolve(`Email loaded with ${address}`);
+      emailNode.setAttribute('href', `mailto:${EMAIL_ADDRESS}`);
+      resolve(`Email loaded with ${EMAIL_ADDRESS}`);
     } else {
       reject(new Error('Email node not found'));
     }
@@ -22,4 +22,4 @@ export default async function loadEmail(address) {
     .catch((res) => {
       logError(res);
     });
-}
+})();
