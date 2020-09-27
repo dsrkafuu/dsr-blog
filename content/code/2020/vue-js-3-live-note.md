@@ -225,7 +225,7 @@ const asyncComponentWithConfig = defineAsyncComponent({
 
 如果我们有这样的层次结构：
 
-```txt
+```
 Root
 └─ TodoList
    ├─ TodoItem
