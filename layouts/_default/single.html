@@ -30,7 +30,7 @@
           </div>
           {{- if ne .Params.comments false -}}
           <div class="card comment-wrapper">
-            <div id="disqus_thread"></div>
+            <div id="disqus_thread" data-id="{{ .File.ContentBaseName }}"></div>
           </div>
           {{- end -}}
         </div>

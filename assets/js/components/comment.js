@@ -15,11 +15,13 @@ if (needComment) {
   DISQUS_API_KEYS.forEach((val) => {
     apikey.push(decData(val));
   });
+  const identifier = needComment.getAttribute('data-id') || 'error';
+  const url = window.location.href || 'https://amzrk2.cc/';
   new DisqusJS({
     shortname: DISQUS_SHORTNAME,
     siteName: DISQUS_SITENAME,
-    identifier: document.location.pathname,
-    url: document.location.origin + document.location.pathname + document.location.search,
+    identifier,
+    url,
     api: DISQUS_API_PROXY,
     apikey,
     nocomment: '暂无评论',
