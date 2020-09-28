@@ -19,7 +19,7 @@ params:
   # sidebar info
   author: "DSRKafuU"
   email: "amzrk2@outlook.com"
-  para: "かふうです"
+  para: "是卡夫"
   avatar: "/images/_kitashirakawa.webp"
   image: "/images/_header.webp"
   mainSections:
@@ -29,7 +29,7 @@ params:
 # menu
 menu:
   main:
-    - name: "生活"
+    - name: "文章"
       url: "/post/"
       weight: 1
     - name: "代码"
