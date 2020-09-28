@@ -7,5 +7,5 @@ import 'lazysizes';
 import mediumZoom from 'medium-zoom';
 mediumZoom('.zoomable', { background: '#00000066', scrollOffset: 128 });
 
-/* disqusjs */
+/* disqus */
 import './components/comment';
