@@ -1,11 +1,29 @@
-/* disqus */
-import { DISQUS_SHORTNAME } from '../plugins/constants';
+/* gitalk */
+import Gitalk from 'gitalk';
+import {
+  GITALK_CLIENT_ID,
+  GITALK_CLIENT_SECRET,
+  GITALK_REPO,
+  GITALK_OWNER,
+  GITALK_ADMIN,
+} from '../plugins/constants';
 
-const needComment = document.getElementById('disqus_thread');
+const needComment = document.getElementById('gitalk-container');
 if (needComment) {
-  var d = document,
-    s = d.createElement('script');
-  s.src = `https://${DISQUS_SHORTNAME}.disqus.com/embed.js`;
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
+  const gitalk = new Gitalk({
+    clientID: GITALK_CLIENT_ID,
+    clientSecret: GITALK_CLIENT_SECRET,
+    repo: GITALK_REPO,
+    owner: GITALK_OWNER,
+    admin: GITALK_ADMIN,
+    id: needComment.getAttribute('data-identifier') || location.pathname,
+    createIssueManually: true,
+    flipMoveOptions: {
+      staggerDelayBy: 150,
+      appearAnimation: 'fade',
+      enterAnimation: 'fade',
+      leaveAnimation: 'fade',
+    },
+  });
+  gitalk.render('gitalk-container');
 }
