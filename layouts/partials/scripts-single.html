@@ -1,5 +1,5 @@
 {{- if and (ne .Params.comments false) (eq (getenv "NODE_ENV") "production") -}}
-<script>var disqus_config=function(){this.page.identifier='{{ .File.ContentBaseName }}';};</script>
+<script>var disqus_config=function(){this.page.url=window.location.origin+window.location.pathname;this.page.identifier='{{ .File.ContentBaseName }}';};</script>
 {{- end -}}
 <!-- main script -->
 {{ if eq (getenv "NODE_ENV") "production" }}
