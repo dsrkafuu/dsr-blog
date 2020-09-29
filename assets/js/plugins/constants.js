@@ -16,4 +16,4 @@ export const SEARCH_API_CX = '981257f142e5b0b8e';
 export const SEARCH_API_URL = 'https://www.googleapis.com/customsearch/v1';
 
 // disqus
-export const DISQUS_SHORTNAME = '';
+export const DISQUS_SHORTNAME = 'amzrk2-ng';
