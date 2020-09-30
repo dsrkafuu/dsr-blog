@@ -1,5 +1,13 @@
 @import 'gitalk/dist/gitalk';
 
+// fix index error
+.markdown-body :checked + .radio-label,
+.gt-container .gt-meta,
+.gt-container.gt-input-focused:after,
+.gt-container.gt-input-focused .gt-header-comment {
+  z-index: auto;
+}
+
 .gt-container {
   a {
     color: var(--color-primary) !important;
