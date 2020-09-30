@@ -25,6 +25,30 @@ footer {
   flex: 0 0 auto;
 }
 
+/* index fixer */
+header {
+  z-index: 3;
+}
+footer {
+  z-index: 1;
+}
+main {
+  z-index: 2;
+  .notification {
+    z-index: 2;
+  }
+  .container {
+    z-index: 1;
+    .column.is-three-quarters {
+      z-index: 1;
+    }
+    .column.is-one-quarter {
+      z-index: 2;
+    }
+  }
+}
+
+/* lazyload animation */
 .lazyload,
 .lazyloading {
   opacity: 0;

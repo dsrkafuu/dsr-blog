@@ -11,7 +11,6 @@ main {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 50;
 
     .container {
       height: $amzrk2-navbar-height-sm * 2;
@@ -82,7 +81,6 @@ main {
     right: 0;
     bottom: 0;
     border-radius: 0;
-    z-index: 50;
     transition: all 250ms ease-in-out;
     max-width: 15rem;
   }
