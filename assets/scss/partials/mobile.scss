@@ -5,6 +5,7 @@ main {
   }
 }
 
+// mobile navbar
 .navbar {
   @media screen and (max-width: $tablet) {
     position: fixed;
@@ -103,23 +104,35 @@ main {
 
 // mobile small card margin
 @media screen and (max-width: $tablet) {
+  // container
   .main-container,
   .list-container,
   .single-container {
-    padding: $amzrk2-space-sm;
+    padding: 1rem;
   }
-  .list-content,
+  // card margins
   .main-sidebar,
-  .list-sidebar {
+  .list-content,
+  .list-sidebar,
+  .single-content,
+  .single-sidebar {
     .card:not(:last-child) {
-      margin-bottom: $amzrk2-space-sm;
+      margin-bottom: 1rem;
     }
   }
-  .column.list-content.is-three-quarters,
-  .column.single-content.is-three-quarters {
+  // index
+  .main-sidebar {
     padding-bottom: 0.25rem;
   }
-  .column.main-sidebar.is-one-quarter {
+  .main-content {
+    padding-bottom: 0.75rem;
+  }
+  // list page
+  .list-content:not(.main-content) {
+    padding-bottom: 0.25rem;
+  }
+  // single page
+  .single-content:not(.main-content) {
     padding-bottom: 0.25rem;
   }
 }
