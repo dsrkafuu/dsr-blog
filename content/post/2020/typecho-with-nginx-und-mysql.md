@@ -38,7 +38,7 @@ sudo apt-key fingerprint ABF5BD827BD9BF62
 
 出现如下内容则正常：
 
-```txt
+```
 pub   rsa2048 2011-08-19 [SC] [expires: 2024-06-14]
       573B FD6B 3D8F BC64 1079  A6AB ABF5 BD82 7BD9 BF62
 uid           [ unknown] nginx signing key <signing-key@nginx.com>
