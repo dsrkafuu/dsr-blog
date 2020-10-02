@@ -2,12 +2,14 @@
 {{ if eq (getenv "NODE_ENV") "production" }}
 {{ $options := (dict "targetPath" "assets/amzrk2-single.min.js" "minify" true "target" "es2017" "format" "iife") }}
 {{ $built := resources.Get "js/single.js" | js.Build $options }}
-<script src="{{ $built.RelPermalink }}"></script>
+<script defer src="{{ $built.RelPermalink }}"></script>
 {{ else }}
 {{ $options := (dict "targetPath" "assets/amzrk2-single.js" "minify" false "target" "es2017" "format" "iife") }}
 {{ $built := resources.Get "js/single.js" | js.Build $options }}
-<script src="{{ $built.RelPermalink }}"></script>
+<script defer src="{{ $built.RelPermalink }}"></script>
 {{ end }}
 <!-- prism.js -->
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer
+        src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js"></script>
+<script defer
+        src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
