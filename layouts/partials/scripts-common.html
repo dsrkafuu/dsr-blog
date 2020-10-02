@@ -1,9 +1,9 @@
 {{ if eq (getenv "NODE_ENV") "production" }}
 {{ $options := (dict "targetPath" "assets/amzrk2-common.min.js" "minify" true "target" "es2017" "format" "iife") }}
 {{ $built := resources.Get "js/common.js" | js.Build $options }}
-<script src="{{ $built.RelPermalink }}"></script>
+<script defer src="{{ $built.RelPermalink }}"></script>
 {{ else }}
 {{ $options := (dict "targetPath" "assets/amzrk2-common.js" "minify" false "target" "es2017" "format" "iife") }}
 {{ $built := resources.Get "js/common.js" | js.Build $options }}
-<script src="{{ $built.RelPermalink }}"></script>
+<script defer src="{{ $built.RelPermalink }}"></script>
 {{ end }}
