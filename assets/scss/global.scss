@@ -47,6 +47,12 @@ main {
     }
   }
 }
+.medium-zoom-overlay {
+  z-index: 4;
+}
+.medium-zoom-image.medium-zoom-image--opened {
+  z-index: 5;
+}
 
 /* lazyload animation */
 .lazyload,
