@@ -1,9 +1,9 @@
 ---
-title: '生活'
-description: 'DSRKafuU 个人站点生活博客模块'
+title: '文章'
+description: 'DSRKafuU 个人站点博客文章模块'
 keywords:
   - DSRKafuU
   - amzrk2
-  - 生活
+  - 文章
   - 博客
 ---
