@@ -30,7 +30,7 @@
 |  email-protection   |                internal                | list search |
 |  vue.js\[browser\]  |          <https://vuejs.org/>          |   search    |
 | prism.js\[browser\] |         <https://prismjs.com/>         |   single    |
-|      disqusjs       |  <https://github.com/SukkaW/DisqusJS>  |   single    |
+|       gitalk        |  <https://github.com/gitalk/gitalk/>   |   single    |
 
 ### CSS
 
@@ -40,7 +40,7 @@
 - 定义不同比例占位适应 lazyload，使用 shortcode 参数传入比例渲染对应占位
 - Navbar 为响应式，宽度小于 `$tablet` 时高度与排列方式单独定义
 - 所有一级标题不显示，所有标题在 Summary 内不显示
-- 侧边栏与导航栏在手机平台上固定，且导航栏上 RSS 在手机上为目录
+- 侧边栏与导航栏在手机平台上固定，且导航栏上 RSS 在手机上为目录，通过 `data-section` 属性判定
 
 ## LICENSE
 
