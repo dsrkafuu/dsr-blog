@@ -28,7 +28,8 @@ $amzrk2-colors-dark: (
     --color-#{$key}: #{$value};
   }
   --shadow: none;
-  img {
+  img,
+  .adsense {
     filter: brightness(85%);
   }
 }
