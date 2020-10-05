@@ -23,19 +23,20 @@
               </div>
             </div>
             <div class="post-content">
+              <div class="adsense">
+                <ins class="adsbygoogle" style="display:block; text-align:center; margin-bottom: 1rem;"
+                     data-ad-layout="in-article" data-ad-format="fluid"
+                     data-ad-client="ca-pub-1082980127729990" data-ad-slot="2040548285"></ins>
+              </div>
               <div class="markdown content">
                 {{ .Content }}
               </div>
-              {{- if eq (getenv "NODE_ENV") "production" -}}
               <div class="adsense">
-                <script async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <ins class="adsbygoogle" style="display:block; text-align:center; margin-top: 1rem;"
                      data-ad-layout="in-article" data-ad-format="fluid"
                      data-ad-client="ca-pub-1082980127729990" data-ad-slot="8883489934"></ins>
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
               </div>
-              {{- end -}}
             </div>
           </div>
           {{- if ne .Params.comments false -}}
