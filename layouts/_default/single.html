@@ -27,10 +27,10 @@
                 {{ .Content }}
               </div>
               {{- if eq (getenv "NODE_ENV") "production" -}}
-              <div class="adsense" style="margin-top: 1rem;">
+              <div class="adsense">
                 <script async
                         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <ins class="adsbygoogle" style="display:block; text-align:center;"
+                <ins class="adsbygoogle" style="display:block; text-align:center; margin-top: 1rem;"
                      data-ad-layout="in-article" data-ad-format="fluid"
                      data-ad-client="ca-pub-1082980127729990" data-ad-slot="8883489934"></ins>
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
