@@ -39,6 +39,11 @@
 }
 .post-content {
   padding: $amzrk2-space-base;
+
+  // fix adblock adsense margin
+  .markdown.content {
+    margin-bottom: 0;
+  }
 }
 
 .comment-wrapper {
