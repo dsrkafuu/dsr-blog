@@ -4,6 +4,8 @@
 
 基于 Bulma 开发，非面向主题使用者的通用主题，如果有朋友感兴趣也欢迎发 issue、修改或自己使用。
 
+模板已经独立发布于：<https://github.com/amzrk2/hugo-template-aofuji>
+
 ## 部分开发细节
 
 ### Hugo
@@ -46,4 +48,4 @@
 
 The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/amzrk2/amzrk2-ng/blob/master/LICENSE).
 
-> © 2020 DSRKafuU <amzrk2.cc>
+> © 2018-present DSRKafuU <amzrk2.cc>
