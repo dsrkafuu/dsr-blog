@@ -33,8 +33,7 @@
 {{- end -}}
 
 <!-- $ og -->
-{{- template "_internal/opengraph.html" . -}}
-{{- template "_internal/twitter_cards.html" . -}}
+{{ partial "opengraph.html" . }}
 
 <!-- stylesheets -->
 {{- if eq (getenv "NODE_ENV") "production" -}}

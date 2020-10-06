@@ -22,6 +22,7 @@ params:
   para: "是卡夫"
   avatar: "/images/_kitashirakawa.webp"
   image: "/images/_header.webp"
+  og: "/images/_og.png"
   mainSections:
     - "post"
     - "code"
