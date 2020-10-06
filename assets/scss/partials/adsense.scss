@@ -1,0 +1,15 @@
+.adsense {
+  border-radius: $amzrk2-radius;
+
+  .adsbygoogle {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+  }
+  .post-pre .adsbygoogle {
+    margin-bottom: 1rem;
+  }
+  .post-end .adsbygoogle {
+    margin-top: 1rem;
+  }
+}
