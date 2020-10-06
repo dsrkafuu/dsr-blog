@@ -11,7 +11,7 @@
         <div class="column single-content main-content is-three-quarters">
           <div class="card">
             <div class="post-image image-wrapper ratio-40x9">
-              <img src="{{ .Site.Params.image | relURL }}" />
+              <img class="lazyload" data-src="{{ .Site.Params.image | relURL }}" />
             </div>
             <div class="post-content">
               <div class="markdown content">
