@@ -4,12 +4,13 @@
   .adsbygoogle {
     display: block;
     text-align: center;
+    border-radius: $amzrk2-radius;
     overflow: hidden;
   }
-  .post-pre .adsbygoogle {
+  .post-pre.adsbygoogle {
     margin-bottom: 1rem;
   }
-  .post-end .adsbygoogle {
+  .post-end.adsbygoogle {
     margin-top: 1rem;
   }
 }
