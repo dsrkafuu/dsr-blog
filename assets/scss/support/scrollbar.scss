@@ -1,19 +1,31 @@
 /* custom scrollbar */
 
-@mixin customScrollbar {
+@mixin customScrollbar($direction: 'all') {
   // firefox
   scrollbar-width: thin;
 
   // webkit
   &::-webkit-scrollbar {
     background-color: var(--color-scroll-bg);
-    height: 8px;
-    width: 8px;
+    @if $direction == 'x' {
+      height: 0.5rem;
+    } @else if $direction == 'y' {
+      width: 0.5rem;
+    } @else {
+      height: 0.5rem;
+      width: 0.5rem;
+    }
   }
   &::-webkit-scrollbar-thumb {
     background-color: var(--color-scroll-thumb);
-    min-height: 48px;
-    min-width: 48px;
+    @if $direction == 'x' {
+      min-height: 3rem;
+    } @else if $direction == 'y' {
+      min-width: 3rem;
+    } @else {
+      min-height: 3rem;
+      min-width: 3rem;
+    }
 
     &:hover {
       background-color: var(--color-scroll-hover);
@@ -26,8 +38,4 @@
     width: 0;
     height: 0;
   }
-}
-
-.c-scrollbar {
-  @include customScrollbar();
 }

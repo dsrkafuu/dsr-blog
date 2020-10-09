@@ -88,7 +88,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   max-height: $amzrk2-toc-height;
-  @include customScrollbar();
+  @include customScrollbar('y');
 
   a {
     white-space: nowrap;
