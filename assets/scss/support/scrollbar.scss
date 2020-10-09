@@ -1,0 +1,33 @@
+/* custom scrollbar */
+
+@mixin customScrollbar {
+  // firefox
+  scrollbar-width: thin;
+
+  // webkit
+  &::-webkit-scrollbar {
+    background-color: var(--color-scroll-bg);
+    height: 8px;
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-scroll-thumb);
+    min-height: 48px;
+    min-width: 48px;
+
+    &:hover {
+      background-color: var(--color-scroll-hover);
+    }
+    &:active {
+      background-color: var(--color-scroll-focus);
+    }
+  }
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+}
+
+.c-scrollbar {
+  @include customScrollbar();
+}
