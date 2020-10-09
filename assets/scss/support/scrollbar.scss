@@ -19,9 +19,9 @@
   &::-webkit-scrollbar-thumb {
     background-color: var(--color-scroll-thumb);
     @if $direction == 'x' {
-      min-height: 3rem;
-    } @else if $direction == 'y' {
       min-width: 3rem;
+    } @else if $direction == 'y' {
+      min-height: 3rem;
     } @else {
       min-height: 3rem;
       min-width: 3rem;
