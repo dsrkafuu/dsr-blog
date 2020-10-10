@@ -16,3 +16,6 @@ import './components/toc';
 
 /* feature detection */
 import './components/feature';
+
+/* clipboard */
+import './components/clipboard';
