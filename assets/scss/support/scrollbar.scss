@@ -5,37 +5,38 @@
   scrollbar-width: thin;
 
   // webkit
-  &::-webkit-scrollbar {
-    background-color: var(--color-scroll-bg);
-    @if $direction == 'x' {
-      height: 0.5rem;
-    } @else if $direction == 'y' {
-      width: 0.5rem;
-    } @else {
-      height: 0.5rem;
-      width: 0.5rem;
+  @media (pointer: fine) {
+    &::-webkit-scrollbar {
+      background-color: var(--color-scroll-bg);
+      @if $direction == 'x' {
+        height: 0.5rem;
+      } @else if $direction == 'y' {
+        width: 0.5rem;
+      } @else {
+        height: 0.5rem;
+        width: 0.5rem;
+      }
     }
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--color-scroll-thumb);
-    @if $direction == 'x' {
-      min-width: 3rem;
-    } @else if $direction == 'y' {
-      min-height: 3rem;
-    } @else {
-      min-height: 3rem;
-      min-width: 3rem;
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-scroll-thumb);
+      @if $direction == 'x' {
+        min-width: 3rem;
+      } @else if $direction == 'y' {
+        min-height: 3rem;
+      } @else {
+        min-height: 3rem;
+        min-width: 3rem;
+      }
+      &:hover {
+        background-color: var(--color-scroll-hover);
+      }
+      &:active {
+        background-color: var(--color-scroll-focus);
+      }
     }
-
-    &:hover {
-      background-color: var(--color-scroll-hover);
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
     }
-    &:active {
-      background-color: var(--color-scroll-focus);
-    }
-  }
-  &::-webkit-scrollbar-button {
-    width: 0;
-    height: 0;
   }
 }
