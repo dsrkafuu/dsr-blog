@@ -20,8 +20,8 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development hugo server --gc",
-    "test": "cross-env NODE_ENV=production hugo server --gc",
-    "build": "cross-env NODE_ENV=production hugo --cleanDestinationDir --gc"
+    "test": "cross-env NODE_ENV=production hugo server --minify --gc",
+    "build": "cross-env NODE_ENV=production hugo --minify --cleanDestinationDir --gc"
   },
   "private": true
 }
