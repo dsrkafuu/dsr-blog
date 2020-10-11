@@ -1,14 +1,14 @@
 {{ if len .Params | eq 3 }}
 <p>
 <div class="image-wrapper ratio-{{ index .Params 0 }}">
-  <img class="lazyload zoomable" data-src="{{ index .Params 2 | relURL | safeURL }}"
+  <img class="lazyload zoomable" data-src="{{ index .Params 2 | safeURL | relURL }}"
        alt="{{ index .Params 1 }}" />
 </div>
 </p>
 {{ else if len .Params | eq 2 }}
 <p>
 <div class="image-wrapper ratio-{{ index .Params 0 }}">
-  <img class="lazyload zoomable" data-src="{{ index .Params 1 | relURL | safeURL }}" />
+  <img class="lazyload zoomable" data-src="{{ index .Params 1 | safeURL | relURL }}" />
 </div>
 </p>
 {{ end }}
