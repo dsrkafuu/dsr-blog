@@ -11,13 +11,13 @@
         <div class="column list-content is-three-quarters">
           <div id="app">
             <div class="card search-ctrl">
-              <form class="search-form" method="GET" target="_self">
+              <form class="search-form" method="GET" target="_self" @submit.prevent="handleSubmit">
                 <input class="input" type="search" name="q" autocapitalize="off" autocomplete="off"
-                       autocorrect="off" spellcheck="false" v-model="searchInput" />
+                       autocorrect="off" spellcheck="false" v-model.trim="searchInput" />
                 <button class="button" type="submit">搜索</button>
               </form>
-              <v-search-info :status="status" :data="resultData.searchInformation"
-                             :query="searchQuerys" />
+              <v-search-info :status="status" :input="searchInput"
+                             :data="resultData.searchInformation" />
             </div>
             <v-search-list :status="status" :items="resultData.items" />
           </div>
