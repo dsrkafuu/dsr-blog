@@ -13,7 +13,7 @@
           <div class="card">
             {{ if .Params.image }}
             <div class="post-image image-wrapper ratio-40x9">
-              <img src="{{ .Params.image | relURL }}" />
+              <img class="lazyload" data-src="{{ .Params.image | relURL }}" />
             </div>
             {{ end }}
             <div class="post-box">
