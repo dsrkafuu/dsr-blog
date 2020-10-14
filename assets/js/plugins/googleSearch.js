@@ -1,6 +1,6 @@
 /*! Google Custom Search in CloudFlare Workers | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License */
 
-const ALLOWED_ORIGIN = [/^https?:\/\/amzrk2\.cc/, /^https?:\/\/localhost/];
+const ALLOWED_ORIGIN = [/^https?:\/\/amzrk2\.cc/];
 const ALLOWED_PATH = /^\/search(.*)/;
 
 const API_URL = 'https://www.googleapis.com/customsearch/v1';
@@ -17,6 +17,11 @@ const timeoutRes = (text) => new Response(`[DSR Search] Request Timeout: ${text}
  */
 function validateOrigin(req) {
   const origin = req.headers.get('Origin');
+  /* DEV - START */
+  if (origin && origin.includes('localhost')) {
+    return true;
+  }
+  /* DEV - END */
   if (origin && origin.includes('https')) {
     for (let i = 0; i < ALLOWED_ORIGIN.length; i++) {
       if (ALLOWED_ORIGIN[i].exec(origin)) {

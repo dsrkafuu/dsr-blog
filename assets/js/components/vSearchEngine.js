@@ -1,9 +1,6 @@
 import { logInfo, logError } from '../plugins/logger';
-import { decData } from '../plugins/encrypt';
-import { SEARCH_API_CX, SEARCH_API_URL, SEARCH_API_KEY } from '../plugins/constants';
+import { SEARCH_API_URL } from '../plugins/constants';
 
-const API_KEY = SEARCH_API_KEY;
-const API_CX = SEARCH_API_CX;
 const API_URL = SEARCH_API_URL;
 
 /* vue components */
@@ -19,14 +16,14 @@ const VSearchInfo = {
         if (this.data && this.data.formattedTotalResults && this.data.formattedSearchTime) {
           return `找到约 ${this.data.formattedTotalResults} 条结果 (用时 ${this.data.formattedSearchTime} 秒)`;
         } else {
-          return `无法连接到 Google 服务器`;
+          return `无法连接到 CloudFlare Workers 服务器`;
         }
       } else {
-        return false;
+        return '';
       }
     },
     loading() {
-      if (!this.status && Array.isArray(this.query) && this.query.length > 0) {
+      if (!this.status && this.query.length > 0) {
         return true;
       } else {
         return false;
@@ -93,32 +90,23 @@ new Vue({
     parseSearchQuerys() {
       const urlParam = new URLSearchParams(window.location.search);
       if (urlParam.has('q')) {
-        let paramsArray = urlParam.get('q');
-        if (paramsArray.length > 0) {
-          paramsArray = paramsArray.split(' ');
-          this.searchQuerys = paramsArray;
-          this.searchInput = paramsArray.join(' ');
+        const searchParam = urlParam.get('q');
+        if (searchParam.length > 0) {
+          this.searchInput = searchParam;
+          this.searchQuerys = searchParam.split(' ');
           return true;
-        } else {
-          return false;
         }
-      } else {
-        return false;
       }
+      return false;
     },
     /**
      * 执行搜索
      */
     async performSearch() {
       const url = new URL(API_URL);
-      const params = new URLSearchParams();
-      params.append('q', this.searchQuerys.join('+'));
-      params.append('cx', API_CX);
-      params.append('key', decData(API_KEY));
-      url.search = params.toString();
-      const req = new Request(url);
+      url.searchParams.set('q', this.searchQuerys.join('+'));
       try {
-        const res = await fetch(req);
+        const res = await fetch(url);
         this.resultData = await res.json();
         this.status = true;
       } catch (e) {
