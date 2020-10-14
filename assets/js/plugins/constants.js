@@ -10,10 +10,7 @@ export const NOTIFICATION_FEATURE_DISMISSED = 'amzrk2-notification-feature-dismi
 export const EMAIL_ADDRESS = 'amzrk2@outlook.com';
 
 // search
-export const SEARCH_API_KEY =
-  'QlJFTXVWbU0yWUdjcjVHWjVWamNSUjNhcUZHWnZWM05ROTFYSkp6ZDNFelE1TlZZNmxVUQ==';
-export const SEARCH_API_CX = '981257f142e5b0b8e';
-export const SEARCH_API_URL = 'https://www.googleapis.com/customsearch/v1';
+export const SEARCH_API_URL = 'https://worker.amzrk2.cc/search';
 
 // gitalk
 export const GITALK_CLIENT_ID = 'ba05c2d3a770e5be487a';
