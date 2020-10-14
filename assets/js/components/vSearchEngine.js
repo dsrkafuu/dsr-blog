@@ -7,8 +7,8 @@ const API_URL = SEARCH_API_URL;
 const VSearchInfo = {
   props: {
     status: Boolean,
+    input: String,
     data: Object,
-    query: Array,
   },
   computed: {
     info() {
@@ -19,15 +19,11 @@ const VSearchInfo = {
           return `无法连接到 CloudFlare Workers 服务器`;
         }
       } else {
-        return '';
+        return '请输入搜索关键词 (空格分隔)';
       }
     },
     loading() {
-      if (!this.status && this.query.length > 0) {
-        return true;
-      } else {
-        return false;
-      }
+      return !this.status && this.input;
     },
   },
   template: `
@@ -36,7 +32,7 @@ const VSearchInfo = {
         <use xlink:href="#icon-spinner-third"></use>
       </svg>
     </div>
-    <div v-else-if="status && info" class="search-data">{{ info }}</div>
+    <div v-else-if="info" class="search-data">{{ info }}</div>
   `,
 };
 const VSearchList = {
@@ -70,13 +66,12 @@ new Vue({
   data: {
     status: false,
     searchInput: '',
-    searchQuerys: [],
     resultData: {},
   },
   mounted() {
-    const hasQuery = this.parseSearchQuerys();
-    if (hasQuery) {
-      logInfo('Searching with keys: ', this.searchQuerys);
+    const hasInput = this.parseSearchInput();
+    if (hasInput) {
+      logInfo('Searching with keys:', this.searchInput);
       this.performSearch();
     } else {
       logInfo('No search keys found');
@@ -87,13 +82,12 @@ new Vue({
      * 获取搜索关键词
      * 返回是否有搜索关键词的布尔值
      */
-    parseSearchQuerys() {
+    parseSearchInput() {
       const urlParam = new URLSearchParams(window.location.search);
       if (urlParam.has('q')) {
         const searchParam = urlParam.get('q');
         if (searchParam.length > 0) {
           this.searchInput = searchParam;
-          this.searchQuerys = searchParam.split(' ');
           return true;
         }
       }
@@ -104,7 +98,7 @@ new Vue({
      */
     async performSearch() {
       const url = new URL(API_URL);
-      url.searchParams.set('q', this.searchQuerys.join('+'));
+      url.searchParams.set('q', this.searchInput);
       try {
         const res = await fetch(url);
         this.resultData = await res.json();
@@ -112,6 +106,23 @@ new Vue({
       } catch (e) {
         logError(e);
         this.status = true;
+      }
+    },
+    /**
+     * 响应表单
+     */
+    handleSubmit() {
+      if (this.searchInput) {
+        // 过滤输入
+        this.searchInput = this.searchInput
+          .replace('　', ' ')
+          .split(' ')
+          .filter((val) => val)
+          .join(' ');
+        // 执行搜索
+        const url = new URL(window.location.origin + window.location.pathname);
+        url.searchParams.set('q', this.searchInput);
+        window.location.href = url;
       }
     },
   },
