@@ -105,7 +105,9 @@ new Vue({
       url.searchParams.set('q', this.searchInput);
       try {
         const res = await fetch(url);
-        this.resultData = await res.json();
+        const data = await res.json();
+        this.filtResult(data);
+        this.resultData = data;
         this.status = true;
       } catch (e) {
         logError(e);
@@ -129,6 +131,17 @@ new Vue({
         const url = new URL(window.location.origin + window.location.pathname);
         url.searchParams.set('q', this.searchInput);
         window.location.href = url;
+      }
+    },
+    /**
+     * 搜索结果标题过滤器
+     */
+    filtResult(resultData) {
+      if (Array.isArray(resultData.items)) {
+        resultData.items.forEach((el) => {
+          el.title = el.title.replace(/ ?\| DSRKafuU/gi, '');
+          el.title = el.title.replace(/ ?- DSRKafuU/gi, '');
+        });
       }
     },
   },
