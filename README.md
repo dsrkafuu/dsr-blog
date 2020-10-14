@@ -21,7 +21,8 @@
 - 不同模板使用不同的 scripts 局部模板，引入不同依赖库并通过不同入口文件编译主 JS
 - Lazyload 图片需要使用 shortcode 并指定固定的长宽比: 文章头图 40x9 anime-note 32x9
 - 手机侧边栏控制 fixed 定位 right 偏移量实现动画淡入，用于显示目录
-- 自定义搜索通过 CloudFlare Workers 和 Google Custom Search 实现
+- 自定义搜索通过 CloudFlare Workers 代理的 Google Custom Search 实现
+- 自定义搜索模拟标准搜索表单行为，自动替换中文空格等
 
 |        模块         |                  链接                  |    用途     |
 | :-----------------: | :------------------------------------: | :---------: |
