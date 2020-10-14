@@ -7,7 +7,6 @@ const API_URL = SEARCH_API_URL;
 const VSearchInfo = {
   props: {
     status: Boolean,
-    input: String,
     data: Object,
   },
   computed: {
@@ -23,7 +22,8 @@ const VSearchInfo = {
       }
     },
     loading() {
-      return !this.status && this.input;
+      const urlParam = new URLSearchParams(window.location.search);
+      return !this.status && urlParam.has('q');
     },
   },
   template: `
@@ -87,8 +87,12 @@ new Vue({
       if (urlParam.has('q')) {
         const searchParam = urlParam.get('q');
         if (searchParam.length > 0) {
+          // 有 q 且有关键词
           this.searchInput = searchParam;
           return true;
+        } else {
+          // 有 q 且没关键词则返回
+          window.location.href = window.location.origin + window.location.pathname;
         }
       }
       return false;
@@ -114,10 +118,12 @@ new Vue({
     handleSubmit() {
       if (this.searchInput) {
         // 过滤输入
+        const str = '测试1  　测试2　测试3';
+        str.replaceAll();
         this.searchInput = this.searchInput
-          .replace('　', ' ')
+          .replaceAll(/　/gi, ' ') // 替换所有中文空格
           .split(' ')
-          .filter((val) => val)
+          .filter((val) => val) // 移除多余项
           .join(' ');
         // 执行搜索
         const url = new URL(window.location.origin + window.location.pathname);

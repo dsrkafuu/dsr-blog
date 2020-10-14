@@ -16,8 +16,7 @@
                        autocorrect="off" spellcheck="false" v-model.trim="searchInput" />
                 <button class="button" type="submit">搜索</button>
               </form>
-              <v-search-info :status="status" :input="searchInput"
-                             :data="resultData.searchInformation" />
+              <v-search-info :status="status" :data="resultData.searchInformation" />
             </div>
             <v-search-list :status="status" :items="resultData.items" />
           </div>
