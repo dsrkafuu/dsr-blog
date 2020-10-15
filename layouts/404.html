@@ -13,7 +13,7 @@
 {{ partial "favicon.html" . }}
 <!-- seo metadata -->
 <!-- $ title -->
-<title>404 NOT FOUND - {{ .Site.Title }}</title>
+<title>404 NOT FOUND | {{ .Site.Title }}</title>
 <!-- stylesheets -->
 {{ if eq (getenv "NODE_ENV") "production" }}
 {{ $options := (dict "targetPath" "assets/amzrk2.min.css" "outputStyle" "compressed" "includePaths" (slice "node_modules")) }}
