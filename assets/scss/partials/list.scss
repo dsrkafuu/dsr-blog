@@ -47,12 +47,15 @@
   color: var(--color-primary);
 }
 
-.tag-list {
+.tag-card {
   padding: $amzrk2-space-base !important;
+}
+.tag-list {
   display: flex;
   flex-wrap: wrap;
 }
 .tag-item {
   color: var(--color-primary);
   margin-right: $amzrk2-space-sm;
+  white-space: nowrap;
 }

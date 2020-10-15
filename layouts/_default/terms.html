@@ -9,15 +9,18 @@
     <div class="container list-container">
       <div class="columns list-columns">
         <div class="column list-content is-three-quarters">
-          <div class="card tag-list">
-            {{ range $name, $tag := .Site.Taxonomies.tags }}
-            {{ $url := printf "/tags/%s/" $name }}
-            <span class="tag-item">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-hashtag"></use>
-              </svg>&nbsp;<a href="{{ $url | relURL }}">{{ $name }}</a>
-            </span>
-            {{end}}
+          <div class="card tag-card">
+            <div class="tag-list">
+              {{ range $name, $tag := .Site.Taxonomies.tags }}
+              {{ $url := printf "/tags/%s/" $name }}
+              <span class="tag-item">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-hashtag"></use>
+                </svg>&nbsp;<a href="{{ $url | relURL }}">{{ $name }}</a>
+              </span>
+              {{end}}
+            </div>
+            {{ partial "adsense-list.html" . }}
           </div>
         </div>
         <div class="column list-sidebar is-one-quarter">
