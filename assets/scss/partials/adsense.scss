@@ -7,10 +7,10 @@
     border-radius: $amzrk2-radius;
     overflow: hidden;
   }
-  &.post-pre .adsbygoogle {
-    margin-bottom: 1rem;
-  }
-  &.post-end .adsbygoogle {
-    margin-top: 1rem;
+  &.ad-single,
+  &.ad-list {
+    .adsbygoogle {
+      margin-top: 1rem;
+    }
   }
 }
