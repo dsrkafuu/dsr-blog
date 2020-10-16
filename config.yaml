@@ -26,6 +26,7 @@ params:
   mainSections:
     - "post"
     - "code"
+  googleAnalytics: "G-JTGSY3FTJ9"
 
 # menu
 menu:

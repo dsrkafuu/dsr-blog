@@ -47,10 +47,12 @@
 {{- end -}}
 
 {{- if eq (getenv "NODE_ENV") "production" -}}
-<!-- cfga -->
+<!-- new google analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JTGSY3FTJ9"></script>
 <script>
-  window.ga_tid = 'UA-146011233-8';
-  window.ga_api = 'https://worker.amzrk2.cc/cfga/main/hls.min.js';
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-JTGSY3FTJ9');
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/cfga@1.0.3/cfga.min.js"></script>
 {{- end -}}
