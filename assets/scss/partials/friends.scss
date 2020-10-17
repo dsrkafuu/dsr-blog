@@ -1,0 +1,43 @@
+.friends-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $amzrk2-space-base;
+  overflow: hidden;
+}
+
+.card-friends {
+  margin-bottom: 0 !important;
+  .image-wrapper {
+    border-radius: $amzrk2-radius $amzrk2-radius 0 0;
+  }
+}
+
+.friends-link {
+  display: block;
+}
+
+.friends-info {
+  text-align: center;
+  padding: $amzrk2-space-sm;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  span {
+    display: block;
+    &:first-child {
+      font-size: $amzrk2-font-size-md;
+    }
+    &:last-child {
+      font-size: $amzrk2-font-size-sm;
+    }
+  }
+}
+
+.friends-add {
+  margin-top: $amzrk2-space-base;
+  a {
+    display: block;
+    text-align: center;
+    padding: $amzrk2-space-sm;
+  }
+}
