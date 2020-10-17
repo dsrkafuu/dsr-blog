@@ -1,3 +1,7 @@
+a.image-link {
+  display: block;
+}
+
 .image-wrapper {
   position: relative;
   display: block;
@@ -5,6 +9,7 @@
   height: 0;
   overflow: hidden;
   background-color: var(--color-wrapper);
+  border-radius: $amzrk2-radius;
 
   img {
     display: block;
@@ -12,7 +17,27 @@
   }
 }
 
-// common aspect ratios
+img {
+  color: var(--color-primary);
+  text-align: center;
+  font-size: $amzrk2-font-size-sm;
+}
+
+img.lazyload:not([src]) {
+  visibility: hidden;
+}
+
+/* lazyload animation */
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms !important;
+}
+
+/* common aspect ratios */
 // 32x9  -  28.125%
 // 21x9  -  42.85714286%
 // 18x9  -  50%
