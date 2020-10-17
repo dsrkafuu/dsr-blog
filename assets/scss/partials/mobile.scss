@@ -143,3 +143,19 @@ main {
     width: 2rem + 2 * $amzrk2-space-sm;
   }
 }
+
+/* friends */
+@media screen and (max-width: $tablet) {
+  .friends-wrapper {
+    gap: $amzrk2-space-sm; // small gap on mobile
+  }
+  .friends-info span:last-child {
+    display: none; // do not show desc on mobile
+  }
+  .friends-add {
+    margin-top: $amzrk2-space-sm;
+    a {
+      padding: 0.375rem;
+    }
+  }
+}

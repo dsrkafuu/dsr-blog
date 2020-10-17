@@ -9,6 +9,26 @@
     <div class="container list-container">
       <div class="columns list-columns">
         <div class="column list-content is-three-quarters">
+          <div class="friends-wrapper">
+            {{ range .Site.Data.friends }}
+            <div class="card card-friends">
+              <a class="friends-link" href="{{ .link | safeURL }}" target="_blank">
+                <div class="image-wrapper ratio-1x1">
+                  <img class="lazyload" data-src="{{ .icon | safeURL | relURL }}" />
+                </div>
+                <div class="friends-info">
+                  <span>{{ .title }}</span>
+                  <span>{{ .desc }}</span>
+                </div>
+              </a>
+            </div>
+            {{ end }}
+          </div>
+          <div class="card friends-add">
+            <a href="" target="_blank">
+              加入此列表
+            </a>
+          </div>
         </div>
         <div class="column list-sidebar is-one-quarter">
           {{ partial "card-bundle-list.html" . }}
@@ -19,6 +39,7 @@
   </main>
   {{ partial "footer.html" . }}
   {{ partial "scripts-common.html" . }}
+  {{ partial "scripts-list.html" . }}
 </body>
 
 {{ end }}
