@@ -1,1 +1,3 @@
-<img class="zoomable" src="{{ .Destination | safeURL | relURL }}" alt="{{ .Text }}" />
+<a class="image-link" href="{{ .Destination | safeURL | relURL }}" target="_blank">
+  <img src="{{ .Destination | safeURL | relURL }}" alt="{{ .Text }}" />
+</a>

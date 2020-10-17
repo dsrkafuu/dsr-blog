@@ -3,9 +3,5 @@
 /* lazyloader */
 import 'lazysizes';
 
-/* init zoomable images */
-import mediumZoom from 'medium-zoom';
-mediumZoom('.zoomable', { background: '#00000066', scrollOffset: 128 });
-
 /* disqus */
 import './components/comment';

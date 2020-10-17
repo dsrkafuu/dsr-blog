@@ -47,12 +47,6 @@ main {
     }
   }
 }
-.medium-zoom-overlay {
-  z-index: 4;
-}
-.medium-zoom-image.medium-zoom-image--opened {
-  z-index: 5;
-}
 /* gitalk */
 .gitalk-container {
   z-index: 1;
@@ -73,14 +67,4 @@ main {
       z-index: 2;
     }
   }
-}
-
-/* lazyload animation */
-.lazyload,
-.lazyloading {
-  opacity: 0;
-}
-.lazyloaded {
-  opacity: 1;
-  transition: opacity 300ms;
 }

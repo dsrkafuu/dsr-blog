@@ -110,21 +110,6 @@ h6 {
       border-color: var(--color-font);
     }
   }
-
-  .image-wrapper {
-    border-radius: $amzrk2-radius;
-
-    img {
-      width: 100%;
-    }
-  }
-}
-
-/* placeholder */
-img {
-  color: var(--color-primary);
-  text-align: center;
-  font-size: $amzrk2-font-size-sm;
 }
 
 input {
