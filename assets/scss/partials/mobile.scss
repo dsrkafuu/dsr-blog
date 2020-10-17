@@ -149,8 +149,16 @@ main {
   .friends-wrapper {
     gap: $amzrk2-space-sm; // small gap on mobile
   }
-  .friends-info span:last-child {
-    display: none; // do not show desc on mobile
+  .friends-info {
+    padding: $amzrk2-space-sm 0;
+    span {
+      &:first-child {
+        font-size: $amzrk2-font-size-sm;
+      }
+      &:last-child {
+        display: none; // do not show desc on mobile
+      }
+    }
   }
   .friends-add {
     margin-top: $amzrk2-space-sm;
