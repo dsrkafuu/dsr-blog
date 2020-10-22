@@ -1,13 +1,13 @@
 ---
-title: '基础 HTML 与 CSS 笔记'
+title: 'Web 基础、HTML 与 CSS 笔记'
 date: 2019-10-22T10:20:43+08:00
 tags:
   - html
   - css
-description: 'HTML 与 CSS 基础。'
+description: 'Web 基础、HTML 与 CSS 笔记。'
 ---
 
-HTML 与 CSS 基础内容笔记，随着自己开发中遇到的各种问题而逐渐更新。
+Web 基础、HTML 与 CSS 笔记，随着自己开发中遇到的各种问题而逐渐更新。
 
 <!--more-->
 
@@ -23,3 +23,9 @@ HTML 与 CSS 基础内容笔记，随着自己开发中遇到的各种问题而�
 ### 新增元素
 
 [前往 W3school CN](https://www.w3school.com.cn/html/html5_new_elements.asp)
+
+### 置换元素
+
+浏览器根据元素的标签和属性，来决定元素的具体显示内容。
+
+`<img> <input> <textarea> <select> <object>`
