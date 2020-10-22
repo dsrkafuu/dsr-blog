@@ -35,7 +35,7 @@
       <div class="columns main-columns">
         <div class="column main-content is-three-quarters">
           <div class="card">
-            <div class="markdown content">
+            <article class="markdown content">
               <h2>404 NOT FOUND</h2>
               <p><strong>资源未找到或未完工</strong></p>
               <ul>
@@ -44,12 +44,12 @@
               </ul>
               <p>将在 <span id="timer">10</span> 秒后跳转至<a href="{{ .Site.BaseURL }}"
                    target="_blank">首页</a></p>
-            </div>
+            </article>
           </div>
         </div>
-        <div class="column main-sidebar is-one-quarter">
+        <aside class="column main-sidebar is-one-quarter">
           {{ partial "card-bundle-list.html" . }}
-        </div>
+        </aside>
       </div>
     </div>
   </main>

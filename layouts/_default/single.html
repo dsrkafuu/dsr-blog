@@ -23,9 +23,9 @@
               </div>
             </div>
             <div class="post-content">
-              <div class="markdown content">
+              <article class="markdown content">
                 {{ .Content }}
-              </div>
+              </article>
               {{ partial "adsense-single.html" . }}
             </div>
           </div>
@@ -37,7 +37,7 @@
           </div>
           {{- end -}}
         </div>
-        <div class="column single-sidebar is-one-quarter">
+        <aside class="column single-sidebar is-one-quarter">
           {{ partial "card-info.html" . }}
           <div class="sticky">
             {{ if ne .Params.toc false }}
@@ -46,7 +46,7 @@
             </div>
             {{ end }}
           </div>
-        </div>
+        </aside>
       </div>
     </div>
     {{ partial "notification.html" . }}
