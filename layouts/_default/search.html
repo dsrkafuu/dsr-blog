@@ -11,9 +11,9 @@
         <div class="column list-content is-three-quarters">
           <div id="app">
             <div class="card search-ctrl">
-              <form class="search-form" method="GET" target="_self" @submit.prevent="handleSubmit">
-                <input class="input" type="search" name="q" autocapitalize="off" autocomplete="off"
-                       autocorrect="off" spellcheck="false" v-model.trim="searchInput" />
+              <form class="search-form" @submit.prevent="handleSubmit" method="GET" target="_self">
+                <input class="input" type="search" name="q" autocapitalize="off" autocorrect="off"
+                       autocomplete="off" spellcheck="false" v-model.trim="searchInput" required />
                 <button class="button" type="submit">搜索</button>
               </form>
               <v-search-info :status="status" :data="resultData.searchInformation" />
