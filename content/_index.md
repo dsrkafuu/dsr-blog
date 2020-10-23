@@ -9,9 +9,11 @@ keywords:
 
 ## About me
 
-- Born in 2000, currently a student at [NJUPT](https://www.njupt.edu.cn/)
-- ACGN enthusiast and great fan of [Kyoto Animation](https://www.kyotoanimation.co.jp/)
-- Newbie front end developer, still in the process of self improvement
+- Currently a college student at [NJUPT](https://www.njupt.edu.cn/)
+- Great fan of [Kyoto Animation](https://www.kyotoanimation.co.jp/)
+- Front end developer newbie, still in the process of self improvement
+- JavaScript, [Vue](https://vuejs.org/), [SCSS](https://sass-lang.com/), and a little bit of [Node.js](https://nodejs.org/)
+- [VS Code](https://code.visualstudio.com), always working with 2-space and [Prettier](https://prettier.io/)
 
 ## Contact me
 
