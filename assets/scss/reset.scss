@@ -31,6 +31,10 @@ h6 {
     font-size: $amzrk2-font-size-xl;
     margin: 1.375rem 0 1rem 0;
     color: var(--color-primary);
+
+    &:first-child {
+      margin-top: 0; // do not show margin as first h2
+    }
   }
 
   h3 {
