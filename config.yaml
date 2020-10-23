@@ -12,7 +12,7 @@ paginate: 10
 
 # language
 languageCode: "zh-cn" # rss
-defaultContentLanguage: "zh-Hans" # html
+defaultContentLanguage: "zh-hans" # html
 
 # params
 params:
