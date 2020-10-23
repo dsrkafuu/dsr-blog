@@ -49,3 +49,20 @@
 .comment-wrapper {
   padding: $amzrk2-space-base !important;
 }
+
+#back-top {
+  display: block;
+  height: 2rem;
+  line-height: 2rem;
+  color: var(--color-font);
+  padding: 0 0.375rem;
+  border-radius: $amzrk2-radius;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: $amzrk2-font-size-sm;
+
+  &:hover {
+    color: var(--color-primary);
+    background-color: var(--color-hover);
+  }
+}
