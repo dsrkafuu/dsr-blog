@@ -49,6 +49,8 @@
 
 ## LICENSE
 
+<img align="right" alt="FOSSA Status" width="50%" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Famzrk2%2Famzrk2-ng.svg?type=large" />
+
 The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/amzrk2/amzrk2-ng/blob/master/LICENSE).
 
-> © 2018-present DSRKafuU <amzrk2.cc>
+**© 2018-present DSRKafuU <https://amzrk2.cc/>**
