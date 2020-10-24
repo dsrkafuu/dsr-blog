@@ -26,3 +26,6 @@ export const COPY_LICENSE = `-------------------------
 来源：${document.title}
 链接：${window.location.href}
 `;
+
+// hm
+export const HM_SRC = 'https://hm.baidu.com/hm.js?05d5e9074b063513b591f93e3ea9543f';
