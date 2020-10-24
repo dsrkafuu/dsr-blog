@@ -45,7 +45,3 @@
 {{ $css := resources.Get "scss/index.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 {{- end -}}
-
-{{- if eq (getenv "NODE_ENV") "production" -}}
-<script async src="https://hm.baidu.com/hm.js?05d5e9074b063513b591f93e3ea9543f"></script>
-{{- end -}}
