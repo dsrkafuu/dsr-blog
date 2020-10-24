@@ -33,14 +33,11 @@
   }
 }
 
-.friends-add {
+.card.friends-add {
   margin-top: $amzrk2-space-base;
+  padding: $amzrk2-space-sm;
   a {
     display: block;
     text-align: center;
-    padding: $amzrk2-space-sm;
-  }
-  .adsense.ad-list .adsbygoogle {
-    margin: 0 $amzrk2-space-base $amzrk2-space-base $amzrk2-space-base;
   }
 }
