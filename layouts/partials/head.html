@@ -47,6 +47,13 @@
 {{- end -}}
 
 {{- if eq (getenv "NODE_ENV") "production" -}}
-<script async defer data-website-id="3dea9f20-dcdc-44fe-8bbc-7718ed5b9873"
-        src="https://analytics.amzrk2.cc/umami.js"></script>
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?05d5e9074b063513b591f93e3ea9543f';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 {{- end -}}
