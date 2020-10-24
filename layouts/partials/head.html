@@ -46,13 +46,7 @@
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 {{- end -}}
 
-{{- if false -}}
-<!-- new google analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JTGSY3FTJ9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-JTGSY3FTJ9');
-</script>
+{{- if eq (getenv "NODE_ENV") "production" -}}
+<script async defer data-website-id="3dea9f20-dcdc-44fe-8bbc-7718ed5b9873"
+        src="https://analytics.amzrk2.cc/umami.js"></script>
 {{- end -}}

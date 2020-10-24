@@ -30,6 +30,7 @@
 |        theme        |                internal                |   common    |
 |     toc-control     |                internal                |   common    |
 |      modernizr      |        <https://modernizr.com/>        |   common    |
+|        umami        |  <https://github.com/mikecao/umami/>   |   common    |
 |      lazysizes      | <https://github.com/aFarkas/lazysizes> | list single |
 |  email-protection   |                internal                | list search |
 |  vue.js\[browser\]  |          <https://vuejs.org/>          |   search    |
@@ -53,4 +54,4 @@
 
 The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/amzrk2/amzrk2-ng/blob/master/LICENSE).
 
-**© 2018-present DSRKafuU <https://amzrk2.cc/>**
+**Copyright © 2018-present DSRKafuU <https://amzrk2.cc/>**
