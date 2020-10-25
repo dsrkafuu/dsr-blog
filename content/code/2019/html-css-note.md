@@ -5,6 +5,7 @@ tags:
   - html
   - css
 description: 'Web 基础、HTML 与 CSS 笔记。'
+image: '/images/2019/html-css-note/header.webp'
 ---
 
 Web 基础、HTML 与 CSS 笔记，随着自己开发中遇到的各种问题而逐渐更新。
