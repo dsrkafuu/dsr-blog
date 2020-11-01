@@ -1,5 +1,5 @@
 ---
-name: friend requese
+name: friend request
 about: be friend here
 title: ''
 labels: friend
