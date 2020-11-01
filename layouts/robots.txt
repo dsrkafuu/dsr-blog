@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /resume/
 
 Sitemap: {{ .Site.BaseURL -}}sitemap.xml

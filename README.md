@@ -14,6 +14,10 @@
 - `image` 字段未设置则不渲染头图
 - 内置 ToC 层级限制 2-3
 - 完全自定义的分页控制
+- Fromt matters:
+  - `toc: false`
+  - `comments: false`
+  - `hide: true`
 
 ### JS
 
