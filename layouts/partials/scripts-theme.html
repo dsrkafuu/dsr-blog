@@ -1,1 +1,13 @@
-<script>!function(t){let e;try{e=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(t){e=null}e&&e!==t&&document.body.setAttribute("data-theme",e)}(document.body.getAttribute("data-theme"));</script>
+<script>
+  (function (dataTheme) {
+    let storedTheme;
+    try {
+      storedTheme = JSON.parse(localStorage.getItem('amzrk2-theme'));
+    } catch (e) {
+      storedTheme = null;
+    }
+    if (storedTheme && storedTheme !== dataTheme) {
+      document.body.setAttribute('data-theme', storedTheme);
+    }
+  })(document.body.getAttribute('data-theme'));
+</script>

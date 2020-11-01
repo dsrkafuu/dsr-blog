@@ -1,5 +1,5 @@
 {{ if eq (getenv "NODE_ENV") "production" }}
-{{ $options := (dict "targetPath" "assets/amzrk2-common.min.js" "minify" true "target" "es2017" "format" "iife") }}
+{{ $options := (dict "targetPath" "assets/amzrk2-common.min.js" "minify" false "target" "es2017" "format" "iife") }}
 {{ $built := resources.Get "js/common.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{ else }}
