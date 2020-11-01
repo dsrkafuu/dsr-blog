@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const path = require('path');
 const fs = require('fs');
 // html
@@ -48,10 +50,13 @@ function getFiles(dirPath) {
     return;
   });
 }
+console.log(`[DSRMIN] Scanning files...`);
 getFiles(path.resolve('./public'));
+console.log('[DSRMIN] Scanning files done.');
 
 // minify
 async function minifyFiles() {
+  console.log('[DSRMIN] Minification started...');
   const processPromises = [];
   // minify htmls
   allFiles['.html'].forEach((val) => {
@@ -115,6 +120,7 @@ async function minifyFiles() {
     );
   });
   await Promise.all(processPromises);
+  console.log('[DSRMIN] Minification done.');
   return;
 }
 minifyFiles();
