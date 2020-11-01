@@ -16,7 +16,7 @@
 <title>404 NOT FOUND | {{ .Site.Title }}</title>
 <!-- stylesheets -->
 {{ if eq (getenv "NODE_ENV") "production" }}
-{{ $options := (dict "targetPath" "assets/amzrk2.min.css" "outputStyle" "compressed" "includePaths" (slice "node_modules")) }}
+{{ $options := (dict "targetPath" "assets/amzrk2.min.css" "outputStyle" "expanded" "includePaths" (slice "node_modules")) }}
 {{ $css := resources.Get "scss/index.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 {{ else }}
@@ -40,10 +40,10 @@
               <p><strong>资源未找到或未完工</strong></p>
               <ul>
                 <li>如果你在寻找 FFXIV 狩猎车时间表，请<a href="https://dsrca.amzrk2.cc/game/ffxiv/"
-                     target="_blank">点击此处移动至 DSRCA</a></li>
+                     target="_blank" rel="noopener">点击此处移动至 DSRCA</a></li>
               </ul>
               <p>将在 <span id="timer">10</span> 秒后跳转至<a href="{{ .Site.BaseURL }}"
-                   target="_blank">首页</a></p>
+                   rel="noopener">首页</a></p>
             </article>
           </div>
         </div>

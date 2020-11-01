@@ -1,6 +1,6 @@
 {
   "name": "amzrk2-ng",
-  "version": "5.3.0",
+  "version": "5.4.0",
   "author": "DSRKafuU <amzrk2@outlook.com> (https://amzrk2.cc/)",
   "license": "Apache-2.0",
   "repository": {
@@ -19,8 +19,9 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development hugo server --gc",
-    "test": "cross-env NODE_ENV=production hugo server --minify --gc",
-    "build": "cross-env NODE_ENV=production hugo --minify --cleanDestinationDir --gc"
+    "compile": "cross-env NODE_ENV=production hugo --cleanDestinationDir --gc",
+    "minify": "",
+    "build": ""
   },
   "private": true
 }
