@@ -49,11 +49,11 @@ menu:
     - name: "#icon-twitter"
       url: "https://twitter.com/amzrk2"
       weight: 2
-    - name: "#icon-tv-retro"
-      url: "https://space.bilibili.com/19767474"
-      weight: 3
     - name: "#icon-envelope-open-text"
       url: "mailto:mail@fake.google"
+      weight: 3
+    - name: "#icon-steam"
+      url: "https://steamcommunity.com/id/amzrk2/"
       weight: 4
 
 # markup
