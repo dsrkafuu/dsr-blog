@@ -20,13 +20,12 @@ params:
   author: "DSRKafuU"
   email: "amzrk2@outlook.com"
   para: "是卡夫"
-  avatar: "/images/_kitashirakawa.webp"
+  avatar: "/images/_wk_256p.webp"
   image: "/images/_header.webp"
   og: "/images/_og.png"
   mainSections:
     - "post"
     - "code"
-  googleAnalytics: "G-JTGSY3FTJ9"
 
 # menu
 menu:
