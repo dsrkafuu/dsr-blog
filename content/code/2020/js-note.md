@@ -323,3 +323,48 @@ let group = {
   },
 };
 ```
+
+## 类与继承
+
+### 绑定方法
+
+可以使用类字段来绑定类方法：
+
+```js
+class Button {
+  constructor(value) {
+    this.value = value;
+  }
+  click = () => {
+    alert(this.value);
+  };
+}
+const button = new Button('hello');
+setTimeout(button.click, 1000); // hello
+```
+
+### 字段初始化
+
+类字段是这样初始化的：
+
+- 对于基类 (还未继承任何东西的那种)，在构造函数调用前初始化
+- 对于派生类，在 `super()` **后**立刻初始化
+
+因此在这种情况下两次的输出都是 `animal`：
+
+```js
+class Animal {
+  name = 'animal';
+  constructor() {
+    alert(this.name); // (*)
+  }
+}
+class Rabbit extends Animal {
+  name = 'rabbit';
+  // constructor(...args) {
+  //   super(...args); // 此时 `Rabbit` 还没有自己的 `name` 字段
+  // }
+}
+new Animal(); // animal
+new Rabbit(); // animal
+```
