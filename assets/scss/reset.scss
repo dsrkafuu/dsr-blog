@@ -98,6 +98,9 @@ h6 {
 
   table {
     background: transparent;
+    border: 2px solid var(--color-primary);
+    border-radius: $amzrk2-radius;
+    border-collapse: separate;
 
     &.is-narrow {
       font-size: $amzrk2-font-size-sm;
