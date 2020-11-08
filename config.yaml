@@ -67,3 +67,7 @@ markup:
   tableOfContents:
     startLevel: 2
     endLevel: 3
+
+# build options
+build:
+  noJSConfigInAssets: true
