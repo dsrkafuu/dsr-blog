@@ -1,10 +1,10 @@
 {{ if eq (getenv "NODE_ENV") "production" }}
-<script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.prod.js"></script>
 {{ $options := (dict "targetPath" "assets/amzrk2-search.min.js" "minify" false "target" "es2017" "format" "iife") }}
 {{ $built := resources.Get "js/search.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{ else }}
-<script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.js"></script>
 {{ $options := (dict "targetPath" "assets/amzrk2-search.js" "minify" false "target" "es2017" "format" "iife") }}
 {{ $built := resources.Get "js/search.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>

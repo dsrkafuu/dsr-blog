@@ -3,13 +3,16 @@ import { SEARCH_API_URL } from '../plugins/constants';
 
 const API_URL = SEARCH_API_URL;
 
-/* vue components */
+// vue components
 const VSearchInfo = {
   props: {
     status: Boolean,
     data: Object,
   },
   computed: {
+    /**
+     * 信息模块
+     */
     info() {
       if (this.status) {
         if (this.data && this.data.formattedTotalResults && this.data.formattedSearchTime) {
@@ -21,6 +24,9 @@ const VSearchInfo = {
         return '请输入搜索关键词 (空格分隔)';
       }
     },
+    /**
+     * loading 状态指示器
+     */
     loading() {
       const urlParam = new URLSearchParams(window.location.search);
       return !this.status && urlParam.has('q');
@@ -41,32 +47,33 @@ const VSearchList = {
     items: Array,
   },
   template: `
-  <div v-if="status && items" class="search-result">
-    <div class="card" v-for="item of items">
-      <div class="list-box">
-        <div class="list-post">
-          <a :href="item.link" target="_blank">
-            <h2 class="list-title" v-text="item.title"></h2>
-          </a>
-          <div class="list-summary markdown content" v-html="item.htmlSnippet"></div>
+    <div v-if="status && items" class="search-result">
+      <div class="card" v-for="item of items">
+        <div class="list-box">
+          <div class="list-post">
+            <a :href="item.link" target="_blank">
+              <h2 class="list-title" v-text="item.title"></h2>
+            </a>
+            <div class="list-summary markdown content" v-html="item.htmlSnippet"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   `,
 };
 
-/* vue search engine */
-new Vue({
-  el: '#app',
+// vue search engine
+const VApp = {
   components: {
     VSearchInfo,
     VSearchList,
   },
-  data: {
-    status: false,
-    searchInput: '',
-    resultData: {},
+  data() {
+    return {
+      status: false,
+      searchInput: '',
+      resultData: {},
+    };
   },
   mounted() {
     const hasInput = this.parseSearchInput();
@@ -120,8 +127,6 @@ new Vue({
     handleSubmit() {
       if (this.searchInput) {
         // 过滤输入
-        const str = '测试1  　测试2　测试3';
-        str.replaceAll();
         this.searchInput = this.searchInput
           .replaceAll(/　/gi, ' ') // 替换所有中文空格
           .split(' ')
@@ -145,4 +150,7 @@ new Vue({
       }
     },
   },
-});
+};
+
+// mount app
+Vue.createApp(VApp).mount('#app');
