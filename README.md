@@ -1,6 +1,11 @@
 # amzrk2-ng
 
-新版整合式个人站点，基于 Hugo 实现，包含个人信息页面和博客文章整合。
+![GitHub last commit](https://img.shields.io/github/last-commit/amzrk2/amzrk2-ng)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/amzrk2/amzrk2-ng)
+![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m785806765-e426925c7ab1f14278e73b34)
+![GitHub license](https://img.shields.io/github/license/amzrk2/amzrk2-ng)
+
+新版整合式个人站点 [amzrk2.cc](https://amzrk2.cc/)，基于 Hugo 实现，包含个人信息页面和博客文章整合。
 
 基于 Bulma 开发，非面向主题使用者的通用主题，如果有朋友感兴趣也欢迎发 issue、修改或自己使用。
 
@@ -54,7 +59,7 @@
 
 ## LICENSE
 
-<img align="right" alt="FOSSA Status" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Famzrk2%2Famzrk2-ng.svg?type=large" />
+<img align="right" alt="FOSSA" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Famzrk2%2Famzrk2-ng.svg?type=large" />
 
 The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/amzrk2/amzrk2-ng/blob/master/LICENSE).
 
