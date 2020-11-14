@@ -1,6 +1,6 @@
 {{ define "body" }}
 
-<body data-theme="auto" data-section="single">
+<body data-theme="auto" data-section="single" {{ if .Params.hide -}}data-hide="hide"{{- end -}}>
   {{ partial "scripts-theme.html" . }}
   <div id="top" style="height: 0; overflow: hidden;"></div>
   <header>

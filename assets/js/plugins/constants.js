@@ -1,8 +1,10 @@
-// theme system
-export const DOCUMENT_THEME = 'data-theme';
-export const STORAGE_THEME = 'amzrk2-theme';
+// dom body data attributes
+export const BODY_ATTRIBUTE_THEME = 'data-theme';
+export const BODY_ATTRIBUTE_SECTION = 'data-section';
+export const BODY_ATTRIBUTE_HIDE = 'data-hide';
 
-// feature detection
+// local storage keys
+export const STORAGE_THEME = 'amzrk2-theme';
 export const NOTIFICATION_FEATURE_SUPPORTED = 'amzrk2-notification-feature-supported';
 export const NOTIFICATION_FEATURE_DISMISSED = 'amzrk2-notification-feature-dismissed';
 
