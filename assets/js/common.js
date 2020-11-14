@@ -22,6 +22,3 @@ import './components/feature';
 
 /* clipboard */
 import './components/clipboard';
-
-/* hm */
-import './plugins/baiduAnalytics';

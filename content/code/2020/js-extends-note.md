@@ -74,22 +74,24 @@ const subInstance = new SubClass('aName', 18);
 ES6 Class 继承的结果和寄生组合继承基本类似，实现方式略有不同：
 
 ```js
-function SuperClass(name) {
-  this.name = name;
-  this.friends = ['1', '2'];
+class SuperClass {
+  constructor(name) {
+    this.name = name;
+    this.friends = ['1', '2'];
+  }
+  printName() {
+    console.log(this.name);
+  }
 }
-SuperClass.prototype.printName = function () {
-  console.log(this.name);
-};
-function SubClass(name, age) {
-  SuperClass.call(this, name);
-  this.age = age;
+class SubClass extends SuperClass {
+  constructor(name, age) {
+    super(name);
+    this.age = age;
+  }
+  printAge() {
+    console.log(this.age);
+  }
 }
-SubClass.prototype = Object.create(SuperClass.prototype); // 不同之处
-SubClass.prototype.constructor = SubClass;
-SubClass.prototype.printAge = function () {
-  console.log(this.age);
-};
 const subInstance = new SubClass('aName', 18);
 ```
 
