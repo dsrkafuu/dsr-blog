@@ -368,3 +368,10 @@ class Rabbit extends Animal {
 new Animal(); // animal
 new Rabbit(); // animal
 ```
+
+## 模块
+
+- AMD：由 RequireJS 库实现，异步加载
+- CommonJS：为 Node.js 服务器创建的模块系统，同步加载
+- UMD：通用模块系统，与 AMD 和 CommonJS 兼容
+- ES Module：语言级的模块系统 (ES6+)
