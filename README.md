@@ -11,6 +11,8 @@
 
 模板已经独立发布于：<https://github.com/amzrk2/hugo-template-aofuji>
 
+如果你对可以直接使用的 Hugo 主题感兴趣，请见：<https://github.com/amzrk2/hugo-theme-fuji>
+
 ## 部分开发细节
 
 ### Hugo
