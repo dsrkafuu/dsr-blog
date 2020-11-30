@@ -12,14 +12,12 @@ keywords:
 - Currently a college student at [NJUPT](https://www.njupt.edu.cn/)
 - Great fan of [Kyoto Animation](https://www.kyotoanimation.co.jp/)
 - Front end developer newbie, still in the process of self improvement
-- JavaScript, [Vue](https://vuejs.org/), [SCSS](https://sass-lang.com/), and a little bit of [Node.js](https://nodejs.org/)
+- [Vue.js](https://vuejs.org/), [SCSS](https://sass-lang.com/), and a little bit of [Node.js](https://nodejs.org/)
 - [VS Code](https://code.visualstudio.com), always working with 2-space and [Prettier](https://prettier.io/)
 
 ## Contact me
 
-Commonly used identity: `DSRKafuU` and `amzrk2`.
-
-You can try the links and my e-mail address in the info section. To prevent e-mali from being crawled by crawlers, you need to click to get them via JavaScript.
+Commonly used identity: `DSRKafuU` and `amzrk2`. You can try the links in the info section.
 
 ## This site
 

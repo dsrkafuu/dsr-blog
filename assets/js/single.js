@@ -3,5 +3,11 @@
 /* lazyloader */
 import 'lazysizes';
 
+/* toc control */
+import './components/toc';
+
+/* clipboard */
+import './components/clipboard';
+
 /* disqus */
 import './components/comment';
