@@ -52,18 +52,12 @@ main {
   }
 }
 
-// show toc btn instead of rss on mob
-#ctrl-rss {
-  display: block;
-}
+// show toc btn on mob
 #ctrl-toc {
   display: none;
 }
 @media screen and (max-width: $tablet) {
   body[data-section='single'] {
-    #ctrl-rss {
-      display: none;
-    }
     #ctrl-toc {
       display: block;
     }
@@ -72,10 +66,6 @@ main {
 
 // mobile table of contents
 @media screen and (max-width: $tablet) {
-  #TableOfContents {
-    max-height: 100%;
-  }
-
   .card.toc {
     position: fixed;
     top: $amzrk2-navbar-height-sm * 2;
@@ -84,6 +74,15 @@ main {
     border-radius: 0;
     transition: all 250ms ease-in-out;
     max-width: 15rem;
+    display: flex;
+    flex-direction: column;
+  }
+  #TableOfContents {
+    max-height: unset;
+    flex: 0 1 auto;
+  }
+  #back-top {
+    flex: 0 0 auto;
   }
   // remove unused margin after info card
   .column.single-sidebar.is-one-quarter .card:first-child {
