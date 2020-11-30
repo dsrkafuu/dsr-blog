@@ -207,16 +207,16 @@ fetch('http://example.org', {
 
 #### 跨源请求
 
-从浏览器角度来看，有两种跨源请求：简单请求和其他请求。
+同源策略：协议、端口、域名都相同
 
-简单请求必须满足下列条件：
+1. JSONP 利用 script 标签没有跨域限制的特性，让服务器发回可执行的 JS 代码（函数），其参数就是要获取的数据。例如搜狐的当前城市 API，返回的就是 `var returnCitySN = {}`
+2. 手动设置 document.domain，实现二级域名相同
+3. frame.postMessage({})
+4. CORS
 
-- 方法：GET、POST 或 HEAD
-- header：仅能设置部分 header
+CORS 分为简单请求和需预检的请求：
 
-使用 `<form>` 或 `<script>` 标签让浏览器进行简单请求向来是可行的，但浏览器本身不能进行非简单请求。因此对于简单请求，浏览器会立即发送，而对于其他请求，浏览器会发出预检请求，以请求许可。
-
-简单请求流程：
+使用 GET、POST 或 HEAD 方法，请求头的类型和 Content-Type 都在限定内的会发出简单请求：
 
 - 浏览器直接发送带有 Origin 头的请求
 - 对于没有 cookie 的请求，服务器响应：
@@ -225,9 +225,7 @@ fetch('http://example.org', {
   - `Access-Control-Allow-Origin`：与 Origin 的相同
   - `Access-Control-Allow-Credentials`：`true`
 
-此外，要授予 JS 访问除 `Cache-Control`、`Content-Language`、`Content-Type`、`Expires`、`Last-Modified`、`Pragma` 外的任何响应头的权限，服务器应该在 `Access-Control-Expose-Headers` 中列出允许的 header。
-
-非简单请求预检：
+需预检的请求：
 
 - 浏览器将具有以下 header 的 OPTIONS 请求发送到相同的 URL：
   - `Access-Control-Request-Method`：请求方法
