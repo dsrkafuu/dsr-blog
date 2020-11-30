@@ -1,107 +1,18 @@
 ---
-title: 'Web 基础、HTML 与 CSS 笔记'
+title: 'HTML 与 CSS 笔记'
 date: 2019-12-12T10:20:43+08:00
 tags:
   - html
   - css
-description: 'Web 基础、HTML 与 CSS 笔记。'
+description: 'HTML 与 CSS 笔记。'
 image: '/images/2019/html-css-note/header.webp'
 ---
 
-Web 基础、HTML 与 CSS 笔记，随着自己开发中遇到的各种问题而逐渐更新。
+HTML 与 CSS 笔记，随着自己开发中遇到的各种问题而逐渐更新。
 
 <!--more-->
 
-## HTTP
-
-### 从输入 URL 到页面加载完成发生了什么
-
-1. DNS 解析：优先查找缓存
-2. TCP 连接：三次握手；客户端发送报文等待服务器确认，服务端确认发回报文等待建立连接，客户端发送包确认建立连接
-3. 发送 HTTP 请求
-4. 服务器处理请求并返回 HTTP 报文
-5. 浏览器解析渲染页面
-6. 断开连接：TCP 四次挥手
-
-### 浏览器渲染页面的过程
-
-火狐使用 Gecko 渲染引擎，以 WebKit 为例：
-
-1. 首先通过请求得到 HTML
-2. 解析 HTML 生成 DOM 树
-3. 遇见 CSS、图片等则异步加载，不会阻塞 DOM 树的生成
-4. 遇见普通的 JS 则阻塞 DOM 树加载，等到 JS 加载且执行完后继续生成 DOM 树
-5. 将 DOM 树 和 CSS 规则树合并到一起生成渲染树
-6. 遍历渲染树计算节点的信息并绘制到屏幕
-
-### 重绘 repaint 和重排 reflow
-
-1. 重绘是屏幕中一部分的内容重新渲染
-2. 重排则是因为某些元素的尺寸或存在与否改变了，因此需要重新计算渲染树对元素进行排列
-3. 重排必然带来重绘，但重绘不一定会带来重排，比如只改变文字的颜色，盒子的背景色等
-
-### HTTP 概述
-
-全名超文本传输协议，特性：本质是无状态的，使用 Cookies 可以创建有状态的会话；一般基于 TCP/IP 协议，默认端口 80；请求和响应两个部分
-
-### HTTP 请求
-
-```http
-GET / HTTP/1.1
-Host: developer.mozilla.org
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101 Firefox/77.0
-Accept: text/css,*/*;q=0.1
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate, br
-Connection: keep-alive
-Cookie: dwf_sg_task_completion=False; _ga=GA1.2.2100708258.1587297770
-```
-
-- HTTP method：GET、POST、OPTIONS 等
-- 资源路径
-- HTTP 协议版本号
-- 其他 headers
-- 如果是例如 POST，还会包含发送的信息
-
-### HTTP 响应
-
-```http
-HTTP/2 200 OK
-content-type: image/png
-content-length: 63794
-last-modified: Tue, 17 Dec 2019 00:26:34 GMT
-server: AmazonS3
-date: Mon, 08 Jun 2020 11:02:02 GMT
-cache-control: public,max-age=31536000,immutable
-age: 239312
-
-<!DOCTYPE html>
-<html lang="zh">
-...
-```
-
-- HTTP 版本号
-- 状态码和状态信息：一般由三位构成
-  - 1xx 表示请求已经接受
-  - 2xx 表示请求已经处理
-  - 3xx 重定向
-  - 4xx 一般为客户端错误
-  - 5xx 一般为服务器错误
-  - 常见的：200 OK；403 Forbidden；404 Not Found；502 Bad Gateway
-- 其他 headers
-- 信息
-
-### 常见的信息头
-
-- Host：服务器域名
-- User-Agent：UA
-- Cookie：Cookie 会一直被携带在 HTTP 请求内发送给服务器，`localStorage` 和 `sessionStorage` 仅和浏览器本地有关，且 `sessionStorage` 仅在当前浏览器窗口关闭之前有效
-
-### RESTful API
-
-[阮一峰的博客](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
-
-## HTML5
+## HTML
 
 ### 新增元素
 
@@ -128,6 +39,54 @@ age: 239312
 ### File API
 
 [前往 MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/File/Using_files_from_web_applications)
+
+## 常规布局
+
+### 水平居中
+
+- 文本 / 行内元素 / 行内块级元素：`text-align: center;`
+- 单个块级元素：`width: 100px; margin: 0 auto;`
+- 多个块级元素：子元素 `display: inline-block;`，父元素 `text-align: center;`
+- 绝对定位
+- Flexbox：`display: flex; justify-content: center;`
+
+## BFC
+
+BFC 即块级格式上下文，当元素具有 BFC 特性后就变成了一个独立的容器，内部的元素不会在布局上不会影响到任何外部的元素。
+
+### 触发要求
+
+- 浮动元素 (`float: none`; 以外的)
+- 绝对定位元素 (`absolute` 和 `fixed`)
+- `display` 设置为 `inline-block`、`tabel-cells` 和 `flex`
+- `overflow` 设置为 `visible` 以外的值
+
+### 用途
+
+基础 clearfix (清除浮动)：
+
+高度不正常的父元素设置 overflow 来触发 BFC。
+
+现代 clearfix (清除浮动)：
+
+```css
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+```
+
+阻止元素被浮动元素覆盖：
+
+```html
+<div style="height: 100px; width: 100px; float: left; background: lightblue">一个左浮动的元素</div>
+<div style="width: 100%; height: 200px; background: #eee">
+  一个没有设置浮动, 也没有触发 BFC 的元素
+</div>
+```
+
+在这种情况下，蓝色的小方块会覆盖在灰色的上层，产生类似 word 图片嵌入的文字包裹效果。 给灰色的方块添加 `overflow` 触发 BFC，则可以实现自适应两栏布局。
 
 ## 盒模型
 
