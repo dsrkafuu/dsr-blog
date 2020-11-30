@@ -12,34 +12,6 @@ HTML 与 CSS 笔记，随着自己开发中遇到的各种问题而逐渐更新�
 
 <!--more-->
 
-## HTML
-
-### 新增元素
-
-[前往 W3school CN](https://www.w3school.com.cn/html/html5_new_elements.asp)
-
-### 置换元素
-
-浏览器根据元素的标签和属性，来决定元素的具体显示内容。
-
-`<img> <input> <textarea> <select> <object>`
-
-置换元素即是图片在 Firefox 浏览器内 (如搭配 Flexbox 使用时) 底部出现白条的原因，显式设置 `display: block;` 即可解决。
-
-### source 标签和 srcset
-
-```html
-<picture>
-  <source srcset="/assets/img/avatar.webp" type="image/webp" />
-  <source srcset="/assets/img/avatar.jpg" type="image/jpeg" />
-  <img src="/assets/img/avatar.jpg" alt="DSRKafuU Avatar" />
-</picture>
-```
-
-### File API
-
-[前往 MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/File/Using_files_from_web_applications)
-
 ## 常规布局
 
 ### 水平居中
@@ -126,66 +98,3 @@ BFC 即块级格式上下文，当元素具有 BFC 特性后就变成了一个�
 | `#ident`                                  | 0100 | 1 ID 选择器                  |
 
 覆盖 `!important` 唯一的办法就是另一个 `!important` 具有相同优先级而且顺序靠后，或者更高优先级。
-
-## 图片防抖占位
-
-```html
-<div class="wrapper">
-  <img src="/api/detail/0001.jpg" />
-</div>
-```
-
-以长宽比 55:100 为例
-
-**使用 padding：**
-
-```css
-.banner {
-  width: 100%;
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 55%;
-}
-```
-
-**使用 viewport (移动端)：**
-
-```css
-.banner {
-  // width: 100vw;
-  height: 55vh;
-}
-```
-
-注意如果显式规定 `100vw` 的 `width` 可能会导致在使用 Chromium 的控制台模拟移动端 DEBUG 时横向宽度溢出，一般使用默认的 `display: block;` 即可
-
-## SCSS 实用性
-
-MAP LIST 循环工具类实现：
-
-```scss
-// COLORS
-// 名称颜色值冲突需要注意,
-$colors: (
-  'primary': #db9e3f,
-  'white': #fff,
-  'grey': #999,
-);
-@each $key, $var in $colors {
-  .color-#{$key} {
-    color: $var;
-  }
-  .color-bg-#{$key} {
-    background-color: $var;
-  }
-}
-// ALIGN
-$aligns: (left, center, right);
-@each $var in $aligns {
-  .text-#{$var} {
-    text-align: $var;
-  }
-}
-// 直接获取
-font-size: map-get($font-sizes, 'md');
-```
