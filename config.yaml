@@ -9,6 +9,8 @@ enableRobotsTXT: true
 taxonomies:
   tag: "tags"
 paginate: 10
+disableKinds:
+  - "RSS"
 
 # language
 languageCode: "zh-cn" # rss
@@ -18,7 +20,6 @@ defaultContentLanguage: "zh-hans" # html
 params:
   # sidebar info
   author: "DSRKafuU"
-  email: "amzrk2@outlook.com"
   para: "是卡夫"
   avatar: "/images/_wk_256p.webp"
   image: "/images/_header.webp"
@@ -49,12 +50,9 @@ menu:
     - name: "#icon-twitter"
       url: "https://twitter.com/amzrk2"
       weight: 2
-    - name: "#icon-envelope-open-text"
-      url: "mailto:mail@fake.google"
-      weight: 3
     - name: "#icon-steam"
       url: "https://steamcommunity.com/id/amzrk2/"
-      weight: 4
+      weight: 3
 
 # markup
 markup:

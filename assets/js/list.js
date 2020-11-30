@@ -2,6 +2,3 @@
 
 /* lazyloader */
 import 'lazysizes';
-
-/* mail */
-import './components/mail';

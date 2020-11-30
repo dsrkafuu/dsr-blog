@@ -11,14 +11,5 @@ document.getElementById('ctrl-adjust').addEventListener('click', () => {
   themeManager.switchTheme();
 });
 
-/* back to top */
-import './components/backTop';
-
-/* toc control */
-import './components/toc';
-
 /* feature detection */
 import './components/feature';
-
-/* clipboard */
-import './components/clipboard';
