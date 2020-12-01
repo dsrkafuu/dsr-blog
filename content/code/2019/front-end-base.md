@@ -4,6 +4,7 @@ date: 2019-09-07T23:00:01+08:00
 tags:
   - web
 description: '前端应用笔记。'
+image: '/images/2019/html-css-note/header.webp'
 ---
 
 前端应用笔记。
@@ -18,19 +19,11 @@ description: '前端应用笔记。'
 2. 减小资源体积：gzip (服务器) ，webp 图片 (`picture` 和 `srcset`)
 3. 缓存：CDN 缓存，HTTP 缓存 (`Cache-Control`，`Last-Modified`，`Etag 304`) ，Service Worker (拦截 HTTP 请求)
 
-- `Cache-Control`，`max-age` 内浏览器直接获取资源，不发送 HTTP 请求
-- 若 `Cache-Control` 过期但服务器设置过 `Etag` 发送响应 (比如取文件 md5 作为 `Etag`) ，下一次客户端发送相同请求时，会设置 `If-None-Match` 为这个 md5，若服务器判断一致则返回 `304`，不下载文件直接获取资源
-- 客户端带上 `If-Modified-Since` 发送请求，服务器判断未修改过则 `304`，不下载文件直接获取资源
-
-### 数据
-
-1. 图片懒加载、进度条显示
-2. 数据请求的本地缓存：`localStorage`，`sessionStorage`，Service Worker
-
 ### DOM 与渲染
 
 1. 基础内容：头部 CSS (异步) ，JS 的 `async` 与 `defer`
-2. DOM 操作：减少大规模 DOM 操作，多使用 CSS 动画和 `requestAnimationFrame`
+2. DOM 操作：减少大规模 DOM 操作，使用 class 修改样式，使用 CSS 动画和 `requestAnimationFrame`
+3. 事件代理：列表内每个元素设置一个事件 vs 整个列表设置事件 (可冒泡)
 
 ## 移动 Web 开发
 
