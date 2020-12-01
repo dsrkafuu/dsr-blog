@@ -19,8 +19,14 @@ HTML 与 CSS 笔记，随着自己开发中遇到的各种问题而逐渐更新�
 - 文本 / 行内元素 / 行内块级元素：`text-align: center;`
 - 单个块级元素：`width: 100px; margin: 0 auto;`
 - 多个块级元素：子元素 `display: inline-block;`，父元素 `text-align: center;`
-- 绝对定位
 - Flexbox：`display: flex; justify-content: center;`
+
+### 垂直居中
+
+- 文本 / 行内元素 / 行内块级元素：`height: 100px; line-height: 100px;`
+- 图片：`vertical-align: middle;`
+- 单个块级元素：`display: table-cell; vertical-align: middle;`，宽高不定
+- Flexbox：`display: flex; align-items: center;`
 
 ## BFC
 
@@ -30,7 +36,7 @@ BFC 即块级格式上下文，当元素具有 BFC 特性后就变成了一个�
 
 - 浮动元素 (`float: none`; 以外的)
 - 绝对定位元素 (`absolute` 和 `fixed`)
-- `display` 设置为 `inline-block`、`tabel-cells` 和 `flex`
+- `display` 设置为 `inline-block`、`tabel-cell` 和 `flex`
 - `overflow` 设置为 `visible` 以外的值
 
 ### 用途
