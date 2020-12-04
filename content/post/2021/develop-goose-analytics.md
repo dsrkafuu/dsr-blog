@@ -20,6 +20,35 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 作为一个重要的 [Vue.js](https://vuejs.org/) 练手与应用项目，在前端的管理面板 (也就是数据展示面板) 自然是使用它了。在最初开始计划这个项目的时候，[Vue 3](https://v3.vuejs.org/) 其本身以及新的[组合式 API](https://v3.vuejs.org/guide/composition-api-introduction.html) 的周边生态相对还不是很完善，因此项目选用了 Vue 2 作为前端的基础框架，但在编写代码时也同时考虑了 Vue 3 的[升级兼容性](https://v3.vuejs.org/guide/migration/introduction.html)。
 
-在后端方便，为了开发的方便以及对 [Vercel](https://vercel.com/) 的 serverless 功能的适配，选用了 [express](https://expressjs.com/) 作为基础框架。数据库则是选择了 [MongoDB](https://www.mongodb.com/)，对于一般的使用，[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) 提供的 500 连接数免费数据库非常的完美，并且数据库本身由于 [mongoose](https://mongoosejs.com/) 的协助使用也十分便捷。
+在后端方便，为了开发的方便以及对 [Vercel](https://vercel.com/) 的 serverless 功能的适配，选用了 [express](https://expressjs.com/) 作为基础框架。数据库则是选择了 [MongoDB](https://www.mongodb.com/)，对于一般的使用，[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) 提供的 500 连接数免费数据库非常简单方便，并且数据库本身由于 [mongoose](https://mongoosejs.com/) 的协助使用也十分便捷。
 
-在收集代码方面，计划不借助 [Babel](https://babeljs.io/) 转译或是其他例如 [rollup](https://rollupjs.org/) 之类的工具打包，只通过 [terser](https://terser.org/) 进行一次压缩来尽可能地缩小文件大小。
+在 tracker 代码方面，计划不借助 [Babel](https://babeljs.io/) 转译或是其他例如 [rollup](https://rollupjs.org/) 之类的工具打包，只通过 [terser](https://terser.org/) 进行一次压缩来尽可能地缩小文件大小。
+
+## 代码规范
+
+代码规范分为两部分，格式与 lint。
+
+- 格式：[Prettier](https://prettier.io/) 的 VSCode 插件 + lint-staged 用于 pre-commit hook
+- lint：
+
+## Trakcer 代码
+
+在什么都没有的最初开发阶段，首要目标是先把 tracker 写完，DEBUG 则是直接将数据发送到 [JSONPlaceholder](https://jsonplaceholder.typicode.com/)。等到 tracker 完成了，再考虑后端的数据库结构设计。
+
+使用类似 Google 的 [Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/) 的 key 名向后端传送数据。以下是计划收集的数据：
+
+- `view`：页面访问
+  - `path`：`location.pathname`
+  - `ref`：`document.referrer`
+  - `lang`：用户语言
+  - `sc`：屏幕分辨率，`screen` 大小乘 `dpr`
+  - 浏览器：服务端[通过 UA 判断](https://www.npmjs.com/package/bowser)
+  - 操作系统：服务端[通过 UA 判断](https://www.npmjs.com/package/bowser)
+  - 国家 / 地区：服务端通过 IP 判断，基于 [node-maxmind](https://www.npmjs.com/package/maxmind) 与[免费 GeoIP2 数据库](https://dev.maxmind.com/geoip/geoip2/geolite2/)
+- `perf`：页面性能数据，来源于 [Navigation Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API)
+  - `res`：服务器响应时间
+  - `dcl`：`DOMContentLoaded`
+  - `load`：`onload`
+- `event`：页面事件，在 `window` 上注册全局方法顾调用
+  - name：自定义事件名
+  - type：事件类型 (传入事件对象或事件名)
