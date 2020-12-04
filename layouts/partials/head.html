@@ -45,3 +45,9 @@
 {{ $css := resources.Get "scss/index.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 {{ end }}
+
+{{/*  <script>
+  window.GOOSE_ID = 'GOOSE-D143D34DS1';
+  window.GOOSE_API = 'https://jsonplaceholder.typicode.com/posts/';
+</script>
+<script async src="/tracker.js"></script>  */}}
