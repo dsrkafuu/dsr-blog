@@ -1,5 +1,5 @@
 ---
-title: 'HTML 与 CSS 笔记'
+title: 'HTML 与 CSS'
 date: 2019-12-12T10:20:43+08:00
 tags:
   - html
@@ -8,7 +8,7 @@ description: 'HTML 与 CSS 笔记。'
 image: '/images/2019/html-css-note/header.webp'
 ---
 
-HTML 与 CSS 笔记，随着自己开发中遇到的各种问题而逐渐更新。
+HTML 与 CSS 笔记。笔记将会随学习进度更新。
 
 <!--more-->
 

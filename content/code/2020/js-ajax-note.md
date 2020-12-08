@@ -1,6 +1,6 @@
 ---
-title: 'JavaScript AJAX 快速参考笔记'
-date: 2020-10-13T14:50:43+08:00
+title: 'JavaScript AJAX 快速参考'
+date: 2020-09-23T14:50:43+08:00
 tags:
   - javascript
 description: '整理 API 也是一种学习方法。'

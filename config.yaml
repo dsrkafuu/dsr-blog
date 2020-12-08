@@ -34,7 +34,7 @@ menu:
     - name: "文章"
       url: "/post/"
       weight: 1
-    - name: "代码"
+    - name: "笔记"
       url: "/code/"
       weight: 2
     - name: "标签"

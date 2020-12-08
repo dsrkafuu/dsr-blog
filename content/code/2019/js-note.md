@@ -1,13 +1,13 @@
 ---
-title: 'JavaScript 基础关注点笔记'
-date: 2020-10-31T11:14:40+08:00
+title: 'JavaScript 基础'
+date: 2019-12-21T11:14:40+08:00
 tags:
   - javascript
 description: 'JavaScript 踩坑大全。'
 image: '/images/2020/js-extends-note/header.webp'
 ---
 
-JavaScript 基础关注点笔记，随着自己开发中遇到的各种问题而逐渐更新。
+JavaScript 基础关注点笔记。笔记将会随学习进度更新。
 
 <!--more-->
 
