@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript 继承方式简单笔记'
+title: 'JavaScript 继承与原型链'
 date: 2020-08-02T16:19:39+08:00
 tags:
   - javascript

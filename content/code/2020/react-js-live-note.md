@@ -1,5 +1,5 @@
 ---
-title: 'React 即时笔记'
+title: 'React.js'
 date: 2020-07-19T09:26:55+08:00
 tags:
   - 'react'

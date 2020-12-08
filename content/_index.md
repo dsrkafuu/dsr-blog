@@ -12,7 +12,7 @@ keywords:
 - Currently a college student at [NJUPT](https://www.njupt.edu.cn/)
 - Great fan of [Kyoto Animation](https://www.kyotoanimation.co.jp/)
 - Front end developer newbie, still in the process of self improvement
-- [Vue.js](https://vuejs.org/), [SCSS](https://sass-lang.com/), and a little bit of [Node.js](https://nodejs.org/)
+- [Vue.js](https://vuejs.org/), [React.js](https://reactjs.org/), and a little bit of [Node.js](https://nodejs.org/)
 - [VS Code](https://code.visualstudio.com), always working with 2-space and [Prettier](https://prettier.io/)
 
 ## Contact me
@@ -29,6 +29,6 @@ Also, as the site is already using [WebP](https://developers.google.com/speed/we
 
 ### Intention
 
-In early 2020, I wrote a new Hugo theme [Fuji](https://github.com/amzrk2/hugo-theme-fuji) for myself to use on my personal blog. From then until the middle of the year, I gradually built up my notes and personal information sites to keep track of my learning progress.
+In late 2019, I wrote a new Hugo theme [Fuji](https://github.com/amzrk2/hugo-theme-fuji) for myself to use on my personal blog. From then until the end of the year, I gradually built up my notes and personal information sites to keep track of my learning progress.
 
 After seeing that the sites were spread across different services and platforms and became cumbersome to maintain, I came up with the idea of a consolidated site. For ease of deployment, SEO optimization, and deconstruction of static articles as the main content, I decided to use the familiar Hugo framework to build a more intuitive web interface.

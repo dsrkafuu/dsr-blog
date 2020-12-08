@@ -1,14 +1,15 @@
 ---
-title: '计算机专业基础笔记'
+title: '计算机专业基础'
 date: 2019-01-07T11:05:30+08:00
 tags:
   - ds
   - os
   - algorithm
-description: '计算机专业基础笔记。'
+description: '计算机专业基础相关笔记。'
+image: '/images/2019/cs-basic-note/header.webp'
 ---
 
-计算机专业基础相关笔记。
+计算机专业基础相关笔记。笔记将会随学习进度更新。
 
 <!--more-->
 
