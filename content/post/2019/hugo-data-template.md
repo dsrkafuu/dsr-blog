@@ -15,7 +15,7 @@ image: '/images/2019/hugo-custom-pagination/header.webp'
 
 ## 原来是什么样的
 
-顺着 [K2Station](https://amzrk2.cc/) 的现有内容，依旧是基于 Bootstrap 4，在一个大卡片中使用胶囊导航，内置小卡片，以下是原文代码：
+顺着 [K2Station](https://dsrca.amzrk2.cc/) 的现有内容，依旧是基于 Bootstrap 4，在一个大卡片中使用胶囊导航，内置小卡片，以下是原文代码：
 
 ```html
 <div class="card-body tab-content">
@@ -33,7 +33,6 @@ image: '/images/2019/hugo-custom-pagination/header.webp'
           </div>
         </div>
       </div>
-      ...
       <div class="col-md-4">
         <div class="card mb-3">
           <div class="card-body">
@@ -43,9 +42,9 @@ image: '/images/2019/hugo-custom-pagination/header.webp'
             <p class="card-text">
               2012 年 Falcom 宣布空之轨迹系列移植至 PS3 平台，并对画面进行高清重制。
             </p>
-            <a href="https://www.falcom.co.jp/sora3rd_psp/hd/" target="_blank" class="card-link"
-              >官方网站</a
-            >
+            <a href="https://www.falcom.co.jp/sora3rd_psp/hd/" target="_blank" class="card-link">
+              官方网站
+            </a>
             <a href="#" target="_blank" class="card-link">相关链接</a>
           </div>
         </div>
@@ -61,11 +60,11 @@ image: '/images/2019/hugo-custom-pagination/header.webp'
 
 ## 模板运用
 
-原本的 html 代码是直接写在 `./content/kiseki/_index.html` 内的，为了用上 Data 模板需要做一些改动。
+原本的 html 代码是直接写在 `content/kiseki/_index.html` 内的，为了用上 Data 模板需要做一些改动。
 
-`./content/kiseki/_index.html` 内仅保留 Frontmatter，内容置空，全部内容直接在 `./layout/kiseki/list.html` 内管理。
+`content/kiseki/_index.html` 内仅保留 Front Matter，内容置空，全部内容直接在 `layout/kiseki/list.html` 内管理。
 
-以下是 `./data/kiseki.json` 的内容示例：
+以下是 `data/kiseki.json` 的内容示例：
 
 ```json
 {
@@ -90,7 +89,7 @@ image: '/images/2019/hugo-custom-pagination/header.webp'
 }
 ```
 
-以下是 `./layout/kiseki/list.html` 的内容示例：
+以下是 `layout/kiseki/list.html` 的内容示例：
 
 ```html
 <div class="tab-pane fade show active" id="kiseki-sora">
