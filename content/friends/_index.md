@@ -1,6 +1,6 @@
 ---
 title: '友链'
-description: 'DSRKafuU 个人站点友情链接页面'
+description: 'DSRKafuU 个人博客友情链接页面'
 keywords:
   - DSRKafuU
   - amzrk2

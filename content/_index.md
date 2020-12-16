@@ -1,10 +1,11 @@
 ---
 title: '主页'
-description: 'DSRKafuU 个人站点主页'
+description: 'DSRKafuU 个人博客主页。'
 keywords:
   - DSRKafuU
   - amzrk2
-  - 个人主页
+  - DSRCA
+  - 个人博客
 ---
 
 ## About me
