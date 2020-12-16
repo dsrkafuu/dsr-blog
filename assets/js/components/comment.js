@@ -36,6 +36,7 @@ const loadComment = () => {
   logInfo('Comment area loaded');
 };
 
+/* IntersectionObserver 懒加载 */
 const needComment = document.getElementById('gitalk-container');
 if (needComment) {
   const commentPromise = new Promise((resolve, reject) => {

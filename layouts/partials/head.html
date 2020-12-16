@@ -1,6 +1,6 @@
 <!-- basic meta -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="HandheldFriendly" content="True" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -27,9 +27,9 @@
 <meta name="description" content="{{ .Params.description }}" />
 {{ end }}
 {{ if .Params.tags }}
-<meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
+<meta name="keywords" content="{{ delimit .Params.tags "," }}" />
 {{ else if .Params.keywords }}
-<meta name="keywords" content="{{ delimit .Params.keywords ", " }}" />
+<meta name="keywords" content="{{ delimit .Params.keywords "," }}" />
 {{ end }}
 
 <!-- $ og -->
@@ -45,9 +45,3 @@
 {{ $css := resources.Get "scss/index.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 {{ end }}
-
-{{/*  <script>
-  window.GOOSE_ID = 'GOOSE-D143D34DS1';
-  window.GOOSE_API = 'https://jsonplaceholder.typicode.com/posts/';
-</script>
-<script async src="/tracker.js"></script>  */}}

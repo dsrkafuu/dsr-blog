@@ -1,4 +1,4 @@
-import { COPY_LICENSE, BODY_ATTRIBUTE_SECTION, BODY_ATTRIBUTE_HIDE } from '../plugins/constants';
+import { COPY_LICENSE, BODY_ATTRIBUTE_SECTION } from '../plugins/constants';
 
 /**
  * 获取父节点
@@ -25,10 +25,7 @@ function getAllParentNodes(node, count = 4) {
 /**
  * 剪贴板拦截
  */
-if (
-  !document.body.getAttribute(BODY_ATTRIBUTE_HIDE) &&
-  document.body.getAttribute(BODY_ATTRIBUTE_SECTION) === 'single'
-) {
+if (document.body.getAttribute(BODY_ATTRIBUTE_SECTION) === 'single') {
   document.addEventListener('copy', (event) => {
     if (event.clipboardData) {
       const selection = window.getSelection(); // 获取选择的内容
@@ -43,7 +40,7 @@ if (
         let copiedText = selection.toString();
         if (copiedText) {
           event.preventDefault(); // 防止默认行为复制原文内容
-          event.clipboardData.setData('text/plain', `${copiedText}\n\n${COPY_LICENSE}`);
+          event.clipboardData.setData('text/plain', `${copiedText}\n${COPY_LICENSE}`);
         }
       }
     }
