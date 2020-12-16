@@ -1,4 +1,4 @@
-/*! amzrk2-ng | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License */
+/*! github.com/amzrk2/dsr-ca | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License */
 
 /* iconfont */
 import iconfont from '../svg/iconfont';
