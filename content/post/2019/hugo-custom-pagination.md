@@ -11,7 +11,9 @@ image: '/images/2019/hugo-custom-pagination/header.webp'
 
 从抛弃 Jekyll 转向 Hugo 搞毫无用处的静态站到现在，全程就是在不停的 `Ctrl+C` 和 `Ctrl+V`。别人的主题用久了也腻了，于是翻来找去从 [printempw](https://github.com/printempw) 那儿继续 `Ctrl+C` 了一个主题，不过这次是自己从零开始。
 
-在写分页导航的时候遇到了不少问题，也查了不少资料，简单记录一下。<!--more-->
+在写分页导航的时候遇到了不少问题，也查了不少资料，简单记录一下。
+
+<!--more-->
 
 ## 自定义 Hugo 的分页导航栏
 

@@ -60,7 +60,7 @@ image: '/images/2020/potplayer-with-lav-fliters/header.webp'
 
 音频输出改为 WASAPI 渲染器，关闭让声音变得极其难受的规格化。
 
-![视频渲染设置示意图](/images/2020/potplayer-with-lav-fliters/20200419210927.webp)
+![音频渲染设置示意图](/images/2020/potplayer-with-lav-fliters/20200419210927.webp)
 
 ## 测试 LAVFilters 启用状态
 
