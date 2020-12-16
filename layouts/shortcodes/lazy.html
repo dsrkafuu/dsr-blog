@@ -1,18 +1,15 @@
 {{ if len .Params | eq 3 }}
 <p>
 <div class="image-wrapper ratio-{{ index .Params 0 }}">
-  <a class="image-link" href="{{ index .Params 2 | safeURL | relURL }}" target="_blank"
-     rel="noopener">
-    <img class="lazyload" data-src="{{ index .Params 2 | safeURL | relURL }}"
-         alt="{{ index .Params 1 }}" />
+  <a class="image-link" href="{{ index .Params 2 | safeURL | relURL }}" target="_blank" rel="noopener">
+    <img class="lazyload" data-src="{{ index .Params 2 | safeURL | relURL }}" alt="{{ index .Params 1 }}" />
   </a>
 </div>
 </p>
 {{ else if len .Params | eq 2 }}
 <p>
 <div class="image-wrapper ratio-{{ index .Params 0 }}">
-  <a class="image-link" href="{{ index .Params 1 | safeURL | relURL }}" target="_blank"
-     rel="noopener">
+  <a class="image-link" href="{{ index .Params 1 | safeURL | relURL }}" target="_blank" rel="noopener">
     <img class="lazyload" data-src="{{ index .Params 1 | safeURL | relURL }}" />
   </a>
 </div>

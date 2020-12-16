@@ -1,11 +1,11 @@
 {
-  "name": "amzrk2-ng",
-  "version": "5.4.3",
+  "name": "dsr-ca",
+  "version": "5.5.0",
   "author": "DSRKafuU <amzrk2@outlook.com> (https://amzrk2.cc/)",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amzrk2/amzrk2-ng"
+    "url": "https://github.com/amzrk2/dsr-ca"
   },
   "dependencies": {
     "bulma": "~0.9.1",
@@ -15,28 +15,18 @@
     "normalize.css": "~8.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.4",
-    "cross-env": "^7.0.2",
+    "autoprefixer": "^10.1.0",
+    "cross-env": "^7.0.3",
     "cssnano": "^4.1.10",
     "html-minifier-terser": "^5.1.1",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.1.10",
+    "postcss": "^8.2.1",
     "terser": "^5.5.1"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development hugo server --gc",
+    "dev": "cross-env NODE_ENV=development hugo server --gc",
     "compile": "cross-env NODE_ENV=production hugo --cleanDestinationDir --gc",
     "minify": "cross-env NODE_ENV=production node ./minify.js",
     "build": "cross-env NODE_ENV=production npm-run-all compile minify"
-  },
-  "browserslist": {
-    "production": [
-      "defaults"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }

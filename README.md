@@ -1,17 +1,13 @@
-# amzrk2-ng
+# dsr-ca
 
-![GitHub last commit](https://img.shields.io/github/last-commit/amzrk2/amzrk2-ng)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/amzrk2/amzrk2-ng)
+![GitHub last commit](https://img.shields.io/github/last-commit/amzrk2/dsr-ca)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/amzrk2/dsr-ca)
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m785806765-e426925c7ab1f14278e73b34)
-![GitHub license](https://img.shields.io/github/license/amzrk2/amzrk2-ng)
+![GitHub license](https://img.shields.io/github/license/amzrk2/dsr-ca)
 
 新版整合式个人站点 [amzrk2.cc](https://amzrk2.cc/)，基于 Hugo 实现，包含个人信息页面和博客文章整合。
 
-基于 Bulma 开发，非面向主题使用者的通用主题，如果有朋友感兴趣也欢迎发 issue、修改或自己使用。
-
-模板已经独立发布于：<https://github.com/amzrk2/hugo-template-aofuji>
-
-如果你对可以直接使用的 Hugo 主题感兴趣，请见：<https://github.com/amzrk2/hugo-theme-fuji>
+基于 Bulma 开发，非面向主题使用者的通用主题，如果有朋友感兴趣也欢迎发 issue、修改或自己使用。模板已经独立发布于：<https://github.com/amzrk2/hugo-template-aofuji>；如果你对可以直接使用的 Hugo 主题感兴趣，请见：<https://github.com/amzrk2/hugo-theme-fuji>
 
 ## 部分开发细节
 
@@ -41,9 +37,7 @@
 |        theme        |                internal                |   common    |
 |     toc-control     |                internal                |   common    |
 |      modernizr      |        <https://modernizr.com/>        |   common    |
-|        umami        |  <https://github.com/mikecao/umami/>   |   common    |
 |      lazysizes      | <https://github.com/aFarkas/lazysizes> | list single |
-|  email-protection   |                internal                | list search |
 |  vue.js\[browser\]  |          <https://vuejs.org/>          |   search    |
 | prism.js\[browser\] |         <https://prismjs.com/>         |   single    |
 |       gitalk        |  <https://github.com/gitalk/gitalk/>   |   single    |
@@ -61,8 +55,8 @@
 
 ## LICENSE
 
-<img align="right" alt="FOSSA" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Famzrk2%2Famzrk2-ng.svg?type=large" />
+<img align="right" alt="FOSSA" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Famzrk2%2Fdsr-ca.svg?type=large" />
 
-The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/amzrk2/amzrk2-ng/blob/master/LICENSE).
+The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/amzrk2/dsr-ca/blob/master/LICENSE).
 
 **Copyright © 2018-present DSRKafuU <https://amzrk2.cc/>**
