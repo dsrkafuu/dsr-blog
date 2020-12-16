@@ -41,8 +41,8 @@ image: '/images/2019/cs-web-note/header.webp'
 
 ### async 和 defer
 
-- `async`：异步下载，执行时阻塞，可能在任何时候执行，顺序由加载完成先后决定
-- `defer`：异步下载，直到 DOMContentLoaded 后才执行，顺序由定义先后决定
+- `async`：异步下载，执行时阻塞，可能在任何时候执行，顺序与定义先后无关
+- `defer`：异步下载，直到 DOMContentLoaded 触发前才执行，顺序由定义先后决定
 - 动态插入：除非显式设置 `false`，否则类似 `async`
 - 一起使用：`async` 优先，浏览器不支持时回退到 `defer`
 
