@@ -26,6 +26,9 @@
               <article class="markdown content">
                 {{ .Content }}
               </article>
+              <div class="license markdown content">
+                <blockquote>{{ .Site.Params.license }}</blockquote>
+              </div>
             </div>
           </div>
           {{- if ne .Params.comments false -}}
