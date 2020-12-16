@@ -20,7 +20,7 @@
 - Fromt matters:
   - `toc: false`
   - `comments: false`
-  - `hide: true`
+  - `license: false`
 
 ### JS
 
