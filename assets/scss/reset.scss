@@ -50,11 +50,23 @@ h6 {
   }
 
   ul {
-    margin-left: 1.3rem;
+    margin-left: 1.4rem;
+
+    li ul {
+      margin-left: 1rem;
+    }
   }
 
   ol {
-    margin-left: 1.5rem;
+    margin-left: 1.6rem;
+
+    li ol {
+      margin-left: 1.1rem;
+    }
+  }
+
+  li::marker {
+    color: var(--color-primary);
   }
 
   img {
