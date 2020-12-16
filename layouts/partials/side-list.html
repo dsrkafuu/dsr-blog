@@ -1,5 +1,5 @@
 <div class="sticky">
-  {{ partial "card-info.html" . }}
+  {{ partial "side-info.html" . }}
   <div class="card card-links">
     {{ range .Site.Menus.links }}
     <a class="links-item{{ if (eq (substr .URL 0 6) "mailto") }} links-email{{ end }}"

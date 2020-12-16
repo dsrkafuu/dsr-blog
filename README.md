@@ -31,16 +31,19 @@
 - 自定义搜索通过 CloudFlare Workers 代理的 Google Custom Search 实现
 - 自定义搜索模拟标准搜索表单行为，自动替换中文空格等
 
-|        模块         |                  链接                  |    用途     |
-| :-----------------: | :------------------------------------: | :---------: |
-|      iconfont       |                internal                |   common    |
-|        theme        |                internal                |   common    |
-|     toc-control     |                internal                |   common    |
-|      modernizr      |        <https://modernizr.com/>        |   common    |
-|      lazysizes      | <https://github.com/aFarkas/lazysizes> | list single |
-|  vue.js\[browser\]  |          <https://vuejs.org/>          |   search    |
-| prism.js\[browser\] |         <https://prismjs.com/>         |   single    |
-|       gitalk        |  <https://github.com/gitalk/gitalk/>   |   single    |
+|      模块       |                  链接                  |  用途  |
+| :-------------: | :------------------------------------: | :----: |
+|    iconfont     |                internal                | common |
+|    clipboard    |                internal                | common |
+|     comment     |                internal                | common |
+|    modernizr    |        <https://modernizr.com/>        | common |
+|      theme      |                internal                | common |
+|   toc-control   |                internal                | common |
+|    lazysizes    | <https://github.com/aFarkas/lazysizes> | common |
+|  cf-gsc-proxy   |                internal                | search |
+|  vue.js\[cdn\]  |          <https://vuejs.org/>          | search |
+| prism.js\[cdn\] |         <https://prismjs.com/>         | single |
+|     gitalk      |  <https://github.com/gitalk/gitalk/>   | single |
 
 ### CSS
 
