@@ -144,8 +144,7 @@ const VApp = {
     filtResult(resultData) {
       if (Array.isArray(resultData.items)) {
         resultData.items.forEach((el) => {
-          el.title = el.title.replace(/ ?\| DSRKafuU/gi, '');
-          el.title = el.title.replace(/ ?- DSRKafuU/gi, '');
+          el.title = el.title.replace(/ ?(\||-) ?(DSRKafuU|DSRCA)/gi, '');
         });
       }
     },
