@@ -1,6 +1,6 @@
 /*! Google Custom Search in CloudFlare Workers | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License */
 
-const ALLOWED_ORIGIN = [/^https?:\/\/amzrk2\.cc/];
+const ALLOWED_ORIGIN = [/^https?:\/\/amzrk2\.cc/, /^https?:\/\/blog\.amzrk2\.cc/];
 const ALLOWED_PATH = /^\/search(.*)/;
 
 const API_URL = 'https://www.googleapis.com/customsearch/v1';
