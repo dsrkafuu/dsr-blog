@@ -30,6 +30,6 @@ Also, as the site is already using [WebP](https://developers.google.com/speed/we
 
 ### Intention
 
-In late 2019, I wrote a new Hugo theme [Fuji](https://github.com/amzrk2/hugo-theme-fuji) for myself to use on my personal blog. From then until the end of the year, I gradually built up my notes and personal information sites to keep track of my learning progress.
+In late 2019, I wrote a new Hugo theme [Fuji](https://github.com/amzrk2/hugo-theme-fuji) for myself to use on my personal blog. From then until the end of the year, I gradually built up my notes to keep track of my learning progress.
 
-After seeing that the sites were spread across different services and platforms and became cumbersome to maintain, I came up with the idea of a consolidated site. For ease of deployment, SEO optimization, and deconstruction of static articles as the main content, I decided to use the familiar Hugo framework to build a more intuitive web interface.
+After seeing that the my blogs and notes were spread across different services and platforms and became cumbersome to maintain, I came up with the idea of a consolidated site. For ease of deployment, SEO optimization, and deconstruction of static articles as the main content, I decided to use the familiar Hugo framework to build a more intuitive web interface.

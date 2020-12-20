@@ -5,7 +5,7 @@
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m785806765-e426925c7ab1f14278e73b34)
 ![GitHub license](https://img.shields.io/github/license/amzrk2/dsr-ca)
 
-新版整合式个人站点 [amzrk2.cc](https://amzrk2.cc/)，基于 Hugo 实现，包含个人信息页面和博客文章整合。
+新版整合式个人博客 [blog.amzrk2.cc](https://blog.amzrk2.cc/)，基于 Hugo 实现，包含博客文章和笔记整合。
 
 基于 Bulma 开发，非面向主题使用者的通用主题，如果有朋友感兴趣也欢迎发 issue、修改或自己使用。模板已经独立发布于：<https://github.com/amzrk2/hugo-template-aofuji>；如果你对可以直接使用的 Hugo 主题感兴趣，请见：<https://github.com/amzrk2/hugo-theme-fuji>
 
