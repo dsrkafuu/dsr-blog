@@ -5,5 +5,6 @@ keywords:
   - DSRKafuU
   - amzrk2
   - 搜索
+  - 博客
 layout: 'search'
 ---
