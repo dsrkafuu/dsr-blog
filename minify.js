@@ -65,17 +65,19 @@ async function minifyFiles() {
         try {
           const content = fs.readFileSync(val, { encoding: 'utf-8' });
           const result = html(content, {
-            caseSensitive: true,
             collapseBooleanAttributes: true,
-            collapseInlineTagWhitespace: true,
             collapseWhitespace: true,
-            conservativeCollapse: true,
+            ignoreCustomComments: [/^!/, /^\s*#/],
             keepClosingSlash: true,
-            preserveLineBreaks: true,
-            minifyCSS: true,
-            minifyJS: true,
+            removeComments: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true,
             sortAttributes: true,
             sortClassName: true,
+            useShortDoctype: true,
+            minifyCSS: true,
+            minifyJS: true,
           });
           fs.writeFileSync(val, result);
           resolve();
