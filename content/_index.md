@@ -1,11 +1,11 @@
 ---
-title: '主页'
-description: 'DSRKafuU 个人博客主页。'
+title: 'DSRCA'
+description: 'DSRKafuU 个人博客。'
 keywords:
   - DSRKafuU
   - amzrk2
   - DSRCA
-  - 个人博客
+  - 博客
 ---
 
 ## About me

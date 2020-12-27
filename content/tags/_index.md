@@ -1,9 +1,10 @@
 ---
-title: '标签'
-description: 'DSRKafuU 个人博客标签列表'
+title: '标签 | DSRCA'
+description: 'DSRKafuU 个人博客标签列表。'
 keywords:
   - DSRKafuU
   - amzrk2
-  - 标签
+  - DSRCA
   - 博客
+  - 标签
 ---
