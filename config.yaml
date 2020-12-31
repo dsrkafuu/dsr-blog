@@ -21,7 +21,7 @@ params:
   # sidebar info
   author: "DSRKafuU"
   para: "是卡夫"
-  avatar: "/images/_wk_256p.webp"
+  avatar: "https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/images/avatars/amzrk2_256p.webp"
   image: "/images/_header.webp"
   og: "/images/_og.png"
   mainSections:
