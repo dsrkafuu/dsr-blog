@@ -50,13 +50,13 @@ function getFiles(dirPath) {
     return;
   });
 }
-console.log(`[DSRMIN] Scanning files...`);
+console.log(`[DSRCA] Scanning files...`);
 getFiles(path.resolve('./public'));
-console.log('[DSRMIN] Scanning files done.');
+console.log('[DSRCA] Scanning files done.');
 
 // minify
 async function minifyFiles() {
-  console.log('[DSRMIN] Minification started...');
+  console.log('[DSRCA] Minification started...');
   const processPromises = [];
   // minify htmls
   allFiles['.html'].forEach((val) => {
@@ -122,7 +122,7 @@ async function minifyFiles() {
     );
   });
   await Promise.all(processPromises);
-  console.log('[DSRMIN] Minification done.');
+  console.log('[DSRCA] Minification done.');
   return;
 }
 minifyFiles();
