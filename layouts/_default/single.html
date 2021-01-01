@@ -1,36 +1,35 @@
-{{ define "body" }}
-
-<body data-theme="auto" data-section="single" {{ if .Params.hide -}}data-hide="hide" {{- end -}}>
-  {{ partial "scripts-theme.html" . }}
+{{- define "body" -}}
+<body data-theme="auto" data-section="single">
+  {{- partial "scripts-theme.html" . -}}
   <div id="top" style="height: 0; overflow: hidden;"></div>
   <header>
-    {{ partial "navbar.html" . }}
+    {{- partial "navbar.html" . -}}
   </header>
   <main>
     <div class="container single-container">
       <div class="columns single-columns">
         <div class="column single-content is-three-quarters">
           <div class="card">
-            {{ if .Params.image }}
+            {{- if .Params.image -}}
             <div class="post-image image-wrapper ratio-40x9">
-              <img class="lazyload" data-src="{{ .Params.image | relURL }}" />
+              <img class="lazyload" data-src="{{- .Params.image | relURL -}}" />
             </div>
-            {{ end }}
+            {{- end -}}
             <div class="post-box">
-              <h2 class="post-title">{{ .Title }}</h2>
+              <h2 class="post-title">{{- .Title -}}</h2>
               <div class="post-meta">
-                {{ partial "metadata.html" . }}
+                {{- partial "metadata.html" . -}}
               </div>
             </div>
             <div class="post-content">
               <article class="markdown content">
                 {{ .Content }}
               </article>
-              {{ if ne .Params.license false }}
+              {{- if ne .Params.license false -}}
               <div class="license markdown content">
-                <blockquote>{{ .Site.Params.license }}</blockquote>
+                <blockquote>{{- .Site.Params.license -}}</blockquote>
               </div>
-              {{ end }}
+              {{- end -}}
             </div>
           </div>
           {{- if ne .Params.comments false -}}
@@ -42,22 +41,21 @@
           {{- end -}}
         </div>
         <aside class="column single-sidebar is-one-quarter">
-          {{ partial "side-info.html" . }}
+          {{- partial "side-info.html" . -}}
           <div class="sticky">
-            {{ if ne .Params.toc false }}
+            {{- if ne .Params.toc false -}}
             <div class="card toc hidden" id="table-of-contents">
-              {{ .TableOfContents }}
+              {{- .TableOfContents -}}
               <a id="back-top" href="#top">返回顶部</a>
             </div>
-            {{ end }}
+            {{- end -}}
           </div>
         </aside>
       </div>
     </div>
-    {{ partial "notification.html" . }}
+    {{- partial "notification.html" . -}}
   </main>
-  {{ partial "footer.html" . }}
-  {{ partial "scripts-single.html" . }}
+  {{- partial "footer.html" . -}}
+  {{- partial "scripts-single.html" . -}}
 </body>
-
-{{ end }}
+{{- end -}}

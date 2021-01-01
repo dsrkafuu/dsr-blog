@@ -1,20 +1,20 @@
 <nav class="navbar">
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{{ .Site.BaseURL }}">
-        {{ .Site.Title }}
+      <a class="navbar-item" href="{{- .Site.BaseURL -}}">
+        {{- .Site.Title -}}
       </a>
     </div>
 
     <div class="navbar-menu">
       <div class="navbar-start">
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-        <a class="navbar-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}"
-           href="{{ .URL }}">
-          {{ .Name }}
+        {{- $currentPage := . -}}
+        {{- range .Site.Menus.main -}}
+        <a class="navbar-item{{- if $currentPage.IsMenuCurrent "main" . }} active{{- end -}}"
+           href="{{- .URL | relURL -}}">
+          {{- .Name -}}
         </a>
-        {{ end }}
+        {{- end -}}
       </div>
 
       <div class="navbar-end">

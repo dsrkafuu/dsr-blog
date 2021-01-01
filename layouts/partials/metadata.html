@@ -12,7 +12,7 @@
   </svg>&nbsp;
   {{- if .Params.tags -}}
   {{- range .Params.tags -}}
-  <a href="{{ "/tags/" | relURL }}{{ . | urlize}}">
+  <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">
     {{- . -}}
   </a>
   {{- end -}}

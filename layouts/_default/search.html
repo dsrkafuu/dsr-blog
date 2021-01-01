@@ -1,9 +1,8 @@
-{{ define "body" }}
-
+{{- define "body" -}}
 <body data-theme="auto" data-section="search">
-  {{ partial "scripts-theme.html" . }}
+  {{- partial "scripts-theme.html" . -}}
   <header>
-    {{ partial "navbar.html" . }}
+    {{- partial "navbar.html" . -}}
   </header>
   <main>
     <div class="container list-container">
@@ -22,14 +21,13 @@
           </div>
         </div>
         <aside class="column list-sidebar is-one-quarter">
-          {{ partial "side-list.html" . }}
+          {{- partial "side-list.html" . -}}
         </aside>
       </div>
     </div>
-    {{ partial "notification.html" . }}
+    {{- partial "notification.html" . -}}
   </main>
-  {{ partial "footer.html" . }}
-  {{ partial "scripts-search.html" . }}
+  {{- partial "footer.html" . -}}
+  {{- partial "scripts-search.html" . -}}
 </body>
-
-{{ end }}
+{{- end -}}

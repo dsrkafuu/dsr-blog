@@ -7,7 +7,7 @@ tags:
   - 'mongodb'
   - 'express'
 description: '一次全新尝试的笔记第二部分。'
-image: '/images/2020/login-api-jwt/header.webp'
+image: '/images/header/nodejs-mongodb.webp'
 ---
 
 近期在补习 [Node.js](https://nodejs.org/) + [MongoDB](https://www.mongodb.com/) 的配合使用，目前已基本将后台管理界面完工。下一步是本人此前从未接触过的账户登录管理以及鉴权相关的内容，因此将学习过程中简单的完整实现记录下来便以后回顾。
@@ -102,7 +102,7 @@ export default http;
 
 此时当用户不存在时应为如下情况：
 
-![用户不存在错误提示截图](/images/2020/login-api-jwt/20200719133154.webp)
+![用户不存在错误提示截图](/images/post/2020/login-api-jwt/20200719133154.webp)
 
 ### 验证密码
 
@@ -137,9 +137,9 @@ app.post('/admin/api/login', async (req, res) => {
 
 首先生成 RSA 私钥和公钥，注意 ssh-keygen 生成 key 后还需用 openssl 生成 pem，这里图方便直接在 WSL 下搞了：
 
-![生成密钥截图一](/images/2020/login-api-jwt/20200719140143.webp)
+![生成密钥截图一](/images/post/2020/login-api-jwt/20200719140143.webp)
 
-![生成密钥截图二](/images/2020/login-api-jwt/20200719153829.webp)
+![生成密钥截图二](/images/post/2020/login-api-jwt/20200719153829.webp)
 
 引入 jwt 和私钥，并使用私钥生成 token：
 

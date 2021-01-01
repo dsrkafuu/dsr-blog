@@ -1,5 +1,5 @@
 ---
-title: '友链 | DSRCA'
+title: '友链'
 description: 'DSRKafuU 个人友情链接页面。'
 keywords:
   - DSRKafuU

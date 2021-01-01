@@ -1,5 +1,5 @@
-<meta property="og:title" content="{{ .Title }}" />
-<meta name="twitter:title" content="{{ .Title }}" />
+<meta property="og:title" content="{{- if .IsHome -}}<title>{{- .Site.Title -}}</title>{{- else -}}<title>{{- .Title }} | {{ .Site.Title -}}</title>{{- end -}}" />
+<meta name="twitter:title" content="{{- if .IsHome -}}<title>{{- .Site.Title -}}</title>{{- else -}}<title>{{- .Title }} | {{ .Site.Title -}}</title>{{- end -}}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 

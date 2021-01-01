@@ -5,18 +5,18 @@ tags:
   - 'github'
   - 'git'
 description: '修改其他社区开发者提交的 pull request。'
-image: '/images/2020/github-add-commit-to-pull-request/header.webp'
+image: '/images/header/github.webp'
 ---
 
 有时我们需要对社区开发者向我们的项目提交的 pull request 进行一些修改，例如一些配置文件以及资源文件的补充等。这种情况下我们可以直接回复 request 提出修改的要求，但除此之外，我们也可以使用一种更简单的方案：直接向 pull request 提交 commit。
 
 <!--more-->
 
-![分支路线图](/images/2020/github-add-commit-to-pull-request/20201001170900.webp)
+![分支路线图](/images/post/2020/github-add-commit-to-pull-request/20201001170900.webp)
 
 在下文的实现例子中，仓库维护者 (我) 的用户名是 `amzrk2`，提交 request 的开发者用户名是 `Hyask`。示例的 pull request 修改了文件，并且直接从对方的 `master` 分支推送到本仓库 [hugo-theme-fuji](https://github.com/amzrk2/hugo-theme-fuji) 的 `master` 分支。
 
-![pull request 预览](/images/2020/github-add-commit-to-pull-request/20200928172908.webp)
+![pull request 预览](/images/post/2020/github-add-commit-to-pull-request/20200928172908.webp)
 
 以下操作基于本地已经有 clone 完成的远程仓库文件的假设，从上面的图可以看出，GitHub 提示我们可以直接提交内容到 request 发起者的仓库，以下是全过程的步骤。
 
@@ -30,7 +30,7 @@ git remote add Hyask git@github.com:Hyask/hugo-theme-fuji.git
 
 添加完成后尝试使用 `git remote -v`，即可看到其他远程仓库：
 
-![添加新的远程仓库预览](/images/2020/github-add-commit-to-pull-request/20200928172829.webp)
+![添加新的远程仓库预览](/images/post/2020/github-add-commit-to-pull-request/20200928172829.webp)
 
 ## 同步仓库并切换分支
 
@@ -46,7 +46,7 @@ git fetch Hyask
 git checkout -b Hyask-master Hyask/master
 ```
 
-![同步仓库并切换分支预览](/images/2020/github-add-commit-to-pull-request/20200928173043.webp)
+![同步仓库并切换分支预览](/images/post/2020/github-add-commit-to-pull-request/20200928173043.webp)
 
 这样就完成了切换，并且本地的 `Hyask-master` 分支对应了对方发起 pull request 的 `Hyask/master` 分支。
 
@@ -58,7 +58,7 @@ git checkout -b Hyask-master Hyask/master
 git commit -m "fix: something"
 ```
 
-![提交 commit 预览](/images/2020/github-add-commit-to-pull-request/20200928173259.webp)
+![提交 commit 预览](/images/post/2020/github-add-commit-to-pull-request/20200928173259.webp)
 
 确定修改已经完成并提交了 commit 之后，推送到对方的仓库即可。注意这里的推送目标分支，git 可能会提示分支名不一致，按提示推送即可：
 
@@ -66,11 +66,11 @@ git commit -m "fix: something"
 git push Hyask HEAD:master
 ```
 
-![推送预览](/images/2020/github-add-commit-to-pull-request/20200928173359.webp)
+![推送预览](/images/post/2020/github-add-commit-to-pull-request/20200928173359.webp)
 
 推送完成之后，应该就已经能在 GitHub 对应 pull request 的页面上看到刚刚做出的修改了。
 
-![看到刚刚做出的修改预览](/images/2020/github-add-commit-to-pull-request/20200928173437.webp)
+![看到刚刚做出的修改预览](/images/post/2020/github-add-commit-to-pull-request/20200928173437.webp)
 
 ## 可能出现的问题
 

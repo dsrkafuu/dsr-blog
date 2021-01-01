@@ -1,11 +1,6 @@
-{{ "<!-- github.com/amzrk2/dsr-ca | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License -->" | safeHTML }}
-
+{{- "<!-- github.com/amzrk2/dsr-ca | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License -->" | safeHTML -}}
 <!DOCTYPE html>
-
-<html lang="{{ .Site.Language.Lang }}">
-
-{{ partial "head.html" . }}
-
-{{ block "body" . }}{{ end }}
-
+<html lang="{{- .Site.Language.Lang -}}">
+{{- partial "head.html" . -}}
+{{- block "body" . -}}{{- end -}}
 </html>

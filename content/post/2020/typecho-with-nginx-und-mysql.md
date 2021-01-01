@@ -7,7 +7,7 @@ tags:
   - 'php'
   - 'sql'
 description: '计划私下里给亲友们发布一些东西，为了方便就搭 Typecho 了。'
-image: '/images/2020/typecho-with-nginx-und-mysql/header.webp'
+image: '/images/header/ubuntu-typecho.webp'
 ---
 
 计划私下里给亲友们发布一些东西，考虑到用 WP 有点小题大做，为了方便就搭 [Typecho](https://typecho.org/) 了。最初计划里是基于 SQLite 的，但是为了主题，还是回到了 MySQL。废话不多说，直接开始记录。
@@ -124,7 +124,7 @@ sudo nginx -s reload
 
 到 [http://example.com/phpinfo.php](http://example.com/phpinfo.php) 下就可以看到 PHP 的信息了，记得替换成刚刚设置的域名，DNS 解析要设置好，另外注意给防火墙开 80 端口：
 
-![PHP 信息截图](/images/2020/typecho-with-nginx-und-mysql/20200530233816.webp)
+![PHP 信息截图](/images/post/2020/typecho-with-nginx-und-mysql/20200530233816.webp)
 
 ## 数据库
 
@@ -199,7 +199,7 @@ sudo chown -R www-data:www-data /var/www
 
 依照安装步骤指引输入刚刚设置的数据库密码、数据库名，建立管理员账户即可开始正式使用了：
 
-![Typecho 截图](/images/2020/typecho-with-nginx-und-mysql/20200531005625.webp)
+![Typecho 截图](/images/post/2020/typecho-with-nginx-und-mysql/20200531005625.webp)
 
 ### 安装提示无法连接数据库
 
