@@ -6,7 +6,7 @@ tags:
   - 'golang'
   - 'hugo'
 description: '从抛弃 Jekyll 转向 Hugo 搞毫无用处的静态站到现在，别人的主题用久了也腻了，于是自己从零开始。'
-image: '/images/2019/hugo-custom-pagination/header.webp'
+image: '/images/header/hugo.webp'
 ---
 
 从抛弃 Jekyll 转向 Hugo 搞毫无用处的静态站到现在，全程就是在不停的 `Ctrl+C` 和 `Ctrl+V`。别人的主题用久了也腻了，于是翻来找去从 [printempw](https://github.com/printempw) 那儿继续 `Ctrl+C` 了一个主题，不过这次是自己从零开始。
@@ -136,7 +136,7 @@ ul.pagination li.page-item {
 
 例如当有十个页面时，并且定义 `$offsetLinks = 2` 时希望实现如下图的效果：
 
-![智能导航栏预览图](/images/2019/hugo-custom-pagination/20200413210143.webp)
+![智能导航栏预览图](/images/post/2019/hugo-custom-pagination/20200413210143.webp)
 
 - 最大可显示的页码数 `$maxLinks = ($offsetLinks * 2) + 1`
 - 如果总页面数小于 `$maxLinks`，那么所有页码正常显示

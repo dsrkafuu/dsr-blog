@@ -1,0 +1,12 @@
+{{- range .Pages -}}
+<div class="card code">
+  <div class="list-box">
+    <div class="list-post">
+      <a href="{{- .RelPermalink -}}">
+        <h2 class="list-title">{{- .Title -}}</h2>
+      </a>
+    </div>
+    <div class="list-meta">{{- partial "metadata.html" . -}}</div>
+  </div>
+</div>
+{{- end -}}

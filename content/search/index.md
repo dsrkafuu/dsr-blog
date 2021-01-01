@@ -1,5 +1,5 @@
 ---
-title: '搜索 | DSRCA'
+title: '搜索'
 description: 'DSRKafuU 个人博客搜索引擎。'
 keywords:
   - DSRKafuU

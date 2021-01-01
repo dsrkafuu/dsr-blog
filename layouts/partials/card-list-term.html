@@ -1,85 +1,85 @@
-{{ $paginator := .Paginator }}
-{{ range $paginator.Pages }}
+{{- $paginator := .Paginator -}}
+{{- range $paginator.Pages -}}
 <div class="card">
-  {{ if .Params.image }}
+  {{- if .Params.image -}}
   <div class="list-image image-wrapper ratio-40x9">
-    <a href="{{ .Permalink }}">
-      <img class="lazyload" data-src="{{ .Params.image | relURL }}" />
+    <a href="{{- .RelPermalink -}}">
+      <img class="lazyload" data-src="{{- .Params.image | relURL -}}" />
     </a>
   </div>
-  {{ end }}
+  {{- end -}}
   <div class="list-box">
     <div class="list-post">
-      <a href="{{ .Permalink }}">
-        <h2 class="list-title">{{ .Title }}</h2>
+      <a href="{{- .RelPermalink -}}">
+        <h2 class="list-title">{{- .Title -}}</h2>
       </a>
-      <div class="list-summary markdown content">{{ .Summary }}</div>
+      <div class="list-summary markdown content">{{- .Summary -}}</div>
     </div>
     <div class="list-meta">
-      {{ partial "metadata.html" . }}
+      {{- partial "metadata.html" . -}}
     </div>
   </div>
 </div>
-{{ end }}
-{{ if gt $paginator.TotalPages 1 }}
+{{- end -}}
+{{- if gt $paginator.TotalPages 1 -}}
 <div class="card">
-  {{ $offsetLinks := 2 }}
-  {{ $maxLinks := (add (mul $offsetLinks 2) 1) }}
-  {{ $lowerLimit := (add $offsetLinks 1) }}
-  {{ $upperLimit := (sub $paginator.TotalPages $offsetLinks) }}
+  {{- $offsetLinks := 2 -}}
+  {{- $maxLinks := (add (mul $offsetLinks 2) 1) -}}
+  {{- $lowerLimit := (add $offsetLinks 1) -}}
+  {{- $upperLimit := (sub $paginator.TotalPages $offsetLinks) -}}
   <div class="list-pagination">
-    {{ if ne $paginator.PageNumber 1 }}
-    <a class="pag-first" href="{{ $paginator.First.URL }}">
+    {{- if ne $paginator.PageNumber 1 -}}
+    <a class="pag-first" href="{{- $paginator.First.URL -}}">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-chevron-double-left"></use>
       </svg>
     </a>
-    {{ end }}
-    {{ if $paginator.HasPrev }}
-    <a class="pag-previous" href="{{ $paginator.Prev.URL }}">
+    {{- end -}}
+    {{- if $paginator.HasPrev -}}
+    <a class="pag-previous" href="{{- $paginator.Prev.URL -}}">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-chevron-left"></use>
       </svg>
     </a>
-    {{ end }}
-    {{ range $paginator.Pagers }}
-    {{ $.Scratch.Set "pageNumFlag" false }}
-    {{ if gt $paginator.TotalPages $maxLinks }}
-    {{ if le $paginator.PageNumber $lowerLimit }}
-    {{ if le .PageNumber $maxLinks }}
-    {{ $.Scratch.Set "pageNumFlag" true }}
-    {{ end }}
-    {{ else if ge $paginator.PageNumber $upperLimit }}
-    {{ if gt .PageNumber (sub $paginator.TotalPages $maxLinks) }}
-    {{ $.Scratch.Set "pageNumFlag" true }}
-    {{ end }}
-    {{ else }}
-    {{ if and ( ge .PageNumber (sub $paginator.PageNumber $offsetLinks) ) ( le .PageNumber (add $paginator.PageNumber $offsetLinks) ) }}
-    {{ $.Scratch.Set "pageNumFlag" true }}
-    {{ end }}
-    {{ end }}
-    {{ else }}
-    {{ $.Scratch.Set "pageNumFlag" true }}
-    {{ end }}
-    {{ if eq ($.Scratch.Get "pageNumFlag") true }}
-    <a class="pag-item{{ if eq . $paginator }} pag-current{{ end }}"
-       href="{{ .URL }}">{{ .PageNumber }}</a>
-    {{ end }}
-    {{ end }}
-    {{ if $paginator.HasNext }}
-    <a class="pag-next" href="{{ $paginator.Next.URL }}">
+    {{- end -}}
+    {{- range $paginator.Pagers -}}
+    {{- $.Scratch.Set "PAGE_NUM_FLAG" false -}}
+    {{- if gt $paginator.TotalPages $maxLinks -}}
+    {{- if le $paginator.PageNumber $lowerLimit -}}
+    {{- if le .PageNumber $maxLinks -}}
+    {{- $.Scratch.Set "PAGE_NUM_FLAG" true -}}
+    {{- end -}}
+    {{- else if ge $paginator.PageNumber $upperLimit -}}
+    {{- if gt .PageNumber (sub $paginator.TotalPages $maxLinks) -}}
+    {{- $.Scratch.Set "PAGE_NUM_FLAG" true -}}
+    {{- end -}}
+    {{- else -}}
+    {{- if and ( ge .PageNumber (sub $paginator.PageNumber $offsetLinks) ) ( le .PageNumber (add $paginator.PageNumber $offsetLinks) ) -}}
+    {{- $.Scratch.Set "PAGE_NUM_FLAG" true -}}
+    {{- end -}}
+    {{- end -}}
+    {{- else -}}
+    {{- $.Scratch.Set "PAGE_NUM_FLAG" true -}}
+    {{- end -}}
+    {{- if eq ($.Scratch.Get "PAGE_NUM_FLAG") true -}}
+    <a class="pag-item{{- if eq . $paginator -}} pag-current{{- end -}}"
+       href="{{- .URL -}}">{{- .PageNumber -}}</a>
+    {{- end -}}
+    {{- end -}}
+    {{- if $paginator.HasNext -}}
+    <a class="pag-next" href="{{- $paginator.Next.URL -}}">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-chevron-right"></use>
       </svg>
     </a>
-    {{ end }}
-    {{ if ne $paginator.PageNumber $paginator.TotalPages }}
-    <a class="pag-last" href="{{ $paginator.Last.URL }}">
+    {{- end -}}
+    {{- if ne $paginator.PageNumber $paginator.TotalPages -}}
+    <a class="pag-last" href="{{- $paginator.Last.URL -}}">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-chevron-double-right"></use>
       </svg>
     </a>
-    {{ end }}
+    {{- end -}}
   </div>
 </div>
-{{ end }}
+{{- end -}}
