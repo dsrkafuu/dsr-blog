@@ -4,20 +4,23 @@ date: 2019-09-07T23:00:01+08:00
 tags:
   - web
 description: '前端应用笔记。'
-image: '/images/2019/html-css-note/header.webp'
 ---
-
-前端应用笔记。笔记将会随学习进度更新。
-
-<!--more-->
 
 ## 性能优化
 
 ### 网络
 
-1. 减少 HTTP 请求：合并资源文件，小图片内联，雪碧图 (`background-position`) 等
+1. 减少 HTTP 请求：合并资源文件，小图片内联，雪碧图 (`background-position`) 等 (这里暂不考虑 HTTP/2)
 2. 减小资源体积：gzip (服务器) ，webp 图片 (`picture` 和 `srcset`)
 3. 缓存：CDN 缓存，HTTP 缓存 (`Cache-Control`，`Last-Modified`，`Etag 304`) ，Service Worker (拦截 HTTP 请求)
+
+### HTTP/2
+
+HTTP/2 带来了什么：
+
+- 预先加载：PUSH 方法；例如请求 `.html` 时服务端主动尝试返回 `.css` 和 `.js` 等资源
+- 请求合并：尝试将多个 HTTP 请求合并一起发送；在 HTTP/1.1 中，`keep-alive` 可以使 TCP 连接保持打开，但数据传输依旧是 `请求 A => 响应 A => 请求 B => 响应 B` 的模式，而在 HTTP/2 中，就可以实现 `请求 A 和 B => 响应 A 和 B`；在使用 HTTP/2 的情况下，上文中的 "减少 HTTP 请求" 并不一定在所有情况下都能有效
+- 数据压缩：压缩 HTTP 头
 
 ### DOM 与渲染
 

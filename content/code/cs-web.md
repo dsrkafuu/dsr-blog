@@ -1,17 +1,12 @@
 ---
-title: '计算机网络基础'
+title: '计算机网络'
 date: 2019-06-12T12:25:32+08:00
 tags:
   - cs
   - web
   - http
-description: '计算机网络基础笔记。'
-image: '/images/2019/cs-web-note/header.webp'
+description: '计算机网络笔记。'
 ---
-
-计算机网络基础笔记。笔记将会随学习进度更新。
-
-<!--more-->
 
 ## TCP 三次握手
 
