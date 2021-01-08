@@ -29,26 +29,41 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 代码规范分为两部分，格式与 lint。
 
 - 格式：[Prettier](https://prettier.io/) 的 VSCode 插件 + lint-staged 用于 pre-commit hook
-- lint：
+- lint：eslint
 
 ## Trakcer 代码
 
 在什么都没有的最初开发阶段，首要目标是先把 tracker 写完，DEBUG 则是直接将数据发送到 [JSONPlaceholder](https://jsonplaceholder.typicode.com/)。等到 tracker 完成了，再考虑后端的数据库结构设计。
 
-使用类似 Google 的 [Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/) 的 key 名向后端传送数据。以下是计划收集的数据：
+使用类似 Google 的 [Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/) 的 key 名向后端传送数据，请求将完全使用 Beacon API。以下是计划收集的数据：
 
 - `view`：页面访问
   - `path`：`location.pathname`
   - `ref`：`document.referrer`
   - `lang`：用户语言
-  - `sc`：屏幕分辨率，`screen` 大小乘 `dpr`
+  - `scrn`：屏幕分辨率，`screen` 大小乘 `dpr`
   - 浏览器：服务端[通过 UA 判断](https://www.npmjs.com/package/bowser)
   - 操作系统：服务端[通过 UA 判断](https://www.npmjs.com/package/bowser)
   - 国家 / 地区：服务端通过 IP 判断，基于 [node-maxmind](https://www.npmjs.com/package/maxmind) 与[免费 GeoIP2 数据库](https://dev.maxmind.com/geoip/geoip2/geolite2/)
-- `perf`：页面性能数据，来源于 [Navigation Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API)
-  - `res`：服务器响应时间
-  - `dcl`：`DOMContentLoaded`
-  - `load`：`onload`
+- `leave`：页面离开
+  - `path`：`location.pathname`
+  - `pvt`：页面停留时间
 - `event`：页面事件，在 `window` 上注册全局方法顾调用
-  - name：自定义事件名
-  - type：事件类型 (传入事件对象或事件名)
+  - `name`：自定义事件名
+  - `type`：事件类型 (传入事件对象或事件名)
+
+## collect 路由
+
+完成 tracker 后，下一个任务是接收信息的基本路由。以下为该路由的处理进程：
+
+1. 收到对 `/collect` 的 POST 请求
+2. 检查请求来源网站是否存在
+3. 检查 cookie 是否存在 uuid
+4. 获取 uuid 对应的 session 或初始化新 session
+5. 判断请求类型
+
+`view` 类型：
+
+1. 写入一个新的 view，包含 pathname 和 referrer 数据
+2. 检查是否有 sync 字段需要更新 session 属性
+3. 更新 language、screen、browser、system 和 location
