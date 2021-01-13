@@ -2,8 +2,7 @@
 title: '计算机专业基础'
 date: 2019-01-07T11:05:30+08:00
 tags:
-  - ds
-  - os
+  - cs
   - algorithm
 description: '计算机专业基础相关笔记。'
 ---
