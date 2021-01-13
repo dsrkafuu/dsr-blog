@@ -13,6 +13,11 @@ image: '/images/header/tamako.webp'
 
 <!--more-->
 
+**记录总览：**
+
+- [2021 不定期更新番剧记录](/post/2021/anime-note/)
+- [2020 不定期更新番剧记录](/post/2020/anime-note/)
+
 ## 2020 年 1 月
 
 **追番 - 突击莉莉 BOUQUET「アサルトリリィ BOUQUET」**
