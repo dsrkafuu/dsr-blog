@@ -8,9 +8,11 @@ tags:
 description: 'LeetCode 解题相关笔记。'
 ---
 
-本笔记收录了我的部分 LeetCode 解题过程，笔记不定期更新，寻找题目请使用 `Ctrl + F` 搜索；使用语言为 JavaScript。
+本笔记收录了我的部分 LeetCode 解题过程，笔记不定期更新，寻找题目请使用 `Ctrl + F` 搜索。
 
-笔记同步仓库：<https://github.com/amzrk2/dsr-leetcode>，题解思路大部分完整标注于注释中。
+使用语言为 JavaScript，注意由于语言本身特性以及 V8 引擎实现特性，理论更优的算法很可能在判题过程中展现出更慢的结果，同一题进行多次提交也有可能表现出不同结果，因此 LeetCode 提交中的数据仅供参考。
+
+源代码同步仓库：<https://github.com/amzrk2/dsr-leetcode>，题解思路大部分完整标注于注释中。
 
 ## 数据结构
 
@@ -20,5 +22,18 @@ description: 'LeetCode 解题相关笔记。'
 
 **剑指 Offer 03 - 数组中重复的数字**
 
-1. 遍历 + set：<https://github.com/amzrk2/dsr-leetcode/blob/main/lcof/03/ans_1.js>
-2. In-place 方法：<https://github.com/amzrk2/dsr-leetcode/blob/main/lcof/03/ans_2.js>
+1. 遍历 + set：<https://leetcode-cn.com/submissions/detail/137886172/>
+2. In-place 方法：<https://leetcode-cn.com/submissions/detail/137890828/>
+
+**剑指 Offer 04 - 二维数组中的查找**
+
+1. 遍历：<https://leetcode-cn.com/submissions/detail/138305063/>
+2. In-place 方法：<https://leetcode-cn.com/submissions/detail/138346942/>
+
+**剑指 Offer 05 - 替换空格**
+
+- 正则：<https://leetcode-cn.com/submissions/detail/138350073/>
+
+**剑指 Offer 06 - 从尾到头打印链表**
+
+- 栈：<https://leetcode-cn.com/submissions/detail/138354124/>

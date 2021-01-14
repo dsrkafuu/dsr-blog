@@ -1,9 +1,10 @@
 ---
-title: '前端应用'
+title: '前端基础及应用'
 date: 2019-09-07T23:00:01+08:00
 tags:
   - web
   - http
+  - html
 description: '前端应用笔记。'
 ---
 
