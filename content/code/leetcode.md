@@ -37,3 +37,12 @@ description: 'LeetCode 解题相关笔记。'
 **剑指 Offer 06 - 从尾到头打印链表**
 
 - 栈：<https://leetcode-cn.com/submissions/detail/138354124/>
+
+**剑指 Offer 07 - 重建二叉树**
+
+1. 递归：<https://leetcode-cn.com/submissions/detail/138552016/>
+2. 递归 (优化)：<https://leetcode-cn.com/submissions/detail/138562868/>
+
+**剑指 Offer 09 - 用两个栈实现队列**
+
+- 栈：<https://leetcode-cn.com/submissions/detail/138567129/>
