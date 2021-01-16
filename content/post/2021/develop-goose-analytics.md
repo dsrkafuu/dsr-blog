@@ -52,7 +52,17 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
   - `name`：自定义事件名
   - `type`：事件类型 (传入事件对象或事件名)
 
-## collect 路由
+## 数据库 Model
+
+为 mongoose 设定以下 model：
+
+- `User`：管理用户，初期版本仅提供单个 `admin` 用户
+- `Website`：添加的站点，关联 `User`
+- `Session`：数据收集的用户
+- `View`：网页浏览记录，关联 `Website` 和 `Session`
+- `Event`：网页事件记录，关联 `Website` 和 `Session`
+
+## Collect 路由
 
 完成 tracker 后，下一个任务是接收信息的基本路由。以下为该路由的处理进程：
 
@@ -65,5 +75,37 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 `view` 类型：
 
 1. 写入一个新的 view，包含 pathname 和 referrer 数据
-2. 检查是否有 sync 字段需要更新 session 属性
+2. 检查是否需要更新 session 属性
 3. 更新 language、screen、browser、system 和 location
+
+`leave` 类型：
+
+1. 搜索网页浏览记录，找到上一次同页同用户同路径的记录
+2. 添加 `pvt` 字段
+
+## 管理面板设置页面
+
+Collect 路由完成后进行基本测试，确认数据收集正常后开始开发管理面板设置页面；这部分开发时前端的页面与后端的对应接口同步进行。
+
+### 自定义组件库
+
+首先使用 Vue 完成了以下基本组件库：
+
+- `GButton`：按钮，包括普通、全宽以及全长
+- `GRouterLink`：对 `GButton` 的二次封装
+- `GCard`：卡片
+- `GLabel`：用于简单标注的小 tag
+- `GList`：多功能列表，最右一格可选控制或小图表
+- `GMessage`：弹出 toast，与 `src/utils/message.js` 配合提供 `vm.$info` 和 `vm.$error` 方法
+
+### 前端路由规划
+
+- `/`：基本页面 (登录后)
+  - `/dashboard[?site=]`：数据一览 (动态路由)
+    - `/dashboard/[type][?site=]`：数据一览 (动态路由)
+  - `/realtime`：实时监控
+  - `/settings`：设置页 (动态组件)
+    - `Users`：关于页
+    - `Websites`：关于页
+    - `About`：关于页
+- `/login`：登录页 (登录前)

@@ -46,3 +46,18 @@ description: 'LeetCode 解题相关笔记。'
 **剑指 Offer 09 - 用两个栈实现队列**
 
 - 栈：<https://leetcode-cn.com/submissions/detail/138567129/>
+
+**剑指 Offer 10-1 - 斐波那契数列**
+
+1. 递归：<https://leetcode-cn.com/submissions/detail/138771276/>
+2. 迭代：<https://leetcode-cn.com/submissions/detail/138773440/>
+3. 查表：<https://leetcode-cn.com/submissions/detail/138774072/>
+
+**剑指 Offer 10-2 - 青蛙跳台阶问题**
+
+- 迭代：<https://leetcode-cn.com/submissions/detail/138773678/>
+
+**剑指 Offer 11 - 旋转数组的最小数字**
+
+1. 遍历：<https://leetcode-cn.com/submissions/detail/138780412/>
+2. 二分：<https://leetcode-cn.com/submissions/detail/138791609/>
