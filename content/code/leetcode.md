@@ -61,3 +61,11 @@ description: 'LeetCode 解题相关笔记。'
 
 1. 遍历：<https://leetcode-cn.com/submissions/detail/138780412/>
 2. 二分：<https://leetcode-cn.com/submissions/detail/138791609/>
+
+**剑指 Offer 12 - 矩阵中的路径**
+
+- 回溯 (DFS)：<https://leetcode-cn.com/submissions/detail/139129194/>
+
+**剑指 Offer 13 - 机器人的运动范围**
+
+- 回溯 (DFS)：<https://leetcode-cn.com/submissions/detail/139357849/>
