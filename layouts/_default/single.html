@@ -32,7 +32,7 @@
               {{- end -}}
             </div>
           </div>
-          {{- if ne .Params.comments false -}}
+          {{- if and (ne .Params.comment false) (ne .Section "code") -}}
           <div class="card comment-wrapper">
             <div id="comment-waiting" style="text-align: center;">评论区正在等待加载</div>
             <div id="gitalk-container" data-identifier="{{- .File.ContentBaseName | safeURL -}}">
