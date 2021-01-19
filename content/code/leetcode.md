@@ -69,3 +69,16 @@ description: 'LeetCode 解题相关笔记。'
 **剑指 Offer 13 - 机器人的运动范围**
 
 - 回溯 (DFS)：<https://leetcode-cn.com/submissions/detail/139357849/>
+
+**剑指 Offer 14-1 - 剪绳子**
+
+1. 递归：<https://leetcode-cn.com/submissions/detail/139507621/>
+2. 动态规划：<https://leetcode-cn.com/submissions/detail/139506724/>
+
+**剑指 Offer 14-2 - 剪绳子**
+
+- 贪心 (数学规律)：<https://leetcode-cn.com/submissions/detail/139518221/>
+
+**剑指 Offer 15 - 二进制中 1 的个数**
+
+- 正则：<https://leetcode-cn.com/submissions/detail/139520739/>
