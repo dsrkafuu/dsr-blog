@@ -96,7 +96,7 @@ Collect 路由完成后进行基本测试，确认数据收集正常后开始开
 - `GCard`：卡片
 - `GLabel`：用于简单标注的小 tag
 - `GList`：多功能列表，最右一格可选控制或小图表
-- `GMessage`：弹出 toast，与 `src/utils/message.js` 配合提供 `vm.$info` 和 `vm.$error` 方法
+- `GMessage`：弹出 toast，与 `src/plugins/message.js` 配合提供 `vm.$info` 和 `vm.$error` 方法
 
 ### 前端路由规划
 
@@ -105,7 +105,9 @@ Collect 路由完成后进行基本测试，确认数据收集正常后开始开
     - `/dashboard/[type][?site=]`：数据一览 (动态路由)
   - `/realtime`：实时监控
   - `/settings`：设置页 (动态组件)
-    - `Users`：关于页
-    - `Websites`：关于页
-    - `About`：关于页
+    - `UserSettings`：用户设置
+    - `WebsiteSettings`：网站设置
+    - `About`：关于
+    - `UserEdit`：用户编辑 (隐藏)
+    - `WebsiteEdit`：网站编辑 (隐藏)
 - `/login`：登录页 (登录前)

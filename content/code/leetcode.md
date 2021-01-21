@@ -82,3 +82,12 @@ description: 'LeetCode 解题相关笔记。'
 **剑指 Offer 15 - 二进制中 1 的个数**
 
 - 正则：<https://leetcode-cn.com/submissions/detail/139520739/>
+
+**剑指 Offer 16 - 数值的整数次方**
+
+1. 运算符：<https://leetcode-cn.com/submissions/detail/139983767/>
+2. 快速幂：<https://leetcode-cn.com/submissions/detail/139990529/>
+
+**剑指 Offer 18 - 删除链表的节点**
+
+- 正则：<https://leetcode-cn.com/submissions/detail/139998699/>
