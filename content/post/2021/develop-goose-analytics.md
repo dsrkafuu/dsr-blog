@@ -14,7 +14,7 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 <!--more-->
 
-作为一个前端实验性项目，同时作为一个我自己每天都需要用到的项目；从制定计划到完成 1.0 版本，我是如何完成 Goose Analytics 的开发的？
+作为一个前端实验性项目，同时作为一个我自己每天都需要用到的项目；从制定计划到完成 0.1 版本，我是如何完成 Goose Analytics 的开发的？
 
 ## 基础框架
 
@@ -35,7 +35,7 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 在什么都没有的最初开发阶段，首要目标是先把 tracker 写完，DEBUG 则是直接将数据发送到 [JSONPlaceholder](https://jsonplaceholder.typicode.com/)。等到 tracker 完成了，再考虑后端的数据库结构设计。
 
-使用类似 Google 的 [Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/) 的 key 名向后端传送数据，请求将完全使用 Beacon API。以下是计划收集的数据：
+使用类似 Google 的 [Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/) 的 key 名向后端传送数据，请求将使用 Beacon API。以下是计划收集的数据：
 
 基本数据：
 
@@ -58,6 +58,8 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 - `event`：页面事件，在 `window` 上注册全局方法顾调用
   - `en`：自定义事件名
   - `et`：事件类型 (传入事件对象或事件名)
+
+`view` 类型的特别之处：所有 `view` 类型请求将使用带回调的 XHR 发送，当服务器返回 `201` (即 `sid` 未发送或不存在) 时设置 `localStorage` 存储新的 `sid`，当服务器返回 `204` 时无回调；同时，当发送除 `view` 类型以外的请求却未发送有效的 `sid` 时，请求将被 `400` 拒绝。
 
 ## 数据库 Model
 
@@ -89,9 +91,7 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 1. 搜索网页浏览记录，找到上一次同页同用户同路径的记录
 2. 修改 `pvt` 字段
 
-以下特殊注意点：
-
-- 写入 view 之前需要检测，若五分钟内同用户同页面访问则合并；因此 `pvt` 的更新需要使用 $inc 增加而不是直接替换更新。
+特殊注意点：写入 `view` 之前需要检测，若十分钟内同用户同页面访问则合并；因此 `pvt` 的更新需要使用 $inc 增加而不是直接替换更新。
 
 ## 管理面板设置页面
 
