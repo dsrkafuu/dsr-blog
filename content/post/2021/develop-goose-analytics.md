@@ -22,7 +22,7 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 在后端方便，为了开发的方便以及对 [Vercel](https://vercel.com/) 的 serverless 功能的适配，选用了 [express](https://expressjs.com/) 作为基础框架。数据库则是选择了 [MongoDB](https://www.mongodb.com/)，对于一般的使用，[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) 提供的 500 连接数免费数据库非常简单方便，并且数据库本身由于 [mongoose](https://mongoosejs.com/) 的协助使用也十分便捷。
 
-在 tracker 代码方面，计划不借助 [Babel](https://babeljs.io/) 转译或是其他例如 [rollup](https://rollupjs.org/) 之类的工具打包，只通过 [terser](https://terser.org/) 进行一次压缩来尽可能地缩小文件大小。
+在 tracker 代码方面，借助 [Babel](https://babeljs.io/) 转译或是其他例如 [rollup](https://rollupjs.org/) 之类的工具打包，只通过 [terser](https://terser.org/) 进行一次压缩并且避免使用过多现代 API 来尽可能的缩小文件大小。
 
 ## 代码规范
 
@@ -37,20 +37,27 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 使用类似 Google 的 [Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/) 的 key 名向后端传送数据，请求将完全使用 Beacon API。以下是计划收集的数据：
 
+基本数据：
+
+- `t`：数据种类，包含 `view`、`leave` 和 `event`
+- `id`：站点 ID
+- `sid`：规避使用 Cookie 引入的 session ID
+- `d`：时间，`Date.now()`
+
+不同数据种类的特定数据：
+
 - `view`：页面访问
-  - `path`：`location.pathname`
-  - `ref`：`document.referrer`
-  - `lang`：用户语言
-  - `scrn`：屏幕分辨率，`screen` 大小乘 `dpr`
+  - `r`：`document.referrer`
+  - `lng`：用户语言
+  - `scn`：屏幕分辨率，`screen` 大小乘 `dpr`
   - 浏览器：服务端[通过 UA 判断](https://www.npmjs.com/package/bowser)
   - 操作系统：服务端[通过 UA 判断](https://www.npmjs.com/package/bowser)
   - 国家 / 地区：服务端通过 IP 判断，基于 [node-maxmind](https://www.npmjs.com/package/maxmind) 与[免费 GeoIP2 数据库](https://dev.maxmind.com/geoip/geoip2/geolite2/)
 - `leave`：页面离开
-  - `path`：`location.pathname`
   - `pvt`：页面停留时间
 - `event`：页面事件，在 `window` 上注册全局方法顾调用
-  - `name`：自定义事件名
-  - `type`：事件类型 (传入事件对象或事件名)
+  - `en`：自定义事件名
+  - `et`：事件类型 (传入事件对象或事件名)
 
 ## 数据库 Model
 
@@ -68,20 +75,23 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 1. 收到对 `/collect` 的 POST 请求
 2. 检查请求来源网站是否存在
-3. 检查 cookie 是否存在 uuid
-4. 获取 uuid 对应的 session 或初始化新 session
-5. 判断请求类型
+3. 检查 `sid` 是否存在，若不存在，则新建 session
+4. 判断请求类型
 
 `view` 类型：
 
-1. 写入一个新的 view，包含 pathname 和 referrer 数据
+1. 写入一个新的 view，包含 `path` 和 `ref` 等数据，并且初始化 `pvt` 为 0
 2. 检查是否需要更新 session 属性
 3. 更新 language、screen、browser、system 和 location
 
 `leave` 类型：
 
 1. 搜索网页浏览记录，找到上一次同页同用户同路径的记录
-2. 添加 `pvt` 字段
+2. 修改 `pvt` 字段
+
+以下特殊注意点：
+
+- 写入 view 之前需要检测，若五分钟内同用户同页面访问则合并；因此 `pvt` 的更新需要使用 $inc 增加而不是直接替换更新。
 
 ## 管理面板设置页面
 
@@ -91,12 +101,17 @@ Collect 路由完成后进行基本测试，确认数据收集正常后开始开
 
 首先使用 Vue 完成了以下基本组件库：
 
+- `GIcon...`：图标，由 `vue-svg-loader` 提供
 - `GButton`：按钮，包括普通、全宽以及全长
-- `GRouterLink`：对 `GButton` 的二次封装
 - `GCard`：卡片
+- `GInput`：输入框
 - `GLabel`：用于简单标注的小 tag
+- `GHeader`：通用头部
+- `GRouterLink`：对 `GButton` 的二次封装
 - `GList`：多功能列表，最右一格可选控制或小图表
 - `GMessage`：弹出 toast，与 `src/plugins/message.js` 配合提供 `vm.$info` 和 `vm.$error` 方法
+
+组件库通过插件的 `install` 方法使用 `Vue.use` 进行安装。
 
 ### 前端路由规划
 
