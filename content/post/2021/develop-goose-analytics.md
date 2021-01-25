@@ -75,10 +75,11 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 完成 tracker 后，下一个任务是接收信息的基本路由。以下为该路由的处理进程：
 
-1. 收到对 `/collect` 的 POST 请求
+1. 收到对 `/collect` 的 GET 或 POST 请求
 2. 检查请求来源网站是否存在
 3. 检查 `sid` 是否存在，若不存在，则新建 session
-4. 判断请求类型
+4. 检查是否为 bot 或 localhost
+5. 步骤 2、3、4 并行运行，完成后判断请求类型
 
 `view` 类型：
 
