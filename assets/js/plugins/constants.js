@@ -19,7 +19,7 @@ export const GITALK_ADMIN = ['amzrk2', 'yozrk2'];
 
 // clipboard
 export const COPY_LICENSE = `
---------------------
+------------------------------
 本站内容采用 CC BY-NC-SA 4.0 进行许可；
 商业转载请联系作者授权，非商业转载请注明出处；
 来源：${window.location.href}`;

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+// deps
 const path = require('path');
 const fs = require('fs');
 // html
@@ -19,7 +19,7 @@ const allFiles = {
 };
 /**
  * get all files need to minify
- * @param {String} dirPath
+ * @param {string} dirPath
  */
 function getFiles(dirPath) {
   // files in current folder
@@ -50,15 +50,15 @@ function getFiles(dirPath) {
     return;
   });
 }
-console.log(`[DSRCA] Scanning files...`);
+console.log('[dsr-ca] scanning files...');
 getFiles(path.resolve('./public'));
-console.log('[DSRCA] Scanning files done.');
+console.log('[dsr-ca] scanning files done.');
 
 // minify
 async function minifyFiles() {
-  console.log('[DSRCA] Minification started...');
+  console.log('[dsr-ca] works started...');
   const processPromises = [];
-  // minify htmls
+
   allFiles['.html'].forEach((val) => {
     processPromises.push(
       new Promise((resolve, reject) => {
@@ -87,7 +87,7 @@ async function minifyFiles() {
       })
     );
   });
-  // minify csses
+
   allFiles['.css'].forEach((val) => {
     processPromises.push(
       new Promise((resolve, reject) => {
@@ -105,7 +105,7 @@ async function minifyFiles() {
       })
     );
   });
-  // minify jses
+
   allFiles['.js'].forEach((val) => {
     processPromises.push(
       new Promise((resolve, reject) => {
@@ -122,7 +122,7 @@ async function minifyFiles() {
     );
   });
   await Promise.all(processPromises);
-  console.log('[DSRCA] Minification done.');
+  console.log('[dsr-ca] works done.');
   return;
 }
 minifyFiles();

@@ -7,7 +7,7 @@ import { COPY_LICENSE, BODY_ATTRIBUTE_SECTION } from '../plugins/constants';
  */
 function getAllParentNodes(node, count = 4) {
   const allParentNodes = [];
-  let recCount = 1; // 递归层数
+  let recCount = 2; // 递归层数
   /**
    * @param {HTMLElement} node
    */
@@ -38,7 +38,7 @@ if (document.body.getAttribute(BODY_ATTRIBUTE_SECTION) === 'single') {
       if (!/(CODE|PRE).* .*(CODE|PRE)/gi.exec(nodes)) {
         // 添加 LICENSE
         let copiedText = selection.toString();
-        if (copiedText) {
+        if (copiedText && copiedText.length > 80) {
           event.preventDefault(); // 防止默认行为复制原文内容
           event.clipboardData.setData('text/plain', `${copiedText}\n${COPY_LICENSE}`);
         }
