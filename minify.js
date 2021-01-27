@@ -8,15 +8,11 @@ const html = require('html-minifier-terser').minify;
 const postcss = require('postcss');
 const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
-// js
-const babel = require('@babel/core').transform;
-const terser = require('terser').minify;
 
 // files
 const allFiles = {
   '.html': [],
   '.css': [],
-  '.js': [],
 };
 /**
  * get all files need to minify
@@ -107,23 +103,6 @@ async function minifyFiles() {
     );
   });
 
-  allFiles['.js'].forEach((val) => {
-    processPromises.push(
-      new Promise((resolve, reject) => {
-        try {
-          const content = fs.readFileSync(val, { encoding: 'utf-8' });
-          babel(content, (err, result) => {
-            terser(result.code).then((result) => {
-              fs.writeFileSync(val, result.code);
-              resolve();
-            });
-          });
-        } catch (e) {
-          reject(e);
-        }
-      })
-    );
-  });
   await Promise.all(processPromises);
   console.log('[dsr-ca] works done.');
   return;

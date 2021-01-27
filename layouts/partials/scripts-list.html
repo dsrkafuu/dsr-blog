@@ -1,9 +1,9 @@
+{{ $filepath := "assets/amzrk2-list.min.js" }}
+
 {{ if eq (getenv "NODE_ENV") "production" }}
-{{ $options := (dict "targetPath" "assets/amzrk2-list.min.js" "minify" false "target" "esnext" "format" "iife") }}
-{{ $built := resources.Get "js/list.js" | js.Build $options }}
-<script defer src="{{ $built.RelPermalink }}"></script>
+<script defer src="{{ $filepath | relURL }}"></script>
 {{ else }}
-{{ $options := (dict "targetPath" "assets/amzrk2-list.js" "minify" false "target" "esnext" "format" "iife") }}
+{{ $options := (dict "targetPath" $filepath "minify" false "target" "esnext" "format" "iife") }}
 {{ $built := resources.Get "js/list.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{ end }}

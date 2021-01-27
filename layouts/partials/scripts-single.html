@@ -5,12 +5,12 @@
 <script defer src="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js"></script>
 
 <!-- main script -->
+{{ $filepath := "assets/amzrk2-single.min.js" }}
+
 {{ if eq (getenv "NODE_ENV") "production" }}
-{{ $options := (dict "targetPath" "assets/amzrk2-single.min.js" "minify" false "target" "esnext" "format" "iife") }}
-{{ $built := resources.Get "js/single.js" | js.Build $options }}
-<script defer src="{{ $built.RelPermalink }}"></script>
+<script defer src="{{ $filepath | relURL }}"></script>
 {{ else }}
-{{ $options := (dict "targetPath" "assets/amzrk2-single.js" "minify" false "target" "esnext" "format" "iife") }}
+{{ $options := (dict "targetPath" $filepath "minify" false "target" "esnext" "format" "iife") }}
 {{ $built := resources.Get "js/single.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{ end }}
