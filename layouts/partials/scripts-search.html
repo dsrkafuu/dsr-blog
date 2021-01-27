@@ -2,14 +2,14 @@
 <!-- vue -->
 <script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.prod.js"></script>
 
-{{ $options := (dict "targetPath" "assets/amzrk2-search.min.js" "minify" false "target" "es2017" "format" "iife") }}
+{{ $options := (dict "targetPath" "assets/amzrk2-search.min.js" "minify" false "target" "esnext" "format" "iife") }}
 {{ $built := resources.Get "js/search.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{ else }}
 <!-- vue -->
 <script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.js"></script>
 
-{{ $options := (dict "targetPath" "assets/amzrk2-search.js" "minify" false "target" "es2017" "format" "iife") }}
+{{ $options := (dict "targetPath" "assets/amzrk2-search.js" "minify" false "target" "esnext" "format" "iife") }}
 {{ $built := resources.Get "js/search.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{ end }}

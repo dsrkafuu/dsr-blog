@@ -1,4 +1,4 @@
-/*!
+/*
  * modernizr v3.6.0
  * Build https://modernizr.com/download?-webp-dontmin
  *
@@ -455,7 +455,7 @@ export default function (window, document, undefined) {
     ModernizrProto.addTest = addTest;
   });
 
-  /*!
+  /*
 {
   "name": "Webp",
   "async": true,

@@ -3,9 +3,9 @@
  */
 
 export function logInfo(info, ...params) {
-  console.info('[DSRCA]', info, ...params);
+  console.info('[dsr-ca]', info, ...params);
 }
 
 export function logError(err, ...params) {
-  console.error('[DSRCA]', err, ...params);
+  console.error('[dsr-ca]', err, ...params);
 }

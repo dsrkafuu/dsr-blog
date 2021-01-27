@@ -9,6 +9,7 @@ const postcss = require('postcss');
 const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 // js
+const babel = require('@babel/core').transform;
 const terser = require('terser').minify;
 
 // files
@@ -111,9 +112,11 @@ async function minifyFiles() {
       new Promise((resolve, reject) => {
         try {
           const content = fs.readFileSync(val, { encoding: 'utf-8' });
-          terser(content).then((result) => {
-            fs.writeFileSync(val, result.code);
-            resolve();
+          babel(content, (err, result) => {
+            terser(result.code).then((result) => {
+              fs.writeFileSync(val, result.code);
+              resolve();
+            });
           });
         } catch (e) {
           reject(e);
