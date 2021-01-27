@@ -1,4 +1,18 @@
-/*! modernizr v3.6.0 | Faruk Ates / Paul Irish / Alex Sexton / Ryan Seddon / Patrick Kettner / Stu Cox / Richard Herrera | Copyright (c) MIT License */
+/*!
+ * modernizr v3.6.0
+ * Build https://modernizr.com/download?-webp-dontmin
+ *
+ * Copyright (c)
+ *  Faruk Ates
+ *  Paul Irish
+ *  Alex Sexton
+ *  Ryan Seddon
+ *  Patrick Kettner
+ *  Stu Cox
+ *  Richard Herrera
+
+ * MIT License
+ */
 
 /*
  * Modernizr tests which native CSS3 and HTML5 features are available in the
@@ -27,9 +41,9 @@ export default function (window, document, undefined) {
     // can go in here as configuration.
     _config: {
       classPrefix: '',
-      enableClasses: true,
-      enableJSClass: true,
-      usePrefixes: true,
+      enableClasses: false,
+      enableJSClass: false,
+      usePrefixes: false,
     },
 
     // Queue of tests
@@ -152,37 +166,6 @@ export default function (window, document, undefined) {
     }
   }
   /**
-   * hasOwnProp is a shim for hasOwnProperty that is needed for Safari 2.0 support
-   *
-   * @author kangax
-   * @access private
-   * @function hasOwnProp
-   * @param {object} object - The object to check for a property
-   * @param {string} property - The property to check for
-   * @returns {boolean}
-   */
-
-  // hasOwnProperty shim by kangax needed for Safari 2.0 support
-  var hasOwnProp;
-
-  (function () {
-    var _hasOwnProperty = {}.hasOwnProperty;
-    /* istanbul ignore else */
-    /* we have no way of testing IE 5.5 or safari 2,
-     * so just assume the else gets hit */
-    if (!is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined')) {
-      hasOwnProp = function (object, property) {
-        return _hasOwnProperty.call(object, property);
-      };
-    } else {
-      hasOwnProp = function (object, property) {
-        /* yes, this can give false positives/negatives, but most of the time we don't care about those */
-        return property in object && is(object.constructor.prototype[property], 'undefined');
-      };
-    }
-  })();
-
-  /**
    * docElement is a convenience wrapper to grab the root element of the document
    *
    * @access private
@@ -235,6 +218,37 @@ export default function (window, document, undefined) {
       }
     }
   }
+
+  /**
+   * hasOwnProp is a shim for hasOwnProperty that is needed for Safari 2.0 support
+   *
+   * @author kangax
+   * @access private
+   * @function hasOwnProp
+   * @param {object} object - The object to check for a property
+   * @param {string} property - The property to check for
+   * @returns {boolean}
+   */
+
+  // hasOwnProperty shim by kangax needed for Safari 2.0 support
+  var hasOwnProp;
+
+  (function () {
+    var _hasOwnProperty = {}.hasOwnProperty;
+    /* istanbul ignore else */
+    /* we have no way of testing IE 5.5 or safari 2,
+     * so just assume the else gets hit */
+    if (!is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined')) {
+      hasOwnProp = function (object, property) {
+        return _hasOwnProperty.call(object, property);
+      };
+    } else {
+      hasOwnProp = function (object, property) {
+        /* yes, this can give false positives/negatives, but most of the time we don't care about those */
+        return property in object && is(object.constructor.prototype[property], 'undefined');
+      };
+    }
+  })();
 
   // _l tracks listeners for async tests, as well as tests that execute after the initial run
   ModernizrProto._l = {};
@@ -440,6 +454,44 @@ export default function (window, document, undefined) {
   Modernizr._q.push(function () {
     ModernizrProto.addTest = addTest;
   });
+
+  /*!
+{
+  "name": "Webp",
+  "async": true,
+  "property": "webp",
+  "tags": ["image"],
+  "builderAliases": ["img_webp"],
+  "authors": ["Krister Kari", "@amandeep", "Rich Bradshaw", "Ryan Seddon", "Paul Irish"],
+  "notes": [{
+    "name": "Webp Info",
+    "href": "https://developers.google.com/speed/webp/"
+  }, {
+    "name": "Chormium blog - Chrome 32 Beta: Animated WebP images and faster Chrome for Android touch input",
+    "href": "https://blog.chromium.org/2013/11/chrome-32-beta-animated-webp-images-and.html"
+  }, {
+    "name": "Webp Lossless Spec",
+    "href": "https://developers.google.com/speed/webp/docs/webp_lossless_bitstream_specification"
+  }, {
+    "name": "Article about WebP support on Android browsers",
+    "href": "http://www.wope-framework.com/en/2013/06/24/webp-support-on-android-browsers/"
+  }, {
+    "name": "Chormium WebP announcement",
+    "href": "https://blog.chromium.org/2011/11/lossless-and-transparency-encoding-in.html?m=1"
+  }]
+}
+!*/
+  /* DOC
+Tests for lossy, non-alpha webp support.
+
+Tests for all forms of webp support (lossless, lossy, alpha, and animated)..
+
+  Modernizr.webp              // Basic support (lossy)
+  Modernizr.webp.lossless     // Lossless
+  Modernizr.webp.alpha        // Alpha (both lossy and lossless)
+  Modernizr.webp.animation    // Animated WebP
+
+*/
 
   Modernizr.addAsyncTest(function () {
     var webpTests = [
