@@ -1,6 +1,5 @@
 /* gitalk */
 import { logInfo, logError } from '../plugins/logger';
-import Gitalk from 'gitalk';
 import {
   GITALK_CLIENT_ID,
   GITALK_CLIENT_SECRET,
@@ -13,27 +12,29 @@ import {
  * 加载评论区
  */
 const loadComment = () => {
-  const gitalk = new Gitalk({
-    clientID: GITALK_CLIENT_ID,
-    clientSecret: GITALK_CLIENT_SECRET,
-    repo: GITALK_REPO,
-    owner: GITALK_OWNER,
-    admin: GITALK_ADMIN,
-    id: needComment.getAttribute('data-identifier') || location.pathname,
-    createIssueManually: true,
-    flipMoveOptions: {
-      staggerDelayBy: 150,
-      appearAnimation: 'fade',
-      enterAnimation: 'fade',
-      leaveAnimation: 'fade',
-    },
-  });
-  // 移除等待加载指示器
-  const loadingIndicator = document.getElementById('comment-waiting');
-  loadingIndicator && loadingIndicator.setAttribute('style', 'display: none;');
-  // 加载评论区
-  gitalk.render('gitalk-container');
-  logInfo('Comment area loaded');
+  if (Gitalk) {
+    const gitalk = new Gitalk({
+      clientID: GITALK_CLIENT_ID,
+      clientSecret: GITALK_CLIENT_SECRET,
+      repo: GITALK_REPO,
+      owner: GITALK_OWNER,
+      admin: GITALK_ADMIN,
+      id: needComment.getAttribute('data-identifier') || location.pathname,
+      createIssueManually: true,
+      flipMoveOptions: {
+        staggerDelayBy: 150,
+        appearAnimation: 'fade',
+        enterAnimation: 'fade',
+        leaveAnimation: 'fade',
+      },
+    });
+    // 移除等待加载指示器
+    const loadingIndicator = document.getElementById('comment-waiting');
+    loadingIndicator && loadingIndicator.setAttribute('style', 'display: none;');
+    // 加载评论区
+    gitalk.render('gitalk-container');
+    logInfo('Comment area loaded');
+  }
 };
 
 /* IntersectionObserver 懒加载 */

@@ -36,6 +36,7 @@
 {{- partial "opengraph.html" . -}}
 
 <!-- stylesheets -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.css" />
 {{- if eq (getenv "NODE_ENV") "production" -}}
 {{- $options := (dict "targetPath" "assets/amzrk2.min.css" "outputStyle" "expanded" "includePaths" (slice "node_modules")) -}}
 {{- $css := resources.Get "scss/index.scss" | resources.ToCSS $options -}}
