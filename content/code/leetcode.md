@@ -90,4 +90,9 @@ description: 'LeetCode 解题相关笔记。'
 
 **剑指 Offer 18 - 删除链表的节点**
 
-- 正则：<https://leetcode-cn.com/submissions/detail/139998699/>
+- 双指针：<https://leetcode-cn.com/submissions/detail/139998699/>
+
+**剑指 Offer 21 - 调整数组顺序使奇数位于偶数前面**
+
+1. 双指针：<https://leetcode-cn.com/submissions/detail/141552993/>
+2. 排序：<https://leetcode-cn.com/submissions/detail/141555301/>
