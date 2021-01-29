@@ -96,3 +96,16 @@ description: 'LeetCode 解题相关笔记。'
 
 1. 双指针：<https://leetcode-cn.com/submissions/detail/141552993/>
 2. 排序：<https://leetcode-cn.com/submissions/detail/141555301/>
+
+**剑指 Offer 22 - 链表中倒数第 k 个节点**
+
+- 快慢指针：<https://leetcode-cn.com/submissions/detail/142106813/>
+
+**剑指 Offer 23 - 反转链表**
+
+- 三指针：<https://leetcode-cn.com/submissions/detail/142114705/>
+
+**剑指 Offer 24 - 合并两个排序的链表**
+
+1. 迭代：<https://leetcode-cn.com/submissions/detail/142118266/>
+2. 迭代 (优化)：<https://leetcode-cn.com/submissions/detail/142121429/>
