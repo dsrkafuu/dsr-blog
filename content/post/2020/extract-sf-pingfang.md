@@ -58,8 +58,10 @@ python otc2otf.py -w PingFang.ttc
         length="185584"
         lan­guage="0"
         nGroups="15464"
-      ></cmap_for­mat_12></cmap_for­mat_4></cmap_for­mat_12
-></cmap_for­mat_4>
+      ></cmap_for­mat_12>
+    </cmap_for­mat_4>
+  </cmap_for­mat_12>
+</cmap_for­mat_4>
 ```
 
 而 DP2 之后的版本却变成了 2 个 CMap 子表：
@@ -74,8 +76,8 @@ python otc2otf.py -w PingFang.ttc
     length="189520"
     lan­guage="0"
     nGroups="15792"
-  ></cmap_for­mat_12
-></cmap_for­mat_4>
+  ></cmap_for­mat_12>
+</cmap_for­mat_4>
 ```
 
 由于缺乏 `plat­formID` 为 `3` 的子表，Win­dows 将其视为了无效的字体文件。将 DP2 之后的字体文件修改为兼容 Win­dows 的字体文件的方法就是加入对应的表了。
@@ -108,9 +110,9 @@ ttx -t name PingFangSC-Regular.otf
   PingFang SC Regular; 15.0d2e5; 2019-06-14
 </namerecord>
 
-<namerecord nameID="5" platformID="3" platEncID="1" langID="0x404"> 15.0d2e5 </namerecord>
+<namerecord nameID="5" platformID="3" platEncID="1" langID="0x404">15.0d2e5</namerecord>
 
-<namerecord nameID="6" platformID="3" platEncID="1" langID="0x404"> PingFangSC-Regular </namerecord>
+<namerecord nameID="6" platformID="3" platEncID="1" langID="0x404">PingFangSC-Regular</namerecord>
 
 <namerecord nameID="7" platformID="3" platEncID="1" langID="0x404">
   PingFang is a trademark of Apple Inc.
@@ -120,7 +122,7 @@ ttx -t name PingFangSC-Regular.otf
   Designed by DynaComware &amp; Apple.
 </namerecord>
 
-<namerecord nameID="11" platformID="3" platEncID="1" langID="0x404"> http://dynacw.com </namerecord>
+<namerecord nameID="11" platformID="3" platEncID="1" langID="0x404">http://dynacw.com</namerecord>
 ```
 
 重新打包字体：
@@ -135,7 +137,10 @@ ttx -b -m PingFangSC-Regular.otf PingFangSC-Regular.ttx
 
 ## 字体下载 (测试用)
 
-本人移植了全部 18 个字体文件，方便各位需要在 Windows 下临时使用的朋友，需要的可以在[此处下载](https://pan.baidu.com/s/1IZpVAkyJkU-mkRD2oEOPYg) (提取码：8ri1；解压密码：amzrk2.cc)。
+本人移植了全部 18 个字体文件，方便各位需要在 Windows 下临时使用的朋友，需要的可以在此处下载：
+
+- 链接：<https://pan.baidu.com/s/1IZpVAkyJkU-mkRD2oEOPYg>
+- 提取码：8ri1；解压密码：amzrk2.cc
 
 **此处分享的文件仅供交流测试使用，请于下载后 24 小时内删除，任何商业使用及商业利益冲突带来的法律纠纷与本人无关、概不负责。**
 
