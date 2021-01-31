@@ -1,14 +1,18 @@
 /*! Google Custom Search in CloudFlare Workers | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License */
 
-const ALLOWED_ORIGIN = [/^https?:\/\/amzrk2\.cc/, /^https?:\/\/blog\.amzrk2\.cc/];
+const ALLOWED_ORIGIN = [
+  /^https?:\/\/amzrk2\.cc/,
+  /^https?:\/\/blog\.amzrk2\.cc/,
+  /^https?:\/\/search-dsrca\.amzrk2\.workers\.dev/,
+];
 const ALLOWED_PATH = /^\/search(.*)/;
 
 const API_URL = 'https://www.googleapis.com/customsearch/v1';
 const API_KEY = 'AI**********DA';
 const API_CX = '98**********b8e';
 
-const blockedRes = (text) => new Response(`[DSR Search] Forbidden: ${text}`, { status: 403 });
-const timeoutRes = (text) => new Response(`[DSR Search] Request Timeout: ${text}`, { status: 408 });
+const blockedRes = (text) => new Response(`[dsr search] forbidden: ${text}`, { status: 403 });
+const timeoutRes = (text) => new Response(`[dsr search] tequest timeout: ${text}`, { status: 408 });
 
 /**
  * 验证 Origin 头是否允许
@@ -80,10 +84,10 @@ async function handleReq(req) {
       return res;
     } catch (e) {
       console.error(e);
-      return timeoutRes('Internal Google API error occurred.');
+      return timeoutRes('internal Google API error occurred');
     }
   }
-  return blockedRes('No search querys found.'); // 拒绝
+  return blockedRes('no search querys found'); // 拒绝
 }
 
 addEventListener('fetch', (event) => {
@@ -95,6 +99,6 @@ addEventListener('fetch', (event) => {
   if (validOrigin && validPath) {
     event.respondWith(handleReq(req)); // 响应
   } else {
-    event.respondWith(blockedRes('Origin or pathname not allowed.')); // 拒绝
+    event.respondWith(blockedRes('origin or pathname not allowed')); // 拒绝
   }
 });
