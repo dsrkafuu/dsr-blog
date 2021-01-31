@@ -8,7 +8,7 @@ export const NOTIFICATION_FEATURE_SUPPORTED = 'amzrk2-notification-feature-suppo
 export const NOTIFICATION_FEATURE_DISMISSED = 'amzrk2-notification-feature-dismissed';
 
 // search
-export const SEARCH_API_URL = 'https://worker.amzrk2.cc/search';
+export const SEARCH_API_URL = 'https://workers.amzrk2.cc/search';
 
 // gitalk
 export const GITALK_CLIENT_ID = 'ba05c2d3a770e5be487a';
