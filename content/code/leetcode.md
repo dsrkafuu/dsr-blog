@@ -10,7 +10,7 @@ description: 'LeetCode 解题相关笔记。'
 
 本笔记收录了我的部分 LeetCode 解题过程，笔记不定期更新，寻找题目请使用 `Ctrl + F` 搜索。
 
-使用语言为 JavaScript，注意由于语言本身特性以及 V8 引擎实现特性，理论更优的算法很可能在判题过程中展现出更慢的结果，同一题进行多次提交也有可能表现出不同结果，因此 LeetCode 提交中的数据仅供参考。
+使用语言为 JavaScript，由于语言本身特性以及 V8 引擎实现特性，理论更优的算法很可能在判题过程中展现出更慢的结果，同一题进行多次提交、亦或是单纯的将定义题解的 `var` 替换为 `const` 都有可能表现出很大的速度、空间差距，因此 LeetCode 提交中的数据仅供参考。
 
 源代码同步仓库：<https://github.com/amzrk2/dsr-leetcode>，题解思路大部分完整标注于注释中。
 
@@ -101,11 +101,23 @@ description: 'LeetCode 解题相关笔记。'
 
 - 快慢指针：<https://leetcode-cn.com/submissions/detail/142106813/>
 
-**剑指 Offer 23 - 反转链表**
+**剑指 Offer 24 - 反转链表**
 
 - 三指针：<https://leetcode-cn.com/submissions/detail/142114705/>
 
-**剑指 Offer 24 - 合并两个排序的链表**
+**剑指 Offer 25 - 合并两个排序的链表**
 
 1. 迭代：<https://leetcode-cn.com/submissions/detail/142118266/>
 2. 迭代 (优化)：<https://leetcode-cn.com/submissions/detail/142121429/>
+
+**剑指 Offer 26 - 树的子结构**
+
+- DFS (先序遍历)：<https://leetcode-cn.com/submissions/detail/143400989/>
+
+**剑指 Offer 27 - 二叉树的镜像**
+
+- DFS (后序遍历)：<https://leetcode-cn.com/submissions/detail/143404579/>
+
+**剑指 Offer 27 - 对称的二叉树**
+
+- BFS (类层次遍历)：<https://leetcode-cn.com/submissions/detail/143409066/>
