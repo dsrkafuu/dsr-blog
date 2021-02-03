@@ -94,11 +94,7 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 特殊注意点：写入 `view` 之前需要检测，若十分钟内同用户同页面访问则合并；因此 `pvt` 的更新需要使用 $inc 增加而不是直接替换更新。
 
-## 管理面板设置页面
-
-Collect 路由完成后进行基本测试，确认数据收集正常后开始开发管理面板设置页面；这部分开发时前端的页面与后端的对应接口同步进行。
-
-### 自定义组件库
+## 自定义组件库
 
 首先使用 Vue 完成了以下基本组件库：
 
@@ -114,16 +110,46 @@ Collect 路由完成后进行基本测试，确认数据收集正常后开始开
 
 组件库通过插件的 `install` 方法使用 `Vue.use` 进行安装。
 
+## 路由规划
+
 ### 前端路由规划
 
-- `/`：基本页面 (登录后)
-  - `/dashboard[?site=]`：数据一览 (动态路由)
-    - `/dashboard/[type][?site=]`：数据一览 (动态路由)
-  - `/realtime`：实时监控
-  - `/settings`：设置页 (动态组件)
-    - `UserSettings`：用户设置
-    - `WebsiteSettings`：网站设置
-    - `About`：关于
-    - `UserEdit`：用户编辑 (隐藏)
-    - `WebsiteEdit`：网站编辑 (隐藏)
+- `/dashboard[?website=]`：数据一览 (动态路由)
+  - `/dashboard/[type][?website=]`：数据一览 (动态路由)
+- `/realtime[?website=]`：实时监控
+- `/settings`：设置页 (动态组件)
+  - `About`：关于
+  - `Account`：用户设置
+  - `WebsiteSettings`：网站设置
+  - `WebsiteEdit`：网站编辑 (隐藏)
 - `/login`：登录页 (登录前)
+
+### 前端 store 规划
+
+使用 Vuex 模块定义多个 module：
+
+- `MESSAGE`：`GMessage` 组件相关数据
+- `THEME`：主题切换相关数据
+- `COMMON`：基本数据，如当前选择的网站、网站列表、登陆的账户等
+- `WEBSITE`：`/settings` 设置页面相关数据
+
+### 后端路由规划
+
+多层嵌套路由：
+
+- `/collect`：上文提及的数据收集路由
+- `/common`：基本数据路由，如网站列表等
+- `/login`：登录接口，基本的 `bcrypt` + `jwt`
+
+### 路由守卫
+
+鉴权检查：
+
+- 前端未登录时仅允许访问 404 页面与登陆页面
+- 后端对所有管理路由添加鉴权中间件
+
+站点选择路由 query 同步：
+
+- 初始化 `/` 页面时 `mounted` 内获取站点，选择默认站点或保存的站点，更新路由 query
+- 初始化 `/realtime` 或 `/dashboard` 页面时 `mounted` 内更新路由 query
+- 在导航栏切换站点时，更新路由 query
