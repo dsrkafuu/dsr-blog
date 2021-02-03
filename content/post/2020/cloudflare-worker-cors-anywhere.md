@@ -28,10 +28,12 @@ Workers 可以直接使用 CloudFlare 提供的域名，不过一般还是绑定
 首先我们需要限制访问请求的来源，防止有限的 worker 访问次数被他人简单刷空，因此定义一个检查 `Referer` 的函数：
 
 ```js
-const ALLOWED_ORIGIN = [/^https?:\/\/my-project\.example\.org/, /^https?:\/\/localhost/]; // 允许的来源
+// 允许的来源
+const ALLOWED_ORIGIN = [/^https?:\/\/my-project\.example\.org/, /^https?:\/\/localhost/];
+
 /**
  * 验证 Origin 头
- * @param {String} origin
+ * @param {string} origins
  */
 function validateOrigin(origin) {
   if (origin && origin.includes('https')) {
@@ -50,10 +52,12 @@ function validateOrigin(origin) {
 由于我们所有的 worker 都在同一个 `worker.example.org` 域名下部署，因此指定 `worker.example.org/bgm/` 作为这次代理的根 URL，接下来我们就需要提取出正确的 pathname 来发送给被代理的 API：
 
 ```js
-const API_PATH = /^\/bgm(.*)/; // 这次代理的根 URL (次级)
+// 这次代理的根 URL (次级)
+const API_PATH = /^\/bgm(.*)/;
+
 /**
  * 解析 pathname
- * @param {String} url
+ * @param {string} url
  */
 function validatePath(pathname) {
   const parsedPath = API_PATH.exec(pathname);
@@ -78,12 +82,15 @@ function validatePath(pathname) {
 以下为演示实现：
 
 ```js
-const API_URL = 'https://api.bgm.tv/'; // 源 API 地址
+// 源 API 地址
+const API_URL = 'https://api.bgm.tv/';
+
 /**
  * 添加 CORS 头
  * @param {Request} request - 源请求
- * @param {String} origin - 源 origin
- * @param {String} pathname - 源请求解析出的正确 pathname
+ * @param {string} origin - 源 origin
+ * @param {string} pathname - 源请求解析出的正确 pathname
+ * @param {URLSearchParams} searchParams - 源请求的 searchParams
  */
 async function handleRequest(request, origin, pathname, searchParams) {
   const apiUrl = new URL(API_URL); // 构建一个新的 URL 对象 `api.bgm.tv/`
@@ -134,7 +141,7 @@ addEventListener('fetch', (event) => {
   if (validOrigin && validPath) {
     event.respondWith(handleRequest(request, origin, validPath));
   } else {
-    const response = new Response('[BGM API Proxy] Request not allowed', { status: 403 });
+    const response = new Response('[bgm.tv api proxy] request not allowed', { status: 403 });
     event.respondWith(response);
   }
 });
@@ -155,7 +162,7 @@ const ALLOWED_ORIGIN = [
 
 /**
  * 验证 Origin 头
- * @param {String} origin
+ * @param {string} origin
  */
 function validateOrigin(origin) {
   if (origin && origin.includes('https')) {
@@ -170,7 +177,7 @@ function validateOrigin(origin) {
 
 /**
  * 解析 pathname
- * @param {String} url
+ * @param {string} url
  */
 function validatePath(pathname) {
   const parsedPath = API_PATH.exec(pathname);
@@ -188,8 +195,8 @@ function validatePath(pathname) {
 /**
  * 添加 CORS 头
  * @param {Request} request - 源请求
- * @param {String} origin - 源 origin
- * @param {String} pathname - 源请求解析出的正确 pathname
+ * @param {string} origin - 源 origin
+ * @param {string} pathname - 源请求解析出的正确 pathname
  * @param {URLSearchParams} searchParams - 源请求的 searchParams
  */
 async function handleRequest(request, origin, pathname, searchParams) {
@@ -220,7 +227,7 @@ addEventListener('fetch', (event) => {
   if (validOrigin && validPath) {
     event.respondWith(handleRequest(request, origin, validPath, searchParams));
   } else {
-    const response = new Response('[BGM API Proxy] Request not allowed', { status: 403 });
+    const response = new Response('[bgm.tv api proxy] request not allowed', { status: 403 });
     event.respondWith(response);
   }
 });
@@ -240,13 +247,13 @@ const API_URL = 'https://www.googleapis.com/customsearch/v1';
 const API_KEY = 'AI**********DA';
 const API_CX = '98**********b8e';
 
-const blockedRes = (text) => new Response(`[Search] Forbidden: ${text}`, { status: 403 });
-const timeoutRes = (text) => new Response(`[Search] Request Timeout: ${text}`, { status: 408 });
+const blockedRes = (text) => new Response(`[search] forbidden: ${text}`, { status: 403 });
+const timeoutRes = (text) => new Response(`[search] request Timeout: ${text}`, { status: 408 });
 
 /**
  * 验证 Origin 头是否允许
  * @param {Request} req
- * @returns {Boolean}
+ * @returns {boolean}
  */
 function validateOrigin(req) {
   const origin = req.headers.get('Origin');
@@ -268,7 +275,7 @@ function validateOrigin(req) {
 /**
  * 验证 pathname 是否允许
  * @param {Request} req
- * @returns {Boolean}
+ * @returns {boolean}
  */
 function validatePath(req) {
   const url = new URL(req.url);
@@ -282,7 +289,7 @@ function validatePath(req) {
 
 /**
  * 请求搜索结果
- * @param {String} searchQuerys - 关键词
+ * @param {string} searchQuerys - 关键词
  * @returns {Promise<Response>}
  */
 async function fetchGoogleAPI(searchQuerys) {
@@ -313,10 +320,10 @@ async function handleReq(req) {
       return res;
     } catch (e) {
       console.error(e);
-      return timeoutRes('Internal Google API error occurred.');
+      return timeoutRes('internal Google API error occurred');
     }
   }
-  return blockedRes('No search querys found.'); // 拒绝
+  return blockedRes('no search querys found'); // 拒绝
 }
 
 addEventListener('fetch', (event) => {
@@ -328,7 +335,7 @@ addEventListener('fetch', (event) => {
   if (validOrigin && validPath) {
     event.respondWith(handleReq(req)); // 响应
   } else {
-    event.respondWith(blockedRes('Origin or pathname not allowed.')); // 拒绝
+    event.respondWith(blockedRes('origin or pathname not allowed')); // 拒绝
   }
 });
 ```
