@@ -14,7 +14,7 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 <!--more-->
 
-作为一个前端实验性项目，同时作为一个我自己每天都需要用到的项目；从制定计划到完成 0.1 版本，我是如何完成 Goose Analytics 的开发的？
+作为我的第一个完全由自己构思的前端项目，同时作为一个我自己每天都需要用到的项目；从制定计划到完成 0.1 版本，我是如何完成 Goose Analytics 的开发的？
 
 ## 基础框架
 
@@ -71,11 +71,11 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 - `View`：网页浏览记录，关联 `Website` 和 `Session`
 - `Event`：网页事件记录，关联 `Website` 和 `Session`
 
-## Collect 路由
+## API Collect 路由
 
 完成 tracker 后，下一个任务是接收信息的基本路由。以下为该路由的处理进程：
 
-1. 收到对 `/collect` 的 GET 或 POST 请求
+1. 收到对 `/api/collect` 的 GET 或 POST 请求
 2. 检查是否为 bot 或 localhost
 3. 检查请求来源网站是否存在
 4. 检查 `sid` 是否存在，若不存在，则新建 session
@@ -83,16 +83,21 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 `view` 类型：
 
-1. 写入一个新的 view，包含 `path` 和 `ref` 等数据，并且初始化 `pvt` 为 0
-2. 检查是否需要更新 session 属性
-3. 更新 language、screen、browser、system 和 location
+1. 写入一个新的 view，包含 `path` 和 `ref` 等数据，并且初始化 `pvt` 为 `0`
+2. 检查是否需要更新 session 的属性
+3. 更新 `language`、`screen`、`browser`、`system` 和 `location`
 
 `leave` 类型：
 
 1. 搜索网页浏览记录，找到上一次同页同用户同路径的记录
 2. 修改 `pvt` 字段
 
-特殊注意点：写入 `view` 之前需要检测，若十分钟内同用户同页面访问则合并；因此 `pvt` 的更新需要使用 $inc 增加而不是直接替换更新。
+特殊注意点：
+
+- 写入 view 之前需要检测以下情况：
+  1. 十五分钟内没有同用户同页访问：写入新的 view
+  2. 十五分钟内有同用户同页访问：检查是否需要更新 `referrer`，并更新 `date` 为最新时间
+- `pvt` 的更新需要使用 `$inc` 从初值 `0` 增加而不是直接替换更新
 
 ## 自定义组件库
 
@@ -110,7 +115,7 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 组件库通过插件的 `install` 方法使用 `Vue.use` 进行安装。
 
-## 路由规划
+## 前端路由
 
 ### 前端路由规划
 
@@ -124,7 +129,7 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
   - `WebsiteEdit`：网站编辑 (隐藏)
 - `/login`：登录页 (登录前)
 
-### 前端 store 规划
+### Vuex 规划
 
 使用 Vuex 模块定义多个 module：
 
@@ -132,14 +137,6 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 - `THEME`：主题切换相关数据
 - `COMMON`：基本数据，如当前选择的网站、网站列表、登陆的账户等
 - `WEBSITE`：`/settings` 设置页面相关数据
-
-### 后端路由规划
-
-多层嵌套路由：
-
-- `/collect`：上文提及的数据收集路由
-- `/common`：基本数据路由，如网站列表等
-- `/login`：登录接口，基本的 `bcrypt` + `jwt`
 
 ### 路由守卫
 
@@ -150,6 +147,32 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 站点选择路由 query 同步：
 
-- 初始化 `/` 页面时 `mounted` 内获取站点，选择默认站点或保存的站点，更新路由 query
-- 初始化 `/realtime` 或 `/dashboard` 页面时 `mounted` 内更新路由 query
-- 在导航栏切换站点时，更新路由 query
+1. 动态更新导航栏连接，添加 `website` query
+2. 若直接访问某页面，则在 `Base` (背景与导航栏) 组件中会有更新 query 的操作，因此无需再次检查
+
+## 后端路由
+
+### 后端路由规划
+
+- `/init`：初始化
+- `/login`：登录
+- `/metrics`：数据展示
+  - `/metrics/dashboard[?website=&type=]`：实时页数据展示
+  - `/metrics/realtime[?website=]`：实时页数据展示
+- `/admin`：设置页
+  - `/admin/website`：站点设置
+  - `/admin/account`：用户设置
+
+### 账户管理
+
+在请求 `/login` 登录时，首先请求 `/init` 获取初始化状态。若未初始化，则将第一次登录的用户密码存入数据库，否则直接登录。
+
+密码方面，使用传统的 bcrypt + jsonwebtoken 组合，详见：[Node 登录模块、权限验证、错误处理和可配置自定义中间件实现笔记](/post/2020/login-api/jwt/)。
+
+## 更新计划
+
+- 多用户管理
+- Vue.js 大版本更新
+- Vue CLI 替换为 Vite
+- 迁移至 TypeScript
+- Chart.js 图表展示与性能优化
