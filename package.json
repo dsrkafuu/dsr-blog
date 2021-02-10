@@ -1,11 +1,11 @@
 {
   "name": "dsr-ca",
   "version": "5.6.1",
-  "author": "DSRKafuU <amzrk2@outlook.com> (https://amzrk2.cc/)",
+  "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.co)",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amzrk2/dsr-ca"
+    "url": "https://github.com/dsrkafuu/dsr-ca"
   },
   "dependencies": {
     "bulma": "~0.9.2",

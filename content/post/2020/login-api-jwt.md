@@ -16,7 +16,7 @@ image: '/images/header/nodejs-mongodb.webp'
 
 ## 管理员账户添加
 
-利用先前的[通用 CRUD 接口实现](https://blog.amzrk2.cc/post/universal-crud-router/)创建一个新的数据模型 `UserAdmin` 用于存储管理员账户的信息。简单起见此处只设置了两个字段 `username` 和 `password`。
+利用先前的[通用 CRUD 接口实现](/post/2020/universal-crud-router/)创建一个新的数据模型 `UserAdmin` 用于存储管理员账户的信息。简单起见此处只设置了两个字段 `username` 和 `password`。
 
 `username` 使用 String 直接保存即可，但 `password` 一定是需要进行加密的，这里使用 [bcrypt](https://github.com/kelektiv/node.bcrypt.js) 包在数据库接受密码存储时进行加密。
 

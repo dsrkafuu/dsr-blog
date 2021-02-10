@@ -1,9 +1,9 @@
 /*! Google Custom Search in CloudFlare Workers | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License */
 
 const ALLOWED_ORIGIN = [
-  /^https?:\/\/amzrk2\.cc/,
-  /^https?:\/\/blog\.amzrk2\.cc/,
-  /^https?:\/\/search-dsrca\.amzrk2\.workers\.dev/,
+  /^https?:\/\/dsrkafuu\.co/,
+  /^https?:\/\/blog\.dsrkafuu\.co/,
+  /^https?:\/\/dsr-ca-search\.dsrkafuu\.workers\.dev/,
 ];
 const ALLOWED_PATH = /^\/search(.*)/;
 

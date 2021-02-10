@@ -12,11 +12,11 @@ description: 'LeetCode 解题相关笔记。'
 
 使用语言为 JavaScript，由于语言本身特性以及 V8 引擎实现特性，理论更优的算法很可能在判题过程中展现出更慢的结果，同一题进行多次提交、亦或是单纯的将定义题解的 `var` 替换为 `const` 都有可能表现出很大的速度、空间差距，因此 LeetCode 提交中的数据仅供参考。
 
-源代码同步仓库：<https://github.com/amzrk2/dsr-leetcode>，题解思路大部分完整标注于注释中。
+源代码同步仓库：<https://github.com/dsrkafuu/dsr-leetcode>，题解思路大部分完整标注于注释中。
 
 ## 数据结构
 
-<https://github.com/amzrk2/dsr-leetcode/blob/main/class>
+<https://github.com/dsrkafuu/dsr-leetcode/blob/main/class>
 
 ## 题解列表
 

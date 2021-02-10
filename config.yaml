@@ -1,5 +1,5 @@
 # base info
-baseURL: "https://blog.amzrk2.cc/"
+baseURL: "https://blog.dsrkafuu.co"
 title: "DSRCA"
 
 # features
@@ -11,7 +11,7 @@ taxonomies:
 paginate: 10
 disableKinds:
   - "RSS"
-googleAnalytics: "G-FE3M2X1N4B"
+googleAnalytics: "G-YW0Y7DD3C0"
 
 # language
 languageCode: "zh-cn" # rss
@@ -21,8 +21,8 @@ defaultContentLanguage: "zh-hans" # html
 params:
   # sidebar info
   author: "DSRKafuU"
-  para: "是卡夫"
-  avatar: "https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/images/avatars/amzrk2_256p.webp"
+  para: "Internet for people, not profit"
+  avatar: "https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1.1/images/avatars/dsrkafuu_256p.webp"
   image: "/images/_header.webp"
   og: "/images/_og.png"
   mainSections:
@@ -47,13 +47,13 @@ menu:
       weight: 4
   links:
     - name: "#icon-github"
-      url: "https://github.com/amzrk2"
+      url: "https://github.com/dsrkafuu"
       weight: 1
     - name: "#icon-twitter"
-      url: "https://twitter.com/amzrk2"
+      url: "https://twitter.com/dsrkafuu"
       weight: 2
     - name: "#icon-steam"
-      url: "https://steamcommunity.com/id/amzrk2/"
+      url: "https://steamcommunity.com/id/dsrkafuu/"
       weight: 3
 
 # markup

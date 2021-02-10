@@ -19,7 +19,7 @@ Bangumi 的 API 的基础 URL 为 `https://api.bgm.tv/`，由于篇幅限制和�
 
 ## Workers 前期设置
 
-Workers 可以直接使用 CloudFlare 提供的域名，不过一般还是绑定自己的域名使用，这种情况下需要一个通过 CloudFlare 提供 DNS 解析的域名。演示中我们以 `worker.example.org` 为例 (假设 `example.org` 是我托管在 CF 的域名)。将 `worker.example.org` 解析到任意页面 (演示中解析到了不使用的 `amzrk2.github.io`) 并通过 CloudFlare 代理流量即可。
+Workers 可以直接使用 CloudFlare 提供的域名，不过一般还是绑定自己的域名使用，这种情况下需要一个通过 CloudFlare 提供 DNS 解析的域名。演示中我们以 `worker.example.org` 为例 (假设 `example.org` 是我托管在 CF 的域名)。将 `worker.example.org` 解析到任意页面 (演示中解析到了不使用的 `dsrkafuu.github.io`) 并通过 CloudFlare 代理流量即可。
 
 完成之后创建一个新的 worker，并开始准备代码。Workers 的完整文档见 [CloudFlare Docs](https://developers.cloudflare.com/workers/)。
 

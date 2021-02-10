@@ -1,4 +1,4 @@
-/*! github.com/amzrk2/dsr-ca | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License */
+/*! github.com/dsrkafuu/dsr-ca | DSRKafuU <dsrkafuu.co> | Copyright (c) Apache-2.0 License */
 
 /* common */
 import './common';
