@@ -3,7 +3,7 @@ const ALLOWED_ORIGIN = [
   /^https?:\/\/blog\.dsrkafuu\.co/,
   /^https?:\/\/dsr-ca-search\.dsrkafuu\.workers\.dev/,
 ];
-const ALLOWED_PATH = /^\//;
+const ALLOWED_PATH = /^\/$/;
 
 const API_URL = 'https://www.googleapis.com/customsearch/v1';
 const API_KEY = 'AI***********************************vk';
