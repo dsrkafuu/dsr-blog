@@ -57,7 +57,7 @@
 
 ## LICENSE
 
-<img align="right" alt="FOSSA" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdsrkafuu%2Fdsr-ca.svg?type=large" />
+<a align="right" href="https://app.fossa.com/projects/git%2Bgithub.com%2Fdsrkafuu%2Fdsr-ca?ref=badge_large" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdsrkafuu%2Fdsr-ca.svg?type=large"/></a>
 
 The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/dsrkafuu/dsr-ca/blob/master/LICENSE).
 
