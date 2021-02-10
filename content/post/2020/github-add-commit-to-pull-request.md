@@ -14,7 +14,7 @@ image: '/images/header/github.webp'
 
 ![分支路线图](/images/post/2020/github-add-commit-to-pull-request/20201001170900.webp)
 
-在下文的实现例子中，仓库维护者 (我) 的用户名是 `amzrk2`，提交 request 的开发者用户名是 `Hyask`。示例的 pull request 修改了文件，并且直接从对方的 `master` 分支推送到本仓库 [hugo-theme-fuji](https://github.com/amzrk2/hugo-theme-fuji) 的 `master` 分支。
+在下文的实现例子中，仓库维护者 (我) 的用户名是 `amzrk2`，提交 request 的开发者用户名是 `Hyask`。示例的 pull request 修改了文件，并且直接从对方的 `master` 分支推送到本仓库 [hugo-theme-fuji](https://github.com/dsrkafuu/hugo-theme-fuji) 的 `master` 分支。
 
 ![pull request 预览](/images/post/2020/github-add-commit-to-pull-request/20200928172908.webp)
 

@@ -17,13 +17,13 @@ const plugins = [
 ];
 const sourcemap = false;
 const banner =
-  '/*! github.com/amzrk2/dsr-ca | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License */';
+  '/*! github.com/dsrkafuu/dsr-ca | DSRKafuU <dsrkafuu.co> | Copyright (c) Apache-2.0 License */';
 
 export default [
   {
     input: 'assets/js/list.js',
     output: {
-      file: 'public/assets/amzrk2-list.min.js',
+      file: 'public/assets/dsr-ca_list.min.js',
       format: 'iife',
       sourcemap,
       banner,
@@ -33,7 +33,7 @@ export default [
   {
     input: 'assets/js/search.js',
     output: {
-      file: 'public/assets/amzrk2-search.min.js',
+      file: 'public/assets/dsr-ca_search.min.js',
       format: 'iife',
       sourcemap,
       banner,
@@ -43,7 +43,7 @@ export default [
   {
     input: 'assets/js/single.js',
     output: {
-      file: 'public/assets/amzrk2-single.min.js',
+      file: 'public/assets/dsr-ca_single.min.js',
       format: 'iife',
       sourcemap,
       banner,
