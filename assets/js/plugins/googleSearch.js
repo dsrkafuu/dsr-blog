@@ -1,15 +1,13 @@
-/*! Google Custom Search in CloudFlare Workers | DSRKafuU <amzrk2.cc> | Copyright (c) Apache-2.0 License */
-
 const ALLOWED_ORIGIN = [
   /^https?:\/\/dsrkafuu\.co/,
   /^https?:\/\/blog\.dsrkafuu\.co/,
   /^https?:\/\/dsr-ca-search\.dsrkafuu\.workers\.dev/,
 ];
-const ALLOWED_PATH = /^\/search(.*)/;
+const ALLOWED_PATH = /^\//;
 
 const API_URL = 'https://www.googleapis.com/customsearch/v1';
-const API_KEY = 'AI**********DA';
-const API_CX = '98**********b8e';
+const API_KEY = 'AI***********************************vk';
+const API_CX = '3a*************3e';
 
 const blockedRes = (text) => new Response(`[dsr search] forbidden: ${text}`, { status: 403 });
 const timeoutRes = (text) => new Response(`[dsr search] tequest timeout: ${text}`, { status: 408 });
@@ -45,7 +43,7 @@ function validatePath(req) {
   const url = new URL(req.url);
   const pathname = url.pathname;
   const valid = ALLOWED_PATH.exec(pathname);
-  if (valid && valid.length > 1) {
+  if (valid) {
     return true; // 放行
   }
   return false; // 拒绝
