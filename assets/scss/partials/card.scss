@@ -12,9 +12,11 @@
 
 .card-info {
   text-align: center;
+  padding: 0;
 
   .avatar {
     margin: 0 auto 1rem auto;
+    padding-top: $amzrk2-space-base;
     width: 5rem;
     user-select: none;
     border-radius: $amzrk2-radius;
@@ -27,6 +29,7 @@
     }
     text-align: center;
     font-size: $amzrk2-font-size-sm;
+    padding: 0 $amzrk2-space-sm / 2;
   }
   .info-name {
     font-size: $amzrk2-font-size-lg;
@@ -38,6 +41,8 @@
 
   .counter {
     display: flex;
+    padding: $amzrk2-space-base;
+    padding-top: 0;
   }
   .counter-wrapper {
     flex: 1 1 auto;
