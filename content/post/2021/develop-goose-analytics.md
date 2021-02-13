@@ -1,6 +1,6 @@
 ---
 title: 'Goose Analytics 开发全记录'
-date: 2021-03-12T00:00:00+08:00
+date: 2025-03-12T00:00:00+08:00
 tags:
   - 'javascript'
   - 'vue'
