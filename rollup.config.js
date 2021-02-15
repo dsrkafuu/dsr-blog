@@ -17,7 +17,7 @@ const plugins = [
 ];
 const sourcemap = false;
 const banner =
-  '/*! github.com/dsrkafuu/dsr-ca | DSRKafuU <dsrkafuu.co> | Copyright (c) Apache-2.0 License */';
+  '/*! github.com/dsrkafuu/dsr-ca | DSRKafuU <dsrkafuu.su> | Copyright (c) Apache-2.0 License */';
 
 export default [
   {
