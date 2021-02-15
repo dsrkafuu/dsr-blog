@@ -11,7 +11,7 @@ taxonomies:
 paginate: 10
 disableKinds:
   - "RSS"
-googleAnalytics: "G-XMT2BTPCRM"
+googleAnalytics: "G-P3JYXLDF3W"
 
 # language
 languageCode: "zh-cn" # rss
