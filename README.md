@@ -4,7 +4,7 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/dsrkafuu/dsr-ca)
 ![GitHub license](https://img.shields.io/github/license/dsrkafuu/dsr-ca)
 
-新版整合式个人博客 [blog.dsrkafuu.co](https://blog.dsrkafuu.co)，基于 Hugo 实现，包含博客文章和笔记整合。
+新版整合式个人博客 [blog.dsrkafuu.su](https://blog.dsrkafuu.su)，基于 Hugo 实现，包含博客文章和笔记整合。
 
 基于 Bulma 开发，非面向主题使用者的通用主题，如果有朋友感兴趣也欢迎发 issue、修改或自己使用。模板已经独立发布于：<https://github.com/dsrkafuu/hugo-template-aofuji>；如果你对可以直接使用的 Hugo 主题感兴趣，请见：<https://github.com/dsrkafuu/hugo-theme-fuji>
 
@@ -61,4 +61,4 @@
 
 The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/dsrkafuu/dsr-ca/blob/master/LICENSE).
 
-**Copyright © 2018-present DSRKafuU <https://dsrkafuu.co/>**
+**Copyright © 2018-present DSRKafuU <https://dsrkafuu.su/>**
