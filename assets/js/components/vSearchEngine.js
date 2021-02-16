@@ -78,10 +78,10 @@ const VApp = {
   mounted() {
     const hasInput = this.parseSearchInput();
     if (hasInput) {
-      logInfo('Searching with keys:', this.searchInput);
+      logInfo('searching with keys:', this.searchInput);
       this.performSearch();
     } else {
-      logInfo('No search keys found');
+      logInfo('no search keys found');
     }
   },
   methods: {

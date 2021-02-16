@@ -8,6 +8,3 @@ const themeManager = new ThemeManager();
 document.getElementById('ctrl-adjust').addEventListener('click', () => {
   themeManager.switchTheme();
 });
-
-/* feature detection */
-import './components/feature';
