@@ -19,7 +19,7 @@ const loadComment = () => {
       repo: GITALK_REPO,
       owner: GITALK_OWNER,
       admin: GITALK_ADMIN,
-      id: needComment.getAttribute('data-identifier') || location.pathname,
+      id: needComment.getAttribute('data-identifier'),
       createIssueManually: true,
       flipMoveOptions: {
         staggerDelayBy: 150,
@@ -33,7 +33,7 @@ const loadComment = () => {
     loadingIndicator && loadingIndicator.setAttribute('style', 'display: none;');
     // 加载评论区
     gitalk.render('gitalk-container');
-    logInfo('Comment area loaded');
+    logInfo('comment area loaded');
   }
 };
 

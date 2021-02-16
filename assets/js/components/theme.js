@@ -42,7 +42,7 @@ export default class ThemeManager {
     if (['auto', 'dark', 'light'].includes(scheme)) {
       document.body.setAttribute(BODY_ATTRIBUTE_THEME, scheme);
       this.theme = scheme;
-      logInfo(`Theme set to ${scheme} mode`);
+      logInfo(`theme set to ${scheme}`);
     }
   }
 
