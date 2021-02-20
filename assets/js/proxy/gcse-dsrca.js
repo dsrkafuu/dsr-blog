@@ -46,7 +46,7 @@ function validatePath(req) {
  * @returns {Promise<Response>}
  */
 async function fetchGoogleAPI(searchQuerys) {
-  const url = new URL(API_URL); // 构建一个新的 URL 对象 `googleapis.com`
+  const url = new URL(API_BASE); // 构建一个新的 URL 对象 `googleapis.com`
   url.searchParams.set('cx', API_CX); // 设置 cx
   url.searchParams.set('key', API_KEY); // 设置 key
   url.searchParams.set('q', searchQuerys); // 设置 q
