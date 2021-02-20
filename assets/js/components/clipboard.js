@@ -2,14 +2,14 @@ import { COPY_LICENSE, BODY_ATTRIBUTE_SECTION } from '../plugins/constants';
 
 /**
  * 获取父节点
- * @param {HTMLElement} node 当前节点
- * @param {Number} count 递归层数
+ * @param {Element} node 当前节点
+ * @param {number} count 递归层数
  */
 function getAllParentNodes(node, count = 4) {
   const allParentNodes = [];
   let recCount = 2; // 递归层数
   /**
-   * @param {HTMLElement} node
+   * @param {Element} node
    */
   const getParentNodes = (node) => {
     if (recCount++ >= count || !node.parentNode) {
@@ -22,9 +22,7 @@ function getAllParentNodes(node, count = 4) {
   return allParentNodes;
 }
 
-/**
- * 剪贴板拦截
- */
+// 剪贴板拦截
 if (document.body.getAttribute(BODY_ATTRIBUTE_SECTION) === 'single') {
   document.addEventListener('copy', (event) => {
     if (event.clipboardData) {

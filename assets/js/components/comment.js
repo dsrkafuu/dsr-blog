@@ -1,6 +1,6 @@
-/* gitalk */
 import { logInfo, logError } from '../plugins/logger';
 import {
+  GITALK_PROXY,
   GITALK_CLIENT_ID,
   GITALK_CLIENT_SECRET,
   GITALK_REPO,
@@ -27,6 +27,7 @@ const loadComment = () => {
         enterAnimation: 'fade',
         leaveAnimation: 'fade',
       },
+      proxy: GITALK_PROXY,
     });
     // 移除等待加载指示器
     const loadingIndicator = document.getElementById('comment-waiting');
