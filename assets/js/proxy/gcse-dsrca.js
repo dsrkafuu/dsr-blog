@@ -1,29 +1,20 @@
-const ALLOWED_ORIGIN = [
-  /^https?:\/\/dsrkafuu\.co/,
-  /^https?:\/\/blog\.dsrkafuu\.co/,
-  /^https?:\/\/dsr-ca-search\.dsrkafuu\.workers\.dev/,
-];
-const ALLOWED_PATH = /^\/$/;
+const API_BASE = 'https://www.googleapis.com/customsearch/v1';
+const PROXY_PATH = /^\/(\/?.*)/;
+const ALLOWED_ORIGIN = [/^https?:\/\/.*dsrkafuu\.su$/, /^https?:\/\/localhost/];
 
-const API_URL = 'https://www.googleapis.com/customsearch/v1';
-const API_KEY = 'AI***********************************vk';
-const API_CX = '3a*************3e';
+const API_KEY = 'A**********************************k';
+const API_CX = '3***************e';
 
 const blockedRes = (text) => new Response(`[dsr search] forbidden: ${text}`, { status: 403 });
 const timeoutRes = (text) => new Response(`[dsr search] tequest timeout: ${text}`, { status: 408 });
 
 /**
- * 验证 Origin 头是否允许
+ * 验证 Origin
  * @param {Request} req
- * @returns {Boolean}
+ * @return {boolean}
  */
 function validateOrigin(req) {
   const origin = req.headers.get('Origin');
-  /* DEV - START */
-  if (origin && origin.includes('localhost')) {
-    return true;
-  }
-  /* DEV - END */
   if (origin && origin.includes('https')) {
     for (let i = 0; i < ALLOWED_ORIGIN.length; i++) {
       if (ALLOWED_ORIGIN[i].exec(origin)) {
@@ -35,9 +26,9 @@ function validateOrigin(req) {
 }
 
 /**
- * 验证 pathname 是否允许
+ * 解析 API 请求路径
  * @param {Request} req
- * @returns {Boolean}
+ * @return {string}
  */
 function validatePath(req) {
   const url = new URL(req.url);
@@ -51,7 +42,7 @@ function validatePath(req) {
 
 /**
  * 请求搜索结果
- * @param {String} searchQuerys - 关键词
+ * @param {string} searchQuerys
  * @returns {Promise<Response>}
  */
 async function fetchGoogleAPI(searchQuerys) {
@@ -59,12 +50,13 @@ async function fetchGoogleAPI(searchQuerys) {
   url.searchParams.set('cx', API_CX); // 设置 cx
   url.searchParams.set('key', API_KEY); // 设置 key
   url.searchParams.set('q', searchQuerys); // 设置 q
-  return fetch(url);
+  const res = await fetch(url);
+  return res;
 }
 
 /**
  * 响应请求
- * @param {Request} req - 源请求
+ * @param {Request} req
  * @returns {Response}
  */
 async function handleReq(req) {
