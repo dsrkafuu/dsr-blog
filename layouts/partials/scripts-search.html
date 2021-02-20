@@ -1,12 +1,15 @@
+{{ if eq (getenv "NODE_ENV") "production" }}
+<script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.prod.js"></script>
+{{ else }}
+{{ end }}
+<script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.js"></script>
+
+{{ partial "scripts-common.html" . }}
 {{ $filepath := "assets/dsr-ca_search.min.js" }}
 
 {{ if eq (getenv "NODE_ENV") "production" }}
-<!-- vue -->
-<script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.prod.js"></script>
 <script defer src="{{ $filepath | relURL }}"></script>
 {{ else }}
-<!-- vue -->
-<script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.js"></script>
 {{ $options := (dict "targetPath" $filepath "minify" false "target" "esnext" "format" "iife") }}
 {{ $built := resources.Get "js/search.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>

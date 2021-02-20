@@ -20,33 +20,23 @@ const banner = '/*! dsr-ca | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apac
 
 export default [
   {
+    input: 'assets/js/common.js',
+    output: { file: 'public/assets/dsr-ca_common.min.js', format: 'iife', sourcemap, banner },
+    plugins,
+  },
+  {
     input: 'assets/js/list.js',
-    output: {
-      file: 'public/assets/dsr-ca_list.min.js',
-      format: 'iife',
-      sourcemap,
-      banner,
-    },
+    output: { file: 'public/assets/dsr-ca_list.min.js', format: 'iife', sourcemap, banner },
     plugins,
   },
   {
     input: 'assets/js/search.js',
-    output: {
-      file: 'public/assets/dsr-ca_search.min.js',
-      format: 'iife',
-      sourcemap,
-      banner,
-    },
+    output: { file: 'public/assets/dsr-ca_search.min.js', format: 'iife', sourcemap, banner },
     plugins,
   },
   {
     input: 'assets/js/single.js',
-    output: {
-      file: 'public/assets/dsr-ca_single.min.js',
-      format: 'iife',
-      sourcemap,
-      banner,
-    },
+    output: { file: 'public/assets/dsr-ca_single.min.js', format: 'iife', sourcemap, banner },
     plugins,
   },
 ];

@@ -17,13 +17,9 @@
 
 <!-- stylesheets -->
 {{- if eq (getenv "NODE_ENV") "production" -}}
-{{- $options := (dict "targetPath" "assets/amzrk2.min.css" "outputStyle" "expanded" "includePaths" (slice "node_modules")) -}}
-{{- $css := resources.Get "scss/index.scss" | resources.ToCSS $options -}}
-<link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
+<link rel="stylesheet" href="{{- "assets/dsr-ca.min.css" | relURL -}}" />
 {{- else -}}
-{{- $options := (dict "targetPath" "assets/amzrk2.css" "outputStyle" "expanded" "enableSourceMap" true "includePaths" (slice "node_modules")) -}}
-{{- $css := resources.Get "scss/index.scss" | resources.ToCSS $options -}}
-<link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
+<link rel="stylesheet" href="{{- "assets/dsr-ca.css" | relURL -}}" />
 {{- end -}}
 
 <body data-theme="auto" data-section="404">
