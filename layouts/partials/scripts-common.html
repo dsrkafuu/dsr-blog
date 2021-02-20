@@ -1,10 +1,9 @@
-{{ partial "scripts-common.html" . }}
-{{ $filepath := "assets/dsr-ca_list.min.js" }}
+{{ $filepath := "assets/dsr-ca_common.min.js" }}
 
 {{ if eq (getenv "NODE_ENV") "production" }}
 <script defer src="{{ $filepath | relURL }}"></script>
 {{ else }}
 {{ $options := (dict "targetPath" $filepath "minify" false "target" "esnext" "format" "iife") }}
-{{ $built := resources.Get "js/list.js" | js.Build $options }}
+{{ $built := resources.Get "js/common.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{ end }}
