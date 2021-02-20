@@ -5,8 +5,8 @@ const ALLOWED_ORIGIN = [/^https?:\/\/.*dsrkafuu\.su$/, /^https?:\/\/localhost/];
 const API_KEY = 'A**********************************k';
 const API_CX = '3***************e';
 
-const blockedRes = (text) => new Response(`[dsr search] forbidden: ${text}`, { status: 403 });
-const timeoutRes = (text) => new Response(`[dsr search] tequest timeout: ${text}`, { status: 408 });
+const blockedRes = (text) => new Response(`[dsr-search] forbidden: ${text}`, { status: 403 });
+const timeoutRes = (text) => new Response(`[dsr-search] tequest timeout: ${text}`, { status: 408 });
 
 /**
  * 验证 Origin
@@ -33,7 +33,7 @@ function validateOrigin(req) {
 function validatePath(req) {
   const url = new URL(req.url);
   const pathname = url.pathname;
-  const valid = ALLOWED_PATH.exec(pathname);
+  const valid = PROXY_PATH.exec(pathname);
   if (valid) {
     return true; // 放行
   }
