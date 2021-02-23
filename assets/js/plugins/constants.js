@@ -9,7 +9,7 @@ export const STORAGE_THEME = 'dsr-blog_theme';
 export const SEARCH_API_URL = 'https://workers.dsrkafuu.su/gcse-blog';
 
 // gitalk
-export const GITALK_PROXY = 'https://workers.dsrkafuu.su/ghoauth';
+export const GITALK_PROXY = 'https://workers.dsrkafuu.su/gh-oauth';
 export const GITALK_CLIENT_ID = 'ba05c2d3a770e5be487a';
 export const GITALK_CLIENT_SECRET = 'b72283fa2b19f5f506d70267f5893b331f781563';
 export const GITALK_REPO = 'dsr-blog-comments';
