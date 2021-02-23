@@ -5,7 +5,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.js"></script>
 
 {{ partial "scripts-common.html" . }}
-{{ $filepath := "assets/dsr-ca_search.min.js" }}
+{{ $filepath := "assets/dsr-blog_search.min.js" }}
 
 {{ if eq (getenv "NODE_ENV") "production" }}
 <script defer src="{{ $filepath | relURL }}"></script>

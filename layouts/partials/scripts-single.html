@@ -3,7 +3,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js"></script>
 
 {{ partial "scripts-common.html" . }}
-{{ $filepath := "assets/dsr-ca_single.min.js" }}
+{{ $filepath := "assets/dsr-blog_single.min.js" }}
 
 {{ if eq (getenv "NODE_ENV") "production" }}
 <script defer src="{{ $filepath | relURL }}"></script>

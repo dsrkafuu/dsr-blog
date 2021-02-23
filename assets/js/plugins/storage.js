@@ -1,7 +1,3 @@
-/**
- * local storage processor
- */
-
 import { logError } from './logger';
 
 /**

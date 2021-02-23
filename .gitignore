@@ -21,7 +21,8 @@ pids
 *.pid.lock
 
 # dependency directories
-.npm
+.npm/
+.pnpm-store/
 node_modules/
 jspm_packages/
 web_modules/

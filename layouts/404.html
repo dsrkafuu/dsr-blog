@@ -1,4 +1,4 @@
-{{- "<!-- dsr-ca | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License -->" | safeHTML -}}
+{{- "<!-- dsr-blog | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License -->" | safeHTML -}}
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
 
@@ -17,9 +17,9 @@
 
 <!-- stylesheets -->
 {{- if eq (getenv "NODE_ENV") "production" -}}
-<link rel="stylesheet" href="{{- "assets/dsr-ca.min.css" | relURL -}}" />
+<link rel="stylesheet" href="{{- "assets/dsr-blog.min.css" | relURL -}}" />
 {{- else -}}
-<link rel="stylesheet" href="{{- "assets/dsr-ca.css" | relURL -}}" />
+<link rel="stylesheet" href="{{- "assets/dsr-blog.css" | relURL -}}" />
 {{- end -}}
 
 <body data-theme="auto" data-section="404">
