@@ -47,13 +47,13 @@ function getFiles(dirPath) {
     return;
   });
 }
-console.log('[dsr-ca] scanning files...');
+console.log('[dsr-blog] scanning files...');
 getFiles(path.resolve('./public'));
-console.log('[dsr-ca] scanning files done.');
+console.log('[dsr-blog] scanning files done.');
 
 // minify
 async function minifyFiles() {
-  console.log('[dsr-ca] works started...');
+  console.log('[dsr-blog] works started...');
   const processPromises = [];
 
   allFiles['.html'].forEach((val) => {
@@ -104,7 +104,7 @@ async function minifyFiles() {
   });
 
   await Promise.all(processPromises);
-  console.log('[dsr-ca] works done.');
+  console.log('[dsr-blog] works done.');
   return;
 }
 minifyFiles();

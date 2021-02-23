@@ -1,4 +1,4 @@
-{{ $filepath := "assets/dsr-ca_common.min.js" }}
+{{ $filepath := "assets/dsr-blog_common.min.js" }}
 
 {{ if eq (getenv "NODE_ENV") "production" }}
 <script defer src="{{ $filepath | relURL }}"></script>

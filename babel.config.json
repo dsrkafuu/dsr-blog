@@ -1,9 +1,5 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      { "useBuiltIns": "usage", "corejs": { "version": "3.9", "proposals": true } }
-    ]
-  ],
+  "presets": ["@babel/preset-env"],
+  "plugins": [["@babel/plugin-transform-runtime", { "corejs": 3 }]],
   "exclude": "node_modules"
 }
