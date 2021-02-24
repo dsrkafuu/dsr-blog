@@ -1,6 +1,6 @@
 {
   "name": "dsr-blog",
-  "version": "5.7.1",
+  "version": "5.7.2",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.su)",
   "license": "Apache-2.0",
   "repository": {
@@ -33,7 +33,6 @@
     "terser": "^5.6.0"
   },
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "dev": "cross-env NODE_ENV=development hugo server --gc",
     "compile": "cross-env NODE_ENV=production hugo --cleanDestinationDir --gc",
     "rollup": "cross-env NODE_ENV=production rollup -c",
