@@ -1,5 +1,5 @@
 const API_BASE = 'https://github.com/login/oauth/access_token';
-const PROXY_PATH = /^\/ghoauth(\/?.*)/;
+const PROXY_PATH = /^\/gh-oauth(\/?.*)/;
 const FAKE_ORIGIN = 'https://github.com';
 const FAKE_REFERRER = '';
 
