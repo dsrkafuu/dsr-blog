@@ -1,6 +1,6 @@
 const API_BASE = 'https://github.com/login/oauth/access_token';
 const PROXY_PATH = /^\/gh-oauth(\/?.*)/;
-const FAKE_ORIGIN = 'https://github.com';
+const FAKE_ORIGIN = '';
 const FAKE_REFERRER = '';
 
 const ALLOWED_ORIGIN = [/^https?:\/\/.*dsrkafuu\.su$/, /^https?:\/\/localhost/];
@@ -58,23 +58,23 @@ async function handleRequest(request, path) {
   const rawParams = rawURL.searchParams;
 
   const reqURL = new URL(API_BASE);
-  // 迁移属性
-  const pexp = /(.*)\/$/.exec(reqURL.pathname);
-  if (pexp) {
-    reqURL.pathname = pexp[1] + path;
-  } else {
-    reqURL.pathname += path;
-  }
+  // 迁移路径
+  const pexp = /(.*)\/$/.exec(reqURL.pathname); // 移除 trail
+  path === '/' && (path = ''); // 规范化根路径
+  reqURL.pathname = pexp ? pexp[1] + path : reqURL.pathname + path; // 连接 URL
+  // 迁移 query
   for (const [key, value] of rawParams) {
     reqURL.searchParams.append(key, value);
   }
   // 发起代理请求
   request = new Request(reqURL, request); // 覆盖源 request
-  request.headers.set('Origin', FAKE_ORIGIN); // 伪装 Origin
-  request.headers.set('Referer', FAKE_REFERRER); // 伪装 Referer
+  request.headers.delete('Origin'); // 伪装 Origin
+  FAKE_ORIGIN && request.headers.set('Origin', FAKE_ORIGIN);
+  request.headers.delete('Referer'); // 伪装 Referer
+  FAKE_REFERRER && request.headers.set('Referer', FAKE_REFERRER);
+
   let res = await fetch(request); // 获取响应
   res = new Response(res.body, res); // 覆盖响应 response 使其 muteable
-
   res.headers.set('Access-Control-Allow-Origin', rawOrigin); // 设置 CORS 头
   res.headers.append('Vary', 'Origin'); // 设置 Vary 头使浏览器正确进行缓存
   res.headers.set('Cache-Control', CACHE_CONTROL); // 设置 Cache-Control
