@@ -21,6 +21,7 @@ pids
 *.pid.lock
 
 # dependency directories
+package-lock.json
 .npm/
 .pnpm-store/
 node_modules/
