@@ -1,3 +1,5 @@
+/*! cloudflare-workers-cors-anywhere | DSRKafuU (https://dsrkafuu.su) | Copyright (c) MIT License */
+
 // 无 trail 的 URL
 const API_BASE = 'https://github.com/login/oauth/access_token';
 // 代理子路径
@@ -38,8 +40,8 @@ function validatePath(req) {
   const url = new URL(req.url);
   const path = url.pathname;
   const exp = PROXY_PATH.exec(path);
-  // `api.live.bilibili.com/data` => `workers.dsrkafuu.su/bilive/data`
-  // `api.live.bilibili.com/` => `workers.dsrkafuu.su/bilive`
+  // `api.bgm.tv/data` => `workers.example.org/bgm/data`
+  // `api.bgm.tv/` => `workers.example.org/bgm`
   if (exp && exp.length > 1) {
     return exp[1] || '';
   }
@@ -87,7 +89,7 @@ async function handleRequest(req, path) {
   }
 
   // 发起代理请求
-  req = new Request(proxyURL, req); // 覆盖源请求使其 muteable
+  req = new Request(proxyURL, req); // 覆盖源请求使其 mutable
   // 伪装 Origin
   req.headers.delete('Origin');
   FAKE_ORIGIN && req.headers.set('Origin', FAKE_ORIGIN);
@@ -96,7 +98,7 @@ async function handleRequest(req, path) {
   FAKE_REFERRER && req.headers.set('Referer', FAKE_REFERRER);
   // 获取响应
   let res = await fetch(req);
-  res = new Response(res.body, res); // 覆盖响应 response 使其 muteable
+  res = new Response(res.body, res); // 覆盖响应 response 使其 mutable
 
   res.headers.set('Access-Control-Allow-Origin', rawOrigin);
   res.headers.set('Cache-Control', CACHE_CONTROL);
