@@ -1,12 +1,17 @@
+// 无 trail 的 URL
 const API_BASE = 'https://www.googleapis.com/customsearch/v1';
+// 代理子路径
 const PROXY_PATH = /^\/(\/?.*)/;
+// 允许的请求来源
 const ALLOWED_ORIGIN = [/^https?:\/\/.*dsrkafuu\.su$/, /^https?:\/\/localhost/];
-
+// 是否拒绝所有无 Origin 请求
+const ALLOW_NO_ORIGIN = false;
+// secrets
 const API_KEY = 'A**********************************k';
 const API_CX = '3***************e';
 
-const blockedRes = (text) => new Response(`[dsr-search] forbidden: ${text}`, { status: 403 });
-const timeoutRes = (text) => new Response(`[dsr-search] tequest timeout: ${text}`, { status: 408 });
+const blockedRes = (text) => new Response(`[dsr-blog] forbidden: ${text}`, { status: 403 });
+const timeoutRes = (text) => new Response(`[dsr-blog] tequest timeout: ${text}`, { status: 408 });
 
 /**
  * 验证 Origin
@@ -15,14 +20,14 @@ const timeoutRes = (text) => new Response(`[dsr-search] tequest timeout: ${text}
  */
 function validateOrigin(req) {
   const origin = req.headers.get('Origin');
-  if (origin && origin.includes('https')) {
+  if (origin) {
     for (let i = 0; i < ALLOWED_ORIGIN.length; i++) {
       if (ALLOWED_ORIGIN[i].exec(origin)) {
-        return true; // 通过
+        return true;
       }
     }
   }
-  return false; // 拒绝所有非 CORS 请求和非 SSL 请求
+  return ALLOW_NO_ORIGIN; // 是否拒绝所有无 Origin 请求
 }
 
 /**
@@ -68,12 +73,9 @@ async function handleReq(req) {
       // CORS
       res = new Response(res.body, res); // 覆盖响应 response
       res.headers.set('Access-Control-Allow-Origin', req.headers.get('Origin') || '*'); // 设置 CORS 头
-      if (!res.headers.get('Vary').includes('Origin')) {
-        res.headers.append('Vary', 'Origin'); // 设置 Vary 头使浏览器正确进行缓存
-      }
+      res.headers.append('Vary', 'Origin'); // 设置 Vary 头使浏览器正确进行缓存
       return res;
-    } catch (e) {
-      console.error(e);
+    } catch {
       return timeoutRes('internal Google API error occurred');
     }
   }
