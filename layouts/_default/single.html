@@ -37,7 +37,8 @@
             <div id="comment-waiting" style="text-align: center;">评论区正在等待加载</div>
             {{ $formated := replace .File.Path "\\" "/" }}
             {{ $path := split $formated "." }}
-            <div id="gitalk-container" data-identifier="{{- index $path 0 -}}">
+            {{ $encoded := replace (index $path 0) "/" "_" }}
+            <div id="gitalk-container" data-identifier="{{- $encoded -}}">
             </div>
           </div>
           {{- end -}}
