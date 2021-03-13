@@ -190,15 +190,6 @@ Cache-Control: public,max-age=31536000,immutable
 
 ## Cookie 和 Session
 
-Cookie：
-
-1. 浏览器首次请求
-2. 服务器响应带有 `Set-Cookie` (用户信息)
-3. 浏览器请求带有 Cookie
-4. 服务器判断身份
-
-Session：
-
 1. 浏览器首次请求
 2. 服务器生成 Session 并保存，响应返回特定包含 Session 信息的 Cookie
 3. 浏览器再次请求带有这个 Cookie
@@ -206,7 +197,7 @@ Session：
 
 区别：
 
-Cookie 所有数据存放在客户端，Session 数据存放在服务端
+Session 是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在内存、数据库、文件中；Cookie 是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现 Session 的一种方式。
 
 ## 跨域
 

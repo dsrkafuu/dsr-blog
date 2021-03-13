@@ -88,3 +88,20 @@ Reflect 是一个用于简化 Proxy 创建的对象。对于每个可被 Proxy �
 1. 将模板字符串转换成元素的 AST 抽象语法树
 2. 优化语法树，标记静态节点
 3. 生成代码 render 函数，`createElement`
+
+## 生命周期顺序
+
+渲染：
+
+```
+父 beforeCreate => 父 created => 父 beforeMount =>
+子 beforeCreate => 子 created => 子beforeMount =>
+子 mounted => 父 mounted
+```
+
+更新和销毁：
+
+```
+父 beforeUpdate => 子 beforeUpdate => 子 updated => 父 updated
+父 beforeDestroy => 子 beforeDestroy => 子 destroyed => 父 destroyed
+```

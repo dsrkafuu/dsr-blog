@@ -40,6 +40,13 @@ description: 'JavaScript 重难点整理。'
 
 ## 执行上下文和变量提升
 
+区别 `let` 和 `var`：
+
+- `let` 拥有块级作用域
+- `let` 声明的全局变量不是全局对象的属性
+- `let` 用于循环中可以正常创建副本
+- `let` 不允许重定义
+
 执行上下文可以理解为当前代码的执行环境，它会形成一个作用域：
 
 - 全局环境
@@ -169,7 +176,7 @@ console.log('End');
 4. 此时宏任务队列中有 `timer1`、`timer2` 和 `timer3`；微任务队列中为空
 5. 下一轮循环，输出 Timer 1；微任务队列仍为空
 6. 下一轮循环，输出 Timer 2 in Promise 2；微任务队列中加入 `promise2` 的第一个 `then`
-7. 优先宏任务队列，输出 Promise 2 Then 1 和 Promise 2 Then 2
+7. 优先微任务队列，输出 Promise 2 Then 1 和 Promise 2 Then 2
 8. 下一轮循环，输出 Timer 3 in Promise 1
 
 ## Map 与 WeakMap
@@ -245,21 +252,6 @@ const obj = new Obj(); // 2 (obj.x)
 - `call`：第一参数为 this 指向，剩余参数为参数列表，临时改变 this 并立即执行
 - `apply`：第一参数为 this 指向，第二参数为参数数组，临时改变 this 并立即执行
 - `bind`：第一参数为 this 指向，剩余参数为参数列表，返回 this 指向确定的函数，同时在调用返回的函数时还可以添加剩余参数
-
-`bind` 实现：
-
-```js
-Function.prototype.bind = function () {
-  const args = [...arguments]; // Array.prototype.slice.call(arguments)
-  const context = args[0];
-  const params = args.slice(1);
-
-  const func = this;
-  return function () {
-    func.apply(context, [...params, ...arguments]);
-  };
-};
-```
 
 ## ESM 与 CommonJS 模块
 
