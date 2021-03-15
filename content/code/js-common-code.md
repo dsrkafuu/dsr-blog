@@ -205,7 +205,7 @@ async function asyncPool(limit, arr, fetch) {
 
   async function push() {
     if (index >= arr.length) {
-      return Promise.resolve();
+      return;
     }
     // 添加任务
     const p = fetch(arr[index++]); // 初始化 Promise
