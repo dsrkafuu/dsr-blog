@@ -152,7 +152,7 @@ function flatten(input) {
 function cloneDeep(src) {
   if (typeof src === 'object') {
     const ret = Array.isArray(src) ? [] : {};
-    for (const key of Object.keys(src)) {
+    for (let key of Object.keys(src)) {
       ret[key] = cloneDeep(src[key]);
     }
     return ret;
