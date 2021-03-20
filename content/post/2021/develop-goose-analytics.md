@@ -1,6 +1,6 @@
 ---
-title: 'Goose Analytics 开发全记录'
-date: 2025-03-12T00:00:00+08:00
+title: 'Aofuji Analytics 开发全记录'
+date: 2021-01-21T00:00:00+08:00
 tags:
   - 'javascript'
   - 'vue'
@@ -14,7 +14,7 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 <!--more-->
 
-作为我的第一个完全由自己构思的前端项目，同时作为一个我自己每天都需要用到的项目；从制定计划到完成 0.1 版本，我是如何完成 Goose Analytics 的开发的？
+作为我的第一个完全由自己构思的前端项目，同时作为一个我自己每天都需要用到的项目；从制定计划到完成 0.1 版本，我是如何完成 Aofuji Analytics 的开发的？
 
 ## 基础框架
 
@@ -49,7 +49,6 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 - `view`：页面访问
   - `r`：`document.referrer`
   - `lng`：用户语言
-  - `scn`：屏幕分辨率，`screen` 大小乘 `dpr`
   - 浏览器：服务端[通过 UA 判断](https://www.npmjs.com/package/bowser)
   - 操作系统：服务端[通过 UA 判断](https://www.npmjs.com/package/bowser)
   - 国家 / 地区：服务端通过 IP 判断，基于 [node-maxmind](https://www.npmjs.com/package/maxmind) 与[免费 GeoIP2 数据库](https://dev.maxmind.com/geoip/geoip2/geolite2/)
@@ -65,11 +64,12 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 为 mongoose 设定以下 model：
 
-- `User`：管理用户，初期版本仅提供单个 `admin` 用户
-- `Website`：添加的站点，关联 `User`
-- `Session`：数据收集的用户
-- `View`：网页浏览记录，关联 `Website` 和 `Session`
+- `Account`：管理用户，初期版本仅提供单个 `admin` 用户
 - `Event`：网页事件记录，关联 `Website` 和 `Session`
+- `Session`：数据收集的用户
+- `Share`：记录分享页面
+- `Website`：添加的站点，关联 `User`
+- `View`：网页浏览记录，关联 `Website` 和 `Session`
 
 ## API Collect 路由
 
@@ -103,15 +103,15 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 首先使用 Vue 完成了以下基本组件库：
 
-- `GIcon...`：图标，由 `vue-svg-loader` 提供
-- `GButton`：按钮，包括普通、全宽以及全长
-- `GCard`：卡片
-- `GInput`：输入框
-- `GLabel`：用于简单标注的小 tag
-- `GHeader`：通用头部
-- `GRouterLink`：对 `GButton` 的二次封装
-- `GList`：多功能列表，最右一格可选控制或小图表
-- `GMessage`：弹出 toast，与 `src/plugins/message.js` 配合提供 `vm.$info` 和 `vm.$error` 方法
+- `AIcon...`：图标，由 `vue-svg-loader` 提供
+- `AButton`：按钮，包括普通、全宽以及全长
+- `ACard`：卡片
+- `AInput`：输入框
+- `ALabel`：用于简单标注的小 tag
+- `AHeader`：通用头部
+- `ARouterLink`：对 `GButton` 的二次封装
+- `AList`：多功能列表，最右一格可选控制或小图表
+- `AMessage`：弹出 toast，与 `src/plugins/message.js` 配合提供 `vm.$info` 和 `vm.$error` 方法
 
 组件库通过插件的 `install` 方法使用 `Vue.use` 进行安装。
 
