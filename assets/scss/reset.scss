@@ -133,3 +133,18 @@ h6 {
 input {
   min-width: 0; // fix mobile input overflow
 }
+
+// code block style fix
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#TableOfContents {
+  code {
+    font-size: 90% !important;
+    line-height: inherit !important;
+    color: inherit !important;
+  }
+}

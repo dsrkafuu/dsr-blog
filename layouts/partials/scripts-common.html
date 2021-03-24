@@ -1,9 +1,10 @@
 {{ $filepath := "assets/dsr-blog_common.min.js" }}
+{{ $defines := dict "process.env.SENTRY_DSN" "null" "process.env.GITALK_CLIENT_ID" "null" "process.env.GITALK_CLIENT_SECRET" "null" }}
 
 {{ if eq (getenv "NODE_ENV") "production" }}
 <script defer src="{{ $filepath | relURL }}"></script>
 {{ else }}
-{{ $options := (dict "targetPath" $filepath "minify" false "target" "esnext" "format" "iife") }}
+{{ $options := (dict "targetPath" $filepath "minify" false "target" "esnext" "format" "iife" "defines" $defines) }}
 {{ $built := resources.Get "js/common.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{ end }}

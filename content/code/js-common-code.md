@@ -15,7 +15,7 @@ description: 'JavaScript 常见手写。'
  * @param {number} delay
  * @return {Function}
  */
-const debounce = (func, delay) => {
+const debounce = (func, delay = 300) => {
   let timer = null;
   return function (...args) {
     timer && clearTimeout(timer);
@@ -30,14 +30,15 @@ window.onresize = debounce(myFunc, 200);
  * @param {number} delay
  * @return {Function}
  */
-const throttle = function (fn, delay) {
+const throttle = (func, delay = 300) => {
   let timer = null;
-  return (...args) => {
-    !timer &&
-      setTimeout(() => {
+  return function (...args) {
+    if (!timer) {
+      timer = setTimeout(() => {
         func(...args);
-        clearTimeout(timer);
+        timer = null;
       }, delay);
+    }
   };
 };
 window.onresize = throttle(myFunc, 200);
@@ -310,6 +311,18 @@ function new(func, ...args) {
   }
   return obj;
 }
+```
+
+## `reduce()` 实现 `map()`
+
+```js
+Array.prototype.mapPolyfill = function (func, thisValue) {
+  const ret = [];
+  this.reduce((pre, cur, idx, arr) => {
+    return ret.push(func.call(thisValue, cur, idx, arr));
+  }, ret);
+  return ret;
+};
 ```
 
 ## Vue Observer
