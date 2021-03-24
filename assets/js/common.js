@@ -1,14 +1,15 @@
-/* sentry */
 import * as Sentry from '@sentry/browser';
 import { Integrations } from '@sentry/tracing';
+import { SENTRY_DSN } from './plugins/constants';
+import { envIsProd } from './plugins/env';
 
-if (/dsrkafuu\.su$/.exec(window.location.hostname)) {
+/* sentry */
+envIsProd() &&
   Sentry.init({
-    dsn: 'https://d48ce0382d374d95aed3f137ba47fc7b@o526740.ingest.sentry.io/5645193',
+    dsn: SENTRY_DSN,
     integrations: [new Integrations.BrowserTracing()],
     tracesSampleRate: 1.0,
   });
-}
 
 /* iconfont */
 import iconfont from '../svg/iconfont';
