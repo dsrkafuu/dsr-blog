@@ -2,10 +2,16 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'; // find module in nod
 import commonjs from '@rollup/plugin-commonjs'; // convert cjs module to esm
 import { babel } from '@rollup/plugin-babel'; // transpile code
 import { terser } from 'rollup-plugin-terser'; // minify
+import replace from '@rollup/plugin-replace'; // support process.env
 
 const plugins = [
   nodeResolve(),
   commonjs(),
+  replace({
+    'process.env.GITALK_CLIENT_ID': JSON.stringify(process.env.GITALK_CLIENT_ID),
+    'process.env.GITALK_CLIENT_SECRET': JSON.stringify(process.env.GITALK_CLIENT_SECRET),
+    'process.env.SENTRY_DSN': JSON.stringify(process.env.SENTRY_DSN),
+  }),
   babel({
     babelHelpers: 'runtime',
     skipPreflightCheck: true, // fix must use the runtime plugin error
