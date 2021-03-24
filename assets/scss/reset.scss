@@ -28,7 +28,7 @@ h6 {
   }
 
   h2 {
-    font-size: $amzrk2-font-size-xl;
+    font-size: $font-size-xl;
     margin: 1.375rem 0 1rem 0;
     color: var(--color-primary);
 
@@ -38,13 +38,13 @@ h6 {
   }
 
   h3 {
-    font-size: $amzrk2-font-size-md;
+    font-size: $font-size-md;
     margin: 1.25rem 0 1rem 0;
     color: var(--color-primary);
   }
 
   h4 {
-    font-size: $amzrk2-font-size-base;
+    font-size: $font-size-base;
     margin: 1.125rem 0 1rem 0;
     color: var(--color-primary);
   }
@@ -70,7 +70,7 @@ h6 {
   }
 
   img {
-    border-radius: $amzrk2-radius;
+    border-radius: $radius;
     max-width: 100%;
     display: block;
   }
@@ -78,10 +78,10 @@ h6 {
   code,
   tt {
     background-color: var(--color-wrapper);
-    border-radius: $amzrk2-radius;
+    border-radius: $radius;
     padding: 0.15em 0.3em;
     color: inherit;
-    font-size: $amzrk2-font-size-sm;
+    font-size: $font-size-sm;
     word-wrap: normal;
     br {
       display: none;
@@ -89,7 +89,7 @@ h6 {
   }
 
   pre {
-    border-radius: $amzrk2-radius;
+    border-radius: $radius;
     background-color: var(--color-wrapper);
     color: inherit;
     overflow-x: auto;
@@ -104,23 +104,23 @@ h6 {
   }
 
   blockquote {
-    border-left: $amzrk2-divider;
+    border-left: $divider;
   }
 
   table {
     background: transparent;
     border: 2px solid var(--color-primary);
-    border-radius: $amzrk2-radius;
+    border-radius: $radius;
     border-collapse: separate;
 
     &.is-narrow {
-      font-size: $amzrk2-font-size-sm;
+      font-size: $font-size-sm;
     }
 
     th {
       color: var(--color-primary);
       font-weight: 400;
-      font-size: $amzrk2-font-size-base;
+      font-size: $font-size-base;
     }
 
     td,

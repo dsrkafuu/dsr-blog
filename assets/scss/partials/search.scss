@@ -1,5 +1,5 @@
 .search-ctrl {
-  padding: $amzrk2-space-base !important;
+  padding: $space-base !important;
 }
 
 .search-form {
@@ -13,12 +13,12 @@
     flex: 0 0 auto;
     outline: none;
     border: none;
-    border-radius: $amzrk2-radius;
+    border-radius: $radius;
     cursor: pointer;
     color: var(--color-font);
     background-color: var(--color-wrapper);
-    margin-left: $amzrk2-space-sm;
-    padding: 0 $amzrk2-space-sm;
+    margin-left: $space-sm;
+    padding: 0 $space-sm;
 
     &:hover {
       color: var(--color-primary);
@@ -30,8 +30,8 @@
 .search-data {
   display: block;
   text-align: center;
-  font-size: $amzrk2-font-size-sm;
-  margin-top: $amzrk2-space-sm;
+  font-size: $font-size-sm;
+  margin-top: $space-sm;
 }
 
 .search-result .list-summary.markdown.content {

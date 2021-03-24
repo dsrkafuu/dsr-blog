@@ -1,10 +1,10 @@
 .list-container {
-  padding: $amzrk2-space-base;
+  padding: $space-base;
 }
 
 .list-sidebar {
   .card:not(:last-child) {
-    margin-bottom: $amzrk2-space-base;
+    margin-bottom: $space-base;
   }
 }
 
@@ -13,7 +13,7 @@
     padding: 0;
   }
   .card:not(:last-child) {
-    margin-bottom: $amzrk2-space-base;
+    margin-bottom: $space-base;
   }
 }
 
@@ -22,17 +22,17 @@
     display: block;
     overflow: hidden;
   }
-  border-radius: $amzrk2-radius $amzrk2-radius 0 0;
+  border-radius: $radius $radius 0 0;
 }
 .list-box {
-  padding: $amzrk2-space-base;
+  padding: $space-base;
 }
 .list-title {
-  font-size: $amzrk2-font-size-xl;
-  margin-bottom: $amzrk2-space-sm;
+  font-size: $font-size-xl;
+  margin-bottom: $space-sm;
 }
 .list-summary {
-  margin-bottom: $amzrk2-space-sm;
+  margin-bottom: $space-sm;
   h1,
   h2,
   h3,
@@ -43,12 +43,12 @@
   }
 }
 .list-meta {
-  font-size: $amzrk2-font-size-sm;
+  font-size: $font-size-sm;
   color: var(--color-primary);
 }
 
 .tag-card {
-  padding: $amzrk2-space-base !important;
+  padding: $space-base !important;
 }
 .tag-list {
   display: flex;
@@ -56,6 +56,6 @@
 }
 .tag-item {
   color: var(--color-primary);
-  margin-right: $amzrk2-space-sm;
+  margin-right: $space-sm;
   white-space: nowrap;
 }

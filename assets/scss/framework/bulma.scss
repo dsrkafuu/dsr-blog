@@ -1,13 +1,13 @@
 /* initial */
-$family-sans-serif: $amzrk2-font-family-base;
-$family-monospace: $amzrk2-font-family-mono;
-$block-spacing: $amzrk2-space-base;
+$family-sans-serif: $font-family-base;
+$family-monospace: $font-family-mono;
+$block-spacing: $space-base;
 
 /* derived */
 $text: var(--color-font);
 
 /* generic */
-$body-size: $amzrk2-font-size-base;
+$body-size: $font-size-base;
 
 /* responsive */
 $tablet: 769px;
@@ -18,8 +18,8 @@ $fullhd-enabled: false;
 /* markdown */
 $text-strong: var(--color-primary);
 $content-blockquote-background-color: transparent;
-$content-blockquote-padding: 0 $amzrk2-space-sm;
-$content-pre-padding: $amzrk2-space-sm;
+$content-blockquote-padding: 0 $space-sm;
+$content-pre-padding: $space-sm;
 $table-color: var(--color-font);
 
 /* search */

@@ -71,10 +71,10 @@
       box-shadow: none !important;
     }
 
-    border-radius: $amzrk2-radius !important;
+    border-radius: $radius !important;
     background-color: var(--color-wrapper) !important;
     color: var(--color-font) !important;
-    padding: $amzrk2-space-sm;
+    padding: $space-sm;
   }
 
   .gt-comment-body {
@@ -84,13 +84,13 @@
   .markdown-body {
     h1,
     h2 {
-      font-size: $amzrk2-font-size-xl !important;
+      font-size: $font-size-xl !important;
       margin: 1.375rem 0 1rem 0 !important;
       color: var(--color-primary) !important;
     }
 
     h3 {
-      font-size: $amzrk2-font-size-md !important;
+      font-size: $font-size-md !important;
       margin: 1.25rem 0 1rem 0 !important;
       color: var(--color-primary) !important;
     }
@@ -98,7 +98,7 @@
     h4,
     h5,
     h6 {
-      font-size: $amzrk2-font-size-base !important;
+      font-size: $font-size-base !important;
       margin: 1.125rem 0 1rem 0 !important;
       color: var(--color-primary) !important;
     }
@@ -114,7 +114,7 @@
     }
 
     img {
-      border-radius: $amzrk2-radius !important;
+      border-radius: $radius !important;
       max-width: 100% !important;
       display: block !important;
     }
@@ -122,10 +122,10 @@
     code,
     tt {
       background-color: var(--color-wrapper) !important;
-      border-radius: $amzrk2-radius !important;
+      border-radius: $radius !important;
       padding: 0.15em 0.3em !important;
       color: inherit !important;
-      font-size: $amzrk2-font-size-sm !important;
+      font-size: $font-size-sm !important;
       word-wrap: normal !important;
       br {
         display: none !important;
@@ -133,7 +133,7 @@
     }
 
     pre {
-      border-radius: $amzrk2-radius !important;
+      border-radius: $radius !important;
       background-color: var(--color-wrapper) !important;
       color: inherit !important;
       overflow-x: auto !important;
@@ -150,7 +150,7 @@
     }
 
     .image-wrapper {
-      border-radius: $amzrk2-radius !important;
+      border-radius: $radius !important;
 
       img {
         width: 100% !important;

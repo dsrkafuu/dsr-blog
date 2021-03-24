@@ -1,13 +1,13 @@
 .card {
   background-color: var(--color-bg);
   box-shadow: var(--shadow);
-  border-radius: $amzrk2-radius;
-  padding: $amzrk2-space-base;
+  border-radius: $radius;
+  padding: $space-base;
 }
 
 .sticky {
   position: sticky;
-  top: $amzrk2-space-base;
+  top: $space-base;
 }
 
 .card-info {
@@ -16,10 +16,10 @@
 
   .avatar {
     margin: 0 auto 1rem auto;
-    padding-top: $amzrk2-space-base;
+    padding-top: $space-base;
     width: 5rem;
     user-select: none;
-    border-radius: $amzrk2-radius;
+    border-radius: $radius;
     overflow: hidden;
   }
 
@@ -28,11 +28,11 @@
       display: block;
     }
     text-align: center;
-    font-size: $amzrk2-font-size-sm;
-    padding: 0 $amzrk2-space-sm / 2;
+    font-size: $font-size-sm;
+    padding: 0 $space-sm / 2;
   }
   .info-name {
-    font-size: $amzrk2-font-size-lg;
+    font-size: $font-size-lg;
   }
   .info-para {
     margin-top: 0.25rem;
@@ -41,7 +41,7 @@
 
   .counter {
     display: flex;
-    padding: $amzrk2-space-base;
+    padding: $space-base;
     padding-top: 0;
   }
   .counter-wrapper {
@@ -50,11 +50,11 @@
     flex-direction: column;
   }
   .counter-data {
-    font-size: $amzrk2-font-size-md;
+    font-size: $font-size-md;
     color: var(--color-primary);
   }
   .counter-name {
-    font-size: $amzrk2-font-size-sm;
+    font-size: $font-size-sm;
   }
 }
 
@@ -67,10 +67,10 @@
     display: block;
     color: inherit;
     flex: 0 1 auto;
-    height: $amzrk2-navbar-height-sm;
+    height: $navbar-height-sm;
     text-align: center;
-    line-height: $amzrk2-navbar-height-sm;
-    padding: 0 $amzrk2-space-sm;
+    line-height: $navbar-height-sm;
+    padding: 0 $space-sm;
     cursor: pointer;
 
     &:hover {
@@ -92,7 +92,7 @@
 #TableOfContents {
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: $amzrk2-toc-height;
+  max-height: $toc-height;
   @include customScrollbar('y');
 
   a {
@@ -106,7 +106,7 @@
     line-height: 2rem;
     color: var(--color-font);
     padding: 0 0.375rem;
-    border-radius: $amzrk2-radius;
+    border-radius: $radius;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -117,14 +117,14 @@
   }
 
   & > ul {
-    font-size: $amzrk2-font-size-sm;
+    font-size: $font-size-sm;
 
     & > li {
       & > ul {
         margin-left: 0.375rem;
         padding: 0 0.25rem;
-        border-left: $amzrk2-divider;
-        font-size: $amzrk2-font-size-sm * 0.9;
+        border-left: $divider;
+        font-size: $font-size-sm * 0.9;
 
         a {
           height: 1.875rem;
@@ -142,7 +142,7 @@
   padding: 0;
 
   .firefox-image {
-    border-radius: $amzrk2-radius;
+    border-radius: $radius;
     overflow: hidden;
   }
 }
