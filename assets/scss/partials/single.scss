@@ -1,10 +1,10 @@
 .single-container {
-  padding: $amzrk2-space-base;
+  padding: $space-base;
 }
 
 .single-sidebar {
   .card:not(:last-child) {
-    margin-bottom: $amzrk2-space-base;
+    margin-bottom: $space-base;
   }
 }
 
@@ -13,7 +13,7 @@
     padding: 0;
   }
   .card:not(:last-child) {
-    margin-bottom: $amzrk2-space-base;
+    margin-bottom: $space-base;
   }
 }
 
@@ -22,23 +22,23 @@
     display: block;
     overflow: hidden;
   }
-  border-radius: $amzrk2-radius $amzrk2-radius 0 0;
+  border-radius: $radius $radius 0 0;
 }
 .post-box {
-  padding: $amzrk2-space-base;
+  padding: $space-base;
   padding-bottom: 0;
 }
 .post-title {
-  font-size: $amzrk2-font-size-xl;
-  margin-bottom: $amzrk2-space-sm;
+  font-size: $font-size-xl;
+  margin-bottom: $space-sm;
   color: var(--color-primary);
 }
 .post-meta {
-  font-size: $amzrk2-font-size-sm;
+  font-size: $font-size-sm;
   color: var(--color-primary);
 }
 .post-content {
-  padding: $amzrk2-space-base;
+  padding: $space-base;
 
   // fix adblock adsense margin
   .markdown.content {
@@ -47,7 +47,7 @@
 }
 
 .comment-wrapper {
-  padding: $amzrk2-space-base !important;
+  padding: $space-base !important;
 }
 
 #back-top {
@@ -56,10 +56,10 @@
   line-height: 2rem;
   color: var(--color-font);
   padding: 0 0.375rem;
-  border-radius: $amzrk2-radius;
+  border-radius: $radius;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: $amzrk2-font-size-sm;
+  font-size: $font-size-sm;
 
   &:hover {
     color: var(--color-primary);
@@ -68,7 +68,7 @@
 }
 
 .license.markdown.content {
-  margin-top: $amzrk2-space-base;
-  font-size: $amzrk2-font-size-sm;
+  margin-top: $space-base;
+  font-size: $font-size-sm;
   color: var(--color-primary);
 }

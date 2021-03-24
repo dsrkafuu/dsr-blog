@@ -3,16 +3,16 @@
   box-shadow: var(--shadow);
 
   .container {
-    height: $amzrk2-navbar-height;
+    height: $navbar-height;
     display: flex;
     align-items: center;
   }
 
   .navbar-item {
     display: block;
-    padding: 0 $amzrk2-space-sm;
-    height: $amzrk2-navbar-height;
-    line-height: $amzrk2-navbar-height;
+    padding: 0 $space-sm;
+    height: $navbar-height;
+    line-height: $navbar-height;
     cursor: pointer;
 
     &:hover {
@@ -34,8 +34,8 @@
     flex: 0 0 auto;
 
     .navbar-item {
-      font-size: $amzrk2-font-size-lg;
-      padding: 0 $amzrk2-space-base;
+      font-size: $font-size-lg;
+      padding: 0 $space-base;
     }
   }
 
@@ -53,7 +53,7 @@
     flex: 0 0 auto;
     justify-self: end;
     display: flex;
-    padding-right: $amzrk2-space-base - $amzrk2-space-sm + 0.05rem;
-    font-size: $amzrk2-font-size-md;
+    padding-right: $space-base - $space-sm + 0.05rem;
+    font-size: $font-size-md;
   }
 }

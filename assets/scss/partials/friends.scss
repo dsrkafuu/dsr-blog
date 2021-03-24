@@ -1,14 +1,14 @@
 .friends-wrapper {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: $amzrk2-space-base;
+  gap: $space-base;
   overflow: hidden;
 }
 
 .card-friends {
   margin-bottom: 0 !important;
   .image-wrapper {
-    border-radius: $amzrk2-radius $amzrk2-radius 0 0;
+    border-radius: $radius $radius 0 0;
   }
 }
 
@@ -18,24 +18,24 @@
 
 .friends-info {
   text-align: center;
-  padding: $amzrk2-space-sm;
+  padding: $space-sm;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   span {
     display: block;
     &:first-child {
-      font-size: $amzrk2-font-size-md;
+      font-size: $font-size-md;
     }
     &:last-child {
-      font-size: $amzrk2-font-size-sm;
+      font-size: $font-size-sm;
     }
   }
 }
 
 .card.friends-add {
-  margin-top: $amzrk2-space-base;
-  padding: $amzrk2-space-sm;
+  margin-top: $space-base;
+  padding: $space-sm;
   a {
     display: block;
     text-align: center;

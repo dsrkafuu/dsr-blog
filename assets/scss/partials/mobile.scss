@@ -1,7 +1,7 @@
 // mobile fixed navbar
 main {
   @media screen and (max-width: $tablet) {
-    margin-top: $amzrk2-navbar-height-sm * 2;
+    margin-top: $navbar-height-sm * 2;
   }
 }
 
@@ -14,22 +14,22 @@ main {
     right: 0;
 
     .container {
-      height: $amzrk2-navbar-height-sm * 2;
+      height: $navbar-height-sm * 2;
       flex-direction: column;
-      font-size: $amzrk2-font-size-sm;
+      font-size: $font-size-sm;
     }
 
     .navbar-item {
-      height: $amzrk2-navbar-height-sm;
-      line-height: $amzrk2-navbar-height-sm;
+      height: $navbar-height-sm;
+      line-height: $navbar-height-sm;
     }
 
     .navbar-brand .navbar-item {
-      font-size: $amzrk2-font-size-md;
+      font-size: $font-size-md;
     }
 
     .navbar-end .navbar-item {
-      font-size: $amzrk2-font-size-sm;
+      font-size: $font-size-sm;
     }
   }
 
@@ -68,7 +68,7 @@ main {
 @media screen and (max-width: $tablet) {
   .card.toc {
     position: fixed;
-    top: $amzrk2-navbar-height-sm * 2;
+    top: $navbar-height-sm * 2;
     right: 0;
     bottom: 0;
     border-radius: 0;
@@ -139,20 +139,20 @@ main {
 // mobile optimized link card
 @media screen and (max-width: $tablet) {
   .card-links > a {
-    width: 2rem + 2 * $amzrk2-space-sm;
+    width: 2rem + 2 * $space-sm;
   }
 }
 
 /* friends */
 @media screen and (max-width: $tablet) {
   .friends-wrapper {
-    gap: $amzrk2-space-sm; // small gap on mobile
+    gap: $space-sm; // small gap on mobile
   }
   .friends-info {
-    padding: $amzrk2-space-sm 0;
+    padding: $space-sm 0;
     span {
       &:first-child {
-        font-size: $amzrk2-font-size-sm;
+        font-size: $font-size-sm;
       }
       &:last-child {
         display: none; // do not show desc on mobile
@@ -160,7 +160,7 @@ main {
     }
   }
   .friends-add {
-    margin-top: $amzrk2-space-sm;
+    margin-top: $space-sm;
     a {
       padding: 0.375rem;
     }

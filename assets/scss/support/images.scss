@@ -9,7 +9,7 @@ a.image-link {
   height: 0;
   overflow: hidden;
   background-color: var(--color-wrapper);
-  border-radius: $amzrk2-radius;
+  border-radius: $radius;
 
   img {
     display: block;
@@ -21,7 +21,7 @@ img {
   margin: 0 auto;
   color: var(--color-primary);
   text-align: center;
-  font-size: $amzrk2-font-size-sm;
+  font-size: $font-size-sm;
 }
 
 img.lazyload:not([src]) {
