@@ -1,13 +1,14 @@
 <script>
-  (function (dataTheme) {
-    let storedTheme;
+  (function () {
+    let storedTheme = null;
     try {
-      storedTheme = JSON.parse(localStorage.getItem('amzrk2-theme'));
-    } catch (e) {
+      storedTheme = JSON.parse(localStorage.getItem('dsr-blog_theme'));
+    } catch {
       storedTheme = null;
     }
+    const dataTheme = document.body.getAttribute('data-theme');
     if (storedTheme && storedTheme !== dataTheme) {
       document.body.setAttribute('data-theme', storedTheme);
     }
-  })(document.body.getAttribute('data-theme'));
+  })();
 </script>

@@ -22,7 +22,7 @@ params:
   # sidebar info
   author: "DSRKafuU"
   para: "Internet for people, not profit"
-  avatar: "https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1.1/images/avatars/dsrkafuu_256p.webp"
+  avatar: "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/images/avatars/dsrkafuu_256p.webp"
   image: "/images/_header.webp"
   og: "/images/_og.png"
   mainSections:

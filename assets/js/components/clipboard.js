@@ -1,7 +1,8 @@
+import { logInfo } from '../plugins/logger';
 import { COPY_LICENSE, BODY_ATTRIBUTE_SECTION } from '../plugins/constants';
 
 /**
- * 获取父节点
+ * 检查父节点
  * @param {Element} node 当前节点
  * @param {number} count 递归层数
  */
@@ -34,11 +35,12 @@ if (document.body.getAttribute(BODY_ATTRIBUTE_SECTION) === 'single') {
       ].join(' ');
       // 如果不是代码块
       if (!/(CODE|PRE).* .*(CODE|PRE)/gi.exec(nodes)) {
-        // 添加 LICENSE
+        // 大于 80 字添加 LICENSE
         let copiedText = selection.toString();
         if (copiedText && copiedText.length > 80) {
           event.preventDefault(); // 防止默认行为复制原文内容
           event.clipboardData.setData('text/plain', `${copiedText}\n${COPY_LICENSE}`);
+          logInfo('copy license added');
         }
       }
     }

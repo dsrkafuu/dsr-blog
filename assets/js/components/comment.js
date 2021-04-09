@@ -1,6 +1,7 @@
 import { logInfo, logError } from '../plugins/logger';
+import loadScript from '../plugins/loadScript';
 import {
-  GITALK_PROXY,
+  SCRIPT_GITALK,
   GITALK_CLIENT_ID,
   GITALK_CLIENT_SECRET,
   GITALK_REPO,
@@ -11,34 +12,41 @@ import {
 /**
  * 加载评论区
  */
-const loadComment = () => {
-  if (Gitalk) {
-    const gitalk = new Gitalk({
-      clientID: GITALK_CLIENT_ID,
-      clientSecret: GITALK_CLIENT_SECRET,
-      repo: GITALK_REPO,
-      owner: GITALK_OWNER,
-      admin: GITALK_ADMIN,
-      id: needComment.getAttribute('data-identifier'),
-      createIssueManually: true,
-      flipMoveOptions: {
-        staggerDelayBy: 150,
-        appearAnimation: 'fade',
-        enterAnimation: 'fade',
-        leaveAnimation: 'fade',
-      },
-      proxy: GITALK_PROXY,
-    });
-    // 移除等待加载指示器
-    const loadingIndicator = document.getElementById('comment-waiting');
-    loadingIndicator && loadingIndicator.setAttribute('style', 'display: none;');
-    // 加载评论区
-    gitalk.render('gitalk-container');
-    logInfo('comment area loaded');
+async function loadComment() {
+  try {
+    await loadScript(SCRIPT_GITALK);
+  } catch {
+    window.Gitalk = null;
   }
-};
+  if (!Gitalk) {
+    logError('error loading gitalk script');
+    return;
+  }
+  // 初始化
+  const gitalk = new Gitalk({
+    clientID: GITALK_CLIENT_ID,
+    clientSecret: GITALK_CLIENT_SECRET,
+    repo: GITALK_REPO,
+    owner: GITALK_OWNER,
+    admin: GITALK_ADMIN,
+    id: needComment.getAttribute('data-identifier'),
+    createIssueManually: true,
+    flipMoveOptions: {
+      staggerDelayBy: 150,
+      appearAnimation: 'fade',
+      enterAnimation: 'fade',
+      leaveAnimation: 'fade',
+    },
+  });
+  // 移除等待加载指示器
+  const loadingIndicator = document.getElementById('comment-waiting');
+  loadingIndicator && loadingIndicator.setAttribute('style', 'display: none;');
+  // 加载评论区
+  gitalk.render('gitalk-container');
+  logInfo('successfully loaded gitalk');
+}
 
-/* IntersectionObserver 懒加载 */
+// IntersectionObserver 懒加载
 const needComment = document.getElementById('gitalk-container');
 if (needComment) {
   const commentPromise = new Promise((resolve, reject) => {
@@ -48,8 +56,8 @@ if (needComment) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             // 若评论区已出现在页面上
-            loadComment(); // 加载评论区
             observer.disconnect(); // 停止当前 observer
+            loadComment(); // 加载评论区
             resolve();
           }
         });
@@ -62,8 +70,8 @@ if (needComment) {
     }
   });
   // 若出现异常 (例如不支持 IntersectionObserver)
-  commentPromise.catch((reason) => {
-    logError(reason);
+  commentPromise.catch(() => {
+    logError('error initializing gitalk observer');
     loadComment(); // 直接加载评论区
   });
 }

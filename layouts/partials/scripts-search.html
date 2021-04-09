@@ -1,16 +1,11 @@
-{{ if eq (getenv "NODE_ENV") "production" }}
-<script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.prod.js"></script>
-{{ else }}
-{{ end }}
-<script defer src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.js"></script>
-
 {{ partial "scripts-common.html" . }}
 {{ $filepath := "assets/dsr-blog_search.min.js" }}
+{{ $defines := dict "process.env.NODE_ENV" (printf "\"%s\"" (getenv "NODE_ENV")) "process.env.SENTRY_DSN" "\"\"" "process.env.GITALK_CLIENT_ID" "\"\"" "process.env.GITALK_CLIENT_SECRET" "\"\"" }}
+{{ $options := (dict "targetPath" $filepath "minify" false "target" "esnext" "format" "iife" "defines" $defines) }}
 
 {{ if eq (getenv "NODE_ENV") "production" }}
 <script defer src="{{ $filepath | relURL }}"></script>
 {{ else }}
-{{ $options := (dict "targetPath" $filepath "minify" false "target" "esnext" "format" "iife") }}
 {{ $built := resources.Get "js/search.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{ end }}

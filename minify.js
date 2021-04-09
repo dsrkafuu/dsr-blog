@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 // deps
 const path = require('path');
 const fs = require('fs');

@@ -1,13 +1,11 @@
-<script defer src="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js"></script>
-
 {{ partial "scripts-common.html" . }}
 {{ $filepath := "assets/dsr-blog_single.min.js" }}
-{{ $defines := dict "process.env.SENTRY_DSN" "null" "process.env.GITALK_CLIENT_ID" "null" "process.env.GITALK_CLIENT_SECRET" "null" }}
+{{ $defines := dict "process.env.NODE_ENV" (printf "\"%s\"" (getenv "NODE_ENV")) "process.env.SENTRY_DSN" "\"\"" "process.env.GITALK_CLIENT_ID" "\"\"" "process.env.GITALK_CLIENT_SECRET" "\"\"" }}
+{{ $options := (dict "targetPath" $filepath "minify" false "target" "esnext" "format" "iife" "defines" $defines) }}
 
 {{ if eq (getenv "NODE_ENV") "production" }}
 <script defer src="{{ $filepath | relURL }}"></script>
 {{ else }}
-{{ $options := (dict "targetPath" $filepath "minify" false "target" "esnext" "format" "iife" "defines" $defines) }}
 {{ $built := resources.Get "js/single.js" | js.Build $options }}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{ end }}

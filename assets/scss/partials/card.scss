@@ -93,7 +93,6 @@
   overflow-y: auto;
   overflow-x: hidden;
   max-height: $toc-height;
-  @include customScrollbar('y');
 
   a {
     white-space: nowrap;
