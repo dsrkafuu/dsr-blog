@@ -48,14 +48,10 @@
 {{- end -}}
 
 {{- if eq (getenv "NODE_ENV") "production" -}}
-<!-- google analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{- .Site.GoogleAnalytics -}}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-  gtag('config', '{{- .Site.GoogleAnalytics -}}');
+<!-- cf web analytics -->
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "{{- .Site.Params.cfBeacon -}}"}'>
 </script>
 {{- end -}}
