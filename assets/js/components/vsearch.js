@@ -1,8 +1,6 @@
 import { logInfo, logError } from '../plugins/logger';
 import { SEARCH_API_URL } from '../plugins/constants';
 
-const API_URL = SEARCH_API_URL;
-
 // vue components
 const VSearchInfo = {
   props: {
@@ -10,9 +8,7 @@ const VSearchInfo = {
     data: Object,
   },
   computed: {
-    /**
-     * 信息模块
-     */
+    // 信息模块
     info() {
       if (this.status) {
         if (this.data && this.data.formattedTotalResults && this.data.formattedSearchTime) {
@@ -24,9 +20,7 @@ const VSearchInfo = {
         return '请输入搜索关键词 (空格分隔)';
       }
     },
-    /**
-     * loading 状态指示器
-     */
+    // loading 状态指示器
     loading() {
       const urlParam = new URLSearchParams(window.location.search);
       return !this.status && urlParam.has('q');
@@ -108,7 +102,7 @@ const VApp = {
      * 执行搜索
      */
     async performSearch() {
-      const url = new URL(API_URL);
+      const url = new URL(SEARCH_API_URL);
       url.searchParams.set('q', this.searchInput);
       try {
         const res = await fetch(url);
@@ -117,7 +111,7 @@ const VApp = {
         this.resultData = data;
         this.status = true;
       } catch (e) {
-        logError(e);
+        logError('error performing search');
         this.status = true;
       }
     },
@@ -144,12 +138,11 @@ const VApp = {
     filtResult(resultData) {
       if (Array.isArray(resultData.items)) {
         resultData.items.forEach((el) => {
-          el.title = el.title.replace(/ ?(\||-) ?(DSRKafuU|DSRCA)/gi, '');
+          el.title = el.title.replace(/ ?(\||-) ?(DSRBLOG)/g, '');
         });
       }
     },
   },
 };
 
-// mount app
-Vue.createApp(VApp).mount('#app');
+export default VApp;

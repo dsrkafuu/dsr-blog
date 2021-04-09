@@ -6,8 +6,8 @@ import { logError } from './logger';
 export const getLS = (key) => {
   try {
     return JSON.parse(localStorage.getItem(key));
-  } catch (e) {
-    logError(e);
+  } catch {
+    logError('error loading localStorage');
     return null;
   }
 };
@@ -19,7 +19,7 @@ export const getLS = (key) => {
 export const setLS = (key, value) => {
   try {
     return localStorage.setItem(key, JSON.stringify(value));
-  } catch (e) {
-    logError(e);
+  } catch {
+    logError('error setting localStorage');
   }
 };

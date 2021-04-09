@@ -1,4 +1,4 @@
-$amzrk2-colors-light: (
+$colors-light: (
   'body': #f2f5f8,
   'bg': #fffffd,
   'hover': #f3f5fa,
@@ -12,13 +12,13 @@ $amzrk2-colors-light: (
   'scroll-focus': #606060,
 );
 @mixin light {
-  @each $key, $value in $amzrk2-colors-light {
+  @each $key, $value in $colors-light {
     --color-#{$key}: #{$value};
   }
   --shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.06);
 }
 
-$amzrk2-colors-dark: (
+$colors-dark: (
   'body': #2f3136,
   'bg': #4d5158,
   'hover': #41454b,
@@ -32,7 +32,7 @@ $amzrk2-colors-dark: (
   'scroll-focus': #535559,
 );
 @mixin dark {
-  @each $key, $value in $amzrk2-colors-dark {
+  @each $key, $value in $colors-dark {
     --color-#{$key}: #{$value};
   }
   --shadow: none;

@@ -4,7 +4,6 @@ about: be friend here
 title: ''
 labels: friend
 assignees: ''
-
 ---
 
 ! only applications for standalone sites will be accepted !

@@ -1,5 +1,4 @@
 /**
- * log info
  * @param {...any} args
  */
 export function logInfo(...args) {
@@ -7,7 +6,6 @@ export function logInfo(...args) {
 }
 
 /**
- * log error
  * @param {...any} args
  */
 export function logError(...args) {
