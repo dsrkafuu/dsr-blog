@@ -48,7 +48,8 @@
 }
 
 .tag-card {
-  padding: $space-base !important;
+  padding: $space-sm $space-base !important;
+  font-size: $font-size-md;
 }
 .tag-list {
   display: flex;
@@ -58,4 +59,5 @@
   color: var(--color-primary);
   margin-right: $space-sm;
   white-space: nowrap;
+  line-height: 2.5;
 }
