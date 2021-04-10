@@ -6,4 +6,5 @@ keywords:
   - DSRBLOG
   - 博客
   - 笔记
+layout: 'code'
 ---
