@@ -104,6 +104,5 @@ async function minifyFiles() {
 
   await Promise.all(processPromises);
   console.log('[dsr-blog] works done.');
-  return;
 }
 minifyFiles();
