@@ -133,15 +133,3 @@
     }
   }
 }
-
-.card-firefox {
-  @media screen and (max-width: $tablet) {
-    display: none;
-  }
-  padding: 0;
-
-  .firefox-image {
-    border-radius: $radius;
-    overflow: hidden;
-  }
-}

@@ -1,4 +1,3 @@
-<!-- basic meta -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="HandheldFriendly" content="True" />
@@ -6,37 +5,29 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 {{- hugo.Generator -}}
-{{- partial "favicon.html" . -}}
 
-<!-- seo metadata title -->
+{{- partial "favicon.html" . -}}
 {{- if .IsHome -}}
 <title>{{- .Site.Title -}}</title>
 {{- else -}}
 <title>{{- .Title }} | {{ .Site.Title -}}</title>
 {{- end -}}
-
-<!-- seo metadata author -->
 {{- if .Params.author -}}
 <meta name="author" content="{{- .Params.author -}}" />
 {{- else -}}
 <meta name="author" content="{{- .Site.Params.author -}}" />
 {{- end -}}
-
-<!-- description -->
 {{- if .Params.description -}}
 <meta name="description" content="{{- .Params.description -}}" />
 {{- end -}}
 {{- if .Params.tags -}}
-<meta name="keywords" content="{{- delimit .Params.tags "," -}}" />
+<meta name="keywords" content="{{- delimit .Params.tags " ," -}}" />
 {{- else if .Params.keywords -}}
-<meta name="keywords" content="{{- delimit .Params.keywords "," -}}" />
+<meta name="keywords" content="{{- delimit .Params.keywords " ," -}}" />
 {{- end -}}
-
-<!-- og -->
 {{- partial "opengraph.html" . -}}
 
-<!-- stylesheets -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css" />
 {{- if eq (getenv "NODE_ENV") "production" -}}
 {{- $options := (dict "targetPath" "assets/dsr-blog.min.css" "outputStyle" "expanded" "includePaths" (slice "node_modules")) -}}
 {{- $css := resources.Get "scss/index.scss" | resources.ToCSS $options -}}
@@ -49,8 +40,7 @@
 
 {{- if eq (getenv "NODE_ENV") "production" -}}
 <!-- cf web analytics -->
-<script
-  defer
+<script defer
   src="https://static.cloudflareinsights.com/beacon.min.js"
   data-cf-beacon='{"token": "{{- .Site.Params.cfBeacon -}}"}'>
 </script>

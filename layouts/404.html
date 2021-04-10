@@ -1,8 +1,8 @@
-{{- "<!-- dsr-blog | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License -->" | safeHTML -}}
 <!DOCTYPE html>
+{{- "<!-- dsr-blog | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License -->" | safeHTML -}}
+
 <html lang="{{ .Site.Language.Lang }}">
 
-<!-- basic meta -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="HandheldFriendly" content="True" />
@@ -10,12 +10,10 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 {{- hugo.Generator -}}
-{{- partial "favicon.html" . -}}
 
-<!-- seo metadata title -->
+{{- partial "favicon.html" . -}}
 <title>404 NOT FOUND | {{ .Site.Title }}</title>
 
-<!-- stylesheets -->
 {{- if eq (getenv "NODE_ENV") "production" -}}
 <link rel="stylesheet" href="{{- "assets/dsr-blog.min.css" | relURL -}}" />
 {{- else -}}
@@ -46,6 +44,7 @@
     </div>
   </main>
   {{- partial "footer.html" . -}}
+
   {{- partial "scripts-list.html" . -}}
   <script>
     (function () {

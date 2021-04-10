@@ -1,0 +1,6 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "html.format.endWithNewline": true
+}
