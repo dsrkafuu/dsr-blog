@@ -37,11 +37,3 @@
 {{- $css := resources.Get "scss/index.scss" | resources.ToCSS $options -}}
 <link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
 {{- end -}}
-
-{{- if eq (getenv "NODE_ENV") "production" -}}
-<!-- cf web analytics -->
-<script defer
-  src="https://static.cloudflareinsights.com/beacon.min.js"
-  data-cf-beacon='{"token": "{{- .Site.Params.cfBeacon -}}"}'>
-</script>
-{{- end -}}
