@@ -4,7 +4,7 @@ import { babel } from '@rollup/plugin-babel'; // transpile code
 import { terser } from 'rollup-plugin-terser'; // minify
 import replace from '@rollup/plugin-replace'; // support process.env
 
-const envs = ['GITALK_CLIENT_ID', 'GITALK_CLIENT_SECRET', 'SENTRY_DSN'];
+const envs = ['NODE_ENV', 'GITALK_CLIENT_ID', 'GITALK_CLIENT_SECRET', 'SENTRY_DSN'];
 const replaced = {};
 for (let key of envs) {
   replaced[`process.env.${key}`] = JSON.stringify(process.env[key]);
@@ -16,7 +16,7 @@ const plugins = [
   replace(replaced),
   babel({
     babelHelpers: 'runtime',
-    skipPreflightCheck: true, // fix must use the runtime plugin error
+    exclude: '**/node_modules/**', // fix must use the runtime plugin error
   }),
   terser(),
 ];
