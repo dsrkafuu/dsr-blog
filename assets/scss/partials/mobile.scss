@@ -136,6 +136,19 @@ main {
   }
 }
 
+// mobile code section flexbox
+@media screen and (max-width: $tablet) {
+  body[data-section='code'] {
+    .list-content {
+      & > .card {
+        text-align: center;
+        flex: 1 1 auto;
+        width: 100%;
+      }
+    }
+  }
+}
+
 // mobile optimized link card
 @media screen and (max-width: $tablet) {
   .card-links > a {

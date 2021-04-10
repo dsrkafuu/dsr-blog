@@ -1,0 +1,25 @@
+body[data-section='code'] {
+  .list-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & > .card {
+      flex: 0 1 auto;
+      width: calc(50% - #{$space-base} / 2);
+    }
+  }
+
+  .list-meta > span:not(:last-child) {
+    display: none;
+  }
+  .list-meta > span:last-child {
+    padding-left: 0;
+  }
+
+  .list-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,6 +1,6 @@
 {{- define "body" -}}
 
-<body data-theme="auto" data-section="list">
+<body data-theme="auto" data-section="code">
   {{- partial "scripts-theme.html" . -}}
   <header>
     {{- partial "navbar.html" . -}}
@@ -9,7 +9,7 @@
     <div class="container list-container">
       <div class="columns list-columns">
         <div class="column list-content is-three-quarters">
-          {{- partial "card-list.html" . -}}
+          {{- partial "card-code.html" . -}}
         </div>
         <aside class="column list-sidebar is-one-quarter">
           {{- partial "side-list.html" . -}}
