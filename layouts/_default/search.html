@@ -1,4 +1,5 @@
 {{- define "body" -}}
+
 <body data-theme="auto" data-section="search">
   {{- partial "scripts-theme.html" . -}}
   <header>
@@ -11,8 +12,8 @@
           <div id="app">
             <div class="card search-ctrl">
               <form class="search-form" @submit.prevent="handleSubmit" method="GET" target="_self">
-                <input class="input" type="search" name="q" autocapitalize="off" autocorrect="off"
-                       autocomplete="off" spellcheck="false" v-model.trim="searchInput" required />
+                <input class="input" type="search" name="q" autocapitalize="off" autocorrect="off" autocomplete="off"
+                  spellcheck="false" v-model.trim="searchInput" required />
                 <button class="button" type="submit">搜索</button>
               </form>
               <v-search-info :status="status" :data="resultData.searchInformation" />
@@ -29,4 +30,5 @@
   {{- partial "footer.html" . -}}
   {{- partial "scripts-search.html" . -}}
 </body>
+
 {{- end -}}

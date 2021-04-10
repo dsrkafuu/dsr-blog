@@ -1,4 +1,5 @@
 {{- define "body" -}}
+
 <body data-theme="auto" data-section="friends">
   {{- partial "scripts-theme.html" . -}}
   <header>
@@ -24,8 +25,8 @@
             {{- end -}}
           </div>
           <div class="card friends-add">
-            <a href="https://github.com/dsrkafuu/dsr-ca/issues/new?assignees=&labels=friend&template=friend-request.md&title="
-               target="_blank" rel="noopener external">
+            <a href="https://github.com/dsrkafuu/dsr-blog/issues/new?assignees=&labels=friend&template=friend-request.md&title="
+              target="_blank" rel="noopener external">
               加入此列表
             </a>
           </div>
@@ -39,4 +40,5 @@
   {{- partial "footer.html" . -}}
   {{- partial "scripts-list.html" . -}}
 </body>
+
 {{- end -}}
