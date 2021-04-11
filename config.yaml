@@ -11,6 +11,7 @@ taxonomies:
 paginate: 10
 disableKinds:
   - "RSS"
+googleAnalytics: "G-P3JYXLDF3W"
 
 # language
 languageCode: "zh-cn" # rss
@@ -27,7 +28,6 @@ params:
     - "post"
     - "code"
   license: 本站内容采用 CC BY-NC-SA 4.0 许可，请注明出处；商业转载请联系作者授权。
-  cfBeacon: "85809be202aa418c833982b2e96e4c29"
 
 # menu
 menu:
