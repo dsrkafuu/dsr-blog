@@ -139,8 +139,8 @@ ttx -b -m PingFangSC-Regular.otf PingFangSC-Regular.ttx
 
 本人移植了全部 18 个字体文件，方便各位需要在 Windows 下临时使用的朋友，需要的可以在此处下载：
 
-- 链接：<https://pan.baidu.com/s/1IZpVAkyJkU-mkRD2oEOPYg>
-- 提取码：8ri1；解压密码：amzrk2.cc
+- 链接：[百度云盘](https://pan.baidu.com/s/1iwCjyHpjsMIABydyM045QA)
+- 提取码：m6n1；解压密码：dsrkafuu.su
 
 **此处分享的文件仅供交流测试使用，请于下载后 24 小时内删除，任何商业使用及商业利益冲突带来的法律纠纷与本人无关、概不负责。**
 
