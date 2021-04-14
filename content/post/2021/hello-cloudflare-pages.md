@@ -21,7 +21,7 @@ CloudFlare Pages 向免费用户提供了无限的站点数、请求数和带宽
 
 开放测试后，在 CloudFlare 管理面板导航栏即可找到 Pages 服务 (简体中文为 "网页")：
 
-[!管理面板](/images/post/2021/hello-cloudflare-pages/20210403191558.webp)
+![管理面板](/images/post/2021/hello-cloudflare-pages/20210403191558.webp)
 
 ## 添加站点
 
