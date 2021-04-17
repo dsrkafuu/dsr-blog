@@ -1,5 +1,5 @@
 ---
-title: '简单配置 PotPlayer、LAVFilters 和 xy-VSFilter 满足基本 BDRIP 回放需求'
+title: '配置全设备通用的 PotPlayer 和 LAVFilters 满足基本 BDRIP 回放需求'
 date: 2020-05-11T19:13:47+08:00
 tags:
   - 'anime'
@@ -8,13 +8,17 @@ description: '现在的高清视频观看体验，瓶颈不在片源，也不在
 image: '/images/header/potplayer.webp'
 ---
 
+> 2021-04-17 更新：移除 xy-VSFilter 并迁移至内置字幕滤镜
+
 涉及回放似乎就脱不开 madVR，但是我现在不再使用 madVR 自然也是有其原因的。
 
 正如大家所知道的，madVR 几乎是当前最好的解决方案，原生 10bit 输入、颜色处理、高质量缩放。但是 madVR 依旧有个最大的麻烦就是配置。即使是在有大量的配置教程、一键导入与安装的今天，其步骤依旧相当繁琐。
 
 <!--more-->
 
-其次，对于对回放要求相对较低的用户，例如显示设备一般、想在低性能设备用同一套配置等等情况，配置 madVR 就不再是必然选项了。因此，使用一套相对基本、配置相对简单的设定就能很好的应对视频回放了。
+其次，对于回放要求相对较低的用户，例如显示设备一般、想在低性能设备用同一套配置等等情况，配置 madVR 就不再是必然选项了。这种情况下，使用一套相对基本的配置、只要正确的进行了设定，依旧能很好的应对视频回放。
+
+当然，如果依旧有坚持 madVR 的需求，请参考 VCB-S 的配置攻略：[VCB-Studio 科普教程 2.2](https://vcb-s.com/archives/7228)
 
 ## 所需软件
 
@@ -84,16 +88,8 @@ image: '/images/header/potplayer.webp'
 
 至此，设置已经基本完成，可以投入使用了。
 
-## (可选) 配置 xy-VSFilter 优化外挂字幕性能与效果
+## 优化字幕渲染
 
-### xy-VSFilter
+进入字幕设置，如下图所示设置字体渲染方式、字幕样式，勾选尽可能将字幕输出在画面底部，将字幕缓冲量设置为 0 即可：
 
-至 [GitHub](https://github.com/Cyberbeing/xy-VSFilter/releases/tag/3.0.0.306) 下载 `xy-VSFilter_3.0.0.306_x64.zip`，解压至任意英文目录，以管理员身份运行 `Install_VSFilter.bat` 注册 dll。
-
-![注册 dll 示意图](/images/post/2020/potplayer-with-lav-fliters/20200419215553.webp)
-
-进入 "全局滤镜优先权" 选项卡，添加系统滤镜 DirectVobSub 以及 DirectVobSub (auto-loading version)，并将他们都改为强制使用。
-
-![全局滤镜优先权示意图](/images/post/2020/potplayer-with-lav-fliters/20200419215628.webp)
-
-播放带有外挂字幕的视频，系统托盘出现绿色箭头表示加载成功。
+![字幕设置示意图](/images/post/2020/potplayer-with-lav-fliters/20210417213728.webp)
