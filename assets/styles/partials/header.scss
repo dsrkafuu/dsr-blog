@@ -6,6 +6,8 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 99;
+  user-select: none;
 
   @include responsive(sm) {
     top: -$height-navbar-sm;
@@ -13,8 +15,8 @@
 }
 
 .navbar {
-  padding: 0 $space-base;
   height: $height-navbar;
+  padding-right: $space-base - $space-sm;
   display: flex;
   position: relative;
 
@@ -28,7 +30,7 @@
     position: relative;
 
     &:hover,
-    &.active {
+    &--active {
       border-bottom: $size-border solid var(--color-primary);
       color: var(--color-primary);
     }

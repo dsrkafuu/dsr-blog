@@ -10,7 +10,7 @@
       <div class="navbar__start">
         {{- $currentPage := . -}}
         {{- range .Site.Menus.main -}}
-        <a class="navbar__item{{- if $currentPage.IsMenuCurrent "main" . }} active{{- end -}}"
+        <a class="navbar__item{{- if $currentPage.IsMenuCurrent "main" . }} navbar__item--active{{- end -}}"
           href="{{- .URL | relURL -}}">
           {{- .Name -}}
         </a>

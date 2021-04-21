@@ -1,0 +1,40 @@
+<div class="card info">
+  <div class="info__avatar">
+    <div class="image image__ratio-1x1">
+      <img src="{{- .Site.Params.avatar -}}" alt="Avatar" />
+    </div>
+  </div>
+  <div class="info__meta">
+    <span class="info__metaName">{{- .Site.Params.author -}}</span>
+    <span class="info__metaPara">{{- .Site.Params.para -}}</span>
+  </div>
+  <div class="info__counter">
+    <div class="info__counterItem">
+      {{- $.Scratch.Set "TOTAL_WORD_COUNT" 0 -}}
+      {{- range .Site.RegularPages -}}
+      {{- $.Scratch.Add "TOTAL_WORD_COUNT" .WordCount -}}
+      {{- end -}}
+      {{- $totalWords := $.Scratch.Get "TOTAL_WORD_COUNT" -}}
+      <span class="info__counterData">{{- math.Round (div $totalWords 1000.0) -}}</span>
+      <span class="info__counterName">千字</span>
+    </div>
+    <div class="info__counterItem">
+      <span class="info__counterData">{{- len .Site.Taxonomies.tags -}}</span>
+      <span class="info__counterName">标签</span>
+    </div>
+    <div class="info__counterItem">
+      <span class="info__counterData">{{- len .Site.RegularPages -}}</span>
+      <span class="info__counterName">文章</span>
+    </div>
+  </div>
+</div>
+
+<div class="card links">
+  {{- range .Site.Menus.links -}}
+  <a class="links__item" href="{{- .URL -}}" target="_blank" rel="noopener external">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="{{- .Name -}}"></use>
+    </svg>
+  </a>
+  {{- end -}}
+</div>
