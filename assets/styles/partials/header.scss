@@ -1,6 +1,6 @@
 .header {
-  background-color: var(--blur-bg);
-  backdrop-filter: var(--blur-filter);
+  background-color: var(--color-bg);
+  backdrop-filter: $filter-blur;
   box-shadow: var(--box-shadow);
   position: sticky;
   top: 0;

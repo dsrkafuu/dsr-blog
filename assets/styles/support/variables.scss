@@ -36,8 +36,10 @@ $height-navbar: 3.25rem;
 $height-navbar-sm: 2.5rem;
 $height-toc: 27.5rem;
 
-$radius: 0.125rem;
+$radius: 0.2rem;
 
 $size-divider: 0.125rem;
 $size-border: 0.125rem;
 $size-underline: 0.1rem;
+
+$filter-blur: saturate(180%) blur(0.2rem);
