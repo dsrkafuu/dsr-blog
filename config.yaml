@@ -19,15 +19,16 @@ defaultContentLanguage: "zh-hans" # html
 
 # params
 params:
-  author: "DSRKafuU"
-  para: "Internet for people, not profit"
-  avatar: "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/images/avatars/dsrkafuu_256p.webp"
-  image: "/images/_header.webp"
-  og: "/images/_og.png"
   mainSections:
     - "post"
     - "code"
-  license: 本站内容采用 CC BY-NC-SA 4.0 许可，请注明出处；商业转载请联系作者授权。
+  author: "DSRKafuU"
+  para: "Internet for people, not profit"
+  avatar: "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/images/avatars/dsrkafuu_256p.webp"
+  header: "/images/_header.webp"
+  og: "/images/_og.png"
+  search: "https://www.google.com"
+  license: "本站内容采用 CC BY-NC-SA 4.0 许可，请注明出处；商业转载请联系作者授权。"
 
 # menu
 menu:

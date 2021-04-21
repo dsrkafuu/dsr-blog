@@ -1,0 +1,43 @@
+$font-family-base: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Arial',
+  'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN',
+  'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$font-family-mono: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 15px;
+$font-size-md: 1.125rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.375rem;
+
+$responsive-desktop: 72rem;
+$responsive-tablet: 50rem;
+
+@mixin responsive($size) {
+  @if $size == sm {
+    @media screen and (max-width: $responsive-tablet) {
+      @content;
+    }
+  } @else if $size == md {
+    @media screen and (max-width: $responsive-desktop) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-base: 1.5rem;
+$space-lg: 2rem;
+
+$height-navbar: 3.25rem;
+$height-navbar-sm: 2.5rem;
+$height-toc: 27.5rem;
+
+$radius: 0.125rem;
+
+$size-divider: 0.125rem;
+$size-border: 0.125rem;
+$size-underline: 0.1rem;

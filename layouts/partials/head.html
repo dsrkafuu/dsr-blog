@@ -6,7 +6,6 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 {{- hugo.Generator -}}
 
-{{- partial "favicon.html" . -}}
 {{- if .IsHome -}}
 <title>{{- .Site.Title -}}</title>
 {{- else -}}
@@ -21,28 +20,25 @@
 <meta name="description" content="{{- .Params.description -}}" />
 {{- end -}}
 {{- if .Params.tags -}}
-<meta name="keywords" content="{{- delimit .Params.tags " ," -}}" />
+<meta name="keywords" content="{{- delimit .Params.tags ", " -}}" />
 {{- else if .Params.keywords -}}
-<meta name="keywords" content="{{- delimit .Params.keywords " ," -}}" />
+<meta name="keywords" content="{{- delimit .Params.keywords ", " -}}" />
 {{- end -}}
+<link rel="apple-touch-icon" sizes="180x180" href="{{- "/apple-touch-icon.png" | relURL -}}" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{- "/favicon-32x32.png" | relURL -}}" />
+<link rel="icon" type="image/png" sizes="16x16" href="{{- "/favicon-16x16.png" | relURL -}}" />
+<link rel="shortcut icon" href="{{- "/favicon.ico" | relURL -}}" />
 {{- partial "opengraph.html" . -}}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css" />
-{{- if eq (getenv "NODE_ENV") "production" -}}
-{{- $options := (dict "targetPath" "assets/dsr-blog.min.css" "outputStyle" "expanded" "includePaths" (slice "node_modules")) -}}
-{{- $css := resources.Get "scss/index.scss" | resources.ToCSS $options -}}
-<link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
-{{- else -}}
-{{- $options := (dict "targetPath" "assets/dsr-blog.css" "outputStyle" "expanded" "enableSourceMap" true "includePaths" (slice "node_modules")) -}}
-{{- $css := resources.Get "scss/index.scss" | resources.ToCSS $options -}}
-<link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
-{{- end -}}
+{{- $src := "styles/index.scss" }}
+{{- $out := "assets/dsr-blog.min.css" -}}
+{{- partial "style.html" (dict "context" . "src" $src "out" $out) -}}
 
 {{- if and (eq (getenv "NODE_ENV") "production") .Site.GoogleAnalytics -}}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{- .Site.GoogleAnalytics -}}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){
+  function gtag() {
     dataLayer.push(arguments);
   }
   gtag('js', new Date());

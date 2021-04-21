@@ -2,5 +2,6 @@
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "html.format.endWithNewline": true
+  "html.format.endWithNewline": true,
+  "px-to-rem.px-per-rem": 15
 }

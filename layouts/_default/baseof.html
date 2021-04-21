@@ -2,6 +2,6 @@
 {{- "<!-- dsr-blog | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License -->" | safeHTML -}}
 
 <html lang="{{- .Site.Language.Lang -}}">
-{{- partial "head.html" . -}}
+{{- block "head" . -}}{{- end -}}
 {{- block "body" . -}}{{- end -}}
 </html>

@@ -1,6 +1,6 @@
 {
   "name": "dsr-blog",
-  "version": "5.8.4",
+  "version": "6.0.0",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.su)",
   "license": "Apache-2.0",
   "repository": {
@@ -8,24 +8,21 @@
     "url": "https://github.com/dsrkafuu/dsr-ca"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "~7.13.10",
-    "@sentry/browser": "~6.2.5",
-    "@sentry/tracing": "~6.2.5",
-    "bulma": "~0.9.2",
-    "lazysizes": "~5.3.2",
+    "@babel/runtime-corejs3": "~7.13.17",
+    "@sentry/browser": "~6.3.0",
+    "@sentry/tracing": "~6.3.0",
     "normalize.css": "~8.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.15",
+    "@babel/core": "^7.13.16",
     "@babel/plugin-transform-runtime": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
     "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^18.0.0",
-    "@rollup/plugin-node-resolve": "^11.2.1",
     "@rollup/plugin-replace": "^2.4.2",
     "autoprefixer": "^10.2.5",
     "cross-env": "^7.0.3",
     "cssnano": "^5.0.1",
+    "eslint": "^7.24.0",
     "html-minifier-terser": "^5.1.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.10",
@@ -34,10 +31,10 @@
     "terser": "^5.6.1"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development hugo server --gc",
-    "compile": "cross-env NODE_ENV=production hugo --cleanDestinationDir --gc",
-    "rollup": "cross-env NODE_ENV=production rollup -c",
-    "minify": "cross-env NODE_ENV=production node ./minify.js",
-    "build": "cross-env NODE_ENV=production npm-run-all compile minify rollup"
+    "build:generate": "cross-env NODE_ENV=production hugo --cleanDestinationDir",
+    "build:bundle": "cross-env NODE_ENV=production rollup -c",
+    "build:minify": "cross-env NODE_ENV=production node ./minify.js",
+    "build": "npm-run-all build:generate build:minify build:bundle",
+    "dev": "cross-env NODE_ENV=development hugo server"
   }
 }

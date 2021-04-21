@@ -1,14 +1,15 @@
 .footer {
   font-size: $font-size-sm;
+  height: 4.5rem;
 
   .container {
-    height: 5rem;
+    height: 100%;
+    padding: 0 $space-base;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 $block-spacing;
 
-    @media screen and (max-width: $tablet) {
+    @include responsive(sm) {
       flex-direction: column;
       justify-content: center;
     }
@@ -17,5 +18,11 @@
   &__text {
     overflow: hidden;
     white-space: nowrap;
+
+    @include responsive(sm) {
+      &:not(:first-child) {
+        margin-top: $space-xs;
+      }
+    }
   }
 }

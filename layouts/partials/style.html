@@ -1,0 +1,9 @@
+{{- if eq (getenv "NODE_ENV") "production" -}}
+{{- $options := (dict "targetPath" .out "outputStyle" "expanded" "includePaths" (slice "node_modules")) -}}
+{{- $css := resources.Get .src | resources.ToCSS $options -}}
+<link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
+{{- else -}}
+{{- $options := (dict "targetPath" .out "outputStyle" "expanded" "enableSourceMap" true "includePaths" (slice "node_modules")) -}}
+{{- $css := resources.Get .src | resources.ToCSS $options -}}
+<link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
+{{- end -}}
