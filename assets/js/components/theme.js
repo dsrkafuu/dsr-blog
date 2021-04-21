@@ -1,13 +1,13 @@
 import { setLS, getLS } from '../plugins/storage';
-import { logInfo } from '../plugins/logger';
-import { BODY_ATTRIBUTE_THEME, STORAGE_THEME } from '../plugins/constants';
+import { logInfo } from '../plugins/loggers';
+import { ATTR_THEME, STORAGE_THEME } from '../plugins/constants';
 
 export default class ThemeManager {
   constructor() {
-    this.theme = getLS(STORAGE_THEME) || document.body.getAttribute(BODY_ATTRIBUTE_THEME);
+    this.theme = getLS(STORAGE_THEME) || document.body.getAttribute(ATTR_THEME);
     // 若 body 后的内联脚本执行失败了
-    if (this.theme !== document.body.getAttribute(BODY_ATTRIBUTE_THEME)) {
-      document.body.setAttribute(BODY_ATTRIBUTE_THEME, this.theme);
+    if (this.theme !== document.body.getAttribute(ATTR_THEME)) {
+      document.body.setAttribute(ATTR_THEME, this.theme);
     }
   }
 
@@ -39,7 +39,7 @@ export default class ThemeManager {
    */
   _setTheme(scheme) {
     if (['auto', 'dark', 'light'].includes(scheme)) {
-      document.body.setAttribute(BODY_ATTRIBUTE_THEME, scheme);
+      document.body.setAttribute(ATTR_THEME, scheme);
       this.theme = scheme;
       logInfo(`theme set to ${scheme}`);
     }

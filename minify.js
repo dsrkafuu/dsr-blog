@@ -1,14 +1,13 @@
-// deps
 const path = require('path');
 const fs = require('fs');
 // html
-const html = require('html-minifier-terser').minify;
+const html = require('html-minifier-terser');
 // css
 const postcss = require('postcss');
 const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 
-// files
+// files needs to be processed
 const allFiles = {
   '.html': [],
   '.css': [],
@@ -46,21 +45,18 @@ function getFiles(dirPath) {
     return;
   });
 }
-console.log('[dsr-blog] scanning files...');
 getFiles(path.resolve('./public'));
-console.log('[dsr-blog] scanning files done.');
 
 // minify
-async function minifyFiles() {
-  console.log('[dsr-blog] works started...');
-  const processPromises = [];
+(async () => {
+  const promises = [];
 
   allFiles['.html'].forEach((val) => {
-    processPromises.push(
+    promises.push(
       new Promise((resolve, reject) => {
         try {
           const content = fs.readFileSync(val, { encoding: 'utf-8' });
-          const result = html(content, {
+          const result = html.minify(content, {
             collapseBooleanAttributes: true,
             collapseWhitespace: true,
             ignoreCustomComments: [/^!/, /^\s*#/],
@@ -85,7 +81,7 @@ async function minifyFiles() {
   });
 
   allFiles['.css'].forEach((val) => {
-    processPromises.push(
+    promises.push(
       new Promise((resolve, reject) => {
         try {
           const content = fs.readFileSync(val, { encoding: 'utf-8' });
@@ -102,7 +98,5 @@ async function minifyFiles() {
     );
   });
 
-  await Promise.all(processPromises);
-  console.log('[dsr-blog] works done.');
-}
-minifyFiles();
+  await Promise.all(promises);
+})();

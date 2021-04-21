@@ -1,5 +1,5 @@
 {
   "presets": ["@babel/preset-env"],
   "plugins": [["@babel/plugin-transform-runtime", { "corejs": 3 }]],
-  "exclude": "node_modules"
+  "exclude": "**/node_modules/**"
 }

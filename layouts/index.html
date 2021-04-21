@@ -1,33 +1,34 @@
+{{- define "head" -}}
+
+<head>
+  {{- partial "head.html" . -}}
+</head>
+
+{{- end -}}
+
 {{- define "body" -}}
 
 <body data-theme="auto" data-section="index">
-  {{- partial "scripts-theme.html" . -}}
-  <header>
-    {{- partial "navbar.html" . -}}
-  </header>
-  <main>
-    <div class="container single-container main-container">
-      <div class="columns single-columns main-columns">
-        <div class="column single-content main-content is-three-quarters">
-          <div class="card">
-            <div class="post-image image-wrapper ratio-40x9">
-              <img class="lazyload" data-src="{{- .Site.Params.image | relURL -}}" />
-            </div>
-            <div class="post-content">
-              <article class="markdown content">
-                {{- with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end -}}
-              </article>
-            </div>
-          </div>
-        </div>
-        <aside class="column main-sidebar is-one-quarter">
-          {{- partial "side-list.html" . -}}
-        </aside>
-      </div>
-    </div>
+  {{- partial "theme.html" . -}}
+  {{- partial "header.html" . -}}
+
+  <main class="main">
+    index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />
+    index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />
+    index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />
+    index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />
+
+    index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />
+    index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />
+    index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />
+    index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />index<br />
   </main>
+
   {{- partial "footer.html" . -}}
-  {{- partial "scripts-list.html" . -}}
+
+  {{- $src := "js/index.js" }}
+  {{- $out := "assets/dsr-blog_index.min.js" -}}
+  {{- partial "script.html" (dict "context" . "src" $src "out" $out) -}}
 </body>
 
 {{- end -}}

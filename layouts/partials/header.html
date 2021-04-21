@@ -1,0 +1,38 @@
+<header class="header">
+  <nav class="navbar container">
+    <div class="navbar__brand">
+      <a class="navbar__item" href="{{- .Site.BaseURL -}}">
+        {{- .Site.Title -}}
+      </a>
+    </div>
+
+    <div class="navbar__menu">
+      <div class="navbar__start">
+        {{- $currentPage := . -}}
+        {{- range .Site.Menus.main -}}
+        <a class="navbar__item{{- if $currentPage.IsMenuCurrent "main" . }} active{{- end -}}"
+          href="{{- .URL | relURL -}}">
+          {{- .Name -}}
+        </a>
+        {{- end -}}
+      </div>
+
+      <div class="navbar__end">
+        <a class="navbar__item" href="{{- .Site.Params.search -}}" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-search"></use>
+          </svg>
+        </a>
+        <div class="navbar__item" id="ctrl-adjust">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-adjust"></use>
+          </svg>
+        </div>
+        <div class="navbar__item" id="ctrl-toc">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-bars"></use>
+          </svg>
+        </div>
+      </div>
+  </nav>
+</header>

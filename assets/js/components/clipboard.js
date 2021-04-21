@@ -1,5 +1,4 @@
-import { logInfo } from '../plugins/logger';
-import { COPY_LICENSE, BODY_ATTRIBUTE_SECTION } from '../plugins/constants';
+import { COPY_LICENSE, ATTR_SECTION } from '../plugins/constants';
 
 /**
  * 检查父节点
@@ -23,26 +22,29 @@ function getAllParentNodes(node, count = 4) {
   return allParentNodes;
 }
 
-// 剪贴板拦截
-if (document.body.getAttribute(BODY_ATTRIBUTE_SECTION) === 'single') {
-  document.addEventListener('copy', (event) => {
-    if (event.clipboardData) {
-      const selection = window.getSelection(); // 获取选择的内容
-      // 检查是否代码块
-      const nodes = [
-        getAllParentNodes(selection.anchorNode).join(),
-        getAllParentNodes(selection.focusNode).join(),
-      ].join(' ');
-      // 如果不是代码块
-      if (!/(CODE|PRE).* .*(CODE|PRE)/gi.exec(nodes)) {
-        // 大于 80 字添加 LICENSE
-        let copiedText = selection.toString();
-        if (copiedText && copiedText.length > 80) {
-          event.preventDefault(); // 防止默认行为复制原文内容
-          event.clipboardData.setData('text/plain', `${copiedText}\n${COPY_LICENSE}`);
-          logInfo('copy license added');
+/**
+ * 剪贴板拦截
+ */
+export default function () {
+  if (document.body.getAttribute(ATTR_SECTION) === 'single') {
+    document.addEventListener('copy', (event) => {
+      if (event.clipboardData) {
+        const selection = window.getSelection(); // 获取选择的内容
+        // 检查是否代码块
+        const nodes = [
+          getAllParentNodes(selection.anchorNode).join(),
+          getAllParentNodes(selection.focusNode).join(),
+        ].join(' ');
+        // 如果不是代码块
+        if (!/(CODE|PRE).* .*(CODE|PRE)/gi.exec(nodes)) {
+          // 大于 100 字添加 LICENSE
+          let copiedText = selection.toString();
+          if (copiedText && copiedText.length > 100) {
+            event.preventDefault(); // 防止默认行为复制原文内容
+            event.clipboardData.setData('text/plain', `${copiedText}\n${COPY_LICENSE}`);
+          }
         }
       }
-    }
-  });
+    });
+  }
 }

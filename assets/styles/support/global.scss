@@ -1,0 +1,23 @@
+html {
+  height: 100%;
+  font-size: $font-size-base;
+  background-color: var(--color-body);
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-base;
+  background-color: var(--color-body);
+}
+
+// sticky footer
+.header,
+.footer {
+  flex: 0 0 auto;
+}
+
+.main {
+  flex: 1 1 auto;
+}
