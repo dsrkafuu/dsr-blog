@@ -2,7 +2,7 @@ $colors-light: (
   'body': #f2f2f2,
   'bg': rgba(255, 255, 253, 0.8),
   'hover': #f3f5fa,
-  'wrapper': #f5f5f5,
+  'wrapper': #e8e8e8,
   'primary': #8aa2d3,
   'font': #3f4551,
 );
@@ -10,7 +10,7 @@ $colors-light: (
   @each $key, $value in $colors-light {
     --color-#{$key}: #{$value};
   }
-  --box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 13%), 0 0 0.2rem rgba(0, 0, 0, 11%);
+  --box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.06);
 }
 
 $colors-dark: (

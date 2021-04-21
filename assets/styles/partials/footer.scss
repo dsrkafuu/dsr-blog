@@ -2,7 +2,7 @@
   font-size: $font-size-sm;
   height: 4.5rem;
 
-  .container {
+  & > .container {
     height: 100%;
     padding: 0 $space-base;
     display: flex;

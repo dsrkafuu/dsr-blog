@@ -5,6 +5,11 @@
 @import './support/colors';
 @import './support/global';
 @import './support/reset';
+@import './support/images';
+@import './support/markdown';
 
 @import './partials/header';
+@import './partials/main';
+@import './partials/info';
+@import './partials/content';
 @import './partials/footer';
