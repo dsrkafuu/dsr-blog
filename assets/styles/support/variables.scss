@@ -1,4 +1,4 @@
-$font-family-base: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Arial',
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Text', 'Segoe UI', 'Arial',
   'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN',
   'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 $font-family-mono: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', monospace;
@@ -38,8 +38,7 @@ $height-toc: 27.5rem;
 
 $radius: 0.2rem;
 
-$size-divider: 0.125rem;
-$size-border: 0.125rem;
+$size-divider: 0.2rem;
 $size-underline: 0.1rem;
 
 $filter-blur: saturate(180%) blur(0.2rem);
