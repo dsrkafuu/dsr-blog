@@ -1,8 +1,8 @@
 $colors-light: (
   'body': #f2f2f2,
   'bg': rgba(255, 255, 253, 0.8),
-  'hover': #f3f5fa,
   'wrapper': #e8e8e8,
+  'code': #f1f1f1,
   'primary': #8aa2d3,
   'font': #3f4551,
 );
@@ -16,10 +16,10 @@ $colors-light: (
 $colors-dark: (
   'body': #2f3136,
   'bg': #4d5158,
-  'hover': #41454b,
   'wrapper': #34373d,
-  'font': rgba(255, 255, 255, 0.75),
+  'code': #34373d,
   'primary': #8aa2d3,
+  'font': rgba(255, 255, 255, 0.75),
 );
 @mixin dark {
   @each $key, $value in $colors-dark {

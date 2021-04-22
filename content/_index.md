@@ -7,7 +7,11 @@ keywords:
   - 博客
 ---
 
-Front end developer newbie, currently a college student at [NJUPT](https://www.njupt.edu.cn).
+> Front end developer newbie, currently a college student at [NJUPT](https://www.njupt.edu.cn).
+> Front end developer newbie, currently a college student at [NJUPT](https://www.njupt.edu.cn).
+> Front end developer newbie, currently a college student at [NJUPT](https://www.njupt.edu.cn).
+>
+> Front end developer newbie, currently a college student at [NJUPT](https://www.njupt.edu.cn).
 
 - Great fan of [Kyoto Animation](https://www.kyotoanimation.co.jp)
 - [Vue.js](https://vuejs.org), [React.js](https://reactjs.org), and a little bit of [Node.js](https://nodejs.org)
@@ -44,7 +48,17 @@ Front end developer newbie, currently a college student at [NJUPT](https://www.n
 
 Front end developer newbie, currently a college student at [NJUPT](https://www.njupt.edu.cn).
 
-- Great fan of [Kyoto Animation](https://www.kyotoanimation.co.jp)
+<hr />
+
+- Great <kbd>fan</kbd> `of` [Kyoto Animation](https://www.kyotoanimation.co.jp)
 - [Vue.js](https://vuejs.org), [React.js](https://reactjs.org), and a little bit of [Node.js](https://nodejs.org)
 - [VS Code](https://code.visualstudio.com), always working with 2-space and [Prettier](https://prettier.io)
 - Learning [Vue.js v3](https://v3.vuejs.org) and [TypeScript](https://www.typescriptlang.org)
+
+```js
+const as = () => console.log();
+- Great <kbd>fan</kbd> `of` [Kyoto Animation](https://www.kyotoanimation.co.jp)
+- [Vue.js](https://vuejs.org), [React.js](https://reactjs.org), and a little bit of [Node.js](https://nodejs.org)
+- [VS Code](https://code.visualstudio.com), always working with 2-space and [Prettier](https://prettier.io)
+- Learning [Vue.js v3](https://v3.vuejs.org) and [TypeScript](https://www.typescriptlang.org)
+```

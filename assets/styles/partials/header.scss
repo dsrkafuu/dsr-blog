@@ -31,7 +31,7 @@
 
     &:hover,
     &--active {
-      border-bottom: $size-border solid var(--color-primary);
+      border-bottom: $size-divider solid var(--color-primary);
       color: var(--color-primary);
     }
   }

@@ -7,11 +7,13 @@
     & > .content {
       flex: 1 1 75%;
       margin-right: $space-base / 2;
+      overflow: auto;
     }
 
     & > .sidebar {
       flex: 0 1 25%;
       margin-left: $space-base / 2;
+      overflow: hidden;
     }
   }
 }

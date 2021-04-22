@@ -8,12 +8,13 @@ body {
 }
 
 a {
+  position: relative;
   color: inherit;
   text-decoration: none;
 
   &:hover {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
@@ -44,17 +45,7 @@ h6 {
 
   &:hover {
     color: var(--color-primary);
-    text-decoration: none;
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: $size-underline;
-      height: $size-underline;
-      background-color: var(--color-primary);
-    }
+    text-decoration: underline;
   }
 }
 
