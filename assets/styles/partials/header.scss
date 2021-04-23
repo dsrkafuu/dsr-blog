@@ -33,6 +33,7 @@
     &--active {
       border-bottom: $size-divider solid var(--color-primary);
       color: var(--color-primary);
+      text-decoration: none;
     }
   }
 
@@ -71,5 +72,15 @@
       justify-content: center;
       align-items: center;
     }
+  }
+}
+
+// only show toc ctrl on single page of mobile
+#ctrl-toc {
+  display: none;
+}
+@include responsive(sm) {
+  body[data-section='single'] #ctrl-toc {
+    display: inline-block;
   }
 }

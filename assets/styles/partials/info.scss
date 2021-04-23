@@ -68,6 +68,7 @@
     &:hover {
       border-bottom: $size-divider solid var(--color-primary);
       color: var(--color-primary);
+      text-decoration: none;
     }
   }
 }

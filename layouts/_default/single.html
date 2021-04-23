@@ -8,21 +8,27 @@
 
 {{- define "body" -}}
 
-<body data-theme="auto" data-section="index">
+<body data-theme="auto" data-section="single">
   {{- partial "theme.html" . -}}
   {{- partial "header.html" . -}}
 
   <main class="main">
     <div class="container">
       <div class="content">
-        <div class="content__inner">
+        <div class="content__inner post__article">
           <div class="card">
+            {{- if .Params.image -}}
             <div class="post__image image image__ratio-40x9">
-              <img class="lazyload" data-src="{{- .Site.Params.header | relURL -}}" />
+              <img class="lazyload" data-src="{{- .Params.image | relURL -}}" />
             </div>
+            {{- end -}}
+            <div class="post__title">
+              <h2>{{- .Title -}}</h2>
+            </div>
+            {{- partial "metadata.html" . -}}
             <div class="post__content">
               <article class="markdown">
-                {{- with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end -}}
+                {{ .Content }}
               </article>
             </div>
           </div>
@@ -39,8 +45,8 @@
   {{- partial "footer.html" . -}}
 
   <script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
-  {{- $src := "js/list.js" }}
-  {{- $out := "assets/dsr-blog_list.min.js" -}}
+  {{- $src := "js/single.js" }}
+  {{- $out := "assets/dsr-blog_single.min.js" -}}
   {{- partial "script.html" (dict "context" . "src" $src "out" $out) -}}
 </body>
 

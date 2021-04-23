@@ -30,6 +30,7 @@
   ol ul {
     margin-top: 0;
     margin-bottom: 0;
+    padding-left: 1.25rem;
   }
 
   li > p {
@@ -138,57 +139,52 @@
       margin-bottom: 0;
     }
   }
+
+  h1,
+  h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: $font-size-xl;
+
+    code,
+    tt {
+      font-size: $font-size-lg;
+    }
+  }
+
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: $font-size-md;
+
+    code,
+    tt {
+      font-size: $font-size-base;
+    }
+  }
+
+  h4,
+  h5,
+  h6 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: $font-size-base;
+
+    code,
+    tt {
+      font-size: $font-size-sm;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-primary);
+  }
 }
-
-// .markdown h1,
-// .markdown h2,
-// .markdown h3,
-// .markdown h4,
-// .markdown h5,
-// .markdown h6 {
-//   margin-top: 24px;
-//   margin-bottom: 16px;
-//   font-weight: 600;
-//   line-height: 1.25;
-// }
-
-// .markdown h1 tt,
-// .markdown h1 code,
-// .markdown h2 tt,
-// .markdown h2 code,
-// .markdown h3 tt,
-// .markdown h3 code,
-// .markdown h4 tt,
-// .markdown h4 code,
-// .markdown h5 tt,
-// .markdown h5 code,
-// .markdown h6 tt,
-// .markdown h6 code {
-//   font-size: inherit;
-// }
-// .markdown h1 {
-//   padding-bottom: 0.3em;
-//   font-size: 2em;
-//   border-bottom: 1px solid var(--color-border-secondary);
-// }
-// .markdown h2 {
-//   padding-bottom: 0.3em;
-//   font-size: 1.5em;
-//   border-bottom: 1px solid var(--color-border-secondary);
-// }
-// .markdown h3 {
-//   font-size: 1.25em;
-// }
-// .markdown h4 {
-//   font-size: 1em;
-// }
-// .markdown h5 {
-//   font-size: 0.875em;
-// }
-// .markdown h6 {
-//   font-size: 0.85em;
-//   color: var(--color-text-tertiary);
-// }
 
 // .markdown table {
 //   display: block;
