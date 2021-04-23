@@ -184,33 +184,24 @@
   h6 {
     color: var(--color-primary);
   }
-}
 
-// .markdown table {
-//   display: block;
-//   width: 100%;
-//   width: max-content;
-//   max-width: 100%;
-//   overflow: auto;
-// }
-// .markdown table th {
-//   font-weight: 600;
-// }
-// .markdown table th,
-// .markdown table td {
-//   padding: 6px 13px;
-//   border: 1px solid var(--color-markdown-table-border);
-// }
-// .markdown table tr {
-//   background-color: var(--color-bg-primary);
-//   border-top: 1px solid var(--color-markdown-table-tr-border);
-// }
-// .markdown table tr:nth-child(2n) {
-//   background-color: var(--color-bg-tertiary);
-// }
-// .markdown table img {
-//   background-color: transparent;
-// }
-// .markdown img {
-//   max-width: 100%;
-// }
+  table {
+    display: block;
+    width: 100%;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+
+    th {
+      font-weight: 600;
+    }
+
+    th,
+    td {
+      padding: 0.25rem 0.75rem;
+      border: $size-border solid var(--color-wrapper);
+    }
+  }
+}

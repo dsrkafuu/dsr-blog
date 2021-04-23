@@ -10,22 +10,22 @@ $colors-light: (
   @each $key, $value in $colors-light {
     --color-#{$key}: #{$value};
   }
-  --box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.06);
+  --box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
 }
 
 $colors-dark: (
   'body': #2f3136,
-  'bg': #4d5158,
+  'bg': rgba(77, 81, 88, 0.8),
   'wrapper': #34373d,
   'code': #34373d,
-  'primary': #8aa2d3,
+  'primary': #9db1da,
   'font': rgba(255, 255, 255, 0.75),
 );
 @mixin dark {
   @each $key, $value in $colors-dark {
     --color-#{$key}: #{$value};
   }
-  --box-shadow: none;
+  --box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
   img {
     filter: brightness(85%);
   }
