@@ -13,7 +13,6 @@
   &__meta {
     text-align: center;
     font-size: $font-size-sm;
-    padding: 0 $space-sm;
   }
 
   &__metaName {
@@ -25,6 +24,9 @@
     display: block;
     margin-top: $space-xs;
     margin-bottom: $space-sm;
+    line-height: 1.45;
+    padding: 0 $space-base;
+    font-size: $font-size-base;
   }
 
   &__counter {

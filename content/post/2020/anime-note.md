@@ -347,24 +347,22 @@ E x p l o s i o n !
 
 ## BD
 
-{{< table "dense" >}}
-| STATUS | DATE | NAME | PROD |
+|  STATUS  |  DATE   |                 NAME                 |        PROD        |
 | :------: | :-----: | :----------------------------------: | :----------------: |
-| CHECKING | 2020.02 | 劇場版 SHIROBAKO | P.A.WORKS |
-| PENDING | 2019.07 | 天気の子 | CoMix Wave Films |
-| CHECKING | 2018.04 | リズと青い鳥 | 京都アニメーション |
-| PENDING | 2018.04 | ガールズ&パンツァー 最終章 第 1-2 話 | アクタス |
-| FINISHED | 2016.12 | 君の名は。 | CoMix Wave Films |
-| FINISHED | 2016.01 | 暗殺教室 第 2 期 | ラルケ |
-| FINISHED | 2015.11 | ガールズ&パンツァー 劇場版 | アクタス |
-| FINISHED | 2015.01 | 暗殺教室 | ラルケ |
-| FINISHED | 2014.10 | SHIROBAKO | P.A.WORKS |
-| FINISHED | 2014.04 | たまこラブストーリー | 京都アニメーション |
-| FINISHED | 2013.01 | たまこまーけっと | 京都アニメーション |
-| FINISHED | 2012.10 | ガールズ&パンツァー | アクタス |
-| FINISHED | 2012.04 | 冰菓 | 京都アニメーション |
-| FINISHED | 2011.12 | 映画けいおん！ | 京都アニメーション |
-| FINISHED | 2010.04 | けいおん！！ | 京都アニメーション |
-| FINISHED | 2009.04 | けいおん！ | 京都アニメーション |
-| FINISHED | 2007.04 | らき ☆ すた | 京都アニメーション |
-{{< /table >}}
+| CHECKING | 2020.02 |           劇場版 SHIROBAKO           |     P.A.WORKS      |
+| PENDING  | 2019.07 |               天気の子               |  CoMix Wave Films  |
+| CHECKING | 2018.04 |             リズと青い鳥             | 京都アニメーション |
+| PENDING  | 2018.04 | ガールズ&パンツァー 最終章 第 1-2 話 |      アクタス      |
+| FINISHED | 2016.12 |              君の名は。              |  CoMix Wave Films  |
+| FINISHED | 2016.01 |           暗殺教室 第 2 期           |       ラルケ       |
+| FINISHED | 2015.11 |      ガールズ&パンツァー 劇場版      |      アクタス      |
+| FINISHED | 2015.01 |               暗殺教室               |       ラルケ       |
+| FINISHED | 2014.10 |              SHIROBAKO               |     P.A.WORKS      |
+| FINISHED | 2014.04 |         たまこラブストーリー         | 京都アニメーション |
+| FINISHED | 2013.01 |           たまこまーけっと           | 京都アニメーション |
+| FINISHED | 2012.10 |         ガールズ&パンツァー          |      アクタス      |
+| FINISHED | 2012.04 |                 冰菓                 | 京都アニメーション |
+| FINISHED | 2011.12 |            映画けいおん！            | 京都アニメーション |
+| FINISHED | 2010.04 |             けいおん！！             | 京都アニメーション |
+| FINISHED | 2009.04 |              けいおん！              | 京都アニメーション |
+| FINISHED | 2007.04 |             らき ☆ すた              | 京都アニメーション |
