@@ -59,3 +59,8 @@ img {
   border-radius: $radius;
   box-shadow: var(--box-shadow);
 }
+
+.sticky {
+  position: sticky;
+  top: $height-navbar + $space-base;
+}
