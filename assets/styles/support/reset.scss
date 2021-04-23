@@ -9,11 +9,11 @@ body {
 
 a {
   position: relative;
-  color: inherit;
+  color: var(--color-primary);
   text-decoration: none;
 
   &:hover {
-    color: inherit;
+    color: var(--color-primary);
     text-decoration: underline;
   }
 }
@@ -30,6 +30,11 @@ h4,
 h5,
 h6 {
   font-weight: 600;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 .container {

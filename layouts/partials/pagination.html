@@ -1,0 +1,64 @@
+{{- $paginator := .paginator -}}
+{{- $scratch := newScratch -}}
+{{- if gt $paginator.TotalPages 1 -}}
+<div class="card">
+  {{- $offsetLinks := 2 -}}
+  {{- $maxLinks := (add (mul $offsetLinks 2) 1) -}}
+  {{- $lowerLimit := (add $offsetLinks 1) -}}
+  {{- $upperLimit := (sub $paginator.TotalPages $offsetLinks) -}}
+  <div class="pagination">
+    {{- if ne $paginator.PageNumber 1 -}}
+    <a class="pagination__first" href="{{- $paginator.First.URL -}}">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chevron-double-left"></use>
+      </svg>
+    </a>
+    {{- end -}}
+    {{- if $paginator.HasPrev -}}
+    <a class="pagination__previous" href="{{- $paginator.Prev.URL -}}">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chevron-left"></use>
+      </svg>
+    </a>
+    {{- end -}}
+    {{- range $paginator.Pagers -}}
+    {{- $scratch.Set "PAGE_NUM_FLAG" false -}}
+    {{- if gt $paginator.TotalPages $maxLinks -}}
+    {{- if le $paginator.PageNumber $lowerLimit -}}
+    {{- if le .PageNumber $maxLinks -}}
+    {{- $scratch.Set "PAGE_NUM_FLAG" true -}}
+    {{- end -}}
+    {{- else if ge $paginator.PageNumber $upperLimit -}}
+    {{- if gt .PageNumber (sub $paginator.TotalPages $maxLinks) -}}
+    {{- $scratch.Set "PAGE_NUM_FLAG" true -}}
+    {{- end -}}
+    {{- else -}}
+    {{- if and ( ge .PageNumber (sub $paginator.PageNumber $offsetLinks) ) ( le .PageNumber (add $paginator.PageNumber
+    $offsetLinks) ) -}}
+    {{- $scratch.Set "PAGE_NUM_FLAG" true -}}
+    {{- end -}}
+    {{- end -}}
+    {{- else -}}
+    {{- $scratch.Set "PAGE_NUM_FLAG" true -}}
+    {{- end -}}
+    {{- if eq ($scratch.Get "PAGE_NUM_FLAG") true -}}
+    <a class="pagination__item{{- if eq . $paginator }} pagination__item--active{{- end -}}" href="{{- .URL -}}">{{- .PageNumber -}}</a>
+    {{- end -}}
+    {{- end -}}
+    {{- if $paginator.HasNext -}}
+    <a class="pagination__next" href="{{- $paginator.Next.URL -}}">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chevron-right"></use>
+      </svg>
+    </a>
+    {{- end -}}
+    {{- if ne $paginator.PageNumber $paginator.TotalPages -}}
+    <a class="pagination__last" href="{{- $paginator.Last.URL -}}">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chevron-double-right"></use>
+      </svg>
+    </a>
+    {{- end -}}
+  </div>
+</div>
+{{- end -}}
