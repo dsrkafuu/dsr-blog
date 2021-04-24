@@ -8,6 +8,7 @@
   right: 0;
   z-index: 99;
   user-select: none;
+  font-family: $font-family-base;
 
   @include responsive(sm) {
     top: -$height-navbar-sm;
@@ -40,6 +41,7 @@
   &__brand {
     flex: 0 0 auto;
     font-size: $font-size-lg;
+    font-weight: 500;
 
     .navbar__item {
       padding: 0 $space-base;

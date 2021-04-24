@@ -1,15 +1,7 @@
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-display: swap;
-  src: local('Inter Regular'),
-    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/fonts/inter/inter-regular.woff2')
-      format('woff2');
-}
-
 html {
   height: 100%;
   font-size: $font-size-base;
+  font-family: $font-family-base;
   background-color: var(--color-body);
 }
 
@@ -18,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: $font-size-base;
+  font-family: $font-family-base;
   background-color: var(--color-body);
 }
 

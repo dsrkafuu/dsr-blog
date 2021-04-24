@@ -1,5 +1,4 @@
 .markdown {
-  font-family: $font-family-base;
   line-height: 1.5;
   word-wrap: break-word;
 
@@ -50,7 +49,7 @@
     margin-top: 1rem;
     font-size: 1rem;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   dl dd {
@@ -195,7 +194,7 @@
     margin-bottom: 1rem;
 
     th {
-      font-weight: 600;
+      font-weight: 500;
     }
 
     th,

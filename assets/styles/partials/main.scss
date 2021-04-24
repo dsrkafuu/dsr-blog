@@ -4,7 +4,7 @@
 
     & > .content {
       flex: 1 1 75%;
-      overflow: auto;
+      max-width: 75%;
 
       & > .content__inner {
         margin-top: $space-base;
@@ -16,9 +16,10 @@
 
     & > .sidebar {
       flex: 0 1 25%;
-      overflow: auto;
+      max-width: 25%;
 
       & > .sidebar__inner {
+        height: 100rem;
         margin-top: $space-base;
         margin-right: $space-base;
         margin-left: $space-base / 2;
