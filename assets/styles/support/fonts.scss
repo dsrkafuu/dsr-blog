@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local('Inter Regular'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/fonts/inter/inter-400.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/fonts/inter/inter-400.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local('Inter Medium'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/fonts/inter/inter-500.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/fonts/inter/inter-500.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local('Noto Sans SC'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/fonts/noto-sans-sc/noto-sans-sc-400.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/fonts/noto-sans-sc/noto-sans-sc-400.woff')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local('Noto Sans SC Medium'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/fonts/noto-sans-sc/noto-sans-sc-500.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/fonts/noto-sans-sc/noto-sans-sc-500.woff')
+      format('woff');
+}
