@@ -7,10 +7,11 @@
       max-width: 75%;
 
       & > .content__inner {
-        margin-top: $space-base;
-        margin-left: $space-base;
-        margin-right: $space-base / 2;
-        margin-bottom: $space-base;
+        height: 100%;
+        padding-top: $space-base;
+        padding-left: $space-base;
+        padding-right: $space-base / 2;
+        padding-bottom: $space-base;
       }
     }
 
@@ -19,11 +20,11 @@
       max-width: 25%;
 
       & > .sidebar__inner {
-        height: 100rem;
-        margin-top: $space-base;
-        margin-right: $space-base;
-        margin-left: $space-base / 2;
-        margin-bottom: $space-base;
+        height: 100%;
+        padding-top: $space-base;
+        padding-right: $space-base;
+        padding-left: $space-base / 2;
+        padding-bottom: $space-base;
       }
     }
   }

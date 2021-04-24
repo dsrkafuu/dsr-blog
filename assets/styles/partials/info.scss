@@ -26,8 +26,8 @@
     margin-top: $space-xs;
     margin-bottom: $space-sm;
     line-height: 1.45;
-    padding: 0 $space-base;
-    font-size: $font-size-base;
+    padding: 0 $space-sm;
+    font-size: $font-size-sm;
   }
 
   &__counter {
