@@ -93,22 +93,10 @@
   &__box {
     padding: $space-base;
   }
-
-  &__meta {
-    line-height: 1.5;
-    font-size: $font-size-sm;
-    overflow-x: hidden;
-    white-space: nowrap;
-    margin-top: 1rem;
-    color: var(--color-primary);
-
-    .icon {
-      margin-right: 0.25rem;
-    }
-
-    & > span:not(:first-child) {
-      display: none;
-    }
+}
+body[data-section='code'] .post__meta {
+  & > span:not(:first-child) {
+    display: none;
   }
 }
 

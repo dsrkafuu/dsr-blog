@@ -25,7 +25,6 @@
             <div class="post__title">
               <h2>{{- .Title -}}</h2>
             </div>
-            {{- .Scratch.Set "metaType" "post" -}}
             {{- partial "metadata.html" . -}}
             <div class="post__content">
               <article class="markdown">
