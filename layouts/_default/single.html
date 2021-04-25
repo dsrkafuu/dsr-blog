@@ -44,10 +44,12 @@
 
   {{- partial "footer.html" . -}}
 
-  <script defer src="{{- .Site.Params.lazysizes -}}"></script>
+  <script defer src='{{- $.Scratch.Get "DEP_lazysizes" -}}'></script>
   {{- .Scratch.Set "scriptSrc" "js/single.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_single.min.js" -}}
   {{- partial "script.html" . -}}
+  <script defer src='{{- $.Scratch.Get "DEP_prism-core" -}}'></script>
+  <script defer src='{{- $.Scratch.Get "DEP_prism-autoloader" -}}'></script>
 </body>
 
 {{- end -}}
