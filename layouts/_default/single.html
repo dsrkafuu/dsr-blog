@@ -25,6 +25,7 @@
             <div class="post__title">
               <h2>{{- .Title -}}</h2>
             </div>
+            {{- .Scratch.Set "metaType" "post" -}}
             {{- partial "metadata.html" . -}}
             <div class="post__content">
               <article class="markdown">
@@ -44,10 +45,10 @@
 
   {{- partial "footer.html" . -}}
 
-  <script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
-  {{- $src := "js/single.js" }}
-  {{- $out := "assets/dsr-blog_single.min.js" -}}
-  {{- partial "script.html" (dict "context" . "src" $src "out" $out) -}}
+  <script defer src="{{- .Site.Params.lazysizes -}}"></script>
+  {{- .Scratch.Set "scriptSrc" "js/single.js" -}}
+  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_single.min.js" -}}
+  {{- partial "script.html" . -}}
 </body>
 
 {{- end -}}

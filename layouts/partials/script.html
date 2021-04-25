@@ -1,13 +1,15 @@
-{{- $options := (dict "targetPath" .out "minify" false "target" "esnext" "format" "iife") -}}
+{{- $src := .Scratch.Get "scriptSrc" -}}
+{{- $out := .Scratch.Get "scriptOut" -}}
+{{- $options := (dict "targetPath" $out "minify" false "target" "esnext" "format" "iife") -}}
 
 {{- if eq (getenv "NODE_ENV") "production" -}}
-<script defer src="{{ .out | relURL }}"></script>
+<script defer src="{{ $out | relURL }}"></script>
 {{- else -}}
 <script>
   window.process = {
     env: { NODE_ENV: 'development' },
   };
 </script>
-{{- $built := resources.Get .src | js.Build $options -}}
+{{- $built := resources.Get $src | js.Build $options -}}
 <script defer src="{{ $built.RelPermalink }}"></script>
 {{- end -}}

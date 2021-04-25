@@ -1,24 +1,64 @@
+{{- $type := .Scratch.Get "metaType" -}}
+
+{{- if eq $type "code" -}}
+
+<div class="code__meta">
+  <span>
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-calendar-day"></use>
+    </svg>
+    {{- printf "<time>%s</time>" (.Lastmod.Format "2006-01-02") | safeHTML -}}
+  </span>
+  <span>
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-clock"></use>
+    </svg>
+    {{- printf "%d 字" .WordCount -}}
+  </span>
+  <span>
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-clock"></use>
+    </svg>
+    {{- printf "%d 分钟" .ReadingTime -}}
+  </span>
+</div>
+
+{{- else -}}
+
 <div class="post__meta">
   <span>
     <svg class="icon" aria-hidden="true">
       <use xlink:href="#icon-calendar-day"></use>
-    </svg>&nbsp;<time>{{- .Date.Format "2006-01-02" -}}</time></span>
+    </svg>
+    {{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}
+  </span>
   <span>
     <svg class="icon" aria-hidden="true">
       <use xlink:href="#icon-clock"></use>
-    </svg>&nbsp;{{- .ReadingTime }} 分钟</span>
+    </svg>
+    {{- printf "%d 字" .WordCount -}}
+  </span>
+  <span>
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-clock"></use>
+    </svg>
+    {{- printf "%d 分钟" .ReadingTime -}}
+  </span>
   <span>
     <svg class="icon" aria-hidden="true">
       <use xlink:href="#icon-hashtag"></use>
-    </svg>&nbsp;
+    </svg>
     {{- if .Params.tags -}}
     {{- range .Params.tags -}}
-    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">
+    {{- $tagLink := (printf "%s%s/" "/tags/" (. | urlize)) | relURL -}}
+    <a href="{{- $tagLink -}}">
       {{- . -}}
     </a>
     {{- end -}}
     {{- else -}}
-    无标签
-    {{- end -}}
+    {{- printf "无标签" -}}
+    {{- end }}
   </span>
 </div>
+
+{{- end -}}

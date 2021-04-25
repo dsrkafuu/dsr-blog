@@ -1,5 +1,6 @@
-{{- $paginator := .paginator -}}
+{{- $paginator := .Scratch.Get "paginator" -}}
 {{- $scratch := newScratch -}}
+
 {{- if gt $paginator.TotalPages 1 -}}
 <div class="card">
   {{- $offsetLinks := 2 -}}
@@ -42,7 +43,9 @@
     {{- $scratch.Set "PAGE_NUM_FLAG" true -}}
     {{- end -}}
     {{- if eq ($scratch.Get "PAGE_NUM_FLAG") true -}}
-    <a class="pagination__item{{- if eq . $paginator }} pagination__item--active{{- end -}}" href="{{- .URL -}}">{{- .PageNumber -}}</a>
+    <a class="pagination__item{{- if eq . $paginator }} pagination__item--active{{- end -}}" href="{{- .URL -}}">
+      {{- .PageNumber -}}
+    </a>
     {{- end -}}
     {{- end -}}
     {{- if $paginator.HasNext -}}
