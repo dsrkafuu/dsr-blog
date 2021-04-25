@@ -56,7 +56,8 @@
 
   @include responsive(sm) {
     flex-direction: column;
-    height: $height-navbar-sm * 3;
+    height: $height-navbar-sm * 2;
+    padding-right: 0;
 
     &__item {
       height: $height-navbar-sm;
@@ -69,9 +70,7 @@
     }
 
     &__menu {
-      flex-direction: column-reverse;
       justify-content: center;
-      align-items: center;
     }
   }
 }
