@@ -39,6 +39,10 @@
     margin-top: 1rem;
     color: var(--color-primary);
 
+    .icon {
+      margin-right: 0.25rem;
+    }
+
     & > span:not(:first-child) {
       padding-left: 1rem;
     }
@@ -61,6 +65,49 @@
       margin-top: 1rem;
       margin-left: $space-base;
       margin-right: $space-base;
+    }
+  }
+}
+
+.code {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-base;
+
+    & > .card {
+      overflow: hidden;
+    }
+  }
+
+  &__title {
+    color: var(--color-primary);
+
+    h2 {
+      color: var(--color-primary);
+      margin-top: 0;
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__box {
+    padding: $space-base;
+  }
+
+  &__meta {
+    line-height: 1.5;
+    font-size: $font-size-sm;
+    overflow-x: hidden;
+    white-space: nowrap;
+    margin-top: 1rem;
+    color: var(--color-primary);
+
+    .icon {
+      margin-right: 0.25rem;
+    }
+
+    & > span:not(:first-child) {
+      display: none;
     }
   }
 }
