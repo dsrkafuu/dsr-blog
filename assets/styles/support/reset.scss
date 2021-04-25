@@ -63,4 +63,8 @@ img {
 .sticky {
   position: sticky;
   top: $height-navbar + $space-base;
+
+  &:not(:first-child) {
+    margin-top: $space-base;
+  }
 }
