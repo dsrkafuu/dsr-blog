@@ -20,21 +20,15 @@
 <meta name="description" content="{{- .Params.description -}}" />
 {{- end -}}
 {{- if .Params.tags -}}
-{{- $keywords := delimit .Params.tags ", " -}}
-<meta name="keywords" content="{{- $keywords -}}" />
+<meta name="keywords" content='{{- delimit .Params.tags ", " -}}' />
 {{- else if .Params.keywords -}}
-{{- $keywords := delimit .Params.keywords ", " -}}
-<meta name="keywords" content="{{- $keywords -}}" />
+<meta name="keywords" content='{{- delimit .Params.keywords ", " -}}' />
 {{- end -}}
 
-{{- $touchIcon := "/apple-touch-icon.png" | relURL -}}
-<link rel="apple-touch-icon" sizes="180x180" href="{{- $touchIcon -}}" />
-{{- $favIcon32 := "/favicon-32x32.png" | relURL -}}
-<link rel="icon" type="image/png" sizes="32x32" href="{{- $favIcon32 -}}" />
-{{- $favIcon16 := "/favicon-16x16.png" | relURL -}}
-<link rel="icon" type="image/png" sizes="16x16" href="{{- $favIcon16 -}}" />
-{{- $favIcon := "/favicon.ico" | relURL -}}
-<link rel="shortcut icon" href="{{- $favIcon -}}" />
+<link rel="apple-touch-icon" sizes="180x180" href='{{- "/apple-touch-icon.png" | relURL -}}' />
+<link rel="icon" type="image/png" sizes="32x32" href='{{- "/favicon-32x32.png" | relURL -}}' />
+<link rel="icon" type="image/png" sizes="16x16" href='{{- "/favicon-16x16.png" | relURL -}}' />
+<link rel="shortcut icon" href='{{- "/favicon.ico" | relURL -}}' />
 {{- partial "opengraph.html" . -}}
 
 {{- .Scratch.Set "styleSrc" "styles/index.scss" -}}

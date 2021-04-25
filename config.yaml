@@ -35,7 +35,6 @@ params:
   og: "/images/_og.png"
   license: "本站内容采用 CC BY-NC-SA 4.0 许可，请注明出处；商业转载请联系作者授权。"
   googleSearch: "3aa67eb3eaa84ba3e"
-  lazysizes: "https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"
 
 # menu
 menu:

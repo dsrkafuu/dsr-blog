@@ -41,7 +41,7 @@
 
   {{- partial "footer.html" . -}}
 
-  <script defer src="{{- .Site.Params.lazysizes -}}"></script>
+  <script defer src='{{- $.Scratch.Get "DEP_lazysizes" -}}'></script>
   {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
   {{- partial "script.html" . -}}
