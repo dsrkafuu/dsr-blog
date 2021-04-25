@@ -1,7 +1,7 @@
 ---
-title: 'LeetCode 题解全记录'
+title: 'LeetCode'
 date: 2020-09-04T17:14:22+08:00
-tags:
+keywords:
   - algorithm
   - javascript
   - leetcode

@@ -1,7 +1,7 @@
 ---
-title: 'Vue.js 重点整理'
+title: 'Vue.js'
 date: 2020-09-11T11:11:11+08:00
-tags:
+keywords:
   - vue
   - javascript
 description: 'Vue.js 重点整理。'

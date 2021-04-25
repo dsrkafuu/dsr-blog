@@ -15,29 +15,25 @@
   <main class="main">
     <div class="container">
       <div class="content">
-        <div class="content__inner post__list">
+        <div class="content__inner code__list">
           {{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) -}}
+
           {{- range $paginator.Pages -}}
           <div class="card">
-            {{- if .Params.image -}}
-            <div class="post__image image image__ratio-40x9">
-              <a href="{{- .RelPermalink -}}">
-                <img class="lazyload" data-src="{{- .Params.image | relURL -}}" />
-              </a>
-            </div>
-            {{- end -}}
-            <div class="post__box">
-              <div class="post__info">
-                <a class="post__title" href="{{- .RelPermalink -}}">
+            <div class="code__box">
+              <div class="code__info">
+                <a class="code__title" href="{{- .RelPermalink -}}">
                   <h2>{{- .Title -}}</h2>
                 </a>
-                <div class="post__summary markdown">{{- .Summary -}}</div>
               </div>
+              {{- .Scratch.Set "metaType" "code" -}}
               {{- partial "metadata.html" . -}}
             </div>
           </div>
           {{- end -}}
-          {{- partial "pagination.html" (dict "context" . "paginator" $paginator) -}}
+
+          {{- .Scratch.Set "paginator" $paginator -}}
+          {{- partial "pagination.html" . -}}
         </div>
       </div>
       <aside class="sidebar">
@@ -50,9 +46,9 @@
 
   {{- partial "footer.html" . -}}
 
-  {{- $src := "js/list.js" }}
-  {{- $out := "assets/dsr-blog_list.min.js" -}}
-  {{- partial "script.html" (dict "context" . "src" $src "out" $out) -}}
+  {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
+  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
+  {{- partial "script.html" . -}}
 </body>
 
 {{- end -}}

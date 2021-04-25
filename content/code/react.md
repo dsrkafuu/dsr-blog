@@ -1,7 +1,7 @@
 ---
-title: 'React 重点整理'
+title: 'React'
 date: 2020-09-11T11:11:11+08:00
-tags:
+keywords:
   - react
   - javascript
 description: 'React 重点整理。'

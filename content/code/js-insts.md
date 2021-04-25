@@ -1,7 +1,7 @@
 ---
-title: 'JavaScript 常见手写'
+title: 'JS Insts'
 date: 2020-01-22T17:12:11+08:00
-tags:
+keywords:
   - javascript
 description: 'JavaScript 常见手写。'
 ---

@@ -40,10 +40,10 @@
 
   {{- partial "footer.html" . -}}
 
-  <script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
-  {{- $src := "js/list.js" }}
-  {{- $out := "assets/dsr-blog_list.min.js" -}}
-  {{- partial "script.html" (dict "context" . "src" $src "out" $out) -}}
+  <script defer src="{{- .Site.Params.lazysizes -}}"></script>
+  {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
+  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
+  {{- partial "script.html" . -}}
 </body>
 
 {{- end -}}

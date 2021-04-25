@@ -17,6 +17,7 @@
       <div class="content">
         <div class="content__inner post__list">
           {{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) -}}
+
           {{- range $paginator.Pages -}}
           <div class="card">
             {{- if .Params.image -}}
@@ -31,18 +32,23 @@
                 <a class="post__title" href="{{- .RelPermalink -}}">
                   <h2>{{- .Title -}}</h2>
                 </a>
-                <div class="post__summary markdown">{{- .Summary -}}</div>
+                <div class="post__summary markdown">{{ .Summary }}</div>
               </div>
+              {{- .Scratch.Set "metaType" "post" -}}
               {{- partial "metadata.html" . -}}
             </div>
           </div>
           {{- end -}}
-          {{- partial "pagination.html" (dict "context" . "paginator" $paginator) -}}
+
+          {{- .Scratch.Set "paginator" $paginator -}}
+          {{- partial "pagination.html" . -}}
         </div>
       </div>
       <aside class="sidebar">
         <div class="sidebar__inner">
-          {{- partial "info.html" . -}}
+          <div class="sticky">
+            {{- partial "info.html" . -}}
+          </div>
         </div>
       </aside>
     </div>
@@ -50,10 +56,10 @@
 
   {{- partial "footer.html" . -}}
 
-  <script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
-  {{- $src := "js/list.js" }}
-  {{- $out := "assets/dsr-blog_list.min.js" -}}
-  {{- partial "script.html" (dict "context" . "src" $src "out" $out) -}}
+  <script defer src="{{- .Site.Params.lazysizes -}}"></script>
+  {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
+  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
+  {{- partial "script.html" . -}}
 </body>
 
 {{- end -}}

@@ -20,19 +20,26 @@
 <meta name="description" content="{{- .Params.description -}}" />
 {{- end -}}
 {{- if .Params.tags -}}
-<meta name="keywords" content="{{- delimit .Params.tags ", " -}}" />
+{{- $keywords := delimit .Params.tags ", " -}}
+<meta name="keywords" content="{{- $keywords -}}" />
 {{- else if .Params.keywords -}}
-<meta name="keywords" content="{{- delimit .Params.keywords ", " -}}" />
+{{- $keywords := delimit .Params.keywords ", " -}}
+<meta name="keywords" content="{{- $keywords -}}" />
 {{- end -}}
-<link rel="apple-touch-icon" sizes="180x180" href="{{- "/apple-touch-icon.png" | relURL -}}" />
-<link rel="icon" type="image/png" sizes="32x32" href="{{- "/favicon-32x32.png" | relURL -}}" />
-<link rel="icon" type="image/png" sizes="16x16" href="{{- "/favicon-16x16.png" | relURL -}}" />
-<link rel="shortcut icon" href="{{- "/favicon.ico" | relURL -}}" />
+
+{{- $touchIcon := "/apple-touch-icon.png" | relURL -}}
+<link rel="apple-touch-icon" sizes="180x180" href="{{- $touchIcon -}}" />
+{{- $favIcon32 := "/favicon-32x32.png" | relURL -}}
+<link rel="icon" type="image/png" sizes="32x32" href="{{- $favIcon32 -}}" />
+{{- $favIcon16 := "/favicon-16x16.png" | relURL -}}
+<link rel="icon" type="image/png" sizes="16x16" href="{{- $favIcon16 -}}" />
+{{- $favIcon := "/favicon.ico" | relURL -}}
+<link rel="shortcut icon" href="{{- $favIcon -}}" />
 {{- partial "opengraph.html" . -}}
 
-{{- $src := "styles/index.scss" }}
-{{- $out := "assets/dsr-blog.min.css" -}}
-{{- partial "style.html" (dict "context" . "src" $src "out" $out) -}}
+{{- .Scratch.Set "styleSrc" "styles/index.scss" -}}
+{{- .Scratch.Set "styleOut" "assets/dsr-blog.min.css" -}}
+{{- partial "style.html" . -}}
 
 {{- if and (eq (getenv "NODE_ENV") "production") .Site.GoogleAnalytics -}}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{- .Site.GoogleAnalytics -}}"></script>
