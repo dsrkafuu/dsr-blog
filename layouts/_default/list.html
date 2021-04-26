@@ -11,13 +11,20 @@
 <body data-theme="auto" data-section="list">
   {{- partial "theme.html" . -}}
   {{- partial "header.html" . -}}
+  {{- $isTagsList := eq .Section "tags" -}}
 
   <main class="main">
     <div class="container">
       <div class="content">
         <div class="content__inner post__list">
+          {{- if $isTagsList -}}
+          {{- .Scratch.Set "paginator" .Paginator -}}
+          {{- else -}}
           {{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) -}}
+          {{- .Scratch.Set "paginator" $paginator -}}
+          {{- end -}}
 
+          {{- $paginator := .Scratch.Get "paginator" -}}
           {{- range $paginator.Pages -}}
           <div class="card">
             {{- if .Params.image -}}
