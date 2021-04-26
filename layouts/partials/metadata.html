@@ -23,7 +23,7 @@
     </svg>
     {{- if .Params.tags -}}
     {{- range .Params.tags -}}
-    <a href='{{- (printf "%s%s/" "/tags/" (. | urlize)) | relURL -}}'>
+    <a href='{{- printf "%s%s/" "/tags/" (. | urlize) | relURL -}}'>
       {{- . -}}
     </a>
     {{- end -}}

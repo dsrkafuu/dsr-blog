@@ -1,0 +1,50 @@
+{{- define "head" -}}
+
+<head>
+  {{- partial "head.html" . -}}
+</head>
+
+{{- end -}}
+
+{{- define "body" -}}
+
+<body data-theme="auto" data-section="tags">
+  {{- partial "theme.html" . -}}
+  {{- partial "header.html" . -}}
+
+  <main class="main">
+    <div class="container">
+      <div class="content">
+        <div class="content__inner tags__list">
+          <div class="card">
+            {{- range $name, $tag := .Site.Taxonomies.tags -}}
+            {{- $url := printf "/tags/%s/" $name | relURL -}}
+            <span class="tags__item">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-hashtag"></use>
+              </svg>
+              {{- printf "<a href='%s'>%s</a>" $url $name | safeHTML -}}
+            </span>
+            {{- end -}}
+          </div>
+        </div>
+      </div>
+      <aside class="sidebar">
+        <div class="sidebar__inner">
+          {{- partial "search.html" . -}}
+          <div class="sticky">
+            {{- partial "info.html" . -}}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  {{- partial "footer.html" . -}}
+
+  {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
+  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
+  {{- partial "script.html" . -}}
+</body>
+
+{{- end -}}
