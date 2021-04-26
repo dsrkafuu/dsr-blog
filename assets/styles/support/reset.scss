@@ -64,7 +64,15 @@ img {
   position: sticky;
   top: $height-navbar + $space-base;
 
+  @include responsive(md) {
+    top: $height-navbar + $space-sm;
+  }
+
   &:not(:first-child) {
     margin-top: $space-base;
+
+    @include responsive(md) {
+      margin-top: $space-sm;
+    }
   }
 }

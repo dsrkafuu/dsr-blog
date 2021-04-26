@@ -49,3 +49,16 @@
     }
   }
 }
+
+// remove index search bar
+@include responsive(md) {
+  body[data-section='index'] .sidebar {
+    .search {
+      display: none;
+    }
+
+    .sticky {
+      margin-top: 0;
+    }
+  }
+}

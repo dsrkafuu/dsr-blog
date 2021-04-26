@@ -55,6 +55,11 @@
 
 .links {
   margin-top: $space-base;
+
+  @include responsive(md) {
+    margin-top: $space-sm;
+  }
+
   display: flex;
   justify-content: center;
 
