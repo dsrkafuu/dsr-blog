@@ -112,7 +112,7 @@
   }
 }
 body[data-section='code'] .post__meta {
-  & > span:not(:first-child) {
+  & > span:not(.post__metaDate) {
     display: none;
   }
 }
