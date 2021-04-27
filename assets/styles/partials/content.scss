@@ -170,3 +170,9 @@ body[data-section='code'] .post__meta {
     }
   }
 }
+
+.license {
+  font-size: $font-size-sm;
+  margin: 0 $space-base $space-base $space-base;
+  color: var(--color-primary);
+}

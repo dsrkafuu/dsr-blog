@@ -3,6 +3,7 @@ html {
   font-size: $font-size-base;
   font-family: $font-family-base;
   background-color: var(--color-body);
+  scroll-behavior: smooth;
 }
 
 body {

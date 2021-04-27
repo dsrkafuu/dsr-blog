@@ -61,7 +61,7 @@
   :not(pre) code,
   tt {
     display: inline-block;
-    font-size: $font-size-sm;
+    font-size: 90%;
     font-family: $font-family-mono;
     padding: 0 0.35rem;
     color: inherit;
@@ -116,7 +116,7 @@
     height: $size-divider;
     padding: 0;
     margin: 1.25rem 0;
-    background-color: var(--color-primary);
+    background-color: var(--color-wrapper);
     border: 0;
   }
 
@@ -144,22 +144,12 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: $font-size-xl;
-
-    code,
-    tt {
-      font-size: $font-size-lg;
-    }
   }
 
   h3 {
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: $font-size-md;
-
-    code,
-    tt {
-      font-size: $font-size-base;
-    }
   }
 
   h4,
@@ -168,11 +158,6 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: $font-size-base;
-
-    code,
-    tt {
-      font-size: $font-size-sm;
-    }
   }
 
   h1,
@@ -182,6 +167,11 @@
   h5,
   h6 {
     color: var(--color-primary);
+
+    code,
+    tt {
+      font-size: 85%;
+    }
   }
 
   table {

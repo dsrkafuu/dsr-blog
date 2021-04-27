@@ -33,5 +33,6 @@ toc();
 import clipboard from './components/clipboard';
 clipboard();
 
+// gitalk comment
 import comment from './components/comment';
 comment();
