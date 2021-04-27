@@ -1,19 +1,20 @@
-import { logInfo } from '../plugins/loggers';
-
+import { logError, logInfo } from '../plugins/loggers';
+import { ID_TOC_CONTENT, ID_TOC_CTRL } from '../plugins/constants';
 /**
- * 初始化移动端目录
+ * initialize toc control
  */
 export default function () {
-  const tocContent = document.querySelector('#content-toc');
-  const tocCtrl = document.querySelector('#ctrl-toc');
-  if (tocContent && tocCtrl) {
-    tocCtrl.addEventListener('click', () => {
-      if (Array.from(tocContent.classList).includes('active')) {
-        tocContent.classList.remove('active');
-      } else {
-        tocContent.classList.add('active');
-      }
-    });
-    logInfo('toc switcher inited');
+  const tocContent = document.querySelector(`#${ID_TOC_CONTENT}`);
+  const tocCtrl = document.querySelector(`#${ID_TOC_CTRL}`);
+  if (!tocContent || !tocCtrl) {
+    logError('toc related element not found');
   }
+  tocCtrl.addEventListener('click', () => {
+    if (Array.from(tocContent.classList).includes('active')) {
+      tocContent.classList.remove('active');
+    } else {
+      tocContent.classList.add('active');
+    }
+  });
+  logInfo('toc switcher inited');
 }

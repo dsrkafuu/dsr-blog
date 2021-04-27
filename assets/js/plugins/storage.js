@@ -2,6 +2,7 @@ import { logError } from './loggers';
 
 /**
  * @param {string} key
+ * @returns {any}
  */
 export function getLS(key) {
   try {

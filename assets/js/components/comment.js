@@ -2,6 +2,9 @@ import { logInfo, logError } from '../plugins/loggers';
 import { loadScript, loadStyle } from '../plugins/loaders';
 import {
   SCRIPT_GITALK,
+  STYLE_GITALK,
+  ID_COMMENT_CONTENT,
+  ID_COMMENT_LOADING,
   GITALK_ID,
   GITALK_SECRET,
   GITALK_REPO,
@@ -10,12 +13,12 @@ import {
 } from '../plugins/constants';
 
 /**
- * 加载评论区
+ * load comment area
  * @param {Element} el
  */
 async function loadComment(el) {
   try {
-    await loadScript(SCRIPT_GITALK);
+    await Promise.all([loadScript(SCRIPT_GITALK), loadStyle(STYLE_GITALK)]);
   } catch {
     window.Gitalk = null;
   }
@@ -23,7 +26,6 @@ async function loadComment(el) {
     logError('error loading gitalk script');
     return;
   }
-  // 初始化
   const gitalk = new window.Gitalk({
     clientID: GITALK_ID,
     clientSecret: GITALK_SECRET,
@@ -33,50 +35,48 @@ async function loadComment(el) {
     id: el.getAttribute('data-identifier'),
     createIssueManually: true,
     flipMoveOptions: {
-      staggerDelayBy: 150,
+      staggerDelayBy: 200,
       appearAnimation: 'fade',
       enterAnimation: 'fade',
       leaveAnimation: 'fade',
     },
   });
-  // 移除等待加载指示器
-  const loadingIndicator = document.getElementById('comment-waiting');
-  loadingIndicator && loadingIndicator.setAttribute('style', 'display: none;');
-  // 加载评论区
-  gitalk.render('gitalk-container');
+  // remove loading indicator
+  const loadEl = document.querySelector(`#${ID_COMMENT_LOADING}`);
+  loadEl && loadEl.setAttribute('style', 'display: none;');
+  gitalk.render(el.getAttribute('id'));
   logInfo('successfully loaded gitalk');
 }
 
 /**
- * IntersectionObserver 懒加载评论区
+ * IntersectionObserver lazyload comment area
  */
 export default function () {
-  const el = document.getElementById('gitalk-container');
+  const el = document.querySelector(`#${ID_COMMENT_CONTENT}`);
   if (el) {
     const commentPromise = new Promise((resolve, reject) => {
       try {
-        // 评论区 observer
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // 若评论区已出现在页面上
-              observer.disconnect(); // 停止当前 observer
-              loadComment(el); // 加载评论区
+              // if comment area already appeared
+              observer.disconnect(); // stop observer
+              loadComment(el);
               resolve();
             }
           });
         });
-        // 开始监测评论区 DOM
-        const commentArea = document.querySelector('.card.comment-wrapper');
-        commentArea && observer.observe(commentArea);
-      } catch (e) {
-        reject(e); // 出现异常
+        // observe DOM
+        observer.observe(el);
+      } catch {
+        reject();
       }
     });
-    // 若出现异常 (例如不支持 IntersectionObserver)
+    // error or IntersectionObserver not supported
     commentPromise.catch(() => {
       logError('error initializing gitalk observer');
-      loadComment(el); // 直接加载评论区
+      loadComment(el);
     });
+    logInfo('gitalk observer initialized');
   }
 }
