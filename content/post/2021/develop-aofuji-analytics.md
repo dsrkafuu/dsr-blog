@@ -16,7 +16,7 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 作为我的第一个完全由自己构思的前端项目，同时作为一个我自己每天都需要用到的项目；从制定计划到完成 0.1 版本，我是如何完成 Aofuji Analytics 的开发的？
 
-## 基础框架 `asasAS`
+## 基础框架
 
 作为一个重要的 [Vue.js](https://vuejs.org/) 练手与应用项目，在前端的管理面板 (也就是数据展示面板) 自然是使用它了。在最初开始计划这个项目的时候，[Vue 3](https://v3.vuejs.org/) 其本身以及新的[组合式 API](https://v3.vuejs.org/guide/composition-api-introduction.html) 的周边生态相对还不是很完善，因此项目选用了 Vue 2 作为前端的基础框架，但在编写代码时也同时考虑了 Vue 3 的[升级兼容性](https://v3.vuejs.org/guide/migration/introduction.html)。
 

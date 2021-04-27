@@ -24,3 +24,28 @@ body {
 .main {
   flex: 1 1 auto;
 }
+
+// index fixes
+.header {
+  z-index: 3;
+}
+.main {
+  z-index: 2;
+
+  .content {
+    z-index: 1;
+  }
+  .sidebar {
+    z-index: 2;
+
+    & > .card {
+      z-index: 1;
+    }
+    & > .sticky {
+      z-index: 2;
+    }
+  }
+}
+.footer {
+  z-index: 1;
+}
