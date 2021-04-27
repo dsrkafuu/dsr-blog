@@ -1,21 +1,21 @@
-// 已加载依赖集
-const scriptSet = new Set();
-const styleSet = new Set();
+import { logInfo } from './loggers';
+
+// loaded sources
+const set = new Set();
 
 /**
- * 动态加载外部依赖
- * @param {string} src 依赖链接
- * @param {Object} props 元素参数
+ * @param {string} src
+ * @param {Object} props
  * @returns {Promise<void>}
  */
 export function loadScript(src, props = {}) {
   return new Promise((resolve, reject) => {
-    // 检查是否已载入
-    if (!src || scriptSet.has(src)) {
+    // check if loaded
+    if (!src || set.has(src)) {
       resolve();
     }
-    scriptSet.add(src);
-    // 载入脚本
+    set.add(src);
+    // load script
     const script = document.createElement('script');
     script.setAttribute('async', '');
     script.setAttribute('src', src);
@@ -24,9 +24,12 @@ export function loadScript(src, props = {}) {
         script.setAttribute(key, props[key]);
       }
     }
-    script.addEventListener('load', () => resolve());
+    script.addEventListener('load', () => {
+      logInfo(`script ${(/[^/]+\.[^/]+$/.exec(src) || [])[0] || ''} loaded`);
+      resolve();
+    });
     script.addEventListener('error', () => {
-      scriptSet.delete(src);
+      set.delete(src);
       reject();
     });
     document.body.appendChild(script);
@@ -34,19 +37,18 @@ export function loadScript(src, props = {}) {
 }
 
 /**
- * 动态加载外部依赖
- * @param {string} src 依赖链接
- * @param {Object} props 元素参数
+ * @param {string} src
+ * @param {Object} props
  * @returns {Promise<void>}
  */
 export function loadStyle(src, props = {}) {
   return new Promise((resolve, reject) => {
-    // 检查是否已载入
-    if (!src || styleSet.has(src)) {
+    // check if loaded
+    if (!src || set.has(src)) {
       resolve();
     }
-    styleSet.add(src);
-    // 载入样式
+    set.add(src);
+    // load stylesheet
     const el = document.createElement('link');
     el.setAttribute('rel', 'stylesheet');
     el.setAttribute('href', src);
@@ -55,11 +57,23 @@ export function loadStyle(src, props = {}) {
         el.setAttribute(key, props[key]);
       }
     }
-    el.addEventListener('load', () => resolve());
+    el.addEventListener('load', () => {
+      logInfo(`stylesheet ${(/[^/]+\.[^/]+$/.exec(src) || [])[0] || ''} loaded`);
+      resolve();
+    });
     el.addEventListener('error', () => {
-      styleSet.delete(src);
+      set.delete(src);
       reject();
     });
-    document.head.appendChild(el);
+    // inject before other stylesheet
+    let firstStyleEl = null;
+    for (const el of document.head.children) {
+      if (el && el?.getAttribute('rel') === 'stylesheet') {
+        firstStyleEl = el;
+      }
+    }
+    if (firstStyleEl) {
+      document.head.insertBefore(el, firstStyleEl);
+    }
   });
 }

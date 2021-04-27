@@ -2,7 +2,7 @@
 
 import * as Sentry from '@sentry/browser';
 import { Integrations } from '@sentry/tracing';
-import { SENTRY_DSN } from './plugins/constants';
+import { SENTRY_DSN, ID_THEME_CTRL } from './plugins/constants';
 
 // sentry
 if (process.env.NODE_ENV === 'production') {
@@ -20,7 +20,7 @@ iconfont(window);
 // theme system
 import ThemeManager from './components/theme';
 const tm = new ThemeManager();
-const switcher = document.querySelector('#ctrl-adjust');
+const switcher = document.querySelector(`#${ID_THEME_CTRL}`);
 if (switcher) {
   switcher.addEventListener('click', () => tm.switchTheme());
 }
@@ -31,7 +31,9 @@ toc();
 
 // clipboard injector
 import clipboard from './components/clipboard';
-clipboard();
+if (process.env.NODE_ENV === 'production') {
+  clipboard();
+}
 
 // gitalk comment
 import comment from './components/comment';

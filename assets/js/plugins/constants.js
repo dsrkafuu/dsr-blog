@@ -1,9 +1,15 @@
-// scripts
+// scripts and styles
 export const SCRIPT_GITALK = 'https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js';
+export const STYLE_GITALK = 'https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css';
 
-// dom attributes
+// dom attributes and ids
 export const ATTR_THEME = 'data-theme';
 export const ATTR_SECTION = 'data-section';
+export const ID_THEME_CTRL = 'ctrl-adjust';
+export const ID_TOC_CTRL = 'ctrl-toc';
+export const ID_TOC_CONTENT = 'content-toc';
+export const ID_COMMENT_CONTENT = 'comment';
+export const ID_COMMENT_LOADING = 'comment-loading';
 
 // local storage keys
 export const STORAGE_THEME = 'dsr-blog_theme';

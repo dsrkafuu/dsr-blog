@@ -38,6 +38,21 @@
             </div>
             {{- end -}}
           </div>
+
+          {{- if and (ne .Params.comment false) (ne .Section "code") -}}
+          <div class="card comment">
+            <div class="comment__loading" id="comment-loading">
+              <svg class="icon spin" aria-hidden="true">
+                <use xlink:href="#icon-spinner-third"></use>
+              </svg>
+              {{- printf "<span>评论区正在等待加载</span>" | safeHTML -}}
+            </div>
+            {{ $formated := replace .File.Path "\\" "/" }}
+            {{ $path := split $formated "." }}
+            <div class="comment__wrapper" id="comment" data-identifier="{{- index $path 0 -}}">
+            </div>
+          </div>
+          {{- end -}}
         </div>
       </div>
       <aside class="sidebar">

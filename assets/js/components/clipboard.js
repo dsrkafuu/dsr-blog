@@ -1,50 +1,51 @@
-import { COPY_LICENSE, ATTR_SECTION } from '../plugins/constants';
+import { logInfo } from '../plugins/loggers';
+import { COPY_LICENSE } from '../plugins/constants';
 
 /**
- * 检查父节点
- * @param {Element} node 当前节点
- * @param {number} count 递归层数
+ * check parent nodes
+ * @param {Element} node
+ * @returns {Element[]}
  */
-function getAllParentNodes(node, count = 4) {
-  const allParentNodes = [];
-  let recCount = 2; // 递归层数
+function getParentNodes(node) {
+  const nodes = [];
+  node.nodeName && nodes.push(node.nodeName);
   /**
    * @param {Element} node
    */
-  const getParentNodes = (node) => {
-    if (recCount++ >= count || !node.parentNode) {
+  function getParentNode(node) {
+    if (!node.parentNode) {
       return;
     }
-    allParentNodes.push(node.parentNode.nodeName);
-    return getParentNodes(node.parentNode);
-  };
-  getParentNodes(node);
-  return allParentNodes;
+    nodes.push(node.parentNode.nodeName);
+    return getParentNode(node.parentNode);
+  }
+  getParentNode(node);
+  return nodes;
 }
 
 /**
- * 剪贴板拦截
+ * clipboard injector
  */
 export default function () {
-  if (document.body.getAttribute(ATTR_SECTION) === 'single') {
-    document.addEventListener('copy', (event) => {
-      if (event.clipboardData) {
-        const selection = window.getSelection(); // 获取选择的内容
-        // 检查是否代码块
-        const nodes = [
-          getAllParentNodes(selection.anchorNode).join(),
-          getAllParentNodes(selection.focusNode).join(),
-        ].join(' ');
-        // 如果不是代码块
-        if (!/(CODE|PRE).* .*(CODE|PRE)/gi.exec(nodes)) {
-          // 大于 100 字添加 LICENSE
-          let copiedText = selection.toString();
-          if (copiedText && copiedText.length > 100) {
-            event.preventDefault(); // 防止默认行为复制原文内容
-            event.clipboardData.setData('text/plain', `${copiedText}\n${COPY_LICENSE}`);
-          }
+  document.addEventListener('copy', (e) => {
+    if (e.clipboardData) {
+      const selection = window.getSelection();
+      // check if code blocks
+      const nodes = [
+        ...getParentNodes(selection.anchorNode),
+        ...getParentNodes(selection.focusNode),
+      ]
+        .join(' ')
+        .toUpperCase();
+      // if not code block and in article
+      if (nodes.includes('ARTICLE') && !nodes.includes('PRE')) {
+        let text = selection.toString();
+        if (text && text.length > 80) {
+          e.preventDefault(); // stop default copy
+          e.clipboardData.setData('text/plain', `${text}\n${COPY_LICENSE}`);
         }
       }
-    });
-  }
+    }
+  });
+  logInfo('clipboard injector initialized');
 }
