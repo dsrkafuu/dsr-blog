@@ -6,13 +6,8 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 99;
   user-select: none;
   font-family: $font-family-base;
-
-  @include responsive(sm) {
-    top: -$height-navbar-sm;
-  }
 }
 
 .navbar {

@@ -73,3 +73,22 @@
     }
   }
 }
+
+@include responsive(md) {
+  .toc {
+    position: fixed;
+    right: 0;
+    top: $height-navbar-sm * 2;
+    bottom: 0;
+    backdrop-filter: $filter-blur;
+    border-radius: 0;
+    max-width: 70%;
+    min-width: 40%;
+    transform: translateX(125%);
+    transition: transform 300ms ease;
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+}
