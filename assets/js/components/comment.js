@@ -1,5 +1,5 @@
 import { logInfo, logError } from '../plugins/loggers';
-import loadScript from '../plugins/loadScript';
+import { loadScript, loadStyle } from '../plugins/loaders';
 import {
   SCRIPT_GITALK,
   GITALK_ID,

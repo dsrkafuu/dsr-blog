@@ -1,0 +1,75 @@
+.toc {
+  line-height: 1.5;
+  font-size: $font-size-sm;
+  padding: $space-base 0;
+
+  & > a:last-child {
+    display: block;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    margin: 0 $space-base;
+    margin-top: 0;
+    border-top: $size-divider solid var(--color-wrapper);
+    color: var(--color-font);
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+  }
+
+  code {
+    line-height: 1.5;
+  }
+}
+
+#TableOfContents {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: $height-toc;
+  font-size: $font-size-sm;
+  padding: 0 $space-base;
+
+  a {
+    white-space: nowrap;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  & > ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    ul {
+      padding: 0;
+      padding-left: 0.375rem;
+      border-left: $size-divider solid var(--color-wrapper);
+      font-size: $font-size-sm * 0.9;
+
+      a {
+        height: 1.65rem;
+        line-height: 1.65rem;
+      }
+    }
+
+    a {
+      display: block;
+      height: 1.75rem;
+      line-height: 1.75rem;
+      color: var(--color-font);
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:hover {
+        color: var(--color-primary);
+        text-decoration: underline;
+      }
+    }
+  }
+}

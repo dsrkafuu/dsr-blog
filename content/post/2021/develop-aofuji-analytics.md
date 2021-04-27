@@ -10,7 +10,7 @@ tags:
 description: '从制定计划到完成初版，我是如何开发 Goose Analytics 的？'
 ---
 
-2020 年下旬，[Google Analytics](https://analytics.google.com/) 发布了 v4，数据收集接口迁移为向 `analytics.google.com` 发送 POST 请求，导致中国大陆不可用。于是因此就计划着开发了 [Goose Analytics](https://github.com/amzrk2/goose-analytics)，作为一个超轻量级的自搭建数据收集工具，用于 GA 的简单替代。
+2020 年下旬，[Google Analytics](https://analytics.google.com/) 发布了 v4，数据收集接口迁移为向 `analytics.google.com` 发送 POST 请求，导致中国大陆不可用。于是因此就计划着开发了 [Aofuji Analytics](https://github.com/dsrkafuu/aofuji-analytics)，作为一个超轻量级的自搭建数据收集工具，用于 GA 的简单替代。
 
 <!--more-->
 
