@@ -2,6 +2,10 @@
 
 <head>
   {{- partial "head.html" . -}}
+
+  {{- .Scratch.Set "styleSrc" "styles/pages/friends.scss" -}}
+  {{- .Scratch.Set "styleOut" "assets/dsr-blog_friends.min.css" -}}
+  {{- partial "style.html" . -}}
 </head>
 
 {{- end -}}
@@ -16,21 +20,37 @@
     <div class="container">
       <div class="content">
         <div class="content__inner friends__list">
-          friends
-        </div>
-      </div>
-      <aside class="sidebar">
-        <div class="sidebar__inner">
-          <div class="sticky">
-            {{- partial "info.html" . -}}
+          {{- range .Site.Data.friends -}}
+          <div class="card friends__item">
+            <div class="friends__image image image__ratio-1x1">
+              <a href="{{- .link | safeURL -}}" target="_blank" rel="noopener">
+                <img class="lazyload" data-src="{{- .icon | safeURL | relURL -}}" />
+              </a>
+            </div>
+            <div class="friends__box">
+              <a class="friends__title" href="{{- .link | safeURL -}}" target="_blank" rel="noopener">
+                <h2>{{- .title -}}</h2>
+              </a>
+              <span class="friends__desc">
+                {{- .desc -}}
+              </span>
+            </div>
           </div>
+          {{- end -}}
         </div>
-      </aside>
-    </div>
+        <aside class="sidebar">
+          <div class="sidebar__inner">
+            <div class="sticky">
+              {{- partial "info.html" . -}}
+            </div>
+          </div>
+        </aside>
+      </div>
   </main>
 
   {{- partial "footer.html" . -}}
 
+  <script defer src='{{- $.Scratch.Get "DEP_lazysizes" -}}'></script>
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
   {{- partial "script.html" . -}}

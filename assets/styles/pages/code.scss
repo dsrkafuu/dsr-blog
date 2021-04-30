@@ -1,0 +1,37 @@
+@import '../support/variables';
+
+.code {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-base;
+
+    @include responsive(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $space-sm;
+    }
+
+    & > .card {
+      overflow: hidden;
+    }
+  }
+
+  &__title {
+    color: var(--color-primary);
+
+    h2 {
+      color: var(--color-primary);
+      margin-top: 0;
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__box {
+    padding: $space-base;
+  }
+}
+body[data-section='code'] .post__meta {
+  & > span:not(.post__metaDate) {
+    display: none;
+  }
+}

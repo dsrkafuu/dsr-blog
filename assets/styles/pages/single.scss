@@ -1,3 +1,66 @@
+@import '../support/variables';
+
+@import '../plugins/gitalk';
+@import '../plugins/prism';
+
+.pagination {
+  display: flex;
+  padding: 0 $space-base;
+  justify-content: center;
+
+  & > a {
+    display: block;
+    color: inherit;
+    flex: 0 1 auto;
+    height: $height-navbar-sm;
+    line-height: $height-navbar-sm;
+    padding: 0 $space-sm;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: $size-divider solid var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    &.pagination__item--active {
+      color: var(--color-primary);
+    }
+
+    .icon {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+
+.license {
+  font-size: $font-size-sm;
+  margin: 0 $space-base $space-base $space-base;
+  color: var(--color-primary);
+}
+
+.comment {
+  margin-top: $space-base;
+
+  @include responsive(md) {
+    margin-top: $space-sm;
+  }
+
+  &__loading {
+    line-height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $space-base;
+
+    & > svg,
+    & > span {
+      margin: 0 0.125rem;
+    }
+  }
+}
+
 .toc {
   line-height: 1.5;
   font-size: $font-size-sm;
