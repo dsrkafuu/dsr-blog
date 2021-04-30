@@ -31,7 +31,6 @@
       </div>
       <aside class="sidebar">
         <div class="sidebar__inner">
-          {{- partial "search.html" . -}}
           <div class="sticky">
             {{- partial "info.html" . -}}
           </div>
@@ -42,8 +41,8 @@
 
   {{- partial "footer.html" . -}}
 
-  {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
-  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
+  {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
+  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
   {{- partial "script.html" . -}}
 </body>
 

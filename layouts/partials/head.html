@@ -31,10 +31,6 @@
 <link rel="shortcut icon" href='{{- "/favicon.ico" | relURL -}}' />
 {{- partial "opengraph.html" . -}}
 
-{{- .Scratch.Set "styleSrc" "styles/index.scss" -}}
-{{- .Scratch.Set "styleOut" "assets/dsr-blog.min.css" -}}
-{{- partial "style.html" . -}}
-
 {{- if and (eq (getenv "NODE_ENV") "production") .Site.GoogleAnalytics -}}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{- .Site.GoogleAnalytics -}}"></script>
 <script>
@@ -46,3 +42,7 @@
   gtag('config', '{{- .Site.GoogleAnalytics -}}');
 </script>
 {{- end -}}
+
+{{- .Scratch.Set "styleSrc" "styles/base.scss" -}}
+{{- .Scratch.Set "styleOut" "assets/dsr-blog_base.min.css" -}}
+{{- partial "style.html" . -}}

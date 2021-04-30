@@ -2,6 +2,10 @@
 
 <head>
   {{- partial "head.html" . -}}
+
+  {{- .Scratch.Set "styleSrc" "styles/list.scss" -}}
+  {{- .Scratch.Set "styleOut" "assets/dsr-blog_list.min.css" -}}
+  {{- partial "style.html" . -}}
 </head>
 
 {{- end -}}
@@ -64,6 +68,9 @@
   {{- partial "footer.html" . -}}
 
   <script defer src='{{- $.Scratch.Get "DEP_lazysizes" -}}'></script>
+  {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
+  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
+  {{- partial "script.html" . -}}
   {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
   {{- partial "script.html" . -}}

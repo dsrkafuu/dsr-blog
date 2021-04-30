@@ -3,23 +3,6 @@
   font-size: $font-size-sm;
   padding: $space-base 0;
 
-  & > a:last-child {
-    display: block;
-    height: 1.75rem;
-    line-height: 1.75rem;
-    margin: 0 $space-base;
-    margin-top: 0;
-    border-top: $size-divider solid var(--color-wrapper);
-    color: var(--color-font);
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    &:hover {
-      color: var(--color-primary);
-      text-decoration: underline;
-    }
-  }
-
   code {
     line-height: 1.5;
   }
