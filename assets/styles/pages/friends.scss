@@ -1,0 +1,87 @@
+@import '../support/variables';
+
+.friends {
+  &__item {
+    overflow: hidden;
+    display: flex;
+    height: 5rem;
+
+    &:not(:first-child) {
+      margin-top: $space-base;
+    }
+  }
+
+  &__image {
+    width: 5rem;
+    padding-bottom: 5rem;
+    border-radius: 0;
+    flex: 0 0 auto;
+  }
+
+  &__box {
+    flex: 1 1 auto;
+    padding: $space-base;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  &__title {
+    display: block;
+    margin-right: $space-base;
+    line-height: 1.35;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &__title,
+  &__title h2,
+  &__desc {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+  }
+
+  &__add {
+    padding: $space-base;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: $space-base;
+  }
+
+  @include responsive(md) {
+    &__item {
+      height: 8rem;
+
+      &:not(:first-child) {
+        margin-top: $space-sm;
+      }
+    }
+
+    &__image {
+      width: 8rem;
+      padding-bottom: 8rem;
+    }
+
+    &__box {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    &__title {
+      margin-right: 0;
+      margin-bottom: $space-sm;
+    }
+
+    &__add {
+      margin-top: $space-sm;
+    }
+  }
+}
