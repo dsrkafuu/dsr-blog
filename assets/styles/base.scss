@@ -3,14 +3,14 @@
 @import 'normalize.css/normalize';
 @import '../svg/iconfont';
 
-@import './support/fonts';
 @import './support/colors';
+@import './support/fonts';
 @import './support/global';
-@import './support/reset';
 @import './support/images';
 @import './support/markdown';
+@import './support/reset';
+
+@import './partials/footer';
 @import './partials/header';
 @import './partials/main';
 @import './partials/info';
-@import './partials/content';
-@import './partials/footer';

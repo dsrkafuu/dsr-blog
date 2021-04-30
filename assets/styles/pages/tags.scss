@@ -1,0 +1,24 @@
+@import '../support/variables';
+
+.tags {
+  &__list {
+    line-height: 2;
+
+    & > .card {
+      display: flex;
+      flex-wrap: wrap;
+      padding: $space-sm;
+      padding-right: $space-base;
+      padding-left: $space-base - 1rem;
+    }
+  }
+
+  &__item {
+    margin-left: 1rem;
+
+    .icon {
+      margin-right: 0.25rem;
+      color: var(--color-primary);
+    }
+  }
+}

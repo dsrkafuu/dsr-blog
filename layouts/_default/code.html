@@ -2,6 +2,10 @@
 
 <head>
   {{- partial "head.html" . -}}
+
+  {{- .Scratch.Set "styleSrc" "styles/pages/code.scss" -}}
+  {{- .Scratch.Set "styleOut" "assets/dsr-blog_code.min.css" -}}
+  {{- partial "style.html" . -}}
 </head>
 
 {{- end -}}

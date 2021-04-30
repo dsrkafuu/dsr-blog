@@ -1,3 +1,5 @@
+@import '../support/variables';
+
 .post {
   &__list {
     display: flex;
@@ -81,98 +83,67 @@
   }
 }
 
-.code {
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: $space-base;
-
-    @include responsive(md) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: $space-sm;
-    }
-
-    & > .card {
-      overflow: hidden;
-    }
-  }
-
-  &__title {
-    color: var(--color-primary);
-
-    h2 {
-      color: var(--color-primary);
-      margin-top: 0;
-      font-size: $font-size-xl;
-    }
-  }
-
-  &__box {
-    padding: $space-base;
-  }
-}
-body[data-section='code'] .post__meta {
-  & > span:not(.post__metaDate) {
-    display: none;
-  }
-}
-
-.pagination {
+.search {
+  height: $height-navbar-sm;
+  line-height: $height-navbar-sm;
   display: flex;
-  padding: 0 $space-base;
-  justify-content: center;
+  padding-left: $space-base;
+  padding-right: $space-base;
 
-  & > a {
-    display: block;
-    color: inherit;
-    flex: 0 1 auto;
+  &__input {
+    flex: 1 1 auto;
+    border-radius: 0;
+
+    input {
+      min-width: 0;
+      width: 100%;
+      padding: 0;
+      height: $height-navbar-sm;
+      line-height: $height-navbar-sm;
+      outline: none;
+      border: none;
+      border-bottom: $size-divider solid transparent;
+      border-top: $size-divider solid transparent;
+      border-radius: 0;
+      background-color: transparent;
+      padding-left: $space-sm;
+      padding-right: $space-xs;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        border: none;
+        border-bottom: $size-divider solid var(--color-primary);
+        border-top: $size-divider solid transparent;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__ctrl {
+    padding: 0 $space-sm;
+    color: var(--color-font);
+    cursor: pointer;
     height: $height-navbar-sm;
     line-height: $height-navbar-sm;
-    padding: 0 $space-sm;
-    cursor: pointer;
 
     &:hover {
-      text-decoration: none;
       border-bottom: $size-divider solid var(--color-primary);
       color: var(--color-primary);
-    }
-
-    &.pagination__item--active {
-      color: var(--color-primary);
-    }
-
-    .icon {
-      width: 1rem;
-      height: 1rem;
+      text-decoration: none;
     }
   }
 }
 
-.tags {
-  &__list {
-    line-height: 2;
+// remove index search bar
+@include responsive(md) {
+  body[data-section='index'] .sidebar {
+    .search {
+      display: none;
+    }
 
-    & > .card {
-      display: flex;
-      flex-wrap: wrap;
-      padding: $space-sm;
-      padding-right: $space-base;
-      padding-left: $space-base - 1rem;
+    .sticky {
+      margin-top: 0;
     }
   }
-
-  &__item {
-    margin-left: 1rem;
-
-    .icon {
-      margin-right: 0.25rem;
-      color: var(--color-primary);
-    }
-  }
-}
-
-.license {
-  font-size: $font-size-sm;
-  margin: 0 $space-base $space-base $space-base;
-  color: var(--color-primary);
 }
