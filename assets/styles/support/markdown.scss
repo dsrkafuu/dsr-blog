@@ -1,4 +1,5 @@
-.markdown {
+.markdown,
+.markdown-body {
   line-height: 1.5;
   word-wrap: break-word;
 
@@ -21,6 +22,7 @@
   ul,
   ol {
     padding-left: 2rem;
+    list-style-type: '- ';
   }
 
   ul ul,
@@ -182,6 +184,11 @@
     overflow: auto;
     border-collapse: collapse;
     margin-bottom: 1rem;
+    background-color: transparent;
+
+    tr {
+      background-color: transparent;
+    }
 
     th {
       font-weight: 500;
@@ -189,6 +196,7 @@
 
     th,
     td {
+      background-color: transparent;
       padding: 0.25rem 0.75rem;
       border: $size-border solid var(--color-wrapper);
     }
