@@ -2,12 +2,19 @@
 export const SCRIPT_GITALK = 'https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js';
 export const STYLE_GITALK = 'https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css';
 
+// search engine
+export const SEARCH_URL = 'https://www.google.com/search';
+export const SEARCH_NW = '1';
+export const SEARCH_SITE = 'blog.dsrkafuu.su/post';
+
 // dom attributes and ids
 export const ATTR_THEME = 'data-theme';
 export const ATTR_SECTION = 'data-section';
 export const ID_THEME_CTRL = 'ctrl-adjust';
 export const ID_TOC_CTRL = 'ctrl-toc';
 export const ID_TOC_CONTENT = 'content-toc';
+export const ID_SEARCH_CTRL = 'ctrl-search';
+export const ID_SEARCH_INPUT = 'input-search';
 export const ID_COMMENT_CONTENT = 'comment';
 export const ID_COMMENT_LOADING = 'comment-loading';
 

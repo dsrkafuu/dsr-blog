@@ -1,3 +1,5 @@
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import { babel } from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import replace from '@rollup/plugin-replace';
@@ -13,6 +15,8 @@ for (let key of Object.keys(process.env)) {
 
 // setup plugins
 const plugins = [
+  nodeResolve(),
+  commonjs(),
   replace(replaced),
   babel({
     babelHelpers: 'runtime',
@@ -22,7 +26,7 @@ const plugins = [
 ];
 
 // settings
-const settings = {
+const outputs = {
   format: 'iife',
   sourcemap: false,
   banner: '/*! dsr-blog | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License */',
@@ -30,18 +34,18 @@ const settings = {
 
 export default [
   {
-    input: 'assets/js/index.js',
-    output: { file: 'public/assets/dsr-blog_index.min.js', ...settings },
+    input: 'assets/js/base.js',
+    output: { file: 'public/assets/dsr-blog_base.min.js', ...outputs },
     plugins,
   },
   {
     input: 'assets/js/list.js',
-    output: { file: 'public/assets/dsr-blog_list.min.js', ...settings },
+    output: { file: 'public/assets/dsr-blog_list.min.js', ...outputs },
     plugins,
   },
   {
     input: 'assets/js/single.js',
-    output: { file: 'public/assets/dsr-blog_single.min.js', ...settings },
+    output: { file: 'public/assets/dsr-blog_single.min.js', ...outputs },
     plugins,
   },
 ];
