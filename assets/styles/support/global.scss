@@ -13,6 +13,7 @@ body {
   font-size: $font-size-base;
   font-family: $font-family-base;
   background-color: var(--color-body);
+  position: relative;
 }
 
 // sticky footer

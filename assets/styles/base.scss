@@ -1,23 +1,16 @@
-@import './support/fonts';
+@import './support/variables';
 
 @import 'normalize.css/normalize';
 @import '../svg/iconfont';
 
-@import './support/variables';
+@import './support/fonts';
 @import './support/colors';
 @import './support/global';
 @import './support/reset';
 @import './support/images';
 @import './support/markdown';
-
 @import './partials/header';
 @import './partials/main';
 @import './partials/info';
 @import './partials/content';
 @import './partials/footer';
-@import './partials/search';
-@import './partials/toc';
-@import './partials/comment';
-
-@import './plugins/prism';
-@import './plugins/gitalk';

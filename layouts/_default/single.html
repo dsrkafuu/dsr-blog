@@ -2,6 +2,10 @@
 
 <head>
   {{- partial "head.html" . -}}
+
+  {{- .Scratch.Set "styleSrc" "styles/single.scss" -}}
+  {{- .Scratch.Set "styleOut" "assets/dsr-blog_single.min.css" -}}
+  {{- partial "style.html" . -}}
 </head>
 
 {{- end -}}
@@ -9,7 +13,6 @@
 {{- define "body" -}}
 
 <body data-theme="auto" data-section="single">
-  <div id="#top" aria-hidden="true"></div>
   {{- partial "theme.html" . -}}
   {{- partial "header.html" . -}}
 
@@ -62,7 +65,6 @@
             {{- if ne .Params.toc false -}}
             <div class="card toc markdown" id="content-toc">
               {{- .TableOfContents -}}
-              <a id="ctrl-top" href="#top">返回顶部</a>
             </div>
             {{- end -}}
           </div>
@@ -74,6 +76,9 @@
   {{- partial "footer.html" . -}}
 
   <script defer src='{{- $.Scratch.Get "DEP_lazysizes" -}}'></script>
+  {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
+  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
+  {{- partial "script.html" . -}}
   {{- .Scratch.Set "scriptSrc" "js/single.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_single.min.js" -}}
   {{- partial "script.html" . -}}
