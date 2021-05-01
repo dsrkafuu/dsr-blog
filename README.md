@@ -8,6 +8,12 @@
 
 ## 部分开发细节
 
+### 环境变量
+
+- `DSR_GITALK_ID`
+- `DSR_GITALK_SECRET`
+- `DSR_SENTRY_DSN`
+
 ### Hugo
 
 - `toc: false` 不渲染 ToC
