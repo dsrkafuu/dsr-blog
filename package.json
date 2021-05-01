@@ -1,6 +1,6 @@
 {
   "name": "dsr-blog",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.su)",
   "license": "Apache-2.0",
   "repository": {
@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "~7.14.0",
-    "@sentry/browser": "~6.3.4",
-    "@sentry/tracing": "~6.3.4",
+    "@sentry/browser": "~6.3.5",
+    "@sentry/tracing": "~6.3.5",
     "normalize.css": "~8.0.1"
   },
   "devDependencies": {
