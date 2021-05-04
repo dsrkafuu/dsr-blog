@@ -68,3 +68,34 @@
     }
   }
 }
+
+.pagination {
+  display: flex;
+  padding: 0 $space-base;
+  justify-content: center;
+
+  & > a {
+    display: block;
+    color: inherit;
+    flex: 0 1 auto;
+    height: $height-navbar-sm;
+    line-height: $height-navbar-sm;
+    padding: 0 $space-sm;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: $size-divider solid var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    &.pagination__item--active {
+      color: var(--color-primary);
+    }
+
+    .icon {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
