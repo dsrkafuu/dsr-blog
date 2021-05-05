@@ -24,4 +24,4 @@ Front end developer, PC enthusiastic, anime & console gamer, college student at 
 
 **🎮 Arknights 🎮**
 
-![ARKNIGHTS ID](/images/arknights.webp)
+![ARKNIGHTS ID](https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/images/banners/arknights_202105.webp)
