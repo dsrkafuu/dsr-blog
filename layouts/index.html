@@ -21,9 +21,11 @@
       <div class="content">
         <div class="content__inner">
           <div class="card">
+            {{- with .Params.image -}}
             <div class="post__image image image__ratio-40x9">
-              <img class="lazyload" data-src="{{- .Site.Params.header | relURL -}}" />
+              <img class="lazyload" data-src="{{- . | relURL -}}" />
             </div>
+            {{- end -}}
             <div class="post__content">
               <article class="markdown">
                 {{- with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end -}}

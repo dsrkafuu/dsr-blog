@@ -5,6 +5,7 @@ keywords:
   - DSRKafuU
   - DSRBLOG
   - 博客
+image: '/images/header.webp'
 ---
 
 Front end developer, PC enthusiastic, anime & console gamer, college student at [NJUPT](https://www.njupt.edu.cn).
@@ -20,3 +21,7 @@ Front end developer, PC enthusiastic, anime & console gamer, college student at 
 
 - Ryzen 5 3600X + RTX3060, ROG GM501GS, MacBook Air M1
 - Varmilo VA87M Cherry MX Brown, Logitech G703 Lightspeed
+
+**🎮 Arknights 🎮**
+
+![ARKNIGHTS ID](/images/arknights.webp)
