@@ -22,8 +22,8 @@
         <div class="content__inner">
           <div class="card">
             {{- with .Params.image -}}
-            <div class="post__image image image__ratio-40x9">
-              <img class="lazyload" data-src="{{- . | relURL -}}" />
+            <div class="post__image">
+              <img src="{{- . | relURL -}}" alt="Index Header" />
             </div>
             {{- end -}}
             <div class="post__content">

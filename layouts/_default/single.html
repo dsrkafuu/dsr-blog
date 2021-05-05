@@ -22,8 +22,8 @@
         <div class="content__inner post__article">
           <div class="card">
             {{- if .Params.image -}}
-            <div class="post__image image image__ratio-40x9">
-              <img class="lazyload" data-src="{{- .Params.image | relURL -}}" />
+            <div class="post__image">
+              <img src="{{- .Params.image | relURL -}}" alt="Post Header" />
             </div>
             {{- end -}}
             <div class="post__title">
