@@ -208,4 +208,9 @@
       border: $size-border solid var(--color-wrapper);
     }
   }
+
+  img {
+    display: block;
+    border-radius: $radius;
+  }
 }
