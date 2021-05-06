@@ -22,7 +22,7 @@
         <div class="content__inner post__article">
           <div class="card">
             {{- if .Params.image -}}
-            <div class="post__image">
+            <div class="post__image image image__ratio-40x9">
               <img src="{{- .Params.image | relURL -}}" alt="Post Header" />
             </div>
             {{- end -}}
