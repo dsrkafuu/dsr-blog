@@ -10,10 +10,10 @@ assignees: ''
 ! applications in cases such as CSDN personal pages will be rejected !
 
 **Your site's title**
-[max: 6 full-angles chars / 10 half-angle chars including spaces]
+[e.g. DSRToolS]
 
 **Short description of your site**
-[max: 8 full-angles chars / 12 half-angle chars including spaces]
+[e.g. DSR 提供支持的综合性游戏小工具站点]
 
 **Site main visual image**
 [min: 256x256px 1x1 square]

@@ -24,11 +24,11 @@
           <div class="card friends__item">
             <div class="friends__image image image__ratio-1x1">
               <a href="{{- .link | safeURL -}}" target="_blank" rel="noopener">
-                <img class="lazyload" data-src="{{- .icon | safeURL | relURL -}}" />
+                <img class="lazyload" data-src='{{- printf "/images/friends/%s" .icon | safeURL | relURL -}}' />
               </a>
             </div>
             <div class="friends__box">
-              <a class="friends__title" href="{{- .link | safeURL -}}" target="_blank" rel="noopener">
+              <a class="friends__title" target="_blank" rel="noopener" href="{{- .link | safeURL -}}">
                 <h2>{{- .title -}}</h2>
               </a>
               <span class="friends__desc">
