@@ -1,8 +1,14 @@
 [
   {
+    "title": "Luminous' Home",
+    "desc": "记录生活中的点滴",
+    "icon": "luminous.webp",
+    "link": "https://luotianyi.vc"
+  },
+  {
     "title": "DSRToolS",
     "desc": "DSR 提供支持的综合性游戏小工具站点",
-    "icon": "/images/friends/dsr-tools.webp",
+    "icon": "dsr-tools.webp",
     "link": "https://tools.dsrkafuu.su"
   }
 ]
