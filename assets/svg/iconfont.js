@@ -1,4 +1,4 @@
-export default function (a) {
+!(function (a) {
   var t,
     o,
     e,
@@ -58,4 +58,4 @@ export default function (a) {
         (l.onreadystatechange = function () {
           'complete' == l.readyState && ((l.onreadystatechange = null), d());
         }));
-}
+})(window);
