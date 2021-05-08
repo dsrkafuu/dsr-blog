@@ -2,14 +2,37 @@
 {{- $out := .Scratch.Get "scriptOut" -}}
 {{- $options := (dict "targetPath" $out "minify" false "target" "esnext" "format" "iife") -}}
 
+{{- $async := .Scratch.Get "scriptAsync" -}}
+
 {{- if eq (getenv "NODE_ENV") "production" -}}
-<script defer src="{{ $out | relURL }}"></script>
+
+{{- if $async -}}
+<script async src="{{ $out | relURL }}"></script>
+<!-- reset async mark -->
+{{- .Scratch.Set "scriptAsync" false -}}
 {{- else -}}
+<script defer src="{{ $out | relURL }}"></script>
+{{- end -}}
+
+{{- else -}}
+
+<!-- only inject once -->
+{{- if not (.Scratch.Get "NODE_ENV_INJECTED") -}}
 <script>
   window.process = {
     env: { NODE_ENV: 'development' },
   };
 </script>
+{{- .Scratch.Set "NODE_ENV_INJECTED" true -}}
+{{- end -}}
+
 {{- $built := resources.Get $src | js.Build $options -}}
+{{- if $async -}}
+<script async src="{{ $built.RelPermalink }}"></script>
+<!-- reset async mark -->
+{{- .Scratch.Set "scriptAsync" false -}}
+{{- else -}}
 <script defer src="{{ $built.RelPermalink }}"></script>
+{{- end -}}
+
 {{- end -}}

@@ -34,11 +34,16 @@ const plugins = [
 // settings
 const outputs = {
   format: 'iife',
-  sourcemap: false,
+  sourcemap: true,
   banner: '/*! dsr-blog | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License */',
 };
 
 export default [
+  {
+    input: 'assets/svg/iconfont.js',
+    output: { file: 'public/assets/dsr-blog_iconfont.min.js', ...outputs },
+    plugins,
+  },
   {
     input: 'assets/js/base.js',
     output: { file: 'public/assets/dsr-blog_base.min.js', ...outputs },

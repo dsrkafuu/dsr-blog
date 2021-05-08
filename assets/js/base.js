@@ -17,10 +17,6 @@ if (process.env.NODE_ENV === 'production') {
   }
 }
 
-// iconfont
-import iconfont from '../svg/iconfont';
-iconfont(window);
-
 // theme system
 import ThemeManager from './components/theme';
 import { logError } from './plugins/loggers';
