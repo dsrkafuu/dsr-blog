@@ -24,8 +24,8 @@ Front end developer, PC enthusiastic, anime & console gamer, college student at 
 
 ### Changelog
 
-![Site Changelog](/images/changelog.webp)
+{{< fiximg "Site Changelog" "/images/changelog.webp" "23.6979%" >}}
 
 ### Arknights
 
-![Arknights ID Card](https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/images/banners/arknights_202105.webp)
+{{< fiximg "Arknights ID Card" "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/images/banners/arknights_202105.webp" "20.6213%" >}}
