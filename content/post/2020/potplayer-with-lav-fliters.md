@@ -70,7 +70,7 @@ image: '/images/header/potplayer.webp'
 
 此时随便打开一个视频，使用 `Tab` 键打开信息覆盖层，应该能看到如下图情况，则已正常启用。
 
-{{< lazy "16x9" "测试 LAVFilters 启用状态示意图" "/images/post/2020/potplayer-with-lav-fliters/20200419211847.webp" >}}
+{{< fiximg "测试 LAVFilters 启用状态示意图" "/images/post/2020/potplayer-with-lav-fliters/20200419211847.webp" "56.25%" >}}
 
 ## 设置 LAVFilters
 

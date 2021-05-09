@@ -1,7 +1,5 @@
-{{- if strings.HasPrefix .Destination "http" -}}
-<a class="link" href="{{- .Destination | safeURL -}}" target="_blank" rel="noopener external">{{- .Text | safeHTML -}}</a>
-{{- else if strings.HasPrefix .Destination "/" -}}
-<a class="link" href="{{- .Destination | safeURL | relURL -}}" target="_blank" rel="noopener">{{- .Text | safeHTML -}}</a>
+{{- if strings.HasPrefix .Destination "/" -}}
+<a class="link" href="{{- .Destination | safeURL | relURL -}}">{{- .Text | safeHTML -}}</a>
 {{- else -}}
 <a class="link" href="{{- .Destination | safeURL -}}" target="_blank" rel="noopener">{{- .Text | safeHTML -}}</a>
 {{- end -}}

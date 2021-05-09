@@ -21,9 +21,11 @@
       <div class="content">
         <div class="content__inner post__article">
           <div class="card">
-            {{- if .Params.image -}}
-            <div class="post__image image image__ratio-40x9">
-              <img src="{{- .Params.image | relURL -}}" alt="Post Header" />
+            {{- with .Params.image -}}
+            <div class="post__image fiximg">
+              <div class="fiximg__container" style="padding-bottom: 22.5%;">
+                <img loading="lazy" src="{{- . | relURL -}}" />
+              </div>
             </div>
             {{- end -}}
             <div class="post__title">
@@ -48,7 +50,7 @@
               <svg class="icon spin" aria-hidden="true">
                 <use xlink:href="#icon-spinner-third"></use>
               </svg>
-              {{- printf "<span>评论区正在等待加载</span>" | safeHTML -}}
+              {{- printf "<span>评论区正在加载</span>" | safeHTML -}}
             </div>
             {{ $formated := replace .File.Path "\\" "/" }}
             {{ $path := split $formated "." }}
@@ -75,7 +77,6 @@
 
   {{- partial "footer.html" . -}}
 
-  <script defer src='{{- $.Scratch.Get "DEP_lazysizes" -}}'></script>
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
   {{- partial "script.html" . -}}

@@ -22,9 +22,10 @@
         <div class="content__inner friends__list">
           {{- range .Site.Data.friends -}}
           <div class="card friends__item">
-            <div class="friends__image image image__ratio-1x1">
-              <a href="{{- .link | safeURL -}}" target="_blank" rel="noopener">
-                <img class="lazyload" data-src='{{- printf "/images/friends/%s" .icon | safeURL | relURL -}}' />
+            <div class="friends__image fiximg">
+              <a target="_blank" rel="noopener" class="fiximg__container" style="padding-bottom: 100%;"
+                href="{{- .link | safeURL -}}">
+                <img loading="lazy" src='{{- printf "/images/friends/%s" .icon | safeURL | relURL -}}' />
               </a>
             </div>
             <div class="friends__box">
@@ -38,8 +39,7 @@
           </div>
           {{- end -}}
           <div class="card friends__add">
-            <a href="https://github.com/dsrkafuu/dsr-blog/issues/new?assignees=&labels=friend&template=friend-request.md&title="
-              target="_blank" rel="noopener external">
+            <a href="{{- .Site.Params.friendsRequest -}}" target="_blank" rel="noopener">
               友链交换
             </a>
           </div>
@@ -56,7 +56,6 @@
 
   {{- partial "footer.html" . -}}
 
-  <script defer src='{{- $.Scratch.Get "DEP_lazysizes" -}}'></script>
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
   {{- partial "script.html" . -}}
