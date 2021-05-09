@@ -32,9 +32,9 @@
           {{- range $paginator.Pages -}}
           <div class="card">
             {{- if .Params.image -}}
-            <div class="post__image image image__ratio-40x9">
-              <a href="{{- .RelPermalink -}}">
-                <img class="lazyload" data-src="{{- .Params.image | relURL -}}" />
+            <div class="post__image fiximg">
+              <a href="{{- .RelPermalink -}}" class="fiximg__container" style="padding-bottom: 22.5%;">
+                <img loading="lazy" src="{{- .Params.image | relURL -}}" />
               </a>
             </div>
             {{- end -}}
@@ -67,7 +67,6 @@
 
   {{- partial "footer.html" . -}}
 
-  <script defer src='{{- $.Scratch.Get "DEP_lazysizes" -}}'></script>
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
   {{- partial "script.html" . -}}

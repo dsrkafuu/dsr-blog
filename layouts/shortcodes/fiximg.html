@@ -1,0 +1,12 @@
+{{- $text := index .Params 0 -}}
+{{- $src := index .Params 1 | safeURL | relURL -}}
+{{- $ratio := index .Params 2 -}}
+{{- $width := index .Params 3 | default "100%" -}}
+
+<p>
+<div class="fiximg" style='width: {{ $width -}};'>
+  <div class="fiximg__container" style="padding-bottom: {{ $ratio -}};">
+    <img src="{{- $src -}}" alt="{{- $text -}}" />
+  </div>
+</div>
+</p>

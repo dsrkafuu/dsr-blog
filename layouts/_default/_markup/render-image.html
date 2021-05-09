@@ -1,3 +1,1 @@
-<a class="image__link" href="{{- .Destination | safeURL | relURL -}}" target="_blank" rel="noopener">
-  <img src="{{- .Destination | safeURL | relURL -}}" alt="{{- .Text -}}" />
-</a>
+<img loading="lazy" src="{{- .Destination | safeURL | relURL -}}" alt="{{- .Text -}}" />

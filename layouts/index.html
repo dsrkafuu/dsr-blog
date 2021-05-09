@@ -16,14 +16,17 @@
   {{- partial "theme.html" . -}}
   {{- partial "header.html" . -}}
 
+
   <main class="main">
     <div class="container">
       <div class="content">
         <div class="content__inner">
           <div class="card">
             {{- with .Params.image -}}
-            <div class="post__image image image__ratio-40x9">
-              <img src="{{- . | relURL -}}" alt="Index Header" />
+            <div class="post__image fiximg">
+              <div class="fiximg__container" style="padding-bottom: 22.5%;">
+                <img loading="lazy" src="{{- . | relURL -}}" />
+              </div>
             </div>
             {{- end -}}
             <div class="post__content">
@@ -47,7 +50,6 @@
 
   {{- partial "footer.html" . -}}
 
-  <script defer src='{{- $.Scratch.Get "DEP_lazysizes" -}}'></script>
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
   {{- partial "script.html" . -}}
