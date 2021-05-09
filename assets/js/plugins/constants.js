@@ -1,6 +1,9 @@
 // scripts and styles
 export const SCRIPT_GITALK = 'https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js';
 export const STYLE_GITALK = 'https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css';
+export const SCRIPT_PRISM_LOADER =
+  'https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js';
+export const PRISM_LANGS_PATH = 'https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/';
 
 // search engine
 export const SEARCH_URL = 'https://www.google.com/search';
