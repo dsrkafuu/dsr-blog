@@ -6,6 +6,27 @@
 
 新版整合式个人博客 [dsr-blog](https://blog.dsrkafuu.su)，基于 Hugo 实现，包含博客文章和笔记整合。非面向主题使用者的通用主题，如果有朋友感兴趣也欢迎发 issue、修改或自己使用。
 
+## 浏览器支持
+
+站点使用的部分现代标准功能如下：
+
+- [CSS Flexible Box 布局](https://caniuse.com/flexbox)
+- [CSS Grid 布局](https://caniuse.com/css-grid)
+- [WebP 图片](https://caniuse.com/webp)
+- [CSSOM Scroll-behavior](https://caniuse.com/css-scroll-behavior)
+- [浏览器原生图片懒加载](https://caniuse.com/loading-lazy-attr)
+- [CSS Backdrop Filter](https://caniuse.com/css-backdrop-filter)
+
+对于不支持的浏览器将**不会使用任何** fallback 或 polyfill (例如 Safari 13 及以下的 WebP 支持和 Safari 中的图片懒加载支持)。
+
+在以下支持列表以外的浏览器中出现的站点问题将**不会被修复**：
+
+- Chrome 80+
+- Firefox 80+
+- Firefox ESR
+- Any Chromium based browser 80+
+- Safari 14+ (macOS Big Sur 17+)
+
 ## 部分开发细节
 
 ### 环境变量
@@ -29,19 +50,17 @@
 
 - JS 通过 rollup 打包编译 (开发模式为 Hugo Pipes 内置的 ESBuild)
 - 不同模板使用不同的 scripts 局部模板，引入不同依赖库并通过不同入口文件编译主 JS
-- Lazyload 图片需要使用 shortcode 并指定固定的长宽比: 例如文章头图 `40x9`，动画记录 `32x9`
 - 手机侧边栏控制 fixed 定位 right 偏移量实现动画淡入，用于显示目录
 
-|      模块       |                  链接                  |  用途  |
-| :-------------: | :------------------------------------: | :----: |
-|    iconfont     |                internal                | common |
-|    clipboard    |                internal                | common |
-|     comment     |                internal                | common |
-|      theme      |                internal                | common |
-|   toc-control   |                internal                | common |
-|    lazysizes    | <https://github.com/aFarkas/lazysizes> | common |
-| prism.js\[cdn\] |         <https://prismjs.com/>         | single |
-|     gitalk      |  <https://github.com/gitalk/gitalk/>   | single |
+|      模块       |                链接                 |  用途  |
+| :-------------: | :---------------------------------: | :----: |
+|    iconfont     |              internal               | common |
+|    clipboard    |              internal               | common |
+|     comment     |              internal               | common |
+|      theme      |              internal               | common |
+|       toc       |              internal               | common |
+| prism.js\[cdn\] |       <https://prismjs.com/>        | single |
+|     gitalk      | <https://github.com/gitalk/gitalk/> | single |
 
 ### CSS
 
