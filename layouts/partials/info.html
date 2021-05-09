@@ -1,7 +1,9 @@
 <div class="card info">
   <div class="info__avatar">
-    <div class="image image__ratio-1x1">
-      <img src="{{- .Site.Params.avatar -}}" alt="Avatar" />
+    <div class="fiximg">
+      <div class="fiximg__container" style="padding-bottom: 100%;">
+        <img loading="lazy" src="{{- .Site.Params.avatar -}}" />
+      </div>
     </div>
   </div>
   <div class="info__meta">
