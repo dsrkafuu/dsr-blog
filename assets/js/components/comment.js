@@ -51,7 +51,7 @@ async function loadComment(el) {
 /**
  * IntersectionObserver lazyload comment area
  */
-export default function () {
+export default () => {
   const el = document.querySelector(`#${ID_COMMENT_CONTENT}`);
   if (el) {
     const commentPromise = new Promise((resolve, reject) => {
@@ -79,4 +79,4 @@ export default function () {
     });
     logInfo('gitalk observer initialized');
   }
-}
+};

@@ -50,6 +50,11 @@ export default [
     plugins,
   },
   {
+    input: 'assets/js/index.js',
+    output: { file: 'public/assets/dsr-blog_index.min.js', ...outputs },
+    plugins,
+  },
+  {
     input: 'assets/js/list.js',
     output: { file: 'public/assets/dsr-blog_list.min.js', ...outputs },
     plugins,

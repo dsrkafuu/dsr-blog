@@ -1,5 +1,3 @@
-/*! dsr-blog | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License */
-
 import * as Sentry from '@sentry/browser';
 import { Integrations } from '@sentry/tracing';
 import { SENTRY_DSN, ID_THEME_CTRL } from './plugins/constants';
