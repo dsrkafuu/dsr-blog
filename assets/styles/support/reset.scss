@@ -37,6 +37,13 @@ img {
   max-width: 100%;
 }
 
+code {
+  display: inline;
+  word-break: break-all;
+  word-wrap: break-word;
+  hyphens: none;
+}
+
 .container {
   max-width: $responsive-desktop;
   margin-left: auto;

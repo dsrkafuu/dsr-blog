@@ -16,6 +16,12 @@ body {
   position: relative;
 }
 
+pre,
+code,
+tt {
+  font-family: $font-family-mono;
+}
+
 // sticky footer
 .header,
 .footer {
