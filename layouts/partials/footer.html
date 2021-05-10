@@ -3,9 +3,9 @@
 
 <footer class="footer">
   <div class="container">
-    <span class="footer__text">版权所有 &copy; 2017-{{- now.Format "2006" }} <a class="link"
+    <span class="footer__text">Copyright &copy; 2017-{{- now.Format "2006" }} | <a class="link"
         href="{{- .Site.Params.authorLink -}}" target="_blank" rel="noopener">{{- .Site.Params.author -}}</a></span>
     <span class="footer__text"><a class="link" href="https://github.com/dsrkafuu/dsr-blog" target="_blank"
-        rel="noopener">原创主题</a> v{{- $version }} 基于 Apache-2.0 许可</a></span>
+        rel="noopener">{{- .Site.Title -}}</a> v{{- $version }} | Apache-2.0</a></span>
   </div>
 </footer>
