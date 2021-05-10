@@ -93,6 +93,11 @@
 }
 
 @include responsive(md) {
+  .sticky {
+    // remove unused top margin of toc on mobile
+    margin-top: 0 !important;
+  }
+
   .toc {
     position: fixed;
     right: 0;
