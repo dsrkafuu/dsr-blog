@@ -103,7 +103,6 @@
     max-width: 70%;
     min-width: 40%;
     transform: translateX(125%);
-    transition: transform 300ms ease;
 
     &.active {
       transform: translateX(0);
