@@ -3,8 +3,9 @@ import { ID_TOC_CONTENT, ID_TOC_CTRL } from '../plugins/constants';
 
 /**
  * initialize toc control
+ * @returns {Promise<void>}
  */
-export default () => {
+export default async () => {
   const tocContent = document.querySelector(`#${ID_TOC_CONTENT}`);
   const tocCtrl = document.querySelector(`#${ID_TOC_CTRL}`);
   if (!tocContent && tocCtrl) {

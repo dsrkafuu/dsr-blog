@@ -50,8 +50,9 @@ async function loadComment(el) {
 
 /**
  * IntersectionObserver lazyload comment area
+ * @returns {Promise<void>}
  */
-export default () => {
+export default async () => {
   const el = document.querySelector(`#${ID_COMMENT_CONTENT}`);
   if (el) {
     const commentPromise = new Promise((resolve, reject) => {
