@@ -16,7 +16,6 @@
   {{- partial "theme.html" . -}}
   {{- partial "header.html" . -}}
 
-
   <main class="main">
     <div class="container">
       <div class="content">
@@ -29,7 +28,37 @@
               </div>
             </div>
             {{- end -}}
+
             <div class="post__content">
+              <!-- compatibility test section -->
+              <div class="markdown compat">
+                <h3>Site Compatibility</h3>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Flexbox</th>
+                      <th>Grid</th>
+                      <th>WebP Image</th>
+                      <th>Native Lazyload</th>
+                      <th>Scroll Behavior</th>
+                      <th>Backdrop Filter</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      {{ range (seq 6) }}
+                      <td>
+                        {{- $.Scratch.Set "iconName" "spinner-third" -}}
+                        {{- $.Scratch.Set "iconSpin" true -}}
+                        {{- partial "icon" $ -}}
+                      </td>
+                      {{ end }}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- index article -->
               <article class="markdown">
                 {{- with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end -}}
               </article>
@@ -53,8 +82,8 @@
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
   {{- partial "script.html" . -}}
-  {{- .Scratch.Set "scriptSrc" "js/index.js" -}}
-  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_index.min.js" -}}
+  {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
+  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
   {{- partial "script.html" . -}}
 </body>
 

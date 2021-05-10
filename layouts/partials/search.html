@@ -3,8 +3,7 @@
     <input type="text" id="input-search" />
   </div>
   <div class="search__ctrl" id="ctrl-search">
-    <svg class="icon" aria-hidden="true">
-      <use xlink:href="#icon-search"></use>
-    </svg>
+    {{- .Scratch.Set "iconName" "search" -}}
+    {{- partial "icon" . -}}
   </div>
 </div>

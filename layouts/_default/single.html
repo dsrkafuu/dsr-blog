@@ -47,9 +47,9 @@
           {{- if and (ne .Params.comment false) (ne .Section "code") -}}
           <div class="card comment">
             <div class="comment__loading" id="comment-loading">
-              <svg class="icon spin" aria-hidden="true">
-                <use xlink:href="#icon-spinner-third"></use>
-              </svg>
+              {{- .Scratch.Set "iconName" "spinner-third" -}}
+              {{- .Scratch.Set "iconSpin" true -}}
+              {{- partial "icon" . -}}
               {{- printf "<span>评论区正在加载</span>" | safeHTML -}}
             </div>
             {{ $formated := replace .File.Path "\\" "/" }}

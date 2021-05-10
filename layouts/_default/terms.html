@@ -24,9 +24,8 @@
             {{- range $name, $tag := .Site.Taxonomies.tags -}}
             {{- $url := printf "/tags/%s/" $name | relURL -}}
             <span class="tags__item">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-hashtag"></use>
-              </svg>
+              {{- $.Scratch.Set "iconName" "hashtag" -}}
+              {{- partial "icon" $ -}}
               {{- printf "<a href='%s'>%s</a>" $url $name | safeHTML -}}
             </span>
             {{- end -}}

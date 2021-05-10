@@ -10,16 +10,14 @@
   <div class="pagination">
     {{- if ne $paginator.PageNumber 1 -}}
     <a class="pagination__first" href="{{- $paginator.First.URL -}}">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-chevron-double-left"></use>
-      </svg>
+      {{- .Scratch.Set "iconName" "chevron-double-left" -}}
+      {{- partial "icon" . -}}
     </a>
     {{- end -}}
     {{- if $paginator.HasPrev -}}
     <a class="pagination__previous" href="{{- $paginator.Prev.URL -}}">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-chevron-left"></use>
-      </svg>
+      {{- .Scratch.Set "iconName" "chevron-left" -}}
+      {{- partial "icon" . -}}
     </a>
     {{- end -}}
     {{- range $paginator.Pagers -}}
@@ -50,16 +48,14 @@
     {{- end -}}
     {{- if $paginator.HasNext -}}
     <a class="pagination__next" href="{{- $paginator.Next.URL -}}">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-chevron-right"></use>
-      </svg>
+      {{- .Scratch.Set "iconName" "chevron-right" -}}
+      {{- partial "icon" . -}}
     </a>
     {{- end -}}
     {{- if ne $paginator.PageNumber $paginator.TotalPages -}}
     <a class="pagination__last" href="{{- $paginator.Last.URL -}}">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-chevron-double-right"></use>
-      </svg>
+      {{- .Scratch.Set "iconName" "chevron-double-right" -}}
+      {{- partial "icon" . -}}
     </a>
     {{- end -}}
   </div>
