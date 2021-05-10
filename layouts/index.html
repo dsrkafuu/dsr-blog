@@ -49,13 +49,10 @@
                       {{ range (seq 6) }}
                       <td>
                         {{- $.Scratch.Set "iconName" "spinner-third" -}}
-                        {{- $.Scratch.Set "iconSpin" true -}}
                         {{- partial "icon" $ -}}
                         {{- $.Scratch.Set "iconName" "check" -}}
-                        {{- $.Scratch.Set "iconHidden" true -}}
                         {{- partial "icon" $ -}}
                         {{- $.Scratch.Set "iconName" "times" -}}
-                        {{- $.Scratch.Set "iconHidden" true -}}
                         {{- partial "icon" $ -}}
                       </td>
                       {{ end }}
@@ -87,9 +84,11 @@
 
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
+  {{- .Scratch.Set "scriptType" "defer" -}}
   {{- partial "script.html" . -}}
   {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
+  {{- .Scratch.Set "scriptType" "defer" -}}
   {{- partial "script.html" . -}}
 </body>
 

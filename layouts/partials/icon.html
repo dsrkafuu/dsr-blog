@@ -1,21 +1,10 @@
 {{- $name := .Scratch.Get "iconName" -}}
-{{- $spin := .Scratch.Get "iconSpin" -}}
-{{- $hidden := .Scratch.Get "iconHidden" -}}
-
 {{- $svg := readFile (printf "assets/svg/%s.svg" $name) -}}
 
 {{- $class := "icon" -}}
-{{- if $spin -}}
+{{- if eq $name "spinner-third" -}}
 {{- $class = "icon spin" -}}
 {{- end -}}
 {{- $svg = replace $svg "<svg" (printf "<svg class='%s'" $class) 1 -}}
 
-{{- if $hidden -}}
-{{- $svg = replace $svg "<svg" "<svg style='display: none;'" 1 -}}
-{{- end -}}
-
 {{- $svg | safeHTML -}}
-
-{{- .Scratch.Set "iconName" nil -}}
-{{- .Scratch.Set "iconSpin" nil -}}
-{{- .Scratch.Set "iconHidden" nil -}}
