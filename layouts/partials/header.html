@@ -19,14 +19,12 @@
 
       <div class="navbar__end">
         <div class="navbar__item" id="ctrl-adjust">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-adjust"></use>
-          </svg>
+          {{- .Scratch.Set "iconName" "adjust" -}}
+          {{- partial "icon" . -}}
         </div>
         <div class="navbar__item" id="ctrl-toc">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-bars"></use>
-          </svg>
+          {{- .Scratch.Set "iconName" "bars" -}}
+          {{- partial "icon" . -}}
         </div>
       </div>
   </nav>

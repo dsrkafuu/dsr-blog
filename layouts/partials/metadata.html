@@ -1,26 +1,22 @@
 <div class="post__meta">
   <span class="post__metaDate">
-    <svg class="icon" aria-hidden="true">
-      <use xlink:href="#icon-calendar-day"></use>
-    </svg>
+    {{- .Scratch.Set "iconName" "calendar-day" -}}
+    {{- partial "icon" . -}}
     {{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}
   </span>
   <span class="post__metaWords">
-    <svg class="icon" aria-hidden="true">
-      <use xlink:href="#icon-file-alt"></use>
-    </svg>
+    {{- .Scratch.Set "iconName" "file-alt" -}}
+    {{- partial "icon" . -}}
     {{- printf "%d 字" .WordCount -}}
   </span>
   <span class="post__metaWords">
-    <svg class="icon" aria-hidden="true">
-      <use xlink:href="#icon-clock"></use>
-    </svg>
+    {{- .Scratch.Set "iconName" "clock" -}}
+    {{- partial "icon" . -}}
     {{- printf "%d 分钟" .ReadingTime -}}
   </span>
   <span class="post__metaTags">
-    <svg class="icon" aria-hidden="true">
-      <use xlink:href="#icon-hashtag"></use>
-    </svg>
+    {{- .Scratch.Set "iconName" "hashtag" -}}
+    {{- partial "icon" . -}}
     {{- if .Params.tags -}}
     {{- range .Params.tags -}}
     <a href='{{- printf "%s%s/" "/tags/" (. | urlize) | relURL -}}'>

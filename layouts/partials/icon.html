@@ -1,0 +1,14 @@
+{{- $name := .Scratch.Get "iconName" -}}
+{{- $spin := .Scratch.Get "iconSpin" -}}
+
+{{- $svg := readFile (printf "assets/svg/%s.svg" $name) -}}
+
+{{- $class := "icon" -}}
+{{- if $spin -}}
+{{- $class = "icon spin" -}}
+{{- end -}}
+
+{{- replace $svg "<svg" (printf "<svg class='%s'" $class) 1 | safeHTML -}}
+
+{{- .Scratch.Set "iconName" nil -}}
+{{- .Scratch.Set "iconSpin" nil -}}

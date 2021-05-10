@@ -53,13 +53,13 @@ menu:
       url: "/friends/"
       weight: 4
   links:
-    - name: "#icon-github"
+    - name: "github"
       url: "https://github.com/dsrkafuu"
       weight: 1
-    - name: "#icon-twitter"
+    - name: "twitter"
       url: "https://twitter.com/dsrkafuu"
       weight: 2
-    - name: "#icon-steam"
+    - name: "steam"
       url: "https://steamcommunity.com/id/dsrkafuu/"
       weight: 3
 
