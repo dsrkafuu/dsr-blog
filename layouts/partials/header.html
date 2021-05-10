@@ -1,7 +1,7 @@
 <header class="header">
   <nav class="navbar container">
     <div class="navbar__brand">
-      <a class="navbar__item" href="{{- .Site.BaseURL -}}">
+      <a class="navbar__item" href="{{- .Site.BaseURL | relURL -}}">
         {{- .Site.Title -}}
       </a>
     </div>

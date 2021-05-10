@@ -38,6 +38,7 @@
     "build:bundle": "cross-env NODE_ENV=production rollup -c",
     "build:minify": "cross-env NODE_ENV=production node ./minify.js",
     "build": "npm-run-all build:generate build:minify build:bundle",
-    "dev": "cross-env NODE_ENV=development hugo server"
+    "dev": "cross-env NODE_ENV=development hugo server",
+    "inspect": "cross-env NODE_ENV=development hugo server --bind=0.0.0.0 --baseURL=http://0.0.0.0:1313"
   }
 }
