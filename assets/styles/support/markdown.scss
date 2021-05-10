@@ -68,14 +68,16 @@
   kbd,
   :not(pre) code,
   tt {
-    display: inline-block;
+    display: inline;
     font-size: 90%;
     font-family: $font-family-mono;
-    padding: 0 0.35rem;
+    padding: 0.1rem 0.35rem;
     color: inherit;
     background-color: var(--color-code);
     border-radius: $radius;
-    word-wrap: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    hyphens: none;
 
     br {
       display: none;
