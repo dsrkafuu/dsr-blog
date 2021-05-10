@@ -1,9 +1,10 @@
 import { logError, logInfo } from '../plugins/loggers';
 import { ID_TOC_CONTENT, ID_TOC_CTRL } from '../plugins/constants';
+
 /**
  * initialize toc control
  */
-export default function () {
+export default () => {
   const tocContent = document.querySelector(`#${ID_TOC_CONTENT}`);
   const tocCtrl = document.querySelector(`#${ID_TOC_CTRL}`);
   if (!tocContent && tocCtrl) {
@@ -23,4 +24,4 @@ export default function () {
     }
   });
   logInfo('toc switcher inited');
-}
+};

@@ -26,7 +26,7 @@ function getParentNodes(node) {
 /**
  * clipboard injector
  */
-export default function () {
+export default () => {
   document.addEventListener('copy', (e) => {
     if (e.clipboardData) {
       const selection = window.getSelection();
@@ -48,4 +48,4 @@ export default function () {
     }
   });
   logInfo('clipboard injector initialized');
-}
+};
