@@ -1,11 +1,11 @@
 {{- define "head" -}}
 
 <head>
-  {{- partial "head.html" . -}}
+  {{- partial "head" . -}}
 
   {{- .Scratch.Set "styleSrc" "styles/pages/friends.scss" -}}
   {{- .Scratch.Set "styleOut" "assets/dsr-blog_friends.min.css" -}}
-  {{- partial "style.html" . -}}
+  {{- partial "style" . -}}
 </head>
 
 {{- end -}}
@@ -13,8 +13,8 @@
 {{- define "body" -}}
 
 <body data-theme="auto" data-section="friends">
-  {{- partial "theme.html" . -}}
-  {{- partial "header.html" . -}}
+  {{- partial "theme" . -}}
+  {{- partial "header" . -}}
 
   <main class="main">
     <div class="container">
@@ -48,18 +48,18 @@
       <aside class="sidebar">
         <div class="sidebar__inner">
           <div class="sticky">
-            {{- partial "info.html" . -}}
+            {{- partial "info" . -}}
           </div>
         </div>
       </aside>
   </main>
 
-  {{- partial "footer.html" . -}}
+  {{- partial "footer" . -}}
 
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
   {{- .Scratch.Set "scriptType" "defer" -}}
-  {{- partial "script.html" . -}}
+  {{- partial "script" . -}}
 </body>
 
 {{- end -}}

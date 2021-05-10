@@ -1,11 +1,11 @@
 {{- define "head" -}}
 
 <head>
-  {{- partial "head.html" . -}}
+  {{- partial "head" . -}}
 
   {{- .Scratch.Set "styleSrc" "styles/pages/list.scss" -}}
   {{- .Scratch.Set "styleOut" "assets/dsr-blog_list.min.css" -}}
-  {{- partial "style.html" . -}}
+  {{- partial "style" . -}}
 </head>
 
 {{- end -}}
@@ -13,8 +13,8 @@
 {{- define "body" -}}
 
 <body data-theme="auto" data-section="list">
-  {{- partial "theme.html" . -}}
-  {{- partial "header.html" . -}}
+  {{- partial "theme" . -}}
+  {{- partial "header" . -}}
   {{- $isTagsList := eq .Section "tags" -}}
 
   <main class="main">
@@ -45,36 +45,36 @@
                 </a>
                 <div class="post__summary markdown">{{ .Summary }}</div>
               </div>
-              {{- partial "metadata.html" . -}}
+              {{- partial "metadata" . -}}
             </div>
           </div>
           {{- end -}}
 
           {{- .Scratch.Set "paginator" $paginator -}}
-          {{- partial "pagination.html" . -}}
+          {{- partial "pagination" . -}}
         </div>
       </div>
       <aside class="sidebar">
         <div class="sidebar__inner">
-          {{- partial "search.html" . -}}
+          {{- partial "search" . -}}
           <div class="sticky">
-            {{- partial "info.html" . -}}
+            {{- partial "info" . -}}
           </div>
         </div>
       </aside>
     </div>
   </main>
 
-  {{- partial "footer.html" . -}}
+  {{- partial "footer" . -}}
 
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
   {{- .Scratch.Set "scriptType" "defer" -}}
-  {{- partial "script.html" . -}}
+  {{- partial "script" . -}}
   {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
   {{- .Scratch.Set "scriptType" "defer" -}}
-  {{- partial "script.html" . -}}
+  {{- partial "script" . -}}
 </body>
 
 {{- end -}}
