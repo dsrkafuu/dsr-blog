@@ -25,8 +25,9 @@ function getParentNodes(node) {
 
 /**
  * clipboard injector
+ * @returns {Promise<void>}
  */
-export default () => {
+export default async () => {
   document.addEventListener('copy', (e) => {
     if (e.clipboardData) {
       const selection = window.getSelection();

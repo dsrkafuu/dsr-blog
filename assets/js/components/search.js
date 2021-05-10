@@ -26,8 +26,9 @@ function handleSearch(str) {
 
 /**
  * add search listener
+ * @returns {Promise<void>}
  */
-export default () => {
+export default async () => {
   const ctrl = document.querySelector(`#${ID_SEARCH_CTRL}`);
   const input = document.querySelector(`#${ID_SEARCH_INPUT}`);
   if (!ctrl || !input) {

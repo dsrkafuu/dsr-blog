@@ -4,8 +4,9 @@ import { logError } from '../plugins/loggers';
 
 /**
  * init prismjs
+ * @returns {Promise<void>}
  */
-export default () => {
+export default async () => {
   if (document.querySelector('pre code')) {
     // set to manual mode
     window.Prism = window.Prism || {};
