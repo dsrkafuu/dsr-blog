@@ -44,6 +44,7 @@ code {
   hyphens: none;
 }
 
+// utils
 .container {
   max-width: $responsive-desktop;
   margin-left: auto;
@@ -85,6 +86,7 @@ code {
   }
 }
 
+// icons
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
@@ -104,4 +106,8 @@ code {
 
 .icon.spin {
   animation: spinner 1s infinite linear;
+}
+
+.fa-secondary {
+  opacity: 0.4;
 }
