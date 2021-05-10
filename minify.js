@@ -86,9 +86,12 @@ getFiles(path.resolve('./public'));
         try {
           const content = fs.readFileSync(val, { encoding: 'utf-8' });
           postcss([cssnano, autoprefixer])
-            .process(content, { from: val })
+            .process(content, { from: val, to: val })
             .then((result) => {
               fs.writeFileSync(val, result.css);
+              if (result.map) {
+                fs.writeFileSync(val + '.map', result.map.toString());
+              }
               resolve();
             });
         } catch (e) {
