@@ -53,6 +53,7 @@
 
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
+  {{- .Scratch.Set "scriptType" "defer" -}}
   {{- partial "script.html" . -}}
 </body>
 

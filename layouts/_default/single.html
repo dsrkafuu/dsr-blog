@@ -48,7 +48,6 @@
           <div class="card comment">
             <div class="comment__loading" id="comment-loading">
               {{- .Scratch.Set "iconName" "spinner-third" -}}
-              {{- .Scratch.Set "iconSpin" true -}}
               {{- partial "icon" . -}}
               {{- printf "<span>评论区正在加载</span>" | safeHTML -}}
             </div>
@@ -79,9 +78,11 @@
 
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
+  {{- .Scratch.Set "scriptType" "defer" -}}
   {{- partial "script.html" . -}}
   {{- .Scratch.Set "scriptSrc" "js/single.js" -}}
   {{- .Scratch.Set "scriptOut" "assets/dsr-blog_single.min.js" -}}
+  {{- .Scratch.Set "scriptType" "defer" -}}
   {{- partial "script.html" . -}}
 </body>
 
