@@ -9,6 +9,8 @@ image: '/images/header/potplayer.webp'
 ---
 
 > 2021-04-17 更新：移除 xy-VSFilter 并迁移至内置字幕滤镜
+>
+> 2021-05-13 更新：调整 LAV Audio Decoder 设置
 
 涉及回放似乎就脱不开 madVR，但是我现在不再使用 madVR 自然也是有其原因的。
 
@@ -82,9 +84,9 @@ image: '/images/header/potplayer.webp'
 
 ![LAV Video Decoder 示意图](/images/post/2020/potplayer-with-lav-fliters/20200419212026.webp)
 
-"音频解码器" 选项卡进入 LAV Audio Decoder 设置，开启 Mixing，物理多声道玩家除外。
+"音频解码器" 选项卡进入 LAV Audio Decoder 设置，开启 Mixing，物理多声道玩家除外；关闭 Clipping Protection 以避免对音频动态范围产生影响。
 
-![LAV Audio Decoder 示意图](/images/post/2020/potplayer-with-lav-fliters/20200419212350.webp)
+![LAV Audio Decoder 示意图](/images/post/2020/potplayer-with-lav-fliters/20210513203829.webp)
 
 至此，设置已经基本完成，可以投入使用了。
 
