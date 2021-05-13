@@ -16,6 +16,7 @@ export const ATTR_THEME = 'data-theme';
 export const ATTR_SECTION = 'data-section';
 export const ATTR_ZOOMABLE = 'data-zoomable';
 export const ID_THEME_CTRL = 'ctrl-adjust';
+export const ID_CONPATIBILITY = 'content-compat';
 export const ID_TOC_CTRL = 'ctrl-toc';
 export const ID_TOC_CONTENT = 'content-toc';
 export const ID_SEARCH_CTRL = 'ctrl-search';

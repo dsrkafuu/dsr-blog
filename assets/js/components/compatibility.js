@@ -1,4 +1,5 @@
 import { logError } from '../plugins/loggers';
+import { ID_CONPATIBILITY } from '../plugins/constants';
 
 async function testFlexbox() {
   return (
@@ -72,25 +73,27 @@ function triggerTimes(el) {
  * @returns {Promise<void>}
  */
 export default async () => {
-  try {
-    const arr = await Promise.all([
-      testFlexbox(),
-      testGrid(),
-      testWebP(),
-      testNativeLazyload(),
-      testScrollBehavior(),
-      testBackdropFilter(),
-    ]);
-    let doms = document.querySelector('#content-compat');
-    doms && (doms = doms.children);
-    arr.forEach((res, idx) => {
-      if (res) {
-        triggerCheck(doms[idx]);
-      } else {
-        triggerTimes(doms[idx]);
-      }
-    });
-  } catch (e) {
-    logError('failed to check compatibility');
-  }
+  const compat = document.querySelector(`#${ID_CONPATIBILITY}`);
+  if (compat)
+    try {
+      const arr = await Promise.all([
+        testFlexbox(),
+        testGrid(),
+        testWebP(),
+        testNativeLazyload(),
+        testScrollBehavior(),
+        testBackdropFilter(),
+      ]);
+      let dom = compat;
+      dom && (dom = dom.children);
+      arr.forEach((res, idx) => {
+        if (res) {
+          triggerCheck(dom[idx]);
+        } else {
+          triggerTimes(dom[idx]);
+        }
+      });
+    } catch (e) {
+      logError('failed to check compatibility');
+    }
 };
