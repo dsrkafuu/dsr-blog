@@ -47,7 +47,10 @@ async function testScrollBehavior() {
 }
 
 async function testBackdropFilter() {
-  return CSS.supports('backdrop-filter', 'saturate(180%) blur(0.2rem)');
+  return (
+    CSS.supports('backdrop-filter', 'saturate(180%) blur(0.2rem)') ||
+    CSS.supports('-webkit-backdrop-filter', 'saturate(180%) blur(0.2rem)')
+  );
 }
 
 /**
