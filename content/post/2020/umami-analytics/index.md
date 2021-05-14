@@ -39,7 +39,7 @@ psql
 createuser --interactive umami
 ```
 
-![创建 PostgreSQL 用户](/images/post/2020/umami-analytics/20201024124907.webp)
+![创建 PostgreSQL 用户](20201024124907.webp)
 
 创建完用户后，还需要创建一个相对应的 Linux 用户，随后切换到这个用户并创建一个名为 umami 的数据库备用：
 
@@ -89,4 +89,4 @@ HASH_SALT=[自选任何字符串]
 
 一切设置完成后，打开 umami 面板，修改密码，添加网址，一切操作就都和 Google Analytics 无异了。
 
-![umami 面板](/images/post/2020/umami-analytics/20201024142720.webp)
+![umami 面板](20201024142720.webp)

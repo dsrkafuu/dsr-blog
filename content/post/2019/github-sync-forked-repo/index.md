@@ -24,16 +24,16 @@ git remote add upstream https://github.com/vuejs/docs-next-zh-cn.git
 
 再次执行 `git remote -v`，应该就能看到上游仓库了：
 
-![上游仓库预览](/images/post/2019/github-sync-forked-repo/20190928191446.webp)
+![上游仓库预览](20190928191446.webp)
 
 ## 获取更新并 merge
 
 执行 `git fetch upstream` 抓取原仓库的更新：
 
-![抓取更新预览](/images/post/2019/github-sync-forked-repo/20190928191627.webp)
+![抓取更新预览](20190928191627.webp)
 
 使用 `git checkout master` 确保自己在想要同步的分支，这里以 master 分支为例。
 
 确保本地没有未保存的更改后，使用 `git merge upstream/master` 即可将远程的 master 分支合并到当前分支：
 
-![合并预览](/images/post/2019/github-sync-forked-repo/20190928191842.webp)
+![合并预览](20190928191842.webp)

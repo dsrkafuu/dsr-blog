@@ -28,8 +28,8 @@ image: '/images/header.webp'
 
 ### 更新记录
 
-{{< fiximg "Site Changelog" "/images/changelog.webp" "23.6979%" >}}
+![更新记录](_changelog.webp)
 
 ### 明日方舟
 
-{{< fiximg "Arknights ID Card" "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/images/banners/arknights_202105.webp" "20.6213%" >}}
+{{< fiximg "明日方舟 ID 卡" "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/images/banners/arknights_202105.webp" "20.6213%" >}}

@@ -1,11 +1,11 @@
 {{- $text := index .Params 0 -}}
 {{- $src := index .Params 1 | safeURL | relURL -}}
-{{- $ratio := index .Params 2 -}}
-{{- $width := index .Params 3 | default "100%" -}}
+{{- $ratio := printf "padding-bottom: %s;" (index .Params 2) -}}
+{{- $width := printf "width: %s;" (index .Params 3 | default "100%") -}}
 
 <p>
-<div class="fiximg" style='width: {{ $width -}};'>
-  <div class="fiximg__container" style="padding-bottom: {{ $ratio -}};">
+<div class="fiximg" style="{{- $width | safeCSS -}}">
+  <div class="fiximg__container" style="{{- $ratio | safeCSS -}}">
     <img src="{{- $src -}}" alt="{{- $text -}}" />
   </div>
 </div>
