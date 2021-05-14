@@ -23,3 +23,6 @@ const switcher = document.querySelector(`#${ID_THEME_CTRL}`);
 if (switcher) {
   switcher.addEventListener('click', () => tm.switchTheme());
 }
+
+import zoom from './components/zoom';
+zoom();
