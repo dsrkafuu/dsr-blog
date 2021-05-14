@@ -43,27 +43,31 @@ Hugo 内置了 Pagination 导航模板，用内置的模板是一般情况下最
 ```html
 <ul class="pagination">
   <li class="page-item">
-    <a href="/" class="page-link" aria-label="First"
-      ><span aria-hidden="true">&laquo;&laquo;</span></a
-    >
+    <a href="/" class="page-link" aria-label="First">
+      <span aria-hidden="true">&laquo;&laquo;</span>
+    </a>
   </li>
   <li class="page-item disabled">
-    <a class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    <a class="page-link" aria-label="Previous">
+      <span aria-hidden="true">&laquo;</span>
+    </a>
   </li>
   <li class="page-item active"><a class="page-link" href="/">1</a></li>
   <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
   <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
-  <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+  <li class="page-item disabled">
+    <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
+  </li>
   <li class="page-item"><a class="page-link" href="/page/5/">5</a></li>
   <li class="page-item">
-    <a href="/page/2/" class="page-link" aria-label="Next"
-      ><span aria-hidden="true">&raquo;</span></a
-    >
+    <a href="/page/2/" class="page-link" aria-label="Next">
+      <span aria-hidden="true">&raquo;</span>
+    </a>
   </li>
   <li class="page-item">
-    <a href="/page/5/" class="page-link" aria-label="Last"
-      ><span aria-hidden="true">&raquo;&raquo;</span></a
-    >
+    <a href="/page/5/" class="page-link" aria-label="Last">
+      <span aria-hidden="true">&raquo;&raquo;</span>
+    </a>
   </li>
 </ul>
 ```
@@ -136,7 +140,7 @@ ul.pagination li.page-item {
 
 例如当有十个页面时，并且定义 `$offsetLinks = 2` 时希望实现如下图的效果：
 
-![智能导航栏预览图](/images/post/2019/hugo-custom-pagination/20200413210143.webp)
+![智能导航栏预览图](20200413210143.webp)
 
 - 最大可显示的页码数 `$maxLinks = ($offsetLinks * 2) + 1`
 - 如果总页面数小于 `$maxLinks`，那么所有页码正常显示

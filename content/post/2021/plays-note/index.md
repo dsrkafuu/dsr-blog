@@ -27,7 +27,7 @@ image: '/images/header/arknights-2021as.webp'
 
 下半场火蓝之心三连发、季节 EP 和合约曲直击灵魂。"Burn me to the ground!"
 
-{{< fiximg "音律联觉现场图" "/images/post/2021/plays-note/20210503211232.webp" "28.125%" >}}
+![音律联觉现场图](20210503211232.webp)
 
 ## 2021 年 4 月
 
