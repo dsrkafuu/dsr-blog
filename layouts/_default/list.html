@@ -34,7 +34,7 @@
             {{- if .Params.image -}}
             <div class="post__image fiximg">
               <a href="{{- .RelPermalink -}}" class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src="{{- .Params.image | relURL -}}" />
+                <img loading="lazy" src='{{- printf "/images/headers/%s" .Params.image | relURL -}}' />
               </a>
             </div>
             {{- end -}}

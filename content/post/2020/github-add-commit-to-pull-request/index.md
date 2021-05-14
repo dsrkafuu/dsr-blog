@@ -5,7 +5,7 @@ tags:
   - 'github'
   - 'git'
 description: '修改其他社区开发者提交的 pull request。'
-image: '/images/header/github.webp'
+image: 'github.webp'
 ---
 
 有时我们需要对社区开发者向我们的项目提交的 pull request 进行一些修改，例如一些配置文件以及资源文件的补充等。这种情况下我们可以直接回复 request 提出修改的要求，但除此之外，我们也可以使用一种更简单的方案：直接向 pull request 提交 commit。

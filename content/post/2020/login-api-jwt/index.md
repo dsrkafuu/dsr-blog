@@ -7,7 +7,7 @@ tags:
   - 'mongodb'
   - 'express'
 description: '一次全新尝试的笔记第二部分。'
-image: '/images/header/nodejs-mongodb.webp'
+image: 'nodejs-mongodb.webp'
 ---
 
 近期在补习 [Node.js](https://nodejs.org/) + [MongoDB](https://www.mongodb.com/) 的配合使用，目前已基本将后台管理界面完工。下一步是本人此前从未接触过的账户登录管理以及鉴权相关的内容，因此将学习过程中简单的完整实现记录下来便以后回顾。
