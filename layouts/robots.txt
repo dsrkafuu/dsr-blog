@@ -1,3 +1,4 @@
 User-agent: *
-
-Sitemap: {{ .Site.BaseURL -}}sitemap.xml
+Allow: /
+Disallow: /code/
+Sitemap: {{ replace (printf "%s/sitemap.xml" .Site.BaseURL) "//sitemap" "/sitemap" -}}
