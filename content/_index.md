@@ -5,7 +5,7 @@ keywords:
   - DSRKafuU
   - DSRBLOG
   - 博客
-image: '/images/header.webp'
+image: '_index.webp'
 ---
 
 ### 个人信息

@@ -5,7 +5,7 @@ tags:
   - 'anime'
   - 'video'
 description: '现在的高清视频观看体验，瓶颈不在片源，也不在制作，而是在播放器。'
-image: '/images/header/potplayer.webp'
+image: 'potplayer.webp'
 ---
 
 > 2021-04-17 更新：移除 xy-VSFilter 并迁移至内置字幕滤镜

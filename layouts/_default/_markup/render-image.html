@@ -6,8 +6,8 @@
 {{- $ratio := mul (div (mul $image.Height 1.0) (mul $image.Width 1.0)) 100 -}}
 {{- $css := printf "padding-bottom: %.4f%%;" $ratio -}}
 {{- $width := "width: 100%;" -}}
-{{- if le $image.Width 700 -}}
-{{- $width := printf "width: %dpx;" $image.Width -}}
+{{- if le $image.Width 652 -}}
+{{- $width = printf "width: %dpx;" $image.Width -}}
 {{- end -}}
 <p>
 <div class="fiximg" style="{{- $width | safeCSS -}}">

@@ -6,7 +6,7 @@ tags:
   - 'movie'
   - 'play'
 description: '2021，更进一步。'
-image: '/images/header/arknights-2021as.webp'
+image: 'arknights-2021as.webp'
 ---
 
 > 给自己的笔记：四种状态分别为首发、补全、回放和抛弃，前三种均为完成状态。

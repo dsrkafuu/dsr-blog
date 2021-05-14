@@ -24,7 +24,7 @@
             {{- with .Params.image -}}
             <div class="post__image fiximg">
               <div class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src="{{- . | relURL -}}" />
+                <img loading="lazy" src='{{- printf "/images/headers/%s" . | relURL -}}' />
               </div>
             </div>
             {{- end -}}
