@@ -14,6 +14,7 @@ body {
   font-family: $font-family-base;
   background-color: var(--color-body);
   position: relative;
+  overflow-x: hidden;
 }
 
 pre,
@@ -55,4 +56,12 @@ tt {
 }
 .footer {
   z-index: 1;
+}
+
+.medium-zoom-overlay {
+  backdrop-filter: $filter-blur;
+  z-index: 4;
+}
+.medium-zoom-image {
+  z-index: 5;
 }
