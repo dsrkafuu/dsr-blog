@@ -32,4 +32,4 @@ image: '_index.webp'
 
 ### 明日方舟
 
-{{< fiximg "明日方舟 ID 卡" "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/images/banners/arknights_202105.webp" "20.6213%" >}}
+{{< fiximg "明日方舟 ID 卡" "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/banners/arknights_202105.webp" "20.6213%" >}}
