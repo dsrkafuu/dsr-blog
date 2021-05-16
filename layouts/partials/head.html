@@ -1,4 +1,5 @@
 <meta charset="UTF-8" />
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 {{- hugo.Generator -}}
 
@@ -21,10 +22,13 @@
 <meta name="keywords" content='{{- delimit .Params.keywords ", " -}}' />
 {{- end -}}
 
-<link rel="apple-touch-icon" sizes="180x180" href='{{- "/apple-touch-icon.png" | relURL -}}' />
-<link rel="icon" type="image/png" sizes="32x32" href='{{- "/favicon-32x32.png" | relURL -}}' />
-<link rel="icon" type="image/png" sizes="16x16" href='{{- "/favicon-16x16.png" | relURL -}}' />
-<link rel="shortcut icon" href='{{- "/favicon.ico" | relURL -}}' />
+<link rel="apple-touch-icon" sizes="180x180"
+  href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrkafuu_apple.png" />
+<link rel="icon" type="image/png" sizes="32x32"
+  href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrkafuu_32x.png" />
+<link rel="icon" type="image/png" sizes="16x16"
+  href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrkafuu_16x.png" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrkafuu.ico" />
 {{- partial "opengraph" . -}}
 
 {{- if and (eq (getenv "NODE_ENV") "production") .Site.GoogleAnalytics -}}
