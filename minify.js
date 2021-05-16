@@ -1,17 +1,17 @@
 const path = require('path');
 const fs = require('fs');
-// html
 const html = require('html-minifier-terser');
-// css
 const postcss = require('postcss');
 const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
+const chalk = require('chalk');
 
 // files needs to be processed
 const allFiles = {
   '.html': [],
   '.css': [],
 };
+
 /**
  * get all files need to minify
  * @param {string} dirPath
@@ -20,9 +20,9 @@ function getFiles(dirPath) {
   // files in current folder
   let files;
   try {
-    files = fs.readdirSync(dirPath, { encoding: 'utf-8' });
+    files = fs.readdirSync(dirPath);
   } catch (e) {
-    console.error(e);
+    console.error(chalk.red(e));
     return;
   }
   if (files.length === 0) {
@@ -45,61 +45,71 @@ function getFiles(dirPath) {
     return;
   });
 }
-getFiles(path.resolve('./public'));
+
+const t = Date.now();
+console.log(chalk.green('fetching raw files...'));
+getFiles(path.resolve(__dirname, './public'));
+console.log(chalk.green(`raw files fetched in ${Date.now() - t}ms`));
 
 // minify
-(async () => {
-  const promises = [];
+const t1 = Date.now();
+console.log(chalk.green('processing html files...'));
+const htmlWorkers = [];
+allFiles['.html'].forEach((val) => {
+  htmlWorkers.push(
+    new Promise((resolve, reject) => {
+      try {
+        const content = fs.readFileSync(val, { encoding: 'utf8' });
+        const result = html.minify(content, {
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          ignoreCustomComments: [/^!/, /^\s*#/],
+          keepClosingSlash: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          sortAttributes: true,
+          sortClassName: true,
+          useShortDoctype: true,
+          minifyCSS: true,
+          minifyJS: true,
+        });
+        fs.writeFileSync(val, result);
+        resolve();
+      } catch (e) {
+        reject(e);
+      }
+    })
+  );
+});
+Promise.all(htmlWorkers)
+  .then(() => console.log(chalk.green(`done with html files in ${Date.now() - t1}ms`)))
+  .catch((e) => console.error(chalk.red(e)));
 
-  allFiles['.html'].forEach((val) => {
-    promises.push(
-      new Promise((resolve, reject) => {
-        try {
-          const content = fs.readFileSync(val, { encoding: 'utf-8' });
-          const result = html.minify(content, {
-            collapseBooleanAttributes: true,
-            collapseWhitespace: true,
-            ignoreCustomComments: [/^!/, /^\s*#/],
-            keepClosingSlash: true,
-            removeComments: true,
-            removeRedundantAttributes: true,
-            removeScriptTypeAttributes: true,
-            removeStyleLinkTypeAttributes: true,
-            sortAttributes: true,
-            sortClassName: true,
-            useShortDoctype: true,
-            minifyCSS: true,
-            minifyJS: true,
+const t2 = Date.now();
+console.log(chalk.green('processing css files...'));
+const cssWorkers = [];
+allFiles['.css'].forEach((val) => {
+  cssWorkers.push(
+    new Promise((resolve, reject) => {
+      try {
+        const content = fs.readFileSync(val, { encoding: 'utf8' });
+        postcss([cssnano, autoprefixer])
+          .process(content, { from: val, to: val })
+          .then((result) => {
+            fs.writeFileSync(val, result.css);
+            if (result.map) {
+              fs.writeFileSync(val + '.map', result.map.toString());
+            }
+            resolve();
           });
-          fs.writeFileSync(val, result);
-          resolve();
-        } catch (e) {
-          reject(e);
-        }
-      })
-    );
-  });
-
-  allFiles['.css'].forEach((val) => {
-    promises.push(
-      new Promise((resolve, reject) => {
-        try {
-          const content = fs.readFileSync(val, { encoding: 'utf-8' });
-          postcss([cssnano, autoprefixer])
-            .process(content, { from: val, to: val })
-            .then((result) => {
-              fs.writeFileSync(val, result.css);
-              if (result.map) {
-                fs.writeFileSync(val + '.map', result.map.toString());
-              }
-              resolve();
-            });
-        } catch (e) {
-          reject(e);
-        }
-      })
-    );
-  });
-
-  await Promise.all(promises);
-})();
+      } catch (e) {
+        reject(e);
+      }
+    })
+  );
+});
+Promise.all(cssWorkers)
+  .then(() => console.log(chalk.green(`done with css files in ${Date.now() - t2}ms`)))
+  .catch((e) => console.error(chalk.red(e)));
