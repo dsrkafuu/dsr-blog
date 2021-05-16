@@ -7,13 +7,13 @@ import { babel } from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import replace from '@rollup/plugin-replace';
 
+import pkg from './package.json';
+
 // env replace
 const replaced = {};
 for (let key of Object.keys(process.env)) {
-  if (key === 'NODE_ENV' || key.startsWith('DSR_')) {
-    replaced[`process.env.${key}`] = JSON.stringify(process.env[key]);
-    replaced[`import.meta.env.${key}`] = JSON.stringify(process.env[key]);
-  }
+  replaced[`process.env.${key}`] = JSON.stringify(process.env[key]);
+  replaced[`import.meta.env.${key}`] = JSON.stringify(process.env[key]);
 }
 
 // setup plugins
@@ -35,23 +35,22 @@ const plugins = [
 const outputs = {
   format: 'iife',
   sourcemap: true,
-  banner: '/*! dsr-blog | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License */',
 };
 
 export default [
   {
     input: 'assets/js/base.js',
-    output: { file: 'public/assets/dsr-blog_base.min.js', ...outputs },
+    output: { file: `public/_assets/dsr-blog_base_v${pkg.version}.min.js`, ...outputs },
     plugins,
   },
   {
     input: 'assets/js/list.js',
-    output: { file: 'public/assets/dsr-blog_list.min.js', ...outputs },
+    output: { file: `public/_assets/dsr-blog_list_v${pkg.version}.min.js`, ...outputs },
     plugins,
   },
   {
     input: 'assets/js/single.js',
-    output: { file: 'public/assets/dsr-blog_single.min.js', ...outputs },
+    output: { file: `public/_assets/dsr-blog_single_v${pkg.version}.min.js`, ...outputs },
     plugins,
   },
 ];

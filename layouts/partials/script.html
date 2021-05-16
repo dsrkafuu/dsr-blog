@@ -1,5 +1,9 @@
 {{- $src := .Scratch.Get "scriptSrc" -}}
 {{- $out := .Scratch.Get "scriptOut" -}}
+
+{{- $pkg := getJSON "package.json" -}}
+{{- $out = replace $out ".min." (printf "_v%s.min." $pkg.version) -}}
+
 {{- $type := .Scratch.Get "scriptType" -}}
 {{- $options := (dict "targetPath" $out "minify" false "target" "esnext" "format" "iife") -}}
 

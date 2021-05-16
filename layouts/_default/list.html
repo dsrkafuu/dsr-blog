@@ -4,7 +4,7 @@
   {{- partial "head" . -}}
 
   {{- .Scratch.Set "styleSrc" "styles/pages/list.scss" -}}
-  {{- .Scratch.Set "styleOut" "assets/dsr-blog_list.min.css" -}}
+  {{- .Scratch.Set "styleOut" "_assets/dsr-blog_list.min.css" -}}
   {{- partial "style" . -}}
 </head>
 
@@ -68,11 +68,11 @@
   {{- partial "footer" . -}}
 
   {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
-  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_base.min.js" -}}
+  {{- .Scratch.Set "scriptOut" "_assets/dsr-blog_base.min.js" -}}
   {{- .Scratch.Set "scriptType" "defer" -}}
   {{- partial "script" . -}}
   {{- .Scratch.Set "scriptSrc" "js/list.js" -}}
-  {{- .Scratch.Set "scriptOut" "assets/dsr-blog_list.min.js" -}}
+  {{- .Scratch.Set "scriptOut" "_assets/dsr-blog_list.min.js" -}}
   {{- .Scratch.Set "scriptType" "defer" -}}
   {{- partial "script" . -}}
 </body>
