@@ -21,7 +21,6 @@
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-replace": "^2.4.2",
     "autoprefixer": "^10.2.5",
-    "chalk": "^2.4.2",
     "concurrently": "^6.1.0",
     "cross-env": "^7.0.3",
     "cssnano": "^5.0.2",
@@ -40,6 +39,6 @@
     "rollup": "rollup -c",
     "minify": "node ./minify.js",
     "dev": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:dev",
-    "build": "cross-env NODE_ENV=production env-cmd concurrently -m 1 npm:hugo:prod npm:minify npm:rollup"
+    "build": "cross-env NODE_ENV=production env-cmd --silent concurrently -m 1 npm:hugo:prod npm:minify npm:rollup"
   }
 }
