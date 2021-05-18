@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Inter';
+  font-family: Inter;
   font-style: normal;
   font-display: swap;
   font-weight: 400;
@@ -11,7 +11,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: Inter;
   font-style: normal;
   font-display: swap;
   font-weight: 500;
@@ -23,11 +23,11 @@
 }
 
 @font-face {
-  font-family: 'Noto Sans SC';
+  font-family: 'Noto Sans S Chinese';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: local('Noto Sans SC'),
+  src: local('Noto Sans S Chinese Regular'),
     url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/noto_sans_sc/noto_sans_sc_400.woff2')
       format('woff2'),
     url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/noto_sans_sc/noto_sans_sc_400.woff')
@@ -35,11 +35,11 @@
 }
 
 @font-face {
-  font-family: 'Noto Sans SC';
+  font-family: 'Noto Sans S Chinese';
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src: local('Noto Sans SC Medium'),
+  src: local('Noto Sans S Chinese Medium'),
     url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/noto_sans_sc/noto_sans_sc_500.woff2')
       format('woff2'),
     url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/noto_sans_sc/noto_sans_sc_500.woff')
