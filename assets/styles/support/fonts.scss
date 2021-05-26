@@ -3,11 +3,8 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: local('Inter Regular'),
-    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/inter/inter_400.woff2')
-      format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/inter/inter_400.woff')
-      format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/inter/inter_400.woff2')
+    format('woff2');
 }
 
 @font-face {
@@ -15,33 +12,42 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src: local('Inter Medium'),
-    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/inter/inter_500.woff2')
-      format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/inter/inter_500.woff')
-      format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/inter/inter_500.woff2')
+    format('woff2');
 }
 
 @font-face {
-  font-family: 'Noto Sans S Chinese';
+  font-family: 'Noto Sans SC';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: local('Noto Sans S Chinese Regular'),
-    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/noto_sans_sc/noto_sans_sc_400.woff2')
-      format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/noto_sans_sc/noto_sans_sc_400.woff')
-      format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/noto_sans_sc/noto_sans_sc_400.woff2')
+    format('woff2');
 }
 
 @font-face {
-  font-family: 'Noto Sans S Chinese';
+  font-family: 'Noto Sans SC';
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src: local('Noto Sans S Chinese Medium'),
-    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/noto_sans_sc/noto_sans_sc_500.woff2')
-      format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/noto_sans_sc/noto_sans_sc_500.woff')
-      format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/noto_sans_sc/noto_sans_sc_500.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/fira_code/fira_code_400.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/fira_code/fira_code_500.woff2')
+    format('woff2');
 }

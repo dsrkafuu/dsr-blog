@@ -1,7 +1,7 @@
 $font-family-base: -apple-system, BlinkMacSystemFont, Inter, 'SF Pro Text', 'Segoe UI', Arial,
-  'Helvetica Neue', Helvetica, 'Noto Sans S Chinese', 'Source Han Sans SC', 'Source Han Sans CN',
-  'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-$font-family-mono: 'Cascadia Code', 'SF Mono', 'Fira Code', Consolas, monospace;
+  'Helvetica Neue', Helvetica, 'Noto Sans SC', 'Source Han Sans CN', 'Source Han Sans SC',
+  'PingFang SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$font-family-mono: 'Fira Code', 'SF Mono', Consolas, $font-family-base;
 
 $font-size-xs: 0.75rem;
 $font-size-sm: 0.875rem;
