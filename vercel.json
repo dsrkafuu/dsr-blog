@@ -1,3 +1,12 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Permissions-Policy", "value": "interest-cohort=()" },
+        { "key": "X-Frame-Options", "value": "deny" }
+      ]
+    }
+  ]
 }
