@@ -171,8 +171,10 @@ description: '从制定计划到完成初版，我是如何开发 Goose Analytic
 
 ## 更新计划
 
-- 多用户管理
 - Vue.js 大版本更新
 - Vue CLI 替换为 Vite
 - 迁移至 TypeScript
 - Chart.js 图表展示与性能优化
+- 相关数据库优化
+
+以上计划不保证进度，可能在 1-2 年内全部完成。
