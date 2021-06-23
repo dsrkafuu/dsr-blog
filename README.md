@@ -37,14 +37,14 @@
 
 ### Hugo
 
-- `image` 字段未设置则不渲染头图
 - 内置 ToC 层级限制 2-3
 - 完全自定义的分页控制，通过 partial 配合 scratch 变量引入
-- Fromt matters:
-  - `toc`
-  - `comments`
-  - `license`
-  - `image`
+- 所有可用的 Fromt Matter:
+  - `toc`：控制是否显示目录
+  - `comments`：控制是否显示评论区
+  - `license`：控制是否显示 license 区域
+  - `image`：文章头图，可为空
+- Lazyload 图片通过 Hugo 内置函数获取长宽比，并用内联样式进行懒加载占位渲染
 
 ### JS
 
@@ -68,7 +68,7 @@
 - Markdown 渲染内容部分通过修改 Bulma 预定义变量实现，其他部分通过覆盖 CSS 样式实现
 - 全局主题与色彩均通过 CSS 变量实现以便于适配多主题
 - 定义不同比例占位适应 lazyload，使用 shortcode 参数传入比例渲染对应占位
-- Navbar 为响应式，宽度小于 `$tablet` 时高度与排列方式单独定义
+- Navbar 为响应式，移动平台高度与排列方式单独定义
 - 所有标题在 Summary 内不显示
 - 侧边栏与导航栏在手机平台上固定，且导航栏上 RSS 在手机上为目录，通过 `data-section` 属性判定
 
@@ -76,6 +76,6 @@
 
 <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fdsrkafuu%2Fdsr-blog?ref=badge_large" alt="FOSSA Status"><img align="right" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdsrkafuu%2Fdsr-blog.svg?type=large"/></a>
 
-The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/dsrkafuu/dsr-blog/blob/master/LICENSE).
+The theme is released under the `Mozilla Public License 2.0`, for more information read the [LICENSE](https://github.com/dsrkafuu/dsr-blog/blob/master/LICENSE).
 
 **Copyright © 2018-present DSRKafuU (<https://dsrkafuu.su>)**
