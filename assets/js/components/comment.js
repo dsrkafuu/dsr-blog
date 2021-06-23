@@ -68,6 +68,7 @@ async function loadComment() {
     window.disqus_config = function () {
       this.page.identifier = data.identifier;
       this.page.url = data.url;
+      console.log(this, this.page);
     };
   } catch (e) {
     logError('error init disqus settings', e);
