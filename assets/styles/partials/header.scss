@@ -78,4 +78,14 @@
   body[data-section='single'] .navbar__toc {
     display: inline-block;
   }
+  .navbar__switch {
+    display: none;
+  }
+}
+
+// iphone 5 fix
+@media screen and (max-width: 350px) {
+  .navbar__item {
+    padding: 0 $space-xs;
+  }
 }

@@ -2,35 +2,47 @@ import { logInfo, logError } from '../plugins/loggers';
 import { loadScript } from '../plugins/loaders';
 import { SCRIPT_DISQUS } from '../plugins/constants';
 
-const DATA_IDENTIFIER = 'data-identifier';
-const ID_TITLE = 'title';
 const ID_COMMENT_AREA = 'comment-area';
 const ID_COMMENT_LOADING = 'comment-loading';
+
+/**
+ * ensure trailing slash
+ * @param {string} str
+ * @param {boolean} remove whether remove trail
+ */
+function ensureTrail(str, remove = false) {
+  if (remove) {
+    return str.replace(/\/$/gi, '');
+  } else if (!/\/$/.exec(str)) {
+    return str + '/';
+  } else {
+    return str;
+  }
+}
 
 /**
  * load comment area
  */
 async function loadComment() {
+  let data = {};
   // get data
   try {
-    const identifier = document.querySelector(`#${ID_COMMENT_AREA}`).getAttribute(DATA_IDENTIFIER);
-    const url = window.location.origin + window.location.pathname;
-    const title = document.querySelector(`#${ID_TITLE}`).textContent.trim();
+    data.url = ensureTrail(window.location.origin + window.location.pathname);
+    data.identifier = ensureTrail(window.location.pathname, true);
     window.disqus_config = function () {
-      this.page.identifier = identifier;
-      this.page.url = url;
-      this.page.title = title;
+      this.page.identifier = data.identifier;
+      this.page.url = data.url;
     };
-  } catch {
-    logError('error init disqus settings');
+  } catch (e) {
+    logError('error init disqus settings', e);
     return;
   }
 
   // load disqus
   try {
     await loadScript(SCRIPT_DISQUS, { 'data-timestamp': +new Date() });
-  } catch {
-    logError('error loading disqus script');
+  } catch (e) {
+    logError('error loading disqus script', e);
     return;
   }
 
@@ -39,7 +51,7 @@ async function loadComment() {
   const area = document.querySelector(`#${ID_COMMENT_AREA}`);
   loading && loading.setAttribute('style', 'display: none;');
   area && area.classList.add('comment--loaded');
-  logInfo('successfully loaded disqus');
+  logInfo('successfully loaded disqus', data);
 }
 
 /**
@@ -52,8 +64,8 @@ export default async () => {
       try {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
+            // if comment area already appeared
             if (entry.isIntersecting) {
-              // if comment area already appeared
               observer.disconnect(); // stop observer
               loadComment();
               resolve();
@@ -67,10 +79,9 @@ export default async () => {
       }
     });
     // error or IntersectionObserver not supported
-    commentPromise.catch(() => {
-      logError('error initializing disqus observer');
+    commentPromise.catch((e) => {
+      logError('error initializing disqus observer', e);
       loadComment();
     });
-    logInfo('disqus observer initialized');
   }
 };

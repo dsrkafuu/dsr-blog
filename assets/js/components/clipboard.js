@@ -1,5 +1,3 @@
-import { logInfo } from '../plugins/loggers';
-
 /**
  * get a license query
  * @returns {string}
@@ -54,5 +52,4 @@ export default async () => {
       }
     }
   });
-  logInfo('clipboard injector initialized');
 };

@@ -52,6 +52,9 @@ menu:
     - name: "友链"
       url: "/friends/"
       weight: 4
+    - name: "番剧"
+      url: "/playlist/"
+      weight: 5
   links:
     - name: "github"
       url: "https://github.com/dsrkafuu"

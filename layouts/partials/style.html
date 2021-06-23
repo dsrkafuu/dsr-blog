@@ -1,6 +1,5 @@
-{{- $src := .Scratch.Get "styleSrc" -}}
-{{- $out := .Scratch.Get "styleOut" -}}
-
+{{- $src := "styles/index.scss" -}}
+{{- $out := "_assets/dsr-blog.min.css" -}}
 {{- $pkg := getJSON "package.json" -}}
 {{- $out = replace $out ".min." (printf "_v%s.min." $pkg.version) -}}
 

@@ -1,6 +1,6 @@
 ---
 title: '博客主题重构记录'
-date: 2021-06-23T15:24:25+08:00
+date: 2021-05-04T15:24:25+08:00
 tags:
   - 'css'
   - 'theme'
@@ -43,24 +43,32 @@ image: 'hugo.webp'
 - 移除 footer 背景色
 - 移除 footer 站点状态链接
 
+### 图片
+
+- 全图片迁移至 WebP
+- 全图片采用浏览器原生 lazyload
+
 ## 代码结构相关
 
 ### JS
 
 - 开发模式由 Hugo 内置 ESBuild 构建，生产模式由 rollup 配合 Babel 构建
 - 拆分为组件和插件对功能进行分类
-- 共三个入口，分别为 `base`、`list` 和 `single`
 - 剪贴板拦截逻辑调整，仅非代码块且大于 100 字时插入版权信息
+- 全模块改写为异步函数，主线程中根据当前页面的 section 并发运行
 
 ### CSS
 
-- 各页面入口分离，最小化每个文件的大小
-- 自定义 Prism 和 Gitalk 主题
-- CSS 类名调整
+- 自定义 Prism 主题
+- CSS 类名格式调整
+- 移除所有 CSS 库完全重写，包括 Bulma 和其他 normalize 等
 
 ### Go HTML
 
 - 基础模板调整，提供 head 和 main 两个模块，便于选择性插入对应的 CSS 和 JS
+- 模板传参全面改为使用 scratch
+- 添加通用 pagination 模板
+- Lazyload 图片通过内置函数获取长宽比，并用内联样式进行懒加载占位渲染
 
 ## 规范相关
 

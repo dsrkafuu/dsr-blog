@@ -49,7 +49,7 @@
 ### JS
 
 - JS 通过 rollup 打包编译 (开发模式为 Hugo Pipes 内置的 ESBuild)
-- 不同模板使用不同的 scripts 局部模板，引入不同依赖库并通过不同入口文件编译主 JS
+- 所有 scripts 局部模板均为异步函数，不同页面按需并发运行
 - 手机侧边栏控制 fixed 定位 right 偏移量实现动画淡入，用于显示目录
 
 |      模块       |                链接                 |  用途  |
@@ -65,7 +65,6 @@
 ### CSS
 
 - CSS 通过 Hugo Pipes 由 SCSS 编译而来
-- Markdown 渲染内容部分通过修改 Bulma 预定义变量实现，其他部分通过覆盖 CSS 样式实现
 - 全局主题与色彩均通过 CSS 变量实现以便于适配多主题
 - 定义不同比例占位适应 lazyload，使用 shortcode 参数传入比例渲染对应占位
 - Navbar 为响应式，移动平台高度与排列方式单独定义

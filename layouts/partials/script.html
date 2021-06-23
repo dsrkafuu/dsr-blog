@@ -1,18 +1,12 @@
-{{- $src := .Scratch.Get "scriptSrc" -}}
-{{- $out := .Scratch.Get "scriptOut" -}}
-
+{{- $src := "js/index.js" -}}
+{{- $out := "_assets/dsr-blog.min.js" -}}
 {{- $pkg := getJSON "package.json" -}}
 {{- $out = replace $out ".min." (printf "_v%s.min." $pkg.version) -}}
 
-{{- $type := .Scratch.Get "scriptType" -}}
 {{- $options := (dict "targetPath" $out "minify" false "target" "esnext" "format" "iife") -}}
 
 {{- if eq (getenv "NODE_ENV") "production" -}}
-{{- if eq $type "async" -}}
-<script async src="{{ $out | relURL }}"></script>
-{{- else -}}
 <script defer src="{{ $out | relURL }}"></script>
-{{- end -}}
 {{- else -}}
 <script>
   window.process = {
@@ -20,9 +14,5 @@
   };
 </script>
 {{- $built := resources.Get $src | js.Build $options -}}
-{{- if eq $type "async" -}}
-<script async src="{{ $built.RelPermalink }}"></script>
-{{- else -}}
 <script defer src="{{ $built.RelPermalink }}"></script>
-{{- end -}}
 {{- end -}}

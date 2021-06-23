@@ -1,6 +1,6 @@
 ---
 title: '对 Google 说不 - 本站已启用屏蔽 FLoC 的 HTTP 标头'
-date: 2099-05-06T20:39:14+08:00
+date: 2021-06-23T17:17:11+08:00
 tags:
   - 'google'
   - 'floc'
