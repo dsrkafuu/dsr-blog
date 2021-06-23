@@ -1,7 +1,6 @@
 /*! dsr-blog | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License */
 
 @import '../support/variables';
-
 @import '../partials/post';
 @import '../plugins/prism';
 
@@ -31,7 +30,7 @@
     }
   }
 
-  &__wrapper--loaded {
+  &--loaded {
     padding: $space-base;
     padding-top: $space-base + $space-xs;
   }
@@ -108,7 +107,7 @@
     min-width: 40%;
     transform: translateX(125%);
 
-    &.active {
+    &--active {
       transform: translateX(0);
     }
   }

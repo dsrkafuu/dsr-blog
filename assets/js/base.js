@@ -2,7 +2,9 @@
 
 import * as Sentry from '@sentry/browser';
 import { Integrations } from '@sentry/tracing';
-import { SENTRY_DSN, ID_THEME_CTRL } from './plugins/constants';
+import { SENTRY_DSN } from './plugins/constants';
+
+const SWITCH_BTN = 'switch-btn';
 
 // sentry
 if (process.env.NODE_ENV === 'production') {
@@ -21,7 +23,7 @@ if (process.env.NODE_ENV === 'production') {
 import ThemeManager from './components/theme';
 import { logError } from './plugins/loggers';
 const tm = new ThemeManager();
-const switcher = document.querySelector(`#${ID_THEME_CTRL}`);
+const switcher = document.querySelector(`#${SWITCH_BTN}`);
 if (switcher) {
   switcher.addEventListener('click', () => tm.switchTheme());
 }

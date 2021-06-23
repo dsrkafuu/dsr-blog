@@ -1,13 +1,15 @@
 import { setLS, getLS } from '../plugins/storage';
 import { logInfo } from '../plugins/loggers';
-import { ATTR_THEME, STORAGE_THEME } from '../plugins/constants';
+
+const STORAGE_THEME = 'dsr-blog_theme';
+const DATA_THEME = 'data-theme';
 
 export default class ThemeManager {
   constructor() {
-    this.theme = getLS(STORAGE_THEME) || document.body.getAttribute(ATTR_THEME);
+    this.theme = getLS(STORAGE_THEME) || document.body.getAttribute(DATA_THEME);
     // if inline scripts failed to execute
-    if (this.theme !== document.body.getAttribute(ATTR_THEME)) {
-      document.body.setAttribute(ATTR_THEME, this.theme);
+    if (this.theme !== document.body.getAttribute(DATA_THEME)) {
+      document.body.setAttribute(DATA_THEME, this.theme);
     }
   }
 
@@ -27,7 +29,7 @@ export default class ThemeManager {
    */
   _getSpecificTheme() {
     if (this.theme === 'auto') {
-      // 若当前为自动模式则获取实际显示的主题
+      // get actual theme when in auto mode
       return this._getCSSScheme();
     } else {
       return this.theme === 'dark' ? 'dark' : 'light';
@@ -39,7 +41,7 @@ export default class ThemeManager {
    * @param {'auto'|'dark'|'light'} scheme
    */
   _setTheme(scheme) {
-    document.body.setAttribute(ATTR_THEME, scheme);
+    document.body.setAttribute(DATA_THEME, scheme);
     this.theme = scheme;
     logInfo(`theme set to ${scheme}`);
   }

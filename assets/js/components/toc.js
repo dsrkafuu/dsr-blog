@@ -1,13 +1,14 @@
 import { logError, logInfo } from '../plugins/loggers';
-import { ID_TOC_CONTENT, ID_TOC_CTRL } from '../plugins/constants';
+
+const ID_TOC_BTN = 'toc-btn';
+const ID_TOC_OVERLAY = 'toc-overlay';
 
 /**
  * initialize toc control
- * @returns {Promise<void>}
  */
 export default async () => {
-  const tocContent = document.querySelector(`#${ID_TOC_CONTENT}`);
-  const tocCtrl = document.querySelector(`#${ID_TOC_CTRL}`);
+  const tocContent = document.querySelector(`#${ID_TOC_OVERLAY}`);
+  const tocCtrl = document.querySelector(`#${ID_TOC_BTN}`);
   if (!tocContent && tocCtrl) {
     logInfo('no need to init toc');
     tocCtrl.remove();
@@ -18,10 +19,10 @@ export default async () => {
     return;
   }
   tocCtrl.addEventListener('click', () => {
-    if (Array.from(tocContent.classList).includes('active')) {
-      tocContent.classList.remove('active');
+    if (Array.from(tocContent.classList).includes('toc--active')) {
+      tocContent.classList.remove('toc--active');
     } else {
-      tocContent.classList.add('active');
+      tocContent.classList.add('toc--active');
     }
   });
   logInfo('toc switcher inited');

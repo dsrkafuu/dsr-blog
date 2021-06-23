@@ -1,5 +1,6 @@
 import { logError } from '../plugins/loggers';
-import { ID_CONPATIBILITY } from '../plugins/constants';
+
+const ID_COMPATIBILITY = 'compatibility';
 
 async function testFlexbox() {
   return (
@@ -73,10 +74,9 @@ function triggerTimes(el) {
 
 /**
  * compatibility test
- * @returns {Promise<void>}
  */
 export default async () => {
-  const compat = document.querySelector(`#${ID_CONPATIBILITY}`);
+  const compat = document.querySelector(`#${ID_COMPATIBILITY}`);
   if (compat)
     try {
       const arr = await Promise.all([
