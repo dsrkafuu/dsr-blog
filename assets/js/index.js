@@ -16,7 +16,7 @@ import prism from './components/prism';
 import clipboard from './components/clipboard';
 import comment from './components/comment';
 
-const PREF_START = window.performance.now();
+const PREF_START = Date.now();
 const SECTION = getSection();
 const THEME_BTN = 'switch-btn';
 
@@ -57,6 +57,6 @@ if (SECTION === SECTIONS.SINGLE) {
 }
 
 Promise.all(works).then(() => {
-  const PERF_END = window.performance.now();
-  logInfo(`all init process done in ${(PERF_END - PREF_START).toPrecision(2)}ms`);
+  const PERF_END = Date.now();
+  logInfo(`all init process done in about ${PERF_END - PREF_START}ms`);
 });

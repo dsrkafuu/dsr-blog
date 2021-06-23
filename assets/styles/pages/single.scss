@@ -14,13 +14,20 @@
   &__loading {
     line-height: 1.5rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: $space-base;
 
-    & > svg,
-    & > span {
-      margin: 0 0.125rem;
+    span {
+      margin-left: 0.25rem;
+    }
+
+    & > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.75;
     }
   }
 
