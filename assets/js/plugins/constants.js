@@ -5,6 +5,8 @@ export const SCRIPT_ZOOM = 'https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/
 export const SCRIPT_PRISM_LOADER =
   'https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js';
 export const PRISM_LANGS_PATH = 'https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/';
+const dev = process.env.NODE_ENV === 'development';
+export const SCRIPT_DISQUS = `https://dsrblog${dev ? '-dev' : ''}.disqus.com/embed.js`;
 
 // search engine
 export const SEARCH_URL = 'https://www.google.com/search';
@@ -21,8 +23,6 @@ export const ID_TOC_CTRL = 'ctrl-toc';
 export const ID_TOC_CONTENT = 'content-toc';
 export const ID_SEARCH_CTRL = 'ctrl-search';
 export const ID_SEARCH_INPUT = 'input-search';
-export const ID_COMMENT_CONTENT = 'comment';
-export const ID_COMMENT_LOADING = 'comment-loading';
 
 // local storage keys
 export const STORAGE_THEME = 'dsr-blog_theme';
@@ -33,13 +33,6 @@ export const COPY_LICENSE = `
 本站内容采用 CC BY-NC-SA 4.0 进行许可；
 商业转载请联系作者授权，非商业转载请注明出处；
 来源：${window.location.href}`;
-
-// gitalk
-export const GITALK_ID = process.env.DSR_GITALK_ID;
-export const GITALK_SECRET = process.env.DSR_GITALK_SECRET;
-export const GITALK_REPO = 'dsr-blog-comments';
-export const GITALK_OWNER = 'dsrkafuu';
-export const GITALK_ADMIN = ['dsrkafuu', 'dsrsatori'];
 
 // sentry
 export const SENTRY_DSN = process.env.DSR_SENTRY_DSN;

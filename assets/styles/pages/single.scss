@@ -3,7 +3,6 @@
 @import '../support/variables';
 
 @import '../partials/post';
-@import '../plugins/gitalk';
 @import '../plugins/prism';
 
 .license {
@@ -30,6 +29,11 @@
     & > span {
       margin: 0 0.125rem;
     }
+  }
+
+  &__wrapper--loaded {
+    padding: $space-base;
+    padding-top: $space-base + $space-xs;
   }
 }
 

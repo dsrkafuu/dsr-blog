@@ -29,7 +29,7 @@
             </div>
             {{- end -}}
             <div class="post__title">
-              <h2>{{- .Title -}}</h2>
+              <h2 id="title">{{- .Title -}}</h2>
             </div>
             {{- partial "metadata" . -}}
             <div class="post__content">
@@ -46,14 +46,15 @@
 
           {{- if and (ne .Params.comment false) (ne .Section "code") -}}
           <div class="card comment">
-            <div class="comment__loading" id="comment-loading">
+            <div class="comment__loading" id="loading">
               {{- .Scratch.Set "iconName" "spinner-third" -}}
               {{- partial "icon" . -}}
               {{- printf "<span>评论区正在加载</span>" | safeHTML -}}
             </div>
-            {{ $formated := replace .File.Path "\\" "/" }}
-            {{ $path := split $formated "." }}
-            <div class="comment__wrapper" id="comment" data-identifier="{{- index $path 0 -}}">
+            {{- $filePath := replace .File.Path "\\" "/" -}}
+            {{- $identifier := index (split $filePath ".") 0 -}}
+            <div class="comment__wrapper" id="comment">
+              <div id="disqus_thread" data-identifier='{{- $identifier -}}'></div>
             </div>
           </div>
           {{- end -}}
