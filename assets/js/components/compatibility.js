@@ -97,6 +97,6 @@ export default async () => {
         }
       });
     } catch (e) {
-      logError('failed to check compatibility');
+      logError('failed to check compatibility', e);
     }
 };

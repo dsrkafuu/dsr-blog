@@ -16,8 +16,8 @@ export default async () => {
           background: 'var(--color-bg)',
         });
       }
-    } catch {
-      logError('failed to init medium-zoom');
+    } catch (e) {
+      logError('error init medium-zoom', e);
     }
   }
 };

@@ -2,9 +2,6 @@
 
 <head>
   {{- partial "head" . -}}
-
-  {{- .Scratch.Set "styleSrc" "styles/pages/tags.scss" -}}
-  {{- .Scratch.Set "styleOut" "_assets/dsr-blog_tags.min.css" -}}
   {{- partial "style" . -}}
 </head>
 
@@ -43,10 +40,6 @@
   </main>
 
   {{- partial "footer" . -}}
-
-  {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
-  {{- .Scratch.Set "scriptOut" "_assets/dsr-blog_base.min.js" -}}
-  {{- .Scratch.Set "scriptType" "defer" -}}
   {{- partial "script" . -}}
 </body>
 

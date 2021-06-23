@@ -2,9 +2,6 @@
 
 <head>
   {{- partial "head" . -}}
-
-  {{- .Scratch.Set "styleSrc" "styles/pages/friends.scss" -}}
-  {{- .Scratch.Set "styleOut" "_assets/dsr-blog_friends.min.css" -}}
   {{- partial "style" . -}}
 </head>
 
@@ -24,7 +21,7 @@
           <div class="card friends__item">
             <div class="friends__image fiximg">
               <a target="_blank" rel="noopener" class="fiximg__container" style="padding-bottom: 100%;"
-                href="{{- .link | safeURL -}}">
+                 href="{{- .link | safeURL -}}">
                 <img loading="lazy" src='{{- printf "/images/friends/%s" .icon | safeURL | relURL -}}' />
               </a>
             </div>
@@ -38,10 +35,16 @@
             </div>
           </div>
           {{- end -}}
-          <div class="card friends__add">
-            <a href="{{- .Site.Params.friendsRequest -}}" target="_blank" rel="noopener">
-              友链交换
-            </a>
+
+          <div class="card comment" id="comment-area">
+            <div class="comment__loading" id="comment-loading">
+              {{- .Scratch.Set "iconName" "spinner-third" -}}
+              {{- partial "icon" . -}}
+              {{- printf "<span>评论区正在加载</span>" | safeHTML -}}
+            </div>
+            <div class="comment__wrapper">
+              <div id="disqus_thread"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -55,10 +58,6 @@
   </main>
 
   {{- partial "footer" . -}}
-
-  {{- .Scratch.Set "scriptSrc" "js/base.js" -}}
-  {{- .Scratch.Set "scriptOut" "_assets/dsr-blog_base.min.js" -}}
-  {{- .Scratch.Set "scriptType" "defer" -}}
   {{- partial "script" . -}}
 </body>
 

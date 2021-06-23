@@ -13,41 +13,24 @@ for (let key of Object.keys(process.env)) {
   replaced[`import.meta.env.${key}`] = JSON.stringify(process.env[key]);
 }
 
-// setup plugins
-const plugins = [
-  replace({
-    preventAssignment: false, // allow assignment
-    values: replaced,
-  }),
-  nodeResolve(),
-  commonjs(),
-  babel({
-    babelHelpers: 'runtime',
-    exclude: '**/node_modules/**', // fix must use the runtime plugin error
-  }),
-  terser(),
-];
-
-// settings
-const outputs = {
-  format: 'iife',
-  sourcemap: true,
+export default {
+  input: 'assets/js/index.js',
+  output: {
+    file: `public/_assets/dsr-blog_v${pkg.version}.min.js`,
+    format: 'iife',
+    sourcemap: true,
+  },
+  plugins: [
+    replace({
+      preventAssignment: false, // allow assignment
+      values: replaced,
+    }),
+    nodeResolve(),
+    commonjs(),
+    babel({
+      babelHelpers: 'runtime',
+      exclude: '**/node_modules/**', // fix must use the runtime plugin error
+    }),
+    terser(),
+  ],
 };
-
-export default [
-  {
-    input: 'assets/js/base.js',
-    output: { file: `public/_assets/dsr-blog_base_v${pkg.version}.min.js`, ...outputs },
-    plugins,
-  },
-  {
-    input: 'assets/js/list.js',
-    output: { file: `public/_assets/dsr-blog_list_v${pkg.version}.min.js`, ...outputs },
-    plugins,
-  },
-  {
-    input: 'assets/js/single.js',
-    output: { file: `public/_assets/dsr-blog_single_v${pkg.version}.min.js`, ...outputs },
-    plugins,
-  },
-];

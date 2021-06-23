@@ -1,114 +1,97 @@
-/*! dsr-blog | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License */
+.post {
+  &__summary {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      display: none;
+    }
+  }
 
-@import '../support/variables';
-@import '../partials/post';
+  &__list {
+    display: flex;
+    flex-direction: column;
 
-.search {
-  height: $height-navbar-sm;
-  line-height: $height-navbar-sm;
-  display: flex;
-  padding-left: $space-base;
-  padding-right: $space-base;
+    & > .card:not(:first-child) {
+      margin-top: $space-base;
 
-  &__input {
-    flex: 1 1 auto;
-    border-radius: 0;
-
-    input {
-      min-width: 0;
-      width: 100%;
-      padding: 0;
-      height: $height-navbar-sm;
-      line-height: $height-navbar-sm;
-      outline: none;
-      border: none;
-      border-bottom: $size-divider solid transparent;
-      border-top: $size-divider solid transparent;
-      border-radius: 0;
-      background-color: transparent;
-      padding-left: $space-sm;
-      padding-right: $space-xs;
-
-      &:hover,
-      &:focus {
-        outline: none;
-        border: none;
-        border-bottom: $size-divider solid var(--color-primary);
-        border-top: $size-divider solid transparent;
-        text-decoration: none;
+      @include responsive(md) {
+        margin-top: $space-sm;
       }
     }
   }
 
-  &__ctrl {
-    padding: 0 $space-sm;
-    color: var(--color-font);
-    cursor: pointer;
-    height: $height-navbar-sm;
-    line-height: $height-navbar-sm;
+  &__title {
+    color: var(--color-primary);
+    display: inline-block;
 
-    &:hover {
-      border-bottom: $size-divider solid var(--color-primary);
+    h2 {
       color: var(--color-primary);
-      text-decoration: none;
+      margin: 0;
+      font-size: $font-size-xl;
     }
   }
-}
 
-// remove index search bar
-@include responsive(md) {
-  body[data-section='index'] .sidebar {
-    .search {
-      display: none;
-    }
-
-    .sticky {
-      margin-top: 0;
-    }
+  &__summary {
+    margin-top: $space-sm;
   }
-}
 
-.pagination {
-  display: flex;
-  padding: 0 $space-base;
-  justify-content: center;
+  &__image {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 
-  & > a {
-    display: block;
-    color: inherit;
-    flex: 0 1 auto;
-    height: $height-navbar-sm;
-    line-height: $height-navbar-sm;
-    padding: 0 $space-sm;
-    cursor: pointer;
+  &__content {
+    padding: $space-base;
+  }
 
-    &:hover {
-      text-decoration: none;
-      border-bottom: $size-divider solid var(--color-primary);
-      color: var(--color-primary);
-    }
+  &__box {
+    padding: $space-base;
+  }
 
-    &.pagination__item--active {
-      color: var(--color-primary);
-    }
+  &__meta {
+    font-size: $font-size-sm;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: 1rem;
+    color: var(--color-primary);
 
+    &Tags a:not(:last-child),
     .icon {
-      width: 1rem;
-      height: 1rem;
+      margin-right: 0.25rem;
+    }
+
+    & > span:not(:first-child) {
+      padding-left: 1rem;
+    }
+
+    & > span:nth-child(3) {
+      a:not(:last-child) {
+        margin-right: 0.375rem;
+      }
+    }
+
+    // hide word count on mobile
+    @include responsive(md) {
+      &Words {
+        display: none;
+      }
     }
   }
-}
 
-// compatibility test section
-.compat {
-  margin-bottom: $space-sm;
+  &__article {
+    .post__title {
+      margin-top: $space-base;
+      margin-left: $space-base;
+      margin-right: $space-base;
+    }
 
-  .icon:not(:first-child) {
-    display: none;
-  }
-
-  th,
-  td {
-    text-align: center;
+    .post__meta {
+      margin-top: 1rem;
+      margin-left: $space-base;
+      margin-right: $space-base;
+    }
   }
 }

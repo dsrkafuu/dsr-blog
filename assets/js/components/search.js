@@ -27,8 +27,7 @@ function handleSearch(str) {
 export default async () => {
   const ctrl = document.querySelector(`#${ID_SEARCH_BTN}`);
   const input = document.querySelector(`#${ID_SEARCH_INPUT}`);
-  if (!ctrl || !input) {
-    logInfo('no need to init search');
+  if (ctrl && input) {
+    ctrl.addEventListener('click', () => handleSearch(input.value));
   }
-  ctrl.addEventListener('click', () => handleSearch(input.value));
 };

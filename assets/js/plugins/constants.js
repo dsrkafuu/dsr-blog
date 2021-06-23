@@ -13,5 +13,12 @@ export const SCRIPT_DISQUS = `https://dsrblog${IS_DEV ? '-dev' : ''}.disqus.com/
 export const SEARCH_URL = 'https://www.google.com/search';
 export const SEARCH_SITE = 'blog.dsrkafuu.su/post';
 
-// sentry
-export const SENTRY_DSN = process.env.DSR_SENTRY_DSN;
+// sections
+export const SECTIONS = {
+  INDEX: 'index',
+  LIST: 'list',
+  SINGLE: 'single',
+  CODE: 'code',
+  TAGS: 'tags',
+  FRIENDS: 'friends',
+};

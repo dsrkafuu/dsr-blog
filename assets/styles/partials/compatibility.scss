@@ -1,0 +1,12 @@
+.compat {
+  margin-bottom: $space-sm;
+
+  .icon:not(:first-child) {
+    display: none;
+  }
+
+  th,
+  td {
+    text-align: center;
+  }
+}
