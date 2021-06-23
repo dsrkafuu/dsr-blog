@@ -71,11 +71,11 @@
 }
 
 // only show toc ctrl on single page of mobile
-#ctrl-toc {
+.navbar__toc {
   display: none;
 }
 @include responsive(sm) {
-  body[data-section='single'] #ctrl-toc {
+  body[data-section='single'] .navbar__toc {
     display: inline-block;
   }
 }

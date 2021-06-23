@@ -2,15 +2,20 @@ import { logInfo, logError } from '../plugins/loggers';
 import { loadScript } from '../plugins/loaders';
 import { SCRIPT_DISQUS } from '../plugins/constants';
 
+const DATA_IDENTIFIER = 'data-identifier';
+const ID_TITLE = 'title';
+const ID_COMMENT_AREA = 'comment-area';
+const ID_COMMENT_LOADING = 'comment-loading';
+
 /**
  * load comment area
  */
 async function loadComment() {
   // get data
   try {
-    const identifier = document.querySelector('#comment').getAttribute('data-identifier');
+    const identifier = document.querySelector(`#${ID_COMMENT_AREA}`).getAttribute(DATA_IDENTIFIER);
     const url = window.location.origin + window.location.pathname;
-    const title = document.querySelector('#title').textContent.trim();
+    const title = document.querySelector(`#${ID_TITLE}`).textContent.trim();
     window.disqus_config = function () {
       this.page.identifier = identifier;
       this.page.url = url;
@@ -30,19 +35,18 @@ async function loadComment() {
   }
 
   // remove loading indicator
-  const loading = document.querySelector('#loading');
-  const wrapper = document.querySelector('#comment');
+  const loading = document.querySelector(`#${ID_COMMENT_LOADING}`);
+  const area = document.querySelector(`#${ID_COMMENT_AREA}`);
   loading && loading.setAttribute('style', 'display: none;');
-  wrapper && wrapper.classList.add('comment__wrapper--loaded');
+  area && area.classList.add('comment--loaded');
   logInfo('successfully loaded disqus');
 }
 
 /**
- * IntersectionObserver lazyload comment area
- * @returns {Promise<void>}
+ * lazyload comment area
  */
 export default async () => {
-  const el = document.querySelector('#comment');
+  const el = document.querySelector(`#${ID_COMMENT_AREA}`);
   if (el) {
     const commentPromise = new Promise((resolve, reject) => {
       try {

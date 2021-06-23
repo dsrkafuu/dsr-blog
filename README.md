@@ -37,14 +37,14 @@
 
 ### Hugo
 
-- `toc: false` 不渲染 ToC
 - `image` 字段未设置则不渲染头图
 - 内置 ToC 层级限制 2-3
-- 完全自定义的分页控制
+- 完全自定义的分页控制，通过 partial 配合 scratch 变量引入
 - Fromt matters:
-  - `toc: false`
-  - `comments: false`
-  - `license: false`
+  - `toc`
+  - `comments`
+  - `license`
+  - `image`
 
 ### JS
 

@@ -45,16 +45,16 @@
           </div>
 
           {{- if and (ne .Params.comment false) (ne .Section "code") -}}
-          <div class="card comment">
-            <div class="comment__loading" id="loading">
+          {{- $filePath := replace .File.Path "\\" "/" -}}
+          {{- $identifier := index (split $filePath ".") 0 -}}
+          <div class="card comment" id="comment-area" data-identifier='{{- $identifier -}}'>
+            <div class="comment__loading" id="comment-loading">
               {{- .Scratch.Set "iconName" "spinner-third" -}}
               {{- partial "icon" . -}}
               {{- printf "<span>评论区正在加载</span>" | safeHTML -}}
             </div>
-            {{- $filePath := replace .File.Path "\\" "/" -}}
-            {{- $identifier := index (split $filePath ".") 0 -}}
-            <div class="comment__wrapper" id="comment">
-              <div id="disqus_thread" data-identifier='{{- $identifier -}}'></div>
+            <div class="comment__wrapper">
+              <div id="disqus_thread"></div>
             </div>
           </div>
           {{- end -}}
@@ -65,7 +65,7 @@
           {{- partial "info" . -}}
           <div class="sticky">
             {{- if ne .Params.toc false -}}
-            <div class="card toc markdown" id="content-toc">
+            <div class="card toc markdown" id="toc-overlay">
               {{- .TableOfContents -}}
             </div>
             {{- end -}}

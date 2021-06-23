@@ -1,11 +1,8 @@
 import { logInfo } from '../plugins/loggers';
-import {
-  SEARCH_NW,
-  SEARCH_SITE,
-  SEARCH_URL,
-  ID_SEARCH_CTRL,
-  ID_SEARCH_INPUT,
-} from '../plugins/constants';
+import { SEARCH_SITE, SEARCH_URL } from '../plugins/constants';
+
+const ID_SEARCH_BTN = 'search-btn';
+const ID_SEARCH_INPUT = 'search-input';
 
 /**
  * preform search
@@ -18,7 +15,7 @@ function handleSearch(str) {
   }
   const url = new URL(SEARCH_URL);
   url.searchParams.append('q', str);
-  url.searchParams.append('newwindow', SEARCH_NW);
+  url.searchParams.append('newwindow', '1');
   url.searchParams.append('as_sitesearch', SEARCH_SITE);
   logInfo(`perform search with ${str.split(' ').length} querys`);
   window.open(url.toString());
@@ -26,10 +23,9 @@ function handleSearch(str) {
 
 /**
  * add search listener
- * @returns {Promise<void>}
  */
 export default async () => {
-  const ctrl = document.querySelector(`#${ID_SEARCH_CTRL}`);
+  const ctrl = document.querySelector(`#${ID_SEARCH_BTN}`);
   const input = document.querySelector(`#${ID_SEARCH_INPUT}`);
   if (!ctrl || !input) {
     logInfo('no need to init search');

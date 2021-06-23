@@ -1,5 +1,12 @@
 import { logInfo } from '../plugins/loggers';
-import { COPY_LICENSE } from '../plugins/constants';
+
+/**
+ * get a license query
+ * @returns {string}
+ */
+function getLicense() {
+  return `[CC BY-NC-SA 4.0] (${window.location.origin + window.location.pathname})`;
+}
 
 /**
  * check parent nodes
@@ -25,7 +32,6 @@ function getParentNodes(node) {
 
 /**
  * clipboard injector
- * @returns {Promise<void>}
  */
 export default async () => {
   document.addEventListener('copy', (e) => {
@@ -43,7 +49,7 @@ export default async () => {
         let text = selection.toString();
         if (text && text.length > 80) {
           e.preventDefault(); // stop default copy
-          e.clipboardData.setData('text/plain', `${text}\n${COPY_LICENSE}`);
+          e.clipboardData.setData('text/plain', `${text}\n${getLicense()}`);
         }
       }
     }
