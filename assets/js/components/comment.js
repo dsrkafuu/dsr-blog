@@ -1,51 +1,40 @@
 import { logInfo, logError } from '../plugins/loggers';
-import { loadScript, loadStyle } from '../plugins/loaders';
-import {
-  SCRIPT_GITALK,
-  STYLE_GITALK,
-  ID_COMMENT_CONTENT,
-  ID_COMMENT_LOADING,
-  GITALK_ID,
-  GITALK_SECRET,
-  GITALK_REPO,
-  GITALK_OWNER,
-  GITALK_ADMIN,
-} from '../plugins/constants';
+import { loadScript } from '../plugins/loaders';
+import { SCRIPT_DISQUS } from '../plugins/constants';
 
 /**
  * load comment area
- * @param {Element} el
  */
-async function loadComment(el) {
+async function loadComment() {
+  // get data
   try {
-    await Promise.all([loadScript(SCRIPT_GITALK), loadStyle(STYLE_GITALK)]);
+    const identifier = document.querySelector('#comment').getAttribute('data-identifier');
+    const url = window.location.origin + window.location.pathname;
+    const title = document.querySelector('#title').textContent.trim();
+    window.disqus_config = function () {
+      this.page.identifier = identifier;
+      this.page.url = url;
+      this.page.title = title;
+    };
   } catch {
-    window.Gitalk = null;
-  }
-  if (!window.Gitalk) {
-    logError('error loading gitalk script');
+    logError('error init disqus settings');
     return;
   }
-  const gitalk = new window.Gitalk({
-    clientID: GITALK_ID,
-    clientSecret: GITALK_SECRET,
-    repo: GITALK_REPO,
-    owner: GITALK_OWNER,
-    admin: GITALK_ADMIN,
-    id: el.getAttribute('data-identifier'),
-    createIssueManually: true,
-    flipMoveOptions: {
-      staggerDelayBy: 200,
-      appearAnimation: 'fade',
-      enterAnimation: 'fade',
-      leaveAnimation: 'fade',
-    },
-  });
+
+  // load disqus
+  try {
+    await loadScript(SCRIPT_DISQUS, { 'data-timestamp': +new Date() });
+  } catch {
+    logError('error loading disqus script');
+    return;
+  }
+
   // remove loading indicator
-  const loadEl = document.querySelector(`#${ID_COMMENT_LOADING}`);
-  loadEl && loadEl.setAttribute('style', 'display: none;');
-  gitalk.render(el.getAttribute('id'));
-  logInfo('successfully loaded gitalk');
+  const loading = document.querySelector('#loading');
+  const wrapper = document.querySelector('#comment');
+  loading && loading.setAttribute('style', 'display: none;');
+  wrapper && wrapper.classList.add('comment__wrapper--loaded');
+  logInfo('successfully loaded disqus');
 }
 
 /**
@@ -53,7 +42,7 @@ async function loadComment(el) {
  * @returns {Promise<void>}
  */
 export default async () => {
-  const el = document.querySelector(`#${ID_COMMENT_CONTENT}`);
+  const el = document.querySelector('#comment');
   if (el) {
     const commentPromise = new Promise((resolve, reject) => {
       try {
@@ -62,7 +51,7 @@ export default async () => {
             if (entry.isIntersecting) {
               // if comment area already appeared
               observer.disconnect(); // stop observer
-              loadComment(el);
+              loadComment();
               resolve();
             }
           });
@@ -75,9 +64,9 @@ export default async () => {
     });
     // error or IntersectionObserver not supported
     commentPromise.catch(() => {
-      logError('error initializing gitalk observer');
-      loadComment(el);
+      logError('error initializing disqus observer');
+      loadComment();
     });
-    logInfo('gitalk observer initialized');
+    logInfo('disqus observer initialized');
   }
 };
