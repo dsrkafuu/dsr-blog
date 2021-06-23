@@ -48,6 +48,11 @@ image: 'hugo.webp'
 - 全图片迁移至 WebP
 - 全图片采用浏览器原生 lazyload
 
+### 评论区
+
+- 利用 Disqus 的 favicon 检查连接状态以选择性加载评论区
+- 使用 Intersection Observer 懒加载防止页面性能被连接检查请求拖慢
+
 ## 代码结构相关
 
 ### JS

@@ -71,6 +71,11 @@
 - 所有标题在 Summary 内不显示
 - 侧边栏与导航栏在手机平台上固定，且导航栏上 RSS 在手机上为目录，通过 `data-section` 属性判定
 
+### 评论区
+
+- 利用 Disqus 的 favicon 检查连接状态以选择性加载评论区
+- 使用 Intersection Observer 懒加载防止页面性能被连接检查请求拖慢
+
 ## LICENSE
 
 <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fdsrkafuu%2Fdsr-blog?ref=badge_large" alt="FOSSA Status"><img align="right" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdsrkafuu%2Fdsr-blog.svg?type=large"/></a>
