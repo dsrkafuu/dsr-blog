@@ -10,13 +10,14 @@
 @import './support/markdown';
 @import './support/reset';
 
+@import './partials/comment';
+@import './partials/compatibility';
 @import './partials/footer';
 @import './partials/header';
-@import './partials/main';
 @import './partials/info';
-@import './partials/compatibility';
-@import './partials/search';
+@import './partials/main';
 @import './partials/pagination';
+@import './partials/search';
 
 @import './pages/list';
 @import './pages/single';

@@ -1,39 +1,34 @@
 import { logInfo, logError } from '../plugins/loggers';
 import { loadScript } from '../plugins/loaders';
-import { SCRIPT_DISQUS } from '../plugins/constants';
+import {
+  SCRIPT_UTTERANCES,
+  UTTERANCES_REPO,
+  UTTERANCES_TERM_PREFIX,
+  UTTERANCES_LABEL,
+} from '../plugins/constants';
 
 const ID_COMMENT_AREA = 'comment-area';
 const ID_COMMENT_LOADING = 'comment-loading';
 const ID_COMMENT_TEXT = 'comment-text';
 const ID_COMMENT_RETRY = 'comment-retry';
-const CONNECTION_TIMEOUT = 3000;
+const ID_COMMENT_CONTENT = 'comment-content';
 
 /**
- * ensure trailing slash
- * @param {string} str
- * @param {boolean} remove whether to remove trail
- */
-function ensureTrail(str, remove = false) {
-  if (remove) {
-    return str.replace(/\/$/gi, '');
-  } else {
-    return /\/$/.exec(str) ? str : str + '/';
-  }
-}
-
-/**
- * check favicon connection
+ * check api connection
  * @returns {Promise<boolean>}
  */
 async function checkConnection() {
-  let avail = false;
-  try {
-    await new Promise((resolve, reject) => {
+  /**
+   * add a check
+   * @param {string} domain
+   */
+  const addCheck = (domain) =>
+    new Promise((resolve, reject) => {
       const img = new Image();
-      // reject after 3s
+      // reject after 2s
       const timeout = setTimeout(() => {
         reject();
-      }, CONNECTION_TIMEOUT);
+      }, 2000);
       // on load or error handler
       const onload = () => {
         clearTimeout(timeout);
@@ -45,8 +40,12 @@ async function checkConnection() {
       };
       img.addEventListener('load', onload);
       img.addEventListener('error', onerror);
-      img.src = `${new URL(SCRIPT_DISQUS).origin}/favicon.ico?t=${Date.now()}`;
+      img.src = `https://${domain}/favicon.ico?t=${Date.now()}`;
     });
+
+  let avail = false;
+  try {
+    await Promise.all([addCheck('github.com'), addCheck('api.github.com')]);
     avail = true;
   } catch {
     avail = false;
@@ -58,35 +57,39 @@ async function checkConnection() {
  * load comment area
  */
 async function loadComment() {
-  let data = null;
-  // get data
+  let path = window.location.pathname;
+  if (!/\/$/.exec(path)) {
+    path += '/';
+  }
+  const attrs = {
+    repo: UTTERANCES_REPO,
+    'issue-term': `${UTTERANCES_TERM_PREFIX}:${path}`,
+    label: UTTERANCES_LABEL,
+    theme: 'preferred-color-scheme',
+    crossorigin: 'anonymous',
+  };
+
+  // load utterances
+  const content = document.querySelector(`#${ID_COMMENT_CONTENT}`);
   try {
-    window.disqus_config = function () {
-      this.page.identifier = encodeURIComponent(
-        ensureTrail(window.location.origin + window.location.pathname)
-      );
-      this.page.url = encodeURIComponent(ensureTrail(window.location.pathname, true));
-      data = this;
-    };
+    await loadScript(SCRIPT_UTTERANCES, attrs, content);
   } catch (e) {
-    logError('error init disqus settings', e);
+    logError('error loading utterances script', e);
     return;
   }
 
-  // load disqus
-  try {
-    await loadScript(SCRIPT_DISQUS, { 'data-timestamp': +new Date() });
-  } catch (e) {
-    logError('error loading disqus script', e);
-    return;
-  }
-
-  // remove loading indicator
-  const loading = document.querySelector(`#${ID_COMMENT_LOADING}`);
-  const area = document.querySelector(`#${ID_COMMENT_AREA}`);
-  loading && loading.setAttribute('style', 'display: none;');
-  area && area.classList.add('comment--loaded');
-  logInfo('successfully loaded disqus', data);
+  // remove loading indicator when utterances loaded
+  const interval = setInterval(() => {
+    const height = getComputedStyle(content).getPropertyValue('height');
+    if (!/^0/.exec(height)) {
+      clearInterval(interval);
+      const loading = document.querySelector(`#${ID_COMMENT_LOADING}`);
+      const area = document.querySelector(`#${ID_COMMENT_AREA}`);
+      loading && loading.setAttribute('style', 'display: none;');
+      area && area.classList.add('comment--loaded');
+      logInfo('successfully loaded utterances', attrs);
+    }
+  }, 200);
 }
 
 /**
@@ -103,7 +106,7 @@ async function initComment() {
     if (await checkConnection()) {
       await loadComment();
     } else {
-      text.textContent = '无法连接到 Disqus 服务器';
+      text.textContent = '无法连接到 GitHub 服务器';
       retry.style.display = 'block';
     }
   };
@@ -120,8 +123,8 @@ async function initComment() {
  * lazyload comment area
  */
 export default async () => {
-  const el = document.querySelector(`#${ID_COMMENT_AREA}`);
-  if (el) {
+  const area = document.querySelector(`#${ID_COMMENT_AREA}`);
+  if (area) {
     try {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -133,11 +136,10 @@ export default async () => {
         });
       });
       // observe DOM
-      observer.observe(el);
-      window.DSRBLOG_DISQUS = true; // inited mark
+      observer.observe(area);
     } catch (e) {
       // error or IntersectionObserver not supported
-      logError('error initializing disqus observer', e);
+      logError('error initializing utterances observer', e);
       initComment();
     }
   }
