@@ -1,0 +1,31 @@
+.comment {
+  margin-top: $space-base;
+
+  @include responsive(md) {
+    margin-top: $space-sm;
+  }
+
+  &__loading {
+    line-height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $space-base;
+
+    span {
+      margin-left: 0.25rem;
+    }
+
+    & > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.75;
+    }
+  }
+
+  &--loaded {
+    padding: $space-sm $space-base;
+  }
+}

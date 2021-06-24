@@ -35,17 +35,7 @@
             </div>
           </div>
           {{- end -}}
-
-          <div class="card comment" id="comment-area">
-            <div class="comment__loading" id="comment-loading">
-              {{- .Scratch.Set "iconName" "spinner-third" -}}
-              {{- partial "icon" . -}}
-              {{- printf "<span>评论区正在加载</span>" | safeHTML -}}
-            </div>
-            <div class="comment__wrapper">
-              <div id="disqus_thread"></div>
-            </div>
-          </div>
+          {{- partial "comment" . -}}
         </div>
       </div>
       <aside class="sidebar">

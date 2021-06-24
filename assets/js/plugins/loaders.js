@@ -4,11 +4,13 @@ import { logInfo } from './loggers';
 const set = new Set();
 
 /**
+ * async load a script in before end of body or other places
  * @param {string} src
  * @param {Object} props
+ * @param {Element} container
  * @returns {Promise<void>}
  */
-export function loadScript(src, props = {}) {
+export function loadScript(src, props = {}, container) {
   return new Promise((resolve, reject) => {
     // check if loaded
     if (!src || set.has(src)) {
@@ -32,11 +34,16 @@ export function loadScript(src, props = {}) {
       set.delete(src);
       reject();
     });
-    document.body.appendChild(script);
+    if (container && container.appendChild) {
+      container.appendChild(script);
+    } else {
+      document.body.appendChild(script);
+    }
   });
 }
 
 /**
+ * async load a stylesheet in head
  * @param {string} src
  * @param {Object} props
  * @returns {Promise<void>}
