@@ -1,6 +1,6 @@
 import { logError } from '../plugins/loggers';
 
-const ID_COMPATIBILITY = 'compatibility';
+export const ID_COMPATIBILITY = 'compatibility';
 
 async function testFlexbox() {
   return (

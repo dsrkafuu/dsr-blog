@@ -1,8 +1,9 @@
 import { setLS, getLS } from '../plugins/storage';
 import { logInfo } from '../plugins/loggers';
 
-const STORAGE_THEME = 'dsr-blog_theme';
-const DATA_THEME = 'data-theme';
+import { ID_COMMENT_CONTENT } from './comment';
+export const STORAGE_THEME = 'dsr-blog_theme';
+export const DATA_THEME = 'data-theme';
 
 export default class ThemeManager {
   constructor() {
@@ -52,6 +53,15 @@ export default class ThemeManager {
   switchTheme() {
     const nowTheme = this._getSpecificTheme();
     const targetTheme = nowTheme === 'light' ? 'dark' : 'light';
+    // set utterances theme
+    const frame = document.querySelector(`#${ID_COMMENT_CONTENT} .utterances-frame`);
+    if (frame && frame.contentWindow) {
+      frame.contentWindow.postMessage(
+        { type: 'set-theme', theme: `github-${targetTheme}` },
+        'https://utteranc.es'
+      );
+    }
+    // set blog theme
     if (targetTheme === this._getCSSScheme()) {
       // return to auto mode if target theme equals system theme
       this._setTheme('auto');

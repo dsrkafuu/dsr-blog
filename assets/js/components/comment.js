@@ -7,11 +7,11 @@ import {
   UTTERANCES_LABEL,
 } from '../plugins/constants';
 
-const ID_COMMENT_AREA = 'comment-area';
-const ID_COMMENT_LOADING = 'comment-loading';
-const ID_COMMENT_TEXT = 'comment-text';
-const ID_COMMENT_RETRY = 'comment-retry';
-const ID_COMMENT_CONTENT = 'comment-content';
+export const ID_COMMENT_AREA = 'comment-area';
+export const ID_COMMENT_LOADING = 'comment-loading';
+export const ID_COMMENT_TEXT = 'comment-text';
+export const ID_COMMENT_RETRY = 'comment-retry';
+export const ID_COMMENT_CONTENT = 'comment-content';
 
 /**
  * check api connection
