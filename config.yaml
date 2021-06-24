@@ -17,7 +17,6 @@ frontmatter:
     - :git
     - :fileModTime
     - :default
-googleAnalytics: "G-P3JYXLDF3W"
 
 # language
 languageCode: "zh-cn" # rss
