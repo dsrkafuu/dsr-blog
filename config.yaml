@@ -34,6 +34,7 @@ params:
   opengraph: "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/opengraph/dsrkafuu.jpg"
   license: "本站内容采用 CC BY-NC-SA 4.0 许可，请注明出处；商业转载请联系作者授权。"
   googleSearch: "3aa67eb3eaa84ba3e"
+  cfBeacon: "85273133954d4064b899fbcc32e4c4b9"
   friendsRequest: "https://github.com/dsrkafuu/dsr-blog/issues/new?assignees=&labels=friend&template=friend-request.md&title="
 
 # menu
