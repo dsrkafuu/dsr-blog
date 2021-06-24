@@ -34,3 +34,8 @@
 {{- .Scratch.Set "styleSrc" "styles/base.scss" -}}
 {{- .Scratch.Set "styleOut" "_assets/dsr-blog_base.min.css" -}}
 {{- partial "style" . -}}
+
+{{- if and (eq (getenv "NODE_ENV") "production") .Site.Params.cfBeacon -}}
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "{{- .Site.Params.cfBeacon -}}"}'></script>
+{{- end -}}
