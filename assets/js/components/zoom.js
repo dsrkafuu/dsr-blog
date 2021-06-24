@@ -2,7 +2,7 @@ import { loadScript } from '../plugins/loaders';
 import { logError } from '../plugins/loggers';
 import { SCRIPT_ZOOM } from '../plugins/constants';
 
-const DATA_ZOOMABLE = 'data-zoomable';
+export const DATA_ZOOMABLE = 'data-zoomable';
 
 /**
  * init medium-zoom

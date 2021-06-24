@@ -1,8 +1,8 @@
 import { logInfo } from '../plugins/loggers';
 import { SEARCH_SITE, SEARCH_URL } from '../plugins/constants';
 
-const ID_SEARCH_BTN = 'search-btn';
-const ID_SEARCH_INPUT = 'search-input';
+export const ID_SEARCH_BTN = 'search-btn';
+export const ID_SEARCH_INPUT = 'search-input';
 
 /**
  * preform search
