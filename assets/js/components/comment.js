@@ -11,15 +11,13 @@ const CONNECTION_TIMEOUT = 3000;
 /**
  * ensure trailing slash
  * @param {string} str
- * @param {boolean} remove whether remove trail
+ * @param {boolean} remove whether to remove trail
  */
 function ensureTrail(str, remove = false) {
   if (remove) {
     return str.replace(/\/$/gi, '');
-  } else if (!/\/$/.exec(str)) {
-    return str + '/';
   } else {
-    return str;
+    return /\/$/.exec(str) ? str : str + '/';
   }
 }
 
@@ -60,15 +58,15 @@ async function checkConnection() {
  * load comment area
  */
 async function loadComment() {
-  let data = {};
+  let data = null;
   // get data
   try {
-    data.url = ensureTrail(window.location.origin + window.location.pathname);
-    data.identifier = ensureTrail(window.location.pathname, true);
     window.disqus_config = function () {
-      this.page.identifier = data.identifier;
-      this.page.url = data.url;
-      console.log(this, this.page);
+      this.page.identifier = encodeURIComponent(
+        ensureTrail(window.location.origin + window.location.pathname)
+      );
+      this.page.url = encodeURIComponent(ensureTrail(window.location.pathname, true));
+      data = this;
     };
   } catch (e) {
     logError('error init disqus settings', e);
