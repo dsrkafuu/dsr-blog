@@ -112,3 +112,20 @@ code {
 .fa-secondary {
   opacity: 0.4;
 }
+
+// anchor position fix
+.markdown {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:target {
+      scroll-margin-top: $height-navbar + 1rem;
+      @include responsive(sm) {
+        scroll-margin-top: $height-navbar-sm * 2 + 1rem;
+      }
+    }
+  }
+}
