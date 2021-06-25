@@ -13,10 +13,14 @@ export default async () => {
       window.Prism.manual = true;
       // loading
       await loadScript(SCRIPT_PRISM_WITH_AUTO_LOADER);
+    } catch (e) {
+      logError('error loading prism', e);
+    }
+    try {
       window.Prism.plugins.autoloader.languages_path = SCRIPT_PRISM_LANGS_PATH;
       window.Prism.highlightAll();
     } catch (e) {
-      logError('error loading prism', e);
+      logError('error peforming prism highlighter', e);
     }
   }
 };
