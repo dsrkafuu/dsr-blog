@@ -1,5 +1,10 @@
 // custom prism theme
 
+pre,
+code {
+  font-weight: 500;
+}
+
 @mixin prism-light {
   --prism-grey: #93a1a1;
   --prism-blue: #7c91bd;
