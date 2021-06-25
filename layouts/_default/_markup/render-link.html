@@ -1,5 +1,5 @@
 {{- if strings.HasPrefix .Destination "/" -}}
-<a class="link" href="{{- .Destination | safeURL | relURL -}}">{{- .Text -}}</a>
+<a class="link" href="{{- .Destination | safeURL | relURL -}}">{{- .Text | safeHTML -}}</a>
 {{- else -}}
-<a class="link" href="{{- .Destination | safeURL -}}" target="_blank" rel="noopener">{{- .Text -}}</a>
+<a class="link" href="{{- .Destination | safeURL -}}" target="_blank" rel="noopener">{{- .Text | safeHTML -}}</a>
 {{- end -}}
