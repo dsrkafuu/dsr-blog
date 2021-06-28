@@ -20,9 +20,9 @@ export const ID_COMMENT_CONTENT = 'comment-content';
 async function checkConnection() {
   /**
    * add a check
-   * @param {string} domain
+   * @param {string} src
    */
-  const addCheck = (domain) =>
+  const addCheck = (src) =>
     new Promise((resolve, reject) => {
       const img = new Image();
       // reject after 2s
@@ -40,12 +40,15 @@ async function checkConnection() {
       };
       img.addEventListener('load', onload);
       img.addEventListener('error', onerror);
-      img.src = `https://${domain}/favicon.ico?t=${Date.now()}`;
+      img.src = `${src}?t=${Date.now()}`;
     });
 
   let avail = false;
   try {
-    await Promise.all([addCheck('github.com'), addCheck('api.github.com')]);
+    await Promise.all([
+      addCheck('https://github.githubassets.com/favicons/favicon.png'),
+      addCheck('https://docs.github.com/assets/images/site/favicon.png'),
+    ]);
     avail = true;
   } catch {
     avail = false;

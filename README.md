@@ -31,8 +31,6 @@
 
 ### 环境变量
 
-- `DSR_GITALK_ID`
-- `DSR_GITALK_SECRET`
 - `DSR_SENTRY_DSN`
 
 ### Hugo
