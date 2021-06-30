@@ -3,7 +3,7 @@
     var saved = null;
     try {
       saved = JSON.parse(localStorage.getItem('dsr-blog_theme'));
-    } catch {
+    } catch (_) {
       saved = null;
     }
     var data = document.body.getAttribute('data-theme');
