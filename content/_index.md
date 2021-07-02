@@ -8,6 +8,8 @@ keywords:
 image: '_index.webp'
 ---
 
+![更新记录](_ccp100.webp)
+
 ### 个人信息
 
 > Checkout [my GitHub page](https://github.com/dsrkafuu) for the English version!
@@ -32,4 +34,4 @@ image: '_index.webp'
 
 ### 明日方舟
 
-{{< fiximg "明日方舟 ID 卡" "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/banners/arknights_202105.webp" "20.6213%" >}}
+{{< fiximg "明日方舟 ID 卡" "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/banners/arknights_210702.webp" "20.6213%" >}}
