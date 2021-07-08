@@ -220,6 +220,66 @@ const heapSort = (arr) => {
 | 快速排序 | O(nlogn) | O(nlogn) |  O(n^2)  | 不稳定 |
 |  堆排序  | O(nlogn) | O(nlogn) | O(nlogn) | 不稳定 |
 
+### 二叉树操作
+
+```ts
+interface TNode {
+  val: number;
+  left: TNode | null;
+  right: TNode | null;
+}
+
+/**
+ * 深度优先遍历 (先序)
+ * @param tnode
+ */
+function dfs(tnode: TNode) {
+  if (!tnode) {
+    return;
+  }
+  console.log(tnode.val);
+  dfs(tnode.left);
+  dfs(tnode.right);
+}
+
+/**
+ * 广度优先遍历
+ * @param tnode
+ */
+function bfs(tnode: TNode) {
+  if (!tnode) {
+    return;
+  }
+  const query: TNode[] = [];
+  query.push(tnode);
+  while (query.length) {
+    const node = query.shift();
+    console.log(node.val);
+    node.left && query.push(node.left);
+    node.right && query.push(node.right);
+  }
+}
+
+/**
+ * 非递归遍历
+ * @param tnode
+ */
+function noRecurse(tnode: TNode) {
+  const stack: TNode[] = [];
+  while (tnode || stack.length > 0) {
+    if (tnode) {
+      stack.push(tnode);
+      console.log(tnode.val); // 先序
+      tnode = tnode.left;
+    } else {
+      const top = stack.pop();
+      // console.log(top.val); // 中序
+      tnode = top.right;
+    }
+  }
+}
+```
+
 ## 操作系统
 
 ### 进程与线程
