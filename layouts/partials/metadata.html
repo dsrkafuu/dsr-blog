@@ -4,16 +4,19 @@
     {{- partial "icon" . -}}
     {{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}
   </span>
+  {{- if .Params.update -}}
+  <span class="post__metaUpdate">
+    {{- .Scratch.Set "iconName" "clock" -}}
+    {{- partial "icon" . -}}
+    {{- printf "<time>%s</time>" ((time .Params.update).Format "2006-01-02") | safeHTML -}}
+  </span>
+  {{- end -}}
   <span class="post__metaWords">
     {{- .Scratch.Set "iconName" "file-alt" -}}
     {{- partial "icon" . -}}
     {{- printf "%d 字" .WordCount -}}
   </span>
-  <span class="post__metaWords">
-    {{- .Scratch.Set "iconName" "clock" -}}
-    {{- partial "icon" . -}}
-    {{- printf "%d 分钟" .ReadingTime -}}
-  </span>
+  {{- printf "" -}}
   <span class="post__metaTags">
     {{- .Scratch.Set "iconName" "hashtag" -}}
     {{- partial "icon" . -}}
