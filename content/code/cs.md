@@ -51,13 +51,19 @@ const shellSort = (arr) => {
     for (let i = gap; i < length; i++) {
       // 寻找插入位置并插入
       const temp = arr[i];
-      for (let j = i - gap; j >= 0; i -= gap) {
+      let j;
+      for (j = i - gap; j >= 0; j -= gap) {
         if (temp < arr[j]) {
           arr[j + gap] = arr[j]; // 后移比当前元素大的元素
         } else {
           arr[j + gap] = temp; // 插入该位置
           break;
         }
+      }
+      // 若一直后移到底没有替换过 temp
+      // 则将当前分组的第一个元素替换为 temp
+      if (j < 0) {
+        arr[i % gap] = temp;
       }
     }
   }
@@ -213,6 +219,66 @@ const heapSort = (arr) => {
 | 归并排序 | O(nlogn) | O(nlogn) | O(nlogn) |  稳定  |
 | 快速排序 | O(nlogn) | O(nlogn) |  O(n^2)  | 不稳定 |
 |  堆排序  | O(nlogn) | O(nlogn) | O(nlogn) | 不稳定 |
+
+### 二叉树操作
+
+```ts
+interface TNode {
+  val: number;
+  left: TNode | null;
+  right: TNode | null;
+}
+
+/**
+ * 深度优先遍历 (先序)
+ * @param tnode
+ */
+function dfs(tnode: TNode) {
+  if (!tnode) {
+    return;
+  }
+  console.log(tnode.val);
+  dfs(tnode.left);
+  dfs(tnode.right);
+}
+
+/**
+ * 广度优先遍历
+ * @param tnode
+ */
+function bfs(tnode: TNode) {
+  if (!tnode) {
+    return;
+  }
+  const query: TNode[] = [];
+  query.push(tnode);
+  while (query.length) {
+    const node = query.shift();
+    console.log(node.val);
+    node.left && query.push(node.left);
+    node.right && query.push(node.right);
+  }
+}
+
+/**
+ * 非递归遍历
+ * @param tnode
+ */
+function noRecurse(tnode: TNode) {
+  const stack: TNode[] = [];
+  while (tnode || stack.length > 0) {
+    if (tnode) {
+      stack.push(tnode);
+      console.log(tnode.val); // 先序
+      tnode = tnode.left;
+    } else {
+      const top = stack.pop();
+      // console.log(top.val); // 中序
+      tnode = top.right;
+    }
+  }
+}
+```
 
 ## 操作系统
 
