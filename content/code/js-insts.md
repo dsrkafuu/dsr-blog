@@ -8,21 +8,22 @@ description: 'JavaScript 常见手写。'
 
 ## 防抖与节流
 
-```js
+```ts
 /**
  * 防抖：仅执行一次
  * @param {Function} func
  * @param {number} delay
  * @return {Function}
  */
-const debounce = (func, delay = 300) => {
-  let timer = null;
-  return function (...args) {
-    timer && clearTimeout(timer);
-    timer = setTimeout(() => func(...args), delay);
+const debounce = (func: Function, delay = 300) => {
+  let timer: number | null = null;
+  return function (...args: any) {
+    timer && window.clearTimeout(timer);
+    const self = this;
+    timer = window.setTimeout(() => func.apply(self, args), delay);
   };
 };
-window.onresize = debounce(myFunc, 200);
+element.onclick = debounce(myFunc);
 
 /**
  * 节流：限制最小执行间隔
@@ -30,18 +31,19 @@ window.onresize = debounce(myFunc, 200);
  * @param {number} delay
  * @return {Function}
  */
-const throttle = (func, delay = 300) => {
-  let timer = null;
-  return function (...args) {
+const throttle = (func: Function, delay = 300) => {
+  let timer: number | null = null;
+  return function (...args: any) {
+    const self = this;
     if (!timer) {
-      timer = setTimeout(() => {
-        func(...args);
+      timer = window.setTimeout(() => {
+        func.apply(self, args);
         timer = null;
       }, delay);
     }
   };
 };
-window.onresize = throttle(myFunc, 200);
+window.onresize = throttle(myFunc);
 ```
 
 ## 柯里化
