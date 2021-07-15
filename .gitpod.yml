@@ -6,6 +6,7 @@ tasks:
       mkdir hugo
       tar -zxvf hugo_extended_0.85.0_Linux-64bit.tar.gz -C hugo
       export PATH=$PATH:/workspace/hugo
+      cd /workspace/dsr-blog
     command: npm run dev
 
 ports:
