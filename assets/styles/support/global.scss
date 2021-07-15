@@ -65,3 +65,9 @@ tt {
 .medium-zoom-image--opened {
   z-index: 5;
 }
+
+// select color fix
+::selection {
+  color: var(--color-select);
+  background-color: var(--color-primary);
+}
