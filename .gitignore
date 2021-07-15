@@ -3,6 +3,9 @@ dist/
 public/
 resources/
 
+# hugo binary
+.hugo/
+
 # logs
 logs
 *.log
