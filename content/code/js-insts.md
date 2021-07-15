@@ -234,7 +234,7 @@ async function asyncPool(limit, arr, fetch) {
 
 ## 非递归二叉树遍历
 
-![CS - 二叉树操作](/code/cs/#二叉树操作)
+[CS - 二叉树操作](/code/cs/#二叉树操作)
 
 ## `bind()`
 
@@ -268,7 +268,7 @@ function instanceOf(inst, func) {
 
 ## `new`
 
-![JavaScript - 模拟实现 new](/code/js/#模拟实现-new)
+[JavaScript - 模拟实现 new](/code/js/#模拟实现-new)
 
 ## `reduce()` 实现 `map()`
 
