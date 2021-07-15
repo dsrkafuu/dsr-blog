@@ -57,7 +57,7 @@ window.onresize = throttle(myFunc);
  */
 function curry(func) {
   return function curried(...args) {
-    if (args.length > func.length) {
+    if (args.length >= func.length) {
       return func.apply(this, args);
     } else {
       return function (...args2) {
@@ -75,8 +75,8 @@ function curry(func) {
 ```js
 // 标准递归
 function flatten(arr) {
-  return arr.reduce((preVal, val) => {
-    return preVal.concat(Array.isArray(val) ? flatten(val) : val);
+  return arr.reduce((pre, cur) => {
+    return pre.concat(Array.isArray(cur) ? flatten(cur) : cur);
   }, []);
 }
 
@@ -202,23 +202,28 @@ function promiseAll(arr) {
  * @return {Promise<any[]>}
  */
 async function asyncPool(limit, arr, fetch) {
-  const pending = []; // 工作任务
-  const results = []; // 任务结果
-  let index = 0;
+  const pending = [];
+  const results = [];
+  let index = 0; // 入池用下表
 
+  // 入池一个
   async function push() {
+    // 若已经全部进入池子则等待全部完成
     if (index >= arr.length) {
       return;
     }
-    // 添加任务
-    const p = fetch(arr[index++]); // 初始化 Promise
+
+    // 获得一个 Promise
+    const p = fetch(arr[index]);
     pending.push(p);
     results.push(p);
-    p.then(() => pending.splice(pending.indexOf(p), 1)); // 完成后从 pending 删除
-    // 若达上限，则等待任一完成后添加；否则直接添加
+    // Promise 完成后在 pending 中删除
+    p.then(() => pending.splice(pending.indexOf(p), 1));
+
     if (pending.length >= limit) {
       await Promise.race(pending);
     }
+    index++;
     await push();
   }
 
@@ -229,56 +234,16 @@ async function asyncPool(limit, arr, fetch) {
 
 ## 非递归二叉树遍历
 
-先序：
-
-```js
-function preOrder(node) {
-  const stack = [];
-
-  while (node || stack.length > 0) {
-    if (node) {
-      stack.push(node);
-      console.log(node.val);
-      node = node.left;
-    } else {
-      const top = stack.pop();
-      node = top.right;
-    }
-  }
-}
-```
-
-中序：
-
-```js
-function inOrder(node) {
-  const stack = [];
-
-  while (node || stack.length > 0) {
-    if (node) {
-      stack.push(node);
-      node = node.left;
-    } else {
-      const top = stack.pop();
-      console.log(top.val);
-      node = top.right;
-    }
-  }
-}
-```
+![CS - 二叉树操作](/code/cs/#二叉树操作)
 
 ## `bind()`
 
 ```js
-Function.prototype.bind = function () {
-  const args = [...arguments]; // Array.prototype.slice.call(arguments)
-  const context = args[0];
-  const params = args.slice(1);
-
-  const func = this;
-  return function () {
-    func.apply(context, [...params, ...arguments]);
-  };
+Function.prototype.bind = function (...args) {
+  const func = this; // 需要绑定的函数
+  const ctx = args[0]; // 绑定的 this
+  const params = args.slice(1); // bind 时传入的参数
+  return (...args) => func.apply(ctx, [...params, ...args]);
 };
 ```
 
@@ -289,7 +254,7 @@ function instanceOf(inst, func) {
   let proto = inst.__proto__;
   // let proto = Object.getPrototypeOf(inst);
   while (true) {
-    if (proto === null) {
+    if (!proto) {
       return false;
     }
     if (proto === func.prototype) {
@@ -303,17 +268,7 @@ function instanceOf(inst, func) {
 
 ## `new`
 
-```js
-function new(func, ...args) {
-  const obj = Object.create(func.prototype);
-  const ret = func.call(obj, ...args);
-
-  if (Object.prototype.toString.call(ret).startsWith('[object O')) {
-    return ret;
-  }
-  return obj;
-}
-```
+![JavaScript - 模拟实现 new](/code/js/#模拟实现-new)
 
 ## `reduce()` 实现 `map()`
 
