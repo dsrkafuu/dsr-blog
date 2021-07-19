@@ -1,6 +1,6 @@
 ---
 title: '工具库 zx - 使用 JavaScript 更便捷地编写 shell 脚本'
-date: 2099-07-19T10:40:00+08:00
+date: 2021-07-19T10:40:00+08:00
 tags:
   - 'javascript'
   - 'shell'
@@ -28,7 +28,7 @@ chmod +x script.mjs
 
 指定运行环境为 zx 后，我们就可以像普通 shell 脚本一样直接运行 zx 脚本了。
 
-![]()
+![运行预览](20210719103712.webp)
 
 ## 执行 shell 指令
 
@@ -45,7 +45,7 @@ count = parseInt(await $`ls -1 ~ | wc -l`);
 console.log(`Files: ${count}`);
 ```
 
-![]()
+![文件个数](20210719104845.webp)
 
 又或者是在一些录播脚本中并发上传文件：
 
