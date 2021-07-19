@@ -123,7 +123,7 @@ ttx -t name PingFangSC-Regular.otf
 
 重新打包字体：
 
-```sh
+```bash
 ttx -b -m PingFangSC-Regular.otf PingFangSC-Regular.ttx
 ```
 
