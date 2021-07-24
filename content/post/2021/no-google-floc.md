@@ -26,9 +26,9 @@ FLoC 被拒绝的原因正是目前第三方 Cookie 逐渐消失的原因，我�
 
 ## 本博客使用的追踪技术
 
-本博客站点 (DSRBLOG) 使用了~~两~~ (一) 项追踪技术：
+本博客站点 (DSRBLOG) 使用了两项追踪技术：
 
-1. (已移除) ~~[Google Analytics](https://analytics.google.com)：为了解各特定博文的访问量而使用，但有很大几率收集到其他数据；虽然我本人并不需要这些数据，但还请对隐私保护敏感的访问者尝试使用 [uBlock](https://ublock.org) 等工具进行屏蔽~~
+1. [Google Analytics](https://analytics.google.com)：为了解各特定博文的访问量而使用，但有很大几率收集到其他数据；虽然我本人并不需要这些数据，但还请对隐私保护敏感的访问者尝试使用 [uBlock](https://ublock.org) 等工具进行屏蔽
 2. [CloudFlare Browser Insights](https://blog.cloudflare.com/introducing-browser-insights/)：CloudFlare 提供的网页性能监测工具，不会收集用户特定的信息
 
 ## 可以做的事
