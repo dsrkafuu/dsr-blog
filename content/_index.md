@@ -18,14 +18,14 @@ image: '_index.webp'
 
 ### 近期状态
 
-- [京都动画](https://www.kyotoanimation.co.jp) 粉丝
+- 自[幸运星 (2007)](https://www.kyotoanimation.co.jp/works/luckystar/) 开始的 [京都动画](https://www.kyotoanimation.co.jp) 粉丝
 - [VS Code](https://code.visualstudio.com)、习惯用两格空格配合 [Prettier](https://prettier.io) 编码
-- 最爱技术栈 [React](https://reactjs.org) + [MobX](https://mobx.js.org) + [Vite](https://vitejs.dev)
+- 最爱前端技术栈 [React](https://reactjs.org) + [MobX](https://mobx.js.org) + [Vite](https://vitejs.dev)
 - 正在学习 [Vue.js v3](https://v3.vuejs.org)、[TypeScript](https://www.typescriptlang.org) 和 [Electron](https://www.electronjs.org)
 
 ### 硬件信息
 
-- Ryzen 5 3600X + RTX3060、ROG GM501GS、MacBook Air M1
+- 华硕 ROG GM501GS, 苹果 MacBook Pro M1
 - 阿米洛 VA87M 樱桃茶轴、罗技 G703 Lightspeed
 
 ### 更新记录
