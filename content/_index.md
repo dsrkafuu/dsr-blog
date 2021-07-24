@@ -19,8 +19,8 @@ image: '_index.webp'
 ### 近期状态
 
 - [京都动画](https://www.kyotoanimation.co.jp) 粉丝
-- [Vue.js](https://vuejs.org)、[React](https://reactjs.org)、加上一点 [Node.js](https://nodejs.org)
 - [VS Code](https://code.visualstudio.com)、习惯用两格空格配合 [Prettier](https://prettier.io) 编码
+- 最爱技术栈 [React](https://reactjs.org) + [MobX](https://mobx.js.org) + [Vite](https://vitejs.dev)
 - 正在学习 [Vue.js v3](https://v3.vuejs.org)、[TypeScript](https://www.typescriptlang.org) 和 [Electron](https://www.electronjs.org)
 
 ### 硬件信息
