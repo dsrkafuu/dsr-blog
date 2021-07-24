@@ -35,7 +35,12 @@
 {{- .Scratch.Set "styleOut" "_assets/dsr-blog_base.min.css" -}}
 {{- partial "style" . -}}
 
-{{- if and (eq (getenv "NODE_ENV") "production") .Site.Params.cfBeacon -}}
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-        data-cf-beacon='{"token": "{{- .Site.Params.cfBeacon -}}"}'></script>
+{{- if and (eq (getenv "NODE_ENV") "production") .Site.Params.googleAnalytics -}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{- .Site.Params.googleAnalytics -}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', '{{- .Site.Params.googleAnalytics -}}');
+</script>
 {{- end -}}
