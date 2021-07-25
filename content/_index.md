@@ -25,7 +25,7 @@ image: '_index.webp'
 
 ### 硬件信息
 
-- 华硕 ROG GM501GS, 苹果 MacBook Pro M1
+- 华硕 ROG GM501GS、苹果 MacBook Pro M1
 - 阿米洛 VA87M 樱桃茶轴、罗技 G703 Lightspeed
 
 ### 更新记录
