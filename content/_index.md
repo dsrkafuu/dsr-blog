@@ -18,7 +18,7 @@ image: '_index.webp'
 
 ### 近期状态
 
-- 自 [幸运星 (2007)](https://www.kyotoanimation.co.jp/works/luckystar/) 开始的[京都动画](https://www.kyotoanimation.co.jp)粉丝
+- 自[幸运星 (2007)](https://www.kyotoanimation.co.jp/works/luckystar/) 开始的[京都动画](https://www.kyotoanimation.co.jp)粉丝
 - [VS Code](https://code.visualstudio.com)、习惯用两格空格配合 [Prettier](https://prettier.io) 编码
 - 最爱前端技术栈 [React](https://reactjs.org) + [MobX](https://mobx.js.org) + [Vite](https://vitejs.dev)
 - 正在学习 [Vue.js v3](https://v3.vuejs.org)、[TypeScript](https://www.typescriptlang.org) 和 [Electron](https://www.electronjs.org)
