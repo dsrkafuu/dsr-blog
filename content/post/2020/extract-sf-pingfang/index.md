@@ -20,9 +20,7 @@ image: 'apple.webp'
 - **2021-07-09** 更新 macOS Big Sur 字体版本 `16.d4e0`
 - **2020-05-01** 更新 macOS Catalina 字体版本 `15.0d2e5`
 
-## 提取方法 (已失效)
-
-**以下提取方法已失效，新移植方法等有空再写一篇文章。**
+## 提取方法
 
 ### 提取源字体
 
@@ -131,10 +129,10 @@ ttx -b -m PingFangSC-Regular.otf PingFangSC-Regular.ttx
 
 ## 字体下载
 
-解压密码：`dsrkafuu.su`
+解压密码：`dsrkafuu`
 
-- [DSR 直链](https://dl.dsrkafuu.su/aHR0cHM6Ly9rYWZ1dS5jb2RpbmcubmV0L3B1YmxpYy9kc3ItYXJjaGl2ZS9zaGFyZS9naXQvZmlsZXMvbWFzdGVyL2Jsb2cvcGluZ2ZhbmctbW9kLTE2LmQ0ZTAuN3o)
-- [百度云盘 (v5fe)](https://pan.baidu.com/s/1g0fAai7Fg4PghWuYuBNTxA)
+- [SharePoint](https://dsrca-my.sharepoint.com/:u:/g/personal/kafuu_dsrca_onmicrosoft_com/EcP7lg3gp0dBm-mlQyhy8ccBQOYUnUcSvuT_QpXk1VTlsA)
+- [百度云盘 (mg5k)](https://pan.baidu.com/s/1kEq4Q6ccyhgbXnzNE-g5nw)
 
 **此处分享的文件仅供技术交流使用，请于下载后 24 小时内删除，任何商业使用及商业利益冲突带来的法律纠纷与本人无关、概不负责。**
 
