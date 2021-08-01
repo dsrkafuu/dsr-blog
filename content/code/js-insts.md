@@ -153,7 +153,7 @@ function flatten(input) {
 ```js
 // 可以通过 WeakMap 解决循环引用问题，同时保证内存被回收
 function cloneDeep(src) {
-  if (typeof src === 'object') {
+  if (src && typeof src === 'object') {
     const ret = Array.isArray(src) ? [] : {};
     for (let key of Object.keys(src)) {
       ret[key] = cloneDeep(src[key]);
@@ -165,7 +165,101 @@ function cloneDeep(src) {
 }
 ```
 
-## `Promise.all()` Polyfill
+## Promise 构造函数
+
+Promises/A+ 标准中仅指定了 Promise 对象的 then 方法的行为，其它一切我们常见的方法、函数都并没有指定。
+
+```js
+class Promise {
+  constructor(func) {
+    // 初始化状态
+    const self = this;
+    this.status = 'pending';
+    this.data = undefined;
+    this.onResolvedCallbacks = [];
+    this.onRejectedCallbacks = [];
+
+    // API 函数
+    function resolve(value) {
+      if (self.status === 'pending') {
+        self.status = 'resolved';
+        self.data = value;
+        self.onResolvedCallbacks.forEach((func) => {
+          func();
+        });
+      }
+    }
+    function reject(reason) {
+      if (self.status === 'pending') {
+        self.status = 'rejected';
+        self.data = reason;
+        self.onRejectedCallbacks.forEach((func) => {
+          func();
+        });
+      }
+    }
+
+    // 执行同步构造器
+    try {
+      func(resolve, reject);
+    } catch (e) {
+      reject(e);
+    }
+  }
+
+  then(onResolved, onRejected) {
+    // 检查参数
+    if (typeof onResolved !== 'function') {
+      onResolved = function () {};
+    }
+    if (typeof onRejected !== 'function') {
+      onRejected = function () {};
+    }
+
+    // resolve 或 reject 则执行对应回调
+    if (this.status === 'resolved') {
+      return new Promise((resolve, reject) => {
+        try {
+          resolve(onResolved(this.data));
+        } catch (e) {
+          reject(e);
+        }
+      });
+    }
+    if (this.status === 'rejected') {
+      return new Promise((resolve, reject) => {
+        try {
+          resolve(onRejected(this.data));
+        } catch (e) {
+          reject(e);
+        }
+      });
+    }
+
+    // pending 状态则等待 pending 完成
+    if (this.status === 'pending') {
+      return new Promise((resolve, reject) => {
+        this.onResolvedCallbacks.push(() => {
+          try {
+            resolve(onResolved(this.data));
+          } catch (e) {
+            reject(e);
+          }
+        });
+        this.onRejectedCallbacks.push(() => {
+          try {
+            resolve(onRejected(this.data));
+          } catch (e) {
+            reject(e);
+          }
+        });
+      });
+    }
+  }
+}
+```
+
+## Polyfill `Promise.all()`
 
 ```js
 /**
@@ -280,83 +374,4 @@ Array.prototype.mapPolyfill = function (func, thisValue) {
   }, ret);
   return ret;
 };
-```
-
-## Vue Observer
-
-```js
-let data = {
-  name: 'name',
-  detail: {
-    age: 12,
-  },
-};
-
-let initWatcher = null;
-class Watcher {
-  constructor(data, key, cb) {
-    this.data = date;
-    this.key = key;
-    this.cb = cb;
-    // 触发 getter 初始化过程
-    initWatcher = this;
-    this.preValue = data[key];
-    initWatcher = null;
-  }
-
-  update() {
-    if (this.preValue !== this.data[this.key]) {
-      this.cb(this.data[this.key]);
-    }
-  }
-}
-
-class Dependency {
-  constructor() {
-    this.watchers = [];
-  }
-
-  subscribe(watcher) {
-    this.watchers.push(watcher);
-  }
-
-  notify() {
-    this.watchers.forEach((watcher) => watcher.update());
-  }
-}
-
-class Observer {
-  constructor() {
-    this.observe(data);
-  }
-
-  observe(data) {
-    if (!data || typeof data !== 'object') {
-      return;
-    }
-    for (let key of Object.keys(data)) {
-      this.observe(data[key]);
-      this.defineProp(data, key, data[key]);
-    }
-  }
-
-  defineProp(obj, key, value) {
-    const dep = new Dependency();
-    Object.defineProperty(obj, key, {
-      configurable: true,
-      enumerable: true,
-      get() {
-        if (initWatcher) {
-          dep.subscribe(initWatcher);
-        }
-        return value;
-      },
-      set(newValue) {
-        this.observe(newValue);
-        value = newValue;
-        dep.notify();
-      },
-    });
-  }
-}
 ```

@@ -105,3 +105,82 @@ Reflect 是一个用于简化 Proxy 创建的对象。对于每个可被 Proxy �
 父 beforeUpdate => 子 beforeUpdate => 子 updated => 父 updated
 父 beforeDestroy => 子 beforeDestroy => 子 destroyed => 父 destroyed
 ```
+
+## 简化样例 Observer
+
+```js
+let data = {
+  name: 'name',
+  detail: {
+    age: 12,
+  },
+};
+
+let initWatcher = null;
+class Watcher {
+  constructor(data, key, cb) {
+    this.data = date;
+    this.key = key;
+    this.cb = cb;
+    // 触发 getter 初始化过程
+    initWatcher = this;
+    this.preValue = data[key];
+    initWatcher = null;
+  }
+
+  update() {
+    if (this.preValue !== this.data[this.key]) {
+      this.cb(this.data[this.key]);
+    }
+  }
+}
+
+class Dependency {
+  constructor() {
+    this.watchers = [];
+  }
+
+  subscribe(watcher) {
+    this.watchers.push(watcher);
+  }
+
+  notify() {
+    this.watchers.forEach((watcher) => watcher.update());
+  }
+}
+
+class Observer {
+  constructor() {
+    this.observe(data);
+  }
+
+  observe(data) {
+    if (!data || typeof data !== 'object') {
+      return;
+    }
+    for (let key of Object.keys(data)) {
+      this.observe(data[key]);
+      this.defineProp(data, key, data[key]);
+    }
+  }
+
+  defineProp(obj, key, value) {
+    const dep = new Dependency();
+    Object.defineProperty(obj, key, {
+      configurable: true,
+      enumerable: true,
+      get() {
+        if (initWatcher) {
+          dep.subscribe(initWatcher);
+        }
+        return value;
+      },
+      set(newValue) {
+        this.observe(newValue);
+        value = newValue;
+        dep.notify();
+      },
+    });
+  }
+}
+```
