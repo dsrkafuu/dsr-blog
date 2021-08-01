@@ -6,7 +6,6 @@ tags:
   - 'shell'
   - 'google'
 description: '更便捷地删库跑路。'
-image: 'cloudflare.webp'
 ---
 
 在编写一些复杂脚本做处理的时候，比起传统 shell 脚本，由于对 JS 更加熟悉，我更倾向于使用 JS 来编写。但一旦涉及到文件相关操作，几条 shell 指令肯定是更加方便的，但 Node 本身的 `child_process` 又差了那么点意思，手感并不是很好。
