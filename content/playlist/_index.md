@@ -146,13 +146,15 @@ image: 'tamako.webp'
 
 加了料的爆米花，异世界 + loop 的设定确实比较吸引人，但不少地方剧情设定的处理和演出表现还是欠缺了。
 
-## 2019 (13 部)
+## 2019 (14 部)
 
 **△ - 刀剑神域 Alicization 篇 War of Underworld (A-1 Pictures)**
 
 **△ - 食戟之灵 神之皿 (J.C.STAFF)**
 
 **△ - 慎重勇者 ～这个勇者明明超强却过分慎重～ (WHITE FOX)**
+
+**○ - 紫罗兰永恒花园 外传 - 永远与自动手记人偶 - (京都アニメーション)**
 
 **△ - 剧场版 为美好的世界献上祝福！红传说 (J.C.STAFF)**
 
@@ -162,9 +164,9 @@ image: 'tamako.webp'
 
 [**2019-07-18 🕯 PRAY FOR KYOANI**](https://www.kyotoanimation.co.jp/information/?id=3072)
 
-**○ - 青春笨蛋少年不做怀梦美少女的梦 (CloverWorks)**
-
 **○ - 女高中生的无所事事 (パッショーネ)**
+
+**○ - 青春笨蛋少年不做怀梦美少女的梦 (CloverWorks)**
 
 **○ - 少女与战车 最终章 第 2 话 (アクタス)**
 
