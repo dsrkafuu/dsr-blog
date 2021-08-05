@@ -7,10 +7,12 @@
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.su)",
   "scripts": {
     "hugo:dev": "hugo server",
+    "hugo:gitpod": "hugo server --bind=\"0.0.0.0\"",
     "hugo:prod": "hugo --cleanDestinationDir",
     "rollup": "rollup -c",
     "minify": "node minify.js",
     "dev": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:dev",
+    "gitpod": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:gitpod",
     "build": "cross-env NODE_ENV=production env-cmd --silent concurrently -m 1 npm:hugo:prod npm:minify npm:rollup"
   },
   "dependencies": {
