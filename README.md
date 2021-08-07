@@ -10,8 +10,6 @@
 
 站点使用的部分现代标准功能如下：
 
-- [CSS Flexible Box 布局](https://caniuse.com/flexbox)
-- [CSS Grid 布局](https://caniuse.com/css-grid)
 - [WebP 图片](https://caniuse.com/webp)
 - [CSSOM Scroll-behavior](https://caniuse.com/css-scroll-behavior)
 - [浏览器原生图片懒加载](https://caniuse.com/loading-lazy-attr)

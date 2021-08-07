@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "dsr-blog",
-  "version": "6.2.3",
+  "version": "6.3.0",
   "description": "Personal blog powered by Hugo.",
   "license": "MPL-2.0",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.su)",
