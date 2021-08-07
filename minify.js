@@ -4,7 +4,7 @@ const html = require('html-minifier-terser');
 const postcss = require('postcss');
 const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
-const { default: chalk } = require('chalk');
+const chalk = require('chalk');
 
 // files needs to be processed
 const allFiles = {
