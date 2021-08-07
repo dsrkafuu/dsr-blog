@@ -6,7 +6,9 @@ keywords:
 description: 'JavaScript 常见手写。'
 ---
 
-## 防抖与节流
+## 工具函数
+
+### 防抖与节流
 
 ```ts
 /**
@@ -46,7 +48,7 @@ const throttle = (func: Function, delay = 300) => {
 window.onresize = throttle(myFunc);
 ```
 
-## 柯里化
+### 柯里化
 
 将一个函数从可调用的 `f(a, b, c)` 转换为可调用的 `f(a)(b)(c)`：
 
@@ -68,9 +70,9 @@ function curry(func) {
 }
 ```
 
-## 扁平化
+### 扁平化
 
-### 数组
+#### 数组
 
 ```js
 // 标准递归
@@ -97,7 +99,7 @@ function flatten(arr) {
 }
 ```
 
-### 对象
+#### 对象
 
 输入：
 
@@ -148,7 +150,16 @@ function flatten(input) {
 }
 ```
 
-## 深拷贝
+### 去重
+
+```js
+Array.prototype.unique = function () {
+  const arr = this;
+  return arr.filter((val, idx) => arr.indexOf(val) === idx);
+};
+```
+
+### 深拷贝
 
 ```js
 // 可以通过 WeakMap 解决循环引用问题，同时保证内存被回收
@@ -165,7 +176,9 @@ function cloneDeep(src) {
 }
 ```
 
-## Promise 构造函数
+## Promise
+
+### Promise 构造函数
 
 Promises/A+ 标准中仅指定了 Promise 对象的 then 方法的行为，其它一切我们常见的方法、函数都并没有指定。
 
@@ -259,7 +272,7 @@ class Promise {
 }
 ```
 
-## Polyfill `Promise.all()`
+### Polyfill `Promise.all()`
 
 ```js
 /**
@@ -286,7 +299,7 @@ function promiseAll(arr) {
 }
 ```
 
-## Promise 并发限制
+### Promise 并发限制
 
 ```js
 /**
@@ -326,11 +339,9 @@ async function asyncPool(limit, arr, fetch) {
 }
 ```
 
-## 非递归二叉树遍历
+## 原生 API
 
-[CS - 二叉树操作](/code/cs/#二叉树操作)
-
-## `bind()`
+### `bind()`
 
 ```js
 Function.prototype.bind = function (...args) {
@@ -341,7 +352,7 @@ Function.prototype.bind = function (...args) {
 };
 ```
 
-## `instanceof`
+### `instanceof`
 
 ```js
 function instanceOf(inst, func) {
@@ -360,11 +371,11 @@ function instanceOf(inst, func) {
 }
 ```
 
-## `new`
+### `new`
 
 [JavaScript - 模拟实现 new](/code/js/#模拟实现-new)
 
-## `reduce()` 实现 `map()`
+### `reduce()` 实现 `map()`
 
 ```js
 Array.prototype.mapPolyfill = function (func, thisValue) {
@@ -374,4 +385,85 @@ Array.prototype.mapPolyfill = function (func, thisValue) {
   }, ret);
   return ret;
 };
+```
+
+## 语言特性
+
+### Iterable 对象
+
+```js
+const object = {
+  a: 1,
+  b: 2,
+  c: 3,
+  // 本质是一个 Generator 函数
+  *[Symbol.iterator]() {
+    for (const key of Object.keys(this)) {
+      yield this[key];
+    }
+  },
+};
+console.log(...object); // 1 2 3
+object.d = 4;
+console.log(...object); // 1 2 3 4
+```
+
+### LazyMan (事件循环)
+
+```js
+new LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(10).eat('junk food');
+// Hi I am Tony
+// 等待了5秒...
+// I am eating lunch
+// I am eating dinner
+// 等待了10秒...
+// I am eating junk food
+
+class LazyMan {
+  constructor(name) {
+    this.taskList = [];
+    console.log(`Hi I am ${name}`);
+    // 等待第一次事件循环
+    // 即 tasklist 初始化完成
+    setTimeout(() => {
+      this.next();
+    }, 0);
+  }
+
+  next() {
+    const func = this.taskList.shift();
+    func && func();
+  }
+
+  eat(food) {
+    const func = () => {
+      console.log(`I am eating ${food}`);
+      this.next();
+    };
+    this.taskList.push(func);
+    return this;
+  }
+
+  sleepFirst(time) {
+    const func = () => {
+      setTimeout(() => {
+        console.log(`等待了${time}秒...`);
+        this.next();
+      }, time * 1000);
+    };
+    this.taskList.unshift(func);
+    return this;
+  }
+
+  sleep(time) {
+    const func = () => {
+      setTimeout(() => {
+        console.log(`等待了${time}秒...`);
+        this.next();
+      }, time * 1000);
+    };
+    this.taskList.push(func);
+    return this;
+  }
+}
 ```

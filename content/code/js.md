@@ -13,13 +13,16 @@ description: 'JavaScript 重难点整理。'
 七种基本数据类型，一种复杂数据类型：
 
 - `number`：+-(2^53-1) 范围内的数字
-- `bigint`：任意长度的整数。
 - `string`：字符串
 - `boolean`：true 和 false
 - `null`：未知的值
 - `undefined`：未定义的值
+- `bigint`：任意长度的整数
 - `symbol`：唯一标识符
 - `object`：复杂的数据结构
+
+- 栈：基本类型和引用类型地址
+- 堆：引用类型地址实际指向的数据
 
 ### 类型检查
 

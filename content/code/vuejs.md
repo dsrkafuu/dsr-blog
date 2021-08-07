@@ -36,6 +36,17 @@ Vue 中 diff 过程：
 5. 一方有节点则进行子结点的增删
 6. 两方都有结点则进行子结点对比，此过程 Vue 使用双向判断
 
+## 组件通信
+
+- `props` <=> `$emit`
+- `$parent` <=> `$children` (不建议)
+- `provide` <=> `inject`
+- Vuex
+  - State
+  - Getters: 计算属性
+  - Mutations: 同步
+  - Actions: 异步
+
 ## 响应式原理
 
 ### Vue 2
