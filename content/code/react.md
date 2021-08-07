@@ -19,6 +19,10 @@ description: 'React 重点整理。'
 - Vue：父组件单向传值给子组件，子组件 emit 事件给父组件监听
 - React：父组件单向传值给子组件，同时传递 handler 函数给组件调用
 
+- `props` <=> `onEvent()`
+- `Context.Provider` <=> `useContext`
+- Redux / MobX
+
 ### Diff 算法
 
 1. 节点比对区别：例如节点 class 更改，React 视为同节点，仅更新其属性
