@@ -33,17 +33,15 @@
                 <table>
                   <thead>
                     <tr>
-                      <th>Flexbox</th>
-                      <th>Grid</th>
-                      <th>WebP 图片</th>
-                      <th>原生 Lazyload</th>
+                      <th>WebP</th>
+                      <th>Native Lazyload</th>
                       <th>Scroll Behavior</th>
                       <th>Backdrop Filter</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr id="compatibility">
-                      {{ range (seq 6) }}
+                      {{ range (seq 4) }}
                       <td>
                         {{- $.Scratch.Set "iconName" "spinner-third" -}}
                         {{- partial "icon" $ -}}
