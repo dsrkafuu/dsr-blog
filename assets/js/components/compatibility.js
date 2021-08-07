@@ -2,26 +2,6 @@ import { logError } from '../plugins/loggers';
 
 export const ID_COMPATIBILITY = 'compatibility';
 
-async function testFlexbox() {
-  return (
-    CSS.supports('display', 'flex') &&
-    CSS.supports('flex', '1 1 auto') &&
-    CSS.supports('flex', '0 1 25%') &&
-    CSS.supports('flex-direction', 'column') &&
-    CSS.supports('justify-content', 'flex-start') &&
-    CSS.supports('align-items', 'flex-start') &&
-    CSS.supports('flex-wrap', 'wrap')
-  );
-}
-
-async function testGrid() {
-  return (
-    CSS.supports('display', 'grid') &&
-    CSS.supports('grid-template-columns', 'repeat(4, 1fr)') &&
-    CSS.supports('gap', '15px')
-  );
-}
-
 function testWebP() {
   return new Promise((resolve) => {
     // most advanced animated webp test image
@@ -80,8 +60,6 @@ export default async () => {
   if (compat)
     try {
       const arr = await Promise.all([
-        testFlexbox(),
-        testGrid(),
         testWebP(),
         testNativeLazyload(),
         testScrollBehavior(),
