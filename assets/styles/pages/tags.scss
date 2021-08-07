@@ -7,15 +7,15 @@
       flex-wrap: wrap;
       padding: $space-sm;
       padding-right: $space-base;
-      padding-left: $space-base - 1rem;
+      padding-left: $space-base - 15px;
     }
   }
 
   &__item {
-    margin-left: 1rem;
+    margin-left: 15px;
 
     .icon {
-      margin-right: 0.25rem;
+      margin-right: 4px;
       color: var(--color-primary);
     }
   }

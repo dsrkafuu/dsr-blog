@@ -19,7 +19,7 @@
   pre,
   details {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
 
     &:last-child {
       margin-bottom: 0;
@@ -28,7 +28,7 @@
 
   ul,
   ol {
-    padding-left: 2rem;
+    padding-left: 30px;
   }
 
   ul ul,
@@ -37,15 +37,15 @@
   ol ul {
     margin-top: 0;
     margin-bottom: 0;
-    padding-left: 1.25rem;
+    padding-left: 18px;
   }
 
   li > p {
-    margin-top: 1rem;
+    margin-top: 15px;
   }
 
   li + li {
-    margin-top: 0.2rem;
+    margin-top: 0.3px;
   }
 
   dl {
@@ -54,15 +54,15 @@
 
   dl dt {
     padding: 0;
-    margin-top: 1rem;
-    font-size: 1rem;
+    margin-top: 15px;
+    font-size: 15px;
     font-style: italic;
     font-weight: 500;
   }
 
   dl dd {
-    padding: 0 1rem;
-    margin-bottom: 1rem;
+    padding: 0 15px;
+    margin-bottom: 15px;
   }
 
   kbd,
@@ -71,7 +71,7 @@
     display: inline;
     font-size: 90%;
     font-family: $font-family-mono;
-    padding: 0.1rem 0.35rem;
+    padding: 0.15px 5px;
     color: inherit;
     background-color: var(--color-code);
     border-radius: $radius;
@@ -94,7 +94,7 @@
     background-color: var(--color-code);
     border-radius: $radius;
     word-wrap: normal;
-    padding: 1rem;
+    padding: 15px;
     overflow: auto;
     line-height: 1.5;
 
@@ -126,7 +126,7 @@
   hr {
     height: $size-divider;
     padding: 0;
-    margin: 1.25rem 0;
+    margin: 18px 0;
     background-color: var(--color-wrapper);
     border: 0;
   }
@@ -135,8 +135,8 @@
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
-    margin-bottom: 1rem;
-    padding: 0 1rem;
+    margin-bottom: 15px;
+    padding: 0 15px;
     color: inherit;
     font-size: inherit;
     border-left: $size-divider solid var(--color-wrapper);
@@ -152,22 +152,22 @@
 
   h1,
   h2 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: $font-size-xl;
   }
 
   h3 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: $font-size-md;
   }
 
   h4,
   h5,
   h6 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: $font-size-base;
   }
 
@@ -192,7 +192,7 @@
     max-width: 100%;
     overflow: auto;
     border-collapse: collapse;
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
     background-color: transparent;
 
     tr {
@@ -206,7 +206,7 @@
     th,
     td {
       background-color: transparent;
-      padding: 0.25rem 0.75rem;
+      padding: 4px 12px;
       border: $size-border solid var(--color-wrapper);
     }
   }
