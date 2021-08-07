@@ -6,7 +6,7 @@
   }
 
   &__loading {
-    line-height: 1.5rem;
+    line-height: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +14,7 @@
     padding: $space-base;
 
     span {
-      margin-left: 0.25rem;
+      margin-left: 4px;
     }
 
     & > div {
@@ -27,5 +27,9 @@
 
   &--loaded {
     padding: $space-sm $space-base;
+
+    @include responsive(md) {
+      padding: 0 $space-sm;
+    }
   }
 }

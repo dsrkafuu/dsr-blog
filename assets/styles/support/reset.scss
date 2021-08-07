@@ -122,9 +122,9 @@ code {
   h5,
   h6 {
     &:target {
-      scroll-margin-top: $height-navbar + 1rem;
+      scroll-margin-top: $height-navbar + 15px;
       @include responsive(sm) {
-        scroll-margin-top: $height-navbar-sm * 2 + 1rem;
+        scroll-margin-top: $height-navbar-sm * 2 + 15px;
       }
     }
   }

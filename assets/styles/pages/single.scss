@@ -32,20 +32,20 @@
   li {
     ul {
       padding: 0;
-      padding-left: 0.375rem;
+      padding-left: 5px;
       border-left: $size-divider solid var(--color-wrapper);
       font-size: $font-size-sm * 0.9;
 
       a {
-        height: 1.65rem;
-        line-height: 1.65rem;
+        height: 25px;
+        line-height: 25px;
       }
     }
 
     a {
       display: block;
-      height: 1.75rem;
-      line-height: 1.75rem;
+      height: 26px;
+      line-height: 26px;
       color: var(--color-font);
       overflow: hidden;
       text-overflow: ellipsis;

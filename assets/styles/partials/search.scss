@@ -6,6 +6,10 @@
   padding-right: $space-base;
   overflow-y: hidden;
 
+  @include responsive(md) {
+    margin-bottom: $space-sm;
+  }
+
   &__input {
     flex: 1 1 auto;
     border-radius: 0;

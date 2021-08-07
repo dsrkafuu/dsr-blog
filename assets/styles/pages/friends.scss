@@ -2,7 +2,7 @@
   &__item {
     overflow: hidden;
     display: flex;
-    height: 5rem;
+    height: 75px;
 
     &:not(:first-child) {
       margin-top: $space-base;
@@ -10,8 +10,8 @@
   }
 
   &__image {
-    width: 5rem;
-    padding-bottom: 5rem;
+    width: 75px;
+    padding-bottom: 75px;
     border-radius: 0;
     flex: 0 0 auto;
   }
@@ -57,7 +57,7 @@
 
   @include responsive(md) {
     &__item {
-      height: 8rem;
+      height: 120px;
 
       &:not(:first-child) {
         margin-top: $space-sm;
@@ -65,8 +65,8 @@
     }
 
     &__image {
-      width: 8rem;
-      padding-bottom: 8rem;
+      width: 120px;
+      padding-bottom: 120px;
     }
 
     &__box {

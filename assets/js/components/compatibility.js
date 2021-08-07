@@ -18,7 +18,7 @@ async function testGrid() {
   return (
     CSS.supports('display', 'grid') &&
     CSS.supports('grid-template-columns', 'repeat(4, 1fr)') &&
-    CSS.supports('gap', '1rem')
+    CSS.supports('gap', '15px')
   );
 }
 
@@ -49,8 +49,8 @@ async function testScrollBehavior() {
 
 async function testBackdropFilter() {
   return (
-    CSS.supports('backdrop-filter', 'saturate(180%) blur(0.2rem)') ||
-    CSS.supports('-webkit-backdrop-filter', 'saturate(180%) blur(0.2rem)')
+    CSS.supports('backdrop-filter', 'saturate(180%) blur(3px)') ||
+    CSS.supports('-webkit-backdrop-filter', 'saturate(180%) blur(3px)')
   );
 }
 
