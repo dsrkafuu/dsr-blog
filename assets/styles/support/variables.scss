@@ -1,7 +1,6 @@
-$font-family-en: Inter, -apple-system, BlinkMacSystemFont;
-$font-family-zh: 'Noto Sans SC', 'PingFang SC', 'Source Han Sans CN', 'Source Han Sans SC';
-$font-family-base: $font-family-en, $font-family-zh, ui-sans-serif, sans-serif;
-$font-family-mono: 'Cascadia Code', ui-monospace, $font-family-zh, monospace;
+$font-family-cjk: 'Noto Sans SC', 'Noto Sans JP';
+$font-family-base: -apple-system, BlinkMacSystemFont, Inter, $font-family-cjk, sans-serif;
+$font-family-mono: 'Fira Code', $font-family-cjk, monospace;
 
 $font-size-xs: 11px;
 $font-size-sm: 13px;

@@ -3,24 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 {{- hugo.Generator -}}
 
-{{- if .IsHome -}}
-<title>{{- .Site.Title -}}</title>
-{{- else -}}
-<title>{{- .Title }} | {{ .Site.Title -}}</title>
-{{- end -}}
-{{- if .Params.author -}}
-<meta name="author" content="{{- .Params.author -}}" />
-{{- else -}}
-<meta name="author" content="{{- .Site.Params.author -}}" />
-{{- end -}}
-{{- if .Params.description -}}
-<meta name="description" content="{{- .Params.description -}}" />
-{{- end -}}
-{{- if .Params.tags -}}
-<meta name="keywords" content='{{- delimit .Params.tags ", " -}}' />
-{{- else if .Params.keywords -}}
-<meta name="keywords" content='{{- delimit .Params.keywords ", " -}}' />
-{{- end -}}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />
 
 <link rel="apple-touch-icon" sizes="180x180"
       href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrkafuu_apple.png" />
@@ -43,4 +29,23 @@
   gtag('js', new Date());
   gtag('config', '{{- .Site.Params.googleAnalytics -}}');
 </script>
+{{- end -}}
+
+{{- if .IsHome -}}
+<title>{{- .Site.Title -}}</title>
+{{- else -}}
+<title>{{- .Title }} | {{ .Site.Title -}}</title>
+{{- end -}}
+{{- if .Params.author -}}
+<meta name="author" content="{{- .Params.author -}}" />
+{{- else -}}
+<meta name="author" content="{{- .Site.Params.author -}}" />
+{{- end -}}
+{{- if .Params.description -}}
+<meta name="description" content="{{- .Params.description -}}" />
+{{- end -}}
+{{- if .Params.tags -}}
+<meta name="keywords" content='{{- delimit .Params.tags ", " -}}' />
+{{- else if .Params.keywords -}}
+<meta name="keywords" content='{{- delimit .Params.keywords ", " -}}' />
 {{- end -}}
