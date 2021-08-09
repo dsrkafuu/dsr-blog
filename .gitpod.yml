@@ -8,6 +8,7 @@ tasks:
       tar -zxvf hugo_extended_0.87.0_Linux-64bit.tar.gz
       cd ../
     command: |
+      git checkout dev
       cd ./.hugo/
       export PATH=$PATH:`pwd`
       cd ../
