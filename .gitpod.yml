@@ -6,9 +6,12 @@ tasks:
       mkdir ./.hugo/ && cd ./.hugo/
       wget https://github.com/gohugoio/hugo/releases/download/v0.87.0/hugo_extended_0.87.0_Linux-64bit.tar.gz
       tar -zxvf hugo_extended_0.87.0_Linux-64bit.tar.gz
+      cd ../
+    command: |
+      cd ./.hugo/
       export PATH=$PATH:`pwd`
       cd ../
-    command: npm run gitpod
+      npm run gitpod
 
 ports:
   - port: 1313
