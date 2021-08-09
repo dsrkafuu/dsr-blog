@@ -257,7 +257,7 @@ var x = 1;
 var obj = {
   x: 2,
   say: () => {
-    consolew.log(this.x);
+    console.log(this.x);
   },
 };
 obj.say(); // 1 (window.x)

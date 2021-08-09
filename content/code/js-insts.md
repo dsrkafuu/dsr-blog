@@ -311,7 +311,7 @@ function promiseAll(arr) {
 async function asyncPool(limit, arr, fetch) {
   const pending = [];
   const results = [];
-  let index = 0; // 入池用下表
+  let index = 0; // 入池用下标
 
   // 入池一个
   async function push() {
@@ -356,8 +356,7 @@ Function.prototype.bind = function (...args) {
 
 ```js
 function instanceOf(inst, func) {
-  let proto = inst.__proto__;
-  // let proto = Object.getPrototypeOf(inst);
+  let proto = Object.getPrototypeOf(inst);
   while (true) {
     if (!proto) {
       return false;
@@ -365,8 +364,7 @@ function instanceOf(inst, func) {
     if (proto === func.prototype) {
       return true;
     }
-    proto = proto.__proto__;
-    // proto = Object.getPrototypeOf(proto);
+    proto = Object.getPrototypeOf(proto);
   }
 }
 ```
@@ -379,9 +377,10 @@ function instanceOf(inst, func) {
 
 ```js
 Array.prototype.mapPolyfill = function (func, thisValue) {
+  const self = thisValue || this;
   const ret = [];
   this.reduce((pre, cur, idx, arr) => {
-    return ret.push(func.call(thisValue, cur, idx, arr));
+    return ret.push(func.call(self, cur, idx, arr));
   }, ret);
   return ret;
 };
