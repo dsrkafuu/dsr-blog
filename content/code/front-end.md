@@ -40,6 +40,14 @@ JWT (一旦签发过期前永远有效)：
 
 ## 性能优化
 
+### 指标
+
+- FCP - First Contentful Paint：第一个元素被渲染
+- LCP - Largest Contentful Paint：可见最大元素被渲染
+- FID - First Input Delay：第一次交互到响应
+- TTI - Time to Interactive：所有元素被加载完成
+- TBT - Total Blocking Time：FCP 到 TTI 之间阻塞时间的总长
+
 ### 网络
 
 1. 减少 HTTP 请求：合并资源文件，小图片内联，雪碧图 (`background-position`) 等 (这里暂不考虑 HTTP/2)
