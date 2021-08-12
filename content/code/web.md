@@ -55,6 +55,17 @@ QUIC 和 WebRTC 基于 RUDP。
 5. 浏览器解析渲染页面
 6. 断开 TCP 连接
 
+## DNS 解析过程
+
+以 `baidu.com` 为例：
+
+1. 本地 DNS 缓存
+2. 本地 DNS 服务器
+3. 根 DNS 服务器
+4. `com` 域 DNS 服务器
+5. `baidu.com` 域 DNS 服务器
+6. (CNAME 到 CDN 域名服务器请求解析)
+
 ## 浏览器渲染页面的过程
 
 ### WebKit 渲染过程
