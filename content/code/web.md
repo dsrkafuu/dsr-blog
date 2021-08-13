@@ -164,6 +164,9 @@ Cache-Control: public,max-age=31536000,immutable
     - 无则直接请求资源
       - `200 OK`
 
+- `no-cache`：可携带 Etag 相关头实现 304 协商缓存，无强缓存
+- `no-store`：无任何缓存
+
 ### HTTPS 过程
 
 通过 TLS 协议对 HTTP 进行加密。
