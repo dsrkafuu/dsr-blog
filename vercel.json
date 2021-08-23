@@ -3,10 +3,7 @@
   "headers": [
     {
       "source": "/(.*)",
-      "headers": [
-        { "key": "Permissions-Policy", "value": "interest-cohort=()" },
-        { "key": "X-Frame-Options", "value": "deny" }
-      ]
+      "headers": [{ "key": "Permissions-Policy", "value": "interest-cohort=()" }]
     }
   ]
 }
