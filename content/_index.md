@@ -8,8 +8,6 @@ keywords:
 image: '_index.webp'
 ---
 
-![更新记录](_ccp100.webp)
-
 ### 个人信息
 
 > Checkout [my GitHub page](https://github.com/dsrkafuu) for the English version!
