@@ -41,6 +41,12 @@ description: 'JavaScript 重难点整理。'
 - `Object.prototype.toString.call([]) === '[object Array]'`
 - `Object.prototype.toString.call(()=>{}) === '[object Function]'`
 
+## 类型转换
+
+- `window.isNaN('abc')`：`true`
+- `Number.isNaN('abc')`：此方法不进行类型转换，因此为 `false`
+- `[0] == true`：数组调用 `toString` 再变为数字 0，因此为 `false`
+
 ## 执行上下文和变量提升
 
 区别 `let` 和 `var`：
@@ -187,6 +193,8 @@ console.log('End');
 6. 下一轮循环，输出 Timer 2 in Promise 2；微任务队列中加入 `promise2` 的第一个 `then`
 7. 优先微任务队列，输出 Promise 2 Then 1 和 Promise 2 Then 2
 8. 下一轮循环，输出 Timer 3 in Promise 1
+
+注意：在 Promise 同步构造函数中，在没有返回值的情况下，`resolve()` 后的代码依旧会被执行，只是无法再使用 `reject()` 改变该 Promise 的状态。
 
 ## Map 与 WeakMap
 
