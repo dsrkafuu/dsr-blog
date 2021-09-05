@@ -22,7 +22,7 @@ const debounce = (func: Function, delay = 300) => {
   return function (...args: any) {
     timer && window.clearTimeout(timer);
     const self = this;
-    timer = window.setTimeout(() => func.apply(self, args), delay);
+    timer = window.setTimeout(() => func(), delay);
   };
 };
 element.onclick = debounce(myFunc);
@@ -39,7 +39,7 @@ const throttle = (func: Function, delay = 300) => {
     const self = this;
     if (!timer) {
       timer = window.setTimeout(() => {
-        func.apply(self, args);
+        func();
         timer = null;
       }, delay);
     }
@@ -163,8 +163,14 @@ Array.prototype.unique = function () {
 
 ```js
 // 可以通过 WeakMap 解决循环引用问题，同时保证内存被回收
+const map = new WeakMap();
 function cloneDeep(src) {
   if (src && typeof src === 'object') {
+    if (map.has(src)) {
+      return map.get(src);
+    } else {
+      map.set(src, src);
+    }
     const ret = Array.isArray(src) ? [] : {};
     for (let key of Object.keys(src)) {
       ret[key] = cloneDeep(src[key]);
