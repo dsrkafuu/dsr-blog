@@ -316,7 +316,7 @@ function genInstance(Constructor, ...args) {
   const obj = Object.create(Constructor.prototype);
   const ret = Constructor.call(obj, ...args);
 
-  if (ret && Object.prototype.toString.call(ret).startsWith('[object O')) {
+  if (ret && typeof ret === 'object') {
     return ret;
   }
   return obj;
