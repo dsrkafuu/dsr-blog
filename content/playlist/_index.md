@@ -150,6 +150,8 @@ image: 'tamako.webp'
 
 加了料的爆米花，异世界 + loop 的设定确实比较吸引人，但不少地方剧情设定的处理和演出表现还是欠缺了。
 
+**○ - 魔法纪录 魔法少女小圆外传 (SHAFT)**
+
 ## 2019 (14 部)
 
 **△ - 刀剑神域 Alicization 篇 War of Underworld (A-1 Pictures)**

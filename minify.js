@@ -60,23 +60,26 @@ allFiles['.html'].forEach((val) => {
     new Promise((resolve, reject) => {
       try {
         const content = fs.readFileSync(val, { encoding: 'utf8' });
-        const result = html.minify(content, {
-          collapseBooleanAttributes: true,
-          collapseWhitespace: true,
-          ignoreCustomComments: [/^!/, /^\s*#/],
-          keepClosingSlash: true,
-          removeComments: true,
-          removeRedundantAttributes: true,
-          removeScriptTypeAttributes: true,
-          removeStyleLinkTypeAttributes: true,
-          sortAttributes: true,
-          sortClassName: true,
-          useShortDoctype: true,
-          minifyCSS: true,
-          minifyJS: true,
-        });
-        fs.writeFileSync(val, result);
-        resolve();
+        html
+          .minify(content, {
+            collapseBooleanAttributes: true,
+            collapseWhitespace: true,
+            ignoreCustomComments: [/^!/, /^\s*#/],
+            keepClosingSlash: true,
+            removeComments: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            sortAttributes: true,
+            sortClassName: true,
+            useShortDoctype: true,
+            minifyCSS: true,
+            minifyJS: true,
+          })
+          .then((result) => {
+            fs.writeFileSync(val, result);
+            resolve();
+          });
       } catch (e) {
         reject(e);
       }
