@@ -29,7 +29,3 @@ image: '_index.webp'
 ### 更新记录
 
 ![更新记录](_changelog.webp)
-
-### 明日方舟
-
-{{< fiximg "明日方舟 ID 卡" "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/banners/arknights_210702.webp" "20.6213%" >}}
