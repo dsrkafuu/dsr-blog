@@ -17,6 +17,7 @@ image: 'apple.webp'
 
 ## 更新记录
 
+- **2021-10-26** 更新 macOS Monterey 字体版本 `17.d1e2`
 - **2021-07-09** 更新 macOS Big Sur 字体版本 `16.d4e0`
 - **2020-05-01** 更新 macOS Catalina 字体版本 `15.0d2e5`
 
@@ -131,8 +132,8 @@ ttx -b -m PingFangSC-Regular.otf PingFangSC-Regular.ttx
 
 解压密码：`dsrkafuu`
 
-- [SharePoint](https://dsrca-my.sharepoint.com/:u:/g/personal/kafuu_dsrca_onmicrosoft_com/EcP7lg3gp0dBm-mlQyhy8ccBQOYUnUcSvuT_QpXk1VTlsA)
-- [百度云盘 (mg5k)](https://pan.baidu.com/s/1kEq4Q6ccyhgbXnzNE-g5nw)
+- [SharePoint](https://dsrca-my.sharepoint.com/:u:/g/personal/kafuu_dsrca_onmicrosoft_com/Ea2KdR0DYlZDk8QArr4_300BaJvSsjUSWXfWGN-0UA4H9A)
+- [百度云盘 (7f9j)](https://pan.baidu.com/s/1WOidRsg4UJpZ4kxZiAfUjg)
 
 **此处分享的文件仅供技术交流使用，请于下载后 24 小时内删除，任何商业使用及商业利益冲突带来的法律纠纷与本人无关、概不负责。**
 
