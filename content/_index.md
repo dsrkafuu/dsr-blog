@@ -26,6 +26,30 @@ image: '_index.webp'
 - 华硕 ROG GM501GS、苹果 MacBook Pro M1
 - 阿米洛 VA87M 樱桃茶轴、罗技 G703 Lightspeed
 
-### 更新记录
+### 来自互联网
 
-![更新记录](_changelog.webp)
+<!-- prettier-ignore -->
+```js
+/*! Source from V2EX@iqoo, 2021 */
+let a = {}; let b = {}; a.b = b; b.a = a;          // 闭环
+window.open('steam://rungame/996/');               // 跨端
+array.push(value);                                 // 价值沉淀
+[[1, 2], [3, 4]].flat();                           // 降维
+try { logic(); } catch (e) {}                      // 完善逻辑
+performance.measure();                             // 体验度量
+form.method = what ? 'GET' : 'POST';               // 方法论
+button.disabled = false;                           // 赋能
+location = '//stackoverflow.com/search?q=' + q;    // 解法
+dispatchEvent(new Event(0));                       // 分发
+export function add(a, b) { return a + b; }        // 包装
+for (v of verions) { }                             // 迭代
+try { go007(); } catch (err) { fire(); }           // 抓手
+eval(s);                                           // 评估
+debugger;                                          // 跟进
+div.style.display = 'grid';                        // 格局
+div.style.textAlign = 'left';                      // 对齐
+div.style.bottom = '0';                            // 落地
+navigator.platform;                                // 平台
+Object.assign(a, b);                               // 融合
+if (navigator.language === 'fr') { while (1) {} }  // 打法
+```

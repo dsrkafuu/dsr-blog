@@ -44,7 +44,7 @@ const works = [];
 
 works.push(zoom());
 if (SECTION === SECTIONS.INDEX) {
-  works.push(compatibility());
+  works.push(compatibility(), prism());
 }
 if ([SECTIONS.INDEX, SECTIONS.LIST].includes(SECTION)) {
   works.push(search());
