@@ -33,8 +33,7 @@ params:
   avatar: "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/avatars/dsrkafuu_256p.webp"
   opengraph: "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/opengraph/dsrkafuu.jpg"
   license: "本站内容采用 CC BY-NC-SA 4.0 许可，请注明出处；商业转载请联系作者授权。"
-  googleSearch: "3aa67eb3eaa84ba3e"
-  googleAnalytics: "G-P3JYXLDF3W"
+  googleAnalytics: "G-RLSJR9NSTX"
 
 # menu
 menu:
