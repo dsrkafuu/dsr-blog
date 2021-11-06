@@ -14,7 +14,7 @@ export const UTTERANCES_LABEL = 'dsr-blog';
 
 // search engine
 export const SEARCH_URL = 'https://www.google.com/search';
-export const SEARCH_SITE = 'blog.dsrkafuu.su/post';
+export const SEARCH_SITE = 'blog.dsrkafuu.net/post';
 
 // sections
 export const SECTIONS = {

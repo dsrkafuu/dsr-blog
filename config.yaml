@@ -1,5 +1,5 @@
 # base info
-baseURL: "https://blog.dsrkafuu.su"
+baseURL: "https://blog.dsrkafuu.net"
 title: "DSRBLOG"
 
 # features
@@ -28,7 +28,7 @@ params:
     - "post"
     - "code"
   author: "DSRKafuU"
-  authorLink: "https://dsrkafuu.su"
+  authorLink: "https://dsrkafuu.net"
   para: "Internet for people, not profit"
   avatar: "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/avatars/dsrkafuu_256p.webp"
   opengraph: "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/opengraph/dsrkafuu.jpg"

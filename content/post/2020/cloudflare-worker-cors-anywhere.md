@@ -205,7 +205,7 @@ addEventListener('fetch', (event) => {
 ## 完整代码
 
 ```js
-/*! cloudflare-workers-cors-anywhere | DSRKafuU (https://dsrkafuu.su) | Copyright (c) MIT License */
+/*! cloudflare-workers-cors-anywhere | DSRKafuU (https://dsrkafuu.net) | Copyright (c) MIT License */
 
 // 无 trail 的 URL
 const API_BASE = 'https://api.bgm.tv';
