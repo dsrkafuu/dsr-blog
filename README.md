@@ -4,7 +4,7 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/dsrkafuu/dsr-blog)
 ![GitHub license](https://img.shields.io/github/license/dsrkafuu/dsr-blog)
 
-新版整合式个人博客 [dsr-blog](https://blog.dsrkafuu.su)，基于 Hugo 实现，包含博客文章和笔记整合。非面向主题使用者的通用主题，如果有朋友感兴趣也欢迎发 issue、修改或自己使用。
+新版整合式个人博客 [dsr-blog](https://blog.dsrkafuu.net)，基于 Hugo 实现，包含博客文章和笔记整合。非面向主题使用者的通用主题，如果有朋友感兴趣也欢迎发 issue、修改或自己使用。
 
 ## 浏览器支持
 
@@ -74,8 +74,6 @@
 
 ## LICENSE
 
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fdsrkafuu%2Fdsr-blog?ref=badge_large" alt="FOSSA Status"><img align="right" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdsrkafuu%2Fdsr-blog.svg?type=large"/></a>
+The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/dsrkafuu/dsr-blog/blob/master/LICENSE).
 
-The theme is released under the `Mozilla Public License 2.0`, for more information read the [LICENSE](https://github.com/dsrkafuu/dsr-blog/blob/master/LICENSE).
-
-**Copyright © 2018-present DSRKafuU (<https://dsrkafuu.su>)**
+**Copyright © 2018-present DSRKafuU (<https://dsrkafuu.net>)**

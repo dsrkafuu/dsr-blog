@@ -15,7 +15,7 @@ image: 'hugo.webp'
 
 ## 原来是什么样的
 
-顺着 [K2Station](https://tools.dsrkafuu.su/) 的现有内容，依旧是基于 Bootstrap 4，在一个大卡片中使用胶囊导航，内置小卡片，以下是原文代码：
+顺着 [K2Station](https://tools.dsrkafuu.net/) 的现有内容，依旧是基于 Bootstrap 4，在一个大卡片中使用胶囊导航，内置小卡片，以下是原文代码：
 
 ```html
 <div class="card-body tab-content">
