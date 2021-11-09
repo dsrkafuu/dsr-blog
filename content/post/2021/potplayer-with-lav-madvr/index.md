@@ -119,21 +119,17 @@ image: 'potplayer.webp'
 
 显示器类型选择为 "Digital Monitor"。
 
-![显示器类型](20210828102454.webp)
+![显示器类型](20211104153047.webp)
 
 清空缩放设置，视个人情况勾选。
 
-![缩放设置](20210828102454.webp)
+![缩放设置](20211104154157.webp)
 
-色度升频使用 NGU AA High。
-
-![色度升频](20210828102454.webp)
-
-画面缩小使用 SSIM 1D 100%，启用 LL，AR 视情况选择 relaxed 或 soft，relaxed 会更加锐利一点，个人使用 soft。
-
-![画面缩小](20210828102454.webp)
+色度升频使用 NGU AA High。画面缩小使用 SSIM 1D 100%，启用 LL，AR 视情况选择 relaxed 或 soft，relaxed 会更加锐利一点，个人使用 soft。
 
 画面放大相关，设置 doubling 为 NGU AA，未启用时放大为 Jinc AR，缩小为 SSIM 1D 100% AR LL。
+
+![画面缩小](20211104155348.webp)
 
 ## 视频测试
 
