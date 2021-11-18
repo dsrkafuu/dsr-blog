@@ -1,6 +1,6 @@
 ---
 title: '经典的 PotPlayer 配合 madVR 满足高级 BDRIP 回放需求'
-date: 2021-11-04T13:54:11+08:00
+date: 2021-11-18T14:48:12+08:00
 tags:
   - 'anime'
   - 'video'
