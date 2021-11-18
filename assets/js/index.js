@@ -24,7 +24,7 @@ const THEME_BTN = 'switch-btn';
 if (process.env.NODE_ENV === 'production') {
   try {
     Sentry.init({
-      dsn: process.env.DSR_SENTRY_DSN,
+      dsn: process.env.SENTRY_DSN,
       integrations: [new Integrations.BrowserTracing()],
       tracesSampleRate: 1.0,
     });
