@@ -17,17 +17,9 @@
     {{- printf "%d 字" .WordCount -}}
   </span>
   {{- printf "" -}}
-  <span class="post__metaTags">
-    {{- .Scratch.Set "ICON_NAME" "hashtag" -}}
+  <span class="post__metaMinutes">
+    {{- .Scratch.Set "ICON_NAME" "file-alt" -}}
     {{- partial "icon" . -}}
-    {{- if .Params.tags -}}
-    {{- range .Params.tags -}}
-    <a href='{{- printf "%s%s/" "/tags/" (. | urlize) | relURL -}}'>
-      {{- . -}}
-    </a>
-    {{- end -}}
-    {{- else -}}
-    {{- printf "无标签" -}}
-    {{- end }}
+    {{- printf "%d 分钟" .ReadingTime -}}
   </span>
 </div>

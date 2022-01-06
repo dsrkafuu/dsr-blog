@@ -10,6 +10,8 @@ taxonomies:
 paginate: 10
 disableKinds:
   - 'RSS'
+  - 'taxonomy'
+  - 'term'
 enableGitInfo: true
 frontmatter:
   lastmod:
@@ -32,15 +34,12 @@ menu:
     - name: '笔记'
       url: '/code/'
       weight: 2
-    - name: '标签'
-      url: '/tags/'
-      weight: 3
     - name: '友链'
       url: '/friends/'
-      weight: 4
+      weight: 3
     - name: '番剧'
       url: '/playlist/'
-      weight: 5
+      weight: 4
 
 # markup
 markup:

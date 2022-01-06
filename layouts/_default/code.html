@@ -16,7 +16,6 @@
       <div class="content">
         <div class="content__inner code__list">
           {{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) -}}
-
           {{- range $paginator.Pages -}}
           <div class="card">
             <div class="code__box">
