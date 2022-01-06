@@ -1,8 +1,7 @@
 import { logInfo } from '../plugins/loggers';
-import { SEARCH_SITE, SEARCH_URL } from '../plugins/constants';
 
-export const ID_SEARCH_BTN = 'search-btn';
-export const ID_SEARCH_INPUT = 'search-input';
+export const SEARCH_URL = 'https://www.google.com/search';
+export const SEARCH_SITE = 'blog.dsrkafuu.net/post';
 
 /**
  * preform search
@@ -24,9 +23,9 @@ function handleSearch(str) {
 /**
  * add search listener
  */
-export default async () => {
-  const ctrl = document.querySelector(`#${ID_SEARCH_BTN}`);
-  const input = document.querySelector(`#${ID_SEARCH_INPUT}`);
+export default () => {
+  const ctrl = document.querySelector('#search-btn');
+  const input = document.querySelector('#search-input');
   if (ctrl && input) {
     ctrl.addEventListener('click', () => handleSearch(input.value));
   }

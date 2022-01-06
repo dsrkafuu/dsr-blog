@@ -1,12 +1,9 @@
-const ID_TOC_BTN = 'toc-btn';
-const ID_TOC_OVERLAY = 'toc-overlay';
-
 /**
  * initialize toc control
  */
-export default async () => {
-  const tocContent = document.querySelector(`#${ID_TOC_OVERLAY}`);
-  const tocCtrl = document.querySelector(`#${ID_TOC_BTN}`);
+export default () => {
+  const tocContent = document.querySelector(`#toc-btn`);
+  const tocCtrl = document.querySelector(`#toc-overlay`);
   if (!tocContent && tocCtrl) {
     tocCtrl.remove();
     return;

@@ -1,53 +1,83 @@
+{{- $type := .Scratch.Get "PAGE_TYPE" -}}
+
 <meta charset="UTF-8" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="x-dns-prefetch-control" content="on" />
 {{- hugo.Generator -}}
 
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />
 
-<link rel="apple-touch-icon" sizes="180x180"
-      href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@2/images/favicons/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32"
-      href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@2/images/favicons/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16"
-      href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@2/images/favicons/favicon-16x16.png" />
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@2/images/favicons/favicon.ico" />
-<link rel="manifest" href='{{- "/site.webmanifest" | relURL -}}' />
-{{- partial "opengraph" . -}}
+{{- $name := .Site.Data.meta.name -}}
+{{- $author := .Site.Data.meta.author -}}
+{{- $bio := .Site.Data.meta.bio -}}
 
-{{- .Scratch.Set "styleSrc" "styles/base.scss" -}}
-{{- .Scratch.Set "styleOut" "_assets/dsr-blog_base.min.css" -}}
-{{- partial "style" . -}}
-
-{{- if and (eq (getenv "NODE_ENV") "production") .Site.Params.googleAnalytics -}}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{- .Site.Params.googleAnalytics -}}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', '{{- .Site.Params.googleAnalytics -}}');
-</script>
-{{- end -}}
+{{- if ne $type "404" -}}
 
 {{- if .IsHome -}}
-<title>{{- .Site.Title -}}</title>
+<title>{{- $name -}}</title>
 {{- else -}}
-<title>{{- .Title }} | {{ .Site.Title -}}</title>
+<title>{{- .Title }} | {{ $name -}}</title>
 {{- end -}}
-{{- if .Params.author -}}
-<meta name="author" content="{{- .Params.author -}}" />
-{{- else -}}
-<meta name="author" content="{{- .Site.Params.author -}}" />
-{{- end -}}
+<meta name="author" content="{{- $author -}}" />
 {{- if .Params.description -}}
 <meta name="description" content="{{- .Params.description -}}" />
+{{- else -}}
+<meta name="description" content="{{- $bio -}}" />
 {{- end -}}
 {{- if .Params.tags -}}
 <meta name="keywords" content='{{- delimit .Params.tags ", " -}}' />
 {{- else if .Params.keywords -}}
 <meta name="keywords" content='{{- delimit .Params.keywords ", " -}}' />
 {{- end -}}
+
+{{- else -}}
+<title>404 Not Found | {{ $name -}}</title>
+<meta name="description" content="Error 404 resource not found." />
+{{- end -}}
+
+<link rel="apple-touch-icon" sizes="180x180" href="{{- .Site.Data.favicon.apple -}}" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{- .Site.Data.favicon.png_32x -}}" />
+<link rel="icon" type="image/png" sizes="16x16" href="{{- .Site.Data.favicon.png_16x -}}" />
+<link rel="shortcut icon" href="{{- .Site.Data.favicon.ico -}}" />
+<link rel="manifest" href='{{- "/site.webmanifest" | relURL -}}' />
+{{- if ne $type "404" -}}
+{{- partial "opengraph" . -}}
+{{- end -}}
+
+{{- $isDev := eq (getenv "NODE_ENV") "development" -}}
+{{- $pkg := getJSON "package.json" -}}
+{{- $src := "styles/index.scss" -}}
+{{- $out := printf "assets/main.v%s.min.css" $pkg.version -}}
+{{- $options := dict "targetPath" $out "outputStyle" "expanded" "enableSourceMap" $isDev "includePaths" (slice "node_modules") -}}
+{{- $css := resources.Get $src | resources.ToCSS $options -}}
+<link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
+
+{{- $gaid := getenv "HUGO_GA_ID" -}}
+{{- if and (not $isDev) $gaid -}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{- $gaid -}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', '{{- $gaid -}}');
+</script>
+{{- end -}}
+
+{{- $isProd := eq (getenv "NODE_ENV") "production" -}}
+<!-- deps -->
+<script defer src="{{ .Site.Data.scripts.prism }}"></script>
+<script defer src="{{ .Site.Data.scripts.prism_autolaoder }}"></script>
+<script defer src="{{ .Site.Data.scripts.medium_zoom }}"></script>
+<!-- custom envs -->
+{{- $sentryDsn := printf "\"%s\"" (getenv "HUGO_SENTRY_DSN") -}}
+{{- $defines := dict "process.env.HUGO_SENTRY_DSN" $sentryDsn -}}
+<!-- js assets -->
+{{- $src := "js/index.js" -}}
+{{- $pkg := getJSON "package.json" -}}
+{{- $out := printf "assets/main.v%s.min.js" $pkg.version -}}
+{{- $options := (dict "targetPath" $out "minify" $isProd "defines" $defines "target" "es2020" "format" "iife") -}}
+{{- $built := resources.Get $src | js.Build $options -}}
+<script defer src="{{ $built.RelPermalink }}"></script>
