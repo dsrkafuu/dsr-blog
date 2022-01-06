@@ -8,7 +8,7 @@ tags:
   - 'firefox'
   - 'edge'
 description: '扶不起的微软。'
-image: 'edge-firefox.webp'
+banner: 'edge-firefox.webp'
 ---
 
 在最初微软公布基于 Chromium 的新版 Edge 时我是非常高兴的，对于中国大陆的用户来说，终于有一款能稳定使用云服务的 "大厂出品" 国际版浏览器了。如今距离发布已经快两年过去了，新版 Edge 的问题依旧多到数不清，事实证明微软依旧还是那个微软。

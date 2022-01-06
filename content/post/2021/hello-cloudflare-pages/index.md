@@ -6,7 +6,7 @@ tags:
   - 'pages'
   - 'ci'
 description: '再见了 GitHub Pages。'
-image: 'cloudflare.webp'
+banner: 'cloudflare.webp'
 ---
 
 今日听闻 CloudFlare 的全新网页托管服务 [CloudFlare Pages](https://pages.cloudflare.com/) 正式进行开放测试，立刻进行了一番尝试。继前人 GitHub Pages、Netlify 和后人 Vercel (Zeit) 之后，终于又出现了一个免费用户完全不限带宽的服务。

@@ -156,6 +156,7 @@ Cache-Control: public,max-age=31536000,immutable
 ### HTTP 缓存机制
 
 - 发送 HTTP 请求时首先检查浏览器缓存 (是否存在或是否过期)
+
   - 缓存有效则直接从缓存中得到资源 (强缓存)
   - 缓存无效检查是否有 `Etag` 或 `Last-Modified`
     - 有 `Etag` 则带 `If-None-Match` 请求资源

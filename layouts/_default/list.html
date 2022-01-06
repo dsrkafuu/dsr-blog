@@ -10,7 +10,6 @@
 {{- define "body" -}}
 
 <body data-theme="auto" data-section="list">
-  {{- partial "theme" . -}}
   {{- partial "header" . -}}
   {{- $isTagsList := eq .Section "tags" -}}
 
@@ -28,10 +27,10 @@
           {{- $paginator := .Scratch.Get "paginator" -}}
           {{- range $paginator.Pages -}}
           <div class="card">
-            {{- if .Params.image -}}
+            {{- if .Params.banner -}}
             <div class="post__image fiximg">
               <a href="{{- .RelPermalink -}}" class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src='{{- printf "/images/headers/%s" .Params.image | relURL -}}' />
+                <img loading="lazy" src='{{- printf "/images/banners/%s" .Params.banner | relURL -}}' />
               </a>
             </div>
             {{- end -}}
@@ -51,6 +50,7 @@
           {{- partial "pagination" . -}}
         </div>
       </div>
+
       <aside class="sidebar">
         <div class="sidebar__inner">
           {{- partial "search" . -}}

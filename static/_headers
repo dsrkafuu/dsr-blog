@@ -1,3 +1,4 @@
 /*
-  X-Frame-Options: DENY
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
   Permissions-Policy: interest-cohort=()

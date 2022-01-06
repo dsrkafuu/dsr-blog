@@ -6,7 +6,7 @@ tags:
   - 'golang'
   - 'hugo'
 description: '近期闲着无事学习 Hugo，光看不过瘾还得上手弄点简单的东西写写。'
-image: 'hugo.webp'
+banner: 'hugo.webp'
 ---
 
 近期闲着无事学习 Hugo，光看不过瘾还得上手弄点简单的东西写写。受铃最近直播零轨的启发，就做了个轨迹系列到现在为止的作品汇总。但是一旦真的开始开工了，自然就会想着偷懒，于是尝试了一波 Hugo 的 Data 模板。

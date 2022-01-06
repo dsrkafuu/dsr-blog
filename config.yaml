@@ -1,16 +1,16 @@
 # base info
-baseURL: "https://blog.dsrkafuu.net"
-title: "DSRBLOG"
+baseURL: 'https://blog.dsrkafuu.net'
+title: 'DSRBLOG'
 
 # features
 hasCJKLanguage: true
 enableEmoji: true
 enableRobotsTXT: true
 taxonomies:
-  tag: "tags"
+  tag: 'tags'
 paginate: 10
 disableKinds:
-  - "RSS"
+  - 'RSS'
 enableGitInfo: true
 frontmatter:
   lastmod:
@@ -19,49 +19,49 @@ frontmatter:
     - :default
 
 # language
-languageCode: "zh-cn" # rss
-defaultContentLanguage: "zh-hans" # html
+languageCode: 'zh-cn' # rss
+defaultContentLanguage: 'zh-hans' # html
 
 # params
 params:
   mainSections:
-    - "post"
-    - "code"
-  author: "DSRKafuU"
-  authorLink: "https://dsrkafuu.net"
-  para: "Internet for people, not profit"
-  avatar: "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@2/images/avatars/dsrkafuu_256p.webp"
-  opengraph: "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@2/images/opengraph/dsrkafuu.jpg"
-  license: "本站内容采用 CC BY-NC-SA 4.0 许可，请注明出处；商业转载请联系作者授权。"
-  googleAnalytics: "G-RLSJR9NSTX"
+    - 'post'
+    - 'code'
+  author: 'DSRKafuU'
+  authorLink: 'https://dsrkafuu.net'
+  para: 'Internet for people, not profit'
+  avatar: 'https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@2/images/avatars/dsrkafuu_256p.webp'
+  opengraph: 'https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@2/images/opengraph/dsrkafuu.jpg'
+  license: '本站内容采用 CC BY-NC-SA 4.0 许可，请注明出处；商业转载请联系作者授权。'
+  googleAnalytics: 'G-RLSJR9NSTX'
 
 # menu
 menu:
   main:
-    - name: "文章"
-      url: "/post/"
+    - name: '文章'
+      url: '/post/'
       weight: 1
-    - name: "笔记"
-      url: "/code/"
+    - name: '笔记'
+      url: '/code/'
       weight: 2
-    - name: "标签"
-      url: "/tags/"
+    - name: '标签'
+      url: '/tags/'
       weight: 3
-    - name: "友链"
-      url: "/friends/"
+    - name: '友链'
+      url: '/friends/'
       weight: 4
-    - name: "番剧"
-      url: "/playlist/"
+    - name: '番剧'
+      url: '/playlist/'
       weight: 5
   links:
-    - name: "github"
-      url: "https://github.com/dsrkafuu"
+    - name: 'github'
+      url: 'https://github.com/dsrkafuu'
       weight: 1
-    - name: "twitter"
-      url: "https://twitter.com/dsrkafuu"
+    - name: 'twitter'
+      url: 'https://twitter.com/dsrkafuu'
       weight: 2
-    - name: "steam"
-      url: "https://steamcommunity.com/id/dsrkafuu/"
+    - name: 'steam'
+      url: 'https://steamcommunity.com/id/dsrkafuu/'
       weight: 3
 
 # markup
@@ -79,3 +79,9 @@ markup:
 # do not generate jsconfig
 build:
   noJSConfigInAssets: true
+
+# security settings
+security:
+  enableInlineShortcodes: true
+  funcs:
+    getenv: '^(HUGO_|NODE_ENV)'

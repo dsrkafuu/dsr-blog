@@ -14,13 +14,7 @@
   {
     "title": "DSRToolS",
     "desc": "DSR 提供支持的综合性游戏小工具站点",
-    "icon": "dsr-tools.webp",
+    "icon": "dsrtools.webp",
     "link": "https://tools.dsrkafuu.net"
-  },
-  {
-    "title": "Carbon",
-    "desc": "代码图片生成器",
-    "icon": "carbon.webp",
-    "link": "https://carbon.dsrkafuu.net"
   }
 ]

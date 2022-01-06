@@ -5,7 +5,7 @@ tags:
   - 'github'
   - 'git'
 description: '向社区贡献代码时也有不少需要注意的点。'
-image: 'github.webp'
+banner: 'github.webp'
 ---
 
 向一个社区项目贡献代码已经过去很久了，而今天有突发奇想想再贡献点东西。直接改肯定是不行的，删除再 fork 也不是很好的选择，那如何把自己 fork 的项目与原仓库同步呢？这里以 Vue 3 的文档为例展示一下更新的过程。

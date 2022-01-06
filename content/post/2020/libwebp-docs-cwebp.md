@@ -6,7 +6,6 @@ tags:
   - 'doc'
   - 'image'
 description: "cwebp 使用 WebP 格式对图像进行压缩。输入格式可以是 PNG, JPEG, TIFF, WebP 或原始 Y'CbCr 样本。"
-license: false
 ---
 
 > 基于 libwebp-1.1.0，发布于 2020-01-06T23:53:53Z

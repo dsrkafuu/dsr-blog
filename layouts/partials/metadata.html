@@ -1,24 +1,24 @@
 <div class="post__meta">
   <span class="post__metaDate">
-    {{- .Scratch.Set "iconName" "calendar-day" -}}
+    {{- .Scratch.Set "ICON_NAME" "calendar-day" -}}
     {{- partial "icon" . -}}
     {{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}
   </span>
   {{- if .Params.update -}}
   <span class="post__metaUpdate">
-    {{- .Scratch.Set "iconName" "clock" -}}
+    {{- .Scratch.Set "ICON_NAME" "clock" -}}
     {{- partial "icon" . -}}
     {{- printf "<time>%s</time>" ((time .Params.update).Format "2006-01-02") | safeHTML -}}
   </span>
   {{- end -}}
   <span class="post__metaWords">
-    {{- .Scratch.Set "iconName" "file-alt" -}}
+    {{- .Scratch.Set "ICON_NAME" "file-alt" -}}
     {{- partial "icon" . -}}
     {{- printf "%d 字" .WordCount -}}
   </span>
   {{- printf "" -}}
   <span class="post__metaTags">
-    {{- .Scratch.Set "iconName" "hashtag" -}}
+    {{- .Scratch.Set "ICON_NAME" "hashtag" -}}
     {{- partial "icon" . -}}
     {{- if .Params.tags -}}
     {{- range .Params.tags -}}

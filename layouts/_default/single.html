@@ -10,7 +10,6 @@
 {{- define "body" -}}
 
 <body data-theme="auto" data-section="single">
-  {{- partial "theme" . -}}
   {{- partial "header" . -}}
 
   <main class="main">
@@ -18,10 +17,10 @@
       <div class="content">
         <div class="content__inner post__article">
           <div class="card">
-            {{- with .Params.image -}}
+            {{- with .Params.banner -}}
             <div class="post__image fiximg">
               <div class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src='{{- printf "/images/headers/%s" . | relURL -}}' />
+                <img loading="lazy" src='{{- printf "/images/banners/%s" . | relURL -}}' />
               </div>
             </div>
             {{- end -}}
@@ -34,15 +33,13 @@
                 {{ .Content }}
               </article>
             </div>
-            {{- if ne .Params.license false -}}
             <div class="license markdown">
               <blockquote>{{- .Site.Params.license -}}</blockquote>
             </div>
-            {{- end -}}
           </div>
-          {{- partial "comment" . -}}
         </div>
       </div>
+
       <aside class="sidebar">
         <div class="sidebar__inner">
           {{- partial "info" . -}}

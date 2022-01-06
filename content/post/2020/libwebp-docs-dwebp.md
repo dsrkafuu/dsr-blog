@@ -6,7 +6,6 @@ tags:
   - 'doc'
   - 'image'
 description: 'dwebp 将 WebP 文件解压成 PNG, PAM, PPM 或 PGM 图像。'
-license: false
 ---
 
 > 基于 libwebp-1.1.0，发布于 2020-01-06T23:53:53Z

@@ -10,7 +10,6 @@
 {{- define "body" -}}
 
 <body data-theme="auto" data-section="friends">
-  {{- partial "theme" . -}}
   {{- partial "header" . -}}
 
   <main class="main">
@@ -35,9 +34,9 @@
             </div>
           </div>
           {{- end -}}
-          {{- partial "comment" . -}}
         </div>
       </div>
+
       <aside class="sidebar">
         <div class="sidebar__inner">
           <div class="sticky">

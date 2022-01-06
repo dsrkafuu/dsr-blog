@@ -7,7 +7,7 @@ tags:
   - 'analytics'
   - 'privacy'
 description: '拒绝第三方 Cookie 不是为了另一个替代品的出现。'
-image: 'google.webp'
+banner: 'google.webp'
 ---
 
 被广泛用于定向广告业务和用户数据收集的[第三方 Cookie 即将迎来它的消失](https://www.cookiebot.com/en/google-third-party-cookies/)，而 Google 正试图设计一种方法让广告商在第三方 Cookie 消失后继续根据用户的浏览情况进行跟踪，即 [FLoC](https://github.com/WICG/floc)。

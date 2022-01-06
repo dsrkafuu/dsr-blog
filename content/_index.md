@@ -5,14 +5,13 @@ keywords:
   - DSRKafuU
   - DSRBLOG
   - 博客
-image: '_index.webp'
 ---
 
 ### 个人信息
 
 > Checkout [my GitHub page](https://github.com/dsrkafuu) for the English version!
 
-前端开发、PC 硬件爱好者、动画党 & 主机游戏玩家、[南京邮电大学](https://www.njupt.edu.cn) 在读。
+前端开发、PC 硬件爱好者、动画党 & 主机游戏玩家。
 
 ### 近期状态
 

@@ -6,7 +6,7 @@ tags:
   - 'cloudflare'
   - 'cors'
 description: '访问量较小的 API 可以简单通过 CloudFlare Workers 进行代理。'
-image: 'cloudflare.webp'
+banner: 'cloudflare.webp'
 ---
 
 [CloudFlare Workers](https://workers.cloudflare.com/) 可以实现很多需求，通过它来代理访问非公开、未设置 CORS 头的 API 也在官方的示例项目内。不过由于免费 plan 的访问量限制以及性能限制等，一般用来给自己的实验性项目做一下简单代理。这里以 [Bangumi 的 API](https://bangumi.github.io/api/) 为例演示完整的实现。

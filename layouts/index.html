@@ -10,7 +10,6 @@
 {{- define "body" -}}
 
 <body data-theme="auto" data-section="index">
-  {{- partial "theme" . -}}
   {{- partial "header" . -}}
 
   <main class="main">
@@ -18,46 +17,13 @@
       <div class="content">
         <div class="content__inner">
           <div class="card">
-            {{- with .Params.image -}}
             <div class="post__image fiximg">
               <div class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src='{{- printf "/images/headers/%s" . | relURL -}}' />
+                <img loading="lazy" src='{{- "/images/banners/_index.webp" | relURL -}}' />
               </div>
             </div>
-            {{- end -}}
 
             <div class="post__content">
-              <!-- compatibility test section -->
-              <div class="markdown compat">
-                <h3>兼容性测试</h3>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>WebP</th>
-                      <th>Native Lazyload</th>
-                      <th>Scroll Behavior</th>
-                      <th>Backdrop Filter</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr id="compatibility">
-                      {{ range (seq 4) }}
-                      <td>
-                        {{- $.Scratch.Set "iconName" "spinner-third" -}}
-                        {{- partial "icon" $ -}}
-                        {{- $.Scratch.Set "iconName" "check" -}}
-                        {{- partial "icon" $ -}}
-                        {{- $.Scratch.Set "iconName" "times" -}}
-                        {{- partial "icon" $ -}}
-                      </td>
-                      {{ end }}
-                    </tr>
-                  </tbody>
-                </table>
-                <p>本站不会提供以上功能的 fallback 或 polyfill，最佳体验请更换优秀的最新版本浏览器。</p>
-              </div>
-
-              <!-- index article -->
               <article class="markdown">
                 {{- with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end -}}
               </article>
@@ -65,6 +31,7 @@
           </div>
         </div>
       </div>
+
       <aside class="sidebar">
         <div class="sidebar__inner">
           {{- partial "search" . -}}

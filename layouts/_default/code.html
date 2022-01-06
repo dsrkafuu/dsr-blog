@@ -10,7 +10,6 @@
 {{- define "body" -}}
 
 <body data-theme="auto" data-section="code">
-  {{- partial "theme" . -}}
   {{- partial "header" . -}}
 
   <main class="main">
@@ -36,6 +35,7 @@
           {{- partial "pagination" . -}}
         </div>
       </div>
+
       <aside class="sidebar">
         <div class="sidebar__inner">
           <div class="sticky">

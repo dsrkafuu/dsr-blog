@@ -3,11 +3,17 @@
 {{- if ge (len $image) 1 -}}
 {{- $image = index $image 0 -}}
 
-{{- $ratio := mul (div (mul $image.Height 1.0) (mul $image.Width 1.0)) 100 -}}
+{{- $imageHeight := mul $image.Height 1.0 -}}
+{{- $imageWidth := mul $image.Width 1.0 -}}
+{{- if or (lt $imageHeight 1) (lt $imageWidth 1) -}}
+{{- warnf "Image not valid \"%s\"" .Destination -}}
+{{- else -}}
+
+{{- $ratio := mul (div $imageHeight $imageWidth) 100 -}}
 {{- $css := printf "padding-bottom: %.4f%%;" $ratio -}}
 {{- $width := "width: 100%;" -}}
-{{- if le $image.Width 652 -}}
-{{- $width = printf "width: %dpx;" $image.Width -}}
+{{- if le $imageWidth 652 -}}
+{{- $width = printf "width: %dpx;" $imageWidth -}}
 {{- end -}}
 <p>
 <div class="fiximg" style="{{- $width | safeCSS -}}">
@@ -16,6 +22,8 @@
   </div>
 </div>
 </p>
+
+{{- end -}}
 
 {{- else -}}
 {{- warnf "Image not found \"%s\"" .Destination -}}

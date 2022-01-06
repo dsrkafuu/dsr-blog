@@ -1,4 +1,4 @@
-{{- $name := .Scratch.Get "iconName" -}}
+{{- $name := .Scratch.Get "ICON_NAME" -}}
 {{- $svg := readFile (printf "assets/svg/%s.svg" $name) -}}
 
 {{- $class := "icon" -}}

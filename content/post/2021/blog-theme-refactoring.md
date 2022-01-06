@@ -6,7 +6,7 @@ tags:
   - 'theme'
   - 'hugo'
 description: '整理下混乱的博客主题结构。'
-image: 'hugo.webp'
+banner: 'hugo.webp'
 ---
 
 我的[博客旧主题](https://github.com/dsrkafuu/hugo-template-aofuji)是基于初学前端时写的 [Fuji 主题](https://github.com/dsrkafuu/hugo-theme-fuji)构建的大改版，而在历经多次小修小补之后终于进入了维护不动的的状态。无论是 Hugo 模板本身，还是相配的 JS 和 CSS 都进入了完全的混乱状态。趁着近期有一点时间，是时候来一次重构了。

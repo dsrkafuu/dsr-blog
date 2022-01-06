@@ -10,13 +10,13 @@
   <div class="pagination">
     {{- if ne $paginator.PageNumber 1 -}}
     <a class="pagination__first" href="{{- $paginator.First.URL -}}">
-      {{- .Scratch.Set "iconName" "chevron-double-left" -}}
+      {{- .Scratch.Set "ICON_NAME" "chevron-double-left" -}}
       {{- partial "icon" . -}}
     </a>
     {{- end -}}
     {{- if $paginator.HasPrev -}}
     <a class="pagination__previous" href="{{- $paginator.Prev.URL -}}">
-      {{- .Scratch.Set "iconName" "chevron-left" -}}
+      {{- .Scratch.Set "ICON_NAME" "chevron-left" -}}
       {{- partial "icon" . -}}
     </a>
     {{- end -}}
@@ -48,13 +48,13 @@
     {{- end -}}
     {{- if $paginator.HasNext -}}
     <a class="pagination__next" href="{{- $paginator.Next.URL -}}">
-      {{- .Scratch.Set "iconName" "chevron-right" -}}
+      {{- .Scratch.Set "ICON_NAME" "chevron-right" -}}
       {{- partial "icon" . -}}
     </a>
     {{- end -}}
     {{- if ne $paginator.PageNumber $paginator.TotalPages -}}
     <a class="pagination__last" href="{{- $paginator.Last.URL -}}">
-      {{- .Scratch.Set "iconName" "chevron-double-right" -}}
+      {{- .Scratch.Set "ICON_NAME" "chevron-double-right" -}}
       {{- partial "icon" . -}}
     </a>
     {{- end -}}

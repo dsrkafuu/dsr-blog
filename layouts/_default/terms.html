@@ -10,7 +10,6 @@
 {{- define "body" -}}
 
 <body data-theme="auto" data-section="tags">
-  {{- partial "theme" . -}}
   {{- partial "header" . -}}
 
   <main class="main">
@@ -21,7 +20,7 @@
             {{- range $name, $tag := .Site.Taxonomies.tags -}}
             {{- $url := printf "/tags/%s/" $name | relURL -}}
             <span class="tags__item">
-              {{- $.Scratch.Set "iconName" "hashtag" -}}
+              {{- $.Scratch.Set "ICON_NAME" "hashtag" -}}
               {{- partial "icon" $ -}}
               {{- printf "<a href='%s'>%s</a>" $url $name | safeHTML -}}
             </span>
@@ -29,6 +28,7 @@
           </div>
         </div>
       </div>
+
       <aside class="sidebar">
         <div class="sidebar__inner">
           <div class="sticky">

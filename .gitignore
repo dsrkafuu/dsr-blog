@@ -22,6 +22,7 @@ pids
 *.pid
 *.seed
 *.pid.lock
+.hugo_build.lock
 
 # dependency directories
 .npm/
