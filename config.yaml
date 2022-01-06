@@ -1,6 +1,5 @@
 # base info
 baseURL: 'https://blog.dsrkafuu.net'
-title: 'DSRBLOG'
 
 # features
 hasCJKLanguage: true
@@ -18,22 +17,11 @@ frontmatter:
     - :fileModTime
     - :default
 
-# language
-languageCode: 'zh-cn' # rss
-defaultContentLanguage: 'zh-hans' # html
-
 # params
 params:
   mainSections:
     - 'post'
     - 'code'
-  author: 'DSRKafuU'
-  authorLink: 'https://dsrkafuu.net'
-  para: 'Internet for people, not profit'
-  avatar: 'https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@2/images/avatars/dsrkafuu_256p.webp'
-  opengraph: 'https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@2/images/opengraph/dsrkafuu.jpg'
-  license: '本站内容采用 CC BY-NC-SA 4.0 许可，请注明出处；商业转载请联系作者授权。'
-  googleAnalytics: 'G-RLSJR9NSTX'
 
 # menu
 menu:

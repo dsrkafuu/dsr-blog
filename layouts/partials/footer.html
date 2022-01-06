@@ -5,8 +5,8 @@
 <footer class="footer">
   <div class="container">
     <span class="footer__text">Copyright &copy; 2018-{{- now.Format "2006" }} | <a class="link"
-         href="{{- .Site.Params.authorLink -}}" target="_blank" rel="noopener">{{- .Site.Params.author -}}</a></span>
+      href="{{- .Site.Data.meta.author_link -}}" target="_blank" rel="noopener">{{- .Site.Data.meta.author -}}</a></span>
     <span class="footer__text"><a class="link" href="https://github.com/dsrkafuu/dsr-blog" target="_blank"
-         rel="noopener">{{- .Site.Title -}}</a> v{{- $version }} | {{ $license }}</a></span>
+      rel="noopener">{{- .Site.Data.meta.name -}}</a> v{{- $version }} | {{ $license }}</a></span>
   </div>
 </footer>

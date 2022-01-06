@@ -2,13 +2,13 @@
   <div class="info__avatar">
     <div class="fiximg">
       <div class="fiximg__container" style="padding-bottom: 100%;">
-        <img loading="lazy" src="{{- .Site.Params.avatar -}}" />
+        <img loading="lazy" src="{{- .Site.Data.meta.avatar -}}" />
       </div>
     </div>
   </div>
   <div class="info__meta">
-    <span class="info__metaName">{{- .Site.Params.author -}}</span>
-    <span class="info__metaPara">{{- .Site.Params.para -}}</span>
+    <span class="info__metaName">{{- .Site.Data.meta.author -}}</span>
+    <span class="info__metaPara">{{- .Site.Data.meta.bio -}}</span>
   </div>
   <div class="info__counter">
     <div class="info__counterItem">
