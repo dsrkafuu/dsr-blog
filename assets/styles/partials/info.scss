@@ -13,21 +13,13 @@
   &__meta {
     text-align: center;
     font-size: $font-sm;
+    margin-bottom: $space-card;
   }
 
   &__metaName {
     display: block;
     font-size: $font-lg;
     font-weight: 500;
-  }
-
-  &__metaPara {
-    display: block;
-    margin-top: 8px;
-    margin-bottom: $space-mobile;
-    line-height: 1.45;
-    padding: 0 $space-mobile;
-    font-size: $font-sm;
   }
 
   &__counter {

@@ -8,7 +8,6 @@
   </div>
   <div class="info__meta">
     <span class="info__metaName">{{- .Site.Data.meta.author -}}</span>
-    <span class="info__metaPara">{{- .Site.Data.meta.bio -}}</span>
   </div>
   <div class="info__counter">
     <div class="info__counterItem">
@@ -19,10 +18,6 @@
       {{- $totalWords := $.Scratch.Get "TOTAL_WORD_COUNT" -}}
       <span class="info__counterData">{{- math.Round (div $totalWords 1000.0) -}}</span>
       <span class="info__counterName">千字</span>
-    </div>
-    <div class="info__counterItem">
-      <span class="info__counterData">{{- len .Site.Taxonomies.tags -}}</span>
-      <span class="info__counterName">标签</span>
     </div>
     <div class="info__counterItem">
       <span class="info__counterData">{{- len .Site.RegularPages -}}</span>
