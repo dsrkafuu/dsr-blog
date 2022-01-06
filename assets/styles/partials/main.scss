@@ -16,10 +16,10 @@
 
       & > .content__inner {
         height: 100%;
-        padding-top: $space-base;
-        padding-left: $space-base;
-        padding-right: $space-base / 2;
-        padding-bottom: $space-base;
+        padding-top: $space-card;
+        padding-left: $space-card;
+        padding-right: $space-card / 2;
+        padding-bottom: $space-card;
       }
     }
 
@@ -29,10 +29,10 @@
 
       & > .sidebar__inner {
         height: 100%;
-        padding-top: $space-base;
-        padding-right: $space-base;
-        padding-left: $space-base / 2;
-        padding-bottom: $space-base;
+        padding-top: $space-card;
+        padding-right: $space-card;
+        padding-left: $space-card / 2;
+        padding-bottom: $space-card;
       }
     }
   }
@@ -47,10 +47,10 @@
         max-width: 100%;
 
         & > .content__inner {
-          padding-top: $space-sm;
-          padding-left: $space-sm;
-          padding-right: $space-sm;
-          padding-bottom: $space-sm / 2;
+          padding-top: $space-mobile;
+          padding-left: $space-mobile;
+          padding-right: $space-mobile;
+          padding-bottom: $space-mobile / 2;
         }
       }
 
@@ -59,10 +59,10 @@
         max-width: 100%;
 
         & > .sidebar__inner {
-          padding-top: $space-sm / 2;
-          padding-right: $space-sm;
-          padding-left: $space-sm;
-          padding-bottom: $space-sm;
+          padding-top: $space-mobile / 2;
+          padding-right: $space-mobile;
+          padding-left: $space-mobile;
+          padding-bottom: $space-mobile;
         }
       }
     }
@@ -75,13 +75,13 @@
       flex-direction: column-reverse;
 
       & > .content > .content__inner {
-        padding-top: $space-sm / 2;
-        padding-bottom: $space-sm;
+        padding-top: $space-mobile / 2;
+        padding-bottom: $space-mobile;
       }
 
       & > .sidebar > .sidebar__inner {
-        padding-top: $space-sm;
-        padding-bottom: $space-sm / 2;
+        padding-top: $space-mobile;
+        padding-bottom: $space-mobile / 2;
       }
     }
   }

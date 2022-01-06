@@ -5,9 +5,9 @@
     & > .card {
       display: flex;
       flex-wrap: wrap;
-      padding: $space-sm;
-      padding-right: $space-base;
-      padding-left: $space-base - 15px;
+      padding: $space-mobile;
+      padding-right: $space-card;
+      padding-left: $space-card - 15px;
     }
   }
 

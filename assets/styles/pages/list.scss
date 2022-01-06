@@ -15,10 +15,10 @@
     flex-direction: column;
 
     & > .card:not(:first-child) {
-      margin-top: $space-base;
+      margin-top: $space-card;
 
       @include responsive(md) {
-        margin-top: $space-sm;
+        margin-top: $space-mobile;
       }
     }
   }
@@ -30,12 +30,12 @@
     h2 {
       color: var(--color-primary);
       margin: 0;
-      font-size: $font-size-xl;
+      font-size: $font-xl;
     }
   }
 
   &__summary {
-    margin-top: $space-sm;
+    margin-top: $space-mobile;
   }
 
   &__image {
@@ -44,15 +44,15 @@
   }
 
   &__content {
-    padding: $space-base;
+    padding: $space-card;
   }
 
   &__box {
-    padding: $space-base;
+    padding: $space-card;
   }
 
   &__meta {
-    font-size: $font-size-sm;
+    font-size: $font-sm;
     overflow-x: auto;
     white-space: nowrap;
     margin-top: 15px;
@@ -64,7 +64,7 @@
     }
 
     & > span:not(:first-child) {
-      padding-left: $space-sm;
+      padding-left: $space-mobile;
     }
 
     & > span:nth-child(3) {
@@ -83,15 +83,15 @@
 
   &__article {
     .post__title {
-      margin-top: $space-base;
-      margin-left: $space-base;
-      margin-right: $space-base;
+      margin-top: $space-card;
+      margin-left: $space-card;
+      margin-right: $space-card;
     }
 
     .post__meta {
-      margin-top: $space-sm;
-      margin-left: $space-base;
-      margin-right: $space-base;
+      margin-top: $space-mobile;
+      margin-left: $space-card;
+      margin-right: $space-card;
     }
   }
 }

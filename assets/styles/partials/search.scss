@@ -2,12 +2,12 @@
   height: $height-navbar-sm;
   line-height: $height-navbar-sm;
   display: flex;
-  padding-left: $space-base;
-  padding-right: $space-base;
+  padding-left: $space-card;
+  padding-right: $space-card;
   overflow-y: hidden;
 
   @include responsive(md) {
-    margin-bottom: $space-sm;
+    margin-bottom: $space-mobile;
   }
 
   &__input {
@@ -22,33 +22,33 @@
       line-height: $height-navbar-sm;
       outline: none;
       border: none;
-      border-bottom: $size-divider solid transparent;
-      border-top: $size-divider solid transparent;
+      border-bottom: $highlight-size solid transparent;
+      border-top: $highlight-size solid transparent;
       border-radius: 0;
       background-color: transparent;
-      padding-left: $space-sm;
-      padding-right: $space-xs;
+      padding-left: $space-mobile;
+      padding-right: 8px;
 
       &:hover,
       &:focus {
         outline: none;
         border: none;
-        border-bottom: $size-divider solid var(--color-primary);
-        border-top: $size-divider solid transparent;
+        border-bottom: $highlight-size solid var(--color-primary);
+        border-top: $highlight-size solid transparent;
         text-decoration: none;
       }
     }
   }
 
   &__ctrl {
-    padding: 0 $space-sm;
+    padding: 0 $space-mobile;
     color: var(--color-font);
     cursor: pointer;
     height: $height-navbar-sm;
     line-height: $height-navbar-sm;
 
     &:hover {
-      border-bottom: $size-divider solid var(--color-primary);
+      border-bottom: $highlight-size solid var(--color-primary);
       color: var(--color-primary);
       text-decoration: none;
     }

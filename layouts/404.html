@@ -1,0 +1,36 @@
+{{- .Scratch.Set "PAGE_TYPE" "404" -}}
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  {{- partial "head" . -}}
+</head>
+
+<body data-theme="auto" data-section="404">
+  {{- partial "header" . -}}
+
+  <main class="main">
+    <div class="container">
+      <div class="content">
+        <div class="content__inner">
+          <div class="card" id="notfound">
+            404 Not Found
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__inner">
+          <div class="sticky">
+            {{- partial "info" . -}}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  {{- partial "footer" . -}}
+</body>
+
+</html>

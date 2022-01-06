@@ -1,11 +1,11 @@
 .footer {
-  font-size: $font-size-sm;
+  font-size: $font-sm;
   height: 45px;
-  margin-bottom: $space-sm;
+  margin-bottom: $space-mobile;
 
   & > .container {
     height: 100%;
-    padding: 0 $space-base;
+    padding: 0 $space-card;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,7 +22,7 @@
 
     @include responsive(sm) {
       &:not(:first-child) {
-        margin-top: $space-xs;
+        margin-top: 8px;
       }
     }
   }

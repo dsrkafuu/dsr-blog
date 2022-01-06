@@ -2,11 +2,11 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: $space-base;
+    gap: $space-card;
 
     @include responsive(md) {
       grid-template-columns: repeat(2, 1fr);
-      gap: $space-sm;
+      gap: $space-mobile;
     }
 
     & > .card {
@@ -21,12 +21,12 @@
     h2 {
       color: var(--color-primary);
       margin: 0;
-      font-size: $font-size-xl;
+      font-size: $font-xl;
     }
   }
 
   &__box {
-    padding: $space-base;
+    padding: $space-card;
   }
 }
 

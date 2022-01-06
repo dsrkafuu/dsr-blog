@@ -1,13 +1,12 @@
-/*! dsr-blog | DSRKafuU (https://dsrkafuu.net) | Copyright (c) MPL-2.0 License */
-
 @import './support/variables';
 
-@import './support/normalize';
-@import './support/colors';
+@import 'dsr-design/scss/reset';
+@import 'dsr-design/scss/colors';
+@import 'dsr-design/scss/markdown';
+@import 'dsr-design/scss/prism';
+
 @import './support/global';
 @import './support/fiximg';
-@import './support/markdown';
-@import './support/reset';
 
 @import './partials/comment';
 @import './partials/compatibility';
@@ -23,5 +22,3 @@
 @import './pages/code';
 @import './pages/tags';
 @import './pages/friends';
-
-@import './plugins/prism';

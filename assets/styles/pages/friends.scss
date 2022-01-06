@@ -5,7 +5,7 @@
     height: 75px;
 
     &:not(:first-child) {
-      margin-top: $space-base;
+      margin-top: $space-card;
     }
   }
 
@@ -18,7 +18,7 @@
 
   &__box {
     flex: 1 1 auto;
-    padding: $space-base;
+    padding: $space-card;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,15 +44,15 @@
   }
 
   &__desc {
-    margin-left: $space-base;
+    margin-left: $space-card;
   }
 
   &__add {
-    padding: $space-base;
+    padding: $space-card;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: $space-base;
+    margin-top: $space-card;
   }
 
   @include responsive(md) {
@@ -60,7 +60,7 @@
       height: 120px;
 
       &:not(:first-child) {
-        margin-top: $space-sm;
+        margin-top: $space-mobile;
       }
     }
 
@@ -76,12 +76,12 @@
     }
 
     &__add {
-      margin-top: $space-sm;
+      margin-top: $space-mobile;
     }
 
     &__desc {
       margin-left: 0;
-      margin-top: $space-sm;
+      margin-top: $space-mobile;
     }
   }
 }

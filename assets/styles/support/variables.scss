@@ -1,13 +1,4 @@
-$font-family-cjk: 'Noto Sans SC', 'Noto Sans JP';
-$font-family-base: Inter, $font-family-cjk, -apple-system, BlinkMacSystemFont, sans-serif;
-$font-family-mono: 'Fira Code', $font-family-cjk, monospace;
-
-$font-size-xs: 11px;
-$font-size-sm: 13px;
-$font-size-base: 15px;
-$font-size-md: 17px;
-$font-size-lg: 18px;
-$font-size-xl: 20px;
+@import 'dsr-design/scss/variables';
 
 $responsive-desktop: 975px;
 $responsive-tablet: 750px;
@@ -26,18 +17,6 @@ $responsive-tablet: 750px;
   }
 }
 
-$space-xs: 8px;
-$space-sm: 16px;
-$space-base: 22px;
-$space-lg: 30px;
-
-$height-navbar: 48px;
+$height-navbar: 50px;
 $height-navbar-sm: 36px;
 $height-toc: 420px;
-
-$radius: 2px;
-
-$size-divider: 2px;
-$size-border: 1px;
-
-$filter-blur: saturate(180%) blur(3px);

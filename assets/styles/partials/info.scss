@@ -2,37 +2,37 @@
   text-align: center;
 
   &__avatar {
-    margin: 0 auto $space-base auto;
-    padding-top: $space-base;
+    margin: 0 auto $space-card auto;
+    padding-top: $space-card;
     width: 75px;
     user-select: none;
-    border-radius: $radius;
+    border-radius: $corner-radius;
     overflow: hidden;
   }
 
   &__meta {
     text-align: center;
-    font-size: $font-size-sm;
+    font-size: $font-sm;
   }
 
   &__metaName {
     display: block;
-    font-size: $font-size-lg;
+    font-size: $font-lg;
     font-weight: 500;
   }
 
   &__metaPara {
     display: block;
-    margin-top: $space-xs;
-    margin-bottom: $space-sm;
+    margin-top: 8px;
+    margin-bottom: $space-mobile;
     line-height: 1.45;
-    padding: 0 $space-sm;
-    font-size: $font-size-sm;
+    padding: 0 $space-mobile;
+    font-size: $font-sm;
   }
 
   &__counter {
     display: flex;
-    padding: $space-base;
+    padding: $space-card;
     padding-top: 0;
   }
 
@@ -43,21 +43,21 @@
   }
 
   &__counterData {
-    font-size: $font-size-md;
+    font-size: $font-lg;
     color: var(--color-primary);
   }
 
   &__counterName {
-    font-size: $font-size-sm;
-    margin-top: $space-xs / 2;
+    font-size: $font-sm;
+    margin-top: 8px / 2;
   }
 }
 
 .links {
-  margin-top: $space-base;
+  margin-top: $space-card;
 
   @include responsive(md) {
-    margin-top: $space-sm;
+    margin-top: $space-mobile;
   }
 
   display: flex;
@@ -70,11 +70,11 @@
     height: $height-navbar-sm;
     text-align: center;
     line-height: $height-navbar-sm;
-    padding: 0 $space-sm;
+    padding: 0 $space-mobile;
     cursor: pointer;
 
     &:hover {
-      border-bottom: $size-divider solid var(--color-primary);
+      border-bottom: $highlight-size solid var(--color-primary);
       color: var(--color-primary);
       text-decoration: none;
     }

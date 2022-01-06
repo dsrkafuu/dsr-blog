@@ -1,24 +1,23 @@
 .header {
   background-color: var(--color-bg);
-  backdrop-filter: $filter-blur;
   box-shadow: var(--box-shadow);
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   user-select: none;
-  font-family: $font-family-base;
+  font-family: $font-family-body;
 }
 
 .navbar {
   height: $height-navbar;
-  padding-right: $space-base - $space-sm;
+  padding-right: $space-card - $space-mobile;
   display: flex;
   position: relative;
 
   &__item {
     display: inline-block;
-    padding: 0 $space-sm;
+    padding: 0 $space-mobile;
     height: $height-navbar;
     line-height: $height-navbar;
     cursor: pointer;
@@ -27,7 +26,7 @@
 
     &:hover,
     &--active {
-      border-bottom: $size-divider solid var(--color-primary);
+      border-bottom: $highlight-size solid var(--color-primary);
       color: var(--color-primary);
       text-decoration: none;
     }
@@ -35,11 +34,11 @@
 
   &__brand {
     flex: 0 0 auto;
-    font-size: $font-size-lg;
+    font-size: $font-lg;
     font-weight: 500;
 
     .navbar__item {
-      padding: 0 $space-base;
+      padding: 0 $space-card;
     }
   }
 
@@ -60,7 +59,7 @@
     }
 
     &__brand {
-      font-size: $font-size-md;
+      font-size: $font-lg;
       text-align: center;
     }
 
@@ -86,6 +85,6 @@
 // iphone 5 fix
 @media screen and (max-width: 350px) {
   .navbar__item {
-    padding: 0 $space-xs;
+    padding: 0 8px;
   }
 }

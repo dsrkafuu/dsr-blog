@@ -7,16 +7,20 @@ specifiers:
   chalk: ~5.0.0
   cross-env: ~7.0.3
   cssnano: ~5.0.14
+  dsr-design: ~2.2.0
   env-cmd: ~10.1.0
   eslint: ~8.6.0
   glob: ~7.2.0
   html-minifier-terser: ~6.1.0
+  normalize.css: ~8.0.1
   npm-run-all: ~4.1.5
   postcss: ~8.4.5
 
 dependencies:
   '@sentry/browser': 6.16.1
   '@sentry/tracing': 6.16.1
+  dsr-design: 2.2.0
+  normalize.css: 8.0.1
 
 devDependencies:
   autoprefixer: 10.4.1_postcss@8.4.5
@@ -539,6 +543,10 @@ packages:
       no-case: 3.0.4
       tslib: 2.3.1
     dev: true
+
+  /dsr-design/2.2.0:
+    resolution: {integrity: sha512-h9qlknutIa0K/hMgaexcPQhCWNwgzO82Lr1P/PzRB+MsxvbRhkWhhqtl6EoewhlrXp5ZrXHJ79BTwJ7C6l+qdA==}
+    dev: false
 
   /electron-to-chromium/1.4.36:
     resolution: {integrity: sha512-MbLlbF39vKrXWlFEFpCgDHwdlz4O3LmHM5W4tiLRHjSmEUXjJjz8sZkMgWgvYxlZw3N1iDTmCEtOkkESb5TMCg==}
@@ -1141,6 +1149,10 @@ packages:
     resolution: {integrity: sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==}
     engines: {node: '>=10'}
     dev: true
+
+  /normalize.css/8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
+    dev: false
 
   /npm-run-all/4.1.5:
     resolution: {integrity: sha512-Oo82gJDAVcaMdi3nuoKFavkIHBRVqQ1qvMb+9LHk/cF4P6B2m8aP04hGf7oL6wZ9BuGwX1onlLhpuoofSyoQDQ==}

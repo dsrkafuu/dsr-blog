@@ -73,8 +73,8 @@
     font-family: $font-family-mono;
     padding: 0.15px 5px;
     color: inherit;
-    background-color: var(--color-code);
-    border-radius: $radius;
+    background-color: var(--color-wrapper);
+    border-radius: $corner-radius;
     word-wrap: break-word;
     word-break: break-all;
     hyphens: none;
@@ -91,8 +91,8 @@
   pre {
     font-size: 90%;
     font-family: $font-family-mono;
-    background-color: var(--color-code);
-    border-radius: $radius;
+    background-color: var(--color-wrapper);
+    border-radius: $corner-radius;
     word-wrap: normal;
     padding: 15px;
     overflow: auto;
@@ -124,7 +124,7 @@
   }
 
   hr {
-    height: $size-divider;
+    height: $highlight-size;
     padding: 0;
     margin: 18px 0;
     background-color: var(--color-wrapper);
@@ -139,7 +139,7 @@
     padding: 0 15px;
     color: inherit;
     font-size: inherit;
-    border-left: $size-divider solid var(--color-wrapper);
+    border-left: $highlight-size solid var(--color-wrapper);
 
     & > :first-child {
       margin-top: 0;
@@ -154,13 +154,13 @@
   h2 {
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: $font-size-xl;
+    font-size: $font-xl;
   }
 
   h3 {
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: $font-size-md;
+    font-size: $font-lg;
   }
 
   h4,
@@ -168,7 +168,7 @@
   h6 {
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: $font-size-base;
+    font-size: $font-md;
   }
 
   h1,
@@ -207,12 +207,12 @@
     td {
       background-color: transparent;
       padding: 4px 12px;
-      border: $size-border solid var(--color-wrapper);
+      border: $border-size solid var(--color-wrapper);
     }
   }
 
   img {
     display: block;
-    border-radius: $radius;
+    border-radius: $corner-radius;
   }
 }
