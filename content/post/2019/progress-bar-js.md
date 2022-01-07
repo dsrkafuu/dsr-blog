@@ -39,8 +39,6 @@ bar.animate(1);
 
 以上代码实现的内容为在 `id="progress"` 的 div 内生成一个颜色为 `#8AA2D3` 的宽度为 `12` 的圆形进度条，如下图：
 
-![简单进度条预览](20200414200041.webp)
-
 `bar.animate(1);` 意为将进度条进度调整至 1，并且显示动画。
 
 更多实例请见[官方示例列表](https://kimmobrunfeldt.github.io/progressbar.js/)。
@@ -174,12 +172,14 @@ $(function () {
     fill: '#E5E2E4',
   });
   // 获取当前页面位置百分比
-  var scrolled = $(window).scrollTop() / ($(document).height() - $(window).height() - 1);
+  var scrolled =
+    $(window).scrollTop() / ($(document).height() - $(window).height() - 1);
   // 设置百分比，初始化时展示动画应对直接刷新时的情况
   bar.animate(scrolled);
   // 监控页面滚动，调整百分比避免图形不闭合
   $(window).scroll(function () {
-    scrolled = $(window).scrollTop() / ($(document).height() - $(window).height() - 1);
+    scrolled =
+      $(window).scrollTop() / ($(document).height() - $(window).height() - 1);
     if (scrolled < 0.0005) {
       scrolled = 0;
     } else if (scrolled > 1) {
