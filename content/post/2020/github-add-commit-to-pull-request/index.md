@@ -1,7 +1,7 @@
 ---
 title: 'GitHub 修改他人的 pull request 并提交 commit'
 date: 2020-10-01T16:44:02+08:00
-tags:
+keywords:
   - 'github'
   - 'git'
 description: '修改其他社区开发者提交的 pull request。'

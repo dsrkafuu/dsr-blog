@@ -1,7 +1,7 @@
 ---
 title: '工具库 zx - 使用 JavaScript 更便捷地编写 shell 脚本'
 date: 2021-07-19T10:40:00+08:00
-tags:
+keywords:
   - 'javascript'
   - 'shell'
   - 'google'

@@ -1,7 +1,7 @@
 ---
 title: '更新深色模式主题并支持 prefers-color-scheme'
 date: 2020-06-15T09:20:21+08:00
-tags:
+keywords:
   - 'html'
   - 'javascript'
   - 'css'

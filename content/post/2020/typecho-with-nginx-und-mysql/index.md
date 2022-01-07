@@ -1,7 +1,7 @@
 ---
 title: 'Ubuntu 20.04 基于 PHP 7.4 和 MySQL 搭建 Typecho'
 date: 2020-05-30T22:14:51+08:00
-tags:
+keywords:
   - 'linux'
   - 'nginx'
   - 'php'

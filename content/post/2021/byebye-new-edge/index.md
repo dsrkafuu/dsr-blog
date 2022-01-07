@@ -2,7 +2,7 @@
 title: '为什么我抛弃了新版 Microsoft Edge 浏览器'
 date: 2021-08-23T10:31:21+08:00
 update: 2021-08-24T17:19:29+08:00
-tags:
+keywords:
   - 'browser'
   - 'microsoft'
   - 'firefox'

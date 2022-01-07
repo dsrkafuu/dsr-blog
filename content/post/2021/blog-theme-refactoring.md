@@ -1,7 +1,7 @@
 ---
 title: '博客主题重构记录'
 date: 2021-05-04T15:24:25+08:00
-tags:
+keywords:
   - 'css'
   - 'theme'
   - 'hugo'

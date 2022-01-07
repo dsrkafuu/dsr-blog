@@ -1,7 +1,7 @@
 ---
 title: '使用 ProgressBar.js 为页面添加浏览进度条'
 date: 2019-06-14T19:15:00+08:00
-tags:
+keywords:
   - 'html'
   - 'css'
   - 'javascript'

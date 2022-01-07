@@ -1,7 +1,7 @@
 ---
 title: '对 Google 说不 - 本站已启用屏蔽 FLoC 的 HTTP 标头'
 date: 2021-06-23T17:17:11+08:00
-tags:
+keywords:
   - 'google'
   - 'floc'
   - 'analytics'

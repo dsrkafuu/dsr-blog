@@ -1,10 +1,6 @@
 ---
 title: 'Web'
 date: 2019-06-12T12:25:32+08:00
-keywords:
-  - cs
-  - web
-  - http
 description: '计算机网络笔记。'
 ---
 

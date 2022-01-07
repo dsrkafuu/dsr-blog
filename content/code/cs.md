@@ -1,9 +1,6 @@
 ---
 title: 'CS'
 date: 2019-01-07T11:05:30+08:00
-keywords:
-  - cs
-  - algorithm
 description: '计算机专业基础相关笔记。'
 ---
 

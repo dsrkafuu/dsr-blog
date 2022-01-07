@@ -1,7 +1,7 @@
 ---
 title: 'CloudFlare 的 Rocket Loader 导致切换夜间模式闪烁'
 date: 2020-06-08T10:31:55+08:00
-tags:
+keywords:
   - 'html'
   - 'javascript'
   - 'cloudflare'

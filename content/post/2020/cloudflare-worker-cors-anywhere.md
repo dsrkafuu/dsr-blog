@@ -1,7 +1,7 @@
 ---
 title: '使用 CloudFlare Workers 实现 CORS Anywhere'
 date: 2020-10-23T19:36:50+08:00
-tags:
+keywords:
   - 'javascript'
   - 'cloudflare'
   - 'cors'

@@ -1,7 +1,7 @@
 ---
 title: '使用 umami 搭建自己的私人数据收集分析工具'
 date: 2020-10-24T14:37:01+08:00
-tags:
+keywords:
   - 'postgresql'
   - 'ubuntu'
 description: '使用 umami 搭建私人版 Google Analytics。'

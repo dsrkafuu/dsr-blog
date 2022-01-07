@@ -2,7 +2,7 @@
 title: 'Aofuji Analytics 开发全记录'
 date: 2021-01-21T00:00:00+08:00
 update: 2021-11-18T13:06:11+08:00
-tags:
+keywords:
   - 'javascript'
   - 'vue'
   - 'mongodb'

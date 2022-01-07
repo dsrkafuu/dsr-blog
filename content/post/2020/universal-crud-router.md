@@ -1,7 +1,7 @@
 ---
 title: 'Node + MongoDB 通用 CRUD 接口实现笔记'
 date: 2020-07-15T11:46:01+08:00
-tags:
+keywords:
   - 'nodejs'
   - 'javascript'
   - 'mongodb'

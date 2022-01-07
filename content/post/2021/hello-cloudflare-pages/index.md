@@ -1,7 +1,7 @@
 ---
 title: 'CloudFlare Pages 网页托管初体验'
 date: 2021-04-03T19:03:04+08:00
-tags:
+keywords:
   - 'cloudflare'
   - 'pages'
   - 'ci'

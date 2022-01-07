@@ -1,7 +1,7 @@
 ---
 title: 'libwebp 文档笔记 - dwebp 部分'
 date: 2020-04-02T18:56:25+08:00
-tags:
+keywords:
   - 'webp'
   - 'doc'
   - 'image'

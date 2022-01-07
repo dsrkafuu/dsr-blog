@@ -1,7 +1,7 @@
 ---
 title: '自定义 Hugo 的分页导航栏'
 date: 2019-11-19T20:16:41+08:00
-tags:
+keywords:
   - 'html'
   - 'golang'
   - 'hugo'

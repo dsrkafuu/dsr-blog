@@ -1,8 +1,6 @@
 ---
 title: 'JavaScript'
 date: 2020-01-22T17:12:11+08:00
-keywords:
-  - javascript
 description: 'JavaScript 重难点整理。'
 ---
 

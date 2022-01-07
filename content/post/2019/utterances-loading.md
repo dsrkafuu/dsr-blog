@@ -1,7 +1,7 @@
 ---
 title: '为 utterances 添加评论加载中提示'
 date: 2019-08-16T15:21:01+08:00
-tags:
+keywords:
   - 'html'
   - 'javascript'
 description: '在使用 utterances 作为博客评论系统的时候发现了一些问题。'

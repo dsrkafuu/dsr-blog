@@ -1,7 +1,7 @@
 ---
 title: 'GitHub 进行 fork 后的仓库如何与原仓库同步'
 date: 2019-12-12T19:07:41+08:00
-tags:
+keywords:
   - 'github'
   - 'git'
 description: '向社区贡献代码时也有不少需要注意的点。'

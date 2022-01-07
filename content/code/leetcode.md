@@ -1,10 +1,6 @@
 ---
 title: 'LeetCode'
 date: 2020-09-04T17:14:22+08:00
-keywords:
-  - algorithm
-  - javascript
-  - leetcode
 description: 'LeetCode 解题相关笔记。'
 ---
 

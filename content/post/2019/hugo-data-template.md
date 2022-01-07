@@ -1,7 +1,7 @@
 ---
 title: '使用 Hugo 的 Data 模板'
 date: 2019-03-21T11:42:55+08:00
-tags:
+keywords:
   - 'html'
   - 'golang'
   - 'hugo'
