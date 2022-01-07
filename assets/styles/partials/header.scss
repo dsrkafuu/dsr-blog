@@ -23,8 +23,10 @@
     cursor: pointer;
     color: inherit;
     position: relative;
-    transition: background-color $transition-duration ease;
+    transition: background-color $transition-duration ease,
+      border-bottom-color $transition-duration ease;
     border-bottom: $highlight-size solid transparent;
+    background-color: transparent;
 
     &:hover {
       color: var(--color-font);
@@ -33,7 +35,7 @@
     }
 
     &--active {
-      border-bottom: $highlight-size solid var(--color-primary);
+      border-bottom-color: var(--color-primary);
     }
   }
 

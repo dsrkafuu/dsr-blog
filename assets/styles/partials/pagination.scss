@@ -11,7 +11,9 @@
     line-height: $height-navbar-sm;
     padding: 0 $space-mobile;
     cursor: pointer;
-    transition: background-color $transition-duration ease;
+    border-bottom: $highlight-size solid transparent;
+    transition: background-color $transition-duration ease,
+      border-bottom-color $transition-duration ease;
 
     &:hover {
       text-decoration: none;
@@ -20,7 +22,7 @@
     }
 
     &.pagination__item--active {
-      border-bottom: $highlight-size solid var(--color-primary);
+      border-bottom-color: var(--color-primary);
     }
 
     .icon {

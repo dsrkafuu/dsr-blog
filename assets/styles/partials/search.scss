@@ -28,14 +28,17 @@
       background-color: transparent;
       padding-left: $space-mobile;
       padding-right: 8px;
+      transition: background-color $transition-duration ease,
+        border-bottom-color $transition-duration ease;
+      text-decoration: none;
 
-      &:hover,
+      &:hover {
+        background-color: var(--color-transparent-active);
+      }
+
       &:focus {
-        outline: none;
-        border: none;
-        border-bottom: $highlight-size solid var(--color-primary);
-        border-top: $highlight-size solid transparent;
-        text-decoration: none;
+        background-color: var(--color-transparent-active);
+        border-bottom-color: var(--color-primary);
       }
     }
   }
@@ -48,8 +51,7 @@
     line-height: $height-navbar-sm;
 
     &:hover {
-      border-bottom: $highlight-size solid var(--color-primary);
-      color: var(--color-primary);
+      background-color: var(--color-transparent-active);
       text-decoration: none;
     }
   }
