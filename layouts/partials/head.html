@@ -81,3 +81,5 @@
 {{- $options := (dict "targetPath" $out "minify" $isProd "defines" $defines "target" "es2020" "format" "iife") -}}
 {{- $built := resources.Get $src | js.Build $options -}}
 <script defer src="{{ $built.RelPermalink }}"></script>
+
+<script>window.$crisp=[];window.CRISP_WEBSITE_ID="abb1fc98-d4c5-475a-b93d-f017d7e47156";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
