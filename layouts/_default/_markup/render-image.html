@@ -15,13 +15,12 @@
 {{- if le $imageWidth 652 -}}
 {{- $width = printf "width: %dpx;" $imageWidth -}}
 {{- end -}}
-<p>
+<!-- goldmark will insert p tag before & after image div so theres no need to wrap it with p tag -->
 <div class="fiximg" style="{{- $width | safeCSS -}}">
   <div class="fiximg__container" style="{{- $css | safeCSS -}}">
     <img loading="lazy" src="{{- $image.Permalink | relURL -}}" alt="{{- .Text -}}" data-zoomable />
   </div>
 </div>
-</p>
 
 {{- end -}}
 

@@ -2,8 +2,8 @@
  * initialize toc control
  */
 export default () => {
-  const tocContent = document.querySelector(`#toc-btn`);
-  const tocCtrl = document.querySelector(`#toc-overlay`);
+  const tocCtrl = document.querySelector(`#toc-btn`);
+  const tocContent = document.querySelector(`#toc-overlay`);
   if (!tocContent && tocCtrl) {
     tocCtrl.remove();
     return;
