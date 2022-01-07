@@ -13,7 +13,7 @@
 {{- $css := printf "padding-bottom: %.4f%%;" $ratio -}}
 {{- $width := "width: 100%;" -}}
 {{- if le $imageWidth 652 -}}
-{{- $width = printf "width: %dpx;" $imageWidth -}}
+{{- $width = printf "width: %.0fpx;" $imageWidth -}}
 {{- end -}}
 <!-- goldmark will insert p tag before & after image div so theres no need to wrap it with p tag -->
 <div class="fiximg" style="{{- $width | safeCSS -}}">
