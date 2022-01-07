@@ -1,5 +1,5 @@
 ---
-title: '番剧播放列表'
+title: '番剧'
 date: 2021-05-22T17:08:20+48:00
 description: 'DSRBLOG 番剧播放列表。'
 keywords:
@@ -8,6 +8,7 @@ keywords:
   - 番剧
   - 播放列表
 layout: 'single'
+weight: 4
 banner: 'tamako.webp'
 ---
 

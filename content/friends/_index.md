@@ -8,4 +8,5 @@ keywords:
   - 友情链接
   - 友链
 layout: 'friends'
+weight: 3
 ---

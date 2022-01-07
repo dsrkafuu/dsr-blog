@@ -17,24 +17,29 @@
 
   &__item {
     display: inline-block;
-    padding: 0 $space-mobile;
+    padding: 0 $space-card;
     height: $height-navbar;
     line-height: $height-navbar;
     cursor: pointer;
     color: inherit;
     position: relative;
+    transition: background-color $transition-duration ease;
+    border-bottom: $highlight-size solid transparent;
 
-    &:hover,
+    &:hover {
+      color: var(--color-font);
+      background-color: var(--color-transparent-active);
+      text-decoration: none;
+    }
+
     &--active {
       border-bottom: $highlight-size solid var(--color-primary);
-      color: var(--color-primary);
-      text-decoration: none;
     }
   }
 
   &__brand {
     flex: 0 0 auto;
-    font-size: $font-lg;
+    font-size: $font-xl;
     font-weight: 500;
 
     .navbar__item {

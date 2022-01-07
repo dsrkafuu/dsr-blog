@@ -10,7 +10,7 @@
       <div class="navbar__start">
         {{- $currentPage := . -}}
         {{- range .Site.Menus.main -}}
-        {{- $pageMatch := $currentPage.IsMenuCurrent "main" . -}}
+        {{- $pageMatch := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) -}}
         <a class="navbar__item{{- if $pageMatch }} navbar__item--active{{- end -}}" href="{{- .URL | relURL -}}">
           {{- .Name -}}
         </a>

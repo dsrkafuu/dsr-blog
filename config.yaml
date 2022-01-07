@@ -26,20 +26,8 @@ params:
     - 'code'
 
 # menu
-menu:
-  main:
-    - name: '文章'
-      url: '/post/'
-      weight: 1
-    - name: '笔记'
-      url: '/code/'
-      weight: 2
-    - name: '友链'
-      url: '/friends/'
-      weight: 3
-    - name: '番剧'
-      url: '/playlist/'
-      weight: 4
+# https://gohugo.io/templates/menu-templates/#section-menu-for-lazy-bloggers
+sectionPagesMenu: 'main'
 
 # markup
 markup:
