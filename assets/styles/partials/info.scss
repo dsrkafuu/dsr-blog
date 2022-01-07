@@ -64,11 +64,12 @@
     line-height: $height-navbar-sm;
     padding: 0 $space-mobile;
     cursor: pointer;
+    transition: background-color $transition-duration ease;
 
     &:hover {
-      border-bottom: $highlight-size solid var(--color-primary);
-      color: var(--color-primary);
       text-decoration: none;
+      color: var(--color-font);
+      background-color: var(--color-transparent-active);
     }
   }
 }
