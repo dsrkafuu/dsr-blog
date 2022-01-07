@@ -139,7 +139,8 @@ tt {
 }
 
 .card {
-  background-color: var(--color-bg);
+  background-color: var(--color-backdrop);
+  backdrop-filter: $filter-blur;
   border-radius: $corner-radius;
   box-shadow: var(--box-shadow);
   overflow: auto;

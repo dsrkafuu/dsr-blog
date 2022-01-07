@@ -15,7 +15,7 @@
   "dependencies": {
     "@sentry/browser": "~6.16.1",
     "@sentry/tracing": "~6.16.1",
-    "dsr-design": "~2.2.0",
+    "dsr-design": "~2.3.0",
     "normalize.css": "~8.0.1"
   },
   "devDependencies": {

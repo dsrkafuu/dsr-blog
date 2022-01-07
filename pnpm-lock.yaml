@@ -7,7 +7,7 @@ specifiers:
   chalk: ~5.0.0
   cross-env: ~7.0.3
   cssnano: ~5.0.14
-  dsr-design: ~2.2.0
+  dsr-design: ~2.3.0
   env-cmd: ~10.1.0
   eslint: ~8.6.0
   glob: ~7.2.0
@@ -19,7 +19,7 @@ specifiers:
 dependencies:
   '@sentry/browser': 6.16.1
   '@sentry/tracing': 6.16.1
-  dsr-design: 2.2.0
+  dsr-design: 2.3.0
   normalize.css: 8.0.1
 
 devDependencies:
@@ -544,8 +544,8 @@ packages:
       tslib: 2.3.1
     dev: true
 
-  /dsr-design/2.2.0:
-    resolution: {integrity: sha512-h9qlknutIa0K/hMgaexcPQhCWNwgzO82Lr1P/PzRB+MsxvbRhkWhhqtl6EoewhlrXp5ZrXHJ79BTwJ7C6l+qdA==}
+  /dsr-design/2.3.0:
+    resolution: {integrity: sha512-LrCdHi8VmUUMsQ6SKD2v7kFOpwvK6T7SGzedlVVEzdv2VE41WSSp5bh5dDXhNeiyQmEXR0aZzRIVDk5q9tgfww==}
     dev: false
 
   /electron-to-chromium/1.4.36:

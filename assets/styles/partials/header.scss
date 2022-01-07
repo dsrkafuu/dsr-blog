@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--color-bg);
+  background-color: var(--color-backdrop);
   box-shadow: var(--box-shadow);
   position: sticky;
   top: 0;
@@ -7,6 +7,7 @@
   right: 0;
   user-select: none;
   font-family: $font-family-body;
+  backdrop-filter: $filter-blur;
 }
 
 .navbar {

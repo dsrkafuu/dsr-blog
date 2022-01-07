@@ -4,6 +4,7 @@ import { logError, logInfo } from './plugins/loggers';
 import { SECTIONS, getSection } from './plugins/utils';
 import search from './components/search';
 import toc from './components/toc';
+import zoom from './components/zoom';
 
 const SECTION = getSection();
 
@@ -28,4 +29,6 @@ if ([SECTIONS.INDEX, SECTIONS.LIST].includes(SECTION)) {
 if (SECTION === SECTIONS.SINGLE) {
   toc();
   logInfo('toc module inited');
+  zoom();
+  logInfo('zoom module inited');
 }
