@@ -2,9 +2,7 @@
 
 ![](https://img.shields.io/github/last-commit/dsrkafuu/dsr-blog)
 ![](https://img.shields.io/github/package-json/v/dsrkafuu/dsr-blog)
-![](https://img.shields.io/github/license/dsrkafuu/dsr-blog)
 [![](https://img.shields.io/github/license/dsrkafuu/dsr-blog)](https://github.com/dsrkafuu/dsr-blog/blob/main/LICENSE)
-[![](https://img.shields.io/lgtm/grade/javascript/github/dsrkafuu/dsr-blog)](https://lgtm.com/projects/g/dsrkafuu/dsr-blog/context:javascript)
 
 新版整合式个人博客 [dsr-blog](https://blog.dsrkafuu.net)，基于 Hugo 实现，包含博客文章和笔记整合。非面向主题使用者的通用主题，如果有朋友感兴趣也欢迎发 issue、修改或自己使用。
 
