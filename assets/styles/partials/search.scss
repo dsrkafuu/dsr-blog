@@ -28,8 +28,8 @@
       background-color: transparent;
       padding-left: $space-mobile;
       padding-right: 8px;
-      transition: background-color $transition-duration ease,
-        border-bottom-color $transition-duration ease;
+      transition: background-color $transition-fast ease,
+        border-bottom-color $transition-fast ease;
       text-decoration: none;
 
       &:hover {

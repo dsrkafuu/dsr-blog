@@ -73,7 +73,7 @@
     max-width: 70%;
     min-width: 40%;
     transform: translateX(125%);
-    transition: transform $transition-duration ease;
+    transition: transform $transition-fast ease;
 
     &--active {
       transform: translateX(0);

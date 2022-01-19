@@ -54,6 +54,8 @@
 
 ## LICENSE
 
-The theme is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/dsrkafuu/dsr-blog/blob/master/LICENSE).
+This project and all contributors shall not be responsible for any dispute or loss caused by using this project.
+
+This project is released under the `GNU AGPLv3`, for more information read the [License](https://github.com/dsrkafuu/dsr-blog/blob/main/LICENSE).
 
 **Copyright © 2018-present DSRKafuU (<https://dsrkafuu.net>)**

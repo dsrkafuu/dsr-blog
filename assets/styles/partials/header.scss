@@ -24,8 +24,8 @@
     cursor: pointer;
     color: inherit;
     position: relative;
-    transition: background-color $transition-duration ease,
-      border-bottom-color $transition-duration ease;
+    transition: background-color $transition-fast ease,
+      border-bottom-color $transition-fast ease;
     border-bottom: $highlight-size solid transparent;
     background-color: transparent;
 

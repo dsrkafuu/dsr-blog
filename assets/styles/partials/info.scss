@@ -64,7 +64,7 @@
     line-height: $height-navbar-sm;
     padding: 0 $space-mobile;
     cursor: pointer;
-    transition: background-color $transition-duration ease;
+    transition: background-color $transition-fast ease;
 
     &:hover {
       text-decoration: none;

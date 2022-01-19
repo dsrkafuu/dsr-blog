@@ -1,9 +1,9 @@
 {
   "private": true,
   "name": "dsr-blog",
-  "version": "7.0.2",
+  "version": "7.0.3",
   "description": "Personal blog powered by Hugo.",
-  "license": "Apache-2.0",
+  "license": "AGPL-3.0",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
   "scripts": {
     "script:minify": "node \"./scripts/minify.mjs\"",
@@ -15,16 +15,16 @@
   "dependencies": {
     "@sentry/browser": "~6.16.1",
     "@sentry/tracing": "~6.16.1",
-    "dsr-design": "~2.3.0",
+    "dsr-design": "~2.5.0",
     "normalize.css": "~8.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "~10.4.1",
+    "autoprefixer": "~10.4.2",
     "chalk": "~5.0.0",
     "cross-env": "~7.0.3",
-    "cssnano": "~5.0.14",
+    "cssnano": "~5.0.15",
     "env-cmd": "~10.1.0",
-    "eslint": "~8.6.0",
+    "eslint": "~8.7.0",
     "glob": "~7.2.0",
     "html-minifier-terser": "~6.1.0",
     "npm-run-all": "~4.1.5",
