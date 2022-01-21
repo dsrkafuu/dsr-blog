@@ -59,7 +59,7 @@ banner: 'tamako.webp'
 
 ## 2021 (17 部)
 
-(持续更新中)
+**△ - 世界顶尖的暗杀者转生为异世界贵族 (SILVER LINK. & studio ぱれっと)**
 
 **△ - 魔法纪录 魔法少女小圆外传 第二季 -觉醒前夜- (SHAFT)**
 
@@ -121,6 +121,8 @@ banner: 'tamako.webp'
 **○ - 魔女之旅 (C2C)**
 
 **△ - Assault Lily BOUQUET (SHAFT)**
+
+**○ - 剧场版 紫罗兰永恒花园 (京都アニメーション)**
 
 **△ - 我的青春恋爱物语果然有问题 完 (feel.)**
 
