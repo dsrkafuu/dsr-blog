@@ -36,7 +36,7 @@ description: '终于可以和糟糕的 2021 告别，迎来也许会更糟也许
 
 旧的博客主题、模板如 [Hugo Theme Fuji](https://github.com/dsrkafuu/hugo-theme-fuji) 和 [Hugo Template Aofuji](https://github.com/dsrkafuu/hugo-template-aofuji)，将减少维护或不再进行维护。同时移除部分 Fork 和镜像项目，如 FFXIV Gearing 配装器等。
 
-[个人博客](https://blog.dsrkafuu.net)依旧使用 Hugo 构建，但会简化整体结构，同时移除部分页面，便于长期维护。[DSRToolS](https://tools.dsrkafuu.net) 将使用 Next.js 重写，同时相应的 API 统一整理。新开发 [DSRDESIGN](https://design.dsrkafuu.net)，统一设计和工具库模板，在各个人项目中通用。
+[个人博客](https://blog.dsrkafuu.net)依旧使用 Hugo 构建，但会简化整体结构，同时移除部分页面，便于长期维护。[DSRTOOLS](https://tools.dsrkafuu.net) 将使用 Next.js 重写，同时相应的 API 统一整理。新开发 [DSRDESIGN](https://design.dsrkafuu.net)，统一设计和工具库模板，在各个人项目中通用。
 
 所有个人项目的浏览器支持将调整为**最新大版本**的 Chrome、Edge、Firefox 和 Safari。同时照旧使用 jsDelivr 等全球 CDN，不再为国内访问量进行特定的优化。
 

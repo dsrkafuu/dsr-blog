@@ -96,3 +96,26 @@
     padding: 0 8px;
   }
 }
+
+// temp banner
+.banner {
+  height: 45px;
+  color: var(--color-font-inverse);
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  user-select: none;
+
+  &__text {
+    margin-right: 6px;
+  }
+
+  &__emoji {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: -0.5px;
+  }
+}
