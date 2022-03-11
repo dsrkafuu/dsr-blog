@@ -2,6 +2,9 @@
 {{- $author := .Site.Data.meta.author -}}
 {{- $bio := .Site.Data.meta.bio -}}
 {{- $opengraph := .Site.Data.meta.opengraph -}}
+{{- with .Params.banner -}}
+{{- $opengraph = printf "/images/banners/%s" . | absURL -}}
+{{- end -}}
 
 <meta property="og:title" content="{{- if .IsHome -}}{{ $name }}{{- else -}}{{- .Title }} | {{ $name }}{{- end -}}" />
 <meta name="twitter:title" content="{{- if .IsHome -}}{{ $name }}{{- else -}}{{- .Title }} | {{ $name }}{{- end -}}" />
