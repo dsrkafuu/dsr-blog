@@ -5,19 +5,26 @@ baseURL: 'https://blog.dsrkafuu.net'
 hasCJKLanguage: true
 enableEmoji: true
 enableRobotsTXT: true
-taxonomies:
-  tag: 'tags'
 paginate: 10
-disableKinds:
-  - 'RSS'
-  - 'taxonomy'
-  - 'term'
 enableGitInfo: true
 frontmatter:
   lastmod:
     - :git
     - :fileModTime
     - :default
+disableKinds:
+  - 'taxonomy'
+  - 'term'
+
+# only preserve home rss
+outputs:
+  page:
+    - HTML
+  home:
+    - HTML
+    - RSS
+  section:
+    - HTML
 
 # params
 params:
