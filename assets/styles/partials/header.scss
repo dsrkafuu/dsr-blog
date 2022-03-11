@@ -28,6 +28,7 @@
       border-bottom-color $transition-fast ease;
     border-bottom: $highlight-size solid transparent;
     background-color: transparent;
+    border-top: $highlight-size solid transparent;
 
     &:hover {
       color: var(--color-font);
@@ -90,7 +91,18 @@
   }
 }
 
-// iphone 5 fix
+// mobile header padding fix
+@media screen and (max-width: 450px) {
+  .navbar__item {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .navbar__item {
+    padding: 0 12px;
+  }
+}
+// iphone 5 (small width) fix
 @media screen and (max-width: 350px) {
   .navbar__item {
     padding: 0 8px;

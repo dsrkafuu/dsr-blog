@@ -24,6 +24,10 @@
       </div>
 
       <div class="navbar__end">
+        <a class="navbar__item" href='{{- "/index.xml" | absURL -}}' target="_blank" rel="noopener">
+          {{- .Scratch.Set "ICON_NAME" "rss" -}}
+          {{- partial "icon" . -}}
+        </a>
         <div class="navbar__item navbar__toc" id="toc-btn">
           {{- .Scratch.Set "ICON_NAME" "bars" -}}
           {{- partial "icon" . -}}
