@@ -1,31 +1,27 @@
 {{- $pages := where .Site.RegularPages "Type" "in" "post" -}}
-{{- $pages = $pages | first 10 -}}
-{{- $latestPage := index $pages 0 -}}
-
-{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
+{{- $pages = $pages | first 20 -}}
+<!-- https://datatracker.ietf.org/doc/html/rfc4287 -->
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>{{- .Site.Data.meta.name -}}</title>
-<link>{{- .Permalink -}}</link>
-<author>
-<name>{{- .Site.Data.meta.author -}}</name>
-</author>
-<language>zh-cn</language>
-<description>{{- .Site.Data.meta.bio -}}</description>
-<lastBuildDate>{{ .Site.LastChange.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
-<copyright>{{- .Site.Data.meta.license -}}</copyright>
-<generator>Hugo {{ hugo.Version -}}</generator>
-{{- with .OutputFormats.Get "RSS" -}}
-{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
-{{- end -}}
-{{ range $pages }}
-<item>
-<title>{{ .Title }}</title>
-<link>{{ .Permalink }}</link>
-<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-<description>{{ .Summary | html }}</description>
-</item>
-{{- end }}
-</channel>
-</rss>
+<summary>{{- .Site.Data.meta.bio -}}</summary>
+{{ with .OutputFormats.Get "RSS" -}}<link href="{{- .Permalink -}}" rel="self" />{{- end }}
+<link href="{{- .Site.BaseURL | absURL -}}" />
+<icon>{{- .Site.Data.favicon.ico -}}</icon>
+<id>{{- .Site.BaseURL | absURL -}}</id>
+<author><name>{{- .Site.Data.meta.author -}}</name></author>
+<rights>{{- .Site.Data.meta.license -}}</rights>
+<updated>{{- .Site.LastChange.Format "2006-01-02T15:04:05Z0700" | safeHTML -}}</updated>
+<generator uri="https://gohugo.io/" version="{{- hugo.Version -}}">Hugo</generator>
+{{ range $pages }}<entry>
+<title>{{- .Title -}}</title>
+<link href="{{- .Permalink -}}" />
+<id>{{- .Permalink -}}</id>
+<summary type="html">{{ .Summary | html }}</summary>
+<content type="text/html" src="{{- .Permalink -}}"></content>
+<published>{{- .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML -}}</published>{{ with .Params.update }}
+<updated>{{- (time .).Format "2006-01-02T15:04:05Z0700" | safeHTML -}}</updated>{{- end }}
+</entry>
+{{ end -}}
+</feed>
 {{- printf "" -}}
