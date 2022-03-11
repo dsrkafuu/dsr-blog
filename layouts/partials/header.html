@@ -7,7 +7,7 @@
 
   <nav class="navbar container">
     <div class="navbar__brand">
-      <a class="navbar__item" href="{{- .Site.BaseURL | relURL -}}">
+      <a class="navbar__item" href="{{- .Site.BaseURL | absURL -}}">
         {{- .Site.Data.meta.name -}}
       </a>
     </div>
@@ -17,7 +17,7 @@
         {{- $currentPage := . -}}
         {{- range .Site.Menus.main -}}
         {{- $pageMatch := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) -}}
-        <a class="navbar__item{{- if $pageMatch }} navbar__item--active{{- end -}}" href="{{- .URL | relURL -}}">
+        <a class="navbar__item{{- if $pageMatch }} navbar__item--active{{- end -}}" href="{{- .URL | absURL -}}">
           {{- .Name -}}
         </a>
         {{- end -}}

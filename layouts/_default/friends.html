@@ -20,7 +20,7 @@
             <div class="friends__image fiximg">
               <a target="_blank" rel="noopener" class="fiximg__container" style="padding-bottom: 100%;"
                  href="{{- .link | safeURL -}}">
-                <img loading="lazy" src='{{- printf "/images/friends/%s" .icon | safeURL | relURL -}}' />
+                <img loading="lazy" src='{{- printf "/images/friends/%s" .icon | safeURL | absURL -}}' />
               </a>
             </div>
             <div class="friends__box">

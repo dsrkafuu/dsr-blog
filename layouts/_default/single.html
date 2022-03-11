@@ -19,7 +19,7 @@
             {{- with .Params.banner -}}
             <div class="post__image fiximg">
               <div class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src='{{- printf "/images/banners/%s" . | relURL -}}' />
+                <img loading="lazy" src='{{- printf "/images/banners/%s" . | absURL -}}' />
               </div>
             </div>
             {{- end -}}

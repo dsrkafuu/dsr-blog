@@ -18,7 +18,7 @@
 <!-- goldmark will insert p tag before & after image div so theres no need to wrap it with p tag -->
 <div class="fiximg" style="{{- $width | safeCSS -}}">
   <div class="fiximg__container" style="{{- $css | safeCSS -}}">
-    <img loading="lazy" src="{{- $image.Permalink | relURL -}}" alt="{{- .Text -}}" data-zoomable />
+    <img loading="lazy" src="{{- $image.Permalink | absURL -}}" alt="{{- .Text -}}" data-zoomable />
   </div>
 </div>
 

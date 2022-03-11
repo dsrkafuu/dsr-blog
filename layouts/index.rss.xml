@@ -1,26 +1,28 @@
+{{- $RFC3339 := "2006-01-02T15:04:05Z07:00" -}}
 {{- $pages := where .Site.RegularPages "Type" "in" "post" -}}
 {{- $pages = $pages | first 20 -}}
 <!-- https://datatracker.ietf.org/doc/html/rfc4287 -->
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>{{- .Site.Data.meta.name -}}</title>
-<summary>{{- .Site.Data.meta.bio -}}</summary>
+<subtitle>{{- .Site.Data.meta.bio -}}</subtitle>
 {{ with .OutputFormats.Get "RSS" -}}<link href="{{- .Permalink -}}" rel="self" />{{- end }}
 <link href="{{- .Site.BaseURL | absURL -}}" />
 <icon>{{- .Site.Data.favicon.ico -}}</icon>
 <id>{{- .Site.BaseURL | absURL -}}</id>
 <author><name>{{- .Site.Data.meta.author -}}</name></author>
 <rights>{{- .Site.Data.meta.license -}}</rights>
-<updated>{{- .Site.LastChange.Format "2006-01-02T15:04:05Z0700" | safeHTML -}}</updated>
+<updated>{{- .Site.LastChange.Format $RFC3339 | safeHTML -}}</updated>
 <generator uri="https://gohugo.io/" version="{{- hugo.Version -}}">Hugo</generator>
 {{ range $pages }}<entry>
 <title>{{- .Title -}}</title>
 <link href="{{- .Permalink -}}" />
 <id>{{- .Permalink -}}</id>
 <summary type="html">{{ .Summary | html }}</summary>
-<content type="text/html" src="{{- .Permalink -}}"></content>
-<published>{{- .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML -}}</published>{{ with .Params.update }}
-<updated>{{- (time .).Format "2006-01-02T15:04:05Z0700" | safeHTML -}}</updated>{{- end }}
+<content type="text/html" src="{{- .Permalink -}}" />
+<published>{{- .Date.Format $RFC3339 | safeHTML -}}</published>{{ if .Params.update }}
+<updated>{{- (time .Params.update).Format $RFC3339 | safeHTML -}}</updated>{{ else }}
+<updated>{{- .Date.Format $RFC3339 | safeHTML -}}</updated>{{ end }}
 </entry>
 {{ end -}}
 </feed>

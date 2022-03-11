@@ -21,14 +21,14 @@
           <div class="card">
             {{- if .Params.banner -}}
             <div class="post__image fiximg">
-              <a href="{{- .RelPermalink -}}" class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src='{{- printf "/images/banners/%s" .Params.banner | relURL -}}' />
+              <a href="{{- .Permalink -}}" class="fiximg__container" style="padding-bottom: 22.5%;">
+                <img loading="lazy" src='{{- printf "/images/banners/%s" .Params.banner | absURL -}}' />
               </a>
             </div>
             {{- end -}}
             <div class="post__box">
               <div class="post__info">
-                <a class="post__title" href="{{- .RelPermalink -}}">
+                <a class="post__title" href="{{- .Permalink -}}">
                   <h2>{{- .Title -}}</h2>
                 </a>
                 <div class="post__summary markdown">{{ .Summary }}</div>

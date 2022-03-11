@@ -42,10 +42,11 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{- .Site.Data.favicon.png_32x -}}" />
 <link rel="icon" type="image/png" sizes="16x16" href="{{- .Site.Data.favicon.png_16x -}}" />
 <link rel="shortcut icon" href="{{- .Site.Data.favicon.ico -}}" />
-<link rel="manifest" href='{{- "/site.webmanifest" | relURL -}}' />
+<link rel="manifest" href='{{- "/site.webmanifest" | absURL -}}' />
 {{- if ne $type "404" -}}
 {{- partial "opengraph" . -}}
-{{- end -}}
+{{- end }}
+<link rel="alternate" type="application/atom+xml" href='{{- "/index.xml" | absURL -}}' />
 
 {{- $isDev := eq (getenv "NODE_ENV") "development" -}}
 {{- $pkg := getJSON "package.json" -}}
@@ -53,7 +54,7 @@
 {{- $out := printf "assets/main.v%s.min.css" $pkg.version -}}
 {{- $options := dict "targetPath" $out "outputStyle" "expanded" "enableSourceMap" $isDev "includePaths" (slice "node_modules") -}}
 {{- $css := resources.Get $src | resources.ToCSS $options -}}
-<link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
+<link rel="stylesheet" href="{{- $css.Permalink -}}" />
 
 {{- $gaid := getenv "HUGO_GA_ID" -}}
 {{- if and (not $isDev) $gaid -}}
@@ -90,6 +91,6 @@
 {{- $out := printf "assets/main.v%s.min.js" $pkg.version -}}
 {{- $options := (dict "targetPath" $out "minify" $isProd "defines" $defines "target" "es2020" "format" "iife") -}}
 {{- $built := resources.Get $src | js.Build $options -}}
-<script defer src="{{ $built.RelPermalink }}"></script>
+<script defer src="{{ $built.Permalink }}"></script>
 
 <script>window.$crisp=[];window.CRISP_WEBSITE_ID="abb1fc98-d4c5-475a-b93d-f017d7e47156";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
