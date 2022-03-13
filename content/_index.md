@@ -30,3 +30,7 @@ Web 前/后端开发、PC 硬件爱好者、动画党 & 主机单机游戏玩家
 - 华硕 ROG GM501GS、苹果 MacBook Pro M1
 - LG 27GL850-B UltraGear Nano IPS
 - 阿米洛 VA87M 樱桃茶轴、罗技 G703 Lightspeed
+
+### 计数
+
+<img height="100" src="https://count.dsrkafuu.net/dsrkafuu:home" alt="Moe Counter CF"  />
