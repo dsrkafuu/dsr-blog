@@ -33,4 +33,6 @@ Web 前/后端开发、PC 硬件爱好者、动画党 & 主机单机游戏玩家
 
 ### 计数
 
-<img height="100" src="https://count.dsrkafuu.net/dsrkafuu:home" alt="Moe Counter CF"  />
+<a href="https://github.com/dsrkafuu/moe-counter-cf#readme" target="_blank" rel="noopener">
+  <img height="100" src="https://count.dsrkafuu.net/dsrkafuu:home" alt="Moe Counter CF" />
+</a>
