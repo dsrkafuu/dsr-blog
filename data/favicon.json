@@ -1,6 +1,7 @@
 {
-  "apple": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/favicon/apple-touch-icon.png",
-  "png_32x": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/favicon/favicon-32x32.png",
-  "png_16x": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/favicon/favicon-16x16.png",
-  "ico": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/favicon/favicon.ico"
+  "ico": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/favicon/favicon.ico",
+  "png_48x": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/favicon/favicon-48x48.png",
+  "png_96x": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/favicon/favicon-96x96.png",
+  "png_144x": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/favicon/favicon-144x144.png",
+  "apple": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/favicon/apple-touch-icon.png"
 }
