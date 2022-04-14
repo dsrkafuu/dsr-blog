@@ -68,13 +68,13 @@
 {{- end -}}
 
 {{- if not $isDev -}}
-<!-- DA DEBUG -->
+<!-- [DEBUG] REPLACE GOOGLE ANALYTICS -->
 <script async
   data-id="6239c1cda8cc0d830a00f53e"
   data-host="https://analytics.dsrkafuu.cn:8443/"
-  src="https://cdn.jsdelivr.net/npm/dsr-analytics@0.12.0/dist/client.min.js"
+  src="https://cdn.jsdelivr.net/npm/dsr-analytics@0.21.0/dist/client.min.js"
 ></script>
-<!-- DA DEBUG -->
+<!-- [DEBUG] REPLACE GOOGLE ANALYTICS -->
 {{- end -}}
 
 {{- $isProd := eq (getenv "NODE_ENV") "production" -}}
