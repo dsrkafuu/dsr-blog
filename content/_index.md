@@ -13,17 +13,11 @@ keywords:
 
 Web 前/后端开发、PC 硬件爱好者、动画党 & 主机单机游戏玩家。
 
-### 信条
-
-- Any application that can be written in JavaScript, will eventually be written in JavaScript.
-- 反正吃饱饭没事干、然后做些损人不利己的事情、一生里最大的乐趣。
-
 ### 状态
 
 - 自[幸运星 (2007)](https://www.kyotoanimation.co.jp/works/luckystar/) 开始的[京都动画](https://www.kyotoanimation.co.jp/)粉丝
 - [VS Code](https://code.visualstudio.com/)、习惯用两格空格配合 [Prettier](https://prettier.io/) 编码
-- 最爱前端技术栈是 [React](https://reactjs.org/) 配合 [Vite](https://vitejs.dev/)
-- 正在学习 [SolidJS](https://www.solidjs.com/)、[Electron](https://www.electronjs.org/) 和 [C#](https://docs.microsoft.com/en-us/dotnet/)
+- 正在学习 [SolidJS](https://www.solidjs.com/)、[Electron](https://www.electronjs.org/) 和 [.NET (C#)](https://docs.microsoft.com/en-us/dotnet/)
 
 ### 硬件
 
