@@ -81,6 +81,8 @@ banner: 'tamako.webp'
 
 **○ - 更衣人偶坠入爱河 (CloverWorks)**
 
+**△ - Slow Loop (CONNECT)**
+
 ## 2021 (23 部)
 
 **△ - 世界顶尖的暗杀者转生为异世界贵族 (SILVER LINK. & studio ぱれっと)**

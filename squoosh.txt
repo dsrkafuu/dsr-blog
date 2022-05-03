@@ -1,0 +1,12 @@
+SMALL PICS <= 500K
+  OxiPNG
+    Interlace
+    Effort 3
+
+BIG PICS > 500K
+  MozJPEG
+    Quality 80
+
+REDUCE PALETTE
+  ONLY FOR SIMPLE IMAGES
+  LIKE CLI SCREENSHOTS
