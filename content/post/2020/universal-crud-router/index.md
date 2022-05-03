@@ -7,7 +7,6 @@ keywords:
   - 'mongodb'
   - 'express'
 description: '一次全新尝试的笔记第一部分。'
-banner: 'nodejs-mongodb.webp'
 ---
 
 近期在补习 [Node.js](https://nodejs.org/) + [MongoDB](https://www.mongodb.com/) 的配合使用，最初目标是实现一个接口用于 CRUD 分类数据。项目继续发展的时候发现除去分类数据以外，其他数据也需要用到几乎一模一样的接口。在路由中重复定义一大堆只有名字不同的接口对于学习用的小项目来说实在是有点没有必要，因此尝试学习了通用 CRUD 接口的实现。

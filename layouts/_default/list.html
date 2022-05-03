@@ -19,10 +19,12 @@
           {{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) -}}
           {{- range $paginator.Pages -}}
           <div class="card">
-            {{- if .Params.banner -}}
+            {{ $bannerImages := .Page.Resources.Match "index.webp" }}
+            {{ if ge (len $bannerImages) 1 }}
+            {{ $bannerImage := index $bannerImages 0 }}
             <div class="post__image fiximg">
               <a href="{{- .Permalink -}}" class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src='{{- printf "/images/banners/%s" .Params.banner | absURL -}}' />
+                <img loading="lazy" src="{{ $bannerImage.Permalink | absURL }}" />
               </a>
             </div>
             {{- end -}}

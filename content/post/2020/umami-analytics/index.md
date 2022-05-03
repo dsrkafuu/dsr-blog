@@ -5,7 +5,6 @@ keywords:
   - 'postgresql'
   - 'ubuntu'
 description: '使用 umami 搭建私人版 Google Analytics。'
-banner: 'postgres-umami.webp'
 ---
 
 [Google Analytics](https://analytics.google.com/) 于近期推出了新版，将数据收集方式改为了向 `analytics.google.com/g/collect` 发送 POST 请求，在中国大陆自然就无法直接访问了，具体见 [V2EX](https://www.v2ex.com/t/716280) 相关讨论。考虑到本身对数据收集的需求不高，因此实验性的切换到了近期正在快速迭代更新的 [umami](https://github.com/mikecao/umami)。
@@ -39,7 +38,7 @@ psql
 createuser --interactive umami
 ```
 
-![创建 PostgreSQL 用户](20201024124907.webp)
+![创建 PostgreSQL 用户示意图](20201024124907.webp)
 
 创建完用户后，还需要创建一个相对应的 Linux 用户，随后切换到这个用户并创建一个名为 umami 的数据库备用：
 
@@ -89,4 +88,4 @@ HASH_SALT=[自选任何字符串]
 
 一切设置完成后，打开 umami 面板，修改密码，添加网址，一切操作就都和 Google Analytics 无异了。
 
-![umami 面板](20201024142720.webp)
+![umami 面板示意图](20201024142720.webp)

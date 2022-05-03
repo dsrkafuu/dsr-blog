@@ -1,39 +1,41 @@
-{{- define "head" -}}
+{{ define "head" }}
 
 <head>
-  {{- partial "head" . -}}
+  {{ partial "head" . }}
 </head>
 
-{{- end -}}
+{{ end }}
 
-{{- define "body" -}}
+{{ define "body" }}
 
 <body data-theme="auto" data-section="single">
-  {{- partial "header" . -}}
+  {{ partial "header" . }}
 
   <main class="main">
     <div class="container">
       <div class="content">
         <div class="content__inner post__article">
           <div class="card">
-            {{- with .Params.banner -}}
+            {{ $bannerImages := .Page.Resources.Match "index.webp" }}
+            {{ if ge (len $bannerImages) 1 }}
+            {{ $bannerImage := index $bannerImages 0 }}
             <div class="post__image fiximg">
               <div class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src='{{- printf "/images/banners/%s" . | absURL -}}' />
+                <img loading="lazy" src="{{ $bannerImage.Permalink | absURL }}" />
               </div>
             </div>
-            {{- end -}}
+            {{ end }}
             <div class="post__title">
-              <h2>{{- .Title -}}</h2>
+              <h2>{{ .Title }}</h2>
             </div>
-            {{- partial "metadata" . -}}
+            {{ partial "metadata" . }}
             <div class="post__content">
               <article class="markdown">
                 {{ .Content }}
               </article>
             </div>
             <div class="license markdown">
-              <blockquote>{{- .Site.Data.meta.license -}}</blockquote>
+              <blockquote>{{ .Site.Data.meta.license }}</blockquote>
             </div>
           </div>
         </div>
@@ -41,20 +43,20 @@
 
       <aside class="sidebar">
         <div class="sidebar__inner">
-          {{- partial "info" . -}}
+          {{ partial "info" . }}
           <div class="sticky">
-            {{- if ne .Params.toc false -}}
+            {{ if ne .Params.toc false }}
             <div class="card toc markdown" id="toc-overlay">
-              {{- .TableOfContents -}}
+              {{ .TableOfContents }}
             </div>
-            {{- end -}}
+            {{ end }}
           </div>
         </div>
       </aside>
     </div>
   </main>
 
-  {{- partial "footer" . -}}
+  {{ partial "footer" . }}
 </body>
 
-{{- end -}}
+{{ end }}

@@ -2,12 +2,11 @@
 title: '解决 Windows 11 开机自动安装 UWP Runtime 失败问题'
 date: 2022-03-09T17:24:11+08:00
 keywords:
-  - 'microsoft'
-  - 'windows'
-  - 'system'
-  - 'runtime'
+  - '微软'
+  - 'bug'
+  - 'uwp'
+  - '运行时'
 description: '微软你行不行啊微软。'
-banner: 'windows.webp'
 ---
 
 每次开机进入系统，总会有弹出三条安装 C++ UWP Runtime 的消息，每次都会自动失败。

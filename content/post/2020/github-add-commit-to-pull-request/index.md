@@ -5,7 +5,6 @@ keywords:
   - 'github'
   - 'git'
 description: '修改其他社区开发者提交的 pull request。'
-banner: 'github.webp'
 ---
 
 有时我们需要对社区开发者向我们的项目提交的 pull request 进行一些修改，例如一些配置文件以及资源文件的补充等。这种情况下我们可以直接回复 request 提出修改的要求，但除此之外，我们也可以使用一种更简单的方案：直接向 pull request 提交 commit。
@@ -30,7 +29,7 @@ git remote add Hyask git@github.com:Hyask/hugo-theme-fuji.git
 
 添加完成后尝试使用 `git remote -v`，即可看到其他远程仓库：
 
-![添加新的远程仓库预览](20200928172829.webp)
+![添加新的远程仓库预览图](20200928172829.webp)
 
 ## 同步仓库并切换分支
 
@@ -46,7 +45,7 @@ git fetch Hyask
 git checkout -b Hyask-master Hyask/master
 ```
 
-![同步仓库并切换分支预览](20200928173043.webp)
+![同步仓库并切换分支预览图](20200928173043.webp)
 
 这样就完成了切换，并且本地的 `Hyask-master` 分支对应了对方发起 pull request 的 `Hyask/master` 分支。
 
@@ -58,7 +57,7 @@ git checkout -b Hyask-master Hyask/master
 git commit -m "fix: something"
 ```
 
-![提交 commit 预览](20200928173259.webp)
+![提交 commit 预览图](20200928173259.webp)
 
 确定修改已经完成并提交了 commit 之后，推送到对方的仓库即可。注意这里的推送目标分支，git 可能会提示分支名不一致，按提示推送即可：
 
@@ -66,11 +65,11 @@ git commit -m "fix: something"
 git push Hyask HEAD:master
 ```
 
-![推送预览](20200928173359.webp)
+![推送预览图](20200928173359.webp)
 
 推送完成之后，应该就已经能在 GitHub 对应 pull request 的页面上看到刚刚做出的修改了。
 
-![看到刚刚做出的修改预览](20200928173437.webp)
+![看到刚刚做出的修改预览图](20200928173437.webp)
 
 ## 可能出现的问题
 
