@@ -1,14 +1,14 @@
-{{- .Scratch.Set "PAGE_TYPE" "404" -}}
+{{ .Scratch.Set "PAGE_TYPE" "404" }}
 
 <!DOCTYPE html>
 <html lang="zh">
 
 <head>
-  {{- partial "head" . -}}
+  {{ partial "head" . }}
 </head>
 
 <body data-theme="auto" data-section="404">
-  {{- partial "header" . -}}
+  {{ partial "header" . }}
 
   <main class="main">
     <div class="container">
@@ -23,14 +23,14 @@
       <aside class="sidebar">
         <div class="sidebar__inner">
           <div class="sticky">
-            {{- partial "info" . -}}
+            {{ partial "info" . }}
           </div>
         </div>
       </aside>
     </div>
   </main>
 
-  {{- partial "footer" . -}}
+  {{ partial "footer" . }}
 </body>
 
 </html>

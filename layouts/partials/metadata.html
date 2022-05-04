@@ -1,25 +1,25 @@
 <div class="post__meta">
   <span class="post__metaDate">
-    {{- .Scratch.Set "ICON_NAME" "calendar-day" -}}
-    {{- partial "icon" . -}}
-    {{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}
+    {{ .Scratch.Set "ICON_NAME" "calendar-day" }}
+    {{ partial "icon" . }}
+    {{ printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML }}
   </span>
-  {{- if .Params.update -}}
+  {{ if .Params.update }}
   <span class="post__metaUpdate">
-    {{- .Scratch.Set "ICON_NAME" "clock" -}}
-    {{- partial "icon" . -}}
-    {{- printf "<time>%s</time>" ((time .Params.update).Format "2006-01-02") | safeHTML -}}
+    {{ .Scratch.Set "ICON_NAME" "clock" }}
+    {{ partial "icon" . }}
+    {{ printf "<time>%s</time>" ((time .Params.update).Format "2006-01-02") | safeHTML }}
   </span>
-  {{- end -}}
+  {{ end }}
   <span class="post__metaWords">
-    {{- .Scratch.Set "ICON_NAME" "file-alt" -}}
-    {{- partial "icon" . -}}
-    {{- printf "%d 字" .WordCount -}}
+    {{ .Scratch.Set "ICON_NAME" "file-alt" }}
+    {{ partial "icon" . }}
+    {{ printf "%d 字" .WordCount }}
   </span>
-  {{- printf "" -}}
+  {{ printf "" }}
   <span class="post__metaMinutes">
-    {{- .Scratch.Set "ICON_NAME" "file-alt" -}}
-    {{- partial "icon" . -}}
-    {{- printf "%d 分钟" .ReadingTime -}}
+    {{ .Scratch.Set "ICON_NAME" "file-alt" }}
+    {{ partial "icon" . }}
+    {{ printf "%d 分钟" .ReadingTime }}
   </span>
 </div>

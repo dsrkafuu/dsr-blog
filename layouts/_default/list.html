@@ -1,62 +1,62 @@
-{{- define "head" -}}
+{{ define "head" }}
 
 <head>
-  {{- partial "head" . -}}
+  {{ partial "head" . }}
 </head>
 
-{{- end -}}
+{{ end }}
 
-{{- define "body" -}}
+{{ define "body" }}
 
 <body data-theme="auto" data-section="list">
-  {{- partial "header" . -}}
-  {{- $isTagsList := eq .Section "tags" -}}
+  {{ partial "header" . }}
+  {{ $isTagsList := eq .Section "tags" }}
 
   <main class="main">
     <div class="container">
       <div class="content">
         <div class="content__inner post__list">
-          {{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) -}}
-          {{- range $paginator.Pages -}}
+          {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) }}
+          {{ range $paginator.Pages }}
           <div class="card">
             {{ $bannerImages := .Page.Resources.Match "*index.webp" }}
             {{ if ge (len $bannerImages) 1 }}
             {{ $bannerImage := index $bannerImages 0 }}
             <div class="post__image fiximg">
-              <a href="{{- .Permalink -}}" class="fiximg__container" style="padding-bottom: 22.5%;">
+              <a href="{{ .Permalink }}" class="fiximg__container" style="padding-bottom: 22.5%;">
                 <img loading="lazy" src="{{ $bannerImage.Permalink | absURL }}" />
               </a>
             </div>
-            {{- end -}}
+            {{ end }}
             <div class="post__box">
               <div class="post__info">
-                <a class="post__title" href="{{- .Permalink -}}">
-                  <h2>{{- .Title -}}</h2>
+                <a class="post__title" href="{{ .Permalink }}">
+                  <h2>{{ .Title }}</h2>
                 </a>
                 <div class="post__summary markdown">{{ .Summary }}</div>
               </div>
-              {{- partial "metadata" . -}}
+              {{ partial "metadata" . }}
             </div>
           </div>
-          {{- end -}}
+          {{ end }}
 
-          {{- .Scratch.Set "paginator" $paginator -}}
-          {{- partial "pagination" . -}}
+          {{ .Scratch.Set "paginator" $paginator }}
+          {{ partial "pagination" . }}
         </div>
       </div>
 
       <aside class="sidebar">
         <div class="sidebar__inner">
-          {{- partial "search" . -}}
+          {{ partial "search" . }}
           <div class="sticky">
-            {{- partial "info" . -}}
+            {{ partial "info" . }}
           </div>
         </div>
       </aside>
     </div>
   </main>
 
-  {{- partial "footer" . -}}
+  {{ partial "footer" . }}
 </body>
 
-{{- end -}}
+{{ end }}

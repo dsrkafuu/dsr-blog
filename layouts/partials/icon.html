@@ -1,10 +1,10 @@
-{{- $name := .Scratch.Get "ICON_NAME" -}}
-{{- $svg := readFile (printf "assets/svg/%s.svg" $name) -}}
+{{ $name := .Scratch.Get "ICON_NAME" }}
+{{ $svg := readFile (printf "assets/svg/%s.svg" $name) }}
 
-{{- $class := "icon" -}}
-{{- if eq $name "spinner-third" -}}
-{{- $class = "icon spin" -}}
-{{- end -}}
-{{- $svg = replace $svg "<svg" (printf "<svg class='%s'" $class) 1 -}}
+{{ $class := "icon" }}
+{{ if eq $name "spinner-third" }}
+{{ $class = "icon spin" }}
+{{ end }}
+{{ $svg = replace $svg "<svg" (printf "<svg class='%s'" $class) 1 }}
 
-{{- $svg | safeHTML -}}
+{{ $svg | safeHTML }}

@@ -1,73 +1,73 @@
-{{- $type := .Scratch.Get "PAGE_TYPE" -}}
+{{ $type := .Scratch.Get "PAGE_TYPE" }}
 
 <meta charset="UTF-8" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-{{- hugo.Generator -}}
+{{ hugo.Generator }}
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />
 
-{{- $name := .Site.Data.meta.name -}}
-{{- $author := .Site.Data.meta.author -}}
-{{- $bio := .Site.Data.meta.bio -}}
+{{ $name := .Site.Data.meta.name }}
+{{ $author := .Site.Data.meta.author }}
+{{ $bio := .Site.Data.meta.bio }}
 
-{{- if ne $type "404" -}}
+{{ if ne $type "404" }}
 
-{{- if .IsHome -}}
-<title>{{- $name -}}</title>
-{{- else -}}
-<title>{{- .Title }} | {{ $name -}}</title>
-{{- end -}}
-<meta name="author" content="{{- $author -}}" />
-{{- if .Params.description -}}
-<meta name="description" content="{{- .Params.description -}}" />
-{{- else -}}
-<meta name="description" content="{{- $bio -}}" />
-{{- end -}}
-{{- if .Params.tags -}}
-<meta name="keywords" content='{{- delimit .Params.tags ", " -}}' />
-{{- else if .Params.keywords -}}
-<meta name="keywords" content='{{- delimit .Params.keywords ", " -}}' />
-{{- end -}}
+{{ if .IsHome }}
+<title>{{ $name }}</title>
+{{ else }}
+<title>{{ .Title }} | {{ $name }}</title>
+{{ end }}
+<meta name="author" content="{{ $author }}" />
+{{ if .Params.description }}
+<meta name="description" content="{{ .Params.description }}" />
+{{ else }}
+<meta name="description" content="{{ $bio }}" />
+{{ end }}
+{{ if .Params.tags }}
+<meta name="keywords" content='{{ delimit .Params.tags ", " }}' />
+{{ else if .Params.keywords }}
+<meta name="keywords" content='{{ delimit .Params.keywords ", " }}' />
+{{ end }}
 
-{{- else -}}
-<title>404 Not Found | {{ $name -}}</title>
+{{ else }}
+<title>404 Not Found | {{ $name }}</title>
 <meta name="description" content="Error 404 resource not found." />
-{{- end -}}
+{{ end }}
 
-<link rel="icon" href="{{- .Site.Data.favicon.ico -}}" sizes="any" />
-<link rel="icon" sizes="48x48" href="{{- .Site.Data.favicon.png_48x -}}" />
-<link rel="icon" sizes="96x96" href="{{- .Site.Data.favicon.png_96x -}}" />
-<link rel="icon" sizes="144x144" href="{{- .Site.Data.favicon.png_144x -}}" />
-<link rel="apple-touch-icon" sizes="180x180" href="{{- .Site.Data.favicon.apple -}}" />
-{{- if ne $type "404" -}}
-{{- partial "opengraph" . -}}
-{{- end }}
-<link rel="alternate" type="application/atom+xml" href='{{- "/index.xml" | absURL -}}' />
+<link rel="icon" href="{{ .Site.Data.favicon.ico }}" sizes="any" />
+<link rel="icon" sizes="48x48" href="{{ .Site.Data.favicon.png_48x }}" />
+<link rel="icon" sizes="96x96" href="{{ .Site.Data.favicon.png_96x }}" />
+<link rel="icon" sizes="144x144" href="{{ .Site.Data.favicon.png_144x }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Data.favicon.apple }}" />
+{{ if ne $type "404" }}
+{{ partial "opengraph" . }}
+{{ end }}
+<link rel="alternate" type="application/atom+xml" href='{{ "/index.xml" | absURL }}' />
 
-{{- $isDev := eq (getenv "NODE_ENV") "development" -}}
-{{- $pkg := getJSON "package.json" -}}
-{{- $src := "styles/index.scss" -}}
-{{- $out := printf "assets/main.v%s.min.css" $pkg.version -}}
-{{- $options := dict "targetPath" $out "outputStyle" "expanded" "enableSourceMap" $isDev "includePaths" (slice "node_modules") -}}
-{{- $css := resources.Get $src | resources.ToCSS $options -}}
-<link rel="stylesheet" href="{{- $css.Permalink -}}" />
+{{ $isDev := eq (getenv "NODE_ENV") "development" }}
+{{ $pkg := getJSON "package.json" }}
+{{ $src := "styles/index.scss" }}
+{{ $out := printf "assets/main.v%s.min.css" $pkg.version }}
+{{ $options := dict "targetPath" $out "outputStyle" "compressed" "enableSourceMap" $isDev "includePaths" (slice "node_modules") }}
+{{ $css := resources.Get $src | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $css.Permalink }}" />
 
-{{- $gaid := getenv "HUGO_GA_ID" -}}
-{{- if and (not $isDev) $gaid -}}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{- $gaid -}}"></script>
+{{ $gaid := getenv "HUGO_GA_ID" }}
+{{ if and (not $isDev) $gaid }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ $gaid }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
-  gtag('config', '{{- $gaid -}}');
+  gtag('config', '{{ $gaid }}');
 </script>
-{{- end -}}
+{{ end }}
 
-{{- if not $isDev -}}
+{{ if not $isDev }}
 <!-- [DEBUG] REPLACE GOOGLE ANALYTICS -->
 <script async
   data-id="6239c1cda8cc0d830a00f53e"
@@ -75,22 +75,22 @@
   src="https://cdn.jsdelivr.net/npm/dsr-analytics@0.21.0/dist/client.min.js"
 ></script>
 <!-- [DEBUG] REPLACE GOOGLE ANALYTICS -->
-{{- end -}}
+{{ end }}
 
-{{- $isProd := eq (getenv "NODE_ENV") "production" -}}
+{{ $isProd := eq (getenv "NODE_ENV") "production" }}
 <!-- deps -->
 <script defer src="{{ .Site.Data.scripts.prism }}"></script>
 <script defer src="{{ .Site.Data.scripts.prism_autolaoder }}"></script>
 <script defer src="{{ .Site.Data.scripts.medium_zoom }}"></script>
 <!-- custom envs -->
-{{- $sentryDsn := printf "\"%s\"" (getenv "HUGO_SENTRY_DSN") -}}
-{{- $defines := dict "process.env.HUGO_SENTRY_DSN" $sentryDsn -}}
+{{ $sentryDsn := printf "\"%s\"" (getenv "HUGO_SENTRY_DSN") }}
+{{ $defines := dict "process.env.HUGO_SENTRY_DSN" $sentryDsn }}
 <!-- js assets -->
-{{- $src := "js/index.js" -}}
-{{- $pkg := getJSON "package.json" -}}
-{{- $out := printf "assets/main.v%s.min.js" $pkg.version -}}
-{{- $options := (dict "targetPath" $out "minify" $isProd "defines" $defines "target" "es2020" "format" "iife") -}}
-{{- $built := resources.Get $src | js.Build $options -}}
+{{ $src := "js/index.js" }}
+{{ $pkg := getJSON "package.json" }}
+{{ $out := printf "assets/main.v%s.min.js" $pkg.version }}
+{{ $options := (dict "targetPath" $out "minify" $isProd "defines" $defines "target" "es2020" "format" "iife") }}
+{{ $built := resources.Get $src | js.Build $options }}
 <script defer src="{{ $built.Permalink }}"></script>
 
 <script>window.$crisp=[];window.CRISP_WEBSITE_ID="abb1fc98-d4c5-475a-b93d-f017d7e47156";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
