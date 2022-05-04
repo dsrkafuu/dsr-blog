@@ -1,30 +1,33 @@
-{{- define "head" -}}
+{{ define "head" }}
 
 <head>
-  {{- partial "head" . -}}
+  {{ partial "head" . }}
 </head>
 
-{{- end -}}
+{{ end }}
 
-{{- define "body" -}}
+{{ define "body" }}
 
 <body data-theme="auto" data-section="index">
-  {{- partial "header" . -}}
+  {{ partial "header" . }}
 
   <main class="main">
     <div class="container">
       <div class="content">
         <div class="content__inner">
           <div class="card">
+            {{ $bannerImages := .Page.Resources.Match "*index.webp" }}
+            {{ if ge (len $bannerImages) 1 }}
+            {{ $bannerImage := index $bannerImages 0 }}
             <div class="post__image fiximg">
               <div class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src='{{- "/images/banners/_index.webp" | absURL -}}' />
+                <img loading="lazy" src="{{ $bannerImage.Permalink | absURL }}" />
               </div>
             </div>
-
+            {{ end }}
             <div class="post__content">
               <article class="markdown">
-                {{- with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end -}}
+                {{ with .Site.GetPage "/_index.md" }}{{ .Content }}{{ end }}
               </article>
             </div>
           </div>
@@ -33,16 +36,16 @@
 
       <aside class="sidebar">
         <div class="sidebar__inner">
-          {{- partial "search" . -}}
+          {{ partial "search" . }}
           <div class="sticky">
-            {{- partial "info" . -}}
+            {{ partial "info" . }}
           </div>
         </div>
       </aside>
     </div>
   </main>
 
-  {{- partial "footer" . -}}
+  {{ partial "footer" . }}
 </body>
 
-{{- end -}}
+{{ end }}

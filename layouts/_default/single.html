@@ -16,7 +16,7 @@
       <div class="content">
         <div class="content__inner post__article">
           <div class="card">
-            {{ $bannerImages := .Page.Resources.Match "index.webp" }}
+            {{ $bannerImages := .Page.Resources.Match "*index.webp" }}
             {{ if ge (len $bannerImages) 1 }}
             {{ $bannerImage := index $bannerImages 0 }}
             <div class="post__image fiximg">

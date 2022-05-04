@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "dsr-blog",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "description": "Personal blog powered by Hugo.",
   "license": "AGPL-3.0",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
@@ -13,21 +13,21 @@
     "build": "cross-env NODE_ENV=production env-cmd --silent run-s compile script:minify"
   },
   "dependencies": {
-    "@sentry/browser": "~6.18.2",
-    "@sentry/tracing": "~6.18.2",
-    "dsr-design": "~2.5.1",
+    "@sentry/browser": "~6.19.7",
+    "@sentry/tracing": "~6.19.7",
+    "dsr-design": "~2.6.0",
     "normalize.css": "~8.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "~10.4.2",
+    "autoprefixer": "~10.4.7",
     "chalk": "~5.0.1",
     "cross-env": "~7.0.3",
-    "cssnano": "~5.1.2",
+    "cssnano": "~5.1.7",
     "env-cmd": "~10.1.0",
-    "eslint": "~8.10.0",
-    "glob": "~7.2.0",
+    "eslint": "~8.14.0",
+    "glob": "~8.0.1",
     "html-minifier-terser": "~6.1.0",
     "npm-run-all": "~4.1.5",
-    "postcss": "~8.4.8"
+    "postcss": "~8.4.13"
   }
 }

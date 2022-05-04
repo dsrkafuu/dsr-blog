@@ -1,51 +1,56 @@
-{{- define "head" -}}
+{{ define "head" }}
 
 <head>
-  {{- partial "head" . -}}
+  {{ partial "head" . }}
 </head>
 
-{{- end -}}
+{{ end }}
 
-{{- define "body" -}}
+{{ define "body" }}
 
 <body data-theme="auto" data-section="friends">
-  {{- partial "header" . -}}
+  {{ partial "header" . }}
 
   <main class="main">
     <div class="container">
       <div class="content">
         <div class="content__inner friends__list">
-          {{- range .Site.Data.friends -}}
+          {{ $recources := .Page.Resources }}
+          {{ range .Site.Data.friends }}
+          {{ $friendImages := $recources.Match .icon }}
+          {{ if ge (len $friendImages) 1 }}
+          {{ $friendImage := index $friendImages 0 }}
           <div class="card friends__item">
             <div class="friends__image fiximg">
               <a target="_blank" rel="noopener" class="fiximg__container" style="padding-bottom: 100%;"
-                 href="{{- .link | safeURL -}}">
-                <img loading="lazy" src='{{- printf "/images/friends/%s" .icon | safeURL | absURL -}}' />
+                 href="{{ .link | safeURL }}">
+                <img loading="lazy" src="{{ $friendImage.Permalink | absURL }}" />
               </a>
             </div>
             <div class="friends__box">
-              <a class="friends__title" target="_blank" rel="noopener" href="{{- .link | safeURL -}}">
-                <h2>{{- .title -}}</h2>
+              <a class="friends__title" target="_blank" rel="noopener" href="{{ .link | safeURL }}">
+                <h2>{{ .title }}</h2>
               </a>
               <span class="friends__desc">
-                {{- .desc -}}
+                {{ .desc }}
               </span>
             </div>
           </div>
-          {{- end -}}
+          {{ end }}
+          {{ end }}
         </div>
       </div>
 
       <aside class="sidebar">
         <div class="sidebar__inner">
           <div class="sticky">
-            {{- partial "info" . -}}
+            {{ partial "info" . }}
           </div>
         </div>
       </aside>
   </main>
 
-  {{- partial "footer" . -}}
+  {{ partial "footer" . }}
 </body>
 
-{{- end -}}
+{{ end }}
