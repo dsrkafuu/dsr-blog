@@ -91,6 +91,10 @@
     margin-top: $space-card;
     height: 36px;
     padding: 0 $space-card;
+
+    @include responsive(md) {
+      margin-top: $space-mobile;
+    }
   }
 
   .comment__btn {
