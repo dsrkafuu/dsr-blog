@@ -5,6 +5,10 @@ keywords:
   - 'html'
   - 'javascript'
   - 'css'
+  - '深色模式'
+  - '夜间模式'
+  - '教程'
+  - '指南'
 description: '用 prefers-color-scheme 适配系统效果绝佳。'
 ---
 
@@ -83,7 +87,10 @@ if (!themeData) {
 } else {
   // 如果非自动模式，调整主题
   if (themeData !== 'auto') {
-    document.body.setAttribute('data-theme', themeData === 'dark' ? 'dark' : 'light');
+    document.body.setAttribute(
+      'data-theme',
+      themeData === 'dark' ? 'dark' : 'light'
+    );
   }
 }
 ```

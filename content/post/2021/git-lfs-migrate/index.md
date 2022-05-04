@@ -3,6 +3,8 @@ title: '博客现有仓库 Git LFS 迁移记录'
 date: 2021-11-04T13:54:11+08:00
 keywords:
   - 'git'
+  - 'github'
+  - 'lfs'
 description: 'LFS 真的好用。'
 ---
 

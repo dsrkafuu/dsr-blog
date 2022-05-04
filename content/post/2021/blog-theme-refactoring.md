@@ -3,7 +3,7 @@ title: '博客主题重构记录'
 date: 2021-05-04T15:24:25+08:00
 keywords:
   - 'css'
-  - 'theme'
+  - '主题'
   - 'hugo'
 description: '整理下混乱的博客主题结构。'
 banner: 'hugo.webp'

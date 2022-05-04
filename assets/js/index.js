@@ -2,6 +2,7 @@ import * as Sentry from '@sentry/browser';
 import { Integrations } from '@sentry/tracing';
 import { logError, logInfo } from './plugins/loggers';
 import { SECTIONS, getSection } from './plugins/utils';
+import crisp from './components/crisp';
 import search from './components/search';
 import toc from './components/toc';
 import zoom from './components/zoom';
@@ -27,6 +28,8 @@ if ([SECTIONS.INDEX, SECTIONS.LIST].includes(SECTION)) {
   logInfo('search module inited');
 }
 if (SECTION === SECTIONS.SINGLE) {
+  crisp();
+  logInfo('crisp module inited');
   toc();
   logInfo('toc module inited');
   zoom();

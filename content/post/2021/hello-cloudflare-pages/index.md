@@ -5,6 +5,7 @@ keywords:
   - 'cloudflare'
   - 'pages'
   - 'ci'
+  - '静态页面'
 description: '再见了 GitHub Pages。'
 ---
 

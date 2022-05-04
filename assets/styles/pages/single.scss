@@ -84,3 +84,27 @@
     max-height: fit-content;
   }
 }
+
+.card {
+  &.comment {
+    text-align: center;
+    margin-top: $space-card;
+    height: 36px;
+    padding: 0 $space-card;
+  }
+
+  .comment__btn {
+    color: var(--color-font);
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 $space-mobile;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+      color: var(--color-font);
+      background-color: var(--color-transparent-active);
+    }
+  }
+}

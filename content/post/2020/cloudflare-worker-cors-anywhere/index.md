@@ -5,6 +5,7 @@ keywords:
   - 'javascript'
   - 'cloudflare'
   - 'cors'
+  - '跨域'
 description: '访问量较小的 API 可以简单通过 CloudFlare Workers 进行代理。'
 ---
 
@@ -180,7 +181,9 @@ async function handleRequest(req, path) {
  * @return {Response}
  */
 function handleReject() {
-  return new Response('[CloudFlare Workers] REQUEST NOT ALLOWED', { status: 403 });
+  return new Response('[CloudFlare Workers] REQUEST NOT ALLOWED', {
+    status: 403,
+  });
 }
 
 addEventListener('fetch', (event) => {
@@ -319,7 +322,9 @@ async function handleRequest(req, path) {
  * @return {Response}
  */
 function handleReject() {
-  return new Response('[CloudFlare Workers] REQUEST NOT ALLOWED', { status: 403 });
+  return new Response('[CloudFlare Workers] REQUEST NOT ALLOWED', {
+    status: 403,
+  });
 }
 
 addEventListener('fetch', (event) => {
@@ -357,8 +362,10 @@ const ALLOW_NO_ORIGIN = false;
 const API_KEY = 'A**********************************k';
 const API_CX = '3***************e';
 
-const blockedRes = (text) => new Response(`[dsr-blog] forbidden: ${text}`, { status: 403 });
-const timeoutRes = (text) => new Response(`[dsr-blog] tequest timeout: ${text}`, { status: 408 });
+const blockedRes = (text) =>
+  new Response(`[dsr-blog] forbidden: ${text}`, { status: 403 });
+const timeoutRes = (text) =>
+  new Response(`[dsr-blog] tequest timeout: ${text}`, { status: 408 });
 
 /**
  * 验证 Origin
@@ -419,7 +426,10 @@ async function handleReq(req) {
       let res = await fetchGoogleAPI(searchQuerys);
       // CORS
       res = new Response(res.body, res); // 覆盖响应 response
-      res.headers.set('Access-Control-Allow-Origin', req.headers.get('Origin') || '*'); // 设置 CORS 头
+      res.headers.set(
+        'Access-Control-Allow-Origin',
+        req.headers.get('Origin') || '*'
+      ); // 设置 CORS 头
       res.headers.append('Vary', 'Origin'); // 设置 Vary 头使浏览器正确进行缓存
       return res;
     } catch {

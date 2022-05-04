@@ -2,7 +2,7 @@
 title: '更新了博客文章的静态永久链接'
 date: 2020-06-02T14:18:18+08:00
 keywords:
-  - 'blog'
+  - '博客'
 description: '更新了博客文章的静态永久链接。'
 toc: false
 ---

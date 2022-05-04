@@ -3,8 +3,10 @@ title: '配置全设备通用的 PotPlayer 和 LAVFilters 满足基本 BDRIP 回
 date: 2020-05-11T19:13:47+08:00
 update: 2021-05-13T16:05:11+08:00
 keywords:
-  - 'anime'
-  - 'video'
+  - 'potplayer'
+  - '教程'
+  - '指南'
+  - 'lavfilters'
 description: '现在的高清视频观看体验，瓶颈不在片源，也不在制作，而是在播放器。'
 ---
 

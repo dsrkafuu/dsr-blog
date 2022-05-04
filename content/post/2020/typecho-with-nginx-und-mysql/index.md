@@ -6,6 +6,8 @@ keywords:
   - 'nginx'
   - 'php'
   - 'sql'
+  - '教程'
+  - '指南'
 description: '计划私下里给亲友们发布一些东西，为了方便就搭 Typecho 了。'
 ---
 

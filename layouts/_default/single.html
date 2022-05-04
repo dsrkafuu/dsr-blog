@@ -38,6 +38,14 @@
               <blockquote>{{ .Site.Data.meta.license }}</blockquote>
             </div>
           </div>
+
+          {{ if ne .Params.comment false }}
+          <div class="card comment">
+            <a class="comment__btn" href="https://github.com/dsrkafuu/dsr-blog/discussions/categories/2-评论"
+               target="_blank" rel="noopener">公开评论</a>
+            <span class="comment__btn" id="crisp-btn">提出建议</span>
+          </div>
+          {{ end }}
         </div>
       </div>
 

@@ -5,6 +5,7 @@ keywords:
   - 'html'
   - 'golang'
   - 'hugo'
+  - '分页'
 description: '从抛弃 Jekyll 转向 Hugo 搞毫无用处的静态站到现在，别人的主题用久了也腻了，于是自己从零开始。'
 banner: 'hugo.webp'
 ---

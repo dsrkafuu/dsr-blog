@@ -5,6 +5,7 @@ keywords:
   - 'javascript'
   - 'shell'
   - 'google'
+  - '谷歌'
 description: '更便捷地删库跑路。'
 ---
 

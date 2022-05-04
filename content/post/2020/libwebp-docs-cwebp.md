@@ -3,8 +3,8 @@ title: 'libwebp 文档笔记 - cwebp 部分'
 date: 2020-03-27T19:36:16+08:00
 keywords:
   - 'webp'
-  - 'doc'
-  - 'image'
+  - '文档'
+  - '图片处理'
 description: "cwebp 使用 WebP 格式对图像进行压缩。输入格式可以是 PNG, JPEG, TIFF, WebP 或原始 Y'CbCr 样本。"
 ---
 

@@ -3,8 +3,8 @@ title: 'libwebp 文档笔记 - dwebp 部分'
 date: 2020-04-02T18:56:25+08:00
 keywords:
   - 'webp'
-  - 'doc'
-  - 'image'
+  - '文档'
+  - '图片处理'
 description: 'dwebp 将 WebP 文件解压成 PNG, PAM, PPM 或 PGM 图像。'
 ---
 
