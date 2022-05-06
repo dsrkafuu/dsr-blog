@@ -28,6 +28,8 @@ description: '微软你行不行啊微软。'
 - Microsoft C++ 2013 UWP Desktop Runtime
 - Microsoft C++ 2015 UWP Desktop Runtime
 
+![安装示意图](20220506152216.webp)
+
 [百度网盘](https://pan.baidu.com/s/1Zf7lQp3r-ismR77YapTm0g?pwd=45na)
 
 密码 `@dsrkafuu`，资源来自 LTT 论坛。
