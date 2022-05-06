@@ -9,6 +9,11 @@
     }
   }
 
+  &__disabled {
+    user-select: none;
+    cursor: not-allowed;
+  }
+
   &__image {
     width: 75px;
     padding-bottom: 75px;

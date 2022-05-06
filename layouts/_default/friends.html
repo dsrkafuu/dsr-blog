@@ -20,17 +20,30 @@
           {{ $friendImages := $recources.Match .icon }}
           {{ if ge (len $friendImages) 1 }}
           {{ $friendImage := index $friendImages 0 }}
-          <div class="card friends__item">
+          {{ $status := gt (len .link) 0 }}
+          <div class="card friends__item {{ if eq $status false }}friends__disabled{{ end }}">
             <div class="friends__image fiximg">
-              <a target="_blank" rel="noopener" class="fiximg__container" style="padding-bottom: 100%;"
-                 href="{{ .link | safeURL }}">
+              {{ if $status }}
+              <a class="fiximg__container" style="padding-bottom: 100%;" href="{{ .link | safeURL }}" target="_blank"
+                 rel="noopener">
                 <img loading="lazy" src="{{ $friendImage.Permalink | absURL }}" />
               </a>
+              {{ else }}
+              <div class="fiximg__container" style="padding-bottom: 100%;">
+                <img loading="lazy" src="{{ $friendImage.Permalink | absURL }}" />
+              </div>
+              {{ end }}
             </div>
             <div class="friends__box">
+              {{ if $status }}
               <a class="friends__title" target="_blank" rel="noopener" href="{{ .link | safeURL }}">
                 <h2>{{ .title }}</h2>
               </a>
+              {{ else }}
+              <div class="friends__title" target="_blank" rel="noopener" href="{{ .link | safeURL }}">
+                <h2>{{ .title }}</h2>
+              </div>
+              {{ end }}
               <span class="friends__desc">
                 {{ .desc }}
               </span>

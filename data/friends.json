@@ -6,6 +6,12 @@
     "link": "https://luotianyi.vc/"
   },
   {
+    "title": "Frost-ZX",
+    "desc": "一个分享技术、资源，记录学习与生活的博客",
+    "icon": "frost-zx.webp",
+    "link": "https://blog.frost-zx.top/"
+  },
+  {
     "title": "贰壹叁",
     "desc": "Always believe good things will happen",
     "icon": "dsr213.webp",
@@ -16,5 +22,11 @@
     "desc": "DSRCA 提供支持的综合性游戏小工具站点",
     "icon": "dsrtools.webp",
     "link": "https://tools.dsrkafuu.net/"
+  },
+  {
+    "title": "Blue",
+    "desc": "代码是热爱，写到世界充满爱",
+    "icon": "blue.webp",
+    "link": ""
   }
 ]
