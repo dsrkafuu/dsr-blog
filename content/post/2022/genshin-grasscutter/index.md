@@ -127,6 +127,10 @@ account create [username] {playerid}
 
 见开发分支的[中文 README](https://github.com/Grasscutters/Grasscutter/blob/development/README_zh-CN.md#命令列表)。
 
+### 工具箱
+
+见项目 [Grasscutter Tools](https://github.com/jie65535/GrasscutterCommandGenerator)，支持指令生成、卡池编辑等功能。
+
 ### ID 列表
 
 角色、武器、物品、NPC、场景等均有对应的 ID，示例：
