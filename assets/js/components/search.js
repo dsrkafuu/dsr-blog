@@ -8,7 +8,7 @@ export const SEARCH_SITE = 'blog.dsrkafuu.net/post';
  * @param {string} str
  */
 function handleSearch(str) {
-  if (!str) {
+  if (!str || typeof str !== 'string') {
     logInfo('no search query set');
     return;
   }
