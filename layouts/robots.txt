@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /code/
 Sitemap: {{ replace (printf "%s/sitemap.xml" .Site.BaseURL) "//sitemap" "/sitemap" -}}
