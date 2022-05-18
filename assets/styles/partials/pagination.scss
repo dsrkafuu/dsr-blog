@@ -2,27 +2,49 @@
   display: flex;
   padding: 0 $space-card;
   justify-content: center;
+  padding: 5px;
 
-  & > a {
+  &__first,
+  &__previous,
+  &__item,
+  &__next,
+  &__last {
     display: block;
     color: inherit;
     flex: 0 1 auto;
-    height: $height-navbar-sm;
-    line-height: $height-navbar-sm;
-    padding: 0 $space-mobile;
+    text-align: center;
+    width: 42px;
+    height: 32px;
+    line-height: 32px;
     cursor: pointer;
-    border-bottom: $highlight-size solid transparent;
-    transition: background-color $transition-fast ease,
-      border-bottom-color $transition-fast ease;
+    transition: background-color $transition-fast ease;
+    border-radius: $corner-radius-sm;
+    margin-left: 5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     &:hover {
       text-decoration: none;
       color: var(--color-font);
-      background-color: var(--color-transparent-active);
+      background-color: var(--color-bg-active);
     }
 
     &.pagination__item--active {
-      border-bottom-color: var(--color-primary);
+      background-color: var(--color-bg-active);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 18px;
+        left: 50%;
+        transform: translate(-50%);
+        height: $active-size;
+        border-radius: $active-radius;
+        background-color: var(--color-primary);
+      }
     }
 
     .icon {

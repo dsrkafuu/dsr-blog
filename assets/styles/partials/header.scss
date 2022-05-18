@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--color-backdrop);
+  background-color: var(--color-bg);
   box-shadow: var(--box-shadow);
   position: sticky;
   top: 0;
@@ -7,37 +7,48 @@
   right: 0;
   user-select: none;
   font-family: $font-family-body;
-  backdrop-filter: $filter-blur;
 }
 
 .navbar {
   height: $height-navbar;
-  padding-right: $space-card - $space-mobile;
+  padding: 5px;
+  padding-left: 0;
   display: flex;
   position: relative;
 
   &__item {
     display: inline-block;
-    padding: 0 $space-card;
-    height: $height-navbar;
-    line-height: $height-navbar;
+    height: $height-navbar - 10px;
+    line-height: $height-navbar - 10px;
+    padding: 0 16px;
+    border-radius: $corner-radius-sm;
     cursor: pointer;
     color: inherit;
     position: relative;
-    transition: background-color $transition-fast ease,
-      border-bottom-color $transition-fast ease;
-    border-bottom: $highlight-size solid transparent;
+    transition: background-color $transition-fast ease;
     background-color: transparent;
-    border-top: $highlight-size solid transparent;
+    margin-left: 5px;
 
     &:hover {
       color: var(--color-font);
-      background-color: var(--color-transparent-active);
+      background-color: var(--color-bg-active);
       text-decoration: none;
     }
 
     &--active {
-      border-bottom-color: var(--color-primary);
+      background-color: var(--color-bg-active);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 24px;
+        left: 50%;
+        transform: translate(-50%);
+        height: $active-size;
+        border-radius: $active-radius;
+        background-color: var(--color-primary);
+      }
     }
   }
 
@@ -45,10 +56,6 @@
     flex: 0 0 auto;
     font-size: $font-xl;
     font-weight: 500;
-
-    .navbar__item {
-      padding: 0 $space-card;
-    }
   }
 
   &__menu {

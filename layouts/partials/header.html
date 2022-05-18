@@ -8,13 +8,13 @@
 
     <div class="navbar__menu">
       <div class="navbar__start">
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-        {{ $pageMatch := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+        {{- $currentPage := . -}}
+        {{- range .Site.Menus.main -}}
+        {{- $pageMatch := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) -}}
         <a class="navbar__item{{ if $pageMatch }} navbar__item--active{{ end }}" href="{{ .URL | absURL }}">
           {{- .Name -}}
         </a>
-        {{ end }}
+        {{- end -}}
       </div>
 
       <div class="navbar__end">

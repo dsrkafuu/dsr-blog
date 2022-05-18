@@ -1,9 +1,6 @@
 .search {
-  height: $height-navbar-sm;
-  line-height: $height-navbar-sm;
+  padding: 5px;
   display: flex;
-  padding-left: $space-card;
-  padding-right: $space-card;
   overflow-y: hidden;
 
   @include responsive(md) {
@@ -13,45 +10,46 @@
   &__input {
     flex: 1 1 auto;
     border-radius: 0;
+    margin-right: 5px;
 
     input {
       min-width: 0;
       width: 100%;
       padding: 0;
-      height: $height-navbar-sm;
-      line-height: $height-navbar-sm;
+      height: 32px;
+      line-height: 32px;
       outline: none;
       border: none;
-      border-bottom: $highlight-size solid transparent;
-      border-top: $highlight-size solid transparent;
-      border-radius: 0;
+      border-radius: $corner-radius-sm;
       background-color: transparent;
-      padding-left: $space-mobile;
-      padding-right: 8px;
-      transition: background-color $transition-fast ease,
-        border-bottom-color $transition-fast ease;
+      padding: 0 8px;
+      transition: background-color $transition-fast ease;
       text-decoration: none;
 
       &:hover {
-        background-color: var(--color-transparent-active);
+        background-color: var(--color-bg-active);
       }
 
       &:focus {
-        background-color: var(--color-transparent-active);
-        border-bottom-color: var(--color-primary);
+        background-color: var(--color-bg-active);
       }
     }
   }
 
   &__ctrl {
-    padding: 0 $space-mobile;
+    flex: 0 0 auto;
+    width: 42px;
     color: var(--color-font);
     cursor: pointer;
-    height: $height-navbar-sm;
-    line-height: $height-navbar-sm;
+    height: 32px;
+    line-height: 32px;
+    border-radius: $corner-radius-sm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
-      background-color: var(--color-transparent-active);
+      background-color: var(--color-bg-active);
       text-decoration: none;
     }
   }

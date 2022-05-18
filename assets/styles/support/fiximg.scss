@@ -3,7 +3,7 @@
   display: block;
   overflow: hidden;
   background-color: var(--color-wrapper);
-  border-radius: $corner-radius;
+  border-radius: $corner-radius-sm;
   width: 100%;
 
   &__container {

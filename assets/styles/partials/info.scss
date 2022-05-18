@@ -6,7 +6,6 @@
     padding-top: $space-card;
     width: 75px;
     user-select: none;
-    border-radius: $corner-radius;
     overflow: hidden;
   }
 
@@ -47,29 +46,33 @@
 
 .links {
   margin-top: $space-card;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @include responsive(md) {
     margin-top: $space-mobile;
   }
 
-  display: flex;
-  justify-content: center;
-
   &__item {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: inherit;
     flex: 0 1 auto;
-    height: $height-navbar-sm;
+    height: 32px;
+    line-height: 32px;
+    width: 42px;
     text-align: center;
-    line-height: $height-navbar-sm;
-    padding: 0 $space-mobile;
     cursor: pointer;
     transition: background-color $transition-fast ease;
+    border-radius: $corner-radius-sm;
 
     &:hover {
       text-decoration: none;
       color: var(--color-font);
-      background-color: var(--color-transparent-active);
+      background-color: var(--color-bg-active);
     }
   }
 }
