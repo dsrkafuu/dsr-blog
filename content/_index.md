@@ -11,19 +11,23 @@ keywords:
 
 ### 个人
 
-Web 前/后端开发、PC 硬件爱好者、动画党 & 主机单机游戏玩家。
+Web/跨平台开发、业余设计师、PC 硬件爱好者、动画党 & 主机单机游戏玩家。
+
+### 关键词
+
+- JavaScript、TypeScript、HTML、CSS、React、Vue.js、Node.js、Electron、Hugo
 
 ### 状态
 
-- 自[幸运星 (2007)](https://www.kyotoanimation.co.jp/works/luckystar/) 开始的[京都动画](https://www.kyotoanimation.co.jp/)粉丝
-- [VS Code](https://code.visualstudio.com/)、习惯用两格空格配合 [Prettier](https://prettier.io/) 编码
-- 正在学习 [SolidJS](https://www.solidjs.com/)、[Electron](https://www.electronjs.org/) 和 [.NET (C#)](https://docs.microsoft.com/en-us/dotnet/)
+- 自幸运星 (2007) 开始的京都动画粉丝
+- 偏好 VS Code、习惯用两格空格编码 (任何语言)
+- 正在使用 Windows、macOS、Manjaro 和 Ubuntu (WSL)
 
 ### 硬件
 
 - 华硕 ROG GM501GS、苹果 MacBook Pro M1
 - LG 27GL850-B UltraGear Nano IPS
-- 阿米洛 VA87M 樱桃茶轴、罗技 G703 Lightspeed
+- 阿米洛 VA87M 樱桃茶轴、罗技 G703 LS
 
 ### 计数
 
