@@ -41,9 +41,12 @@
 
           {{ if ne .Params.comment false }}
           <div class="card comment">
-            <a class="comment__btn" href="https://github.com/dsrkafuu/dsr-blog/discussions/categories/comments"
-               target="_blank" rel="noopener">公开评论</a>
-            <span class="comment__btn" id="crisp-btn">提出建议</span>
+            <script async crossorigin="anonymous" src="https://giscus.app/client.js"
+                    data-repo="{{ .Site.Params.giscusRepo }}" data-repo-id="{{ .Site.Params.giscusRepoID }}"
+                    data-category="{{ .Site.Params.giscusCatg }}" data-category-id="{{ .Site.Params.giscusCatgID }}"
+                    data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom"
+                    data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy">
+                    </script>
           </div>
           {{ end }}
         </div>

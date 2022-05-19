@@ -85,30 +85,12 @@
   }
 }
 
-.card {
-  &.comment {
-    text-align: center;
-    margin-top: $space-card;
-    padding: 5px;
+.comment {
+  text-align: center;
+  margin-top: $space-card;
+  padding: $space-card;
 
-    @include responsive(md) {
-      margin-top: $space-mobile;
-    }
-  }
-
-  .comment__btn {
-    color: var(--color-font);
-    display: inline-block;
-    height: 32px;
-    line-height: 32px;
-    padding: 0 $space-mobile;
-    cursor: pointer;
-    border-radius: $corner-radius-sm;
-
-    &:hover {
-      text-decoration: none;
-      color: var(--color-font);
-      background-color: var(--color-bg-active);
-    }
+  @include responsive(md) {
+    margin-top: $space-mobile;
   }
 }
