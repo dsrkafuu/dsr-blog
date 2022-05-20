@@ -66,17 +66,18 @@
 
   @include responsive(sm) {
     flex-direction: column;
-    height: $height-navbar-sm * 2;
+    height: $height-navbar-sm;
     padding-right: 0;
 
     &__item {
-      height: $height-navbar-sm;
-      line-height: $height-navbar-sm;
+      height: 32px;
+      line-height: 32px;
     }
 
     &__brand {
       font-size: $font-lg;
       text-align: center;
+      margin-bottom: 5px;
     }
 
     &__menu {

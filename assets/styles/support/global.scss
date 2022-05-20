@@ -139,7 +139,7 @@ tt {
 }
 
 .card {
-  background-color: var(--color-backdrop);
+  background-color: var(--color-bg);
   backdrop-filter: $filter-blur;
   border-radius: $corner-radius-lg;
   box-shadow: var(--box-shadow);
@@ -200,7 +200,7 @@ tt {
     &:target {
       scroll-margin-top: $height-navbar + $space-para;
       @include responsive(sm) {
-        scroll-margin-top: $height-navbar-sm * 2 + $space-para;
+        scroll-margin-top: $height-navbar-sm + $space-para;
       }
     }
   }
