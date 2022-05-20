@@ -1,5 +1,5 @@
 ---
-title: 'Hugo 实现图片懒加载和自适应 CSS 图片占位'
+title: 'Hugo 图片懒加载和自适应 CSS 图片占位'
 date: 2022-05-07T11:28:12+08:00
 keywords:
   - 'hugo'

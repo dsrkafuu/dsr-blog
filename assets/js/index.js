@@ -4,6 +4,7 @@ import { logError, logInfo } from './plugins/loggers';
 import { SECTIONS, getSection } from './plugins/utils';
 import search from './components/search';
 import toc from './components/toc';
+import twemoji from './components/twemoji';
 import zoom from './components/zoom';
 
 const SECTION = getSection();
@@ -22,6 +23,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // modules
+twemoji();
+logInfo('twemoji module inited');
 if ([SECTIONS.INDEX, SECTIONS.LIST].includes(SECTION)) {
   search();
   logInfo('search module inited');
