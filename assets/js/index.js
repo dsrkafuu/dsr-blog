@@ -15,7 +15,8 @@ if (process.env.NODE_ENV === 'production') {
     Sentry.init({
       dsn: process.env.HUGO_SENTRY_DSN,
       integrations: [new Integrations.BrowserTracing()],
-      tracesSampleRate: 1.0,
+      sampleRate: 1, // report all errors
+      tracesSampleRate: 0.05, // report 5% of traces
     });
   } catch (e) {
     logError('error init sentry', e);
