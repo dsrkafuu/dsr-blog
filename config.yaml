@@ -31,11 +31,6 @@ params:
   mainSections:
     - 'post'
     - 'code'
-  giscusRepo: 'dsrkafuu/dsr-blog'
-  giscusRepoID: 'MDEwOlJlcG9zaXRvcnkyODcyODY2NjE='
-  giscusCatg: '评论'
-  giscusCatgID: 'DIC_kwDOER-lhc4CO7Hv'
-  giscusFriendsID: '5'
 
 # menu
 # https://gohugo.io/templates/menu-templates/#section-menu-for-lazy-bloggers

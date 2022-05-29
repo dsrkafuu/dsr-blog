@@ -76,3 +76,11 @@
     }
   }
 }
+
+.kofi {
+  margin-top: $space-card;
+
+  @include responsive(md) {
+    margin-top: $space-mobile;
+  }
+}

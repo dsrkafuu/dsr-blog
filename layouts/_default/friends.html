@@ -51,13 +51,12 @@
           </div>
           {{ end }}
           {{ end }}
-
+          {{ $giscus := .Site.Data.comment }}
           <div class="card comment">
-            <script async crossorigin="anonymous" src="https://giscus.app/client.js"
-                    data-repo="{{ .Site.Params.giscusRepo }}" data-repo-id="{{ .Site.Params.giscusRepoID }}"
-                    data-mapping="number" data-term="{{ .Site.Params.giscusFriendsID }}" data-reactions-enabled="1"
-                    data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme"
-                    data-lang="zh-CN" data-loading="lazy">
+            <script async crossorigin="anonymous" src="https://giscus.app/client.js" data-repo="{{ $giscus.repo }}"
+                    data-repo-id="{{ $giscus.repoID }}" data-mapping="number" data-term="{{ $giscus.friendsID }}"
+                    data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top"
+                    data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy">
                     </script>
           </div>
         </div>

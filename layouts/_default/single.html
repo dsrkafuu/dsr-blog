@@ -40,12 +40,13 @@
           </div>
 
           {{ if ne .Params.comment false }}
+          {{ $giscus := .Site.Data.comment }}
           <div class="card comment">
-            <script async crossorigin="anonymous" src="https://giscus.app/client.js"
-                    data-repo="{{ .Site.Params.giscusRepo }}" data-repo-id="{{ .Site.Params.giscusRepoID }}"
-                    data-category="{{ .Site.Params.giscusCatg }}" data-category-id="{{ .Site.Params.giscusCatgID }}"
-                    data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top"
-                    data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy">
+            <script async crossorigin="anonymous" src="https://giscus.app/client.js" data-repo="{{ $giscus.repo }}"
+                    data-repo-id="{{ $giscus.repoID }}" data-category="{{ $giscus.catg }}"
+                    data-category-id="{{ $giscus.catgID }}" data-mapping="title" data-reactions-enabled="1"
+                    data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme"
+                    data-lang="zh-CN" data-loading="lazy">
                     </script>
           </div>
           {{ end }}

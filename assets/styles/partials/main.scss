@@ -68,21 +68,3 @@
     }
   }
 }
-
-@include responsive(md) {
-  body[data-section='index'] .main {
-    & > .container {
-      flex-direction: column-reverse;
-
-      & > .content > .content__inner {
-        padding-top: $space-mobile / 2;
-        padding-bottom: $space-mobile;
-      }
-
-      & > .sidebar > .sidebar__inner {
-        padding-top: $space-mobile;
-        padding-bottom: $space-mobile / 2;
-      }
-    }
-  }
-}
