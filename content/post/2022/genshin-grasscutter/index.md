@@ -1,6 +1,6 @@
 ---
-title: 'Grasscutter 原神私服搭建指南'
-date: 2022-05-29T19:51:21+08:00
+title: '原神私服 Grasscutter 搭建指南 - 2.7 预更新'
+date: 2022-05-30T11:06:11+08:00
 pubdate: 2022-04-26T15:12:02+08:00
 keywords:
   - '原神'
@@ -12,13 +12,17 @@ description: '可以用来自己私下当单机随便玩玩的原神私服。'
 
 > 注意：未经授权修改与使用游戏客户端及服务端是侵犯相关公司版权的行为
 
-服务端可以正常运行于云服务器并支持多账户链接，作者本人不推荐这类行为。
-
 **此指南仅供技术交流使用，请于研究测试后 24 小时内删除，任何商业使用及商业利益冲突带来的法律纠纷与本人无关、概不负责。**
 
 <!--more-->
 
-**⚠️ 不建议游玩任何公共私服，该类服务器的数据安全没有保障；不要在任何私服内以任何形式投入资金，避免上当受骗。**
+在一段时间的开发后，社区开发者构建了很多 Grasscutter 相关的辅助工具，这些工具都很好用，有兴趣的可以自行探索。
+
+⚠️ 但是，作者依旧**不推荐使用任何的一键整合包**，也**不推荐游玩任何公共私服**，原因如下：如果你拥有基本的计算机知识，就应该理解服务器的部署是一件多简单的事情，以及——在这基础上的二次开发和劫持是多简单的事情，你的**数据安全**没有保障。
+
+⚠️ 如果你希望和朋友们一起游玩，找个廉价 Linux 服务器自行部署是很好的选择。无论如何，一切的核心是**不要在任何私服内以任何形式投入资金**，避免上当受骗。
+
+ℹ 有关于这方面的私人问题可以直接 DM 联系[我的 Twitter](https://twitter.com/dsrkafuu)。
 
 ## 资源整合
 
@@ -28,7 +32,7 @@ description: '可以用来自己私下当单机随便玩玩的原神私服。'
 
 ## 更新记录
 
-- **2022-05-29** 添加 2.7 版本提示
+- **2022-05-30** 更新部分 2.7 版本内容
 - **2022-05-11** 更新新版指南和游戏资源
 - **2022-05-08** 添加一些实用工具的链接
 - **2022-05-03** 更新游戏资源
@@ -45,7 +49,7 @@ description: '可以用来自己私下当单机随便玩玩的原神私服。'
 
 ~~要求特定版本 8u202，其他版本未测试，请至 [Oracle 官网](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)下载并安装。~~
 
-稳定版 v1.1.0 之后要求使用 Java 17+，请至 [Oracle 官网](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)下载并安装，或使用[微软编译的 OpenJDK](https://www.microsoft.com/openjdk) 版本。~~
+稳定版 v1.1.0 之后要求使用 Java 17+，请至 [Oracle 官网](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)下载并安装，或使用[微软编译的 OpenJDK](https://www.microsoft.com/openjdk) 版本。
 
 ![JDK 示意图](20220511194321.webp)
 
@@ -63,7 +67,7 @@ description: '可以用来自己私下当单机随便玩玩的原神私服。'
 
 ### 自行编译核心
 
-> 适用于 2.7 版本的服务端已在 `2.7` 分支开发中，有 2.7 版本测试客户端和游戏资源的玩家可以提前使用该分支进行测试。
+> 适用于 2.7 版本的服务端请切换至 `2.7` 分支。
 
 首先拉取所需分支的 Grasscutter 源码：
 
@@ -84,6 +88,8 @@ cd .\Grasscutter\
 编译完成后，在项目目录内即可找到名为 `grasscutter-<version>.jar` 的服务器核心。
 
 ### 游戏资源
+
+> 2.7 版本的资源见该仓库的 `2.7` 分支。
 
 除了服务端本身以外，还需要游戏的相关资源放置于目录内。本指南基于游戏版本 2.6，资源来自 [Grasscutter Resources](https://github.com/Koko-boya/Grasscutter_Resources) (Commit `3dd07fa`)，将 `Resources` 目录内的全部六个文件夹拷贝到 `resources` 目录内即可，其中包含了 2.6 版本的全部资源。
 
@@ -121,6 +127,8 @@ netstat -ano | findstr /r /c:":22102.*LISTENING"
 ```powershell
 mitmdump -s proxy.py --ssl-insecure --listen-port 12345
 ```
+
+若为直接使用预编译的服务器核心，该文件[见仓库](https://github.com/Grasscutters/Grasscutter/blob/stable/proxy.py)。
 
 ![代理运行示意图](20220503153153.webp)
 
