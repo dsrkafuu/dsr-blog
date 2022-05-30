@@ -1,5 +1,5 @@
 ---
-title: '原神私服 Grasscutter 配置指南'
+title: 'Grasscutter 原神私服搭建指南'
 date: 2022-05-29T19:51:21+08:00
 pubdate: 2022-04-26T15:12:02+08:00
 keywords:
