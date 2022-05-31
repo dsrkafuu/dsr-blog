@@ -1,6 +1,6 @@
 ---
-title: '原神私服 Grasscutter 搭建指南 - 2.7 预更新'
-date: 2022-05-30T11:06:11+08:00
+title: '原神私服 Grasscutter 搭建指南 - 2.7 更新'
+date: 2022-05-31T13:48:11+08:00
 pubdate: 2022-04-26T15:12:02+08:00
 keywords:
   - '原神'
@@ -32,7 +32,7 @@ description: '可以用来自己私下当单机随便玩玩的原神私服。'
 
 ## 更新记录
 
-- **2022-05-30** 更新部分 2.7 版本内容
+- **2022-05-30** 更新 2.7 版本
 - **2022-05-11** 更新新版指南和游戏资源
 - **2022-05-08** 添加一些实用工具的链接
 - **2022-05-03** 更新游戏资源
@@ -57,7 +57,7 @@ description: '可以用来自己私下当单机随便玩玩的原神私服。'
 
 ### 预编译核心
 
-预编译的核心可以直接在[项目仓库的 Actions](https://github.com/Grasscutters/Grasscutter/actions?query=branch%3Astable) 内找到。
+预编译的核心可以直接在[项目仓库的 Actions](https://github.com/Grasscutters/Grasscutter/actions) 内找到。上文[资源整合](#资源整合)的百度网盘内有作者自行编译的核心。
 
 若使用预编译核心，则需要将以下三项资源放置于目录内：
 
@@ -67,12 +67,10 @@ description: '可以用来自己私下当单机随便玩玩的原神私服。'
 
 ### 自行编译核心
 
-> 适用于 2.7 版本的服务端请切换至 `2.7` 分支。
-
-首先拉取所需分支的 Grasscutter 源码：
+首先拉取所需分支的 Grasscutter 源码，以开发分支为例：
 
 ```powershell
-git clone -b stable https://github.com/Grasscutters/Grasscutter.git
+git clone -b development https://github.com/Grasscutters/Grasscutter.git
 cd .\Grasscutter\
 ```
 
@@ -89,9 +87,7 @@ cd .\Grasscutter\
 
 ### 游戏资源
 
-> 2.7 版本的资源见该仓库的 `2.7` 分支。
-
-除了服务端本身以外，还需要游戏的相关资源放置于目录内。本指南基于游戏版本 2.6，资源来自 [Grasscutter Resources](https://github.com/Koko-boya/Grasscutter_Resources) (Commit `3dd07fa`)，将 `Resources` 目录内的全部六个文件夹拷贝到 `resources` 目录内即可，其中包含了 2.6 版本的全部资源。
+除了服务端本身以外，还需要游戏的相关资源放置于目录内。本指南基于游戏版本 2.7，资源来自 [Grasscutter Resources](https://github.com/Koko-boya/Grasscutter_Resources) (Commit `20ced72`)，将 `Resources` 目录内的全部文件夹拷贝到 `resources` 目录内即可，其中包含了 2.7 版本的全部资源。
 
 ### 运行服务器
 
@@ -99,7 +95,7 @@ cd .\Grasscutter\
 java -jar .\grasscutter-<version>.jar.jar
 ```
 
-稳定版 v1.1.0 后在首次运行时需要选择语言，输入 `chs` 即可。
+首次运行时需要选择语言，输入 `chs` 即可。
 
 ![语言选择示意图](20220511202056.webp)
 
@@ -150,7 +146,7 @@ account create [username] {playerid}
 
 服务端的全部控制台指令可以通过 `help` 指令获取。
 
-最后，运行对应游戏资源版本的游戏客户端即可，本指南使用国际服 2.6 版本客户端。输入注册的用户名并随便设置一个密码即可进入游戏。进入游戏后代理可以关闭，推荐在连接公共服务器时尽快关闭代理以节约服务器流量。
+最后，运行对应游戏资源版本的游戏客户端即可，本指南使用国际服 2.7 版本客户端。输入注册的用户名并随便设置一个密码即可进入游戏。进入游戏后代理可以关闭，推荐在连接公共服务器时尽快关闭代理以节约服务器流量。
 
 ![游戏运行示意图](20220503160930.webp)
 
