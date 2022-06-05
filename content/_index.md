@@ -13,9 +13,11 @@ keywords:
 
 Web/跨平台开发、业余设计师、PC 硬件爱好者、动画党 & 主机单机游戏玩家。
 
+我更喜欢 React 而非 Vue.js、更喜欢 SolidJS 而非 Svelte，但我不会仅仅因为某些方面的个人喜好而拒绝尝试/使用某些技术。
+
 ### 关键词
 
-- JavaScript、TypeScript、HTML、CSS、React、Vue.js、Node.js、Electron、Hugo
+JavaScript, TypeScript, HTML, CSS, React, Vue.js, SolidJS, Svelte, Node.js, Electron, Hugo
 
 ### 状态
 
