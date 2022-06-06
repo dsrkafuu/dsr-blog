@@ -11,37 +11,36 @@ description: 'JavaScript 常见手写。'
 ```ts
 /**
  * 防抖：仅执行一次
- * @param {Function} func
- * @param {number} delay
- * @return {Function}
  */
-const debounce = (func: Function, delay = 300) => {
+const debounce = <F extends (...args: any[]) => any>(func: F, delay = 300) => {
   let timer: number | null = null;
-  return function (...args: any) {
-    timer && window.clearTimeout(timer);
-    const self = this;
-    timer = window.setTimeout(() => func(), delay);
+  const ret = (...args: any) => {
+    if (timer) {
+      window.clearTimeout(timer);
+    }
+    timer = window.setTimeout(() => {
+      func(...args);
+      timer = null;
+    }, delay);
   };
+  return ret as (...args: Parameters<F>) => void;
 };
 element.onclick = debounce(myFunc);
 
 /**
  * 节流：限制最小执行间隔
- * @param {Function} fn
- * @param {number} delay
- * @return {Function}
  */
-const throttle = (func: Function, delay = 300) => {
+const throttle = <F extends (...args: any[]) => any>(func: F, delay = 300) => {
   let timer: number | null = null;
-  return function (...args: any) {
-    const self = this;
+  const ret = (...args: any) => {
     if (!timer) {
       timer = window.setTimeout(() => {
-        func();
+        func(...args);
         timer = null;
       }, delay);
     }
   };
+  return ret as (...args: Parameters<F>) => void;
 };
 window.onresize = throttle(myFunc);
 ```
@@ -414,7 +413,12 @@ console.log(...object); // 1 2 3 4
 ### LazyMan (事件循环)
 
 ```js
-new LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(10).eat('junk food');
+new LazyMan('Tony')
+  .eat('lunch')
+  .eat('dinner')
+  .sleepFirst(5)
+  .sleep(10)
+  .eat('junk food');
 // Hi I am Tony
 // 等待了5秒...
 // I am eating lunch
