@@ -41,7 +41,7 @@
 
           {{ if ne .Params.comment false }}
           {{ $giscus := .Site.Data.comment }}
-          <div class="card comment">
+          <div class="card comment-area">
             <script async crossorigin="anonymous" src="https://giscus.app/client.js" data-repo="{{ $giscus.repo }}"
                     data-repo-id="{{ $giscus.repoID }}" data-category="{{ $giscus.catg }}"
                     data-category-id="{{ $giscus.catgID }}" data-mapping="title" data-reactions-enabled="1"

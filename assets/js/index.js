@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/browser';
-import { Integrations } from '@sentry/tracing';
+import { BrowserTracing } from '@sentry/tracing';
 import { logError, logInfo } from './plugins/loggers';
 import { SECTIONS, getSection } from './plugins/utils';
 import search from './components/search';
@@ -14,10 +14,11 @@ if (process.env.NODE_ENV === 'production') {
   try {
     Sentry.init({
       dsn: process.env.HUGO_SENTRY_DSN,
-      integrations: [new Integrations.BrowserTracing()],
+      integrations: [new BrowserTracing()],
       sampleRate: 1, // report all errors
       tracesSampleRate: 0.05, // report 5% of traces
     });
+    logInfo('sentry module inited');
   } catch (e) {
     logError('error init sentry', e);
   }
