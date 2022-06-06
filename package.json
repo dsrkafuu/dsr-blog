@@ -5,7 +5,7 @@
   },
   "private": true,
   "name": "dsr-blog",
-  "version": "7.6.3",
+  "version": "7.6.4",
   "description": "Personal blog powered by Hugo.",
   "license": "AGPL-3.0",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",

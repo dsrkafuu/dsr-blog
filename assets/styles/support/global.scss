@@ -174,8 +174,6 @@ tt {
 }
 
 .icon {
-  width: 1.1em;
-  height: 1.1em;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
@@ -183,10 +181,6 @@ tt {
 
 .icon.spin {
   animation: spinner 1s infinite linear;
-}
-
-.fa-secondary {
-  opacity: 0.4;
 }
 
 // anchor position fix
