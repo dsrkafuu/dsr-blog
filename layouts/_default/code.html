@@ -14,23 +14,25 @@
   <main class="main">
     <div class="container">
       <div class="content">
-        <div class="content__inner code__list">
-          {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) }}
-          {{ range $paginator.Pages }}
-          <div class="card">
-            <div class="code__box">
-              <div class="code__info">
-                <a class="code__title" href="{{ .Permalink }}">
-                  <h2>{{ .Title }}</h2>
-                </a>
+        <div class="content__inner">
+          <div class="code__list">
+            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Section) }}
+            {{ range $paginator.Pages }}
+            <div class="card">
+              <div class="code__box">
+                <div class="code__info">
+                  <a class="code__title" href="{{ .Permalink }}">
+                    <h2>{{ .Title }}</h2>
+                  </a>
+                </div>
+                {{ partial "metadata" . }}
               </div>
-              {{ partial "metadata" . }}
             </div>
-          </div>
-          {{ end }}
+            {{ end }}
 
-          {{ .Scratch.Set "paginator" $paginator }}
-          {{ partial "pagination" . }}
+            {{ .Scratch.Set "paginator" $paginator }}
+            {{ partial "pagination" . }}
+          </div>
         </div>
       </div>
 
