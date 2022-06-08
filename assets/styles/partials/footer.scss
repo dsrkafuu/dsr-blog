@@ -3,6 +3,10 @@
   height: 48px;
   margin-bottom: $space-card;
 
+  @include responsive(sm) {
+    height: 48px + 2 * 8px;
+  }
+
   & > .container {
     height: 100%;
     padding: 0 $space-card;
@@ -21,6 +25,10 @@
     white-space: nowrap;
 
     @include responsive(sm) {
+      &:first-child {
+        margin-bottom: 8px;
+      }
+
       &:not(:first-child) {
         margin-top: 8px;
       }
