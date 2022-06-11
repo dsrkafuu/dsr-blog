@@ -68,16 +68,6 @@
 </script>
 {{ end }}
 
-{{ if not $isDev }}
-<!-- [DEBUG] REPLACE GOOGLE ANALYTICS -->
-<script async
-  data-id="6239c1cda8cc0d830a00f53e"
-  data-host="https://analytics.dsrkafuu.cn:8443/"
-  src="https://unpkg.com/dsr-analytics@1.0.0/dist/client.min.js"
-></script>
-<!-- [DEBUG] REPLACE GOOGLE ANALYTICS -->
-{{ end }}
-
 {{ $isProd := eq (getenv "NODE_ENV") "production" }}
 <!-- deps -->
 <script defer src="{{ .Site.Data.scripts.prism }}"></script>
