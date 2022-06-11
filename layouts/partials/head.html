@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />
 
 {{ $name := .Site.Data.meta.name }}
 {{ $author := .Site.Data.meta.author }}
@@ -53,7 +54,8 @@
 {{ $pkg := getJSON "package.json" }}
 {{ $src := "styles/index.scss" }}
 {{ $out := printf "assets/main.v%s.min.css" $pkg.version }}
-{{ $options := dict "targetPath" $out "outputStyle" "compressed" "enableSourceMap" $isDev "includePaths" (slice "node_modules") }}
+{{ $options := dict "targetPath" $out "outputStyle" "compressed" "enableSourceMap" $isDev "includePaths" (slice
+"node_modules") }}
 {{ $css := resources.Get $src | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.Permalink }}" />
 
@@ -65,6 +67,17 @@
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', '{{ $gaid }}');
+</script>
+{{ end }}
+
+{{ $mcid := getenv "HUGO_MC_ID" }}
+{{ if and (not $isDev) $mcid }}
+<script>
+  (function (c, l, a, r, i, t, y) {
+    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+    t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "{{ $mcid }}");
 </script>
 {{ end }}
 
