@@ -41,9 +41,8 @@
 {{ end }}
 
 <link rel="icon" href="{{ .Site.Data.favicon.ico }}" sizes="any" />
-<link rel="icon" sizes="48x48" href="{{ .Site.Data.favicon.png_48x }}" />
-<link rel="icon" sizes="96x96" href="{{ .Site.Data.favicon.png_96x }}" />
-<link rel="icon" sizes="144x144" href="{{ .Site.Data.favicon.png_144x }}" />
+<link rel="icon" sizes="192x192" href="{{ .Site.Data.favicon.png_192x }}" />
+<link rel="icon" sizes="512x512" href="{{ .Site.Data.favicon.png_512x }}" />
 <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Data.favicon.apple }}" />
 {{ if ne $type "404" }}
 {{ partial "opengraph" . }}
