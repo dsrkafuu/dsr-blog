@@ -9,7 +9,7 @@ keywords:
   - '夜间模式'
   - '教程'
   - '指南'
-description: '用 prefers-color-scheme 适配系统效果绝佳。'
+description: '自己给博客写的主题 Fuji 正在进行大改版，顺手也把夜间模式进行了改版以适配 prefers-color-scheme。'
 ---
 
 自己给博客写的主题 [Fuji](https://github.com/dsrkafuu/hugo-theme-fuji) 正在进行大改版，顺手也把夜间模式 (深色模式、黑暗模式？都差不多) 进行了改版以适配 `prefers-color-scheme`。

@@ -5,7 +5,7 @@ keywords:
   - 'git'
   - 'github'
   - 'lfs'
-description: 'LFS 真的好用。'
+description: '博客图片越来越多，是时候把二进制资源迁移到 LFS 存储了。'
 ---
 
 博客图片越来越多，是时候把二进制资源迁移到 LFS 存储了。

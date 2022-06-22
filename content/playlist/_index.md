@@ -1,7 +1,7 @@
 ---
 title: '番剧'
 date: 2021-05-22T17:08:20+48:00
-description: 'DSRBLOG 番剧播放列表。'
+description: 'DSRBLOG 番剧播放列表，列表中包含了我认为值得评判一番的作品。'
 keywords:
   - DSRKafuU
   - DSRBLOG

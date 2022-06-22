@@ -1,7 +1,7 @@
 ---
 title: 'JS Insts'
 date: 2020-01-22T17:12:11+08:00
-description: 'JavaScript 常见手写。'
+description: 'JavaScript 常见手写，包括防抖、节流、柯里、扁平、去重等各类手写。'
 ---
 
 ## 工具函数

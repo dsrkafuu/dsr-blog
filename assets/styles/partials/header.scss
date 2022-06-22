@@ -56,6 +56,11 @@
     flex: 0 0 auto;
     font-size: $font-xl;
     font-weight: 500;
+
+    h1 {
+      margin: 0;
+      font-size: $font-xl;
+    }
   }
 
   &__menu {

@@ -4,7 +4,7 @@ date: 2020-10-24T14:37:01+08:00
 keywords:
   - 'postgresql'
   - 'ubuntu'
-description: '使用 umami 搭建私人版 Google Analytics。'
+description: 'umami 是一个基本数据收集工具，虽然不及 Google Analytics 那样有完善的数据分析工具和整合功能，但是对于我这种日常博客使用还是完全足够了。'
 ---
 
 [Google Analytics](https://analytics.google.com/) 于近期推出了新版，将数据收集方式改为了向 `analytics.google.com/g/collect` 发送 POST 请求，在中国大陆自然就无法直接访问了，具体见 [V2EX](https://www.v2ex.com/t/716280) 相关讨论。考虑到本身对数据收集的需求不高，因此实验性的切换到了近期正在快速迭代更新的 [umami](https://github.com/mikecao/umami)。

@@ -7,7 +7,7 @@ keywords:
   - 'apple'
   - '苹方'
   - 'macos'
-description: '近来由于本地项目需求，需要在 Windows 下临时使用苹方字体。但是旧版苹方的移植方案已经失效，因此需要使用新的方法。'
+description: '此文章持续更新从 macOS Catalina 及之后版本中提取的新版苹方字体，包含从 TTC 字体集中提取的 HK、SC 和 TC 三个版本。字体已经过修改，Windows 中可以直接使用。'
 ---
 
 > 注意：未经授权修改与使用 PingFang 字体是侵犯 Apple 公司版权的行为

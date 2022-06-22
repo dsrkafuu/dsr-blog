@@ -1,6 +1,6 @@
 ---
 title: 'DSRBLOG'
-description: 'DSRKafuU 个人博客。'
+description: 'DSRKafuU 个人博客。Web/跨平台开发、业余设计师、PC 硬件爱好者、动画党 & 主机单机游戏玩家。'
 keywords:
   - DSRKafuU
   - DSRBLOG

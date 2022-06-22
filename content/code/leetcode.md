@@ -1,7 +1,7 @@
 ---
 title: 'LeetCode'
 date: 2020-09-04T17:14:22+08:00
-description: 'LeetCode 解题相关笔记。'
+description: '本笔记收录了我的部分 LeetCode 解题过程，笔记不定期更新，寻找题目请使用搜索。'
 ---
 
 本笔记收录了我的部分 LeetCode 解题过程，笔记不定期更新，寻找题目请使用 `Ctrl + F` 搜索。

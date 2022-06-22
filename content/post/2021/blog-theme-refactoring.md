@@ -5,7 +5,7 @@ keywords:
   - 'css'
   - '主题'
   - 'hugo'
-description: '整理下混乱的博客主题结构。'
+description: '整理下混乱的博客主题结构，为后续减少浪费在维护上的时间打下基础。'
 banner: 'hugo.webp'
 ---
 

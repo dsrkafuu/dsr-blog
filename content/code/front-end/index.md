@@ -1,7 +1,7 @@
 ---
 title: 'Front End'
 date: 2019-09-07T23:00:01+08:00
-description: '前端应用笔记。'
+description: '前端应用笔记，包括前端安全、性能优化、移动兼容等内容。'
 ---
 
 ## CSRF 和 XSS 攻击

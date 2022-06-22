@@ -8,7 +8,7 @@ keywords:
   - 'sql'
   - '教程'
   - '指南'
-description: '计划私下里给亲友们发布一些东西，为了方便就搭 Typecho 了。'
+description: '计划私下里给亲友们发布一些东西，考虑到用 WP 有点小题大做，为了方便就搭 Typecho 了。'
 ---
 
 计划私下里给亲友们发布一些东西，考虑到用 WP 有点小题大做，为了方便就搭 [Typecho](https://typecho.org/) 了。最初计划里是基于 SQLite 的，但是为了主题，还是回到了 MySQL。废话不多说，直接开始记录。

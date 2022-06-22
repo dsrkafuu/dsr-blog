@@ -1,6 +1,6 @@
 ---
 title: '文章'
-description: 'BSRBLOG 文章模块。'
+description: 'DSRBLOG 文章模块，我的所有博客文章均在这一分类内。'
 keywords:
   - DSRKafuU
   - DSRBLOG

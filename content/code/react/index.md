@@ -1,7 +1,7 @@
 ---
 title: 'React'
 date: 2020-09-11T11:11:11+08:00
-description: 'React 重点整理。'
+description: 'React 重点整理，包括一些框架特定的内容、特性，以及与其他框架的对比等。'
 ---
 
 ## 对比 Vue.js

@@ -1,7 +1,7 @@
 ---
 title: 'JavaScript'
 date: 2020-01-22T17:12:11+08:00
-description: 'JavaScript 重难点整理。'
+description: 'JavaScript 重难点整理，包括数据类型、执行上下文、事件循环等内容。'
 ---
 
 ## 数据

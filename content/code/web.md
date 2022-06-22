@@ -1,7 +1,7 @@
 ---
 title: 'Web'
 date: 2019-06-12T12:25:32+08:00
-description: '计算机网络笔记。'
+description: '计算机网络笔记，包括网络模型、TCP/UDP 协议、页面解析过程的内容。'
 ---
 
 ## OSI 七层与 TCP/IP 四层模型

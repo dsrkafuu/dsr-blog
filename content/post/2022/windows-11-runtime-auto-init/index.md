@@ -6,7 +6,7 @@ keywords:
   - 'bug'
   - 'uwp'
   - '运行时'
-description: '微软你行不行啊微软。'
+description: '每次开机进入系统，总会有弹出三条安装 C++ UWP Runtime 的消息，每次都会自动失败。'
 ---
 
 > 2022-05-18 更新，该方法可能已失效。
