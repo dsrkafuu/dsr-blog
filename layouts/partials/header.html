@@ -18,11 +18,11 @@
       </div>
 
       <div class="navbar__end">
-        <a class="navbar__item" href='{{ "/index.xml" | absURL }}' target="_blank" rel="noopener">
+        <a class="navbar__item" href='{{ "/index.xml" | absURL }}' title="RSS" target="_blank" rel="noopener">
           {{ .Scratch.Set "ICON_NAME" "rss" }}
           {{ partial "icon" . }}
         </a>
-        <div class="navbar__item navbar__toc" id="toc-btn">
+        <div class="navbar__item navbar__toc" id="toc-btn" title="目录">
           {{ .Scratch.Set "ICON_NAME" "bars" }}
           {{ partial "icon" . }}
         </div>

@@ -28,7 +28,7 @@
 
 <div class="card links">
   {{ range .Site.Data.links }}
-  <a class="links__item" href="{{ .href }}" target="_blank" rel="noopener">
+  <a class="links__item" href="{{ .href }}" target="_blank" rel="noopener" title="{{ .name }}">
     {{ $.Scratch.Set "ICON_NAME" .icon }}
     {{ partial "icon" $ }}
   </a>
