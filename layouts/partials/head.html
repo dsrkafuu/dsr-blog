@@ -6,11 +6,10 @@
 {{ hugo.Generator }}
 
 <link rel="preconnect" href="https://cdn.dsrkafuu.net" />
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />
 
 {{ $name := .Site.Data.meta.name }}
 {{ $author := .Site.Data.meta.author }}
@@ -53,8 +52,7 @@
 {{ $pkg := getJSON "package.json" }}
 {{ $src := "styles/index.scss" }}
 {{ $out := printf "assets/main.v%s.min.css" $pkg.version }}
-{{ $options := dict "targetPath" $out "outputStyle" "compressed" "enableSourceMap" $isDev "includePaths" (slice
-"node_modules") }}
+{{ $options := dict "targetPath" $out "outputStyle" "compressed" "enableSourceMap" $isDev "includePaths" (slice "node_modules") }}
 {{ $css := resources.Get $src | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.Permalink }}" />
 

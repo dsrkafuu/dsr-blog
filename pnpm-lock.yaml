@@ -1,24 +1,24 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@sentry/browser': ~7.0.0
-  '@sentry/tracing': ~7.0.0
+  '@sentry/browser': ~7.3.0
+  '@sentry/tracing': ~7.3.0
   cross-env: ~7.0.3
-  dsr-design: ~3.3.0
+  dsr-design: ~3.5.1
   env-cmd: ~10.1.0
-  eslint: ~8.17.0
-  prettier: ~2.6.2
+  eslint: ~8.18.0
+  prettier: ~2.7.1
 
 dependencies:
-  '@sentry/browser': 7.0.0
-  '@sentry/tracing': 7.0.0
-  dsr-design: 3.3.0
+  '@sentry/browser': 7.3.0
+  '@sentry/tracing': 7.3.0
+  dsr-design: 3.5.1
 
 devDependencies:
   cross-env: 7.0.3
   env-cmd: 10.1.0
-  eslint: 8.17.0
-  prettier: 2.6.2
+  eslint: 8.18.0
+  prettier: 2.7.1
 
 packages:
 
@@ -54,55 +54,55 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@sentry/browser/7.0.0:
-    resolution: {integrity: sha512-XJeQA/CIocrmShpfVcccJ2RvZbWZy+OustSbgLP5Vk+ZnzbqKQo1zQ92jO/dUoVIsl5dWpUaOKfT6gXmORf4vQ==}
+  /@sentry/browser/7.3.0:
+    resolution: {integrity: sha512-UJMTDbajKNRGrs4ZQNelrPDaATvSZ9uELpPOtPSG6JUvB1BCwGgsgzz55RS0Uqs7B8KhMnDQ0kIn3FMewM4FMg==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/core': 7.0.0
-      '@sentry/types': 7.0.0
-      '@sentry/utils': 7.0.0
+      '@sentry/core': 7.3.0
+      '@sentry/types': 7.3.0
+      '@sentry/utils': 7.3.0
       tslib: 1.14.1
     dev: false
 
-  /@sentry/core/7.0.0:
-    resolution: {integrity: sha512-Wl7MjmahLhuzzByYiWaYTeHKQfF6usnMp+rTTYTBbneuM4MD7TikRt6ybgnxqyqR7nI7ADH/U8OljtiqwnsOcw==}
+  /@sentry/core/7.3.0:
+    resolution: {integrity: sha512-EvuWVlYm0F0+BtIEmQiCL31Fw0cfKSwUTmxc99wvouaabpHBr2zCJHRxaXOWzxS705bYBJEQiFDTIHfoOQZMzA==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/hub': 7.0.0
-      '@sentry/types': 7.0.0
-      '@sentry/utils': 7.0.0
+      '@sentry/hub': 7.3.0
+      '@sentry/types': 7.3.0
+      '@sentry/utils': 7.3.0
       tslib: 1.14.1
     dev: false
 
-  /@sentry/hub/7.0.0:
-    resolution: {integrity: sha512-my4s+SPZiL6BKOK89YNk74QFRejlwVKKSetzz+Wr1cxDLbGXOIHS3uRJlagqOpfthhD1dq8m3WBQnabPf5JlHQ==}
+  /@sentry/hub/7.3.0:
+    resolution: {integrity: sha512-0GtTaWf/hoAMoIFY7Ke6eozIbG3FdIPM364sER4SxUQVSklp6AORrV6p82IgWPROK6aj83cPk9Bszgi6RiF/BA==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.0.0
-      '@sentry/utils': 7.0.0
+      '@sentry/types': 7.3.0
+      '@sentry/utils': 7.3.0
       tslib: 1.14.1
     dev: false
 
-  /@sentry/tracing/7.0.0:
-    resolution: {integrity: sha512-eUHER2RWzm9OtFKQZIr5EwTGM3IU0xJ7l60rnAEbgW5b1bzWC0k/J6EeXeBBfGq7wric/BjH0WKQOnixtXUBpw==}
+  /@sentry/tracing/7.3.0:
+    resolution: {integrity: sha512-A+mLEH8jtLkhfyw81EZA1XgI96jh9TIwH9EST3hdfSPgdZQf0A5sV8oVVh/d9Hw7NVb65Va5KhAZDNhcx5QxUA==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/hub': 7.0.0
-      '@sentry/types': 7.0.0
-      '@sentry/utils': 7.0.0
+      '@sentry/hub': 7.3.0
+      '@sentry/types': 7.3.0
+      '@sentry/utils': 7.3.0
       tslib: 1.14.1
     dev: false
 
-  /@sentry/types/7.0.0:
-    resolution: {integrity: sha512-im6iugKKyeOwHWiS3u+S+Ox4F6aJQ2fe76rzTDTlzdCPol4xEqYnB2kujGVVnDYrODR+qVb24ua3OsxXxwzppA==}
+  /@sentry/types/7.3.0:
+    resolution: {integrity: sha512-cGkHdh9+uvbFTj65TjWcXuhe6vQiMY+U+N2GE5xCfmZT9hwuouCASViNsbJMpZqvCg+Yi0fasQLZ71rujiRNOA==}
     engines: {node: '>=8'}
     dev: false
 
-  /@sentry/utils/7.0.0:
-    resolution: {integrity: sha512-wmZNwzl1F/xCvaGX0TLz0+M+mZP8kn5woF770o2eUgXGURIuNsnSd0Vfi0nHuBJfngVeI/3+ofOJ9MH4Co4lIw==}
+  /@sentry/utils/7.3.0:
+    resolution: {integrity: sha512-xUP8TBf2p/c6CN8eFQ7Y+xk0IFrJXsph5ScozqNl/2l/Xs8hd2EiYETqgUklphoYD4J2RxvPwMyqBL15QN6wNg==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.0.0
+      '@sentry/types': 7.3.0
       tslib: 1.14.1
     dev: false
 
@@ -229,8 +229,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /dsr-design/3.3.0:
-    resolution: {integrity: sha512-9gSVGg0NWLlwen94xImvF1joD4/cv5M6yNXfRaK2QWtMFL4KuO19XbFtSiRq72frWtcbckzPFlKM7qsJAKl/9Q==}
+  /dsr-design/3.5.1:
+    resolution: {integrity: sha512-W81TpQpGvTYMQMwQttDQINqTZsuTrrRl/Osqf5nXj1qORKc+0LZkaIxoe56BBYiny0C870Oa1Tz+4LYstO8pfA==}
     dev: false
 
   /env-cmd/10.1.0:
@@ -255,13 +255,13 @@ packages:
       estraverse: 5.3.0
     dev: true
 
-  /eslint-utils/3.0.0_eslint@8.17.0:
+  /eslint-utils/3.0.0_eslint@8.18.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.17.0
+      eslint: 8.18.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -275,8 +275,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /eslint/8.17.0:
-    resolution: {integrity: sha512-gq0m0BTJfci60Fz4nczYxNAlED+sMcihltndR8t9t1evnU/azx53x3t2UHXC/uRjcbvRw/XctpaNygSTcQD+Iw==}
+  /eslint/8.18.0:
+    resolution: {integrity: sha512-As1EfFMVk7Xc6/CvhssHUjsAQSkpfXvUGMFC3ce8JDe6WvqCgRrLOBQbVpsBFr1X1V+RACOadnzVvcUS5ni2bA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -289,7 +289,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.17.0
+      eslint-utils: 3.0.0_eslint@8.18.0
       eslint-visitor-keys: 3.3.0
       espree: 9.3.2
       esquery: 1.4.0
@@ -547,8 +547,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.6.2:
-    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
