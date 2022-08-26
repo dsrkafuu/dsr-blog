@@ -1,0 +1,5 @@
+tasks:
+  - init: |
+      brew install hugo
+      pnpm install
+    command: pnpm run dev

@@ -5,23 +5,23 @@
   },
   "private": true,
   "name": "dsr-blog",
-  "version": "7.6.7",
+  "version": "7.6.8",
   "description": "Personal blog powered by Hugo.",
   "license": "AGPL-3.0",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development env-cmd hugo server",
+    "dev": "cross-env NODE_ENV=development env-cmd --silent hugo server",
     "build": "cross-env NODE_ENV=production env-cmd --silent hugo --minify --cleanDestinationDir"
   },
   "dependencies": {
-    "@sentry/browser": "~7.3.0",
-    "@sentry/tracing": "~7.3.0",
+    "@sentry/browser": "~7.11.1",
+    "@sentry/tracing": "~7.11.1",
     "dsr-design": "~3.5.1"
   },
   "devDependencies": {
     "cross-env": "~7.0.3",
     "env-cmd": "~10.1.0",
-    "eslint": "~8.18.0",
+    "eslint": "~8.22.0",
     "prettier": "~2.7.1"
   }
 }
