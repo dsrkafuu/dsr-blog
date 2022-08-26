@@ -20,3 +20,13 @@
 @import './pages/code';
 @import './pages/tags';
 @import './pages/friends';
+
+#sakana-widget {
+  position: fixed;
+  right: 60px;
+  bottom: 20px;
+  z-index: 4;
+  @include responsive(md) {
+    display: none;
+  }
+}
