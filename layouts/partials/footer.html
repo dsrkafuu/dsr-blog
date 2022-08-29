@@ -16,5 +16,10 @@
   </div>
 </footer>
 
-<div id='sakana-widget'></div>
-<script async onload="SakanaWidget()" src="{{ .Site.Data.scripts.sakana_widget }}"></script>
+<div id="sakana-widget"></div>
+<script>
+  function initSakanaWidget() {
+    new SakanaWidget().mount('#sakana-widget');
+  }
+</script>
+<script async onload="initSakanaWidget()" src="{{ .Site.Data.scripts.sakana_widget }}"></script>
