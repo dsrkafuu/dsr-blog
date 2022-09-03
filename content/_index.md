@@ -15,17 +15,19 @@ Web/跨平台开发、业余设计师、PC 硬件爱好者、动画党 & 主机�
 
 ### 关键词
 
-JavaScript, TypeScript, HTML, CSS, React, Vue.js, SolidJS, Svelte, Node.js, Electron, Hugo
+- 等级一 (主要)：JavaScript, TypeScript, HTML, CSS, React, Node.js
+- 等级二 (次要)：SolidJS, Svelte, Vue.js, Electron, Deno, Hugo
 
 ### 状态
 
 - 自幸运星 (2007) 开始的京都动画粉丝
 - 偏好 VS Code、习惯用两格空格编码 (任何语言)
-- 正在使用 Windows、macOS、Manjaro 和 Ubuntu (WSL)
+- 正在使用 Windows 11、macOS Monterey 和 Ubuntu 20.04 (WSL)
+- JSX/TSX 是现代 web 前端开发的最佳语法实践
 
 ### 硬件
 
-- 华硕 ROG GM501GS、苹果 MacBook Pro M1
+- i7-12700KF + RTX3080-10G、苹果 MBP 16' M1 Pro
 - LG 27GL850-B UltraGear Nano IPS
 - 阿米洛 VA87M 樱桃茶轴、罗技 G703 LS
 
