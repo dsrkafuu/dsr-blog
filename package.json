@@ -10,8 +10,8 @@
     "build": "cross-env NODE_ENV=production env-cmd --silent hugo --minify --cleanDestinationDir"
   },
   "dependencies": {
-    "@sentry/browser": "~7.14.0",
-    "@sentry/tracing": "~7.14.0",
+    "@sentry/browser": "~7.14.1",
+    "@sentry/tracing": "~7.14.1",
     "dsr-design": "~3.5.1"
   },
   "devDependencies": {

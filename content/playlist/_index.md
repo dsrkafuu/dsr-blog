@@ -72,6 +72,14 @@ weight: 4
 
 ## 2022 (10 部)
 
+**○ - 赛博浪客 (TRIGGER)**
+
+**△ - 欢迎来到实力至上主义教室 第二季 (ラルケ)**
+
+**○ - 契约之吻 (A-1 Pictures)**
+
+**○ - 莉可丽丝 (A-1 Pictures)**
+
 **○ - 间谍过家家 (WIT STUDIO × CloverWorks)**
 
 **○ - 辉夜大小姐想让我告白 -超级浪漫- (A-1 Pictures)**
@@ -252,6 +260,7 @@ weight: 4
 
 **△ - 关于我转生变成史莱姆这档事 (エイトビット)**
 
+<!-- prettier-ignore -->
 **○ - 少女☆歌剧 Revue Starlight (KINEMA CITRUS)**
 
 **○ - 邪神与厨二病少女 (ノーマッド)**
