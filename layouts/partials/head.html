@@ -55,6 +55,7 @@
 {{ $options := dict "targetPath" $out "outputStyle" "compressed" "enableSourceMap" $isDev "includePaths" (slice "node_modules") }}
 {{ $css := resources.Get $src | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $css.Permalink }}" />
+<link rel="stylesheet" href="{{ .Site.Data.styles.sakana_widget }}" />
 
 {{ $isProd := eq (getenv "NODE_ENV") "production" }}
 <!-- deps -->
