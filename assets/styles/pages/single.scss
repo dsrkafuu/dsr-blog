@@ -1,12 +1,12 @@
 .license {
   font-size: $font-sm;
-  margin: 0 $space-card $space-card $space-card;
+  margin: 0 $space-xl $space-xl $space-xl;
   color: var(--color-primary);
 }
 
 .toc {
   font-size: $font-sm;
-  padding: $space-card 0;
+  padding: $space-xl 0;
 }
 
 #TableOfContents {
@@ -14,7 +14,7 @@
   overflow-x: hidden;
   max-height: $height-toc;
   font-size: $font-sm;
-  padding: 0 $space-card;
+  padding: 0 $space-xl;
 
   a {
     white-space: nowrap;
@@ -33,7 +33,7 @@
     ul {
       padding: 0;
       padding-left: 5px;
-      border-left: $highlight-size solid var(--color-border);
+      border-left: $size-quote solid var(--color-border);
       font-size: $font-sm * 0.9;
 
       a {
@@ -73,7 +73,7 @@
     max-width: 70%;
     min-width: 40%;
     transform: translateX(125%);
-    transition: transform $transition-fast ease;
+    transition: transform $trans-fast ease;
 
     &--active {
       transform: translateX(0);
@@ -87,10 +87,10 @@
 
 .comment-area {
   text-align: center;
-  margin-top: $space-card;
-  padding: $space-card;
+  margin-top: $space-xl;
+  padding: $space-xl;
 
   @include responsive(md) {
-    margin-top: $space-mobile;
+    margin-top: $space-lg;
   }
 }

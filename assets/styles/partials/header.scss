@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   user-select: none;
-  font-family: $font-family-body;
+  font-family: $family-body;
 }
 
 .navbar {
@@ -21,23 +21,25 @@
     height: $height-navbar - 10px;
     line-height: $height-navbar - 10px;
     padding: 0 16px;
-    border-radius: $corner-radius-sm;
+    border-radius: $radius-sm;
     cursor: pointer;
     color: inherit;
     position: relative;
-    transition: background-color $transition-fast ease;
+    transition: background-color $trans-fast ease;
     background-color: transparent;
     margin-left: 5px;
 
     &:hover {
       color: var(--color-font);
-      background-color: var(--color-bg-active);
+      background-color: var(--color-bg-hover);
       text-decoration: none;
     }
 
-    &--active {
+    &:active {
       background-color: var(--color-bg-active);
+    }
 
+    &--active {
       &::after {
         content: '';
         position: absolute;
@@ -45,8 +47,8 @@
         width: 24px;
         left: 50%;
         transform: translate(-50%);
-        height: $active-size;
-        border-radius: $active-radius;
+        height: $size-bar;
+        border-radius: $radius-bar;
         background-color: var(--color-primary);
       }
     }

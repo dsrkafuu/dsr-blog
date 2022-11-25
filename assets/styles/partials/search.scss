@@ -4,7 +4,7 @@
   overflow-y: hidden;
 
   @include responsive(md) {
-    margin-bottom: $space-mobile;
+    margin-bottom: $space-lg;
   }
 
   &__input {
@@ -20,18 +20,18 @@
       line-height: 32px;
       outline: none;
       border: none;
-      border-radius: $corner-radius-sm;
+      border-radius: $radius-sm;
       background-color: transparent;
       padding: 0 8px;
-      transition: background-color $transition-fast ease;
+      transition: background-color $trans-fast ease;
       text-decoration: none;
 
       &:hover {
-        background-color: var(--color-bg-active);
+        background-color: var(--color-bg-hover);
       }
 
       &:focus {
-        background-color: var(--color-bg-active);
+        background-color: var(--color-bg-hover);
       }
     }
   }
@@ -43,14 +43,18 @@
     cursor: pointer;
     height: 32px;
     line-height: 32px;
-    border-radius: $corner-radius-sm;
+    border-radius: $radius-sm;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &:hover {
-      background-color: var(--color-bg-active);
+      background-color: var(--color-bg-hover);
       text-decoration: none;
+    }
+
+    &:active {
+      background-color: var(--color-bg-active);
     }
   }
 }

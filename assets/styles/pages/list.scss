@@ -15,10 +15,10 @@
     flex-direction: column;
 
     & > .card:not(:first-child) {
-      margin-top: $space-card;
+      margin-top: $space-xl;
 
       @include responsive(md) {
-        margin-top: $space-mobile;
+        margin-top: $space-lg;
       }
     }
   }
@@ -35,7 +35,7 @@
   }
 
   &__summary {
-    margin-top: $space-mobile;
+    margin-top: $space-lg;
   }
 
   &__image {
@@ -44,11 +44,11 @@
   }
 
   &__content {
-    padding: $space-card;
+    padding: $space-xl;
   }
 
   &__box {
-    padding: $space-card;
+    padding: $space-xl;
   }
 
   &__meta {
@@ -64,7 +64,7 @@
     }
 
     & > span:not(:first-child) {
-      padding-left: $space-mobile;
+      padding-left: $space-lg;
     }
 
     & > span:nth-child(3) {
@@ -83,15 +83,15 @@
 
   &__article {
     .post__title {
-      margin-top: $space-card;
-      margin-left: $space-card;
-      margin-right: $space-card;
+      margin-top: $space-xl;
+      margin-left: $space-xl;
+      margin-right: $space-xl;
     }
 
     .post__meta {
-      margin-top: $space-mobile;
-      margin-left: $space-card;
-      margin-right: $space-card;
+      margin-top: $space-lg;
+      margin-left: $space-xl;
+      margin-right: $space-xl;
     }
   }
 }

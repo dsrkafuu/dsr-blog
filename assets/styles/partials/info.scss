@@ -2,8 +2,8 @@
   text-align: center;
 
   &__avatar {
-    margin: 0 auto $space-card auto;
-    padding-top: $space-card;
+    margin: 0 auto $space-xl auto;
+    padding-top: $space-xl;
     width: 75px;
     user-select: none;
     overflow: hidden;
@@ -12,7 +12,7 @@
   &__meta {
     text-align: center;
     font-size: $font-sm;
-    margin-bottom: $space-card;
+    margin-bottom: $space-xl;
   }
 
   &__metaName {
@@ -23,7 +23,7 @@
 
   &__counter {
     display: flex;
-    padding: $space-card;
+    padding: $space-xl;
     padding-top: 0;
   }
 
@@ -45,14 +45,14 @@
 }
 
 .links {
-  margin-top: $space-card;
+  margin-top: $space-xl;
   padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   @include responsive(md) {
-    margin-top: $space-mobile;
+    margin-top: $space-lg;
   }
 
   &__item {
@@ -66,21 +66,25 @@
     width: 42px;
     text-align: center;
     cursor: pointer;
-    transition: background-color $transition-fast ease;
-    border-radius: $corner-radius-sm;
+    transition: background-color $trans-fast ease;
+    border-radius: $radius-sm;
 
     &:hover {
       text-decoration: none;
       color: var(--color-font);
+      background-color: var(--color-bg-hover);
+    }
+
+    &:active {
       background-color: var(--color-bg-active);
     }
   }
 }
 
 .kofi {
-  margin-top: $space-card;
+  margin-top: $space-xl;
 
   @include responsive(md) {
-    margin-top: $space-mobile;
+    margin-top: $space-lg;
   }
 }

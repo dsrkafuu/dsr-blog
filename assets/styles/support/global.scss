@@ -7,7 +7,7 @@
 html {
   height: 100%;
   font-size: $font-md;
-  font-family: $font-family-body;
+  font-family: $family-body;
   background-color: var(--color-body);
   scroll-behavior: smooth;
   color: var(--color-font);
@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: $font-md;
-  font-family: $font-family-body;
+  font-family: $family-body;
   background-color: var(--color-body);
   position: relative;
   overflow-x: hidden;
@@ -55,7 +55,7 @@ code {
 pre,
 code,
 tt {
-  font-family: $font-family-mono;
+  font-family: $family-mono;
 }
 
 // sticky footer
@@ -141,24 +141,24 @@ tt {
 .card {
   background-color: var(--color-bg);
   backdrop-filter: $filter-blur;
-  border-radius: $corner-radius-lg;
+  border-radius: $radius-lg;
   box-shadow: var(--box-shadow);
   overflow: auto;
 }
 
 .sticky {
   position: sticky;
-  top: $height-navbar + $space-card;
+  top: $height-navbar + $space-xl;
 
   @include responsive(md) {
-    top: $height-navbar + $space-mobile;
+    top: $height-navbar + $space-lg;
   }
 
   &:not(:first-child) {
-    margin-top: $space-card;
+    margin-top: $space-xl;
 
     @include responsive(md) {
-      margin-top: $space-mobile;
+      margin-top: $space-lg;
     }
   }
 }
@@ -192,9 +192,9 @@ tt {
   h5,
   h6 {
     &:target {
-      scroll-margin-top: $height-navbar + $space-para;
+      scroll-margin-top: $height-navbar + $space-md;
       @include responsive(sm) {
-        scroll-margin-top: $height-navbar-sm + $space-para;
+        scroll-margin-top: $height-navbar-sm + $space-md;
       }
     }
   }

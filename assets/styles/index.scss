@@ -1,9 +1,11 @@
 @import './support/variables';
 
-@import 'dsr-design/scss/reset';
-@import 'dsr-design/scss/colors';
-@import 'dsr-design/scss/markdown';
-@import 'dsr-design/scss/prism';
+@import '@dsrca/design/style/colors.scss';
+@include dsr-colors-full;
+@import '@dsrca/design/style/reset.scss';
+@import '@dsrca/design/style/markdown.scss';
+@import '@dsrca/design/style/prism.scss';
+@include dsr-prism-full;
 
 @import './support/global';
 @import './support/fiximg';

@@ -1,6 +1,6 @@
 .pagination {
   display: flex;
-  padding: 0 $space-card;
+  padding: 0 $space-xl;
   justify-content: center;
   padding: 5px;
 
@@ -17,8 +17,8 @@
     height: 32px;
     line-height: 32px;
     cursor: pointer;
-    transition: background-color $transition-fast ease;
-    border-radius: $corner-radius-sm;
+    transition: background-color $trans-fast ease;
+    border-radius: $radius-sm;
     margin-left: 5px;
 
     &:first-child {
@@ -28,12 +28,14 @@
     &:hover {
       text-decoration: none;
       color: var(--color-font);
+      background-color: var(--color-bg-hover);
+    }
+
+    &:active {
       background-color: var(--color-bg-active);
     }
 
     &.pagination__item--active {
-      background-color: var(--color-bg-active);
-
       &::after {
         content: '';
         position: absolute;
@@ -41,8 +43,8 @@
         width: 18px;
         left: 50%;
         transform: translate(-50%);
-        height: $active-size;
-        border-radius: $active-radius;
+        height: $size-bar;
+        border-radius: $radius-bar;
         background-color: var(--color-primary);
       }
     }
