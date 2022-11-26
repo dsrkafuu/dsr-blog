@@ -57,6 +57,17 @@
 <link rel="stylesheet" href="{{ $css.Permalink }}" />
 <link rel="stylesheet" href="{{ .Site.Data.styles.sakana_widget }}" />
 
+{{ $gaid := getenv "HUGO_GA_ID" }}
+{{ if and (not $isDev) $gaid }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ $gaid }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', '{{ $gaid }}');
+</script>
+{{ end }}
+
 {{ $isProd := eq (getenv "NODE_ENV") "production" }}
 <!-- deps -->
 <script defer src="{{ .Site.Data.scripts.prism }}"></script>
