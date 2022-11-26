@@ -25,8 +25,8 @@
 
 #sakana-widget {
   position: fixed;
-  right: 60px;
-  bottom: 20px;
+  right: 40px;
+  bottom: 40px;
   z-index: 4;
   @include responsive(md) {
     display: none;
