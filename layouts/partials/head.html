@@ -74,6 +74,7 @@
 <script defer src="{{ .Site.Data.scripts.prism_autolaoder }}"></script>
 <script defer src="{{ .Site.Data.scripts.twemoji }}"></script>
 <script defer src="{{ .Site.Data.scripts.medium_zoom }}"></script>
+<script defer src="{{ .Site.Data.scripts.quicklink }}"></script>
 <!-- custom envs -->
 {{ $sentryDsn := printf "\"%s\"" (getenv "HUGO_SENTRY_DSN") }}
 {{ $defines := dict "process.env.HUGO_SENTRY_DSN" $sentryDsn }}

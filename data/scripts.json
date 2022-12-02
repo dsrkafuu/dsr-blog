@@ -1,4 +1,5 @@
 {
+  "quicklink": "https://cdn.jsdelivr.net/npm/quicklink@2.3.0/dist/quicklink.umd.js",
   "prism": "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js",
   "prism_autolaoder": "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js",
   "twemoji": "https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js",

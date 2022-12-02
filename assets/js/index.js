@@ -4,6 +4,7 @@ import search from './components/search';
 import toc from './components/toc';
 import twemoji from './components/twemoji';
 import zoom from './components/zoom';
+import quicklink from './components/quicklink';
 
 const SECTION = getSection();
 
@@ -19,3 +20,5 @@ if (SECTION === SECTIONS.SINGLE) {
   zoom();
   logInfo('zoom module inited');
 }
+quicklink();
+logInfo('quicklink module inited');
