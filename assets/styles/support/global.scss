@@ -199,3 +199,8 @@ tt {
     }
   }
 }
+
+// grayscale
+.gray {
+  filter: grayscale(0.9) saturate(0.8);
+}
