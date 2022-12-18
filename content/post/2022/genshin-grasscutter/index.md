@@ -26,7 +26,7 @@ description: '原神私服 Grasscutter 搭建指南，可以用来自己私下�
 
 ## 资源整合
 
-本指南中的全部资源均可于此[百度网盘分享](https://pan.baidu.com/s/1Lfd2bjlOqzo1E2bh9GUFQQ?pwd=5iev) (解压密码：`@dsrkafuu`) 找到，但可能存在资源更新不及时的问题，请自行检查并从官方/上游下载。本指南基于 Windows 11 (x64)，其他系统环境大同小异，请自行尝试。
+~~本指南中的全部资源均可于此[百度网盘分享](https://pan.baidu.com/s/1Lfd2bjlOqzo1E2bh9GUFQQ?pwd=5iev) (解压密码：`@dsrkafuu`) 找到，但可能存在资源更新不及时的问题，请自行检查并从官方/上游下载。本指南基于 Windows 11 (x64)，其他系统环境大同小异，请自行尝试。~~
 
 本指南不对软件下载安装、环境变量配置、MongoDB 使用等基础内容进行详细描述。也不会对相关资源进行整合再发布，请自行独立下载并使用。
 

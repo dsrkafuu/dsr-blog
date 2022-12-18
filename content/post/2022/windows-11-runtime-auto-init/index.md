@@ -32,6 +32,6 @@ description: '每次开机进入系统，总会有弹出三条安装 C++ UWP Run
 
 ![安装示意图](20220506152216.webp)
 
-[百度网盘](https://pan.baidu.com/s/1Zf7lQp3r-ismR77YapTm0g?pwd=45na)
+~~[百度网盘](https://pan.baidu.com/s/1Zf7lQp3r-ismR77YapTm0g?pwd=45na)~~
 
-密码 `@dsrkafuu`，资源来自 LTT 论坛。
+~~密码 `@dsrkafuu`，资源来自 LTT 论坛。~~
