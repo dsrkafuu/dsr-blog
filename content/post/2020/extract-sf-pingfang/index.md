@@ -132,6 +132,8 @@ ttx -b -m PingFangSC-Regular.otf PingFangSC-Regular.ttx
 
 ## 字体下载
 
+非 Windows 系统可直接用 7-Zip 打开解压。
+
 - [阿里云盘 (lu62)](https://www.aliyundrive.com/s/bETpMMx5v3Z)
 - [MEGA](https://mega.nz/folder/875zRApb#meX761lF_16RbQnpbtBm_g)
 
