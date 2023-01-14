@@ -15,7 +15,11 @@
 - [浏览器原生图片懒加载](https://caniuse.com/loading-lazy-attr)
 - [CSS Backdrop Filter](https://caniuse.com/css-backdrop-filter)
 
-和我的其他个人项目相同，仅对**最新大版本**的 Chrome、Edge、Firefox 和 Safari 提供支持。
+Supports major browser versions released at 2020 or `ES2020`.
+
+- Chrome: >=87
+- Firefox: >=78
+- Safari: >=14
 
 ## 部分开发细节
 
