@@ -27,7 +27,7 @@ Web/跨平台开发、业余设计师、PC 硬件爱好者、动画党 & 主机�
 
 ### 硬件
 
-- i7-12700KF + RTX3080-10G、苹果 MBP 16' M1 Pro
+- i9-13900KF, DDR5 7200C38, GeForce RTX4090, MBP16 M1P
 - LG 27GL850-B UltraGear Nano IPS
 - 阿米洛 VA87M 樱桃茶轴、罗技 G703 LS
 
