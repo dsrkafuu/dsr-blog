@@ -28,7 +28,7 @@ Web/跨平台开发、业余设计师、PC 硬件爱好者、动画党 & 主机�
 ### 硬件
 
 - i9-13900KF, DDR5 7200C38, GeForce RTX4090, MBP16 M1P
-- LG 27GL850-B UltraGear Nano IPS
+- LG 27GP95R UltraGear 4K Nano IPS
 - 阿米洛 VA87M 樱桃茶轴、罗技 G703 LS
 
 ### 计数
