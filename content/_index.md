@@ -7,31 +7,29 @@ keywords:
   - 博客
 ---
 
-> Checkout [my GitHub page](https://github.com/dsrkafuu) for the English version!
+**Personal**
 
-### 个人
+Web/Cross-platform developer, amateur designer, PC enthusiastic, anime fan & console gamer.
 
-Web/跨平台开发、业余设计师、PC 硬件爱好者、动画党 & 主机单机游戏玩家。
+**Keywords**
 
-### 关键词
+- Tier 1 (Primary): JavaScript, TypeScript, HTML, CSS, React, Node.js
+- Tier 2 (Secondary): SolidJS, Svelte, Vue.js, Electron, Deno, Hugo
 
-- 等级一 (主要)：JavaScript, TypeScript, HTML, CSS, React, Node.js
-- 等级二 (次要)：SolidJS, Svelte, Vue.js, Electron, Deno, Hugo
+**Stats**
 
-### 状态
+- Huge fan of Kyoto Animation since Lucky Star (2007)
+- Prefer VS Code, always working with 2-space (in any language)
+- Using Windows 11, macOS Ventura and Ubuntu 20.04 (WSL)
+- JSX/TSX are the best syntax for mordern web development
 
-- 自幸运星 (2007) 开始的京都动画粉丝
-- 偏好 VS Code、习惯用两格空格编码 (任何语言)
-- 正在使用 Windows 11、macOS Monterey 和 Ubuntu 20.04 (WSL)
-- JSX/TSX 是现代 web 前端开发的最佳语法实践
+**Hardware**
 
-### 硬件
-
-- i9-13900KF, DDR5 7200C38, GeForce RTX4090, MBP16 M1P
+- Core i9-13900KF, DDR5 7200C38, GeForce RTX4090, MBP16 M1P
 - LG 27GP95R UltraGear 4K Nano IPS
-- 阿米洛 VA87M 樱桃茶轴、罗技 G703 LS
+- Varmilo VA87M Cherry MX Brown, Logitech G703 LS
 
-### 计数
+**Counter**
 
 <a href="https://github.com/dsrkafuu/moe-counter-cf#readme" target="_blank" rel="noopener">
   <img height="100" src="https://count.dsrkafuu.net/dsrkafuu:home" alt="Moe Counter CF" />

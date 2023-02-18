@@ -8,13 +8,6 @@
 
 ## 浏览器支持
 
-站点使用的部分现代标准功能如下：
-
-- [WebP 图片](https://caniuse.com/webp)
-- [CSSOM Scroll-behavior](https://caniuse.com/css-scroll-behavior)
-- [浏览器原生图片懒加载](https://caniuse.com/loading-lazy-attr)
-- [CSS Backdrop Filter](https://caniuse.com/css-backdrop-filter)
-
 Supports major browser versions released at 2020 or `ES2020`.
 
 - Chrome: >=87
