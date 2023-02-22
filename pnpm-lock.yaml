@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@dsrca/config': ^3.0.0
-  '@dsrca/design': ^3.1.0
+  '@dsrca/design': ^3.2.0
   cross-env: ^7.0.3
   env-cmd: ^10.1.0
   eslint: ^8.34.0
@@ -10,7 +10,7 @@ specifiers:
   typescript: ^4.9.5
 
 dependencies:
-  '@dsrca/design': 3.1.0
+  '@dsrca/design': 3.2.0
 
 devDependencies:
   '@dsrca/config': 3.0.0_ztlnmuobvwn63gpuifwwrjpt4i
@@ -42,8 +42,8 @@ packages:
       - supports-color
     dev: true
 
-  /@dsrca/design/3.1.0:
-    resolution: {integrity: sha512-QKo3rsCl0qX66AbfcCyMdi8tM43IfW1kgGJLRvjixdC8u6lJfgosxYIM2XtZLwBekZNySM4ZHXntUonR9LiLUw==}
+  /@dsrca/design/3.2.0:
+    resolution: {integrity: sha512-lVMPnjM6ZBzUkSmvhgaeUZNA/e2tQHbqkRjkix8E4QdTOc14Zl/tja0iSfu1zsKg56jHdJkfDfFP/+W0nzujVg==}
     dev: false
 
   /@eslint/eslintrc/1.4.1:

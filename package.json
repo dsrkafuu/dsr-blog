@@ -14,7 +14,7 @@
     "build": "cross-env NODE_ENV=production env-cmd --silent hugo --minify --cleanDestinationDir"
   },
   "dependencies": {
-    "@dsrca/design": "^3.1.0"
+    "@dsrca/design": "^3.2.0"
   },
   "devDependencies": {
     "@dsrca/config": "^3.0.0",
