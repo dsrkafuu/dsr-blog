@@ -183,7 +183,7 @@ async function handleLogin() {
 
 ### 限制访问数据接口
 
-在先前的[通用 CRUD 接口实现](https://blog.amzrk2.cc/post/universal-crud-router/)时已经使用过一个类名转换的中间件，此处再次通过一个校验中间件来限制未登录用户对接口的访问。
+在先前的[通用 CRUD 接口实现](/post/universal-crud-router/)时已经使用过一个类名转换的中间件，此处再次通过一个校验中间件来限制未登录用户对接口的访问。
 
 这里需要客户端发送请求时带上 `token`。如果之前使用的是 Cookie 进行存储，则请求直接带上 Cookie；如果和此处一样使用了 localStorage，可以在请求头内对 request 添加 axios 拦截器、设置一个专门的字段用于发送 `token`。
 
