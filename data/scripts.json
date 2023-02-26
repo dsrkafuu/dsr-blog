@@ -4,5 +4,5 @@
   "prism_autolaoder": "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js",
   "twemoji": "https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js",
   "medium_zoom": "https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js",
-  "sakana_widget": "https://cdn.jsdelivr.net/npm/sakana-widget@2.4.1/lib/sakana.min.js"
+  "sakana_widget": "https://cdn.jsdelivr.net/npm/sakana-widget@2.6.0/lib/sakana.min.js"
 }
