@@ -1,11 +1,11 @@
 {
   "engines": {
-    "node": "^18.0.0",
-    "pnpm": "^7.0.0"
+    "node": ">=18",
+    "pnpm": ">=7.0.0"
   },
   "private": true,
   "name": "dsr-blog",
-  "version": "8.2.0",
+  "version": "8.3.0",
   "description": "Personal blog powered by Hugo.",
   "license": "AGPL-3.0",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
@@ -14,14 +14,14 @@
     "build": "cross-env NODE_ENV=production env-cmd --silent hugo --minify --cleanDestinationDir"
   },
   "dependencies": {
-    "@dsrca/design": "^3.2.0"
+    "@dsrca/design": "^3.4.0"
   },
   "devDependencies": {
-    "@dsrca/config": "^3.0.0",
+    "@dsrca/config": "^3.4.0",
     "cross-env": "^7.0.3",
     "env-cmd": "^10.1.0",
-    "eslint": "^8.34.0",
-    "prettier": "^2.8.4",
-    "typescript": "^4.9.5"
+    "eslint": "^8.48.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   }
 }
