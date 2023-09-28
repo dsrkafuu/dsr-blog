@@ -14,13 +14,13 @@
     "build": "cross-env NODE_ENV=production env-cmd --silent hugo --minify --cleanDestinationDir"
   },
   "dependencies": {
-    "@dsrca/design": "^3.4.0"
+    "@dsrca/design": "^3.5.0"
   },
   "devDependencies": {
     "@dsrca/config": "^3.4.0",
     "cross-env": "^7.0.3",
     "env-cmd": "^10.1.0",
-    "eslint": "^8.48.0",
+    "eslint": "^8.50.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   }
