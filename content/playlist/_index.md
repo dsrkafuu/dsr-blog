@@ -40,29 +40,19 @@ weight: 4
 
 ○ - 吹响！悠风号～誓言的终章～ (京都アニメーション)
 
-○ - 魔法少女小圆 (SHAFT)
-
-○ - 剧场版 魔法少女小圆 \[新篇\] 叛逆的物语 (SHAFT)
-
 ○ - 天气之子 (CoMix Wave Films)
 
 ○ - 你的名字。(CoMix Wave Films)
 
 ○ -「S1 ~ S2」妄想学生会 (GoHands)
 
-○ - 少女终末旅行 (WHITE FOX)
-
 ○ - 白箱 (P.A.WORKS)
-
-○ - 无职转生 ～到了异世界就拿出真本事～ (スタジオバインド)
-
-○ - 无职转生 ～到了异世界就拿出真本事～ 第二部分 (スタジオバインド)
 
 ○ - 孤独摇滚！(CloverWorks)
 
 ○ - BanG Dream! It's MyGO!!!!! (サンジゲン)
 
-## 2023 (12 部)
+## 2023 (13 部)
 
 ○ - 超超超超超喜欢你的100个女朋友 (バイブリーアニメーションスタジオ)
 
@@ -78,17 +68,19 @@ weight: 4
 
 ○ - 天国大魔境 (Production I.G)
 
+○ - 古立特宇宙 (TRIGGER)
+
 ○ - 别当欧尼酱了！(スタジオバインド)
 
 △ - 16bit的感动 ANOTHER LAYER (st.シルバー)
 
 △ - 喜欢的人忘记戴眼镜了 (GoHands)
 
-△ - 机动战士高达 水星的魔女 Season2 (サンライズ)
+△ - 机动战士高达 水星的魔女 第二季 (サンライズ)
 
 △ - 转生公主与天才千金的魔法革命 (diomedéa)
 
-## 2022 (23 部)
+## 2022 (24 部)
 
 ○ - 孤独摇滚！(CloverWorks)
 
@@ -111,6 +103,8 @@ weight: 4
 ○ - 辉夜大小姐想让我告白 -超级浪漫- (A-1 Pictures)
 
 ○ - Love Live! 虹咲学园校园偶像同好会 第二季 (サンライズ)
+
+△ - 剧场版 刀剑神域 进击篇 黯淡黄昏的谐谑曲 (A-1 Pictures)
 
 △ - 铃芽之旅 (CoMix Wave Films)
 
@@ -136,7 +130,7 @@ weight: 4
 
 △ - Slow Loop (CONNECT)
 
-## 2021 (24 部)
+## 2021 (25 部)
 
 ○ - 剧场版 少女☆歌剧 Revue Starlight (KINEMA CITRUS)
 
@@ -161,6 +155,8 @@ weight: 4
 ○ - 摇曳露营△ 第二季 (C-Station)
 
 ○ - 赛马娘 Pretty Derby 第二季 (スタジオ KAI)
+
+△ - 剧场版 刀剑神域 进击篇 无星之夜的咏叹调 (A-1 Pictures)
 
 △ - 世界顶尖的暗杀者转生为异世界贵族 (SILVER LINK. & studio ぱれっと)
 
