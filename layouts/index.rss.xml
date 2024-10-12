@@ -12,7 +12,7 @@
 <id>{{- .Site.BaseURL | absURL -}}</id>
 <author><name>{{- .Site.Data.meta.author -}}</name></author>
 <rights>{{- .Site.Data.meta.license -}}</rights>
-<updated>{{- .Site.LastChange.Format $RFC3339 | safeHTML -}}</updated>
+<updated>{{- .Site.Lastmod.Format $RFC3339 | safeHTML -}}</updated>
 <generator uri="https://gohugo.io/" version="{{- hugo.Version -}}">Hugo</generator>
 {{ range $pages }}<entry>
 <title>{{- .Title -}}</title>

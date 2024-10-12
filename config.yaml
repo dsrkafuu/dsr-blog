@@ -5,7 +5,8 @@ baseURL: 'https://blog.dsrkafuu.net'
 hasCJKLanguage: true
 enableEmoji: true
 enableRobotsTXT: true
-paginate: 10
+pagination:
+  pagerSize: 10
 enableGitInfo: true
 frontmatter:
   lastmod:

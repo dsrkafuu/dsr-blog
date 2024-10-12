@@ -49,11 +49,11 @@
 <link rel="alternate" type="application/atom+xml" href='{{ "/index.xml" | absURL }}' />
 
 {{ $isDev := eq (getenv "NODE_ENV") "development" }}
-{{ $pkg := getJSON "package.json" }}
+{{ $pkg := resources.Get "package.json" | transform.Unmarshal }}
 {{ $src := "styles/index.scss" }}
 {{ $out := printf "assets/main.v%s.min.css" $pkg.version }}
 {{ $options := dict "targetPath" $out "outputStyle" "compressed" "enableSourceMap" $isDev "includePaths" (slice "node_modules") }}
-{{ $css := resources.Get $src | resources.ToCSS $options }}
+{{ $css := resources.Get $src | css.Sass $options }}
 <link rel="stylesheet" href="{{ $css.Permalink }}" />
 <link rel="stylesheet" href="{{ .Site.Data.styles.sakana_widget }}" />
 
@@ -80,7 +80,7 @@
 {{ $defines := dict "process.env.HUGO_SENTRY_DSN" $sentryDsn }}
 <!-- js assets -->
 {{ $src := "js/index.js" }}
-{{ $pkg := getJSON "package.json" }}
+{{ $pkg := resources.Get "package.json" | transform.Unmarshal }}
 {{ $out := printf "assets/main.v%s.min.js" $pkg.version }}
 {{ $options := (dict "targetPath" $out "minify" $isProd "defines" $defines "target" "es2020" "format" "iife") }}
 {{ $built := resources.Get $src | js.Build $options }}

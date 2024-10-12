@@ -1,4 +1,4 @@
-{{ $package := getJSON "package.json" }}
+{{ $package := resources.Get "package.json" | transform.Unmarshal }}
 {{ $version := $package.version }}
 {{ $license := $package.license }}
 
