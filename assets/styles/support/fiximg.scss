@@ -22,7 +22,8 @@
     }
   }
 
-  &__desc {
+  &::before {
+    content: attr(data-alt);
     position: absolute;
     display: block;
     right: 0;
