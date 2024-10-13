@@ -21,4 +21,17 @@
       text-align: center;
     }
   }
+
+  &__desc {
+    position: absolute;
+    display: block;
+    right: 0;
+    bottom: 0;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 0 6px;
+    color: var(--color-font-inverse);
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    border-top-left-radius: 4px;
+  }
 }
