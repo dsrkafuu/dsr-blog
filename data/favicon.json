@@ -1,6 +1,4 @@
 {
-  "ico": "https://cdn.jsdelivr.net/npm/@dsrca/cdn@1.1.1/lib/favicon/favicon.ico",
-  "png_192x": "https://cdn.jsdelivr.net/npm/@dsrca/cdn@1.1.1/lib/favicon/pwa-192x192.png",
-  "png_512x": "https://cdn.jsdelivr.net/npm/@dsrca/cdn@1.1.1/lib/favicon/pwa-512x512.png",
-  "apple": "https://cdn.jsdelivr.net/npm/@dsrca/cdn@1.1.1/lib/favicon/apple-touch-icon.png"
+  "ico": "/favicon.svg",
+  "apple": "/favicon.png"
 }
