@@ -26,11 +26,11 @@
               {{ if $status }}
               <a class="fiximg__container" style="padding-bottom: 100%;" href="{{ .link | safeURL }}" target="_blank"
                  rel="noopener">
-                <img loading="lazy" src="{{ $friendImage.Permalink | absURL }}" alt="好友头像" />
+                <img loading="lazy" src="{{ $friendImage.Permalink | relURL }}" alt="{{ .title }}" />
               </a>
               {{ else }}
               <div class="fiximg__container" style="padding-bottom: 100%;">
-                <img loading="lazy" src="{{ $friendImage.Permalink | absURL }}" alt="好友头像" />
+                <img loading="lazy" src="{{ $friendImage.Permalink | relURL }}" alt="{{ .title }}" />
               </div>
               {{ end }}
             </div>

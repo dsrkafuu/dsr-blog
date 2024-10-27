@@ -1,5 +1,5 @@
 {{ $text := index .Params 0 }}
-{{ $src := index .Params 1 | safeURL | absURL }}
+{{ $src := index .Params 1 | safeURL | relURL }}
 
 <p>
   <img loading="lazy" src="{{ $src }}" alt="{{ $text }}" data-zoomable />

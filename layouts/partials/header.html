@@ -18,7 +18,7 @@
       </div>
 
       <div class="navbar__end">
-        <a class="navbar__item" href='{{ "/index.xml" | absURL }}' title="RSS" target="_blank" rel="noopener">
+        <a class="navbar__item" href='{{ "/index.xml" | relURL }}' title="RSS" target="_blank" rel="noopener">
           {{ .Scratch.Set "ICON_NAME" "rss" }}
           {{ partial "icon" . }}
         </a>

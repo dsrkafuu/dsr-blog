@@ -44,7 +44,7 @@
 {{ if ne $type "404" }}
 {{ partial "opengraph" . }}
 {{ end }}
-<link rel="alternate" type="application/atom+xml" href='{{ "/index.xml" | absURL }}' />
+<link rel="alternate" type="application/atom+xml" href='{{ "/index.xml" | relURL }}' />
 
 {{ $isDev := eq (getenv "NODE_ENV") "development" }}
 {{ $pkg := resources.Get "package.json" | transform.Unmarshal }}
