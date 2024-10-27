@@ -23,14 +23,14 @@
             {{ if ge (len $bannerImages) 1 }}
             {{ $bannerImage := index $bannerImages 0 }}
             <div class="post__image fiximg">
-              <a href="{{ .Permalink }}" class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src="{{ $bannerImage.Permalink | absURL }}" alt="博客文章头图" />
+              <a href="{{ .Permalink | relURL }}" class="fiximg__container" style="padding-bottom: 22.5%;">
+                <img loading="lazy" src="{{ $bannerImage.Permalink | relURL }}" alt="{{ .Title }}" />
               </a>
             </div>
             {{ end }}
             <div class="post__box">
               <div class="post__info">
-                <a class="post__title" href="{{ .Permalink }}">
+                <a class="post__title" href="{{ .Permalink | relURL }}">
                   <h2>{{ .Title }}</h2>
                 </a>
                 <div class="post__summary markdown">{{ .Summary }}</div>

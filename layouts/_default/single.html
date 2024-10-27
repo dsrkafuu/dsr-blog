@@ -21,7 +21,7 @@
             {{ $bannerImage := index $bannerImages 0 }}
             <div class="post__image fiximg">
               <div class="fiximg__container" style="padding-bottom: 22.5%;">
-                <img loading="lazy" src="{{ $bannerImage.Permalink | absURL }}" alt="博客文章头图" />
+                <img loading="lazy" src="{{ $bannerImage.Permalink | relURL }}" alt="{{ .Title }}" />
               </div>
             </div>
             {{ end }}
