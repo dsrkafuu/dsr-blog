@@ -2,8 +2,8 @@
   <div class="search__input">
     <input type="text" id="search-input" />
   </div>
-  <div class="search__ctrl" id="search-btn" title="搜索">
+  <label class="search__ctrl" id="search-btn" title="搜索" for="search-input">
     {{ .Scratch.Set "ICON_NAME" "search" }}
     {{ partial "icon" . }}
-  </div>
+  </label>
 </div>
