@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@dsrca/design':
-        specifier: ^4.3.0
-        version: 4.3.0
+        specifier: ^3.6.0
+        version: 3.6.0
     devDependencies:
       '@dsrca/config':
         specifier: ^4.4.1
@@ -40,8 +40,8 @@ packages:
       prettier: ^3.0.0
       typescript: ^5.0.0
 
-  '@dsrca/design@4.3.0':
-    resolution: {integrity: sha512-2sgT6NTlCEcnxyaFV+tR/TsGr5Rzdp5eiLv9ySN5MTYkoPTLmjAvPB2hLt92Z7OpnJ1GeCAfjNL7WBirBDZGrg==}
+  '@dsrca/design@3.6.0':
+    resolution: {integrity: sha512-0LVaL1tWvJthBaBEeI2VhMGvAJ/9ewlzgMDjjpioM0hytrMBAdaFwCwEhTZ0i/nvcGU07qYkmiXcUTOtDFLjzA==}
 
   '@eslint-community/eslint-utils@4.4.1':
     resolution: {integrity: sha512-s3O3waFUrMV8P/XaF/+ZTp1X9XBZW1a4B97ZnjQF2KYWaFD2A8KyFBsrsfSjEmjn3RGWAIuvlneuZm3CUK3jbA==}
@@ -1030,7 +1030,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@dsrca/design@4.3.0': {}
+  '@dsrca/design@3.6.0': {}
 
   '@eslint-community/eslint-utils@4.4.1(eslint@9.18.0)':
     dependencies:
