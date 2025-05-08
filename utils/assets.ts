@@ -182,7 +182,6 @@ export const getPostList = async () => {
     const fullFilePath = path.resolve(process.cwd(), markdownFile);
     const relFilePath = path.relative(contentPath, fullFilePath);
     const postPath = relFilePath.replace('.md', '').replace(/\\/gi, '/');
-    console.log(111, fullFilePath, relFilePath, postPath);
     const postMeta = await getPostMeta(`/${postPath}`);
     postList.list.push(postMeta);
     postList.wordsCount += postMeta.words;
