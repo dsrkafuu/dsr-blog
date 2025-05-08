@@ -1,0 +1,62 @@
+@use '@/styles/variables';
+
+.search {
+  padding: 5px;
+  display: flex;
+  overflow-y: hidden;
+
+  @include variables.responsive(md) {
+    margin-bottom: variables.$space-lg;
+  }
+
+  &__input {
+    flex: 1 1 auto;
+    border-radius: 0;
+    margin-right: 5px;
+
+    input {
+      min-width: 0;
+      width: 100%;
+      padding: 0;
+      height: 32px;
+      line-height: 32px;
+      outline: none;
+      border: none;
+      border-radius: variables.$radius-sm;
+      background-color: transparent;
+      padding: 0 8px;
+      transition: background-color variables.$trans-fast ease;
+      text-decoration: none;
+
+      &:hover {
+        background-color: var(--color-bg-hover);
+      }
+
+      &:focus {
+        background-color: var(--color-bg-hover);
+      }
+    }
+  }
+
+  &__ctrl {
+    flex: 0 0 auto;
+    width: 42px;
+    color: var(--color-font);
+    cursor: pointer;
+    height: 32px;
+    line-height: 32px;
+    border-radius: variables.$radius-sm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: var(--color-bg-hover);
+      text-decoration: none;
+    }
+
+    &:active {
+      background-color: var(--color-bg-active);
+    }
+  }
+}

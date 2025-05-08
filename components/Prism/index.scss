@@ -1,0 +1,5 @@
+@use '@dsrca/design/prism';
+
+.markdown {
+  @include prism.token;
+}

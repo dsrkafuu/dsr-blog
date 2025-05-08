@@ -1,0 +1,74 @@
+@use '@/styles/variables';
+
+.post {
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    & > .card:not(:first-child) {
+      margin-top: variables.$space-xl;
+
+      @include variables.responsive(md) {
+        margin-top: variables.$space-lg;
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  padding: 0 variables.$space-xl;
+  justify-content: center;
+  padding: 5px;
+
+  &__first,
+  &__previous,
+  &__item,
+  &__next,
+  &__last {
+    display: block;
+    color: inherit;
+    flex: 0 1 auto;
+    text-align: center;
+    width: 42px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    transition: background-color variables.$trans-fast ease;
+    border-radius: variables.$radius-sm;
+    margin-left: 5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: var(--color-font);
+      background-color: var(--color-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--color-bg-active);
+    }
+
+    &.pagination__item--active {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 18px;
+        left: 50%;
+        transform: translate(-50%);
+        height: variables.$size-bar;
+        border-radius: variables.$radius-bar;
+        background-color: var(--color-primary);
+      }
+    }
+
+    .icon {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

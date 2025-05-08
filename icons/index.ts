@@ -1,0 +1,14 @@
+export { default as IBars } from './IBars';
+export { default as IBitcoin } from './IBitcoin';
+export { default as ICalendarDay } from './ICalendarDay';
+export { default as IChevronDoubleLeft } from './IChevronDoubleLeft';
+export { default as IChevronDoubleRight } from './IChevronDoubleRight';
+export { default as IChevronLeft } from './IChevronLeft';
+export { default as IChevronRight } from './IChevronRight';
+export { default as IClock } from './IClock';
+export { default as IFileAlt } from './IFileAlt';
+export { default as IGitHub } from './IGitHub';
+export { default as INextJS } from './INextJS';
+export { default as INotFound } from './INotFound';
+export { default as ISearch } from './ISearch';
+export { default as ITimer } from './ITimer';

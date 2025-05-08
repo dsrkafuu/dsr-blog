@@ -1,0 +1,88 @@
+@use '@/styles/variables';
+
+.post {
+  &__summary {
+    margin-top: variables.$space-sm;
+    margin-left: variables.$space-xl;
+    margin-right: variables.$space-xl;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      display: none;
+    }
+  }
+
+  &__title {
+    color: var(--color-primary);
+    display: inline-block;
+    margin-top: variables.$space-xl;
+    margin-left: variables.$space-xl;
+    margin-right: variables.$space-xl;
+
+    h2 {
+      color: var(--color-primary);
+      margin: 0;
+      font-size: variables.$font-xl;
+    }
+  }
+
+  &__image {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__content {
+    padding: variables.$space-xl;
+  }
+
+  &__box {
+    padding: variables.$space-xl;
+  }
+
+  &__meta {
+    line-height: 1.5;
+    font-size: variables.$font-sm;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: 15px;
+    color: var(--color-primary);
+    margin-top: variables.$space-xs;
+    margin-left: variables.$space-xl;
+    margin-right: variables.$space-xl;
+
+    .icon {
+      margin-right: 4px;
+    }
+
+    & > span:not(:first-child) {
+      padding-left: variables.$space-xl;
+    }
+
+    & > span:nth-child(3) {
+      a:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
+
+    // hide word count on mobile
+    @include variables.responsive(md) {
+      &Words {
+        display: none;
+      }
+    }
+  }
+
+  &__metas {
+    margin-top: variables.$space-sm;
+    padding-bottom: variables.$space-xl;
+  }
+
+  &__empty {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}

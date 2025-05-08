@@ -1,0 +1,19 @@
+@use '@/styles/variables';
+
+.comment-area {
+  text-align: center;
+  margin-top: variables.$space-xl;
+  padding: variables.$space-xl;
+
+  @include variables.responsive(md) {
+    margin-top: variables.$space-lg;
+  }
+}
+
+#comment:target {
+  scroll-margin-top: variables.$height-navbar;
+
+  @include variables.responsive(sm) {
+    scroll-margin-top: variables.$height-navbar-sm;
+  }
+}

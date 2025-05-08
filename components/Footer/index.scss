@@ -1,0 +1,39 @@
+@use '@/styles/variables';
+
+.footer {
+  font-size: variables.$font-xs;
+  height: 48px;
+  margin-bottom: variables.$space-xl;
+
+  @include variables.responsive(sm) {
+    height: 48px + 2 * 8px;
+  }
+
+  & > .container {
+    height: 100%;
+    padding: 0 variables.$space-xl;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include variables.responsive(sm) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    overflow: hidden;
+    white-space: nowrap;
+
+    @include variables.responsive(sm) {
+      &:first-child {
+        margin-bottom: 8px;
+      }
+
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+    }
+  }
+}

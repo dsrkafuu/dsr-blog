@@ -1,0 +1,94 @@
+@use '@/styles/variables';
+
+.friends {
+  &__item {
+    overflow: hidden;
+    display: flex;
+    height: 75px;
+
+    &:not(:first-child) {
+      margin-top: variables.$space-xl;
+    }
+  }
+
+  &__disabled {
+    user-select: none;
+    cursor: not-allowed;
+  }
+
+  &__image {
+    width: 75px;
+    padding-bottom: 75px;
+    border-radius: 0;
+    flex: 0 0 auto;
+  }
+
+  &__box {
+    flex: 1 1 auto;
+    padding: variables.$space-xl;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  &__title {
+    display: block;
+    line-height: 1.35;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &__title,
+  &__title h2,
+  &__desc {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__desc {
+    margin-left: variables.$space-xl;
+  }
+
+  &__add {
+    padding: variables.$space-xl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: variables.$space-xl;
+  }
+
+  @include variables.responsive(md) {
+    &__item {
+      height: 120px;
+
+      &:not(:first-child) {
+        margin-top: variables.$space-lg;
+      }
+    }
+
+    &__image {
+      width: 120px;
+      padding-bottom: 120px;
+    }
+
+    &__box {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    &__add {
+      margin-top: variables.$space-lg;
+    }
+
+    &__desc {
+      margin-left: 0;
+      margin-top: variables.$space-lg;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "domain": "blog.dsrkafuu.net",
+  "name": "DSRKafuU",
+  "siteName": "DSRBLOG",
+  "bio": "声なき魚",
+  "desc": "Personal blog of DSRKafuU, a Web/Cross-platform developer.",
+  "links": [
+    {
+      "key": "github",
+      "icon": "github",
+      "name": "GitHub",
+      "href": "https://github.com/dsrkafuu"
+    },
+    {
+      "key": "crypto",
+      "icon": "bitcoin",
+      "name": "Crypto",
+      "href": "https://dsrkafuu.net/crypto"
+    }
+  ],
+  "friends": [
+    {
+      "title": "Luminous' Home",
+      "desc": "记录生活中的点滴",
+      "icon": "luminous.webp",
+      "link": "https://luotianyi.vc/"
+    },
+    {
+      "title": "LanYun の Blog",
+      "desc": "Share Technology.",
+      "icon": "lanyundev.webp",
+      "link": "https://lanyundev.com/"
+    },
+    {
+      "title": "Frost-ZX",
+      "desc": "一个分享技术、资源，记录学习与生活的博客",
+      "icon": "frost-zx.webp",
+      "link": "https://blog.frost-zx.top/"
+    },
+    {
+      "title": "星日语",
+      "desc": "星语日点灯",
+      "icon": "weekdaycare.webp",
+      "link": "https://weekdaycare.cn/"
+    },
+    {
+      "title": "Wincer's Blog",
+      "desc": "喜欢折腾新技术，却没多大耐心",
+      "icon": "itswincer.webp",
+      "link": "https://blog.itswincer.com/"
+    },
+    {
+      "title": "qqAys",
+      "desc": "学途漫漫，朋辈同行",
+      "icon": "qqays.webp",
+      "link": "https://qqays.xyz/"
+    },
+    {
+      "title": "Saiita's Blog",
+      "desc": "好记性不如烂笔头",
+      "icon": "saiita.webp",
+      "link": "https://www.saiita.com.cn/"
+    }
+  ]
+}

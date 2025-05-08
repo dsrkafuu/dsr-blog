@@ -1,0 +1,61 @@
+// from @dsrca/design/variables
+
+$trans-fast: 100ms;
+$trans-slow: 300ms;
+
+$weight-medium: 500;
+$weight-bold: 700;
+
+$line-height-lg: 1.75;
+$line-height-md: 1.5;
+$line-height-sm: 1.25;
+
+$size-border: 1px;
+$size-quote: 2px;
+$size-bar: 3px;
+
+$radius-lg: 8px;
+$radius-md: 6px;
+$radius-sm: 4px;
+$radius-bar: 2px;
+
+$font-xl: 20px;
+$font-lg: 18px;
+$font-md: 15px;
+$font-sm: 14px;
+$font-xs: 12px;
+
+$family-body: 'Inter', 'Noto Sans JP', 'Noto Sans SC', sans-serif;
+$family-mono: 'Fira Code', 'Noto Sans JP', 'Noto Sans SC', monospace;
+
+$filter-blur: saturate(180%) blur(3px);
+$filter-mica: saturate(200%) blur(24px);
+
+// custom defined
+
+$space-xl: 22px;
+$space-lg: 17px;
+$space-md: 15px;
+$space-sm: 12px;
+$space-xs: 10px;
+
+$responsive-desktop: 975px;
+$responsive-tablet: 750px;
+
+@mixin responsive($size) {
+  @if $size == sm {
+    @media screen and (max-width: $responsive-tablet) {
+      @content;
+    }
+  } @else if $size == md {
+    @media screen and (max-width: $responsive-desktop) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+$height-navbar: 56px;
+$height-navbar-sm: 32px * 2 + 5px * 3;
+$height-toc: 420px;

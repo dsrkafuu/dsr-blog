@@ -1,0 +1,21 @@
+@use '@/styles/variables';
+
+.error {
+  padding: 22px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__icon {
+    max-height: 160px;
+    width: auto;
+  }
+
+  &__title {
+    margin-top: 22px;
+    font-size: variables.$font-lg;
+  }
+}

@@ -1,0 +1,150 @@
+@use '@/styles/variables';
+
+.header {
+  background-color: var(--color-bg);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  user-select: none;
+  font-family: variables.$family-body;
+}
+
+.navbar {
+  height: variables.$height-navbar;
+  padding: 5px;
+  padding-left: 0;
+  display: flex;
+  position: relative;
+
+  &__item {
+    display: inline-block;
+    height: variables.$height-navbar - 10px;
+    line-height: variables.$height-navbar - 10px;
+    padding: 0 16px;
+    border-radius: variables.$radius-sm;
+    cursor: pointer;
+    color: inherit;
+    position: relative;
+    transition: background-color variables.$trans-fast ease;
+    background-color: transparent;
+    margin-left: 5px;
+
+    &:hover {
+      color: var(--color-font);
+      background-color: var(--color-bg-hover);
+      text-decoration: none;
+    }
+
+    &:active {
+      background-color: var(--color-bg-active);
+    }
+
+    &--active {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 24px;
+        left: 50%;
+        transform: translate(-50%);
+        height: variables.$size-bar;
+        border-radius: variables.$radius-bar;
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  &__brand {
+    flex: 0 0 auto;
+    font-size: variables.$font-xl;
+    font-weight: 500;
+
+    h1 {
+      margin: 0;
+      font-size: variables.$font-xl;
+    }
+  }
+
+  &__menu {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include variables.responsive(sm) {
+    flex-direction: column;
+    height: variables.$height-navbar-sm;
+    padding-right: 0;
+
+    &__item {
+      height: 32px;
+      line-height: 32px;
+    }
+
+    &__brand {
+      font-size: variables.$font-lg;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    &__menu {
+      justify-content: center;
+    }
+  }
+}
+
+// only show toc ctrl on single page of mobile
+.navbar__toc {
+  display: none;
+}
+@include variables.responsive(sm) {
+  body[data-section='single'] .navbar__toc {
+    display: inline-block;
+  }
+  .navbar__switch {
+    display: none;
+  }
+}
+
+// mobile header padding fix
+@media screen and (max-width: 450px) {
+  .navbar__item {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .navbar__item {
+    padding: 0 12px;
+  }
+}
+// iphone 5 (small width) fix
+@media screen and (max-width: 350px) {
+  .navbar__item {
+    padding: 0 8px;
+  }
+}
+
+// temp banner
+.banner {
+  height: 45px;
+  color: var(--color-font-inverse);
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  user-select: none;
+
+  &__text {
+    margin-right: 6px;
+  }
+
+  &__emoji {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: -0.5px;
+  }
+}

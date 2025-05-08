@@ -1,0 +1,124 @@
+@use '@/styles/variables';
+@use '@dsrca/design/markdown';
+
+.markdown {
+  @include markdown.markdown;
+
+  // anchor position fix
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:target {
+      scroll-margin-top: variables.$height-navbar + variables.$space-md;
+
+      @include variables.responsive(sm) {
+        scroll-margin-top: variables.$height-navbar-sm + variables.$space-md;
+      }
+    }
+  }
+}
+
+.fiximg {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: var(--color-wrapper);
+  border-radius: variables.$radius-sm;
+  width: 100%;
+
+  &__container {
+    display: block;
+    width: 100%;
+    height: 0;
+    margin: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      margin: 0;
+      color: var(--color-primary);
+      font-size: inherit;
+      text-align: center;
+    }
+  }
+
+  &::before {
+    content: attr(data-alt);
+    position: absolute;
+    display: block;
+    right: 0;
+    bottom: 0;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 0 6px;
+    color: var(--color-font-inverse);
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    border-top-left-radius: 4px;
+  }
+}
+
+.main {
+  & > .container {
+    display: flex;
+
+    & > .content {
+      flex: 1 1 75%;
+      max-width: 75%;
+
+      & > .content__inner {
+        height: 100%;
+        padding-top: variables.$space-xl;
+        padding-left: variables.$space-xl;
+        padding-right: calc(variables.$space-xl / 2);
+        padding-bottom: variables.$space-xl;
+      }
+    }
+
+    & > .sidebar {
+      flex: 0 1 25%;
+      max-width: 25%;
+
+      & > .sidebar__inner {
+        height: 100%;
+        padding-top: variables.$space-xl;
+        padding-right: variables.$space-xl;
+        padding-left: calc(variables.$space-xl / 2);
+        padding-bottom: variables.$space-xl;
+      }
+    }
+  }
+
+  @include variables.responsive(md) {
+    & > .container {
+      display: flex;
+      flex-direction: column;
+
+      & > .content {
+        flex: 1 1 auto;
+        max-width: 100%;
+
+        & > .content__inner {
+          padding-top: variables.$space-lg;
+          padding-left: variables.$space-lg;
+          padding-right: variables.$space-lg;
+          padding-bottom: calc(variables.$space-lg / 2);
+        }
+      }
+
+      & > .sidebar {
+        flex: 0 1 auto;
+        max-width: 100%;
+
+        & > .sidebar__inner {
+          padding-top: calc(variables.$space-lg / 2);
+          padding-right: variables.$space-lg;
+          padding-left: variables.$space-lg;
+          padding-bottom: variables.$space-lg;
+        }
+      }
+    }
+  }
+}

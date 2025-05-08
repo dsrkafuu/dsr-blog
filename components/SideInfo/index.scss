@@ -1,0 +1,98 @@
+@use '@/styles/variables';
+
+.info {
+  text-align: center;
+
+  &__avatar {
+    margin: 0 auto variables.$space-sm auto;
+    padding-top: variables.$space-md;
+    width: 75px;
+    user-select: none;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  &__meta {
+    text-align: center;
+    font-size: variables.$font-sm;
+    margin-bottom: variables.$space-xl;
+  }
+
+  &__metaName {
+    display: block;
+    font-size: variables.$font-lg;
+    font-weight: 500;
+  }
+
+  &__counter {
+    display: flex;
+    padding: variables.$space-xl;
+    padding-top: 0;
+  }
+
+  &__counterItem {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__counterData {
+    font-size: variables.$font-lg;
+    color: var(--color-primary);
+  }
+
+  &__counterName {
+    font-size: variables.$font-sm;
+    margin-top: 8px / 2;
+  }
+
+  &:not(:first-child) {
+    margin-top: variables.$space-xl;
+  }
+}
+
+.links {
+  margin-top: variables.$space-xl;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include variables.responsive(md) {
+    margin-top: variables.$space-lg;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    flex: 0 1 auto;
+    height: 32px;
+    line-height: 32px;
+    width: 42px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color variables.$trans-fast ease;
+    border-radius: variables.$radius-sm;
+
+    &:hover {
+      text-decoration: none;
+      color: var(--color-font);
+      background-color: var(--color-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--color-bg-active);
+    }
+  }
+}
+
+.kofi {
+  display: block;
+  margin-top: variables.$space-xl;
+
+  @include variables.responsive(md) {
+    margin-top: variables.$space-lg;
+  }
+}

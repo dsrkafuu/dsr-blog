@@ -1,0 +1,95 @@
+@use '@/styles/variables';
+
+.toc__wrapper {
+  font-size: variables.$font-sm;
+  padding: variables.$space-md 0;
+  background-color: #fff;
+}
+
+.toc {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: variables.$height-toc;
+  font-size: variables.$font-sm;
+  padding: 0 variables.$space-xl;
+  list-style-type: none;
+  margin: 0;
+
+  a {
+    white-space: nowrap;
+  }
+
+  & > ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    ul {
+      padding: 0;
+      padding-left: 5px;
+      border-left: variables.$size-quote solid var(--color-border);
+      font-size: variables.$font-sm * 0.9;
+
+      a {
+        height: 25px;
+        line-height: 25px;
+      }
+    }
+
+    a {
+      display: block;
+      height: 26px;
+      line-height: 26px;
+      color: var(--color-font);
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:hover {
+        color: var(--color-primary);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@include variables.responsive(md) {
+  .sticky {
+    // remove unused top margin of toc on mobile
+    margin-top: 0 !important;
+  }
+
+  .toc {
+    position: fixed;
+    right: 0;
+    top: variables.$height-navbar-sm;
+    bottom: 0;
+    border-radius: 0;
+    max-width: 70%;
+    min-width: 40%;
+    transform: translateX(125%);
+    transition: transform variables.$trans-fast ease;
+    max-height: fit-content;
+
+    &--active {
+      transform: translateX(0);
+    }
+  }
+}
+
+.back-top {
+  font-size: variables.$font-sm;
+  padding: variables.$space-md variables.$space-xl;
+  margin-top: variables.$space-lg;
+
+  a {
+    color: var(--color-font);
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+  }
+}
