@@ -1,0 +1,12 @@
+@use '@/styles/variables';
+
+#sakana-widget {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 4;
+
+  @include variables.responsive(md) {
+    display: none;
+  }
+}

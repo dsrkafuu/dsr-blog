@@ -74,9 +74,9 @@
   }
 
   @include variables.responsive(sm) {
-    flex-direction: column;
     height: variables.$height-navbar-sm;
-    padding-right: 0;
+    justify-content: center;
+    align-items: center;
 
     &__item {
       height: 32px;
@@ -86,43 +86,11 @@
     &__brand {
       font-size: variables.$font-lg;
       text-align: center;
-      margin-bottom: 5px;
     }
 
     &__menu {
-      justify-content: center;
+      flex: 0 1 auto;
     }
-  }
-}
-
-// only show toc ctrl on single page of mobile
-.navbar__toc {
-  display: none;
-}
-@include variables.responsive(sm) {
-  body[data-section='single'] .navbar__toc {
-    display: inline-block;
-  }
-  .navbar__switch {
-    display: none;
-  }
-}
-
-// mobile header padding fix
-@media screen and (max-width: 450px) {
-  .navbar__item {
-    padding: 0 16px;
-  }
-}
-@media screen and (max-width: 380px) {
-  .navbar__item {
-    padding: 0 12px;
-  }
-}
-// iphone 5 (small width) fix
-@media screen and (max-width: 350px) {
-  .navbar__item {
-    padding: 0 8px;
   }
 }
 

@@ -2,7 +2,6 @@ import './index.scss';
 import Link from 'next/link';
 import config from '@/config.json';
 import NavTabs from './NavTabs';
-import { IBars } from '@/icons';
 
 const NavBar = async () => {
   return (
@@ -20,11 +19,6 @@ const NavBar = async () => {
               { title: '友链', link: '/friends/' },
             ]}
           />
-          <div className='navbar__end'>
-            <div className='navbar__item navbar__toc' id='toc-btn' title='目录'>
-              <IBars />
-            </div>
-          </div>
         </div>
       </nav>
     </header>

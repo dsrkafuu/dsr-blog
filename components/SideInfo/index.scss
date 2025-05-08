@@ -3,6 +3,12 @@
 .info {
   text-align: center;
 
+  @include variables.responsive(sm) {
+    &:not(:first-child) {
+      margin-top: variables.$space-lg !important;
+    }
+  }
+
   &__avatar {
     margin: 0 auto variables.$space-sm auto;
     padding-top: variables.$space-md;

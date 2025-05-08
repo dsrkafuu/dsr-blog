@@ -6,6 +6,11 @@
     margin-left: variables.$space-xl;
     margin-right: variables.$space-xl;
 
+    @include variables.responsive(md) {
+      margin-left: variables.$space-lg;
+      margin-right: variables.$space-lg;
+    }
+
     h1,
     h2,
     h3,
@@ -28,6 +33,12 @@
       margin: 0;
       font-size: variables.$font-xl;
     }
+
+    @include variables.responsive(md) {
+      margin-top: variables.$space-lg;
+      margin-left: variables.$space-lg;
+      margin-right: variables.$space-lg;
+    }
   }
 
   &__image {
@@ -37,10 +48,18 @@
 
   &__content {
     padding: variables.$space-xl;
+
+    @include variables.responsive(md) {
+      padding: variables.$space-lg;
+    }
   }
 
   &__box {
     padding: variables.$space-xl;
+
+    @include variables.responsive(md) {
+      padding: variables.$space-lg;
+    }
   }
 
   &__meta {
@@ -53,6 +72,11 @@
     margin-top: variables.$space-xs;
     margin-left: variables.$space-xl;
     margin-right: variables.$space-xl;
+
+    @include variables.responsive(md) {
+      margin-left: variables.$space-lg;
+      margin-right: variables.$space-lg;
+    }
 
     .icon {
       margin-right: 4px;
@@ -79,6 +103,10 @@
   &__metas {
     margin-top: variables.$space-sm;
     padding-bottom: variables.$space-xl;
+
+    @include variables.responsive(md) {
+      padding-bottom: variables.$space-lg;
+    }
   }
 
   &__empty {

@@ -1,5 +1,6 @@
 import '@/styles/globals.scss';
 import './layout.scss';
+import 'sakana-widget/lib/index.css';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -8,6 +9,7 @@ import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import Search from '@/components/Search';
 import SideInfo from '@/components/SideInfo';
+import SakanaWidget from '@/components/SakanaWidget';
 
 export const metadata: Metadata = {
   title: config.siteName,
@@ -66,6 +68,7 @@ const RootLayout = ({ children, toc }: RootLayoutProps) => {
         {typeof process.env.NEXT_PUBLIC_GA_ID === 'string' && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
+        <SakanaWidget />
       </body>
     </html>
   );

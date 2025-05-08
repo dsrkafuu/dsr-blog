@@ -17,7 +17,7 @@ const PostTOC = async ({ params }: PostTOCProps) => {
     return null;
   }
   return (
-    <div className='sticky'>
+    <div className='sticky subtoc'>
       {content.toc && (
         <div
           className='card toc__wrapper'

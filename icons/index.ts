@@ -1,4 +1,3 @@
-export { default as IBars } from './IBars';
 export { default as IBitcoin } from './IBitcoin';
 export { default as ICalendarDay } from './ICalendarDay';
 export { default as IChevronDoubleLeft } from './IChevronDoubleLeft';

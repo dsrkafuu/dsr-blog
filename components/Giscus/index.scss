@@ -7,6 +7,7 @@
 
   @include variables.responsive(md) {
     margin-top: variables.$space-lg;
+    padding: variables.$space-lg;
   }
 }
 

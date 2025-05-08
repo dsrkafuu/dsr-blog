@@ -64,7 +64,7 @@
 
   @include variables.responsive(md) {
     &__item {
-      height: 120px;
+      height: 100px;
 
       &:not(:first-child) {
         margin-top: variables.$space-lg;
@@ -72,14 +72,15 @@
     }
 
     &__image {
-      width: 120px;
-      padding-bottom: 120px;
+      width: 100px;
+      padding-bottom: 100px;
     }
 
     &__box {
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      padding: variables.$space-lg;
     }
 
     &__add {
@@ -88,7 +89,7 @@
 
     &__desc {
       margin-left: 0;
-      margin-top: variables.$space-lg;
+      margin-top: variables.$space-md;
     }
   }
 }
