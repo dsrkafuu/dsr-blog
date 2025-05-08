@@ -1,6 +1,0 @@
-tasks:
-  - before: brew install hugo
-    init: |
-      git lfs pull
-      pnpm install
-    command: npx cross-env NODE_ENV=development env-cmd --silent hugo server --baseUrl $(gp url 1313) --liveReloadPort=443 --appendPort=false --bind=0.0.0.0

@@ -1,6 +1,0 @@
-{
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "html.format.wrapAttributes": "aligned-multiple"
-}
