@@ -54,7 +54,11 @@ const renderMarkdown = async (content: string, imgPrefix: string) => {
         return `<h${depth} id="${escapedText}">${text}</h${depth}>`;
       },
       link({ text, href }) {
-        return `<a href="${href}" target="_blank" rel="noreferrer">${text}</a>`;
+        if (/^https?:/i.test(href) || /^\//i.test(href)) {
+          return `<a href="${href}" target="_blank" rel="noreferrer">${text}</a>`;
+        } else {
+          return `<a href="${href}">${text}</a>`;
+        }
       },
       image({ text, href }) {
         const imagePath = path.join(publicPath, imgPrefix, href);
