@@ -15,6 +15,8 @@
     "@giscus/react": "^3.1.0",
     "@homegrown/word-counter": "^0.1.7",
     "@next/third-parties": "^15.3.2",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "clipboard": "^2.0.11",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
