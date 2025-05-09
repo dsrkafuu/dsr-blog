@@ -57,7 +57,7 @@ const SideInfo = async () => {
       </div>
       <a
         className='card kofi'
-        href='https://ko-fi.com/dsrkafuu'
+        href='https://dsrkafuu.net/crypto'
         target='_blank'
         rel='noreferrer'
       >
