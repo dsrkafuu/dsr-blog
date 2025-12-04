@@ -13,6 +13,7 @@ interface PostCardProps {
   pubdate?: Date;
   words: number;
   link?: string;
+  eol?: boolean;
   children?: ReactNode;
 }
 
@@ -24,10 +25,11 @@ const PostCard = ({
   pubdate,
   words,
   link,
+  eol,
   children,
 }: PostCardProps) => {
   return (
-    <div className='card post'>
+    <div className={clsx('card post', { post__eol: eol })}>
       {cover && link && (
         <Link className='post__image fiximg' href={link}>
           <div className='fiximg__container' style={{ paddingBottom: '22.5%' }}>

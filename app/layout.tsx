@@ -3,6 +3,7 @@ import './layout.scss';
 import 'sakana-widget/lib/index.css';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -53,6 +54,13 @@ const RootLayout = ({ children, toc }: RootLayoutProps) => {
       <body>
         <NavBar />
         <main className='main'>
+          <div className='container container__eol'>
+            <div className='card eol__warning'>
+              <Link href='/post/2025/blog-eol/'>
+                <h2>博客停止更新并进入维护模式</h2>
+              </Link>
+            </div>
+          </div>
           <div className='container'>
             <div className='content'>
               <div className='content__inner'>{children}</div>

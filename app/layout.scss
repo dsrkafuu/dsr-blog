@@ -61,6 +61,24 @@
 }
 
 .main {
+  & > .container__eol {
+    padding: 22px;
+    padding-bottom: 0;
+
+    & > .card {
+      border: 3px solid var(--color-danger);
+    }
+
+    h2 {
+      font-size: 20px !important;
+    }
+
+    @include variables.responsive(md) {
+      padding: 17px;
+      padding-bottom: 0;
+    }
+  }
+
   & > .container {
     display: flex;
 
@@ -121,4 +139,12 @@
       }
     }
   }
+}
+
+.eol__warning {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
