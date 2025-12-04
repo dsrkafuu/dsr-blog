@@ -4,6 +4,8 @@
 ![](https://img.shields.io/github/package-json/v/dsrkafuu/dsr-blog)
 [![](https://img.shields.io/github/license/dsrkafuu/dsr-blog)](https://github.com/dsrkafuu/dsr-blog/blob/main/LICENSE)
 
+**由于个人兴趣转移等原因，本博客将进入维护模式、停止更新内容。**
+
 新版整合式个人博客 [dsr-blog](https://blog.dsrkafuu.net)，基于 Next 实现。
 
 ## 环境变量
