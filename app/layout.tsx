@@ -57,7 +57,7 @@ const RootLayout = ({ children, toc }: RootLayoutProps) => {
           <div className='container container__eol'>
             <div className='card eol__warning'>
               <Link href='/post/2025/blog-eol/'>
-                <h2>博客停止更新并进入维护模式</h2>
+                <h2>博客低频率更新并进入维护模式</h2>
               </Link>
             </div>
           </div>
