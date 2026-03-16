@@ -93,7 +93,7 @@ http.interceptors.response.use(
       });
     }
     return Promise.reject(err); // 返回一个被 reject 的 Promise
-  }
+  },
 );
 
 export default http;
@@ -157,7 +157,7 @@ app.post('/admin/api/login', async (req, res) => {
       username: user.username, // 用户的 username
     },
     privateKey,
-    { algorithm: 'RS256' }
+    { algorithm: 'RS256' },
   );
   res.send({ token });
 });
@@ -204,7 +204,7 @@ app.use(
     // 即可支持接受 Cookie
     origin: [/localhost/],
     credentials: true,
-  })
+  }),
 );
 app.use(require('cookie-parser')()); // 使用 cookie-parser 方便解析 cookie
 ```
@@ -357,7 +357,7 @@ module.exports = (app) => {
         username: user.username, // 用户的 username
       },
       privateKey,
-      { algorithm: 'RS256' }
+      { algorithm: 'RS256' },
     );
     res.send({ token });
   });

@@ -1,11 +1,12 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import { Fragment } from 'react';
-import config from '@/config.json';
-import MediumZoom from '@/components/MediumZoom';
+
 import Giscus from '@/components/Giscus';
-import Prism from '@/components/Prism';
+import MediumZoom from '@/components/MediumZoom';
 import NotFound from '@/components/NotFound';
 import PostCard from '@/components/PostCard';
+import Prism from '@/components/Prism';
+import config from '@/config.json';
 import { getPostContent, getPostList } from '@/utils/assets';
 
 interface PostPageProps {
@@ -17,7 +18,7 @@ interface PostPageProps {
 
 export const generateMetadata = async (
   { params }: PostPageProps,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> => {
   const { year, post } = await params;
   const postPath = `/post/${year}/${post}`;
@@ -62,10 +63,7 @@ const PostPage = async ({ params }: PostPageProps) => {
   return (
     <Fragment>
       <PostCard mode='post' {...content}>
-        <article
-          className='markdown'
-          dangerouslySetInnerHTML={{ __html: content.html }}
-        />
+        <article className='markdown' dangerouslySetInnerHTML={{ __html: content.html }} />
       </PostCard>
       <Giscus />
       <MediumZoom />

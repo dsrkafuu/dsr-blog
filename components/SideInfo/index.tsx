@@ -1,11 +1,12 @@
 import './index.scss';
-import { Fragment } from 'react';
 import Image from 'next/image';
+import { Fragment } from 'react';
+
 import irasutoya from '@/assets/irasutoya.jpg';
 import kofi from '@/assets/kofi.png';
 import config from '@/config.json';
-import { getPostList } from '@/utils/assets';
 import { IBitcoin, IGitHub } from '@/icons';
+import { getPostList } from '@/utils/assets';
 
 const IconMap: Record<string, any> = {
   github: IGitHub,
@@ -27,9 +28,7 @@ const SideInfo = async () => {
         </div>
         <div className='info__counter'>
           <div className='info__counterItem'>
-            <span className='info__counterData'>
-              {Math.round(wordsCount / 1000)}
-            </span>
+            <span className='info__counterData'>{Math.round(wordsCount / 1000)}</span>
             <span className='info__counterName'>千字</span>
           </div>
           <div className='info__counterItem'>
@@ -55,17 +54,8 @@ const SideInfo = async () => {
           );
         })}
       </div>
-      <a
-        className='card kofi'
-        href='https://dsrkafuu.net/crypto'
-        target='_blank'
-        rel='noreferrer'
-      >
-        <Image
-          src={kofi}
-          style={{ width: '100%', height: 'auto' }}
-          alt='赞助图片'
-        />
+      <a className='card kofi' href='https://dsrkafuu.net/crypto' target='_blank' rel='noreferrer'>
+        <Image src={kofi} style={{ width: '100%', height: 'auto' }} alt='赞助图片' />
       </a>
     </Fragment>
   );

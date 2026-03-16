@@ -1,14 +1,10 @@
 import './page.scss';
-import Link from 'next/link';
 import clsx from 'clsx';
-import PostCard from '@/components/PostCard';
+import Link from 'next/link';
+
 import NotFound from '@/components/NotFound';
-import {
-  IChevronDoubleLeft,
-  IChevronDoubleRight,
-  IChevronLeft,
-  IChevronRight,
-} from '@/icons';
+import PostCard from '@/components/PostCard';
+import { IChevronDoubleLeft, IChevronDoubleRight, IChevronLeft, IChevronRight } from '@/icons';
 import { getPostList } from '@/utils/assets';
 
 interface ListPageProps {
@@ -42,15 +38,9 @@ const ListPage = async ({ params }: ListPageProps) => {
     if (data.totalPages > maxLinks) {
       if (pageNum <= lowerLimit && showPage <= maxLinks) {
         pageNumFlag = true;
-      } else if (
-        pageNum >= upperLimit &&
-        showPage >= data.totalPages - maxLinks
-      ) {
+      } else if (pageNum >= upperLimit && showPage >= data.totalPages - maxLinks) {
         pageNumFlag = true;
-      } else if (
-        showPage >= pageNum - offsetLinks &&
-        showPage <= pageNum + offsetLinks
-      ) {
+      } else if (showPage >= pageNum - offsetLinks && showPage <= pageNum + offsetLinks) {
         pageNumFlag = true;
       }
     } else {
@@ -72,17 +62,9 @@ const ListPage = async ({ params }: ListPageProps) => {
     <div className='post__list'>
       {slicedList.map((post) => {
         return (
-          <PostCard
-            mode='list'
-            key={post.path}
-            link={`${post.path}/`}
-            {...post}
-          >
+          <PostCard mode='list' key={post.path} link={`${post.path}/`} {...post}>
             {post.preview && (
-              <div
-                className='markdown'
-                dangerouslySetInnerHTML={{ __html: post.preview }}
-              />
+              <div className='markdown' dangerouslySetInnerHTML={{ __html: post.preview }} />
             )}
           </PostCard>
         );
@@ -95,10 +77,7 @@ const ListPage = async ({ params }: ListPageProps) => {
             </Link>
           )}
           {hasPrev && (
-            <Link
-              className='pagination__previous'
-              href={getPageLink(pageNum - 1)}
-            >
+            <Link className='pagination__previous' href={getPageLink(pageNum - 1)}>
               <IChevronLeft />
             </Link>
           )}
@@ -122,10 +101,7 @@ const ListPage = async ({ params }: ListPageProps) => {
             </Link>
           )}
           {pageNum !== data.totalPages && (
-            <Link
-              className='pagination__last'
-              href={getPageLink(data.totalPages)}
-            >
+            <Link className='pagination__last' href={getPageLink(data.totalPages)}>
               <IChevronDoubleRight />
             </Link>
           )}

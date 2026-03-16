@@ -1,6 +1,7 @@
-import { INextJS } from '@/icons';
-import './index.scss';
 import config from '@/config.json';
+
+import './index.scss';
+import { INextJS } from '@/icons';
 
 const Footer = () => {
   return (

@@ -65,8 +65,7 @@ Google Fonts 团队在 2018 年发表了[一篇博文](https://developers.google
 
 ```js
 const url = 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC';
-const ua =
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0';
+const ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0';
 
 /**
  * get css from google fonts
@@ -197,9 +196,7 @@ const rangesOfThisFile = { ...ranges };
 const processedUnicodeSet = new Set();
 Object.entries(rangesOfThisFile).forEach(([key, unicodes]) => {
   // filter the unicodes
-  const supportedUnicodes = unicodes.filter((unicode) =>
-    supportedUnicodeSet.has(unicode)
-  );
+  const supportedUnicodes = unicodes.filter((unicode) => supportedUnicodeSet.has(unicode));
   // if no unicode is supported, delete the range
   if (supportedUnicodes.length === 0) {
     delete rangesOfThisFile[key];
@@ -220,15 +217,13 @@ Array.from(supportedUnicodeSet).forEach((unicode) => {
 });
 
 // write the result to json
-fse.writeJSONSync(
-  path.resolve(__dirname, '../raw/ranges-supported.json'),
-  rangesOfThisFile,
-  { spaces: 2 }
-);
+fse.writeJSONSync(path.resolve(__dirname, '../raw/ranges-supported.json'), rangesOfThisFile, {
+  spaces: 2,
+});
 fse.writeJSONSync(
   path.resolve(__dirname, '../raw/ranges-unprocessed.json'),
   Array.from(unProcessedUnicodeSet),
-  { spaces: 2 }
+  { spaces: 2 },
 );
 ```
 
@@ -260,10 +255,7 @@ async function sliceUnprocessedUnicodes(set) {
   }
   // if last slice is to small
   if (slices[`[-${idx}]`].length < 100) {
-    slices[`[-${idx - 1}]`] = [
-      ...slices[`[-${idx - 1}]`],
-      ...slices[`[-${idx}]`],
-    ];
+    slices[`[-${idx - 1}]`] = [...slices[`[-${idx - 1}]`], ...slices[`[-${idx}]`]];
     delete slices[`[-${idx}]`];
   }
   return slices;
@@ -271,11 +263,9 @@ async function sliceUnprocessedUnicodes(set) {
 
 // custom slices
 const customSlices = await sliceUnprocessedUnicodes(unProcessedUnicodeSet);
-fse.writeJSONSync(
-  path.resolve(__dirname, '../raw/ranges-custom.json'),
-  customSlices,
-  { spaces: 2 }
-);
+fse.writeJSONSync(path.resolve(__dirname, '../raw/ranges-custom.json'), customSlices, {
+  spaces: 2,
+});
 ```
 
 定义一些工具方法，例如计算字体文件哈希、Unicode 编码转数字、合并 CSS Unicode 范围等：
@@ -356,32 +346,23 @@ if (!empty) {
 
 ```js
 // create subsets
-Object.entries({ ...rangesOfThisFile, ...customSlices }).forEach(
-  ([key, unicodes]) => {
-    const _unicodes = unicodes.join(',');
-    childProcess.execSync(`fonttools subset --unicodes="${_unicodes}" ${file}`);
-    // move subset to the output directory
-    const index = /\[(-?[0-9]+)\]/i.exec(key)[1];
-    const targetFile = path.resolve(
-      targetFolder,
-      `${baseName}.${hash}.${index}.ttf`
-    );
-    fse.moveSync(outFile, targetFile);
-    childProcess.execSync(`fonttools ttLib.woff2 compress ${targetFile}`);
-    fse.unlinkSync(targetFile);
-    css +=
-      `/*${key}*/` +
-      `@font-face{font-family:MiSans;font-style:normal;` +
-      `font-weight:${fontWeight};font-display:swap;` +
-      `src: url('${baseName}.${hash}.${index}.woff2') format('woff2');` +
-      `unicode-range:${mergeUnicodes(unicodes)};}\n`;
-  }
-);
-fse.writeFileSync(
-  path.resolve(targetFolder, `${baseName}.min.css`),
-  css.trim(),
-  'utf-8'
-);
+Object.entries({ ...rangesOfThisFile, ...customSlices }).forEach(([key, unicodes]) => {
+  const _unicodes = unicodes.join(',');
+  childProcess.execSync(`fonttools subset --unicodes="${_unicodes}" ${file}`);
+  // move subset to the output directory
+  const index = /\[(-?[0-9]+)\]/i.exec(key)[1];
+  const targetFile = path.resolve(targetFolder, `${baseName}.${hash}.${index}.ttf`);
+  fse.moveSync(outFile, targetFile);
+  childProcess.execSync(`fonttools ttLib.woff2 compress ${targetFile}`);
+  fse.unlinkSync(targetFile);
+  css +=
+    `/*${key}*/` +
+    `@font-face{font-family:MiSans;font-style:normal;` +
+    `font-weight:${fontWeight};font-display:swap;` +
+    `src: url('${baseName}.${hash}.${index}.woff2') format('woff2');` +
+    `unicode-range:${mergeUnicodes(unicodes)};}\n`;
+});
+fse.writeFileSync(path.resolve(targetFolder, `${baseName}.min.css`), css.trim(), 'utf-8');
 const cssWithoutCustom = css
   .trim()
   .split('\n')
@@ -390,7 +371,7 @@ const cssWithoutCustom = css
 fse.writeFileSync(
   path.resolve(targetFolder, `${baseName}.slim.min.css`),
   cssWithoutCustom,
-  'utf-8'
+  'utf-8',
 );
 ```
 

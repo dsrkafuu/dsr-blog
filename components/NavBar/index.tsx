@@ -1,6 +1,8 @@
 import './index.scss';
 import Link from 'next/link';
+
 import config from '@/config.json';
+
 import NavTabs from './NavTabs';
 
 const NavBar = async () => {

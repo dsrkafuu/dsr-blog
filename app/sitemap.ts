@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+
 import config from '@/config.json';
 import { getPostList } from '@/utils/assets';
 

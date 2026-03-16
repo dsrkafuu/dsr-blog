@@ -17,12 +17,9 @@ const PostTOC = async ({ params }: PostTOCProps) => {
     return null;
   }
   return (
-    <div className='sticky subtoc'>
+    <div className='subtoc sticky'>
       {content.toc && (
-        <div
-          className='card toc__wrapper'
-          dangerouslySetInnerHTML={{ __html: content.toc }}
-        />
+        <div className='card toc__wrapper' dangerouslySetInnerHTML={{ __html: content.toc }} />
       )}
       <div className='card back-top'>
         <a href='#top'>返回顶部</a>

@@ -2,6 +2,7 @@
 
 import './index.scss';
 import { useState } from 'react';
+
 import { ISearch } from '@/icons';
 
 export const SEARCH_URL = 'https://www.google.com/search';

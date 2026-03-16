@@ -295,7 +295,7 @@ function promiseAll(arr) {
             resolve(results);
           }
         },
-        (e) => reject(e)
+        (e) => reject(e),
       );
     });
   });
@@ -413,12 +413,7 @@ console.log(...object); // 1 2 3 4
 ### LazyMan (事件循环)
 
 ```js
-new LazyMan('Tony')
-  .eat('lunch')
-  .eat('dinner')
-  .sleepFirst(5)
-  .sleep(10)
-  .eat('junk food');
+new LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(10).eat('junk food');
 // Hi I am Tony
 // 等待了5秒...
 // I am eating lunch

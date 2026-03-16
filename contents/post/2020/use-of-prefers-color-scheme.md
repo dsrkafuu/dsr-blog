@@ -87,10 +87,7 @@ if (!themeData) {
 } else {
   // 如果非自动模式，调整主题
   if (themeData !== 'auto') {
-    document.body.setAttribute(
-      'data-theme',
-      themeData === 'dark' ? 'dark' : 'light'
-    );
+    document.body.setAttribute('data-theme', themeData === 'dark' ? 'dark' : 'light');
   }
 }
 ```

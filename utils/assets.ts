@@ -1,12 +1,14 @@
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
+
+import { countWords } from '@homegrown/word-counter';
 import { globSync } from 'glob';
 import matter from 'gray-matter';
-import { countWords } from '@homegrown/word-counter';
-import { marked } from 'marked';
 import { imageSize } from 'image-size';
 import { LRUCache } from 'lru-cache';
+import { marked } from 'marked';
 import twemoji from 'twemoji';
+
 import { endPerf, startPref } from './performance';
 
 const cache = new LRUCache({ max: 1000 });
@@ -54,7 +56,7 @@ const renderMarkdown = async (content: string, imgPrefix: string) => {
         return `<h${depth} id="${escapedText}">${text}</h${depth}>`;
       },
       link({ text, href }) {
-        if (/^https?:/i.test(href) || /^\//i.test(href)) {
+        if (/^https?:/i.test(href) || href.startsWith('/')) {
           return `<a href="${href}" target="_blank" rel="noreferrer">${text}</a>`;
         } else {
           return `<a href="${href}">${text}</a>`;

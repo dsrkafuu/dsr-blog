@@ -1,6 +1,6 @@
 import './page.scss';
-import config from '@/config.json';
 import Giscus from '@/components/Giscus';
+import config from '@/config.json';
 
 const FriendsPage = async () => {
   return (
@@ -22,12 +22,7 @@ const FriendsPage = async () => {
               </a>
             </div>
             <div className='friends__box'>
-              <a
-                className='friends__title'
-                href={url.toString()}
-                target='_blank'
-                rel='noreferrer'
-              >
+              <a className='friends__title' href={url.toString()} target='_blank' rel='noreferrer'>
                 <h2>{friend.title}</h2>
               </a>
               <span className='friends__desc'>{friend.desc}</span>
@@ -35,10 +30,7 @@ const FriendsPage = async () => {
           </div>
         );
       })}
-      <Giscus
-        mapping='number'
-        term={process.env.NEXT_PUBLIC_GISCUS_FRIENDS_TERM}
-      />
+      <Giscus mapping='number' term={process.env.NEXT_PUBLIC_GISCUS_FRIENDS_TERM} />
     </div>
   );
 };

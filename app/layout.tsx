@@ -1,18 +1,19 @@
 import '@/styles/globals.scss';
 import './layout.scss';
 import 'sakana-widget/lib/index.css';
-import type { ReactNode } from 'react';
-import type { Metadata } from 'next';
-import Link from 'next/link';
 // import { SpeedInsights } from '@vercel/speed-insights/next';
 // import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import config from '@/config.json';
-import NavBar from '@/components/NavBar';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import type { ReactNode } from 'react';
+
 import Footer from '@/components/Footer';
+import NavBar from '@/components/NavBar';
+import SakanaWidget from '@/components/SakanaWidget';
 import Search from '@/components/Search';
 import SideInfo from '@/components/SideInfo';
-import SakanaWidget from '@/components/SakanaWidget';
+import config from '@/config.json';
 
 export const metadata: Metadata = {
   title: config.siteName,
@@ -54,7 +55,7 @@ const RootLayout = ({ children, toc }: RootLayoutProps) => {
       <body>
         <NavBar />
         <main className='main'>
-          <div className='container container__eol'>
+          <div className='container__eol container'>
             <div className='card eol__warning'>
               <Link href='/post/2025/blog-eol/'>
                 <h2>博客低频率更新并进入维护模式</h2>

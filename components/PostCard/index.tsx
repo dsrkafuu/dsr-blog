@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import dayjs from 'dayjs';
 import Link from 'next/link';
 import { ReactNode } from 'react';
+
 import { ICalendarDay, IClock, IFileAlt, ITimer } from '@/icons';
 
 interface PostCardProps {
@@ -54,23 +55,17 @@ const PostCard = ({
         )}
       </div>
       {mode === 'list' && (
-        <div className={clsx({ post__summary: true, post__empty: !children })}>
-          {children}
-        </div>
+        <div className={clsx({ post__summary: true, post__empty: !children })}>{children}</div>
       )}
       <div className={clsx({ post__meta: true, post__metas: mode === 'list' })}>
         <span className='post__metaDate'>
           {pubdate ? <IClock /> : <ICalendarDay />}
-          <time dateTime={date.toISOString()}>
-            {dayjs(date).format('YYYY-MM-DD')}
-          </time>
+          <time dateTime={date.toISOString()}>{dayjs(date).format('YYYY-MM-DD')}</time>
         </span>
         {pubdate && (
           <span className='post__metaUpdate'>
             <ICalendarDay />
-            <time dateTime={pubdate.toISOString()}>
-              {dayjs(pubdate).format('YYYY-MM-DD')}
-            </time>
+            <time dateTime={pubdate.toISOString()}>{dayjs(pubdate).format('YYYY-MM-DD')}</time>
           </span>
         )}
         <span className='post__metaWords'>
@@ -83,9 +78,7 @@ const PostCard = ({
         </span>
       </div>
       {mode === 'post' && (
-        <div className={clsx({ post__content: true, post__empty: !children })}>
-          {children}
-        </div>
+        <div className={clsx({ post__content: true, post__empty: !children })}>{children}</div>
       )}
     </div>
   );
