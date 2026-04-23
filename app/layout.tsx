@@ -44,13 +44,13 @@ const RootLayout = ({ children, toc }: RootLayoutProps) => {
         {/* prettier-ignore */}
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
         {/* prettier-ignore */}
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500' />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap' />
         {/* prettier-ignore */}
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?display=swap&family=Fira+Code:wght@400;500' />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap' />
         {/* prettier-ignore */}
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans+JP:wght@400;500' />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap' />
         {/* prettier-ignore */}
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans+SC:wght@400;500' />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap' />
       </head>
       <body>
         <NavBar />
