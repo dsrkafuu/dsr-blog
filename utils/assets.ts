@@ -6,7 +6,7 @@ import { globSync } from 'glob';
 import matter from 'gray-matter';
 import { imageSize } from 'image-size';
 import { LRUCache } from 'lru-cache';
-import { marked } from 'marked';
+import { Marked } from 'marked';
 import twemoji from 'twemoji';
 
 import { endPerf, startPref } from './performance';
@@ -44,9 +44,9 @@ export interface PostContent extends PostMeta {
   toc?: string;
 }
 
-const renderMarkdown = async (content: string, imgPrefix: string) => {
+export const renderMarkdown = async (content: string, imgPrefix: string) => {
   const headings: Array<{ id: string; level: number; text: string }> = [];
-  marked.use({
+  const markdown = new Marked({
     renderer: {
       heading({ tokens, depth }) {
         const text = this.parser.parseInline(tokens);
@@ -80,7 +80,7 @@ const renderMarkdown = async (content: string, imgPrefix: string) => {
       },
     },
   });
-  let html = await marked.parse(content);
+  let html = await markdown.parse(content);
   let toc = '';
   if (headings.length > 0) {
     toc = `

@@ -1,8 +1,6 @@
 import '@/styles/globals.scss';
 import './layout.scss';
 // import 'sakana-widget/lib/index.css';
-// import { SpeedInsights } from '@vercel/speed-insights/next';
-// import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 // import Link from 'next/link';
@@ -79,8 +77,6 @@ const RootLayout = ({ children, toc }: RootLayoutProps) => {
         </main>
         <Footer />
         <SakanaWidget />
-        {/* <SpeedInsights /> */}
-        {/* <Analytics /> */}
         {typeof process.env.NEXT_PUBLIC_GA_ID === 'string' && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
