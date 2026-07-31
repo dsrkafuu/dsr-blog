@@ -35,6 +35,11 @@
       &:focus {
         background-color: var(--color-bg-hover);
       }
+
+      &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: -2px;
+      }
     }
   }
 
@@ -43,6 +48,10 @@
     width: 42px;
     color: var(--color-font);
     cursor: pointer;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font: inherit;
     height: 32px;
     line-height: 32px;
     border-radius: variables.$radius-sm;
@@ -57,6 +66,12 @@
 
     &:active {
       background-color: var(--color-bg-active);
+    }
+
+    &:focus-visible {
+      background-color: var(--color-bg-hover);
+      outline: 2px solid var(--color-primary);
+      outline-offset: -2px;
     }
   }
 }

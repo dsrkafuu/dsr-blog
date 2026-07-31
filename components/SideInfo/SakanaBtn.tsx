@@ -2,6 +2,18 @@
 
 import { useEffect, useState } from 'react';
 
+interface SakanaShowButtonProps {
+  onClick: () => void;
+}
+
+export const SakanaShowButton = ({ onClick }: SakanaShowButtonProps) => {
+  return (
+    <button type='button' className='sakanawbtn' onClick={onClick}>
+      显示小组件
+    </button>
+  );
+};
+
 const SakanaBtn = () => {
   const [showBtn, setShowBtn] = useState(false);
 
@@ -24,11 +36,7 @@ const SakanaBtn = () => {
   if (!showBtn) {
     return null;
   }
-  return (
-    <div className='sakanawbtn' onClick={handleClick}>
-      显示小组件
-    </div>
-  );
+  return <SakanaShowButton onClick={handleClick} />;
 };
 
 export default SakanaBtn;

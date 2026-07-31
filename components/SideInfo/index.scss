@@ -103,10 +103,11 @@
   .sakanawbtn {
     cursor: pointer;
     padding: 0 8px;
-    outline: none;
     border: none;
     border-radius: variables.$radius-sm;
     background-color: transparent;
+    color: inherit;
+    font: inherit;
     transition: background-color variables.$trans-fast ease;
     text-decoration: none;
     margin-bottom: 5px;
@@ -115,8 +116,10 @@
       background-color: var(--color-bg-hover);
     }
 
-    &:focus {
+    &:focus-visible {
       background-color: var(--color-bg-hover);
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
     }
 
     @include variables.responsive(md) {

@@ -1,7 +1,7 @@
 'use client';
 
 import './index.scss';
-import { useState } from 'react';
+import { type FormEvent, useState } from 'react';
 
 import { ISearch } from '@/icons';
 
@@ -12,44 +12,44 @@ const Search = () => {
   const [query, setQuery] = useState('');
 
   const handleSearch = () => {
-    if (!query || typeof query !== 'string' || query.trim() === '') {
+    const trimmedQuery = query.trim();
+    if (!trimmedQuery) {
       return;
     }
     const url = new URL(SEARCH_URL);
-    url.searchParams.append('q', query.trim());
+    url.searchParams.append('q', trimmedQuery);
     url.searchParams.append('newwindow', '1');
     url.searchParams.append('as_sitesearch', SEARCH_SITE);
-    window.open(url.toString());
+    window.open(url.toString(), '_blank', 'noopener,noreferrer');
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    handleSearch();
   };
 
   return (
-    <div className='card search'>
+    <form className='card search' role='search' onSubmit={handleSubmit}>
       <div className='search__input'>
         <input
-          type='text'
+          type='search'
           id='search-input'
+          name='q'
+          aria-label='搜索文章'
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              handleSearch();
-            }
-          }}
         />
       </div>
-      <label
+      <button
+        type='submit'
         className='search__ctrl'
         id='search-btn'
-        title='搜索'
-        htmlFor='search-input'
-        onClick={(e) => {
-          e.preventDefault();
-          handleSearch();
-        }}
+        title='搜索文章'
+        aria-label='搜索文章'
       >
-        <ISearch />
-      </label>
-    </div>
+        <ISearch aria-hidden='true' focusable='false' />
+      </button>
+    </form>
   );
 };
 
