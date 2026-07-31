@@ -11,6 +11,7 @@
     "lint": "oxlint",
     "dev": "bun --bun next dev",
     "build": "bun --bun next build",
+    "analyze": "bun --bun next experimental-analyze",
     "start": "bun --bun next start"
   },
   "dependencies": {
@@ -41,7 +42,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "oxfmt": "^0.44.0",
-    "oxlint": "^1.62.0",
+    "oxlint": "^1.76.0",
     "typescript": "^5.9.3"
   }
 }
