@@ -57,6 +57,7 @@ config.json   # site metadata, navigation links, and friend links
 
 - Components are Server Components unless they require browser APIs or React state.
 - Keep browser-only integrations behind existing client boundaries such as Giscus, Prism, Medium Zoom, Search, and Sakana Widget.
+- Load third-party scripts through `next/script` and give inline scripts stable IDs. Prism highlighting must rerun after client-side route changes.
 - Route `params` are promises in Next.js 16 and must be awaited.
 - Create an independent `Marked` instance for each Markdown render; do not mutate the package-level renderer because post previews render concurrently.
 - Markdown is rendered with `dangerouslySetInnerHTML`. This is acceptable only while `contents/` remains trusted repository input; sanitize before accepting external or user-authored Markdown.
