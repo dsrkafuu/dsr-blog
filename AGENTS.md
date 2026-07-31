@@ -46,6 +46,7 @@ config.json   # site metadata, navigation links, and friend links
 ## Content and Routing
 
 - `utils/assets.ts` reads Markdown from `contents/` and matching media from `public/`.
+- Keep every filesystem and glob path statically scoped to `contents/` or `public/`; request absolute glob results instead of resolving arbitrary returned paths against `process.cwd()`.
 - Post URLs use `/post/[year]/[post]/`; all posts are returned by `generateStaticParams`.
 - Paginated lists use `/post/page/[num]/`; page 1 is also exposed as `/post/`.
 - Missing post content returns `null` from the content layer; route pages must call `notFound()` so the response keeps the custom UI and HTTP 404 status.

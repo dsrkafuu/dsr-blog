@@ -13,8 +13,7 @@ import { endPerf, startPref } from './performance';
 
 const cache = new LRUCache({ max: 1000 });
 
-const contentPath = path.resolve(process.cwd(), './contents');
-const publicPath = path.resolve(process.cwd(), './public');
+const contentPath = path.join(process.cwd(), 'contents');
 
 export interface PostMeta {
   path: string;
@@ -63,7 +62,7 @@ const renderMarkdown = async (content: string, imgPrefix: string) => {
         }
       },
       image({ text, href }) {
-        const imagePath = path.join(publicPath, imgPrefix, href);
+        const imagePath = path.join(process.cwd(), 'public', imgPrefix, href);
         if (!fs.existsSync(imagePath)) {
           return '';
         }
@@ -120,9 +119,8 @@ const getPostMeta = async (postPath: string): Promise<PostMeta | null> => {
   }
 
   // startPref('getPostMeta');
-  const globFile = globSync(`${contentPath}/${postPath}.md`);
-  const filePath = globFile[0] || '';
-  if (!filePath || !fs.existsSync(filePath)) {
+  const filePath = path.join(process.cwd(), 'contents', `${postPath}.md`);
+  if (!fs.existsSync(filePath)) {
     return null;
   }
   const fileContents = fs.readFileSync(filePath, 'utf-8');
@@ -136,7 +134,7 @@ const getPostMeta = async (postPath: string): Promise<PostMeta | null> => {
   }
   // 封面
   let cover = '';
-  const coverPath = path.join(publicPath, postPath, 'index.webp');
+  const coverPath = path.join(process.cwd(), 'public', postPath, 'index.webp');
   if (fs.existsSync(coverPath)) {
     cover = `${postPath}/index.webp`;
   }
@@ -178,15 +176,14 @@ export const getPostList = async () => {
     totalPages: 0,
     wordsCount: 0,
   };
-  const allMarkdownFiles = globSync(`${contentPath}/post/**/*.md`);
+  const allMarkdownFiles = globSync(`${contentPath}/post/**/*.md`, { absolute: true });
   const allMarkdownFilesWithoutIndex = allMarkdownFiles.filter((file) => {
     return !file.includes('index.md');
   });
   // 并发读取
   const promises: Array<Promise<void>> = [];
   const readPost = async (markdownFile: string) => {
-    const fullFilePath = path.resolve(process.cwd(), markdownFile);
-    const relFilePath = path.relative(contentPath, fullFilePath);
+    const relFilePath = path.relative(contentPath, markdownFile);
     const postPath = relFilePath.replace('.md', '').replace(/\\/gi, '/');
     const postMeta = await getPostMeta(`/${postPath}`);
     if (!postMeta) {
