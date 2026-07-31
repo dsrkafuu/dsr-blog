@@ -4,17 +4,15 @@ title: 'DSRBLOG'
 
 **Personal**
 
-Web/Cross-platform developer.
+Web & cross-platform developer (full-stack-ish).
 
 **Keywords**
 
-- ~~Tier 1 (Primary): JavaScript, TypeScript, HTML, CSS, React, Node.js~~
-- ~~Tier 2 (Secondary): SolidJS, Svelte, Vue.js, Electron~~
+- ~~Tier 1 (Primary): HTML, CSS, TypeScript, React, Next.js, Vue.js, Node.js~~
+- ~~Tier 2 (Secondary): SolidJS, Svelte, React Native, Electron, Rust, Tauri~~
 
-No more keywords. I am a Web Developer at heart, powered by JS/TS and building in synergy with LLM models.
+No more keywords. I am a Developer at heart, mainly powered by JS/TS and building in synergy with LLM models.
 
 **Counter**
 
-<a href="https://github.com/dsrkafuu/moe-counter-cf#readme" target="_blank" rel="noopener">
-  <img height="100" src="https://count.dsrkafuu.net/dsrkafuu:home" alt="Moe Counter CF" />
-</a>
+<a style="display: inline-block; vertical-align: baseline;" href="https://github.com/dsrkafuu/moe-counter-cf#readme" target="_blank" rel="noopener"><img width="380" height="120" src="https://count.dsrkafuu.net/dsrkafuu:home" alt="Moe Counter CF" /></a>&nbsp;<img style="display: inline-block; vertical-align: baseline;" width="125" height="120" alt="Front-end 2026" src="/front-end.webp" />
