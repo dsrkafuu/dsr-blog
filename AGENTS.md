@@ -5,13 +5,14 @@
 ```bash
 bun run dev          # start the Next.js development server
 bun run lint         # run oxlint
+bun run test         # run Bun regression tests
 bun run fmt          # write formatting changes
 bun run fmt --check  # check formatting without writing
 bun run build        # production build and TypeScript validation
 bun run analyze      # open the built-in Next.js bundle analyzer
 ```
 
-Use Bun as the package manager and runtime. The Next.js scripts run with `bun --bun`. There is no separate typecheck or test command: TypeScript errors surface via `bun run build`, and this repository currently has no automated test suite.
+Use Bun as the package manager and runtime. The Next.js scripts run with `bun --bun`. There is no separate typecheck command; TypeScript errors surface via `bun run build`.
 
 ## Maintenance Priorities
 
@@ -63,7 +64,9 @@ config.json   # site metadata, navigation links, and friend links
 - `@/` maps to the repository root.
 - Use `oxfmt` for formatting and `oxlint` for linting.
 - Keep the existing lint exceptions unless the corresponding native image and pagination patterns are removed.
-- `.agents/`, `.codex/`, and `skills-lock.json` are local skill artifacts and must remain ignored.
+- `.agents/` and `.codex/` are local skill artifacts and must remain ignored.
+- `skills-lock.json` is tracked to keep project skill sources and versions reproducible.
+- `docs/` contains local maintenance notes for this public repository and must remain ignored.
 
 ## Environment Variables
 

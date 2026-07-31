@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["bun"],
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "bundler",

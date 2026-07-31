@@ -33,9 +33,9 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
       url: `${base}/post/`,
       lastModified: latestPost?.lastModified || now,
     },
-    ...new Array(totalPages).fill(1).map((_, i) => {
+    ...Array.from({ length: Math.max(totalPages - 1, 0) }, (_, i) => {
       return {
-        url: `${base}/post/${i + 1}/`,
+        url: `${base}/post/page/${i + 2}/`,
         lastModified: latestPost?.lastModified || now,
       };
     }),

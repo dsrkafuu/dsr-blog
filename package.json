@@ -9,6 +9,7 @@
   "scripts": {
     "fmt": "oxfmt",
     "lint": "oxlint",
+    "test": "bun test",
     "dev": "bun --bun next dev",
     "build": "bun --bun next build",
     "analyze": "bun --bun next experimental-analyze",
@@ -38,6 +39,7 @@
     "twemoji": "^14.0.2"
   },
   "devDependencies": {
+    "@types/bun": "^1.3.14",
     "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

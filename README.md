@@ -26,7 +26,7 @@ bunx skills add shadcn/ui --skill shadcn --yes
 bunx skills add vercel-labs/agent-skills --full-depth --skill vercel-react-best-practices --yes
 ```
 
-生成的 `.agents/`、`.codex/` 和 `skills-lock.json` 仅供本地使用，不纳入 Git。
+生成的 `.agents/` 与 `.codex/` 仅供本地使用；`skills-lock.json` 纳入 Git，用于锁定项目 skill 来源与版本。
 
 ## LICENSE
 
