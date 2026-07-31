@@ -1,7 +1,8 @@
 import config from '@/config.json';
+import { INextJS } from '@/icons';
 
 import './index.scss';
-import { INextJS } from '@/icons';
+import packageInfo from '@/package.json';
 
 const Footer = () => {
   return (
@@ -9,12 +10,7 @@ const Footer = () => {
       <div className='container'>
         <span className='footer__text'>
           {`Copyright © 2018-${new Date().getFullYear()} | `}
-          <a
-            className='link'
-            href='{{ .Site.Data.meta.author_link }}'
-            target='_blank'
-            rel='noopener'
-          >
+          <a className='link' href={config.authorLink} target='_blank' rel='noopener'>
             {config.name}
           </a>
         </span>
@@ -36,7 +32,7 @@ const Footer = () => {
           >
             {config.siteName}
           </a>
-          {' v9.0.0 | AGPL-3.0'}
+          {` v${packageInfo.version} | ${packageInfo.license}`}
         </span>
       </div>
     </footer>

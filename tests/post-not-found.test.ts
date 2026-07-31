@@ -11,11 +11,11 @@ const missingPostParams = Promise.resolve({
 
 describe('missing posts', () => {
   test('return null from the content layer', async () => {
-    await expect(getPostContent(missingPostPath)).resolves.toBeNull();
+    expect(getPostContent(missingPostPath)).resolves.toBeNull();
   });
 
   test('trigger the Next.js not-found response', async () => {
-    await expect(PostPage({ params: missingPostParams })).rejects.toMatchObject({
+    expect(PostPage({ params: missingPostParams })).rejects.toMatchObject({
       digest: 'NEXT_HTTP_ERROR_FALLBACK;404',
     });
   });

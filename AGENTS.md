@@ -65,6 +65,7 @@ config.json   # site metadata, navigation links, and friend links
 - `@/` maps to the repository root.
 - Use `oxfmt` for formatting and `oxlint` for linting.
 - Keep the existing lint exceptions unless the corresponding native image and pagination patterns are removed.
+- Keep site identity and author links in `config.json`; display the application version and license from `package.json` instead of duplicating those values.
 - `.agents/` and `.codex/` are local skill artifacts and must remain ignored.
 - `skills-lock.json` is tracked to keep project skill sources and versions reproducible.
 - `docs/` contains local maintenance notes for this public repository and must remain ignored.
