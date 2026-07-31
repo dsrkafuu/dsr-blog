@@ -48,6 +48,7 @@ config.json   # site metadata, navigation links, and friend links
 - `utils/assets.ts` reads Markdown from `contents/` and matching media from `public/`.
 - Post URLs use `/post/[year]/[post]/`; all posts are returned by `generateStaticParams`.
 - Paginated lists use `/post/page/[num]/`; page 1 is also exposed as `/post/`.
+- Missing post content returns `null` from the content layer; route pages must call `notFound()` so the response keeps the custom UI and HTTP 404 status.
 - `app/@toc` is a parallel route rendered by the root layout. Keep `app/@toc/default.tsx`; it is required for hard navigation and 404 recovery.
 - `trailingSlash: true` is intentional. Preserve existing public URLs and the `/post/page/1/` redirect.
 

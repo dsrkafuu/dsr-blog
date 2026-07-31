@@ -112,7 +112,7 @@ const renderMarkdown = async (content: string, imgPrefix: string) => {
 /**
  * @param postPath /[list]/[year]/[post]
  */
-const getPostMeta = async (postPath: string) => {
+const getPostMeta = async (postPath: string): Promise<PostMeta | null> => {
   const cacheKey = `getPostMeta:${postPath}`;
   if (cache.has(cacheKey) && process.env.NODE_ENV === 'production') {
     console.log(`[lru-cache] <hit> ${cacheKey}`);
@@ -123,7 +123,7 @@ const getPostMeta = async (postPath: string) => {
   const globFile = globSync(`${contentPath}/${postPath}.md`);
   const filePath = globFile[0] || '';
   if (!filePath || !fs.existsSync(filePath)) {
-    throw new Error(`Post ${postPath} not found`);
+    return null;
   }
   const fileContents = fs.readFileSync(filePath, 'utf-8');
   const { content, data } = matter(fileContents);
@@ -189,6 +189,9 @@ export const getPostList = async () => {
     const relFilePath = path.relative(contentPath, fullFilePath);
     const postPath = relFilePath.replace('.md', '').replace(/\\/gi, '/');
     const postMeta = await getPostMeta(`/${postPath}`);
+    if (!postMeta) {
+      return;
+    }
     postList.list.push(postMeta);
     postList.wordsCount += postMeta.words;
     postList.totalPages = Math.ceil(postList.list.length / postList.pageSize);
@@ -217,8 +220,13 @@ export const getPostContent = async (postPath: string) => {
     return cache.get(cacheKey) as PostContent;
   }
 
+  const postMeta = await getPostMeta(postPath);
+  if (!postMeta) {
+    return null;
+  }
+
   startPref('getPostContent');
-  const { content, ...meta } = await getPostMeta(postPath);
+  const { content, ...meta } = postMeta;
   const { html, toc } = await renderMarkdown(content, postPath);
 
   endPerf('getPostContent');

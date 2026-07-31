@@ -1,9 +1,9 @@
 import type { Metadata, ResolvingMetadata } from 'next';
+import { notFound } from 'next/navigation';
 import { Fragment } from 'react';
 
 import Giscus from '@/components/Giscus';
 import MediumZoom from '@/components/MediumZoom';
-import NotFound from '@/components/NotFound';
 import PostCard from '@/components/PostCard';
 import Prism from '@/components/Prism';
 import config from '@/config.json';
@@ -58,7 +58,7 @@ const PostPage = async ({ params }: PostPageProps) => {
   const content = await getPostContent(postPath);
 
   if (!content) {
-    return <NotFound />;
+    notFound();
   }
   return (
     <Fragment>
