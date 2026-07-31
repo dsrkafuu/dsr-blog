@@ -11,11 +11,14 @@
 ## 环境变量
 
 - `NEXT_PUBLIC_GA_ID`
-- `NEXT_PUBLIC_GISCUS_REPO`
-- `NEXT_PUBLIC_GISCUS_REPO_ID`
-- `NEXT_PUBLIC_GISCUS_CATE`
-- `NEXT_PUBLIC_GISCUS_CATE_ID`
-- `NEXT_PUBLIC_GISCUS_FRIENDS_TERM`
+- Giscus 评论区需要同时配置：
+  - `NEXT_PUBLIC_GISCUS_REPO`
+  - `NEXT_PUBLIC_GISCUS_REPO_ID`
+  - `NEXT_PUBLIC_GISCUS_CATE`
+  - `NEXT_PUBLIC_GISCUS_CATE_ID`
+- `NEXT_PUBLIC_GISCUS_FRIENDS_TERM`：可选，仅用于友链页的指定 discussion 编号
+
+任一 Giscus 必填变量缺失或为空时，评论区不会渲染，页面其余内容保持可用。
 
 ## 本地 Agent Skills
 

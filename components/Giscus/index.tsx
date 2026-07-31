@@ -6,13 +6,18 @@ import GiscusReact from '@giscus/react';
 import { usePathname } from 'next/navigation';
 import { Fragment } from 'react';
 
-const Giscus = (props: Partial<GiscusProps>) => {
-  const pathname = usePathname();
+import { type GiscusConfig, resolveGiscusConfig } from './config';
 
-  const repo = props.repo || process.env.NEXT_PUBLIC_GISCUS_REPO;
-  const repoId = props.repoId || process.env.NEXT_PUBLIC_GISCUS_REPO_ID;
-  const category = props.category || process.env.NEXT_PUBLIC_GISCUS_CATE;
-  const categoryId = props.categoryId || process.env.NEXT_PUBLIC_GISCUS_CATE_ID;
+type GiscusOverrides = Partial<
+  Pick<GiscusProps, 'repo' | 'repoId' | 'category' | 'categoryId' | 'mapping' | 'term'>
+>;
+
+type ConfiguredGiscusProps = Pick<GiscusProps, 'mapping' | 'term'> & {
+  config: GiscusConfig;
+};
+
+const ConfiguredGiscus = ({ config, mapping, term }: ConfiguredGiscusProps) => {
+  const pathname = usePathname();
 
   return (
     <Fragment>
@@ -22,12 +27,9 @@ const Giscus = (props: Partial<GiscusProps>) => {
         <GiscusReact
           id='giscus'
           key={`giscus-${pathname}`}
-          repo={repo as any}
-          repoId={repoId as any}
-          category={category as any}
-          categoryId={categoryId as any}
-          mapping={props.mapping || 'title'}
-          term={props.term}
+          {...config}
+          mapping={mapping}
+          term={term}
           strict='0'
           reactionsEnabled='1'
           emitMetadata='0'
@@ -39,6 +41,21 @@ const Giscus = (props: Partial<GiscusProps>) => {
       </div>
     </Fragment>
   );
+};
+
+const Giscus = (props: GiscusOverrides) => {
+  const config = resolveGiscusConfig(props, {
+    repo: process.env.NEXT_PUBLIC_GISCUS_REPO,
+    repoId: process.env.NEXT_PUBLIC_GISCUS_REPO_ID,
+    category: process.env.NEXT_PUBLIC_GISCUS_CATE,
+    categoryId: process.env.NEXT_PUBLIC_GISCUS_CATE_ID,
+  });
+
+  if (!config) {
+    return null;
+  }
+
+  return <ConfiguredGiscus config={config} mapping={props.mapping || 'title'} term={props.term} />;
 };
 
 export default Giscus;

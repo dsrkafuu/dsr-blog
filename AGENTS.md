@@ -72,13 +72,14 @@ config.json   # site metadata, navigation links, and friend links
 
 ## Environment Variables
 
-All current variables are optional public configuration:
+All current variables are public configuration:
 
-- `NEXT_PUBLIC_GA_ID`
-- `NEXT_PUBLIC_GISCUS_REPO`
-- `NEXT_PUBLIC_GISCUS_REPO_ID`
-- `NEXT_PUBLIC_GISCUS_CATE`
-- `NEXT_PUBLIC_GISCUS_CATE_ID`
-- `NEXT_PUBLIC_GISCUS_FRIENDS_TERM`
+- `NEXT_PUBLIC_GA_ID` is optional.
+- These four Giscus variables are required as a complete set:
+  - `NEXT_PUBLIC_GISCUS_REPO`
+  - `NEXT_PUBLIC_GISCUS_REPO_ID`
+  - `NEXT_PUBLIC_GISCUS_CATE`
+  - `NEXT_PUBLIC_GISCUS_CATE_ID`
+- `NEXT_PUBLIC_GISCUS_FRIENDS_TERM` is optional and only selects the friends-page discussion number.
 
-Google Analytics renders only when `NEXT_PUBLIC_GA_ID` is present. Giscus still renders when its variables are missing, so validate the configured deployment after changing comment settings.
+Google Analytics renders only when `NEXT_PUBLIC_GA_ID` is present. Giscus renders only when all four required values are non-empty and the repository uses `owner/repo` format; keep runtime validation instead of asserting environment values into required third-party types.
