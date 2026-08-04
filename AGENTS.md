@@ -76,7 +76,7 @@ config.json   # site metadata, navigation links, and friend links
 
 ## Environment Variables
 
-All current variables are public configuration:
+Public configuration:
 
 - `NEXT_PUBLIC_GA_ID` is optional.
 - These four Giscus variables are required as a complete set:
@@ -87,3 +87,5 @@ All current variables are public configuration:
 - `NEXT_PUBLIC_GISCUS_FRIENDS_TERM` is optional and only selects the friends-page discussion number.
 
 Google Analytics renders only when `NEXT_PUBLIC_GA_ID` is present. Giscus renders only when all four required values are non-empty and the repository uses `owner/repo` format; keep runtime validation instead of asserting environment values into required third-party types.
+
+`CONTENT_LOG_LEVEL` is optional server-only diagnostics. It defaults to `perf` for aggregated content timing; use `debug` only when per-key LRU cache hits are needed, or `silent` to disable content diagnostics.

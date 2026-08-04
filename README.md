@@ -20,6 +20,10 @@
 
 任一 Giscus 必填变量缺失或为空时，评论区不会渲染，页面其余内容保持可用。
 
+内容层默认按操作输出 Markdown 读取和渲染的调用次数、总耗时、平均值与最大值。服务端变量
+`CONTENT_LOG_LEVEL` 可设置为 `perf`（默认）、`debug`（额外输出逐项 LRU 缓存命中）或
+`silent`（关闭内容层诊断日志）。
+
 ## 本地 Agent Skills
 
 安装用于 UI 与 React/Next.js 维护的可选项目 skill：

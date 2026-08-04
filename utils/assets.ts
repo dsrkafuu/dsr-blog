@@ -9,7 +9,7 @@ import { LRUCache } from 'lru-cache';
 import { Marked } from 'marked';
 import twemoji from 'twemoji';
 
-import { endPerf, startPref } from './performance';
+import { endPerf, logCacheHit, startPerf } from './performance';
 
 const cache = new LRUCache({ max: 1000 });
 
@@ -114,11 +114,10 @@ export const renderMarkdown = async (content: string, imgPrefix: string) => {
 const getPostMeta = async (postPath: string): Promise<PostMeta | null> => {
   const cacheKey = `getPostMeta:${postPath}`;
   if (cache.has(cacheKey) && process.env.NODE_ENV === 'production') {
-    console.log(`[lru-cache] <hit> ${cacheKey}`);
+    logCacheHit(cacheKey);
     return cache.get(cacheKey) as PostMeta;
   }
 
-  // startPref('getPostMeta');
   const filePath = path.join(process.cwd(), 'contents', `${postPath}.md`);
   if (!fs.existsSync(filePath)) {
     return null;
@@ -148,7 +147,6 @@ const getPostMeta = async (postPath: string): Promise<PostMeta | null> => {
     preview = html;
   }
 
-  // endPerf('getPostMeta');
   const res = {
     path: postPath,
     params,
@@ -165,11 +163,11 @@ const getPostMeta = async (postPath: string): Promise<PostMeta | null> => {
 export const getPostList = async () => {
   const cacheKey = 'getPostList';
   if (cache.has(cacheKey) && process.env.NODE_ENV === 'production') {
-    console.log(`[lru-cache] <hit> ${cacheKey}`);
+    logCacheHit(cacheKey);
     return cache.get(cacheKey) as PostList;
   }
 
-  startPref('getPostList');
+  const perfStart = startPerf();
   const postList: PostList = {
     list: [],
     pageSize: 10,
@@ -202,7 +200,7 @@ export const getPostList = async () => {
     return b.date.getTime() - a.date.getTime();
   });
 
-  endPerf('getPostList');
+  endPerf('getPostList', perfStart);
   cache.set(cacheKey, postList);
   return postList;
 };
@@ -213,7 +211,7 @@ export const getPostList = async () => {
 export const getPostContent = async (postPath: string) => {
   const cacheKey = `getPostContent:${postPath}`;
   if (cache.has(cacheKey) && process.env.NODE_ENV === 'production') {
-    console.log(`[lru-cache] <hit> ${cacheKey}`);
+    logCacheHit(cacheKey);
     return cache.get(cacheKey) as PostContent;
   }
 
@@ -222,11 +220,11 @@ export const getPostContent = async (postPath: string) => {
     return null;
   }
 
-  startPref('getPostContent');
+  const perfStart = startPerf();
   const { content, ...meta } = postMeta;
   const { html, toc } = await renderMarkdown(content, postPath);
 
-  endPerf('getPostContent');
+  endPerf('getPostContent', perfStart);
   const res = { ...meta, content, html, toc };
   cache.set(cacheKey, res);
   return res as PostContent;
