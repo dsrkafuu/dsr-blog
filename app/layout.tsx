@@ -18,13 +18,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(`https://${config.domain}`),
   authors: [{ url: '/', name: config.name }],
   description: config.desc,
-  icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' },
   openGraph: {
     siteName: config.siteName,
     title: config.name,
     description: config.desc,
     url: '/',
-    images: '/og.png',
+    images: '/og.jpg',
   },
 };
 

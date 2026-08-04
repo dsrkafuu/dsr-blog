@@ -2,8 +2,8 @@ import './index.scss';
 import Image from 'next/image';
 import { Fragment } from 'react';
 
-import irasutoya from '@/assets/irasutoya.jpg';
-import kofi from '@/assets/kofi.png';
+import botan from '@/assets/botan.jpg';
+import kofi from '@/assets/kofi.jpg';
 import config from '@/config.json';
 import { IBitcoin, IGitHub } from '@/icons';
 import { getPostList } from '@/utils/assets';
@@ -23,7 +23,7 @@ const SideInfo = async () => {
     <Fragment>
       <div className='card info'>
         <div className='info__avatar'>
-          <Image src={irasutoya} width={75} height={75} alt='头像' />
+          <Image className='info__avatarImg' src={botan} width={75} height={75} alt='头像' />
         </div>
         <div className='info__meta'>
           <span className='info__metaName'>{config.name}</span>

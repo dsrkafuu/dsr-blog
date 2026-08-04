@@ -15,7 +15,10 @@
     width: 75px;
     user-select: none;
     overflow: hidden;
-    border-radius: 4px;
+
+    &Img {
+      border-radius: 4px;
+    }
   }
 
   &__meta {
