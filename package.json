@@ -10,10 +10,10 @@
     "fmt": "oxfmt",
     "lint": "oxlint",
     "test": "bun test",
-    "dev": "bun --bun next dev",
-    "build": "bun --bun next build",
-    "analyze": "bun --bun next experimental-analyze",
-    "start": "bun --bun next start"
+    "dev": "next dev",
+    "build": "next build",
+    "analyze": "next experimental-analyze",
+    "start": "next start"
   },
   "dependencies": {
     "@dsrca/design": "^5.1.0",
