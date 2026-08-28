@@ -1,9 +1,8 @@
 import '@/styles/globals.scss';
 import './layout.scss';
-// import 'sakana-widget/lib/index.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import clsx from 'clsx';
 import type { Metadata } from 'next';
-// import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 import Footer from '@/components/Footer';
@@ -12,6 +11,8 @@ import SakanaWidget from '@/components/SakanaWidget';
 import Search from '@/components/Search';
 import SideInfo from '@/components/SideInfo';
 import config from '@/config.json';
+
+import { inter, cascadiaMono, notoSansSC, notoSansJP } from './fonts';
 
 export const metadata: Metadata = {
   title: config.siteName,
@@ -34,33 +35,20 @@ interface RootLayoutProps {
 
 const RootLayout = ({ children, toc }: RootLayoutProps) => {
   return (
-    <html lang='zh' data-scroll-behavior='smooth'>
-      <head>
-        {/* prettier-ignore */}
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
-        {/* prettier-ignore */}
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
-        {/* prettier-ignore */}
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap' />
-        {/* prettier-ignore */}
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap' />
-        {/* prettier-ignore */}
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap' />
-        {/* prettier-ignore */}
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap' />
-      </head>
+    <html
+      lang='zh'
+      suppressHydrationWarning
+      data-scroll-behavior='smooth'
+      className={clsx(
+        inter.variable,
+        cascadiaMono.variable,
+        notoSansSC.variable,
+        notoSansJP.variable,
+      )}
+    >
       <body>
         <NavBar />
         <main className='main'>
-          {/*
-          <div className='container__eol container'>
-            <div className='card eol__warning'>
-              <Link href='/post/2025/blog-eol/'>
-                <h2>博客低频率更新并进入维护模式</h2>
-              </Link>
-            </div>
-          </div>
-          */}
           <div className='container'>
             <div className='content'>
               <div className='content__inner'>{children}</div>
