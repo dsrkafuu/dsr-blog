@@ -1,4 +1,4 @@
-@use '@dsrca/design/prism';
+@use '@/styles/design/prism';
 
 .markdown {
   @include prism.token;

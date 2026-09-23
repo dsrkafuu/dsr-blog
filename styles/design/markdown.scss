@@ -1,0 +1,201 @@
+@use '@/styles/design/variables';
+
+@mixin markdown {
+  line-height: variables.$line-height-md;
+  font-size: variables.$font-md;
+  word-wrap: break-word;
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h1,
+  h2 {
+    font-size: variables.$font-xl;
+  }
+  h3 {
+    font-size: variables.$font-lg;
+  }
+  h4 {
+    font-size: variables.$font-md;
+  }
+  h5 {
+    font-size: variables.$font-sm;
+  }
+  h6 {
+    font-size: variables.$font-xs;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: variables.$weight-medium;
+    margin: 15px 0;
+    color: var(--color-primary);
+
+    code,
+    tt {
+      font-size: 85%;
+    }
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  p,
+  blockquote,
+  ul,
+  ol,
+  dl,
+  table,
+  pre,
+  details {
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 28px;
+    line-height: variables.$line-height-lg;
+  }
+
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 16px;
+  }
+
+  li > p {
+    margin: 0;
+  }
+
+  hr {
+    height: variables.$size-quote;
+    padding: 0;
+    margin: 15px 0;
+    background-color: var(--color-border);
+    border: none;
+  }
+
+  pre {
+    word-wrap: normal;
+    font-size: variables.$font-sm;
+    font-family: variables.$family-mono;
+    background-color: var(--color-wrapper);
+    border-radius: variables.$radius-sm;
+    padding: 15px 16px;
+    overflow-x: auto;
+  }
+
+  kbd,
+  code,
+  tt {
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: variables.$font-sm;
+    display: inline;
+    font-family: variables.$family-mono;
+    padding: 2px 6px;
+    color: inherit;
+    background-color: var(--color-wrapper);
+    border-radius: variables.$radius-sm;
+    hyphens: none;
+
+    br {
+      display: none;
+    }
+  }
+
+  pre code {
+    word-wrap: inherit;
+    word-break: inherit;
+    font-size: inherit;
+    display: inline;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    hyphens: none;
+
+    br {
+      display: unset;
+    }
+  }
+
+  del code {
+    text-decoration: inherit;
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding: 0 15px;
+    color: inherit;
+    font-size: inherit;
+    border-left: variables.$size-quote solid var(--color-border);
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    background-color: transparent;
+
+    tr {
+      background-color: transparent;
+    }
+
+    th {
+      font-weight: variables.$weight-medium;
+    }
+
+    th,
+    td {
+      background-color: transparent;
+      padding: 4px 12px;
+      border: variables.$size-border solid var(--color-border);
+    }
+  }
+
+  img:not(.emoji) {
+    display: block;
+    border-radius: variables.$radius-sm;
+  }
+
+  .footnotes {
+    font-size: variables.$font-sm;
+  }
+}

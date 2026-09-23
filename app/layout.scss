@@ -1,5 +1,5 @@
 @use '@/styles/variables';
-@use '@dsrca/design/markdown';
+@use '@/styles/design/markdown';
 
 .markdown {
   @include markdown.markdown;

@@ -1,5 +1,5 @@
-@use '@dsrca/design/reset';
-@use '@dsrca/design/colors';
+@use '@/styles/design/reset';
+@use '@/styles/design/colors';
 @use './variables';
 
 @include reset.sanitize;

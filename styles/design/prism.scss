@@ -1,0 +1,63 @@
+@use '@/styles/design/variables';
+
+@mixin token {
+  .token {
+    &.important,
+    &.bold {
+      font-weight: variables.$weight-medium;
+    }
+    &.italic {
+      font-style: italic;
+    }
+
+    &.comment,
+    &.block-comment,
+    &.prolog,
+    &.doctype,
+    &.cdata {
+      color: var(--color-prism-grey);
+    }
+
+    &.property,
+    &.tag,
+    &.boolean,
+    &.number,
+    &.constant,
+    &.symbol,
+    &.deleted {
+      color: var(--color-prism-blue);
+    }
+
+    &.selector,
+    &.attr-name,
+    &.string,
+    &.char,
+    &.builtin,
+    &.url,
+    &.inserted {
+      color: var(--color-prism-cyan);
+    }
+
+    &.entity {
+      color: var(--color-prism-entity);
+    }
+
+    &.atrule,
+    &.attr-value,
+    &.keyword {
+      color: var(--color-prism-green);
+    }
+
+    &.function,
+    &.class-name {
+      color: var(--color-prism-yellow);
+    }
+
+    &.regex,
+    &.important,
+    &.variable,
+    &.operator {
+      color: var(--color-prism-orange);
+    }
+  }
+}

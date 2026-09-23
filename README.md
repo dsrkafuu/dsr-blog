@@ -8,6 +8,17 @@
 
 新版整合式个人博客 [dsr-blog](https://blog.dsrkafuu.net)，基于 Next 实现。
 
+## 本地开发
+
+使用 Bun 安装依赖并运行项目，锁文件为 `bun.lock`：
+
+```bash
+bun install --frozen-lockfile
+bun run dev
+```
+
+提交前可运行 `bun run fmt --check`、`bun run lint`、`bun run test` 和 `bun run build`。
+
 ## 环境变量
 
 - `NEXT_PUBLIC_GA_ID`
@@ -26,7 +37,7 @@
 
 ## 本地 Agent Skills
 
-安装用于 UI 与 React/Next.js 维护的可选项目 skill：
+项目 skill 不随仓库上传。新克隆仓库后，如需进行 UI 或 React/Next.js 维护，请先在项目目录安装：
 
 ```bash
 bunx skills add shadcn/ui --skill shadcn --yes
